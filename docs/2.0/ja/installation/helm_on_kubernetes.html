@@ -78,6 +78,8 @@
                   selected
                   >2.0 (current)</option>
                 file_path: 2.1/ja/installation/helm_on_kubernetes
+                  <option value="../../../2.1/ja/installation/helm_on_kubernetes.html"
+                  >2.1</option>
             </select>
           </div>
         </dd>
@@ -140,6 +142,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../2.1/index.html">Exastro IT Automation Documentation 2.1</a></li>
 </ul>
 
     <!-- <ul>
@@ -839,7 +842,7 @@ $(window).on('load', function () {
 </ul>
 <div class="line-block">
 <div class="line">サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。</div>
-<div class="line">Azure におけるドメイン名の確認方法については <a class="reference internal" href="../configuration/kubernetes/aks.html#aks-dns"><span class="std std-ref">ドメイン名の確認</span></a> を確認してください。</div>
+<div class="line">Azure におけるドメイン名の確認方法については <a class="reference internal" href="../../../2.1/ja/configuration/kubernetes/aks.html#aks-dns"><span class="std std-ref">ドメイン名の確認</span></a> を確認してください。</div>
 <div class="line">クラウドプロバイダ毎に必要な <kbd class="kbd docutils literal notranslate">annotations</kbd> を指定してください。</div>
 <div class="line">下記は、AKS の Ingress Controller を使用する際の例を記載しています。</div>
 </div>
@@ -1483,7 +1486,7 @@ $(window).on('load', function () {
 </li>
 <li><p>Exastro IT Automation 用データベースの設定</p>
 <div class="line-block">
-<div class="line">Exastro IT Automation コンテナがデータベースに接続できるようにするために、<a class="reference internal" href="#database-setup"><span class="std std-ref">データベース連携</span></a> で作成した root アカウントのパスワードを設定します。</div>
+<div class="line">Exastro IT Automation コンテナがデータベースに接続できるようにするために、<a class="reference internal" href="../../../2.1/ja/installation/helm_on_kubernetes.html#database-setup"><span class="std std-ref">データベース連携</span></a> で作成した root アカウントのパスワードを設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id35">
 <caption><span class="caption-number">表 1.10 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id35" title="このテーブルへのパーマリンク">¶</a></caption>
@@ -2324,7 +2327,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <div class="line-block">
-<div class="line">※ 下記は、<a class="reference internal" href="#database-setup"><span class="std std-ref">データベース連携</span></a> で設定済みです。</div>
+<div class="line">※ 下記は、<a class="reference internal" href="../../../2.1/ja/installation/helm_on_kubernetes.html#database-setup"><span class="std std-ref">データベース連携</span></a> で設定済みです。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id51">
 <div class="code-block-caption"><span class="caption-number">リスト 1.20 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id51" title="このコードへのパーマリンク">¶</a></div>
@@ -2405,7 +2408,7 @@ $(window).on('load', function () {
 <section id="id13">
 <h3><span class="section-number">1.4.1. </span>永続ボリュームの作成<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line"><a class="reference internal" href="#persistent-volume"><span class="std std-ref">永続ボリュームの設定</span></a> で作成したマニフェストファイルを適用し、ボリュームを作成します。</div>
+<div class="line"><a class="reference internal" href="../../../2.1/ja/installation/helm_on_kubernetes.html#persistent-volume"><span class="std std-ref">永続ボリュームの設定</span></a> で作成したマニフェストファイルを適用し、ボリュームを作成します。</div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># pv-database.yaml</span>
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>pv-database.yaml
@@ -2610,7 +2613,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <li><p>接続確認</p>
 <div class="line-block">
 <div class="line">出力結果に従って、<span class="menuselection">Administrator Console</span> の URL にアクセスします。</div>
-<div class="line">下記は、実行例のため <a class="reference internal" href="#service-setting"><span class="std std-ref">サービス公開の設定</span></a> で設定したホスト名に読み替えてください。</div>
+<div class="line">下記は、実行例のため <a class="reference internal" href="../../../2.1/ja/installation/helm_on_kubernetes.html#service-setting"><span class="std std-ref">サービス公開の設定</span></a> で設定したホスト名に読み替えてください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id63">
 <div class="code-block-caption"><span class="caption-number">リスト 1.31 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id63" title="このコードへのパーマリンク">¶</a></div>
@@ -3037,7 +3040,7 @@ http://172.16.20.xxx:30080
 <a class="reference internal image-reference" href="../../../_images/administrator-console.png"><img alt="administrator-console" src="../../../_images/administrator-console.png" style="width: 600px;" /></a>
 </figure>
 <div class="line-block">
-<div class="line">ログイン ID とパスワードは <a class="reference internal" href="#create-system-manager"><span class="std std-ref">Exastro システム管理者の作成</span></a> で登録した、<kbd class="kbd docutils literal notranslate">KEYCLOAK_USER</kbd> 及び <kbd class="kbd docutils literal notranslate">KEYCLOAK_PASSWORD</kbd> です。</div>
+<div class="line">ログイン ID とパスワードは <a class="reference internal" href="../../../2.1/ja/installation/helm_on_kubernetes.html#create-system-manager"><span class="std std-ref">Exastro システム管理者の作成</span></a> で登録した、<kbd class="kbd docutils literal notranslate">KEYCLOAK_USER</kbd> 及び <kbd class="kbd docutils literal notranslate">KEYCLOAK_PASSWORD</kbd> です。</div>
 </div>
 <figure class="align-default" id="id17">
 <a class="reference internal image-reference" href="../../../_images/exastro-login.png"><img alt="login" src="../../../_images/exastro-login.png" style="width: 300px;" /></a>
