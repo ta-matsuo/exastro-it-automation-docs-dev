@@ -107,6 +107,6 @@ html_context = {
     'versions': {
         'current': '2.0',
         '2.0 (current)': '2.0',
-        '2.1 (beta)': '2.1'
+        '2.1': '2.1'
     }
 }
