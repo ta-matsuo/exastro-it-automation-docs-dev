@@ -35,12 +35,6 @@
    cd ~/${MY_GITHUB_ACCOUNT}
    git clone https://github.com/${MY_GITHUB_ACCOUNT}/exastro-it-automation-docs-dev.git
    ```
-3. exastro-it-automation-docs と docs リポジトリをサブモジュールとしてクローンする
-   ```bash
-   # サブモジュールを自身のリポジトリに置き換える
-   cd ~/${MY_GITHUB_ACCOUNT}/exastro-it-automation-docs-dev
-   sed -i -e "s|https://github.com/exastro-suite|https://github.com/${MY_GITHUB_ACCOUNT}|g" .gitmodules
-   ```
 
 ### ドキュメントの作成・更新
 
