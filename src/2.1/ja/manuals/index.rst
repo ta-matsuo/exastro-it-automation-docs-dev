@@ -25,6 +25,7 @@
    it_automation_base/index
    create_param/index
    ansible-driver/index
+   terraform_driver/index
    maintenance/index
 
 .. raw:: html
