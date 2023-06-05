@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>比較機能 &#8212; Documentation  ドキュメント</title>
+    <title>2. 比較機能 &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -33,7 +33,9 @@
     <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
-    <link rel="search" title="検索" href="../../../../search.html" /> 
+    <link rel="search" title="検索" href="../../../../search.html" />
+    <link rel="next" title="Ansible ドライバ" href="../ansible-driver/index.html" />
+    <link rel="prev" title="1. メニュー作成機能" href="menu_creation.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -98,6 +100,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
+        <li class="prev"><a href="menu_creation.html" title="前のトピックへ"><span class="section-number">1. </span>メニュー作成機能</a></li>
+        <li class="next"><a href="../ansible-driver/index.html" title="次のトピックへ">Ansible ドライバ</a></li>
       </ul>
     </div>
   </div>
@@ -108,9 +112,33 @@
   <div id="menuButton"></div>
   
   <aside class="divInner">
-    <ul>
+    <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../2.0/index.html">Exastro IT Automation Documentation 2.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.1</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.1</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html#id1">日本語</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/index.html">構成・構築ガイド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../installation/index.html">インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../learn/index.html">Learn</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">マニュアル</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../platform_management/index.html">システム管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organization_management/index.html">オーガナイゼーション管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../it_automation_base/index.html">基本操作</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">パラメータ管理</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="menu_creation.html">1. メニュー作成機能</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">2. 比較機能</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../ansible-driver/index.html">Ansible ドライバ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../terraform_driver/index.html">Terraform ドライバ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../maintenance/index.html">メンテナンス</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/index.html">リファレンス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/index.html">貢献</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
     <!-- <ul>
@@ -124,52 +152,46 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">比較機能</a><ul>
-<li><a class="reference internal" href="#id2">1 比較機能概要</a><ul>
-<li><a class="reference internal" href="#id3">1.1 比較機能について</a><ul>
-<li><a class="reference internal" href="#id4">1.1.1 比較機能全体概要図</a></li>
-<li><a class="reference internal" href="#id5">1.1.2 比較機能処理概要図</a></li>
-<li><a class="reference internal" href="#id6">1.1.3 比較機能定義概要図</a></li>
+<li><a class="reference internal" href="#">2. 比較機能</a><ul>
+<li><a class="reference internal" href="#id2">2.1. 比較機能概要</a><ul>
+<li><a class="reference internal" href="#id3">2.1.1. 比較機能について</a><ul>
+<li><a class="reference internal" href="#id4">比較機能全体概要図</a></li>
+<li><a class="reference internal" href="#id5">比較機能処理概要図</a></li>
+<li><a class="reference internal" href="#id6">比較機能定義概要図</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7">パラメータシートの比較について</a><ul>
-<li><a class="reference internal" href="#id8">1.2.1 比較機能の動作要件</a></li>
-<li><a class="reference internal" href="#id9">1.2.2 比較実行パラメータ</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id10">2 比較機能での対象項目について</a><ul>
-<li><a class="reference internal" href="#id11">2.1 比較対象項目</a><ul>
-<li><a class="reference internal" href="#id12">2.1.1 比較対象のパラメータシートの項目</a></li>
-<li><a class="reference internal" href="#id13">2.1.2 比較可能な対象項目の組み合わせ</a></li>
+<li><a class="reference internal" href="#about-base-datetime">2.1.2. 基準日時について</a></li>
+<li><a class="reference internal" href="#id8">2.1.3. パラメータシートの比較について</a><ul>
+<li><a class="reference internal" href="#id9">比較機能の実行要件</a></li>
+<li><a class="reference internal" href="#id10">比較実行パラメータ</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id14">3 比較のメニュー構成</a><ul>
-<li><a class="reference internal" href="#id15">3.1 メニュー/画面一覧</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id16">4 比較機能の利用手順</a><ul>
-<li><a class="reference internal" href="#id17">4.1 作業フロー</a><ul>
-<li><a class="reference internal" href="#id18">4.1.1 比較機能実行フロー</a></li>
+<li><a class="reference internal" href="#id11">2.2. 比較機能での対象項目について</a><ul>
+<li><a class="reference internal" href="#id12">2.2.1. 比較対象項目</a><ul>
+<li><a class="reference internal" href="#id13">比較対象のパラメータシートの項目</a></li>
+<li><a class="reference internal" href="#id14">比較可能な対象項目の組み合わせ</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id19">5 比較機能・操作方法説明</a><ul>
-<li><a class="reference internal" href="#id20">5.1 比較</a><ul>
-<li><a class="reference internal" href="#id21">5.1.1 比較定義</a></li>
-<li><a class="reference internal" href="#id22">5.1.2 比較定義詳細</a></li>
-<li><a class="reference internal" href="#id23">5.1.3 比較実行</a></li>
+<li><a class="reference internal" href="#id15">2.3. 比較機能 メニュー構成</a><ul>
+<li><a class="reference internal" href="#id16">2.3.1. メニュー/画面一覧</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id17">2.4. 比較機能の利用手順</a><ul>
+<li><a class="reference internal" href="#id18">2.4.1. 作業フロー</a><ul>
+<li><a class="reference internal" href="#id19">比較機能実行フロー</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id24">6 付録</a><ul>
-<li><a class="reference internal" href="#id25">6.1 参考</a><ul>
-<li><a class="reference internal" href="#id26">6.1.1 プルダウン使用</a></li>
+<li><a class="reference internal" href="#about-how-to-use-compare">2.5. 比較機能・操作方法説明</a><ul>
+<li><a class="reference internal" href="#id21">2.5.1. 比較</a><ul>
+<li><a class="reference internal" href="#about-compare-list">比較設定</a></li>
+<li><a class="reference internal" href="#about-compare-detail">比較詳細設定</a></li>
+<li><a class="reference internal" href="#about-compare-execute">比較実行</a></li>
 </ul>
 </li>
 </ul>
@@ -187,8 +209,11 @@
  <div id="breadcrumbs">
   <ul>
     <li><a href="../../../../index.html">HOME</a></li>
+    <li><a href="../../../index.html">Exastro IT Automation Documentation 2.1</a></li>
+    <li><a href="../index.html">マニュアル</a></li>
+    <li><a href="index.html">パラメータ管理</a></li>
     
-    <li>比較機能</li>
+    <li><span class="section-number">2. </span>比較機能</li>
   </ul>
 </div>
 
@@ -197,95 +222,140 @@
 <div class="body" role="main">
 
   <section id="id1">
-<h1>比較機能<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">2. </span>比較機能<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id2">
-<h2>1 比較機能概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.1. </span>比較機能概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本章では比較機能について説明します。</div>
+<div class="line">本書では、ITAの比較機能および操作方法について説明します。</div>
 </div>
 <section id="id3">
-<h3>1.1 比較機能について<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.1.1. </span>比較機能について<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">比較機能とは、ITAのメニュー作成機能で作成したパラメータシートを比較し、差分を出力する機能です。</div>
+<div class="line">比較機能とは、ITAのパラメータシート作成機能で作成したパラメータシートを比較し、差分を出力する機能です。</div>
 <div class="line"><br /></div>
 <div class="line">本機能は、「パラメータシート（ホスト/オペレーションあり）」を対象としています。</div>
-<div class="line">パラメータシートの詳細については、「利用手順マニュアル メニュー作成機能」を参照してください。</div>
-<div class="line">アクセス権/アクセス許可ロールについては、「利用手順マニュアル データレコード毎のロールベースアクセス制御」を参照してください。</div>
+<div class="line">パラメータシートの詳細については、「<a class="reference internal" href="menu_creation.html"><span class="doc">メニュー作成機能</span></a>」を参照してください。</div>
 </div>
 <section id="id4">
-<h4>1.1.1 比較機能全体概要図<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>比較機能全体概要図<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">以下は、比較機能実行までの全体の概要図です。</div>
 </div>
-<figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/比較機能全体概要図.png"><img alt="比較機能全体概要図" src="../../../../_images/%E6%AF%94%E8%BC%83%E6%A9%9F%E8%83%BD%E5%85%A8%E4%BD%93%E6%A6%82%E8%A6%81%E5%9B%B3.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id25">
+<a class="reference internal image-reference" href="../../../../_images/overview_all.drawio1.png"><img alt="収集機能概要図" src="../../../../_images/overview_all.drawio1.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.35 </span><span class="caption-text">収集機能概要図</span><a class="headerlink" href="#id25" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
 </figure>
 </section>
 <section id="id5">
-<h4>1.1.2 比較機能処理概要図<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>比較機能処理概要図<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">以下は、比較機能の処理の概要図です。</div>
+<div class="line">比較設定、比較詳細設定、実行時に指定する条件に従い、比較結果を出力します。</div>
 </div>
-<figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/比較機能処理概要図.png"><img alt="比較機能処理概要図" src="../../../../_images/%E6%AF%94%E8%BC%83%E6%A9%9F%E8%83%BD%E5%87%A6%E7%90%86%E6%A6%82%E8%A6%81%E5%9B%B3.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id26">
+<a class="reference internal image-reference" href="../../../../_images/overview_process.drawio1.png"><img alt="比較機能処理概要図" src="../../../../_images/overview_process.drawio1.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.36 </span><span class="caption-text">比較機能処理概要図</span><a class="headerlink" href="#id26" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
 </figure>
 </section>
 <section id="id6">
-<h4>1.1.3 比較機能定義概要図<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>比較機能定義概要図<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">以下は、パラメータシートの紐付と比較結果の概要図です。</div>
-<div class="line">比較定義、比較定義詳細、各設定については、「5 比較機能・操作方法説明」を参照してください。</div>
+<div class="line">比較設定、比較詳細設定、各設定については、「<a class="reference internal" href="#about-how-to-use-compare"><span class="std std-ref">比較機能・操作方法説明</span></a>」を参照してください。</div>
 <div class="line"><br /></div>
-<div class="line">・パラメータシートの紐付（比較対象のパラメータシートの項目名が完全に一致している場合）</div>
+<div class="line">・パラメータシートの紐付（比較対象のパラメータシートの項目が一致している場合）</div>
 </div>
-<figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/比較定義概要図1.png"><img alt="比較対象のパラメータシートの項目名が完全に一致している場合" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E6%A6%82%E8%A6%81%E5%9B%B31.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id27">
+<a class="reference internal image-reference" href="../../../../_images/example_parameter_sheet_match.drawio.png"><img alt="比較対象のパラメータシートの項目が一致している場合" src="../../../../_images/example_parameter_sheet_match.drawio.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.37 </span><span class="caption-text">比較対象のパラメータシートの項目が一致している場合</span><a class="headerlink" href="#id27" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
 </figure>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line">・パラメータシートの紐付（比較対象のパラメータシートの項目が不一致の場合）</div>
 </div>
-<figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/比較定義概要図2.png"><img alt="比較対象のパラメータシートの項目が不一致の場合" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E6%A6%82%E8%A6%81%E5%9B%B32.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id28">
+<a class="reference internal image-reference" href="../../../../_images/example_parameter_sheet_unmatch.drawio.png"><img alt="比較対象のパラメータシートの項目が不一致の場合" src="../../../../_images/example_parameter_sheet_unmatch.drawio.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.38 </span><span class="caption-text">比較対象のパラメータシートの項目が不一致の場合</span><a class="headerlink" href="#id28" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
 </figure>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
 </section>
 </section>
-<section id="id7">
-<h3>パラメータシートの比較について<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="about-base-datetime">
+<span id="id7"></span><h3><span class="section-number">2.1.2. </span>基準日時について<a class="headerlink" href="#about-base-datetime" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">比較機能は、比較定義、比較定義詳細にて、紐付された対象パラメータシート、項目情報を元に比較を実施します。</div>
-<div class="line"><br /></div>
+<div class="line">基準日時とは、該当のオペレーションが過去に一度でも実行されたことがあれば「最終実行日時」、一度も実行されたことがなければ「実施予定日時」が「基準日時」となります。</div>
+<div class="line">基準日時については、「<a class="reference internal" href="menu_creation.html"><span class="doc">メニュー作成機能</span></a>」を参照してください。</div>
 </div>
+<figure class="align-left" id="id29">
+<a class="reference internal image-reference" href="../../../../_images/basedate.drawio.png"><img alt="基準日時概要図" src="../../../../_images/basedate.drawio.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.39 </span><span class="caption-text">基準日時概要図</span><a class="headerlink" href="#id29" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">「参照用」メニューグループで、①～③の日時を基準日時とした検索をした場合の、検索結果の例です。</div>
+<div class="line">① 1/1時点で、値は、何も設定されていない為、検索結果はありません。「なし」</div>
+<div class="line">② 3/15時点で、オペレーション1に設定されている値が検索結果に表示されます。「パラメータA:100」</div>
+<div class="line">③ 5/15時点で、オペレーション4に設定されている値が検索結果に表示されます。「パラメータA:200」</div>
+</div>
+</div>
+</section>
 <section id="id8">
-<h4>1.2.1 比較機能の動作要件<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h4>
+<h3><span class="section-number">2.1.3. </span>パラメータシートの比較について<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">ITAで以下の設定がされていること。</div>
-<div class="line">・ITA インストーラにて、「createparam」が選択され、インストールされている</div>
-<div class="line">・ メニュー定義/作成にて、作成対象「パラメータシート（ホスト/オペレーションあり）」が作成されている</div>
-<div class="line">・比較定義にて、比較対象となるパラメータシート同士の紐づけ設定がされている。</div>
-<div class="line">・比較定義詳細にて、比較対象となるの項目同士で紐づけ設定がされている。（比較定義の設定状態によっては、設定不要）</div>
+<div class="line">比較機能は、比較設定、比較詳細設定にて、紐付された対象パラメータシートの項目情報を元に値の比較を実施します。</div>
+<div class="line"><br /></div>
+</div>
+<section id="id9">
+<h4>比較機能の実行要件<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">ITAで以下の設定がされている必要があります。</div>
+</div>
+<ul>
+<li><div class="line-block">
+<div class="line">パラメータシート定義・作成にて、パラメータシート（ホスト/オペレーションあり）が作成されている。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">比較設定にて、比較対象となるパラメータシート同士の紐づけ設定がされている。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">比較詳細設定にて、比較対象とする項目同士で紐づけ設定がされている。</div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<div class="line-block">
+<div class="line">比較設定にて、詳細設定フラグが「True」設定時のみ、比較詳細設定について設定が可能です。</div>
+<div class="line">比較するパラメータシートの項目数、項目名が一致している場合(詳細設定フラグが「False」)、比較詳細設定の設定は不要です。</div>
+</div>
 </div>
 </section>
-<section id="id9">
-<h4>1.2.2 比較実行パラメータ<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id10">
+<h4>比較実行パラメータ<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">以下をパラメータとして設定し比較を実行できます。</div>
-<div class="line">比較定義については、後述の「比較定義」を参照。</div>
+<div class="line">比較設定については、後述の「<a class="reference internal" href="#about-compare-list"><span class="std std-ref">比較設定</span></a>」を参照。</div>
 </div>
-<table class="docutils align-left" id="id27">
-<caption><span class="caption-text">表 1.2-1 比較実行パラメータ</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 37%" />
-<col style="width: 10%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-</colgroup>
+<figure class="align-left" id="id30">
+<a class="reference internal image-reference" href="../../../../_images/compare_execute.png"><img alt="サブメニュー画面（比較実行）" src="../../../../_images/compare_execute.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.40 </span><span class="caption-text">サブメニュー画面(比較実行)</span><a class="headerlink" href="#id30" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<table class="docutils align-left" id="id31">
+<caption><span class="caption-number">表 2.70 </span><span class="caption-text">比較実行パラメータ</span><a class="headerlink" href="#id31" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">パラメータ</div>
@@ -311,11 +381,11 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">比較定義</div>
+<div class="line">比較設定選択</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義名を選択</div>
+<div class="line">比較設定を選択して下さい。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -332,12 +402,12 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">基準日１</div>
+<div class="line">基準日時1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義にて比較対象メニュー1 で選択したメニューの</div>
-<div class="line">基準日となる日時を入力</div>
+<div class="line">比較設定にて対象パラメータシート1 で選択したパラメータシートの</div>
+<div class="line">基準となる日時を入力して下さい。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -349,17 +419,17 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">入力しない場合、最新の基準日時が適応されます。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">基準日２</div>
+<div class="line">基準日時2</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義にて比較対象メニュー2 で選択したメニューの</div>
-<div class="line">基準日となる日時を入力</div>
+<div class="line">比較設定にて対象パラメータシート2 で選択したパラメータシートの</div>
+<div class="line">基準となる日時を入力して下さい。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -371,16 +441,16 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">入力しない場合、最新の基準日時が適応されます。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">対象ホスト</div>
+<div class="line">ホスト選択</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">対象ホストを選択</div>
+<div class="line">対象ホストを選択して下さい。</div>
 <div class="line">デフォルト：対象の絞り込みなし。（比較対象を全件表示）</div>
 </div>
 </td>
@@ -402,21 +472,17 @@
 </section>
 </section>
 </section>
-<section id="id10">
-<h2>2 比較機能での対象項目について<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="id11">
-<h3>2.1 比較対象項目<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<h2><span class="section-number">2.2. </span>比較機能での対象項目について<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="id12">
-<h4>2.1.1 比較対象のパラメータシートの項目<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h4>
+<h3><span class="section-number">2.2.1. </span>比較対象項目<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id13">
+<h4>比較対象のパラメータシートの項目<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">比較機能で使用可能なパラメータシートの項目について以下となります。</div>
 </div>
-<table class="docutils align-left" id="id28">
-<caption><span class="caption-text">表 2.1-1 パラメータシートの比較対象項目</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
+<table class="docutils align-left" id="id32">
+<caption><span class="caption-number">表 2.71 </span><span class="caption-text">パラメータシートの比較対象項目</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">項目種別</div>
@@ -466,12 +532,30 @@
 </td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
+<div class="line">日時</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">日付</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
 <div class="line">プルダウン選択</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">選択したリストの ID での比較を行います。</div>
-<div class="line">アクセス権がない場合、 ID 返還失敗(X)表記となります。</div>
+<div class="line">選択したリストの値での比較を行います。</div>
+<div class="line">参照先のレコードが廃止されている場合、 ID変換失敗(X)表記となります。</div>
 </div>
 </td>
 </tr>
@@ -494,29 +578,38 @@
 </div>
 </td>
 </tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">パラメータシート参照</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">参照先のパラメータシートの値で比較を行います。</div>
+<div class="line">参照先のレコードが廃止されている場合、 ID変換失敗(X)表記となります。</div>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
-<div class="line-block">
-<div class="line">※アクセス権については、「利用手順マニュアル データレコード毎のロールベースアクセス制御」を参照してください。</div>
-<div class="line"><br /></div>
-</div>
 </section>
-<section id="id13">
-<h4>2.1.2 比較可能な対象項目の組み合わせ<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id14">
+<h4>比較可能な対象項目の組み合わせ<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">比較可能なパラメータシートの項目の組み合わせ一覧になります。</div>
 </div>
-<table class="docutils align-left" id="id29">
-<caption><span class="caption-text">表 2-1 比較対象項目の比較パターン組み合わせ</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id33">
+<caption><span class="caption-number">表 2.72 </span><span class="caption-text">比較対象項目の比較パターン組み合わせ</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 13%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head stub"><div class="line-block">
@@ -542,6 +635,14 @@
 </div>
 </th>
 <th class="head"><div class="line-block">
+<div class="line">日時</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">日付</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
 <div class="line">プルダウン</div>
 <div class="line">選択</div>
 </div>
@@ -553,6 +654,11 @@
 </th>
 <th class="head"><div class="line-block">
 <div class="line">リンク</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">パラメータシート</div>
+<div class="line">参照</div>
 </div>
 </th>
 </tr>
@@ -580,11 +686,23 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -614,11 +732,23 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -647,11 +777,23 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -680,11 +822,23 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -698,31 +852,43 @@
 </div>
 </th>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１※２</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
 </div>
 </td>
 </tr>
@@ -732,31 +898,43 @@
 </div>
 </th>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○※1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○※1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○※1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○※1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１※２</div>
+<div class="line">○※1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※３</div>
+<div class="line">○※1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
 </div>
 </td>
 </tr>
@@ -781,11 +959,69 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※１</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">○※２</div>
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><th class="stub"><div class="line-block">
+<div class="line">パラメータシート</div>
+<div class="line">参照</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -795,29 +1031,35 @@
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-</section>
-<section id="id14">
-<h2>3 比較のメニュー構成<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">本章では、比較メニュー構成について説明します。</div>
+<div class="line">※1 ファイル名、ファイルの内容のどちらか片方で差分がある場合、差分ありとなります。ファイルアップロード以外の項目について、ファイルの内容は空扱いで比較します。</div>
 </div>
+</div>
+</section>
+</section>
+</section>
 <section id="id15">
-<h3>3.1 メニュー/画面一覧<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
+<h2><span class="section-number">2.3. </span>比較機能 メニュー構成<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">比較のメニュー一覧をいかに記述します。</div>
+<div class="line">本章では、比較機能のメニュー構成について説明します。</div>
 </div>
-<table class="docutils align-left" id="id30">
-<caption><span class="caption-text">表 3-1 比較画面一覧</span><a class="headerlink" href="#id30" title="このテーブルへのパーマリンク">¶</a></caption>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 51%" />
-</colgroup>
+<section id="id16">
+<h3><span class="section-number">2.3.1. </span>メニュー/画面一覧<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">比較のメニュー一覧を以下に記述します。</div>
+</div>
+<figure class="align-left" id="id34">
+<a class="reference internal image-reference" href="../../../../_images/compare_menu_list.png"><img alt="比較メニュー一覧" src="../../../../_images/compare_menu_list.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.41 </span><span class="caption-text">比較メニュー一覧</span><a class="headerlink" href="#id34" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<table class="docutils align-left" id="id35">
+<caption><span class="caption-number">表 2.73 </span><span class="caption-text">比較画面一覧</span><a class="headerlink" href="#id35" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head stub"><div class="line-block">
+<tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">No</div>
 </div>
 </th>
@@ -836,34 +1078,35 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><th class="stub"><div class="line-block">
+<tr class="row-even"><td><div class="line-block">
 <div class="line">1</div>
 </div>
-</th>
+</td>
 <td><div class="line-block">
 <div class="line">比較</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義</div>
+<div class="line">比較設定</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較実行する定義名の作成を行います。</div>
+<div class="line">比較実行する設定名の作成を行います。</div>
 <div class="line">比較対象のパラメータシートの紐付を行います。</div>
+<div class="line">詳細設定フラグを「True」にすると、比較詳細設定が設定可能になります。</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><th class="stub"><div class="line-block">
+<tr class="row-odd"><td><div class="line-block">
 <div class="line">2</div>
 </div>
-</th>
+</td>
 <td><div class="line-block">
 <div class="line">比較</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義詳細</div>
+<div class="line">比較詳細設定</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -872,10 +1115,10 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><th class="stub"><div class="line-block">
+<tr class="row-even"><td><div class="line-block">
 <div class="line">3</div>
 </div>
-</th>
+</td>
 <td><div class="line-block">
 <div class="line">比較</div>
 </div>
@@ -885,8 +1128,8 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義・比較定義詳細で設定した、</div>
-<div class="line">設定を元に比較を実施</div>
+<div class="line">比較設定・比較詳細設定で設定した、</div>
+<div class="line">設定を元に比較を実施します。</div>
 </div>
 </td>
 </tr>
@@ -894,98 +1137,96 @@
 </table>
 </section>
 </section>
-<section id="id16">
-<h2>4 比較機能の利用手順<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id17">
+<h2><span class="section-number">2.4. </span>比較機能の利用手順<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">比較機能の利用手順について説明します。</div>
 </div>
-<section id="id17">
-<h3>4.1 作業フロー<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id18">
+<h3><span class="section-number">2.4.1. </span>作業フロー<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">比較機能の実施における標準的なフローは以下の通りです。</div>
 </div>
-<section id="id18">
-<h4>4.1.1 比較機能実行フロー<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id19">
+<h4>比較機能実行フロー<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">以下は、パラメータシートの比較を実行するまでの流れです。</div>
 </div>
-<figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/比較機能実行フロー.png"><img alt="比較機能実行フロー" src="../../../../_images/%E6%AF%94%E8%BC%83%E6%A9%9F%E8%83%BD%E5%AE%9F%E8%A1%8C%E3%83%95%E3%83%AD%E3%83%BC.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-</figure>
 <ul>
 <li><p>作業フロー詳細と参照先</p>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">パラメータシートの作成</div>
-<div class="line">[メニュー作成] - [メニュー定義/作成] 画面からのパラメータシートを作成します。</div>
-<div class="line">詳細は「利用手順マニュアル_メニュー作成機能」を参照してください。</div>
+<div class="line"><span class="menuselection">パラメータシート作成‣ パラメータシート定義/作成</span> 画面からパラメータシートを作成します。</div>
+<div class="line">詳細は「<a class="reference internal" href="menu_creation.html"><span class="doc">メニュー作成機能</span></a>」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line">パラメータシートへのデータ登録</div>
-<div class="line">「1. パラメータシートの作成」にて作成したパラメータシートへデータを登録します。</div>
-<div class="line">詳細は「利用手順マニュアル_メニュー作成機能」を参照してください。</div>
+<div class="line">「パラメータシートの作成」にて作成したパラメータシートへデータを登録します。</div>
+<div class="line">詳細は「<a class="reference internal" href="menu_creation.html"><span class="doc">メニュー作成機能</span></a>」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
-<div class="line">比較定義の作成</div>
-<div class="line">[比較] - [比較定義詳細] 画面から、比較定義詳細の設定を行います。</div>
-<div class="line">詳細は「比較定義詳細」を参照してください。</div>
+<div class="line">比較設定の作成</div>
+<div class="line"><span class="menuselection">比較‣ 比較設定</span> 画面から、比較設定の設定を行います。</div>
+<div class="line">詳細は「<a class="reference internal" href="#about-compare-list"><span class="std std-ref">比較設定</span></a>」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
-<div class="line">比較定義詳細の設定</div>
-<div class="line">[比較] - [比較定義詳細] 画面から、比較定義詳細の設定を行います。</div>
-<div class="line">詳細は「比較定義詳細」を参照してください。</div>
+<div class="line">比較詳細設定の設定</div>
+<div class="line"><span class="menuselection">比較‣ 比較詳細設定</span> 画面から、比較詳細設定の設定を行います。</div>
+<div class="line">詳細は「<a class="reference internal" href="#about-compare-detail"><span class="std std-ref">比較詳細設定</span></a>」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line">比較実行</div>
-<div class="line">[比較] - [比較実行] 画面から、パラメータシートの比較を行います。</div>
-<div class="line">詳細は「比較実行」を参照してください。</div>
+<div class="line"><span class="menuselection">比較‣ 比較実行</span> 画面から、パラメータシートの比較を行います。</div>
+<div class="line">詳細は「<a class="reference internal" href="#about-compare-execute"><span class="std std-ref">比較実行</span></a>」を参照してください。</div>
 </div>
 </li>
 </ol>
 </li>
 </ul>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 </section>
 </section>
 </section>
-<section id="id19">
-<h2>5 比較機能・操作方法説明<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="about-how-to-use-compare">
+<span id="id20"></span><h2><span class="section-number">2.5. </span>比較機能・操作方法説明<a class="headerlink" href="#about-how-to-use-compare" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本章では、比較機能で利用する各メニューについて説明します。</div>
 </div>
-<section id="id20">
-<h3>5.1 比較<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id21">
-<h4>5.1.1 比較定義<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h4>
-<div class="line-block">
-<div class="line">[比較定義] では、比較実行時に使用する定義情報（対象のパラメータシートの紐付）の登録、更新を行います。</div>
+<h3><span class="section-number">2.5.1. </span>比較<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="about-compare-list">
+<span id="id22"></span><h4>比較設定<a class="headerlink" href="#about-compare-list" title="この見出しへのパーマリンク">¶</a></h4>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">[比較設定]では、比較実行時に使用する設定情報（対象のパラメータシートの紐付）の登録、更新を行います。</div>
 </div>
-<figure class="align-left" id="id31">
-<a class="reference internal image-reference" href="../../../../_images/比較定義サブメニュー画面.png"><img alt="サブメニュー画面（比較定義）" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E3%82%B5%E3%83%96%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E7%94%BB%E9%9D%A2.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id36">
+<a class="reference internal image-reference" href="../../../../_images/submenu_compare_list.png"><img alt="サブメニュー画面（比較設定）" src="../../../../_images/submenu_compare_list.png" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">図5.1-1 サブメニュー画面(比較定義)</span><a class="headerlink" href="#id31" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.42 </span><span class="caption-text">サブメニュー画面(比較設定)</span><a class="headerlink" href="#id36" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<div class="line-block">
-<div class="line">「一覧」-「更新/一覧」-「登録開始」ボタンより、比較定義の登録を行います。</div>
+</li>
+<li><div class="line-block">
+<div class="line"><span class="menuselection">一覧 ‣ 登録 or 編集</span> より、比較設定の登録を行います。</div>
 </div>
-<figure class="align-left" id="id32">
-<a class="reference internal image-reference" href="../../../../_images/比較定義登録画面.png"><img alt="サブメニュー画面（比較定義）" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E7%99%BB%E9%8C%B2%E7%94%BB%E9%9D%A2.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id37">
+<a class="reference internal image-reference" href="../../../../_images/edit_compare_list.png"><img alt="登録、編集画面(比較設定)" src="../../../../_images/edit_compare_list.png" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">図 5.1-2 登録画面(比較定義)</span><a class="headerlink" href="#id32" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.43 </span><span class="caption-text">登録、編集画面(比較設定)</span><a class="headerlink" href="#id37" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
+</li>
+</ol>
 <div class="line-block">
-<div class="line">比較定義画面の項目一覧は以下の通りです。</div>
+<div class="line">比較設定画面の項目一覧は以下の通りです。</div>
 </div>
-<table class="docutils align-left" id="id33">
-<caption><span class="caption-text">表 5.1-1 比較実行の項目一覧</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id38">
+<caption><span class="caption-number">表 2.74 </span><span class="caption-text">比較設定の項目一覧</span><a class="headerlink" href="#id38" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 18%" />
 <col style="width: 45%" />
@@ -1018,11 +1259,11 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">比較定義名</div>
+<div class="line">比較名称</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義名を入力します。</div>
+<div class="line">比較名称を入力します。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1039,11 +1280,11 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">比較対象メニュー１</div>
+<div class="line">対象パラメータシート1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">対象のメニューを選択します。</div>
+<div class="line">対象のパラメータシートを選択します。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1060,11 +1301,11 @@
 </td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">比較対象メニュー２</div>
+<div class="line">対象パラメータシート2</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">対象のメニューを選択します。</div>
+<div class="line">対象のパラメータシートを選択します。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1081,12 +1322,14 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">全件一致</div>
+<div class="line">詳細設定フラグ</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較対象メニュー１、比較対象メニュー２の項目名が</div>
-<div class="line">完全に一致している場合に選択します。</div>
+<div class="line">対象パラメータシート1、対象パラメータシート2の項目名、項目数が</div>
+<div class="line">一致している場合に選択します。</div>
+<div class="line">False：比較詳細設定は不要です。</div>
+<div class="line">True：比較詳細設定が必要です。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1098,7 +1341,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">※１</div>
+<div class="line">※1</div>
 </div>
 </td>
 </tr>
@@ -1125,36 +1368,42 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">※１ 全件一致を選択する場合、比較定義詳細の設定が不要になります。</div>
-<div class="line">選択したパラメータシート同士の項目名が完全に一致している必要があります。</div>
+<div class="line">※1 詳細設定フラグを「False」の場合、比較詳細設定の設定が不要になります。選択したパラメータシート同士の項目数、項目名が完全に一致している必要があります。</div>
+</div>
 </div>
 </section>
-<section id="id22">
-<h4>5.1.2 比較定義詳細<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h4>
-<div class="line-block">
-<div class="line">[比較定義詳細]では、比較対象の項目名とパラメータシートの項目同士の紐付設定を行います。</div>
+<section id="about-compare-detail">
+<span id="id23"></span><h4>比較詳細設定<a class="headerlink" href="#about-compare-detail" title="この見出しへのパーマリンク">¶</a></h4>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">[比較詳細設定]では、比較対象の項目名とパラメータシートの項目同士の紐付設定を行います。</div>
 </div>
-<figure class="align-left" id="id34">
-<a class="reference internal image-reference" href="../../../../_images/比較定義詳細サブメニュー画面.png"><img alt="サブメニュー画面\(比較定義詳細\)" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E8%A9%B3%E7%B4%B0%E3%82%B5%E3%83%96%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E7%94%BB%E9%9D%A2.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id39">
+<a class="reference internal image-reference" href="../../../../_images/submenu_compare_detail.png"><img alt="サブメニュー画面\(比較詳細設定\)" src="../../../../_images/submenu_compare_detail.png" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">図 5.1-3 サブメニュー画面(比較定義詳細)</span><a class="headerlink" href="#id34" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.44 </span><span class="caption-text">サブメニュー画面(比較詳細設定)</span><a class="headerlink" href="#id39" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<div class="line-block">
-<div class="line">「一覧」-「登録開始」ボタンより、比較項目の登録を行います。</div>
+</li>
+<li><div class="line-block">
+<div class="line"><span class="menuselection">一覧 ‣ 登録 or 編集</span> より、比較項目の登録を行います。</div>
 </div>
-<figure class="align-left" id="id35">
-<a class="reference internal image-reference" href="../../../../_images/比較定義詳細登録画面.png"><img alt="登録画面\(比較定義詳細\)" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E8%A9%B3%E7%B4%B0%E7%99%BB%E9%8C%B2%E7%94%BB%E9%9D%A2.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id40">
+<a class="reference internal image-reference" href="../../../../_images/edit_compare_detail.png"><img alt="登録、編集画面\(比較詳細設定\)" src="../../../../_images/edit_compare_detail.png" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">図 5.1-4 登録画面(比較定義詳細)</span><a class="headerlink" href="#id35" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.45 </span><span class="caption-text">登録、編集画面(比較詳細設定)</span><a class="headerlink" href="#id40" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
+</li>
+</ol>
 <div class="line-block">
 <div class="line">比較項目値管理画面の項目一覧は以下の通りです。</div>
 </div>
-<table class="docutils align-left" id="id36">
-<caption><span class="caption-text">表 5.1-1 登録画面項目一覧(比較定義)</span><a class="headerlink" href="#id36" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id41">
+<caption><span class="caption-number">表 2.75 </span><span class="caption-text">登録画面項目一覧(比較設定)</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 19%" />
 <col style="width: 47%" />
@@ -1187,11 +1436,11 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">比較定義名</div>
+<div class="line">比較名称</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義を選択</div>
+<div class="line">比較設定を選択</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1203,17 +1452,17 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">※１</div>
+<div class="line">※1</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">表示項目名</div>
+<div class="line">比較項目名称</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">表示項目名を入力します。</div>
-<div class="line">比較結果で出力される先頭行の項目名となります。</div>
+<div class="line">表示する項目名を入力します。</div>
+<div class="line">比較結果で出力されるの項目名となります。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1230,11 +1479,11 @@
 </td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">対象カラム１</div>
+<div class="line">対象項目1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較カラムを選択します。</div>
+<div class="line">対象項目を選択します。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1246,16 +1495,16 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">※２</div>
+<div class="line">※2</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">対象カラム２</div>
+<div class="line">対象項目2</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">対象カラムを選択します。</div>
+<div class="line">対象項目を選択します。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1267,7 +1516,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">※３</div>
+<div class="line">※3</div>
 </div>
 </td>
 </tr>
@@ -1276,11 +1525,12 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">表示順を選択します。</div>
+<div class="line">表示順を入力します。</div>
+<div class="line">比較結果にて昇順で表示されます。</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">-</div>
+<div class="line">○</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1288,7 +1538,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">※４</div>
+<div class="line"><br /></div>
 </div>
 </td>
 </tr>
@@ -1315,44 +1565,34 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">※１ 比較定義にて全件一致が選択されていないものがリストに表示されます。</div>
-<div class="line">※２ 比較定義にて登録した比較対象メニュー１にある項目から選択できます。</div>
-<div class="line">※３ 比較定義にて登録した比較対象メニュー２にある項目から選択できます。</div>
-<div class="line">※４ 入力されない場合、比較結果出力時、左から比較定義詳細の ID 順で出力されます。</div>
+<div class="line">※1 比較設定にて詳細設定フラグが「True」設定しているものがリストに表示されます。</div>
+<div class="line">※2 比較設定にて登録した対象パラメータシート1にある項目を選択して下さい。</div>
+<div class="line">※3 比較設定にて登録した対象パラメータシート2にある項目を選択して下さい。</div>
+</div>
 </div>
 </section>
-<section id="id23">
-<h4>5.1.3 比較実行<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="about-compare-execute">
+<span id="id24"></span><h4>比較実行<a class="headerlink" href="#about-compare-execute" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
-<div class="line">[比較実行] では、比較定義、比較定義詳細で設定した定義情報を元に、パラメータシートの比較を行います。</div>
-<div class="line">・　「比較定義」で登録した比較定義の一覧が表示されます。</div>
-<div class="line">・　比較ボタンを押下すると、入力されたパラメータを元に対象のメニュー、項目に対して比較が実行されます。</div>
+<div class="line">[比較実行] では、比較設定、比較詳細設定で設定した定義情報を元に、パラメータシートの比較を行います。</div>
+<div class="line">・[比較設定]で登録した比較設定の一覧が表示されます。</div>
+<div class="line">・ 比較ボタンを押下すると、入力されたパラメータを元に対象のパラメータシート、項目に対して比較が実行されます。</div>
+<div class="line">・ バンドル利用時のパラメータシートの比較は、 同一項目名、もしくは、比較詳細設定で紐づけた項目の同一代入順序同士で比較されます。</div>
 </div>
-<figure class="align-left" id="id37">
-<a class="reference internal image-reference" href="../../../../_images/比較実行画面(パラメータ入力).png"><img alt="比較実行画面\(パラメータ入力\)" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9F%E8%A1%8C%E7%94%BB%E9%9D%A2%28%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E5%85%A5%E5%8A%9B%29.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figure class="align-left" id="id42">
+<a class="reference internal image-reference" href="../../../../_images/compare_execute.gif"><img alt="比較実行画面" src="../../../../_images/compare_execute.gif" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">図 5.1-5 比較実行画面(パラメータ入力)</span><a class="headerlink" href="#id37" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.46 </span><span class="caption-text">比較実行画面</span><a class="headerlink" href="#id42" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-left" id="id38">
-<a class="reference internal image-reference" href="../../../../_images/ホスト一覧画面(比較実行対象ホスト).png"><img alt="ホスト一覧画面(比較実行:対象ホスト)" src="../../../../_images/%E3%83%9B%E3%82%B9%E3%83%88%E4%B8%80%E8%A6%A7%E7%94%BB%E9%9D%A2%28%E6%AF%94%E8%BC%83%E5%AE%9F%E8%A1%8C%E5%AF%BE%E8%B1%A1%E3%83%9B%E3%82%B9%E3%83%88%29.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-<figcaption>
-<p><span class="caption-text">図 5.1-6 ホスト一覧画面(比較実行:対象ホスト)</span><a class="headerlink" href="#id38" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<table class="docutils align-left" id="id39">
-<caption><span class="caption-text">表 5.1-1 登録画面項目一覧(比較定義詳細)</span><a class="headerlink" href="#id39" title="このテーブルへのパーマリンク">¶</a></caption>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 47%" />
-<col style="width: 9%" />
-<col style="width: 11%" />
-<col style="width: 13%" />
-</colgroup>
+<table class="docutils align-left" id="id43">
+<caption><span class="caption-number">表 2.76 </span><span class="caption-text">比較実行条件</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
-<div class="line">項目</div>
+<div class="line">パラメータ</div>
 </div>
 </th>
 <th class="head"><div class="line-block">
@@ -1375,11 +1615,11 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">比較定義</div>
+<div class="line">比較設定選択</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較定義を選択します。</div>
+<div class="line">比較設定を選択して下さい。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1396,107 +1636,64 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">基準日１</div>
+<div class="line">基準日時1</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較対象メニュー１ の基準日を指定します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">-</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">手動入力</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">※１</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">基準日２</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">比較対象メニュー２の基準日を指定します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">-</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">手動入力</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">※１</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">ホスト</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">選択ボタン押下後、ホストを選択します。</div>
-<div class="line">対象ホストの一覧が表示されます。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">-</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">選択</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">※２</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">出力内容</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">出力内容について選択します。</div>
-<div class="line">全件出力 : 結果を全件出力します。</div>
-<div class="line">差分のみ : 差分ありの結果のみ出力します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">-</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">選択</div>
+<div class="line">比較設定にて対象パラメータシート1 で選択したパラメータシートの</div>
+<div class="line">基準となる日時を入力して下さい。 ※1</div>
 </div>
 </td>
 <td><div class="line-block">
 <div class="line"><br /></div>
 </div>
 </td>
+<td><div class="line-block">
+<div class="line">手動入力</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">入力しない場合、最新の基準日時が適応されます。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">基準日時2</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較設定にて対象パラメータシート2 で選択したパラメータシートの</div>
+<div class="line">基準となる日時を入力して下さい ※1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">手動入力</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">入力しない場合、最新の基準日時が適応されます。</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">比較</div>
+<div class="line">ホスト選択</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">選択されたパラメータを元に比較を実行し、</div>
-<div class="line">比較結果を出力します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">-</div>
+<div class="line">対象ホストを選択して下さい。</div>
+<div class="line">デフォルト：対象の絞り込みなし。 ※2</div>
 </div>
 </td>
 <td><div class="line-block">
 <div class="line">-</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リスト選択</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1506,33 +1703,65 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">※１ 基準日へ入力した場合、入力した日時の時点の最新のデータで比較実行します。</div>
-<div class="line-block">
-<div class="line">入力しない場合、最新の基準日のデータで比較実行します。</div>
-</div>
-<div class="line">※２ 初期状態ではホストの絞り込みはされていません。</div>
-<div class="line-block">
-<div class="line">比較定義内で紐付された対象メニューにある全ホストの比較結果を出力します。</div>
+<div class="line">※1 基準日時へ入力した場合、入力した日時の時点の最新のデータで比較実行します。入力しない場合、最新の基準日時のデータで比較実行します。</div>
+<div class="line">※2 初期状態ではホストの絞り込みはされていません。比較設定内で紐付された対象パラメータシートにある全ホストの比較結果を出力します。</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line">・ 比較ボタン押下後、比較結果の一覧と、ファイル出力 (Excel, Csv) ボタンが表示されます。</div>
-<div class="line">・ 表示順について、ホスト毎に、対象メニュー１、対象メニュー２ の順で表示されます。</div>
+<div class="line">比較実行結果ついて</div>
 </div>
-<figure class="align-left" id="id40">
-<a class="reference internal image-reference" href="../../../../_images/比較実行画面(比較結果).png"><img alt="比較実行画面\(比較結果\)" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9F%E8%A1%8C%E7%94%BB%E9%9D%A2%28%E6%AF%94%E8%BC%83%E7%B5%90%E6%9E%9C%29.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<ul>
+<li><div class="line-block">
+<div class="line">パラメータシートの比較</div>
+</div>
+</li>
+</ul>
+<figure class="align-left" id="id44">
+<a class="reference internal image-reference" href="../../../../_images/result_compare_execute.drawio.png"><img alt="比較実行画面\(比較結果\)" src="../../../../_images/result_compare_execute.drawio.png" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">図 5.1-7 比較実行画面(比較結果)</span><a class="headerlink" href="#id40" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.47 </span><span class="caption-text">比較実行画面(比較結果)</span><a class="headerlink" href="#id44" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id41">
-<caption><span class="caption-text">表 5.1-1 比較実行の出力一覧</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 50%" />
-<col style="width: 30%" />
-</colgroup>
+<ul>
+<li><div class="line-block">
+<div class="line">パラメータシート(バンドル利用時)の比較</div>
+</div>
+</li>
+</ul>
+<figure class="align-left" id="id45">
+<a class="reference internal image-reference" href="../../../../_images/result_compare_execute_bundle.drawio.png"><img alt="比較実行画面\(比較結果:バンドル利用\)" src="../../../../_images/result_compare_execute_bundle.drawio.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.48 </span><span class="caption-text">比較実行画面(比較結果:バンドル利用)</span><a class="headerlink" href="#id45" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ul>
+<li><div class="line-block">
+<div class="line">パラメータシート(ファイルアップロード項目)の比較</div>
+</div>
+</li>
+</ul>
+<figure class="align-left" id="id46">
+<a class="reference internal image-reference" href="../../../../_images/result_compare_execute_file.png"><img alt="比較実行画面\(比較結果:ファイルアップロード項目\)" src="../../../../_images/result_compare_execute_file.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.49 </span><span class="caption-text">比較実行画面(比較結果:ファイルアップロード項目)</span><a class="headerlink" href="#id46" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">比較結果について</div>
+</div>
+<ul>
+<li><div class="line-block">
+<div class="line">対象ホスト</div>
+<div class="line">ホスト毎の比較結果の一覧を表示します。</div>
+<div class="line">対象を選択すると、比較結果の詳細が表示されます。</div>
+</div>
+</li>
+</ul>
+<table class="docutils align-left" id="id47">
+<caption><span class="caption-number">表 2.77 </span><span class="caption-text">対象ホストの出力一覧</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">項目</div>
@@ -1550,38 +1779,11 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">比較項番</div>
+<div class="line">対象ホスト</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">比較結果の項番</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">結果</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">比較実行結果を表示します。</div>
-<div class="line">差分あり / 差分なし</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">※１</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">ホスト名</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">対象のホスト名を表示します。</div>
+<div class="line">対象ホスト名を表示します。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1590,89 +1792,11 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">メニュー名称</div>
+<div class="line">差分</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">対象のメニュー名を表示します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">No</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">比較対象メニュー上の No 表示します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">オペレーション名</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">オペレーション名を表示します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">基準日</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">基準日を表示します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">比較項目</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">対象項目を表示します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">※１</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">Excel 出力</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">比較結果を Excel で出力します。</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">Csv 出力</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">比較結果を Csv で出力します。</div>
+<div class="line">比較実行結果を表示します。差分がある場合、「✓」で表示します。</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1682,77 +1806,114 @@
 </tr>
 </tbody>
 </table>
-<div class="line-block">
-<div class="line">※１ 差分がある値について、赤文字で強調表示します。</div>
+<ul>
+<li><div class="line-block">
+<div class="line">比較結果</div>
+<div class="line">比較結果下に、選択しているホスト名が表示され、比較結果の詳細が表示されます。</div>
 </div>
-</section>
-</section>
-</section>
-<section id="id24">
-<h2>6 付録<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h2>
-<section id="id25">
-<h3>6.1 参考<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id26">
-<h4>6.1.1 プルダウン使用<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h4>
-<div class="line-block">
-<div class="line">プルダウン使用時の比較例は以下となります。</div>
-<div class="line">・ 比較対象パラメータシート、プルダウン選択の構成情報について</div>
+</li>
+</ul>
+<table class="docutils align-left" id="id48">
+<caption><span class="caption-number">表 2.78 </span><span class="caption-text">比較結果の表示内容一覧</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">項目</div>
 </div>
-<p>比較対象パラメータシート（メニュー作成・定義）</p>
-<figure class="align-left" id="id42">
-<a class="reference internal image-reference" href="../../../../_images/比較対象パラメータシート(メニュー作成・定義).png"><img alt="比較対象パラメータシート（メニュー作成・定義）" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AF%BE%E8%B1%A1%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%B7%E3%83%BC%E3%83%88%28%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E4%BD%9C%E6%88%90%E3%83%BB%E5%AE%9A%E7%BE%A9%29.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-<figcaption>
-<p><span class="caption-text">図 6.1-1 比較対象パラメータシート(メニュー定義・作成)</span><a class="headerlink" href="#id42" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-left" id="id43">
-<a class="reference internal image-reference" href="../../../../_images/プルダウン参照先[データシートグローバルIP].png"><img alt="プルダウン参照先[データシート:グローバル IP]" src="../../../../_images/%E3%83%97%E3%83%AB%E3%83%80%E3%82%A6%E3%83%B3%E5%8F%82%E7%85%A7%E5%85%88%5B%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B7%E3%83%BC%E3%83%88%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%ABIP%5D.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-<figcaption>
-<p><span class="caption-text">図 6.1-2 プルダウン参照先[データシート:グローバル IP]</span><a class="headerlink" href="#id43" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-left" id="id44">
-<a class="reference internal image-reference" href="../../../../_images/プルダウン参照先[データシートプライベートIP].png"><img alt="プルダウン参照先[データシート:プライベート IP]" src="../../../../_images/%E3%83%97%E3%83%AB%E3%83%80%E3%82%A6%E3%83%B3%E5%8F%82%E7%85%A7%E5%85%88%5B%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B7%E3%83%BC%E3%83%88%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88IP%5D.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-<figcaption>
-<p><span class="caption-text">図 6.1-3 プルダウン参照先[データシート:プライベート IP]</span><a class="headerlink" href="#id44" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<div class="line-block">
-<div class="line">比較対象、比較定義情報について、比較対象を以下の赤枠・青枠を対象とした場合</div>
-<div class="line">グローバル：グローバルIP(データシート)を参照</div>
-<div class="line">プライベート：プライベートIP(データシート)を参照</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">説明</div>
 </div>
-<figure class="align-left" id="id45">
-<a class="reference internal image-reference" href="../../../../_images/比較対象パラメータシート.png"><img alt="比較対象パラメータシート" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AF%BE%E8%B1%A1%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%B7%E3%83%BC%E3%83%88.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-<figcaption>
-<p><span class="caption-text">図 6.1-4 比較対象パラメータシート</span><a class="headerlink" href="#id45" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-left" id="id46">
-<a class="reference internal image-reference" href="../../../../_images/比較定義設定例.png"><img alt="比較定義設定例" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E8%A8%AD%E5%AE%9A%E4%BE%8B.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-<figcaption>
-<p><span class="caption-text">図 6.1-5 比較定義設定例</span><a class="headerlink" href="#id46" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-left" id="id47">
-<a class="reference internal image-reference" href="../../../../_images/比較定義詳細設定例.png"><img alt="比較定義詳細設定例" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E8%A9%B3%E7%B4%B0%E8%A8%AD%E5%AE%9A%E4%BE%8B.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-<figcaption>
-<p><span class="caption-text">図 6.1-6 比較定義詳細設定例</span><a class="headerlink" href="#id47" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<div class="line-block">
-<div class="line">比較実行結果について</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">制約事項</div>
 </div>
-<figure class="align-left" id="id48">
-<a class="reference internal image-reference" href="../../../../_images/比較実行結果.png"><img alt="比較実行結果" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9F%E8%A1%8C%E7%B5%90%E6%9E%9C.png" style="width: 6.67391in; height: 3.20028in;" /></a>
-<figcaption>
-<p><span class="caption-text">図 6.1-7 比較実行結果</span><a class="headerlink" href="#id48" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">項目</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">項目名を表示します。</div>
+</div>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">差分</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">項目の比較結果を表示します。</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">差分がある場合、「✓」で表示します。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">比較対象パラメーターシート1</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較対象パラメーターシート1の値を表示します。</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ヘッダーにパラメーターシート名が表示されます。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">比較対象パラメーターシート2</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較対象パラメーターシート2の値を表示します。</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ヘッダーにパラメーターシート名が表示されます。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">備考</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">各項目を比較した際に、その他の情報がある場合表示されます。</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ファイルアップロード:ファイル内容の比較結果表示用のボタンが表示されます。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">プルダウンの参照先が異なっている為、※１、※２ のようなパターンが発生する場合があります。</div>
-<div class="line">※１について、参照先の No が異なっているが、表示内容は同一の場合、差分と見なす。</div>
-<div class="line">※２について、参照先の No が同一であるが、表示内容は異なっている場合、差分と見なさない。</div>
+<div class="line">バンドル利用時の比較について</div>
+</div>
+<ul>
+<li><div class="line-block">
+<div class="line">比較項目は、項目名[代入順序]の形式で表示されます。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">同一項目名、もしくは、比較詳細設定で紐づけた項目の同一代入順序同士で比較されます。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">項番、ホスト名、オペレーション名、基準日時は、表示されません。</div>
+</div>
+</li>
+</ul>
 </div>
 </section>
 </section>
@@ -1765,6 +1926,8 @@
 
 <div id="articleNavigation">
   <ul>
+    <li class="prev"><a href="menu_creation.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">1. </span>メニュー作成機能</a></li>
+    <li class="next"><a href="../ansible-driver/index.html" title="次のトピックへ"><span>次のトピックへ</span>Ansible ドライバ</a></li>
   </ul>
 </div>
 
