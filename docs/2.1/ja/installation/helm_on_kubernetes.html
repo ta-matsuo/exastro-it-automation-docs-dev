@@ -998,6 +998,13 @@ $(window).on('load', function () {
 <div class="line">マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。</div>
 <div class="line">Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。</div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<div class="line-block">
+<div class="line">複数のITAを構築する場合はlower_case_table_namesの設定を統一してください。</div>
+<div class="line">※統一しないと環境間でのメニューエクスポート・インポートが正常に動作しなくなる可能性があります。</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>設定例</p></li>
 </ul>
