@@ -17,7 +17,7 @@ H1 (見出し1、タイトル)
 
 記述例
 ^^^^^^
-.. code-block:: 
+.. code-block::
 
    ========
    タイトル
@@ -42,7 +42,7 @@ H2 (見出し2)
 記述例
 ^^^^^^
 
-.. code-block:: 
+.. code-block::
 
    見出し2
    =======
@@ -61,7 +61,7 @@ H3 (見出し3)
 記述例
 ^^^^^^
 
-.. code-block:: 
+.. code-block::
 
    見出し3
    -------
@@ -80,7 +80,7 @@ H4 (見出し4)
 記述例
 ^^^^^^
 
-.. code-block:: 
+.. code-block::
 
    見出し4
    ^^^^^^^
@@ -99,7 +99,7 @@ H5 (見出し5)
 記述例
 ^^^^^^
 
-.. code-block:: 
+.. code-block::
 
    見出し5
    *******
@@ -110,7 +110,7 @@ H6 (見出し6) 以上の表現
 
 | H6レベル以上の見出し(H6を含む)は使ってはなりません。
 
-.. danger:: 
+.. danger::
    | 通常、H6レベル以上の見出しになる場合は、文章の構造が複雑過ぎています。
    | 書き方を工夫するなどしてH6レベル以上を使わないようにしなければなりません。
 
@@ -184,28 +184,28 @@ H6 (見出し6) 以上の表現
 .. code-block:: bash
 
    Hello world を出力するプログラム
-   
+
    .. tabs::
-   
+
       .. tab:: C言語
 
          :kbd:`printf` を使います。
-   
+
          .. code-block:: c
             :caption: helloworld.c
             :linenos:
 
             #include <stdio.h>
-         
+
             main()
             {
                printf("Hello World\n");
             }
-   
+
       .. tab:: シェルスクリプト
 
          :kbd:`echo` を使用します。
-   
+
          .. code-block:: shell
             :caption: helloworld.sh
             :linenos:
@@ -213,7 +213,7 @@ H6 (見出し6) 以上の表現
             #!/bin/bash
             echo "Hello World"
             exit 0
- 
+
       .. tab:: Python
 
          :kbd:`print` を使います。
@@ -240,7 +240,7 @@ Hello world を出力するプログラム
          :linenos:
 
          #include <stdio.h>
-      
+
          main()
          {
             printf("Hello World\n");
@@ -308,7 +308,7 @@ Hello world を出力するプログラム
      - 12,13 (行の範囲)
 
 
-.. note:: 
+.. note::
    | code-block の定義と実際のコードは1行空行を空ける必要があります。
    | インデントは半角スペース3文字分必要です。
 
@@ -323,7 +323,7 @@ Hello world を出力するプログラム
       :linenos:
       :lineno-start: 5
       :emphasize-lines: 12,13
-   
+
       # Default values for Exastro.
       # This is a YAML-formatted file.
       # Declare variables to be passed into your templates.
@@ -411,7 +411,7 @@ Hello world を出力するプログラム
      - ``:dfn:`用語```
      - :dfn:`用語`
 
-.. danger:: 
+.. danger::
    | 単語を強調するために、「」や ""、太字や斜体は使用してはなりません。
    | 上記の単語表現の中から適切な記述を選んでください。
 
@@ -470,7 +470,7 @@ Hello world を出力するプログラム
 .. code-block:: bash
 
    画像を文中　|aa| に挿入できます。
-   
+
    .. |aa| image:: ../../../images/manual_design/chart.png
       :width: 2.0em
       :alt: サンプルイメージ
@@ -483,7 +483,7 @@ Hello world を出力するプログラム
 .. |aa| image:: /images/manual_design/chart.png
    :width: 2.0em
    :alt: サンプルイメージ
-   
+
 
 表・テーブル
 ============
@@ -658,7 +658,7 @@ Hello world を出力するプログラム
 - 正しい記述例
 
   .. code-block:: bash
-  
+
      +-------
      | 通信条\    --> "通信条件" とつなげて出力されます。
      | 件
@@ -666,7 +666,7 @@ Hello world を出力するプログラム
   | フィールド内で改行する際に、同時に空白を入れる場合は、 :kbd:`\ \\` (スペース+バックスラッシュ・円マーク)と記載します。
 
   .. code-block:: bash
-  
+
      | Exastro \                | --> "Exastro ITAのWebコンテンツへのアクセス"
      | ITAのWebコンテンツへの\  |
      | アクセス                 |
@@ -676,13 +676,13 @@ Hello world を出力するプログラム
 - 誤った記述例
 
   .. code-block:: bash
-  
+
      +-------
      | 通信条    --> "通信条 件" と出力されます。
      | 件
 
   .. code-block:: bash
-  
+
      | Exastro\                 | --> 文字列が崩れます。 (空白が行頭にきています。)
      |  ITAのWebコンテンツへの\ |
      | アクセス                 |
@@ -702,7 +702,7 @@ Hello world を出力するプログラム
       +-----------------+---------+
       | 新機\           | 項目B   |
       | 能について      |         |   --> "*" 又は "#." を使って項目を列挙します。
-      |                 |         |   --> 前行との間に要空白  
+      |                 |         |   --> 前行との間に要空白
       | * 項目1         |         |
       | * 項目2         |         |
       +-----------------+---------+
@@ -753,7 +753,7 @@ CSVテーブル(使用禁止)
 記述例
 ^^^^^^
 
-.. code-block:: 
+.. code-block::
 
    # Note
    .. note::
@@ -808,7 +808,7 @@ CSVテーブル(使用禁止)
 
 | 箇条書きは文頭に :kbd:`-\ ` (ハイフン+スペース)を記載することで箇条書きになります。
 
-.. warning:: 
+.. warning::
    | 親リストと子リストの間は1行空ける必要があります。
 
 記述例
@@ -817,12 +817,12 @@ CSVテーブル(使用禁止)
 
    - 項目1
    - 項目2
-   
+
      - 項目2-1
      - 項目2-2
    - | 項目3
      | (複数行)
-   
+
      - | 項目3-1
      - | 項目3-2
        | 複数行書くこともできます。
@@ -854,7 +854,7 @@ CSVテーブル(使用禁止)
 | 箇条書きは文頭に :kbd:`#.\ ` (シャープor数字+ドット+スペース)を記載することで番号付き箇条書きになります。
 | 親子関係がある場合には、末端の子供以外はすべて数字で記載する必要があります。
 
-.. warning:: 
+.. warning::
    | 親リストと子リストの間は1行空ける必要があります。
 
 記述例
@@ -863,12 +863,12 @@ CSVテーブル(使用禁止)
 
    1. 項目1
    2. 項目2
-   
+
       #. 項目2-1
       #. 項目2-2
    3. | 項目3
       | (複数行)
-   
+
       # | 項目3-1
       # | 項目3-2
         | 複数行書くこともできます。
@@ -991,6 +991,46 @@ CSVテーブル(使用禁止)
 4. 項目4
 
    次の行にインデントがあると通常の番号付き箇条書きになります。
+
+
+参照先のリンク表現
+------------------
+
+| 参照先のタイトル変更に伴う、修正等の運用観点から、タイトルの指定は、基本的に禁止とします。
+
+.. code-block:: bash
+   :name: タイトル指定のリンク、参照の禁止例
+
+   OK：:doc:`参照先`
+   OK：:ref:`参照先`
+   NG：:doc:`title<参照先>`
+   NG：:ref:`title<参照先>`
+
+
+.. note::
+         | OK： 「:doc:`../../manuals/ansible-driver/general_operations`」
+         | NG： 「:doc:`Ansibleドライバのマニュアルはこちら<../../manuals/ansible-driver/general_operations>`」
+
+         | OK：  「:ref:`manual_syntax_word`」
+         | NG：  「:ref:`コードについての参照先はこちらです。<manual_syntax_word>`」
+
+| 例外として、外部ページのリンクを参照する場合は、例外的に使用可能とします。
+
+.. code-block:: bash
+   :name: タイトル指定のリンク、参照の例外
+
+   参照先
+   `title <参照先>`
+   # 例
+   OK： Sphinx日本語マニュアルは https://www.sphinx-doc.org/ja/master/ です。
+   OK： `Sphinx日本語マニュアル <https://www.sphinx-doc.org/ja/master/>`_
+   OK： Sphinx日本語マニュアルは `こちら <https://www.sphinx-doc.org/ja/master/>`_ です。
+
+.. note::
+         | OK： Sphinx日本語マニュアルは https://www.sphinx-doc.org/ja/master/ です。
+         | OK： `Sphinx日本語マニュアル <https://www.sphinx-doc.org/ja/master/>`_
+         | OK： Sphinx日本語マニュアルは `こちら <https://www.sphinx-doc.org/ja/master/>`_ です。
+
 
 
 禁止表現

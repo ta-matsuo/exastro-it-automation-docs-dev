@@ -35,7 +35,7 @@
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="検索" href="../../../../search.html" />
     <link rel="next" title="Ansible ドライバ" href="../ansible-driver/index.html" />
-    <link rel="prev" title="1. メニュー作成機能" href="menu_creation.html" /> 
+    <link rel="prev" title="1. パラメータシート作成機能" href="menu_creation.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -100,7 +100,7 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="menu_creation.html" title="前のトピックへ"><span class="section-number">1. </span>メニュー作成機能</a></li>
+        <li class="prev"><a href="menu_creation.html" title="前のトピックへ"><span class="section-number">1. </span>パラメータシート作成機能</a></li>
         <li class="next"><a href="../ansible-driver/index.html" title="次のトピックへ">Ansible ドライバ</a></li>
       </ul>
     </div>
@@ -123,14 +123,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../platform_management/index.html">システム管理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../organization_management/index.html">オーガナイゼーション管理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../it_automation_base/index.html">基本操作</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../export_import/index.html">エクスポート・インポート</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">パラメータ管理</a><ul class="current">
-<li class="toctree-l5"><a class="reference internal" href="menu_creation.html">1. メニュー作成機能</a></li>
+<li class="toctree-l5"><a class="reference internal" href="menu_creation.html">1. パラメータシート作成機能</a></li>
 <li class="toctree-l5 current"><a class="current reference internal" href="#">2. 比較機能</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../ansible-driver/index.html">Ansible ドライバ</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../terraform_driver/index.html">Terraform ドライバ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../export_import/index.html">エクスポート・インポート</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../maintenance/index.html">メンテナンス</a></li>
 </ul>
 </li>
@@ -235,7 +235,7 @@
 <div class="line">比較機能とは、ITAのパラメータシート作成機能で作成したパラメータシートを比較し、差分を出力する機能です。</div>
 <div class="line"><br /></div>
 <div class="line">本機能は、「パラメータシート（ホスト/オペレーションあり）」を対象としています。</div>
-<div class="line">パラメータシートの詳細については、「<a class="reference internal" href="menu_creation.html"><span class="doc">メニュー作成機能</span></a>」を参照してください。</div>
+<div class="line">パラメータシートの詳細については、「<a class="reference internal" href="menu_creation.html"><span class="doc">パラメータシート作成機能</span></a>」を参照してください。</div>
 </div>
 <section id="id4">
 <h4>比較機能全体概要図<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h4>
@@ -292,7 +292,7 @@
 <span id="id7"></span><h3><span class="section-number">2.1.2. </span>基準日時について<a class="headerlink" href="#about-base-datetime" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">基準日時とは、該当のオペレーションが過去に一度でも実行されたことがあれば「最終実行日時」、一度も実行されたことがなければ「実施予定日時」が「基準日時」となります。</div>
-<div class="line">基準日時については、「<a class="reference internal" href="menu_creation.html"><span class="doc">メニュー作成機能</span></a>」を参照してください。</div>
+<div class="line">基準日時については、「<a class="reference internal" href="menu_creation.html"><span class="doc">パラメータシート作成機能</span></a>」を参照してください。</div>
 </div>
 <figure class="align-left" id="id29">
 <a class="reference internal image-reference" href="../../../../_images/basedate.drawio.png"><img alt="基準日時概要図" src="../../../../_images/basedate.drawio.png" style="width: 6.67391in; height: 3.20028in;" /></a>
@@ -356,7 +356,7 @@
 </figcaption>
 </figure>
 <table class="docutils align-left" id="id31">
-<caption><span class="caption-number">表 2.76 </span><span class="caption-text">比較実行パラメータ</span><a class="headerlink" href="#id31" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.70 </span><span class="caption-text">比較実行パラメータ</span><a class="headerlink" href="#id31" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">パラメータ</div>
@@ -483,7 +483,7 @@
 <div class="line">比較機能で使用可能なパラメータシートの項目について以下となります。</div>
 </div>
 <table class="docutils align-left" id="id32">
-<caption><span class="caption-number">表 2.77 </span><span class="caption-text">パラメータシートの比較対象項目</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.71 </span><span class="caption-text">パラメータシートの比較対象項目</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">項目種別</div>
@@ -598,7 +598,7 @@
 <div class="line">比較可能なパラメータシートの項目の組み合わせ一覧になります。</div>
 </div>
 <table class="docutils align-left" id="id33">
-<caption><span class="caption-number">表 2.78 </span><span class="caption-text">比較対象項目の比較パターン組み合わせ</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.72 </span><span class="caption-text">比較対象項目の比較パターン組み合わせ</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 11%" />
 <col style="width: 8%" />
@@ -1058,7 +1058,7 @@
 </figcaption>
 </figure>
 <table class="docutils align-left" id="id35">
-<caption><span class="caption-number">表 2.79 </span><span class="caption-text">比較画面一覧</span><a class="headerlink" href="#id35" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.73 </span><span class="caption-text">比較画面一覧</span><a class="headerlink" href="#id35" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">No</div>
@@ -1159,13 +1159,13 @@
 <li><div class="line-block">
 <div class="line">パラメータシートの作成</div>
 <div class="line"><span class="menuselection">パラメータシート作成‣ パラメータシート定義/作成</span> 画面からパラメータシートを作成します。</div>
-<div class="line">詳細は「<a class="reference internal" href="menu_creation.html"><span class="doc">メニュー作成機能</span></a>」を参照してください。</div>
+<div class="line">詳細は「<a class="reference internal" href="menu_creation.html"><span class="doc">パラメータシート作成機能</span></a>」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line">パラメータシートへのデータ登録</div>
 <div class="line">「パラメータシートの作成」にて作成したパラメータシートへデータを登録します。</div>
-<div class="line">詳細は「<a class="reference internal" href="menu_creation.html"><span class="doc">メニュー作成機能</span></a>」を参照してください。</div>
+<div class="line">詳細は「<a class="reference internal" href="menu_creation.html"><span class="doc">パラメータシート作成機能</span></a>」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
@@ -1227,7 +1227,7 @@
 <div class="line">比較設定画面の項目一覧は以下の通りです。</div>
 </div>
 <table class="docutils align-left" id="id38">
-<caption><span class="caption-number">表 2.80 </span><span class="caption-text">比較設定の項目一覧</span><a class="headerlink" href="#id38" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.74 </span><span class="caption-text">比較設定の項目一覧</span><a class="headerlink" href="#id38" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 18%" />
 <col style="width: 45%" />
@@ -1404,7 +1404,7 @@
 <div class="line">比較項目値管理画面の項目一覧は以下の通りです。</div>
 </div>
 <table class="docutils align-left" id="id41">
-<caption><span class="caption-number">表 2.81 </span><span class="caption-text">登録画面項目一覧(比較設定)</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.75 </span><span class="caption-text">登録画面項目一覧(比較設定)</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 19%" />
 <col style="width: 47%" />
@@ -1590,7 +1590,7 @@
 </figcaption>
 </figure>
 <table class="docutils align-left" id="id43">
-<caption><span class="caption-number">表 2.82 </span><span class="caption-text">比較実行条件</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.76 </span><span class="caption-text">比較実行条件</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">パラメータ</div>
@@ -1762,7 +1762,7 @@
 </li>
 </ul>
 <table class="docutils align-left" id="id47">
-<caption><span class="caption-number">表 2.83 </span><span class="caption-text">対象ホストの出力一覧</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.77 </span><span class="caption-text">対象ホストの出力一覧</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">項目</div>
@@ -1815,7 +1815,7 @@
 </li>
 </ul>
 <table class="docutils align-left" id="id48">
-<caption><span class="caption-number">表 2.84 </span><span class="caption-text">比較結果の表示内容一覧</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.78 </span><span class="caption-text">比較結果の表示内容一覧</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">項目</div>
@@ -1927,7 +1927,7 @@
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="menu_creation.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">1. </span>メニュー作成機能</a></li>
+    <li class="prev"><a href="menu_creation.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">1. </span>パラメータシート作成機能</a></li>
     <li class="next"><a href="../ansible-driver/index.html" title="次のトピックへ"><span>次のトピックへ</span>Ansible ドライバ</a></li>
   </ul>
 </div>
