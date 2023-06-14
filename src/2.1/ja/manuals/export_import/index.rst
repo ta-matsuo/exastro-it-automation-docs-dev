@@ -4,7 +4,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 3
+   :numbered: 2
 
    menu_export_import
    excel_export_import
