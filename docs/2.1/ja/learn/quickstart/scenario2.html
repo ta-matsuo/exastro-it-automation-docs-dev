@@ -305,7 +305,7 @@
 <div class="line">データシートを作成します。</div>
 </div>
 <div class="line-block">
-<div class="line"><span class="menuselection">メニュー作成 ‣ メニュー定義・作成</span> から、データシートを登録します。</div>
+<div class="line"><span class="menuselection">パラメータシート作成 ‣ パラメータシート定義・作成</span> から、データシートを登録します。</div>
 </div>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../../../_images/データシートの作成.gif"><img alt="データシートの作成" src="../../../../_images/%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B7%E3%83%BC%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90.gif" style="width: 1200px;" /></a>
@@ -355,7 +355,7 @@
 </tbody>
 </table>
 <table class="docutils align-default" id="id24">
-<caption><span class="caption-number">表 2.50 </span><span class="caption-text">メニュー作成情報の設定値</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.50 </span><span class="caption-text">パラメータシート作成情報の設定値</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 67%" />
@@ -432,10 +432,10 @@
 <div class="line">こういったパラメータをテーブル形式で管理する場合、IPアドレスやユーザが増えるごとにテーブル内の項目を増やす必要があるため、パラメータシートのフォーマット修正が都度必要となり、管理が煩雑になってしまいます。</div>
 </div>
 <div class="line-block">
-<div class="line">そこで、本シナリオでは縦メニューというパラメータシートを使い、複数のパラメータを管理する方法を紹介します。</div>
+<div class="line">そこで、本シナリオではバンドルというパラメータシートを使い、複数のパラメータを管理する方法を紹介します。</div>
 </div>
 <div class="line-block">
-<div class="line"><span class="menuselection">メニュー作成 ‣ メニュー定義・作成</span> から、パラメータシートを登録します。</div>
+<div class="line"><span class="menuselection">パラメータシート作成 ‣ パラメータシート定義・作成</span> から、パラメータシートを登録します。</div>
 <div class="line">項目1の <span class="menuselection">入力方式</span> を <kbd class="kbd docutils literal notranslate">プルダウン選択</kbd> に設定することで、<a class="reference internal" href="#quickstart-create-datasheet"><span class="std std-ref">データシートの作成</span></a> で登録したデータシートを参照できるようになります。</div>
 </div>
 <figure class="align-default">
@@ -506,13 +506,13 @@
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">メニュー作成情報で <span class="menuselection">縦メニュー利用</span> を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。</div>
+<div class="line">パラメータシート作成情報で <span class="menuselection">バンドル利用</span> を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。</div>
 </div>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../../../../_images/メニュー作成情報設定.png"><img alt="メニュー作成情報設定" src="../../../../_images/%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E4%BD%9C%E6%88%90%E6%83%85%E5%A0%B1%E8%A8%AD%E5%AE%9A.png" style="width: 1200px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/パラメータシート作成情報設定.png"><img alt="パラメータシート作成情報設定" src="../../../../_images/%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%B7%E3%83%BC%E3%83%88%E4%BD%9C%E6%88%90%E6%83%85%E5%A0%B1%E8%A8%AD%E5%AE%9A.png" style="width: 1200px;" /></a>
 </figure>
 <table class="filter-table docutils align-default" id="id27">
-<caption><span class="caption-number">表 2.53 </span><span class="caption-text">メニュー作成情報の設定値</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.53 </span><span class="caption-text">パラメータシート作成情報の設定値</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 67%" />
@@ -538,7 +538,7 @@
 <tr class="row-even"><td><p>表示順序</p></td>
 <td><p><kbd class="kbd docutils literal notranslate">2</kbd></p></td>
 </tr>
-<tr class="row-odd"><td><p>縦メニュー利用</p></td>
+<tr class="row-odd"><td><p>バンドル利用</p></td>
 <td><p>「利用する」にチェックを入れる(有効)</p></td>
 </tr>
 <tr class="row-even"><td><p>最終更新日時</p></td>
@@ -1123,7 +1123,7 @@ postgresql-server-10.23-1.module+el8.7.0+17280+3a452e1f.x86_64
 </div>
 <ul class="simple">
 <li><p>入力値が確定している様な場合は、データシートを利用して入力ミスを防ぐことが可能です。</p></li>
-<li><p>複数かつ数が不定のパラメータを管理する場合は、「縦メニュー」を利用することで柔軟なパラメータ管理が行なえます。</p></li>
+<li><p>複数かつ数が不定のパラメータを管理する場合は、「バンドル」を利用することで柔軟なパラメータ管理が行なえます。</p></li>
 <li><p>大量のパラメータを設定する場合には、「全件ダウンロード・ファイル一括登録」を利用することでファイルからのデータ登録を行うことが可能です。</p></li>
 </ul>
 <div class="line-block">

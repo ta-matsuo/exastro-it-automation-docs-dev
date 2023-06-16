@@ -591,7 +591,7 @@ Movement-Module紐付
 代入値自動登録設定
 ******************
 
-#. | :menuselection:`Terraform CLI-->代入値自動登録設定` では、メニュー作成機能で作成したパラメータシート（オペレーションあり）と、Movementの変数を紐付けます。
+#. | :menuselection:`Terraform CLI-->代入値自動登録設定` では、パラメータシート作成機能で作成したパラメータシート（オペレーションあり）と、Movementの変数を紐付けます。
    | 登録した情報は内部の処理により作業実行時に「:ref:`terraform_cli_substitution_value_list`」に反映されます。
 
 
