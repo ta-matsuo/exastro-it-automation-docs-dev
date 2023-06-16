@@ -81,4 +81,4 @@
    * - exastro-platform.platform-auth.image.tag
      - コンテナイメージのタグ
      - 不可
-     - "1.0.6"
+     - ""

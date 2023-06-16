@@ -21,7 +21,7 @@
    * - exastro-platform.keycloak.image.tag
      - コンテナイメージのタグ
      - 不可
-     - "1.0.6"
+     - ""
    * - exastro-platform.keycloak.image.pullPolicy
      - イメージプルポリシー
      - 可

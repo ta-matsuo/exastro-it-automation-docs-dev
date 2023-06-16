@@ -256,7 +256,7 @@ Helm リポジトリの登録
          #   release: "stable"
          # matchExpressions:
          #   - {key: environment, operator: In, values: [dev]}
-   
+
    exastro-it-automation:
      ita-api-admin:
        replicaCount: 1
@@ -267,7 +267,7 @@ Helm リポジトリの登録
        extraEnv:
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
-   
+
      ita-api-organization:
        replicaCount: 1
        image:
@@ -277,7 +277,7 @@ Helm リポジトリの登録
        extraEnv:
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
-   
+
      ita-by-ansible-execute:
        replicaCount: 1
        image:
@@ -288,65 +288,238 @@ Helm リポジトリの登録
          EXECUTE_INTERVAL: "10"
          ANSIBLE_AGENT_IMAGE: "exastro/exastro-it-automation-by-ansible-agent"
          ANSIBLE_AGENT_IMAGE_TAG: ""
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
        serviceAccount:
          create: false
          name: "ita-by-ansible-execute-sa"
-   
+
      ita-by-ansible-legacy-role-vars-listup:
        replicaCount: 1
        extraEnv:
          EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
        image:
          repository: "exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup"
          tag: ""
          pullPolicy: IfNotPresent
-   
+
+     ita-by-ansible-legacy-vars-listup:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-ansible-legacy-vars-listup"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-ansible-pioneer-vars-listup:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-ansible-pioneer-vars-listup"
+         tag: ""
+         pullPolicy: IfNotPresent
+
      ita-by-ansible-towermaster-sync:
        replicaCount: 1
        extraEnv:
          EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
        image:
          repository: "exastro/exastro-it-automation-by-ansible-towermaster-sync"
          tag: ""
          pullPolicy: IfNotPresent
-   
+
+     ita-by-cicd-for-iac:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-cicd-for-iac"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-collector:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-collector"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-conductor-regularly:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-conductor-regularly"
+         tag: ""
+         pullPolicy: IfNotPresent
+
      ita-by-conductor-synchronize:
        replicaCount: 1
        extraEnv:
          EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
        image:
          repository: "exastro/exastro-it-automation-by-conductor-synchronize"
          tag: ""
          pullPolicy: IfNotPresent
-   
+
+     ita-by-excel-export-import:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-excel-export-import"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-execinstance-dataautoclean:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-execinstance-dataautoclean"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-file-autoclean:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-file-autoclean"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-hostgroup-split:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-hostgroup-split"
+         tag: ""
+         pullPolicy: IfNotPresent
+
      ita-by-menu-create:
        replicaCount: 1
        extraEnv:
          EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
        image:
          repository: "exastro/exastro-it-automation-by-menu-create"
          tag: ""
          pullPolicy: IfNotPresent
-   
+
+     ita-by-menu-export-import:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-menu-export-import"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-terraform-cli-execute:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-terraform-cli-execute"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-terraform-cli-vars-listup:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-terraform-cli-vars-listup"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-terraform-cloud-ep-execute:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-terraform-cloud-ep-execute"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-terraform-cloud-ep-vars-listup:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup"
+         tag: ""
+         pullPolicy: IfNotPresent
+
      ita-database-setup-job:
        image:
          repository: ""
          tag: ""
          pullPolicy: IfNotPresent
-   
+
      ita-web-server:
        replicaCount: 1
        image:
          repository: "exastro/exastro-it-automation-web-server"
          tag: ""
          pullPolicy: IfNotPresent
-   
+
+     ita-migration:
+       extraEnv:
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "exastro/exastro-it-automation-migration"
+         tag: ""
+         pullPolicy: IfNotPresent
+
    exastro-platform:
      platform-api:
        image:
          repository: "exastro/exastro-platform-api"
          tag: ""
-   
+
      platform-auth:
        extraEnv:
          # Please set the URL to access
@@ -374,17 +547,17 @@ Helm リポジトリの登録
        image:
          repository: "exastro/exastro-platform-auth"
          tag: ""
-   
+
      platform-migration:
        image:
          repository: "exastro/exastro-platform-migration"
          tag: ""
-   
+
      platform-web:
        image:
          repository: "exastro/exastro-platform-web"
          tag: ""
-   
+
      mariadb:
        enabled: true
        image:
@@ -398,7 +571,7 @@ Helm リポジトリの登録
          limits:
            memory: "2Gi"
            cpu: "4"
-   
+
      keycloak:
        enabled: true
        image:

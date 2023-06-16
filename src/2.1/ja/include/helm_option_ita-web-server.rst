@@ -20,7 +20,7 @@
    * - exastro-it-automation.ita-web-server.image.tag
      - コンテナイメージのタグ
      - 不可
-     - 2.0.1
+     - ""
    * - exastro-it-automation.ita-web-server.image.pullPolicy
      - イメージプルポリシー
      - 可
