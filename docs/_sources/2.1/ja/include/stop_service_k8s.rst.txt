@@ -13,6 +13,24 @@
      RS_MC=`kubectl get deploy ita-by-menu-create -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
      RS_PA=`kubectl get deploy platform-auth -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
 
+   | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。
+
+   .. code-block:: bash
+
+     RS_ALV=`kubectl get deploy ita-by-ansible-legacy-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_APV=`kubectl get deploy ita-by-ansible-pioneer-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_CFI=`kubectl get deploy ita-by-cicd-for-iac -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_CR=`kubectl get deploy ita-by-conductor-regularly -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_COL=`kubectl get deploy ita-by-collector -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_EEI=`kubectl get deploy ita-by-excel-export-import -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_HS=`kubectl get deploy ita-by-hostgroup-split -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_MEI=`kubectl get deploy ita-by-menu-export-import -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_TCE=`kubectl get deploy ita-by-terraform-cli-execute -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_TCV=`kubectl get deploy ita-by-terraform-cli-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_TCEE=`kubectl get deploy ita-by-terraform-cloud-ep-execute -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_TCEV=`kubectl get deploy ita-by-terraform-cloud-ep-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+ 
+
 2. リバースプロキシの停止
 
    | リバースプロキシ (platform-auth) の Pod 起動数を 0 に変更し、エンドユーザーからのアクセスを制限します。
@@ -34,6 +52,23 @@
      kubectl scale deployment ita-by-ansible-towermaster-sync -n exastro --replicas=0
      kubectl scale deployment ita-by-conductor-synchronize -n exastro --replicas=0
      kubectl scale deployment ita-by-menu-create -n exastro --replicas=0
+
+   | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。
+
+   .. code-block:: bash
+
+     kubectl scale deployment ita-by-ansible-legacy-vars-listup -n exastro --replicas=0
+     kubectl scale deployment ita-by-ansible-pioneer-vars-listup -n exastro --replicas=0
+     kubectl scale deployment ita-by-cicd-for-iac -n exastro --replicas=0
+     kubectl scale deployment ita-by-collector -n exastro --replicas=0
+     kubectl scale deployment ita-by-conductor-regularly -n exastro --replicas=0
+     kubectl scale deployment ita-by-excel-export-import -n exastro --replicas=0
+     kubectl scale deployment ita-by-hostgroup-split -n exastro --replicas=0
+     kubectl scale deployment ita-by-menu-export-import -n exastro --replicas=0
+     kubectl scale deployment ita-by-terraform-cli-execute -n exastro --replicas=0
+     kubectl scale deployment ita-by-terraform-cli-vars-listup -n exastro --replicas=0
+     kubectl scale deployment ita-by-terraform-cloud-ep-execute -n exastro --replicas=0
+     kubectl scale deployment ita-by-terraform-cloud-ep-vars-listup -n exastro --replicas=0
 
 4. Pod 起動数の確認
 
@@ -61,3 +96,21 @@
      ita-by-ansible-towermaster-sync          0/0     0            0           3h41m
      ita-by-conductor-synchronize             0/0     0            0           3h41m
      platform-auth                            0/0     0            0           3h41m
+
+   | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に確認してください。
+
+   .. code-block:: bash
+
+     NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
+     ita-by-ansible-legacy-vars-listup        0/0     0            0           3h41m
+     ita-by-ansible-pioneer-vars-listup       0/0     0            0           3h41m
+     ita-by-cicd-for-iac                      0/0     0            0           3h41m
+     ita-by-collector                         0/0     0            0           3h41m
+     ita-by-conductor-regularly               0/0     0            0           3h41m
+     ita-by-excel-export-import               0/0     0            0           3h41m
+     ita-by-hostgroup-split                   0/0     0            0           3h41m
+     ita-by-menu-export-import                0/0     0            0           3h41m
+     ita-by-terraform-cli-execute             0/0     0            0           3h41m
+     ita-by-terraform-cli-vars-listup         0/0     0            0           3h41m
+     ita-by-terraform-cloud-ep-execute        0/0     0            0           3h41m
+     ita-by-terraform-cloud-ep-vars-listup    0/0     0            0           3h41m

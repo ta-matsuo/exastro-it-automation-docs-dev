@@ -101,20 +101,90 @@ ita-by-ansible-legacy-role-vars-listup
 
 .. include:: ../../include/helm_option_ita-by-ansible-legacy-role-vars-listup.rst
 
+ita-by-ansible-legacy-vars-listup
+--------------------------------------
+
+.. include:: ../../include/helm_option_ita-by-ansible-legacy-vars-listup.rst
+
+ita-by-ansible-pioneer-vars-listup
+--------------------------------------
+
+.. include:: ../../include/helm_option_ita-by-ansible-pioneer-vars-listup.rst
+
 ita-by-ansible-towermaster-sync
 -------------------------------
 
 .. include:: ../../include/helm_option_ita-by-ansible-towermaster-sync.rst
+
+ita-by-cicd-for-iac
+-------------------------------
+
+.. include:: ../../include/helm_option_ita-by-cicd-for-iac.rst
+
+ita-by-collector
+-------------------------------
+
+.. include:: ../../include/helm_option_ita-by-collector.rst
+
+ita-by-conductor-regularly
+-------------------------------
+
+.. include:: ../../include/helm_option_ita-by-conductor-regularly.rst
 
 ita-by-conductor-synchronize
 ----------------------------
 
 .. include:: ../../include/helm_option_ita-by-conductor-synchronize.rst
 
+ita-by-excel-export-import
+----------------------------
+
+.. include:: ../../include/helm_option_ita-by-excel-export-import.rst
+
+ita-by-execinstance-dataautoclean
+----------------------------
+
+.. include:: ../../include/helm_option_ita-by-execinstance-dataautoclean.rst
+
+ita-by-file-autoclean
+----------------------------
+
+.. include:: ../../include/helm_option_ita-by-file-autoclean.rst
+
+ita-by-hostgroup-split
+----------------------------
+
+.. include:: ../../include/helm_option_ita-by-hostgroup-split.rst
+
 ita-by-menu-create
 ------------------
 
 .. include:: ../../include/helm_option_ita-by-menu-create.rst
+
+ita-by-menu-export-import
+------------------
+
+.. include:: ../../include/helm_option_ita-by-menu-export-import.rst
+
+ita-by-terraform-cli-execute
+------------------
+
+.. include:: ../../include/helm_option_ita-by-terraform-cli-execute.rst
+
+ita-by-terraform-cli-vars-listup
+------------------
+
+.. include:: ../../include/helm_option_ita-by-terraform-cli-vars-listup.rst
+
+ita-by-terraform-cloud-ep-execute
+------------------
+
+.. include:: ../../include/helm_option_ita-by-terraform-cloud-ep-execute.rst
+
+ita-by-terraform-cloud-ep-vars-listup
+------------------
+
+.. include:: ../../include/helm_option_ita-by-terraform-cloud-ep-vars-listup.rst
 
 ita-database-setup-job
 ----------------------
@@ -125,3 +195,8 @@ ita-web-server
 --------------
 
 .. include:: ../../include/helm_option_ita-web-server.rst
+
+ita-migration
+--------------
+
+.. include:: ../../include/helm_option_ita-migration.rst

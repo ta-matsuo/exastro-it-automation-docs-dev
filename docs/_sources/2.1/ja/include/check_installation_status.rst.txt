@@ -14,18 +14,29 @@
     :caption: 出力結果
     
     NAME                                                      READY   STATUS      RESTARTS   AGE
-    ita-by-menu-create-7fccfc7f57-7cc2f                       1/1     Running     0          11m
-    ita-by-conductor-synchronize-9dc6cfbdf-vp64z              1/1     Running     0          11m
-    ita-api-admin-85b7d8f977-cxr58                            1/1     Running     0          11m
-    ita-api-organization-5c5f4b86cb-rmf4g                     1/1     Running     0          11m
-    ita-by-ansible-execute-6cd6d4d5fd-wkxjd                   1/1     Running     0          11m
-    ita-by-ansible-legacy-role-vars-listup-67dbf5586f-dhdb2   1/1     Running     0          11m
-    ita-by-ansible-towermaster-sync-5674448c55-t9592          1/1     Running     0          11m
-    ita-web-server-7dbf6fd6ff-2s7s4                           1/1     Running     0          11m
-    platform-auth-5b57bc57bd-h4k2g                            1/1     Running     0          11m
-    platform-web-9f9d486fd-zf5vb                              1/1     Running     0          11m
-    mariadb-67dd78cc76-nthtf                                  1/1     Running     0          11m
-    platform-api-8655864fbf-t5xxf                             1/1     Running     0          11m
-    ita-setup-wv2t6                                           0/1     Completed   0          11m
-    keycloak-7f7cdccb6b-rf4rj                                 1/1     Running     0          11m
-    platform-setup-8vv2x                                      0/1     Completed   0          11m
+    ita-api-admin-64657656c6-r4s2l                            1/1     Running     0          30m
+    ita-api-organization-75ff9d599c-gthvl                     1/1     Running     0          30m
+    ita-by-ansible-execute-fdd8dfc57-7676h                    1/1     Running     0          30m
+    ita-by-ansible-legacy-role-vars-listup-6cd558d78b-xxl6x   1/1     Running     0          30m
+    ita-by-ansible-legacy-vars-listup-5db44d54d8-zxqj7        1/1     Running     0          30m
+    ita-by-ansible-pioneer-vars-listup-6bf744f5b6-k8ctx       1/1     Running     0          30m
+    ita-by-ansible-towermaster-sync-59594b5d84-phbg7          1/1     Running     0          30m
+    ita-by-cicd-for-iac-f6855c588-r6w4k                       1/1     Running     0          30m
+    ita-by-collector-6fc8c7b4d4-hjwck                         1/1     Running     0          30m
+    ita-by-conductor-regularly-5897dcb9f6-4npz7               1/1     Running     0          30m
+    ita-by-conductor-synchronize-6fd6dcd5f4-qgdhx             1/1     Running     0          30m
+    ita-by-excel-export-import-df76d77c4-ms4j2                1/1     Running     0          30m
+    ita-by-hostgroup-split-86746f758-b796k                    1/1     Running     0          30m
+    ita-by-menu-create-8588c9747d-66xwn                       1/1     Running     0          30m
+    ita-by-menu-export-import-6b8498f476-zwml7                1/1     Running     0          30m
+    ita-by-terraform-cli-execute-8478554d8d-qztbv             1/1     Running     0          30m
+    ita-by-terraform-cli-vars-listup-bf688659d-zgh8d          1/1     Running     0          30m
+    ita-by-terraform-cloud-ep-execute-5dbbb599b-qh8rc         1/1     Running     0          30m
+    ita-by-terraform-cloud-ep-vars-listup-5564fcb5b-nphm7     1/1     Running     0          30m
+    ita-migration-1.0.4-0wdt                                  0/1     Completed   0          30m
+    ita-web-server-854bcdbbf4-s7fdb                           1/1     Running     0          30m
+    keycloak-56d8b4556c-tndnv                                 1/1     Running     0          30m
+    platform-api-bddb446db-s9zjh                              1/1     Running     0          30m
+    platform-auth-799f57fb6c-wlbtf                            1/1     Running     0          30m
+    platform-migration-1.4.2-6sks                             0/1     Completed   0          30m
+    platform-web-88db7c489-wkmn9                              1/1     Running     0          30m

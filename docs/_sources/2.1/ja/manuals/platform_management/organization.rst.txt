@@ -176,6 +176,14 @@ Organization (オーガナイゼーション)
               - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
+            * - optionsIta.no_install_driver
+              - インストールをしないドライバを指定。
+              - 可
+              - | 以下の値をList形式で指定すると、指定したドライバがワークスペース作成時にインストールされない。省略可。
+                | :program:`terraform_cloud_ep`: Terraform Cloud/EPドライバ
+                | :program:`terraform_cli`: Terraform CLIドライバ
+                | :program:`ci_cd`: CI/CD for IaCドライバ
+                | 例：:program:`"optionsIta": {"no_install_driver": ["terraform_cloud_ep", "terraform_cli", "ci_cd"]}`
 
 
          | 設定ファイルの作成は、:file:`./exastro-platform/tools/create-organization.sample.json` を基に、作成するオーガナイゼーションの情報を指定した JSON ファイルを基に作成します。
@@ -213,7 +221,8 @@ Organization (オーガナイゼーション)
                 "plan": {
                     "id": "plan-1"
                 },
-                "options": {}
+                "options": {},
+                "optionsIta": {}
             }
 
          .. raw:: html
@@ -383,19 +392,17 @@ Organization (オーガナイゼーション)
               - オーガナイゼーション管理者の初期パスワードを指定。
               - 可
               - "password"
-            * - options.sslRequired
-              - SSL 接続の有無を指定。
+            * - organization plan id (optional)
+              - リソースプランを指定。
               - 可
-              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
-                | :program:`none`: SSL の設定なし。
-                | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
+              - ※初期状態では未作成のため入力不要。 
 
          .. code-block:: sh
             :caption: コマンド 
 
             bash ./exastro-platform/tools/create-organization.sh
 
-         | :kbd:`your username` と :kbd:`your username` は :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
+         | :kbd:`your username` と :kbd:`your password` は :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
 
          .. code-block::
             :caption: コマンド (入力例)
@@ -521,6 +528,14 @@ Organization (オーガナイゼーション)
               - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
+            * - optionsIta.no_install_driver
+              - インストールをしないドライバを指定。
+              - 可
+              - | 以下の値をList形式で指定すると、指定したドライバがワークスペース作成時にインストールされない。省略可。
+                | :program:`terraform_cloud_ep`: Terraform Cloud/EPドライバ
+                | :program:`terraform_cli`: Terraform CLIドライバ
+                | :program:`ci_cd`: CI/CD for IaCドライバ
+                | 例：:program:`"optionsIta": {"no_install_driver": ["terraform_cloud_ep", "terraform_cli", "ci_cd"]}`
 
 
       | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
@@ -565,7 +580,8 @@ Organization (オーガナイゼーション)
             }
           ],
           "plan": {},
-          "options": {}
+          "options": {},
+          "optionsIta": {}
         }'
 
 

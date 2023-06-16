@@ -16,4 +16,4 @@
    * - exastro-platform.platform-web.image.tag
      - コンテナイメージのタグ
      - 不可
-     - "1.0.6"
+     - ""

@@ -20,7 +20,7 @@
    * - exastro-it-automation.ita-by-ansible-execute.image.tag
      - コンテナイメージのタグ
      - 不可
-     - 2.0.1
+     - ""
    * - exastro-it-automation.ita-by-ansible-execute.image.pullPolicy
      - イメージプルポリシー
      - 可
@@ -39,6 +39,14 @@
      - Ansible Agent のコンテナイメージのタグ
      - 不可
      - 2.0.0
+   * - exastro-it-automation.ita-by-ansible-execute.extraEnv.PLATFORM_API_HOST
+     - Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名
+     - 不可
+     - "platform-api"
+   * - exastro-it-automation.ita-by-ansible-execute.extraEnv.PLATFORM_API_PORT
+     - Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)
+     - 不可
+     - "8000"
    * - exastro-it-automation.ita-by-ansible-execute.serviceAccount.create
      - Ansible Agent 用のサービスアカウントの作成要否
      - 可

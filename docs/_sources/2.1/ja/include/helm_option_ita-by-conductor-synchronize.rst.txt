@@ -17,6 +17,14 @@
      - 処理終了後から次回実行時までの待機時間
      - 不可
      - 10
+   * - exastro-it-automation.ita-by-conductor-synchronize.extraEnv.PLATFORM_API_HOST
+     - Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名
+     - 不可
+     - "platform-api"
+   * - exastro-it-automation.ita-by-conductor-synchronize.extraEnv.PLATFORM_API_PORT
+     - Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)
+     - 不可
+     - "8000"
    * - exastro-it-automation.ita-by-conductor-synchronize.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
@@ -24,7 +32,7 @@
    * - exastro-it-automation.ita-by-conductor-synchronize.image.tag
      - コンテナイメージのタグ
      - 不可
-     - 2.0.1
+     - ""
    * - exastro-it-automation.ita-by-conductor-synchronize.image.pullPolicy
      - イメージプルポリシー
      - 可

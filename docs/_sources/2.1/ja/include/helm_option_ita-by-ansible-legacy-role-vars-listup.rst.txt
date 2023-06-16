@@ -9,23 +9,31 @@
      - 説明
      - 変更
      - デフォルト値・選択可能な設定値
-   * - ita-by-ansible-legacy-role-vars-listup.replicaCount
+   * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.replicaCount
      - Pod のレプリカ数
      - 不可
      - 1
-   * - ita-by-ansible-legacy-role-vars-listup.extraEnv.EXECUTE_INTERVAL
+   * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.extraEnv.EXECUTE_INTERVAL
      - 処理終了後から次回実行時までの待機時間
      - 不可
      - 10
-   * - ita-by-ansible-legacy-role-vars-listup.image.repository
+   * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.extraEnv.PLATFORM_API_HOST
+     - Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名
+     - 不可
+     - "platform-api"
+   * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.extraEnv.PLATFORM_API_PORT
+     - Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)
+     - 不可
+     - "8000"
+   * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
      - exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup
-   * - ita-by-ansible-legacy-role-vars-listup.image.tag
+   * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.tag
      - コンテナイメージのタグ
      - 不可
-     - 2.0.1
-   * - ita-by-ansible-legacy-role-vars-listup.image.pullPolicy
+     - ""
+   * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.pullPolicy
      - イメージプルポリシー
      - 可
      - | :program:`IfNotPresent` (デフォルト): コンテナイメージが存在しない場合のみプル

@@ -425,6 +425,18 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>optionsIta.no_install_driver</p></td>
+<td><p>インストールをしないドライバを指定。</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line">以下の値をList形式で指定すると、指定したドライバがワークスペース作成時にインストールされない。省略可。</div>
+<div class="line"><strong class="program">terraform_cloud_ep</strong>: Terraform Cloud/EPドライバ</div>
+<div class="line"><strong class="program">terraform_cli</strong>: Terraform CLIドライバ</div>
+<div class="line"><strong class="program">ci_cd</strong>: CI/CD for IaCドライバ</div>
+<div class="line">例：<strong class="program">&quot;optionsIta&quot;: {&quot;no_install_driver&quot;: [&quot;terraform_cloud_ep&quot;, &quot;terraform_cli&quot;, &quot;ci_cd&quot;]}</strong></div>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="line-block">
@@ -456,8 +468,9 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <span class="linenos">23</span><span class="w">    </span><span class="nt">&quot;plan&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">24</span><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan-1&quot;</span>
 <span class="linenos">25</span><span class="w">    </span><span class="p">},</span>
-<span class="linenos">26</span><span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
-<span class="linenos">27</span><span class="p">}</span>
+<span class="linenos">26</span><span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="linenos">27</span><span class="w">    </span><span class="nt">&quot;optionsIta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="linenos">28</span><span class="p">}</span>
 </pre></div>
 </div>
 </details><div class="literal-block-wrapper docutils container" id="id14">
@@ -666,15 +679,10 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <td><p>可</p></td>
 <td><p>&quot;password&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>options.sslRequired</p></td>
-<td><p>SSL 接続の有無を指定。</p></td>
+<tr class="row-odd"><td><p>organization plan id (optional)</p></td>
+<td><p>リソースプランを指定。</p></td>
 <td><p>可</p></td>
-<td><div class="line-block">
-<div class="line"><strong class="program">external</strong> (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。</div>
-<div class="line"><strong class="program">none</strong>: SSL の設定なし。</div>
-<div class="line"><strong class="program">all</strong>: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)</div>
-</div>
-</td>
+<td><p>※初期状態では未作成のため入力不要。</p></td>
 </tr>
 </tbody>
 </table>
@@ -685,7 +693,7 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 </div>
 </div>
 <div class="line-block">
-<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">your</kbd> <kbd class="kbd docutils literal notranslate">username</kbd></kbd> と <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">your</kbd> <kbd class="kbd docutils literal notranslate">username</kbd></kbd> は <a class="reference internal" href="../../installation/helm_on_kubernetes.html#create-system-manager"><span class="std std-ref">Exastro システム管理者の作成</span></a> で登録した、<kbd class="kbd docutils literal notranslate">KEYCLOAK_USER</kbd> 及び <kbd class="kbd docutils literal notranslate">KEYCLOAK_PASSWORD</kbd> です。</div>
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">your</kbd> <kbd class="kbd docutils literal notranslate">username</kbd></kbd> と <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">your</kbd> <kbd class="kbd docutils literal notranslate">password</kbd></kbd> は <a class="reference internal" href="../../installation/helm_on_kubernetes.html#create-system-manager"><span class="std std-ref">Exastro システム管理者の作成</span></a> で登録した、<kbd class="kbd docutils literal notranslate">KEYCLOAK_USER</kbd> 及び <kbd class="kbd docutils literal notranslate">KEYCLOAK_PASSWORD</kbd> です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id23">
 <div class="code-block-caption"><span class="caption-number">リスト 1.153 </span><span class="caption-text">コマンド (入力例)</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
@@ -843,6 +851,18 @@ Create an organization, are you sure? (Y/other) : Y # &quot;Y&quot;を入力す�
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>optionsIta.no_install_driver</p></td>
+<td><p>インストールをしないドライバを指定。</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line">以下の値をList形式で指定すると、指定したドライバがワークスペース作成時にインストールされない。省略可。</div>
+<div class="line"><strong class="program">terraform_cloud_ep</strong>: Terraform Cloud/EPドライバ</div>
+<div class="line"><strong class="program">terraform_cli</strong>: Terraform CLIドライバ</div>
+<div class="line"><strong class="program">ci_cd</strong>: CI/CD for IaCドライバ</div>
+<div class="line">例：<strong class="program">&quot;optionsIta&quot;: {&quot;no_install_driver&quot;: [&quot;terraform_cloud_ep&quot;, &quot;terraform_cli&quot;, &quot;ci_cd&quot;]}</strong></div>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -892,7 +912,8 @@ curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST
 <span class="s1">    }</span>
 <span class="s1">  ],</span>
 <span class="s1">  &quot;plan&quot;: {},</span>
-<span class="s1">  &quot;options&quot;: {}</span>
+<span class="s1">  &quot;options&quot;: {},</span>
+<span class="s1">  &quot;optionsIta&quot;: {}</span>
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>

@@ -174,11 +174,26 @@
 <li><a class="reference internal" href="#ita-api-organization">ita-api-organization</a></li>
 <li><a class="reference internal" href="#ita-by-ansible-execute">ita-by-ansible-execute</a></li>
 <li><a class="reference internal" href="#ita-by-ansible-legacy-role-vars-listup">ita-by-ansible-legacy-role-vars-listup</a></li>
+<li><a class="reference internal" href="#ita-by-ansible-legacy-vars-listup">ita-by-ansible-legacy-vars-listup</a></li>
+<li><a class="reference internal" href="#ita-by-ansible-pioneer-vars-listup">ita-by-ansible-pioneer-vars-listup</a></li>
 <li><a class="reference internal" href="#ita-by-ansible-towermaster-sync">ita-by-ansible-towermaster-sync</a></li>
+<li><a class="reference internal" href="#ita-by-cicd-for-iac">ita-by-cicd-for-iac</a></li>
+<li><a class="reference internal" href="#ita-by-collector">ita-by-collector</a></li>
+<li><a class="reference internal" href="#ita-by-conductor-regularly">ita-by-conductor-regularly</a></li>
 <li><a class="reference internal" href="#ita-by-conductor-synchronize">ita-by-conductor-synchronize</a></li>
+<li><a class="reference internal" href="#ita-by-excel-export-import">ita-by-excel-export-import</a></li>
+<li><a class="reference internal" href="#ita-by-execinstance-dataautoclean">ita-by-execinstance-dataautoclean</a></li>
+<li><a class="reference internal" href="#ita-by-file-autoclean">ita-by-file-autoclean</a></li>
+<li><a class="reference internal" href="#ita-by-hostgroup-split">ita-by-hostgroup-split</a></li>
 <li><a class="reference internal" href="#ita-by-menu-create">ita-by-menu-create</a></li>
+<li><a class="reference internal" href="#ita-by-menu-export-import">ita-by-menu-export-import</a></li>
+<li><a class="reference internal" href="#ita-by-terraform-cli-execute">ita-by-terraform-cli-execute</a></li>
+<li><a class="reference internal" href="#ita-by-terraform-cli-vars-listup">ita-by-terraform-cli-vars-listup</a></li>
+<li><a class="reference internal" href="#ita-by-terraform-cloud-ep-execute">ita-by-terraform-cloud-ep-execute</a></li>
+<li><a class="reference internal" href="#ita-by-terraform-cloud-ep-vars-listup">ita-by-terraform-cloud-ep-vars-listup</a></li>
 <li><a class="reference internal" href="#ita-database-setup-job">ita-database-setup-job</a></li>
 <li><a class="reference internal" href="#ita-web-server">ita-web-server</a></li>
+<li><a class="reference internal" href="#ita-migration">ita-migration</a></li>
 </ul>
 </li>
 </ul>
@@ -742,7 +757,7 @@
 <tr class="row-odd"><td><p>exastro-platform.platform-api.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;1.0.6&quot;</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 </tbody>
 </table>
@@ -882,7 +897,7 @@
 <tr class="row-odd"><td><p>exastro-platform.platform-auth.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;1.0.6&quot;</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 </tbody>
 </table>
@@ -913,7 +928,7 @@
 <tr class="row-odd"><td><p>exastro-platform.platform-web.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;1.0.6&quot;</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 </tbody>
 </table>
@@ -944,7 +959,7 @@
 <tr class="row-odd"><td><p>exastro-platform.platform-setup.keycloak.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;1.0.6&quot;</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 </tbody>
 </table>
@@ -1054,7 +1069,7 @@
 <tr class="row-even"><td><p>exastro-platform.keycloak.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;1.0.6&quot;</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-platform.keycloak.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -1395,7 +1410,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-api-admin.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>2.0.1</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-api-admin.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -1441,7 +1456,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-api-organization.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>2.0.1</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-api-organization.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -1487,7 +1502,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-execute.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>2.0.1</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-execute.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -1513,6 +1528,16 @@
 <td><p>Ansible Agent のコンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
 <td><p>2.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-execute.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-execute.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-execute.serviceAccount.create</p></td>
 <td><p>Ansible Agent 用のサービスアカウントの作成要否</p></td>
@@ -1549,27 +1574,159 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>ita-by-ansible-legacy-role-vars-listup.replicaCount</p></td>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.replicaCount</p></td>
 <td><p>Pod のレプリカ数</p></td>
 <td><p>不可</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>ita-by-ansible-legacy-role-vars-listup.extraEnv.EXECUTE_INTERVAL</p></td>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.extraEnv.EXECUTE_INTERVAL</p></td>
 <td><p>処理終了後から次回実行時までの待機時間</p></td>
 <td><p>不可</p></td>
 <td><p>10</p></td>
 </tr>
-<tr class="row-even"><td><p>ita-by-ansible-legacy-role-vars-listup.image.repository</p></td>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
 <td><p>exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup</p></td>
 </tr>
-<tr class="row-odd"><td><p>ita-by-ansible-legacy-role-vars-listup.image.tag</p></td>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>2.0.1</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>ita-by-ansible-legacy-role-vars-listup.image.pullPolicy</p></td>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-ansible-legacy-vars-listup">
+<h3>ita-by-ansible-legacy-vars-listup<a class="headerlink" href="#ita-by-ansible-legacy-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id26">
+<caption><span class="caption-number">表 141 </span><span class="caption-text">ita-by-ansible-legacy-vars-listup における Values 一覧</span><a class="headerlink" href="#id26" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-ansible-legacy-vars-listup</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-ansible-pioneer-vars-listup">
+<h3>ita-by-ansible-pioneer-vars-listup<a class="headerlink" href="#ita-by-ansible-pioneer-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id27">
+<caption><span class="caption-number">表 142 </span><span class="caption-text">ita-by-ansible-pioneer-vars-listup における Values 一覧</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-ansible-pioneer-vars-listup</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">
@@ -1584,8 +1741,8 @@
 </section>
 <section id="ita-by-ansible-towermaster-sync">
 <h3>ita-by-ansible-towermaster-sync<a class="headerlink" href="#ita-by-ansible-towermaster-sync" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id26">
-<caption><span class="caption-number">表 141 </span><span class="caption-text">ita-by-ansible-towermaster-sync における Values 一覧</span><a class="headerlink" href="#id26" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id28">
+<caption><span class="caption-number">表 143 </span><span class="caption-text">ita-by-ansible-towermaster-sync における Values 一覧</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31%" />
 <col style="width: 31%" />
@@ -1610,6 +1767,16 @@
 <td><p>不可</p></td>
 <td><p>10</p></td>
 </tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-towermaster-sync.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-towermaster-sync.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-towermaster-sync.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
@@ -1618,7 +1785,7 @@
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-towermaster-sync.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>2.0.1</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-towermaster-sync.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -1633,10 +1800,193 @@
 </tbody>
 </table>
 </section>
+<section id="ita-by-cicd-for-iac">
+<h3>ita-by-cicd-for-iac<a class="headerlink" href="#ita-by-cicd-for-iac" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id29">
+<caption><span class="caption-number">表 144 </span><span class="caption-text">ita-by-cicd-for-iac における Values 一覧</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-cicd-for-iac.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-cicd-for-iac.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-cicd-for-iac.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-cicd-for-iac.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-cicd-for-iac.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-cicd-for-iac</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-cicd-for-iac.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-cicd-for-iac.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-collector">
+<h3>ita-by-collector<a class="headerlink" href="#ita-by-collector" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id30">
+<caption><span class="caption-number">表 145 </span><span class="caption-text">ita-by-collector における Values 一覧</span><a class="headerlink" href="#id30" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-collector.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-collector.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-collector.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-collector.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-collector.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-collector</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-collector.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-collector.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-conductor-regularly">
+<h3>ita-by-conductor-regularly<a class="headerlink" href="#ita-by-conductor-regularly" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id31">
+<caption><span class="caption-number">表 146 </span><span class="caption-text">ita-by-conductor-regularly における Values 一覧</span><a class="headerlink" href="#id31" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-regularly.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-conductor-regularly.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-regularly.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-conductor-regularly.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-regularly.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-conductor-regularly</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-conductor-regularly.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-regularly.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="ita-by-conductor-synchronize">
 <h3>ita-by-conductor-synchronize<a class="headerlink" href="#ita-by-conductor-synchronize" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id27">
-<caption><span class="caption-number">表 142 </span><span class="caption-text">ita-by-conductor-synchronize における Values 一覧</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id32">
+<caption><span class="caption-number">表 147 </span><span class="caption-text">ita-by-conductor-synchronize における Values 一覧</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31%" />
 <col style="width: 31%" />
@@ -1661,6 +2011,16 @@
 <td><p>不可</p></td>
 <td><p>10</p></td>
 </tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-synchronize.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-conductor-synchronize.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-synchronize.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
@@ -1669,7 +2029,7 @@
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-conductor-synchronize.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>2.0.1</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-synchronize.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -1684,10 +2044,254 @@
 </tbody>
 </table>
 </section>
+<section id="ita-by-excel-export-import">
+<h3>ita-by-excel-export-import<a class="headerlink" href="#ita-by-excel-export-import" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id33">
+<caption><span class="caption-number">表 148 </span><span class="caption-text">ita-by-excel-export-import における Values 一覧</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-excel-export-import.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-excel-export-import.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-excel-export-import.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-excel-export-import.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-excel-export-import.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-excel-export-import</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-excel-export-import.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-excel-export-import.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-execinstance-dataautoclean">
+<h3>ita-by-execinstance-dataautoclean<a class="headerlink" href="#ita-by-execinstance-dataautoclean" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id34">
+<caption><span class="caption-number">表 149 </span><span class="caption-text">ita-by-execinstance-dataautoclean における Values 一覧</span><a class="headerlink" href="#id34" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-execinstance-dataautoclean</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-file-autoclean">
+<h3>ita-by-file-autoclean<a class="headerlink" href="#ita-by-file-autoclean" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id35">
+<caption><span class="caption-number">表 150 </span><span class="caption-text">ita-by-file-autoclean における Values 一覧</span><a class="headerlink" href="#id35" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-file-autoclean.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-file-autoclean.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-file-autoclean.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-file-autoclean.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-file-autoclean.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-file-autoclean</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-file-autoclean.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-file-autoclean.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-hostgroup-split">
+<h3>ita-by-hostgroup-split<a class="headerlink" href="#ita-by-hostgroup-split" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id36">
+<caption><span class="caption-number">表 151 </span><span class="caption-text">ita-by-hostgroup-split における Values 一覧</span><a class="headerlink" href="#id36" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-hostgroup-split.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-hostgroup-split.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-hostgroup-split.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-hostgroup-split.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-hostgroup-split.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-hostgroup-split</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-hostgroup-split.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-hostgroup-split.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="ita-by-menu-create">
 <h3>ita-by-menu-create<a class="headerlink" href="#ita-by-menu-create" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id28">
-<caption><span class="caption-number">表 143 </span><span class="caption-text">ita-by-menu-create における Values 一覧</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id37">
+<caption><span class="caption-number">表 152 </span><span class="caption-text">ita-by-menu-create における Values 一覧</span><a class="headerlink" href="#id37" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31%" />
 <col style="width: 31%" />
@@ -1712,6 +2316,16 @@
 <td><p>不可</p></td>
 <td><p>10</p></td>
 </tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-create.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-menu-create.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-create.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
@@ -1720,7 +2334,7 @@
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-menu-create.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>2.0.1</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-create.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -1735,10 +2349,315 @@
 </tbody>
 </table>
 </section>
+<section id="ita-by-menu-export-import">
+<h3>ita-by-menu-export-import<a class="headerlink" href="#ita-by-menu-export-import" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id38">
+<caption><span class="caption-number">表 153 </span><span class="caption-text">ita-by-menu-export-import における Values 一覧</span><a class="headerlink" href="#id38" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-export-import.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-menu-export-import.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-export-import.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-menu-export-import.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-export-import.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-menu-export-import</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-menu-export-import.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-export-import.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-terraform-cli-execute">
+<h3>ita-by-terraform-cli-execute<a class="headerlink" href="#ita-by-terraform-cli-execute" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id39">
+<caption><span class="caption-number">表 154 </span><span class="caption-text">ita-by-terraform-cli-execute における Values 一覧</span><a class="headerlink" href="#id39" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-terraform-cli-execute</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-terraform-cli-vars-listup">
+<h3>ita-by-terraform-cli-vars-listup<a class="headerlink" href="#ita-by-terraform-cli-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id40">
+<caption><span class="caption-number">表 155 </span><span class="caption-text">ita-by-terraform-cli-vars-listup における Values 一覧</span><a class="headerlink" href="#id40" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-terraform-cli-vars-listup</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-terraform-cloud-ep-execute">
+<h3>ita-by-terraform-cloud-ep-execute<a class="headerlink" href="#ita-by-terraform-cloud-ep-execute" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id41">
+<caption><span class="caption-number">表 156 </span><span class="caption-text">ita-by-terraform-cloud-ep-execute における Values 一覧</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-terraform-cloud-ep-execute</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-terraform-cloud-ep-vars-listup">
+<h3>ita-by-terraform-cloud-ep-vars-listup<a class="headerlink" href="#ita-by-terraform-cloud-ep-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id42">
+<caption><span class="caption-number">表 157 </span><span class="caption-text">ita-by-terraform-cloud-ep-vars-listup における Values 一覧</span><a class="headerlink" href="#id42" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="ita-database-setup-job">
 <h3>ita-database-setup-job<a class="headerlink" href="#ita-database-setup-job" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id29">
-<caption><span class="caption-number">表 144 </span><span class="caption-text">ita-database-setup-job における Values 一覧</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id43">
+<caption><span class="caption-number">表 158 </span><span class="caption-text">ita-database-setup-job における Values 一覧</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31%" />
 <col style="width: 31%" />
@@ -1779,8 +2698,8 @@
 </section>
 <section id="ita-web-server">
 <h3>ita-web-server<a class="headerlink" href="#ita-web-server" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id30">
-<caption><span class="caption-number">表 145 </span><span class="caption-text">ita-web-server における Values 一覧</span><a class="headerlink" href="#id30" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id44">
+<caption><span class="caption-number">表 159 </span><span class="caption-text">ita-web-server における Values 一覧</span><a class="headerlink" href="#id44" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31%" />
 <col style="width: 31%" />
@@ -1808,9 +2727,60 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-web-server.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>2.0.1</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-web-server.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-migration">
+<h3>ita-migration<a class="headerlink" href="#ita-migration" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id45">
+<caption><span class="caption-number">表 160 </span><span class="caption-text">ita-migration における Values 一覧</span><a class="headerlink" href="#id45" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 13%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-migration.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-migration.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-migration.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro/exastro-it-automation-migration</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-migration.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-migration.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">

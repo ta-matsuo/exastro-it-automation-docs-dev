@@ -164,6 +164,23 @@
 </pre></div>
 </div>
 </div>
+<div class="line-block">
+<div class="line">以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RS_ALV</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-legacy-vars-listup<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_APV</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-pioneer-vars-listup<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_CFI</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-cicd-for-iac<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_CR</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-conductor-regularly<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_COL</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-collector<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_EEI</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-excel-export-import<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_HS</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-hostgroup-split<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_MEI</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-menu-export-import<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_TCE</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-terraform-cli-execute<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_TCV</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-terraform-cli-vars-listup<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_TCEE</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-terraform-cloud-ep-execute<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+<span class="nv">RS_TCEV</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-terraform-cloud-ep-vars-listup<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
+</pre></div>
+</div>
 </li>
 <li><p>リバースプロキシの停止</p>
 <div class="line-block">
@@ -189,6 +206,23 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span clas
 kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-menu-create<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
+</div>
+<div class="line-block">
+<div class="line">以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-legacy-vars-listup<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-pioneer-vars-listup<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-cicd-for-iac<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-collector<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-conductor-regularly<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-excel-export-import<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-hostgroup-split<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-menu-export-import<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-terraform-cli-execute<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-terraform-cli-vars-listup<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-terraform-cloud-ep-execute<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-terraform-cloud-ep-vars-listup<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+</pre></div>
 </div>
 </li>
 <li><p>Pod 起動数の確認</p>
@@ -219,6 +253,24 @@ ita-by-conductor-synchronize<span class="w">             </span><span class="m">
 platform-auth<span class="w">                            </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
 </pre></div>
 </div>
+</div>
+<div class="line-block">
+<div class="line">以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に確認してください。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+ita-by-ansible-legacy-vars-listup<span class="w">        </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-ansible-pioneer-vars-listup<span class="w">       </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-cicd-for-iac<span class="w">                      </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-collector<span class="w">                         </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-conductor-regularly<span class="w">               </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-excel-export-import<span class="w">               </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-hostgroup-split<span class="w">                   </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-menu-export-import<span class="w">                </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-terraform-cli-execute<span class="w">             </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-terraform-cli-vars-listup<span class="w">         </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-terraform-cloud-ep-execute<span class="w">        </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+ita-by-terraform-cloud-ep-vars-listup<span class="w">    </span><span class="m">0</span>/0<span class="w">     </span><span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">           </span>3h41m
+</pre></div>
 </div>
 </li>
 </ol>
