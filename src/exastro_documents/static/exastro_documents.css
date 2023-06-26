@@ -597,7 +597,7 @@ input,
 textarea,
 select,
 option {
- line-height: 1.2rem;
+ line-height: 1.2;
  font-family: inherit;
  font-size: 100%;
 }
@@ -617,11 +617,9 @@ a:hover img {
 }
 
 #container {
- overflow: hidden;
  position: relative;
  min-height: 100%;
  padding-bottom: 24px;
- /* background-color: #F2F2F2; */
 }
 
 #overlay,
@@ -669,8 +667,7 @@ span.highlighted {
 /* Header */
 
 #header {
- position: fixed;
- left: 0;
+ position: sticky;
  top: 0;
  z-index: 1000;
  width: 100%;
@@ -783,9 +780,8 @@ span.highlighted {
 /* Toolbar */
 
 #toolbar {
- position: fixed;
+ position: sticky;
  top: 64px;
- left: 0;
  z-index: 1000;
  width: 100%;
  /* min-height: 32px; */
@@ -843,6 +839,7 @@ span.highlighted {
  display: inline-block;
  letter-spacing: normal;
  text-align: left;
+ margin: 2px 0;
 }
 
 #toolbarNavigation li::after {
@@ -861,10 +858,10 @@ span.highlighted {
  position: fixed;
  left: 0;
  top: 0;
- z-index: 30;
+ z-index: 1010;
  width: 320px;
  height: 100%;
- padding: 100px 0 24px;
+ padding: 98px 0 24px;
 }
 
 #sideMenu .divInner {
@@ -1184,7 +1181,6 @@ span.highlighted {
 #contents {
  display: block;
  margin-left: 320px;
- padding: 96px 0 0;
 }
 
 #contents::after {
@@ -2402,56 +2398,85 @@ span.highlighted {
  padding: 0;
 }
 
-#article #multiColumnIndex div.toctree-wrapper.compound>ul {
+#article #multiColumnIndex div.toctree-wrapper.compound > ul {
  display: flex;
  flex-wrap: wrap;
+ gap: 48px;
 }
 
-#article #multiColumnIndex .toctree-wrapper li:first-child {
- padding-top: 0;
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 {
+ margin: 0; padding: 0;
+ flex: 0 0 calc( 50% - 24px );
 }
-
-#article #multiColumnIndex li {
- margin: 24px 0;
-}
-
-#article #multiColumnIndex li>a {
- font-size: 1.1em
-}
-
-#article #multiColumnIndex li li {
- padding: 0;
- border: 1px solid #002b62;
- list-style: none;
- height: 100px;
- width: 200px;
- float: left;
- margin: 10px;
- border-radius: 0px;
-}
-
-#article #multiColumnIndex li li a {
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 > a {
+ display: block;
+ position: relative;
+ padding: 8px 16px 8px 36px;
+ border-bottom: 2px solid #7F95B1;
+ line-height: 1.5;
+ font-size: 1.7rem;
  color: #444;
- line-height: 1.7;
- font-weight: bold;
- height: 100%;
- width: 100%;
- display: flex;
- justify-content: center;
- align-items: center;
- padding: 10px;
- text-align: center;
 }
-
-#article #multiColumnIndex li li:hover {
- background-image: linear-gradient(90deg, #002B62, #6680A1);
- color: white;
- border: none;
- border-bottom: solid orange 11px;
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 > a:hover {
+ background-color: #F5F7F9;
+ color: #002B62;
 }
-
-#article #multiColumnIndex li li:hover a {
- color: white;
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 > a::before,
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 > a::after {
+ content: '';
+ display: block;
+ position: absolute;
+ left: 8px; top: 50%;
+ transform: translateY(-50%);
+ z-index: 0;
+ width: 18px; height: 18px;
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 > a::before {
+ background-color: #7F95B1;
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 > a:hover::before {
+ background-color: #002B62;
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 > a::after {
+ background-image: linear-gradient( transparent 7px, #FFF 7px, #FFF 11px, transparent 11px ),
+ linear-gradient( 90deg, transparent 7px, #FFF 7px, #FFF 11px, transparent 11px );
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 > a:hover::after {
+ background-image: linear-gradient( transparent 7px, #F5F7F9 7px, #F5F7F9 11px, transparent 11px ),
+ linear-gradient( 90deg, transparent 7px, #F5F7F9 7px, #F5F7F9 11px, transparent 11px );
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l2 {
+ margin: 0; padding: 0;
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l2 > a {
+ display: block;
+ position: relative;
+ padding: 8px 16px 8px 36px;
+ border-bottom: 1px solid rgba(0,0,0,.1);
+ font-weight: normal;
+ line-height: 1.5;
+ font-size: 1.4rem;
+ color: #666;
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l2 > a:hover {
+ background-color: #FAFAFA;
+ color: #002B62;
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l2 > a::after {
+ content: '';
+ position: absolute;
+ left: 8px; top: 50%;
+ transform: translateY(-50%);
+ width: 16px; height: 2px;
+ background-color: rgba(0,0,0,.2);
+}
+#article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l2 > a:hover::before {
+ content: '';
+ position: absolute;
+ left: 8px; top: 50%;
+ transform: translateY(-50%);
+ width: 16px; height: 2px;
+ background-color: #002B62;
 }
 
 #swaggerBody {
@@ -2702,12 +2727,17 @@ span.highlighted {
 
  #toolbar {
   top: 32px;
-  /* min-height: 28px; */
+  padding-left: 24px;
  }
 
- #sideMenu,
- #contents {
-  padding-top: 60px;
+ #sideMenu {
+  padding-top: 36px;
+ }
+ #menuButton {
+  padding-top: 8px;
+ }
+ #menuButton::after, #menuButton::before {
+  top: 8px;
  }
 
  #breadcrumbs {
@@ -2793,6 +2823,10 @@ span.highlighted {
  #index #article .body .section {
   padding: 48px 32px;
  }
+
+ #article #multiColumnIndex div.toctree-wrapper.compound li.toctree-l1 {
+  flex: 1 1 100%;
+ }
 }
 
 @media screen and (max-width: 600px) {
@@ -2814,7 +2848,6 @@ span.highlighted {
 
  #sideMenu,
  #contents {
-  padding-top: 120px;
  }
 
  #tableOfContents.on #tocButton::before {
