@@ -61,8 +61,8 @@
 
 | ITAで以下の設定がされている必要があります。
 
-- | パラメータシート定義・作成にて、パラメータシート（ホスト/オペレーションあり）が作成されている
-- | 収集項目値管理にて、作業実行結果（ソースファイル）とパラメータシートの項目と紐づけ設定がされている
+- | :menuselection:`パラメータシート定義・作成` にて、パラメータシート（ホスト/オペレーションあり）が作成されている
+- | :menuselection:`収集項目値管理` にて、作業実行結果（ソースファイル）とパラメータシートの項目と紐づけ設定がされている
 - | 収集対象機器（ホスト名）が、機器一覧に登録済み
 
 | 作業実行後に、以下の状態である場合、パラメータシートへの登録を実施します。
@@ -294,8 +294,8 @@
 メニュー/画面一覧
 -----------------
 
-#. | Ansible共通のメニュー
-   | Ansible共通のメニュー一覧を以下に記述します。
+#. | :menuselection:`Ansible共通` のメニュー
+   | :menuselection:`Ansible共通` のメニュー一覧を以下に記述します。
 
 .. list-table:: Ansible共通 メニュー/画面一覧
    :header-rows: 1
@@ -375,11 +375,11 @@
 -  作業フロー詳細と参照先
 
    #. | パラメータシート（ホスト/オペレーションあり）の作成
-      | パラメータシート作成のパラメータシート定義・作成の画面からのパラメータシートを作成します。
+      | :menuselection:`パラメータシート作成` の :menuselection:`パラメータシート定義・作成` の画面からのパラメータシートを作成します。
       | 詳細は「:doc:`../create_param/menu_creation`」を参照してください。
 
-   #. | 収集項目値管理の登録
-      | Ansible共通の収集項目値管理の画面から、ソースファイルとパラメータシートの項目の紐付情報の登録をします。
+   #. | :menuselection:`収集項目値管理` の登録
+      | :menuselection:`Ansible共通` の :menuselection:`収集項目値管理` の画面から、ソースファイルとパラメータシートの項目の紐付情報の登録をします。
       | 詳細は「:ref:`about_collected_item_value_list`」を参照してください。
 
    #. | 作業準備
@@ -395,7 +395,7 @@
       | 詳細は「:ref:`about_backyard`」を参照してください。
 
    #. | 収集状況確認
-      | 「Ansible-Legacy」/「Ansible-Pioneer」/「Ansible-LegacyRole」の作業管理の画面では、完了した作業の収集状態の確認、ログファイルがDL可能です。
+      | 「:menuselection:`Ansible-Legacy` 」/「:menuselection:`Ansible-Pioneer` 」/「:menuselection:`Ansible-LegacyRole` 」の :menuselection:`作業管理` の画面では、完了した作業の収集状態の確認、ログファイルがDL可能です。
       | 詳細は「:ref:`about_collect_status`」を参照してください。
 
 
@@ -408,7 +408,7 @@
 Ansible 共通
 ----------------------
 
-| 本節では、Ansible共通での操作について記載します。
+| 本節では、:menuselection:`Ansible共通` での操作について記載します。
 
 
 .. _about_collected_item_value_list:
@@ -416,7 +416,7 @@ Ansible 共通
 収集項目値管理
 ~~~~~~~~~~~~~~
 
-#. | [収集項目値管理]では、収集項目とパラメータシートの項目の紐付設定を行います。
+#. | :menuselection:`収集項目値管理` では、収集項目とパラメータシートの項目の紐付設定を行います。
 
    .. figure:: /images/ja/ansible_common/collect_flow/submenu_collected_item_value_list.png
       :width: 6.67391in
@@ -437,7 +437,7 @@ Ansible 共通
       登録、編集画面（収集項目値管理）
 
 
-#. | 収集項目値管理画面の項目一覧は以下のとおりです。
+#. | :menuselection:`収集項目値管理` 画面の項目一覧は以下のとおりです。
 
 .. list-table:: 登録画面項目一覧（収集項目値管理）：収集項目(From)
    :header-rows: 1
@@ -481,7 +481,7 @@ Ansible 共通
      - ※2
 
 .. note:: | ※1 ファイル名、変数、メンバ変数入力値の例
-          | ※2 同一の「パラメータシート(To)-メニューグループ：メニュー：項目」に対して、複数の「PREFIX(ファイル名)-変数名」を設定している場合、ファイル順に処理が実行されます。詳しくは「:ref:`about_execute_example`」参照。
+          | ※2 同一の「:menuselection:`パラメータシート(To)` - :menuselection:`メニューグループ：メニュー：項目` 」に対して、複数の「:menuselection:`PREFIX(ファイル名)` - :menuselection:`変数名` 」を設定している場合、ファイル順に処理が実行されます。詳しくは「:ref:`about_execute_example`」参照。
 
 
 | ■e.g.) 通常変数の構造の変数の場合
@@ -583,7 +583,7 @@ Ansible-Legacy、Ansible-Pioneer、Ansible-LegacyRole
 収集状況の確認
 ~~~~~~~~~~~~~~
 
-| 各メニューグループ（Ansible-Legacy/Ansible-Pioneer/Ansible-LegacyRole）の作業管理の画面では、完了した作業の収集状態の確認、ログファイルがDL可能です。
+| 各メニューグループ（:menuselection:`Ansible-Legacy` /:menuselection:`Ansible-Pioneer` /:menuselection:`Ansible-LegacyRole` ）の :menuselection:`作業管理` の画面では、完了した作業の収集状態の確認、ログファイルがDL可能です。
 
 .. figure:: /images/ja/ansible_common/collect_flow/submenu_execution_list_legacy.png
    :width: 6.67391in
@@ -663,9 +663,9 @@ Ansible-Legacy、Ansible-Pioneer、Ansible-LegacyRole
 
 
 .. note:: | ※ステータスの表記について
-          | 作業状態が完了でない場合、収集機能対象外の為、収集状況は更新されないため、空のままとなります。
+          | 作業状態が完了でない場合、収集機能対象外の為、:menuselection:`収集状況` は更新されないため、空のままとなります。
           | 作業状態が完了で、収集対象ファイルが存在しない場合、ステータスは収集済み、収集ログは空の状態となります。
-          | 設定項目値管理の不備により、登録処理が失敗した場合でも収集済み（通知あり）となります。詳細は、以下ログファイル出力内容例を参照してください。
+          | :menuselection:`設定項目値管理` の不備により、登録処理が失敗した場合でも収集済み（通知あり）となります。詳細は、以下ログファイル出力内容例を参照してください。
 
 | **ログファイル出力内容例**
 

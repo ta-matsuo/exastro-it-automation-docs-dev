@@ -97,7 +97,9 @@ $(window).on('load', function () {
 
       });
     } else {
-      targets[0].classList.add('current');
+      if ( targets[0] ) {
+       targets[0].classList.add('current');
+      }
     }
   });
 });

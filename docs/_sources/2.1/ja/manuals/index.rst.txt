@@ -24,6 +24,7 @@
    organization_management/index
    it_automation_base/index
    create_param/index
+   host_group/index
    ansible-driver/index
    terraform_driver/index
    export_import/index
