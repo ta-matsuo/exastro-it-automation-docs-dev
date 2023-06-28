@@ -142,7 +142,7 @@ ita-by-excel-export-import
 .. include:: ../../include/helm_option_ita-by-excel-export-import.rst
 
 ita-by-execinstance-dataautoclean
-----------------------------
+---------------------------------
 
 .. include:: ../../include/helm_option_ita-by-execinstance-dataautoclean.rst
 
@@ -162,27 +162,27 @@ ita-by-menu-create
 .. include:: ../../include/helm_option_ita-by-menu-create.rst
 
 ita-by-menu-export-import
-------------------
+-------------------------
 
 .. include:: ../../include/helm_option_ita-by-menu-export-import.rst
 
 ita-by-terraform-cli-execute
-------------------
+----------------------------
 
 .. include:: ../../include/helm_option_ita-by-terraform-cli-execute.rst
 
 ita-by-terraform-cli-vars-listup
-------------------
+--------------------------------
 
 .. include:: ../../include/helm_option_ita-by-terraform-cli-vars-listup.rst
 
 ita-by-terraform-cloud-ep-execute
-------------------
+---------------------------------
 
 .. include:: ../../include/helm_option_ita-by-terraform-cloud-ep-execute.rst
 
 ita-by-terraform-cloud-ep-vars-listup
-------------------
+-------------------------------------
 
 .. include:: ../../include/helm_option_ita-by-terraform-cloud-ep-vars-listup.rst
 
