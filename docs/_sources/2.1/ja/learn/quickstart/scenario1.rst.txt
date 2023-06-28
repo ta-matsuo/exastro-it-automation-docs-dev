@@ -71,7 +71,7 @@
 | ホスト名を管理するためのパラメータシートを作成します。
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、ホスト名を管理するために、「サーバー基本情報」というパラメータシートを作成します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/パラメータシート.png
+.. figure:: ../../../../images/learn/quickstart/scenario1/パラメータシート作成.png
    :width: 1200px
    :alt: パラメータシート作成
 
