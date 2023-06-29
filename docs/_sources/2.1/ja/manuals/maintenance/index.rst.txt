@@ -7,4 +7,6 @@
    :numbered: 3
 
    log_list
+   log_level
    backup_and_restore
+   file_autoclean
