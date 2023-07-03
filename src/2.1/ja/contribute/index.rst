@@ -10,8 +10,6 @@
 .. toctree::
    :maxdepth: 2
 
-   .. environment/check
-   .. development/check
    documentation/index
 
 .. raw:: html
