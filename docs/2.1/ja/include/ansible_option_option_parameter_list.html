@@ -148,22 +148,22 @@
 <div class="body" role="main">
 
   <div class="line-block">
-<div class="line">インターフェース情報とMovement一覧のオプションパラメータについて説明します。</div>
-<div class="line">ITAでは、以下の順番でansible-playbookのオプションパラメータを設定するので、単一の値しか許容していないパラメータを複数定義した場合、Movement一覧=&gt;オプションパラメータのパラメータが有効になります。</div>
+<div class="line"><span class="menuselection">Ansible共通 ‣ インターフェース情報</span> と <span class="menuselection">各モード ‣ Movement一覧</span> の <span class="menuselection">オプションパラメータ</span> について説明します。</div>
+<div class="line">ITAでは、以下の優先順位でオプションパラメータを設定します。単一の値しか許容していないパラメータを複数定義した場合、 <span class="menuselection">各モード ‣ Movement一覧</span> の <span class="menuselection">オプションパラメータ</span> が有効になります。</div>
 </div>
-<ul>
+<ol class="arabic">
 <li><div class="line-block">
-<div class="line">Ansible共通=&gt;インターフェース情報=&gt;オプションパラメータ</div>
+<div class="line"><span class="menuselection">各モード ‣ Movement一覧</span> の <span class="menuselection">オプションパラメータ</span></div>
 </div>
 </li>
 <li><div class="line-block">
-<div class="line">Movement一覧=&gt;オプションパラメータ</div>
+<div class="line"><span class="menuselection">Ansible共通 ‣ インターフェース情報</span> の <span class="menuselection">オプションパラメータ</span></div>
 </div>
 </li>
-</ul>
+</ol>
 <div class="line-block">
-<div class="line">▼実行エンジンがAnsible Coreの場合</div>
-<div class="line">　　実行エンジンがAnsible Coreの場合、ansible-playbookコマンドのオプションパラメータを入力します。</div>
+<div class="line">▼ <span class="menuselection">Ansible共通 ‣ インターフェース情報</span> の <span class="menuselection">実行エンジン</span> が「Ansible Core」の場合</div>
+<div class="line">　　ansible-playbookコマンドのオプションパラメータを入力します。</div>
 <div class="line">　　ansible-playbookコマンドのオプションパラメータの仕様については、以下のコマンドを実行して表示されたヘルプを参照してください。</div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ansible-playbook -h
@@ -171,17 +171,17 @@
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
-<div class="line">▼実行エンジンがAnsible Core以外の場合</div>
-<div class="line">　　以下の表は実行エンジンがAnsible Core以外の場合に、指定可能なオプションパラメータです。</div>
+<div class="line">▼ <span class="menuselection">Ansible共通 ‣ インターフェース情報</span> の <span class="menuselection">実行エンジン</span> が「Ansible Automation Controller」の場合に</div>
+<div class="line">　　入力可能なオプションパラメータは以下のとおりです。</div>
 <div class="line"><br /></div>
 </div>
 <table class="docutils align-left" id="id1">
-<caption><span class="caption-text">実行エンジンがAnsible Core以外の場合に指定可能なオプションパラメータ一覧</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-text">Ansible Automation Controllerの場合に指定可能なオプションパラメータ一覧</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 25%" />
-<col style="width: 42%" />
-<col style="width: 17%" />
+<col style="width: 14%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 36%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>オプションパラメータ</p></th>
@@ -205,7 +205,7 @@
 <div class="line">--verbose</div>
 </div>
 </td>
-<td><p>テンプレート 画面の[詳細]に指定した vの数を設定</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">詳細</span> に v の数が設定される。</p></td>
 <td><div class="line-block">
 <div class="line">・vの合計値を適用</div>
 <div class="line">・--verboseは、-vと同様</div>
@@ -224,7 +224,7 @@
 <div class="line">--forks=FORKS</div>
 </div>
 </td>
-<td><p>テンプレートの[フォーク]に指定したFORKSが設定される</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">フォーク</span> にFORKSの値が設定される。</p></td>
 <td><div class="line-block">
 <div class="line">・FORKSには数値を指定</div>
 <div class="line">・複数定義した場合、最後に定義したパラメータが有効</div>
@@ -243,7 +243,7 @@
 <div class="line">--limit=SUBSET</div>
 </div>
 </td>
-<td><p>テンプレートの[制限]に指定したSUBMITが設定される</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">制限</span> にSUBMITの値が設定される。</p></td>
 <td><div class="line-block">
 <div class="line">・SUBSET:機器一覧にあるホスト名</div>
 <div class="line">・複数定義した場合、最後に定義したパラメータが有効</div>
@@ -260,11 +260,13 @@
 <div class="line">--extra-vars=EXTRA_VARS</div>
 </div>
 </td>
-<td><p>テンプレートの[追加変数]に変数名:具体値の形式で設定される</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">追加変数</span> にEXTRA_VARSの値が設定される。</p></td>
 <td><div class="line-block">
 <div class="line">・EXTRA_VARS:変数名、具体値をjson形式またはyaml形式</div>
-<div class="line">例：json形式の場合 -extra-vars={&quot;VAR_1&quot;:&quot;directory&quot;,&quot;VAR_2&quot;:&quot;0755&quot;}</div>
-<div class="line">yaml形式の場合 -extra-vars=VAR_1:directorynVAR_2:0755</div>
+<div class="line">e.g.) json形式の場合</div>
+<div class="line">　-extra-vars={&quot;VAR_1&quot;:&quot;directory&quot;}</div>
+<div class="line">e.g.) yaml形式の場合</div>
+<div class="line">　-extra-vars=VAR_1:directory</div>
 <div class="line">・複数定義した場合、最後に定義したパラメータが有効</div>
 </div>
 </td>
@@ -279,7 +281,7 @@
 <div class="line">--tags=TAGS</div>
 </div>
 </td>
-<td><p>テンプレートの[ジョブタグ]に設定したTAGSが設定される</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">ジョブタグ</span> にTAGSの値が設定される。</p></td>
 <td><div class="line-block">
 <div class="line">・TAGS:タグ名</div>
 <div class="line">・複数個のパラメータを許容</div>
@@ -296,7 +298,7 @@
 <div class="line">--become</div>
 </div>
 </td>
-<td><p>テンプレートのオプション[権限昇格の有効化]がチェックされる</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">権限昇格の有効化</span> がチェックされる。</p></td>
 <td><p>・少なくとも1つ指定すればパラメータが有効</p></td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
@@ -309,21 +311,25 @@
 <div class="line">--diff</div>
 </div>
 </td>
-<td><p>テンプレートの[変更]の表示が有効化される</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">変更</span> の表示が有効化される。</p></td>
 <td><p>・少なくとも1つ指定すればパラメータが有効</p></td>
 </tr>
 <tr class="row-odd"><td><p>--skip-tags</p></td>
 <td><p>--skip-tags=SKIP_TAGS</p></td>
-<td><p>テンプレートの[スキップタグ]に設定したSKIP_TAGSが設定される</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">スキップタグ</span> にSKIP_TAGSの値が設定される。</p></td>
 <td><div class="line-block">
 <div class="line">・SKIP_TAGS:スキップタグ名</div>
 <div class="line">・複数個のパラメータを許容</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>--st art-at-task</p></td>
+<tr class="row-even"><td><p>--start-at-task</p></td>
 <td><p>--start-at-task=START_AT_TASK</p></td>
-<td><p>※Ansible Automation ControllerのWebUI には--start-at-taskの表示はない。</p></td>
+<td><div class="line-block">
+<div class="line">※Ansible Automation ControllerのWebUI には--start-at-taskの表示はありません。</div>
+<div class="line">ansible-playbookコマンドの--start-at-taskと同様の扱いになります。</div>
+</div>
+</td>
 <td><p>・複数定義した場合、最後に定義したパラメータが有効</p></td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
@@ -336,7 +342,7 @@
 <div class="line">--use_fact_cache</div>
 </div>
 </td>
-<td><p>テンプレートのオプション[ファクトキャッシュの有効化]がチェックされる</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">ファクトキャッシュの有効化</span> がチェックされる。</p></td>
 <td><p>・少なくとも1つ指定すればパラメータが有効</p></td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
@@ -349,7 +355,7 @@
 <div class="line">--allow_simultaneous</div>
 </div>
 </td>
-<td><p>テンプレートのオプション[同時実行ジョブの有効化]がチェックされる</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">同時実行ジョブの有効化</span> がチェックされる。</p></td>
 <td><p>・少なくとも1つ指定すればパラメータが有効</p></td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
@@ -358,11 +364,11 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">-jscジョブスライス数</div>
+<div class="line">-jsc ジョブスライス数</div>
 <div class="line">--job_slice_count=ジョブスライス数</div>
 </div>
 </td>
-<td><p>テンプレートの[ジョブスライス数]に指定したジョブスライス数が設定される</p></td>
+<td><p><span class="menuselection">テンプレート</span> の <span class="menuselection">ジョブスライス数</span> にジョブスライス数の値が設定される。</p></td>
 <td><div class="line-block">
 <div class="line">・ジョブスライス数には数値を指定</div>
 <div class="line">・複数定義した場合、最後に定義したパラメータが有効</div>
@@ -372,7 +378,7 @@
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">※Ansible Automation Controllerのオプションパラメータの仕様については、Ansible Automation Controllerユーザーガイドのジョブテンプレートの説明を参照してください。</div>
+<div class="line">※Ansible Automation Controllerのオプションパラメータの仕様については、Ansible Automation Controller公式マニュアルのユーザガイドのジョブテンプレートを参照してください。</div>
 </div>
 
 

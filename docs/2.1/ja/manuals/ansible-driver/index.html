@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="検索" href="../../../../search.html" />
-    <link rel="next" title="1. Ansible-driver" href="general_operations.html" />
+    <link rel="next" title="1. Ansible共通" href="ansible_common.html" />
     <link rel="prev" title="1. ホストグループ機能" href="../host_group/host_group.html" /> 
   </head>
 <body id="page" class="ja">
@@ -106,7 +106,7 @@
     <div id="toolbarNavigation">
       <ul>
         <li class="prev"><a href="../host_group/host_group.html" title="前のトピックへ"><span class="section-number">1. </span>ホストグループ機能</a></li>
-        <li class="next"><a href="general_operations.html" title="次のトピックへ"><span class="section-number">1. </span>Ansible-driver</a></li>
+        <li class="next"><a href="ansible_common.html" title="次のトピックへ"><span class="section-number">1. </span>Ansible共通</a></li>
       </ul>
     </div>
   </div>
@@ -131,8 +131,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../create_param/index.html">パラメータ管理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../host_group/index.html">ホストグループ</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Ansible ドライバ</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="general_operations.html">1. Ansible-driver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="collect.html">2. 収集機能</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ansible_common.html">1. Ansible共通</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ansible_legacy.html">2. Ansible-Legacy</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ansible_pioneer.html">3. Ansible-Pioneer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ansible_legacyrole.html">4. Ansible-LegacyRole</a></li>
+<li class="toctree-l5"><a class="reference internal" href="collect.html">5. 収集機能</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../terraform_driver/index.html">Terraform ドライバ</a></li>
@@ -178,25 +181,53 @@
 <h1>Ansible ドライバ<a class="headerlink" href="#ansible" title="この見出しへのパーマリンク">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="general_operations.html">1. Ansible-driver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="general_operations.html#id1">1.1. はじめに</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general_operations.html#id2">1.2. Ansible driver概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general_operations.html#general-operations-variable-handling-in-ansible-driver">1.3. Ansible driverでの変数取り扱い</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general_operations.html#id47">1.4. Ansible driver コンソールメニュー構成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general_operations.html#id49">1.5. Ansible driver利用手順</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general_operations.html#id50">1.6. Ansible driver機能・操作方法説明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general_operations.html#id70">1.7. 構築コード記述方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general_operations.html#id77">1.8. 付録</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_common.html">1. Ansible共通</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_common.html#id1">1.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_common.html#ansible-driver">1.2. Ansible driver概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_common.html#ansible-common-variable-handling">1.3. Ansible driverでの変数取り扱い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_common.html#id19">1.4. Ansible共通メニュー構成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_common.html#id21">1.5. メニュー操作方法説明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_common.html#id29">1.6. 付録</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="collect.html">2. 収集機能</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="collect.html#id2">2.1. はじめに</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collect.html#id3">2.2. 収集機能概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collect.html#id9">2.3. 収集機能でのディレクトリ、ファイル構造、変数取り扱い</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collect.html#id12">2.4. 収集機能 メニュー構成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collect.html#id14">2.5. 収集機能の利用手順</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collect.html#id17">2.6. 収集機能・操作方法説明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collect.html#id20">2.7. 付録</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_legacy.html">2. Ansible-Legacy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacy.html#id1">2.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacy.html#id2">2.2. Ansible-Legacy概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacy.html#id3">2.3. Ansible-Legacy メニュー構成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacy.html#id5">2.4. Ansible-Legacy利用手順</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacy.html#id7">2.5. Ansible-Legacy メニュー操作方法説明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacy.html#playbook-ansible-legacy">2.6. Playbook（Ansible-Legacy）の記述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacy.html#id17">2.7. 付録</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_pioneer.html">3. Ansible-Pioneer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_pioneer.html#id1">3.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_pioneer.html#id2">3.2. Ansible-Pioneer概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_pioneer.html#id3">3.3. Ansible-Pioneer メニュー構成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_pioneer.html#id5">3.4. Ansible-Pioneer利用手順</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_pioneer.html#id7">3.5. Ansible-Pioneer メニュー操作方法説明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_pioneer.html#ansible-pioneer-write-dialog-file-ansible-pioneer">3.6. 対話ファイル（Ansible-Pioneer）の記述方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_pioneer.html#id39">3.7. 付録</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ansible_legacyrole.html">4. Ansible-LegacyRole</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacyrole.html#id1">4.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacyrole.html#id2">4.2. Ansible-LegacyRole概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacyrole.html#id3">4.3. Ansible-LegacyRole メニュー構成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacyrole.html#id5">4.4. Ansible-LegacyRole利用手順</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacyrole.html#id7">4.5. Ansible-LegacyRole メニュー操作方法説明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacyrole.html#id19">4.6. 構築コード記述方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansible_legacyrole.html#id24">4.7. 付録</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collect.html">5. 収集機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="collect.html#id2">5.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect.html#id3">5.2. 収集機能概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect.html#id9">5.3. 収集機能でのディレクトリ、ファイル構造、変数取り扱い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect.html#id12">5.4. 収集機能 メニュー構成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect.html#id14">5.5. 収集機能の利用手順</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect.html#id17">5.6. 収集機能・操作方法説明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect.html#id20">5.7. 付録</a></li>
 </ul>
 </li>
 </ul>

@@ -6,5 +6,8 @@ Ansible ドライバ
    :maxdepth: 2
    :numbered: 3
 
-   general_operations
+   ansible_common
+   ansible_legacy
+   ansible_pioneer
+   ansible_legacyrole
    collect
