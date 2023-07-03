@@ -28,6 +28,7 @@
    ansible-driver/index
    terraform_driver/index
    export_import/index
+   cicd_for_iac/index
    maintenance/index
 
 .. raw:: html
