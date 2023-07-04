@@ -435,7 +435,7 @@
 
       サブメニュー画面\(比較設定\)
 
-#. | :menuselection:`一覧 --> 登録 or 編集` より、 :menuselection:`比較設定`の登録を行います。
+#. | :menuselection:`一覧 --> 登録 or 編集` より、 :menuselection:`比較設定` の登録を行います。
 
    .. figure:: /images/ja/menu_creation/comparison_function/edit_compare_list.png
       :width: 6.67391in
@@ -462,7 +462,7 @@
      - | 比較名称を入力します。
      - | ○
      - | 手動入力
-     - |
+     - | 最大長255バイトです。
    * - | 対象パラメータシート1
      - | 対象のパラメータシートを選択します。
      - | ○
@@ -540,7 +540,7 @@
        | 比較結果で出力されるの項目名となります。
      - | ○
      - | 手動入力
-     - |
+     - | 最大長255バイトです。
    * - | 対象項目1
      - | 対象項目を選択します。
      - | ○
@@ -556,7 +556,7 @@
        | 比較結果にて昇順で表示されます。
      - | ○
      - |
-     - |
+     - | 入力範囲は0～2,147,483,647です。
    * - | 備考
      - | 自由記述欄です。
      - | -
@@ -564,9 +564,9 @@
      - |
 
 .. note::
-          | ※1  :menuselection:`比較設定`にて :menuselection:`詳細設定フラグ` が「True」設定しているものがリストに表示されます。
-          | ※2  :menuselection:`比較設定`にて登録した :menuselection:`対象パラメータシート1` にある項目を選択して下さい。
-          | ※3  :menuselection:`比較設定`にて登録した :menuselection:`対象パラメータシート2` にある項目を選択して下さい。
+          | ※1  :menuselection:`比較設定` にて :menuselection:`詳細設定フラグ` が「True」設定しているものがリストに表示されます。
+          | ※2  :menuselection:`比較設定` にて登録した :menuselection:`対象パラメータシート1` にある項目を選択して下さい。
+          | ※3  :menuselection:`比較設定` にて登録した :menuselection:`対象パラメータシート2` にある項目を選択して下さい。
 
 .. _about_compare_execute:
 

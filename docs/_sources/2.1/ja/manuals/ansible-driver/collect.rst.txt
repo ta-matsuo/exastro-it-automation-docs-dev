@@ -18,7 +18,7 @@
 | 収集機能とは、ITAで実施した、作業実行結果（規定のフォーマットで出力されたソースファイル）を元に、パラメータシートへ値を自動で登録する機能です。
 | 本機能は、Ansible-Driverを対象としています。
 | Ansibleの詳細情報については、「Ansibleの製品マニュアル」を参照してください。
-| Ansible-Driverの詳細については、「:doc:`./general_operations`」を参照してください。
+| Ansible-Driverの詳細については、「:doc:`./index`」を参照してください。
 | パラメータシートの詳細については、「:doc:`../create_param/menu_creation`」を参照してください。
 
 収集機能概要図
@@ -362,7 +362,7 @@
 ----------
 
 | 収集機能の実施における標準的なフローは以下のとおりです。
-| ITA Ansible-Driverの利用方法は、「:doc:`./general_operations`」を参照してください。
+| ITA Ansible-Driverの利用方法は、「:doc:`./index`」を参照してください。
 | ITA 基本コンソールの利用方法は、「:doc:`../it_automation_base/basic_console`」を参照してください。
 
 
@@ -384,11 +384,11 @@
 
    #. | 作業準備
       | 作業実行のための準備を行います。
-      | 詳細は、「:doc:`./general_operations`」 、「:doc:`../it_automation_base/conductor`」を参照してください。
+      | 詳細は、「:doc:`./index`」 、「:doc:`../it_automation_base/conductor`」を参照してください。
 
    #. | 作業実行
       | 実行日時、投入オペレーション、Movement、ワークフローを選択し処理の実行を指示します。
-      | 実行について「:doc:`./general_operations`」 、「:doc:`../it_automation_base/conductor`」を参照してください。
+      | 実行について「:doc:`./index`」 、「:doc:`../it_automation_base/conductor`」を参照してください。
 
    #. | 収集機能実行
       | 作業実行が完了した作業Noを収集機能の対象として、パラメータシートへの登録処理を実施します。
@@ -758,7 +758,7 @@ BackYardコンテンツ
 
 
 | なお、パラメータシートへのデータ登録のタイミングはBackyardの実行プロセスの周期に依存します。
-| 対象の作業結果については、「:doc:`./general_operations`」を参照してください。
+| 対象の作業結果については、「:doc:`./index`」を参照してください。
 
 
 付録
@@ -831,7 +831,7 @@ BackYardコンテンツ
 .. note::
          | ※　makeYml_Ansible.yml実行して、収集対象のソースファイル(yaml)を生成する場合、gather_factsを有効にする必要があります。
          | 「Ansible-Legacy」-「Movement一覧」編集時、「ヘッダーセクション」に以下を記載してください。
-         | 設定変更については、「:doc:`./general_operations`」を参照してください。
+         | 設定変更については、「:doc:`./index`」を参照してください。
 
 
 .. code-block:: yaml

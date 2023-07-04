@@ -1008,7 +1008,7 @@ CSVテーブル(使用禁止)
 
 
 .. note::
-         | OK： 「:doc:`../../manuals/ansible-driver/general_operations`」
+         | OK： 「:doc:`../../manuals/ansible-driver/index`」
          | NG： 「:doc:`Ansibleドライバのマニュアルはこちら<../../manuals/ansible-driver/general_operations>`」
 
          | OK：  「:ref:`manual_syntax_word`」
