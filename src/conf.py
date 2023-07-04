@@ -71,7 +71,7 @@ html_theme_path = ['.']
 html_static_path = ['_static']
 
 html_css_files = [
-    'exastro_documents.css?v=3',
+    'exastro_documents.css?v=4',
     'swagger/swagger-ui.css',
 ]
 
