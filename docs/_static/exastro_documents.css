@@ -857,11 +857,11 @@ span.highlighted {
 #sideMenu {
  position: fixed;
  left: 0;
- top: 0;
+ top: 98px;
  z-index: 1010;
  width: 320px;
  height: 100%;
- padding: 98px 0 24px;
+ padding: 0px 0 24px;
 }
 
 #sideMenu .divInner {
