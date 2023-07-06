@@ -13,7 +13,7 @@ Exastro IT Automation Admin API
      $('#article').attr('id', 'swaggerBody');
 
      $api_urls = [
-       {url: "https://raw.githubusercontent.com/exastro-suite/exastro-it-automation/2.0/ita_root/ita_api_admin/openapi.yaml", name: "2.0"}
+       {url: "https://raw.githubusercontent.com/exastro-suite/exastro-it-automation/2.1/ita_root/ita_api_admin/openapi.yaml", name: "2.1"}
      ]
 
      // Begin Swagger UI call region
