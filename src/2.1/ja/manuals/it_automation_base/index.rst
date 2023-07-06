@@ -7,6 +7,7 @@
    :numbered: 3
 
    general
+   dashboard
    common_operation
    management_console
    basic_console
