@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exastro_documents.css?v=3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exastro_documents.css?v=4" />
     <link rel="stylesheet" type="text/css" href="../../../_static/swagger/swagger-ui.css" />
     
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
@@ -185,23 +185,35 @@
 </thead>
 <tbody>
 <tr class="row-even"><td colspan="2"><p>ホスト</p></td>
-<td><p>Ansible Automation Controllerサーバのホスト名（またはIPアドレス）を入力します。</p>
-<p>HTTPS通信の場合はホスト名が推奨です。</p>
-</td>
+<td><p>Ansible Automation Controllerサーバのホスト名（またはIPアドレス）を入力します。</p></td>
 <td><p>○</p></td>
 <td><p>手動入力</p></td>
 <td><p>最大長255バイト</p></td>
 </tr>
 <tr class="row-odd"><td colspan="2"><p>認証方式</p></td>
 <td><p>Ansible Automation Controllerサーバへファイル転送(scp)で接続する際の認証方式を選択します。</p>
-<p>●パスワード認証</p>
-<p>ログインユーザとパスワードの入力が必須です。</p>
-<p>●鍵認証（パスフレーズなし）</p>
-<p>ssh秘密鍵ファイル(id_ras)のアップロードが必須です。</p>
-<p>●鍵認証（パスフレーズあり）</p>
-<p>ssh秘密鍵ファイル(id_ras)のアップロードと、パスフレーズの入力が必須です。</p>
-<p>●鍵認証（鍵交換済み）※</p>
-<p>ssh秘密鍵ファイル(id_ras)のアップロードは必要ありません。</p>
+<ul>
+<li><div class="line-block">
+<div class="line">パスワード認証</div>
+<div class="line">ログインユーザとパスワードの入力が必須です。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">鍵認証（パスフレーズなし）</div>
+<div class="line">ssh秘密鍵ファイル(id_ras)のアップロードが必須です。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">鍵認証（パスフレーズあり）</div>
+<div class="line">ssh秘密鍵ファイル(id_ras)のアップロードと、パスフレーズの入力が必須です。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">鍵認証（鍵交換済み）※</div>
+<div class="line">ssh秘密鍵ファイル(id_ras)のアップロードは必要ありません。</div>
+</div>
+</li>
+</ul>
 </td>
 <td><p>○</p></td>
 <td><p>手動入力</p></td>
@@ -209,7 +221,7 @@
 </tr>
 <tr class="row-even"><td colspan="2"><p>ユーザー</p></td>
 <td><p>Ansible Automation Controllerサーバへファイル転送(scp)で接続する際のログインユーザを入力します。</p>
-<p>ログインユーザは、Ansible Automation Controllerインストール時に生成されるawxユーザーにパスワードを設定し、使用することを強く推奨します。</p>
+<p>ログインユーザは、Ansible Automation Controllerインストール時に生成されるawxユーザーにパスワードを設定し、使用してください。</p>
 </td>
 <td><p>○</p></td>
 <td><p>手動入力</p></td>
@@ -237,10 +249,10 @@
 <td><p>最大長255バイト</p></td>
 </tr>
 <tr class="row-even"><td colspan="2"><p>isolatedTower</p></td>
-<td><p>クラスタ構成で構築されている場合で、対象ノードがAnsibleTowerのisolatednode/Ansible Automation Controllerのexecution node の場合、「●」を選択します。</p></td>
+<td><p>クラスタ構成で構築されている場合で、対象ノードがAnsible Automation Controllerのexecution node の場合、「True」を選択します。</p></td>
 <td><p>ー</p></td>
 <td><p>リスト選択</p></td>
-<td></td>
+<td><p>説明欄記載のとおり。</p></td>
 </tr>
 <tr class="row-odd"><td colspan="2"><p>備考</p></td>
 <td><p>自由記述欄です。</p></td>
