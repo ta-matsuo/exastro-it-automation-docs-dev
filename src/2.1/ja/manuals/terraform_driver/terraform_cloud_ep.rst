@@ -1,14 +1,11 @@
-.. _terraform_cloud_ep_top:
-
 =========================
 Terraform Cloud/EP driver
 =========================
 
 はじめに
 ========
-
-| 本書では、Exastro IT Automation（以下、ITAとも記載する）の Terraform Cloud/EP driver 機能および操作方法について説明します。
-| Terraform や Terraform driverの概要および、Terraform CLI driver と共通の機能については「:ref:`terraform_common_top`」を参照してください。
+| 本書では、Terraform Cloud/EP driver 機能および操作方法について説明します。
+| Terraform や Terraform driverの概要および、Terraform CLI driver と共通の機能については「:doc:`./terraform_common`」を参照してください。
 
 コンソールメニュー構成
 ======================
