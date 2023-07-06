@@ -128,4 +128,4 @@ Terraform Cloud/EP
     ユーザトークン発行
 
 | 発行されたユーザトークンは Exastro IT Automation システムに登録する必要があります。
-| マニュアル「:ref:`terraform_cloud_ep_top` -> :ref:`terraform_cloud_ep_interface_information`」 を参照し、登録を行ってください。
+| マニュアル「:doc:`../../manuals/terraform_driver/terraform_cloud_ep` -> :ref:`terraform_cloud_ep_interface_information`」 を参照し、登録を行ってください。

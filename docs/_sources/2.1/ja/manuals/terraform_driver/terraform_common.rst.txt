@@ -1,5 +1,3 @@
-.. _terraform_common_top:
-
 =====================
 Terraform driver 共通
 =====================
@@ -7,7 +5,7 @@ Terraform driver 共通
 はじめに
 ========
 
-| 本書では、Exastro IT Automation（以下、ITAとも記載する）の「:ref:`terraform_cloud_ep_top`」「:ref:`terraform_cli_top`」（以下、Terraform driver）における共通の機能について説明します。
+| 本書では、「:doc:`./terraform_cloud_ep`」「:doc:`./terraform_cli`」（以下、Terraform driver）における共通の機能について説明します。
 
 概要
 ====
@@ -39,11 +37,11 @@ Terrform driverについて
 
 -  | **Terraform Cloud/EP driver**
    | ITAで登録した Terraform Cloud もしくは Terraform Enterprise に対し、Organizationの作成、Workspaceの作成、作業の実行（Plan/ PolicyCheck / Apply）および作業ログの取得を行うことができます。
-   | 操作方法等については「:ref:`terraform_cloud_ep_top`」を参照してください。
+   | 操作方法等については「:doc:`./terraform_cloud_ep`」を参照してください。
 
 -  | **Terraform CLI driver**
    | ITAと同一の環境内にインストールしたTerraformに対し、作業の実行（Plan/ Apply）および作業ログの取得を行うことができます。
-   | 操作方法等については「:ref:`terraform_cli_top`」を参照してください。
+   | 操作方法等については「:doc:`./terraform_cli`」を参照してください。
 
 .. _terraform_common_variable_handling:
 
@@ -55,7 +53,7 @@ Terrform driverについて
 
 | Terraform driverでは、Module中の変数の具体値をITAの設定画面から設定することができます。
 
-| ※設定方法の詳細は、「:ref:`terraform_cloud_ep_top` -> :ref:`terraform_cloud_ep_substitution_value_auto_registration_setting`」「:ref:`terraform_cli_top` -> :ref:`terraform_cli_substitution_value_auto_registration_setting`」を参照してください。
+| ※設定方法の詳細は、「:doc:`./terraform_cloud_ep` -> :ref:`terraform_cloud_ep_substitution_value_auto_registration_setting`」「:doc:`./terraform_cli` -> :ref:`terraform_cli_substitution_value_auto_registration_setting`」を参照してください。
 | Moduleファイルの中のVariableブロックに定義した対象を変数として扱えます。
 
 +----------+----------------------------------------------------------+
@@ -93,7 +91,7 @@ Terrform driverについて
 --------------------------
 
 | ITAにアップロードされたModule素材から変数を抜出して具体値を登録できます。
-| 抜出した変数の具体値は「:ref:`terraform_cloud_ep_top` -> :ref:`terraform_cloud_ep_substitution_value_auto_registration_setting`」「:ref:`terraform_cli_top` -> :ref:`terraform_cli_substitution_value_auto_registration_setting`」にて、パラメータシートと連携させることで具体値を登録します。
+| 抜出した変数の具体値は「:doc:`./terraform_cloud_ep` -> :ref:`terraform_cloud_ep_substitution_value_auto_registration_setting`」「:doc:`./terraform_cli` -> :ref:`terraform_cli_substitution_value_auto_registration_setting`」にて、パラメータシートと連携させることで具体値を登録します。
 
 | Terraform Cloud/EP driverでは、登録された変数と具体値は作業実行時に連携先TerraformのWorkspaceで管理するVariablesに対し、「変数名」が「Key」、「具体値」が「Value」として登録されます。
 | Terraform CLI driverでは、登録された変数と具体値は、作業実行時に生成されるterraform.tfvarsファイルに「変数名」が「Key」、「具体値」が「Value」として記載され、作業実行で使用されます。
@@ -193,7 +191,7 @@ Terrform driverについて
    | 変数のタイプがtupleの場合、tuple内に定義した変数を先頭から[0],[1],[2]…と採番してメンバー変数となります。
 
    | 変数のタイプが変数ネスト管理メニューの登録対象の場合、最大繰返数をもとに[0],[1],[2]…と採番してメンバー変数となります。
-   | 変数ネストに関しては「:ref:`terraform_cloud_ep_top` -> :ref:`terraform_cloud_ep_nested_variable`」「:ref:`terraform_cli_top` -> :ref:`terraform_cli_nested_variable`」を参照してください。
+   | 変数ネストに関しては「:doc:`./terraform_cloud_ep` -> :ref:`terraform_cloud_ep_nested_variable`」「:doc:`./terraform_cli` -> :ref:`terraform_cli_nested_variable`」を参照してください。
 
       -  | **例: 変数タイプがobjectの場合**
    
@@ -348,7 +346,7 @@ Terrform driverについて
 
 -  | **※2 …代入順序対象**
    | 変数に複数具体値を設定する際の先頭から代入する順序です。
-   | 変数または階層構造の変数の最下層の変数のタイプがlist,setの場合、「:ref:`terraform_cloud_ep_top` -> :ref:`terraform_cloud_ep_substitution_value_auto_registration_setting`」「:ref:`terraform_cli_top` -> :ref:`terraform_cli_substitution_value_auto_registration_setting`」にて設定可能です。
+   | 変数または階層構造の変数の最下層の変数のタイプがlist,setの場合、「:doc:`./terraform_cloud_ep` -> :ref:`terraform_cloud_ep_substitution_value_auto_registration_setting`」「:doc:`./terraform_cli` -> :ref:`terraform_cli_substitution_value_auto_registration_setting`」にて設定可能です。
 
       -  | **例: 変数タイプがlistの場合**
 

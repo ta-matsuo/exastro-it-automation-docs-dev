@@ -674,9 +674,9 @@ Movement-Playbook紐付
 
       .. figure:: /images/ja/ansible_common/menu_definition_and_create/menu_create.png
          :width: 800px
-         :alt: メニュー定義・作成画面
+         :alt: パラメータシート定義・作成画面
 
-         メニュー定義・作成画面
+         パラメータシート定義・作成画面
 
       .. table:: サンプルパラメータシートの登録内容
          :align: left
