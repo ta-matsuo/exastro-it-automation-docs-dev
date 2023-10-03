@@ -247,7 +247,7 @@ ConductorインスタンスID
 
    * - 項目名
      - 変数名
-   * - オペレーション
+   * - ConductorインスタンスID
      - __conductor_id__
 
 | __conductor_id__はConductor実行の場合に使用可能な変数です。

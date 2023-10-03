@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>3. アンインストール &#8212; Documentation  ドキュメント</title>
+    <title>4. アンインストール &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exastro_documents.css?v=4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exastro_documents.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/swagger/swagger-ui.css" />
     
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
@@ -28,14 +28,14 @@
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/translations.js"></script>
     <script src="../../../_static/jquery-3.6.3.min.js"></script>
-    <script src="../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../_static/exastro_documents.js"></script>
     <script src="../../../_static/swagger/swagger-ui-bundle.js"></script>
     <script src="../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="Learn" href="../learn/index.html" />
-    <link rel="prev" title="2. アップグレード" href="upgrade.html" /> 
+    <link rel="prev" title="3. アップグレード" href="upgrade.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -105,7 +105,7 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="upgrade.html" title="前のトピックへ"><span class="section-number">2. </span>アップグレード</a></li>
+        <li class="prev"><a href="upgrade.html" title="前のトピックへ"><span class="section-number">3. </span>アップグレード</a></li>
         <li class="next"><a href="../learn/index.html" title="次のトピックへ">Learn</a></li>
       </ul>
     </div>
@@ -123,13 +123,14 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../index.html#id1">日本語</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">構成・構築ガイド</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">インストール</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="helm_on_kubernetes.html">1. Helm chart (Kubernetes)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="upgrade.html">2. アップグレード</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3. アンインストール</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id2">3.1. 目的</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id3">3.2. 前提条件</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id4">3.3. アンインストールの準備</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id5">3.4. アンインストール</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docker_compose.html">1. Docker Compose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="helm_on_kubernetes.html">2. Helm chart (Kubernetes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="upgrade.html">3. アップグレード</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4. アンインストール</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id2">4.1. 目的</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id3">4.2. 前提条件</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id4">4.3. アンインストールの準備</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id5">4.4. アンインストール</a></li>
 </ul>
 </li>
 </ul>
@@ -155,14 +156,14 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">3. アンインストール</a><ul>
-<li><a class="reference internal" href="#id2">3.1. 目的</a></li>
-<li><a class="reference internal" href="#id3">3.2. 前提条件</a></li>
-<li><a class="reference internal" href="#id4">3.3. アンインストールの準備</a></li>
-<li><a class="reference internal" href="#id5">3.4. アンインストール</a><ul>
-<li><a class="reference internal" href="#id7">3.4.1. アンインストール実施</a></li>
-<li><a class="reference internal" href="#id8">3.4.2. データベースのデータの削除</a></li>
-<li><a class="reference internal" href="#id9">3.4.3. ファイルデータの削除</a></li>
+<li><a class="reference internal" href="#">4. アンインストール</a><ul>
+<li><a class="reference internal" href="#id2">4.1. 目的</a></li>
+<li><a class="reference internal" href="#id3">4.2. 前提条件</a></li>
+<li><a class="reference internal" href="#id4">4.3. アンインストールの準備</a></li>
+<li><a class="reference internal" href="#id5">4.4. アンインストール</a><ul>
+<li><a class="reference internal" href="#id6">4.4.1. アンインストール実施</a></li>
+<li><a class="reference internal" href="#id7">4.4.2. データベースのデータの削除</a></li>
+<li><a class="reference internal" href="#id8">4.4.3. ファイルデータの削除</a></li>
 </ul>
 </li>
 </ul>
@@ -181,7 +182,7 @@
     <li><a href="../../index.html">Exastro IT Automation Documentation 2.1</a></li>
     <li><a href="index.html">インストール</a></li>
     
-    <li><span class="section-number">3. </span>アンインストール</li>
+    <li><span class="section-number">4. </span>アンインストール</li>
   </ul>
 </div>
 
@@ -190,23 +191,23 @@
 <div class="body" role="main">
 
   <section id="id1">
-<h1><span class="section-number">3. </span>アンインストール<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">4. </span>アンインストール<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id2">
-<h2><span class="section-number">3.1. </span>目的<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.1. </span>目的<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本書では、Exastro システムのアンインストール方法について紹介します。</div>
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">3.2. </span>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.2. </span>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
 <ul>
 <li><p>Exastro システムが導入済みであること</p></li>
 <li><p>クライアント要件</p>
 <div class="line-block">
 <div class="line">動作確認が取れているクライアントアプリケーションのバージョンは下記のとおりです。</div>
 </div>
-<table class="docutils align-default" id="id10">
-<caption><span class="caption-number">表 3.16 </span><span class="caption-text">クライアント要件</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-number">表 4.26 </span><span class="caption-text">クライアント要件</span><a class="headerlink" href="#id9" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -229,7 +230,7 @@
 </ul>
 </section>
 <section id="id4">
-<h2><span class="section-number">3.3. </span>アンインストールの準備<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.3. </span>アンインストールの準備<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -238,39 +239,39 @@
 </div>
 </section>
 <section id="id5">
-<span id="id6"></span><h2><span class="section-number">3.4. </span>アンインストール<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
-<section id="id7">
-<h3><span class="section-number">3.4.1. </span>アンインストール実施<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<h2><span class="section-number">4.4. </span>アンインストール<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id6">
+<h3><span class="section-number">4.4.1. </span>アンインストール実施<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">アンインストールを実施します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-number">リスト 3.38 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-number">リスト 4.1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id10" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>uninstall<span class="w"> </span>exastro<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-number">リスト 3.39 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-number">リスト 4.2 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>release<span class="w"> </span><span class="s2">&quot;exastro&quot;</span><span class="w"> </span>uninstalled
 </pre></div>
 </div>
 </div>
 </section>
-<section id="id8">
-<h3><span class="section-number">3.4.2. </span>データベースのデータの削除<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id7">
+<h3><span class="section-number">4.4.2. </span>データベースのデータの削除<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。</div>
 <div class="line">マネージドデータベースを含む外部データベースを利用している場合は、環境にあったデータ削除方法を実施してください。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-number">リスト 3.40 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-number">リスト 4.3 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pv<span class="w"> </span>pv-database
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-number">リスト 3.41 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-number">リスト 4.4 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolume<span class="w"> </span><span class="s2">&quot;pv-database&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
@@ -279,8 +280,8 @@
 <div class="line">Kubernetes のコントロールノードにログインし、データを削除します。</div>
 <div class="line">下記コマンドは、Persistent Volume 作成時の hostPath に <code class="file docutils literal notranslate"><span class="pre">/var/data/exastro-suite/exastro-platform/database</span></code> を指定した場合の例です。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-number">リスト 3.42 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-number">リスト 4.5 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永続データがあるコントロールノードにログイン</span>
 ssh<span class="w"> </span>user@contol.node.example
 
@@ -290,20 +291,20 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 </div>
 </div>
 </section>
-<section id="id9">
-<h3><span class="section-number">3.4.3. </span>ファイルデータの削除<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id8">
+<h3><span class="section-number">4.4.3. </span>ファイルデータの削除<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。</div>
 <div class="line">マネージドストレージを含む外部ストレージを利用している場合は、環境にあったデータ削除方法を実施してください。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-number">リスト 3.43 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-number">リスト 4.6 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pv<span class="w"> </span>pv-ita-common
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-number">リスト 3.44 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-number">リスト 4.7 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolume<span class="w"> </span><span class="s2">&quot;pv-ita-common&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
@@ -312,8 +313,8 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 <div class="line">Kubernetes のコントロールノードにログインし、データを削除します。</div>
 <div class="line">下記コマンドは、Persistent Volume 作成時の hostPath に <code class="file docutils literal notranslate"><span class="pre">/var/data/exastro-suite/exastro-it-automation/ita-common</span></code> を指定した場合の例です。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-number">リスト 3.45 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-number">リスト 4.8 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永続データがあるコントロールノードにログイン</span>
 ssh<span class="w"> </span>user@contol.node.example
 
@@ -332,7 +333,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="upgrade.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">2. </span>アップグレード</a></li>
+    <li class="prev"><a href="upgrade.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">3. </span>アップグレード</a></li>
     <li class="next"><a href="../learn/index.html" title="次のトピックへ"><span>次のトピックへ</span>Learn</a></li>
   </ul>
 </div>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=4" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
     
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
@@ -28,7 +28,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/translations.js"></script>
     <script src="../../../../_static/jquery-3.6.3.min.js"></script>
-    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/exastro_documents.js"></script>
     <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
     <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
@@ -164,8 +164,8 @@
 <li><a class="reference internal" href="#">2. ログレベル</a><ul>
 <li><a class="reference internal" href="#id2">2.1. はじめに</a></li>
 <li><a class="reference internal" href="#id3">2.2. ログレベルとは</a><ul>
-<li><a class="reference internal" href="#ita-log-level-list">2.2.1. ログレベルの設定値と出力について</a></li>
-<li><a class="reference internal" href="#ita-service-list">2.2.2. ログレベル変更可能なサービス一覧</a></li>
+<li><a class="reference internal" href="#ita-log-level-list-v2-1">2.2.1. ログレベルの設定値と出力について</a></li>
+<li><a class="reference internal" href="#ita-service-list-v2-1">2.2.2. ログレベル変更可能なサービス一覧</a></li>
 <li><a class="reference internal" href="#id6">2.2.3. ログレベルの設定手順</a></li>
 </ul>
 </li>
@@ -222,10 +222,10 @@
 <div class="line">指定したサービスに対して、ログレベルを変更することができます。</div>
 <div class="line">サービスのログレベルは、全オーガナイゼーション、ワークスペースで共通です。</div>
 </div>
-<section id="ita-log-level-list">
-<span id="id4"></span><h3><span class="section-number">2.2.1. </span>ログレベルの設定値と出力について<a class="headerlink" href="#ita-log-level-list" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="ita-log-level-list-v2-1">
+<span id="id4"></span><h3><span class="section-number">2.2.1. </span>ログレベルの設定値と出力について<a class="headerlink" href="#ita-log-level-list-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
 <table class="docutils align-left" id="id15">
-<caption><span class="caption-number">表 2.130 </span><span class="caption-text">ログレベルの設定値と出力について</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.147 </span><span class="caption-text">ログレベルの設定値と出力について</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>サービスのログレベルの設定値</p></th>
 <th class="head"><p>ログに出力される対象</p></th>
@@ -254,13 +254,13 @@
 <p>インストール直後は、INFOで設定されています。</p>
 </div>
 </section>
-<section id="ita-service-list">
-<span id="id5"></span><h3><span class="section-number">2.2.2. </span>ログレベル変更可能なサービス一覧<a class="headerlink" href="#ita-service-list" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="ita-service-list-v2-1">
+<span id="id5"></span><h3><span class="section-number">2.2.2. </span>ログレベル変更可能なサービス一覧<a class="headerlink" href="#ita-service-list-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">ログレベル変更可能なサービスの一覧は、以下です。</div>
 </div>
 <table class="docutils align-left" id="id16">
-<caption><span class="caption-number">表 2.131 </span><span class="caption-text">サービス一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.148 </span><span class="caption-text">サービス一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>サービス名</p></th>
 <th class="head"><p>機能概要</p></th>
@@ -503,7 +503,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <li><p>変更するログレベルのjsonファイルを設定</p>
 <div class="line-block">
 <div class="line">取得した toolsフォルダ配下にある、 <cite>update-ita-loglevel.sample.json</cite> を コピーして使用してください。</div>
-<div class="line"><a class="reference internal" href="#ita-service-list"><span class="std std-ref">ログレベル変更可能なサービス一覧</span></a>  または、<a class="reference internal" href="#get-log-level"><span class="std std-ref">ログレベルの確認</span></a> で確認した対象から、変更するサービス名、ログレベルを指定してください。</div>
+<div class="line"><a class="reference internal" href="#ita-service-list-v2-1"><span class="std std-ref">ログレベル変更可能なサービス一覧</span></a>  または、<a class="reference internal" href="#get-log-level"><span class="std std-ref">ログレベルの確認</span></a> で確認した対象から、変更するサービス名、ログレベルを指定してください。</div>
 </div>
 </li>
 <li><p>登録するログレベルの設定</p>
@@ -526,7 +526,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <div class="line">変更後</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-number">リスト 2.111 </span><span class="caption-text">例:「ita-api-admin」、「ita-api-organization」を「DEBUG」へ変更</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.142 </span><span class="caption-text">例:「ita-api-admin」、「ita-api-organization」を「DEBUG」へ変更</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="s2">&quot;ita-api-admin&quot;</span>:<span class="w"> </span><span class="s2">&quot;DEBUG&quot;</span>,
 <span class="w">    </span><span class="s2">&quot;ita-api-organization&quot;</span>:<span class="w"> </span><span class="s2">&quot;DEBUG&quot;</span>
@@ -537,7 +537,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </li>
 <li><p>項目説明</p>
 <table class="docutils align-left" id="id18">
-<caption><span class="caption-number">表 2.132 </span><span class="caption-text">ログレベル設定項目</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.149 </span><span class="caption-text">ログレベル設定項目</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />

@@ -529,7 +529,7 @@ Movement-Module紐付
 **************
 #. | :menuselection:`Terraform CLI-->変数ネスト管理` では、Module素材集で登録したtfファイルで定義されている変数のタイプがlist,setかつ、その変数の中でlist,set,tuple,objectが定義されている場合、メンバー変数の最大繰返数を閲覧及び更新できます。
    | 本メニューはModule素材集を元に内部機能がレコードを管理するため、登録・廃止・復活はできません。
-   | 変数ネストの管理フロー例については「:ref:`terraform_cli_nested_example`」をご参照ください。
+   | 変数ネストの管理フロー例については「:ref:`terraform_nested_example`」をご参照ください。
 
    .. figure:: /images/ja/terraform_cli_driver/operation_method_explanation/nested_variable_list_menu.png
       :width: 800px
@@ -790,7 +790,7 @@ Movement-Module紐付
    | **ファイルパス**
    | [Conductor作業ディレクトリパス]/[ConductorインスタンスID]/terraform_output_[作業No.].json
    | Conductor作業ディレクトリパス・・・Ansible ITA独自変数のデータ連携のConductor作業ディレクトリパス
-   | ConductorインスタンスID・・・「:ref:`conductor_conductor_job_list`」のconductorインスタンスID
+   | ConductorインスタンスID・・・「:ref:`conductor_conductor_job_list_v2.1`」のconductorインスタンスID
    | 作業No.・・・「:ref:`terraform_cloud_ep_execution_list`」の作業No.
 
    | 記述例
@@ -853,6 +853,7 @@ Movement-Module紐付
    | 「呼出元Conductor」には、どのConductorから実行されたかを表示します。Terraform CLI driver から直接実行した場合は空欄になります。
    | 「実行ユーザ」には、作業実行メニューより「実行」ボタンを押下した際のログインユーザが表示されます。
    | ※「実行種別」が「リソース削除」の場合は下記の項目が設定されません。
+
    - 呼出元Conductor
    - Movement
    - オペレーション

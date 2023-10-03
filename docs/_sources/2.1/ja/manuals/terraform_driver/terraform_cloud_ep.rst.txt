@@ -934,7 +934,7 @@ PolicySet-Workspace紐付
 Movement-Module紐付
 *******************
 
-#. | :menuselection:`Terraform Cloud/EP-->Movement-Module紐付` では、「:ref:`terraform_cloud_ep_movment_list`」にて登録したMovementと「:ref:`terraform_cloud_ep_module_list`」にて登録したModule素材の紐付けについてメンテナンス（閲覧/登録/更新/廃止）を行います。
+#. | :menuselection:`Terraform Cloud/EP-->Movement-Module紐付` では、「:ref:`terraform_cloud_ep_movement_list`」にて登録したMovementと「:ref:`terraform_cloud_ep_module_list`」にて登録したModule素材の紐付けについてメンテナンス（閲覧/登録/更新/廃止）を行います。
    | Movementを実行する際、紐付けたModule素材が適用されます。
    | Movementに対して複数のModule素材を紐付けることが可能です。
 
@@ -987,7 +987,7 @@ Movement-Module紐付
 
 #. | :menuselection:`Terraform Cloud/EP-->変数ネスト管理` では、Module素材集で登録したtfファイルで定義されている変数のタイプがlist,setかつ、その変数の中でlist,set,tuple,objectが定義されている場合、メンバー変数の最大繰返数を閲覧及び更新できます。
    | 本メニューはModule素材集を元に内部機能がレコードを管理するため、登録・廃止・復活はできません。
-   | 変数ネストの管理フロー例については「:ref:`terraform_cloud_ep_nested_example`」をご参照ください。
+   | 変数ネストの管理フロー例については「:ref:`terraform_nested_example`」をご参照ください。
 
    .. figure:: /images/ja/terraform_cloud_ep_driver/operation_method_explanation/nested_variable_list_menu.png
       :width: 800px
@@ -1245,7 +1245,7 @@ Movement-Module紐付
    | **ファイルパス**
    | [Conductor作業ディレクトリパス]/[ConductorインスタンスID]/terraform_output_[作業No.].json
    | Conductor作業ディレクトリパス・・・Ansible ITA独自変数のデータ連携のConductor作業ディレクトリパス
-   | ConductorインスタンスID・・・「:ref:`conductor_conductor_job_list`」のconductorインスタンスID
+   | ConductorインスタンスID・・・「:ref:`conductor_conductor_job_list_v2.1`」のconductorインスタンスID
    | 作業No.・・・「:ref:`terraform_cloud_ep_execution_list`」の作業No.
 
    | 記述例
@@ -1309,6 +1309,7 @@ Movement-Module紐付
    | 「Terraform利用情報」に表示される「RUN-ID」はTerraform側で管理する実行管理のIDで、内部機能によるTerraformとの連携処理の際に利用されます。
 
    | ※「実行種別」が「リソース削除」の場合は下記の項目が設定されません。
+
    - 呼出元Conductor
    - Movement
    - オペレーション

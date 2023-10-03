@@ -283,8 +283,9 @@ Bearer認証
 
   2. | 「Offline Session Max Limited」をONに設定し、「Offline Session Idle」と「Offline Session Max」にrefresh tokenの有効期限に設定したい値を入力します。
      | 各項目についての詳細は Keycloakのドキュメント <https://www.keycloak.org/docs/latest/server_admin/index.html> をご確認ください。
-     | 
+
      | 例)refresh tokenの有効期限を365日に設定したい場合
+
      - | Offline Session Idle：365 Days
      - | Offline Session Max：365 Days
 
@@ -308,9 +309,9 @@ Bearer認証
    
   3. | 「Advanced Settings」の中の「Access Token Lifespan」と「Client Session Idle」と「Client Session Max」にaccess tokenの有効期限に設定したい値を入力します。
      | 各項目についての詳細は Keycloakのドキュメント <https://www.keycloak.org/docs/latest/server_admin/index.html> をご確認ください。
-     | 
+
      | 例)access tokenの有効期限を1日に設定したい場合
-     - | Access Token Lifespan：1 Days
+
      - | Client Session Idle：1 Days
      - | Client Session Max：1 Days
 

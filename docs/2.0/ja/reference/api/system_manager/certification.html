@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/exastro_documents.css?v=4" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exastro_documents.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/swagger/swagger-ui.css" />
     
     <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
@@ -28,7 +28,7 @@
     <script src="../../../../../_static/copybutton.js"></script>
     <script src="../../../../../_static/translations.js"></script>
     <script src="../../../../../_static/jquery-3.6.3.min.js"></script>
-    <script src="../../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../../_static/exastro_documents.js"></script>
     <script src="../../../../../_static/swagger/swagger-ui-bundle.js"></script>
     <script src="../../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
@@ -551,7 +551,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </s
 <li><div class="line-block">
 <div class="line">「Offline Session Max Limited」をONに設定し、「Offline Session Idle」と「Offline Session Max」にrefresh tokenの有効期限に設定したい値を入力します。</div>
 <div class="line">各項目についての詳細は Keycloakのドキュメント &lt;<a class="reference external" href="https://www.keycloak.org/docs/latest/server_admin/index.html">https://www.keycloak.org/docs/latest/server_admin/index.html</a>&gt; をご確認ください。</div>
-<div class="line"><br /></div>
+</div>
+<div class="line-block">
 <div class="line">例)refresh tokenの有効期限を365日に設定したい場合</div>
 </div>
 <ul>
@@ -595,14 +596,11 @@ curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </s
 <li><div class="line-block">
 <div class="line">「Advanced Settings」の中の「Access Token Lifespan」と「Client Session Idle」と「Client Session Max」にaccess tokenの有効期限に設定したい値を入力します。</div>
 <div class="line">各項目についての詳細は Keycloakのドキュメント &lt;<a class="reference external" href="https://www.keycloak.org/docs/latest/server_admin/index.html">https://www.keycloak.org/docs/latest/server_admin/index.html</a>&gt; をご確認ください。</div>
-<div class="line"><br /></div>
+</div>
+<div class="line-block">
 <div class="line">例)access tokenの有効期限を1日に設定したい場合</div>
 </div>
 <ul>
-<li><div class="line-block">
-<div class="line">Access Token Lifespan：1 Days</div>
-</div>
-</li>
 <li><div class="line-block">
 <div class="line">Client Session Idle：1 Days</div>
 </div>

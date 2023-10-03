@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=4" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
     
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
@@ -29,7 +29,7 @@
     <script src="../../../../_static/tabs.js"></script>
     <script src="../../../../_static/translations.js"></script>
     <script src="../../../../_static/jquery-3.6.3.min.js"></script>
-    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/exastro_documents.js"></script>
     <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
     <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
@@ -179,9 +179,9 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id13">2.7. ワークスペース追加時の作業</a><ul>
-<li><a class="reference internal" href="#platform-ansible-execution-environment">2.7.1. インスタンスを組み込む</a></li>
+<li><a class="reference internal" href="#platform-ansible-execution-environment-v2-1">2.7.1. インスタンスを組み込む</a></li>
 <li><a class="reference internal" href="#id15">2.7.2. インスタンスグループ作成</a></li>
-<li><a class="reference internal" href="#platform-add-insetance">2.7.3. インスタンスグループにインスタンスを追加</a></li>
+<li><a class="reference internal" href="#platform-add-insetance-v2-1">2.7.3. インスタンスグループにインスタンスを追加</a></li>
 <li><a class="reference internal" href="#platform-connection-instance">2.7.4. 組織とインスタンスグループの紐づけ</a></li>
 <li><a class="reference internal" href="#id18">2.7.5. ITA に認証トークンと組織を登録</a></li>
 </ul>
@@ -905,8 +905,8 @@
 </section>
 <section id="id13">
 <h2><span class="section-number">2.7. </span>ワークスペース追加時の作業<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h2>
-<section id="platform-ansible-execution-environment">
-<span id="id14"></span><h3><span class="section-number">2.7.1. </span>インスタンスを組み込む<a class="headerlink" href="#platform-ansible-execution-environment" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="platform-ansible-execution-environment-v2-1">
+<span id="id14"></span><h3><span class="section-number">2.7.1. </span>インスタンスを組み込む<a class="headerlink" href="#platform-ansible-execution-environment-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">インスタンスであるAnsible Execution Environment (以下、Ansible ee とも表記) を組み込んてください。</div>
 </div>
@@ -914,7 +914,7 @@
 <section id="id15">
 <h3><span class="section-number">2.7.2. </span>インスタンスグループ作成<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">※ 組み込んだ インスタンス (Ansible ee) を追加するインスタンスグループが既にある場合、次の 「 <a class="reference internal" href="#platform-add-insetance"><span class="std std-ref">インスタンスグループにインスタンスを追加</span></a> 」の手順に進んでください。</div>
+<div class="line">※ 組み込んだ インスタンス (Ansible ee) を追加するインスタンスグループが既にある場合、次の 「 <a class="reference internal" href="#platform-add-insetance-v2-1"><span class="std std-ref">インスタンスグループにインスタンスを追加</span></a> 」の手順に進んでください。</div>
 </div>
 <div class="line-block">
 <div class="line">Ansible Automation Platform は admin(管理ユーザー)でログインしてください。</div>
@@ -922,7 +922,7 @@
 </div>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line"><span class="menuselection">管理 ‣ インスタンスグループ</span> の <a class="reference internal" href="#platform-ansible-execution-environment"><span class="std std-ref">インスタンスを組み込む</span></a> で組み込んだインスタンス( Ansible ee )を追加するインスタンスグループを選択してください。</div>
+<div class="line"><span class="menuselection">管理 ‣ インスタンスグループ</span> の <a class="reference internal" href="#platform-ansible-execution-environment-v2-1"><span class="std std-ref">インスタンスを組み込む</span></a> で組み込んだインスタンス( Ansible ee )を追加するインスタンスグループを選択してください。</div>
 </div>
 </li>
 <li><div class="line-block">
@@ -952,16 +952,16 @@
 </tbody>
 </table>
 </section>
-<section id="platform-add-insetance">
-<span id="id16"></span><h3><span class="section-number">2.7.3. </span>インスタンスグループにインスタンスを追加<a class="headerlink" href="#platform-add-insetance" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="platform-add-insetance-v2-1">
+<span id="id16"></span><h3><span class="section-number">2.7.3. </span>インスタンスグループにインスタンスを追加<a class="headerlink" href="#platform-add-insetance-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">インスタンスグループに「 <a class="reference internal" href="#platform-ansible-execution-environment"><span class="std std-ref">インスタンスを組み込む</span></a> 」で組み込んだインスタンス( Ansible ee )を追加します。</div>
+<div class="line">インスタンスグループに「 <a class="reference internal" href="#platform-ansible-execution-environment-v2-1"><span class="std std-ref">インスタンスを組み込む</span></a> 」で組み込んだインスタンス( Ansible ee )を追加します。</div>
 <div class="line">Ansible Automation Platform は admin(管理ユーザー)でログインしてください。</div>
 <div class="line"><br /></div>
 </div>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line"><span class="menuselection">管理 ‣ インスタンスグループ</span> より、「 <a class="reference internal" href="#platform-ansible-execution-environment"><span class="std std-ref">インスタンスを組み込む</span></a> 」で組み込んだインスタンス( Ansible ee )を追加するインスタンスグループ名をクリックしてください。</div>
+<div class="line"><span class="menuselection">管理 ‣ インスタンスグループ</span> より、「 <a class="reference internal" href="#platform-ansible-execution-environment-v2-1"><span class="std std-ref">インスタンスを組み込む</span></a> 」で組み込んだインスタンス( Ansible ee )を追加するインスタンスグループ名をクリックしてください。</div>
 </div>
 </li>
 <li><div class="line-block">
