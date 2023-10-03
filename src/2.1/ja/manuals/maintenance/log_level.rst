@@ -1,4 +1,5 @@
 .. _log_level:
+
 ==========
 ログレベル
 ==========
@@ -16,7 +17,8 @@
 | 指定したサービスに対して、ログレベルを変更することができます。
 | サービスのログレベルは、全オーガナイゼーション、ワークスペースで共通です。
 
-.. _ita_log_level_list:
+.. _ita_log_level_list_v2.1:
+
 ログレベルの設定値と出力について
 --------------------------------
 
@@ -36,7 +38,8 @@
 
 .. note:: インストール直後は、INFOで設定されています。
 
-.. _ita_service_list:
+.. _ita_service_list_v2.1:
+
 ログレベル変更可能なサービス一覧
 --------------------------------
 
@@ -161,6 +164,7 @@
 
 
 .. _get_log_level:
+
 ログレベルの確認
 ----------------
 
@@ -240,13 +244,14 @@
 
 
 .. _create_log_level_json:
+
 ログレベルの設定を作成
 ----------------------
 
 - 変更するログレベルのjsonファイルを設定
 
   | 取得した toolsフォルダ配下にある、 `update-ita-loglevel.sample.json` を コピーして使用してください。
-  | :ref:`ita_service_list`  または、:ref:`get_log_level` で確認した対象から、変更するサービス名、ログレベルを指定してください。
+  | :ref:`ita_service_list_v2.1`  または、:ref:`get_log_level` で確認した対象から、変更するサービス名、ログレベルを指定してください。
 
 
 - 登録するログレベルの設定
@@ -259,6 +264,7 @@
 
 
   | 変更前
+
   .. code-block:: bash
 
       {
@@ -268,6 +274,7 @@
 
 
   | 変更後
+
   .. code-block:: bash
      :caption: 例:「ita-api-admin」、「ita-api-organization」を「DEBUG」へ変更
 
@@ -293,6 +300,7 @@
          | DEBUG：INFO、DEBUG、ERRORレベルのログを出力します。
 
 .. _update_log_level:
+
 ログレベル設定変更
 ------------------
 
@@ -367,4 +375,5 @@
           "service_name_2": "INFO/DEBUG",
         }
         EOF
+
 | 設定変更後の確認は、「:ref:`get_log_level` 」を参照してください。

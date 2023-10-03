@@ -187,7 +187,7 @@
     - ホスト名
   * - :kbd:`web01`
     - :kbd:`2023/04/03 12:00:00_Webサーバーへの再構築`
-    - :kbd:`"{{ __loginhostname__ }}"`
+    - :kbd:`"{{ __inventory_hostname__ }}"`
 
 | :menuselection:`入力用 --> 導入パッケージ` から、パッケージに関するパラメータを登録します。
 

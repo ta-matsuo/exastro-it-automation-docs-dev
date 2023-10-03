@@ -144,7 +144,6 @@ Helm リポジトリの更新
            - host: exastro-suite.example.local
              paths:
 
-.. _アップグレード-1:
 
 アップグレード
 ==============

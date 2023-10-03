@@ -71,13 +71,13 @@ html_theme_path = ['.']
 html_static_path = ['_static']
 
 html_css_files = [
-    'exastro_documents.css?v=4',
+    'exastro_documents.css',
     'swagger/swagger-ui.css',
 ]
 
 html_js_files = [
     'jquery-3.6.3.min.js',
-    'exastro_documents.js?v=1',
+    'exastro_documents.js',
     'swagger/swagger-ui-bundle.js',
     'swagger/swagger-ui-standalone-preset.js',
 ]

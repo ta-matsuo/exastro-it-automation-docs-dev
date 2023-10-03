@@ -236,7 +236,7 @@
 リストア
 ========
 
-.. _check_replica_count_restore:
+.. _check_replica_count_restore_v2.1:
 
 サービス停止
 ------------

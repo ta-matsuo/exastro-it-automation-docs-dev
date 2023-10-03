@@ -135,6 +135,9 @@ H6 (見出し6) 以上の表現
 
 | すべての文章はパラグラフ上に記載される必要があります。
 
+説明
+----
+
 記載方法
 ^^^^^^^^
 
@@ -172,6 +175,9 @@ H6 (見出し6) 以上の表現
 ====
 
 | 説明をする上で選択肢が有る場合などに利用します。
+
+説明
+----
 
 記載方法
 ^^^^^^^^
@@ -269,10 +275,13 @@ Hello world を出力するプログラム
          print("Hello World")
 
 
-.. _manual_syntax_word:
+.. _manual_syntax_word_v2.1:
 
 コード
 ======
+
+説明
+----
 
 | ファイル内のソースコードやコマンドなどを表現する際に利用します。
 
@@ -743,6 +752,9 @@ CSVテーブル(使用禁止)
 | Note や Tip については読み飛ばしてもそれほど運用に影響はありませんが、Warning や Danger は運用上注意が必要な項目となりますので、ユーザが確認することを推奨します。
 | 吹き出し形式のメモには下記の意味があります。
 
+説明
+----
+
 記載方法
 ^^^^^^^^
 
@@ -1009,10 +1021,10 @@ CSVテーブル(使用禁止)
 
 .. note::
          | OK： 「:doc:`../../manuals/ansible-driver/index`」
-         | NG： 「:doc:`Ansibleドライバのマニュアルはこちら<../../manuals/ansible-driver/general_operations>`」
+         | NG： 「:doc:`Ansibleドライバのマニュアルはこちら <../../manuals/ansible-driver/index>` 」
 
-         | OK：  「:ref:`manual_syntax_word`」
-         | NG：  「:ref:`コードについての参照先はこちらです。<manual_syntax_word>`」
+         | OK：  「:ref:`manual_syntax_word_v2.1`」
+         | NG：  「:ref:`コードについての参照先はこちらです。<manual_syntax_word_v2.1>`」
 
 | 例外として、外部ページのリンクを参照する場合は、例外的に使用可能とします。
 
@@ -1050,7 +1062,7 @@ H6 (見出し6) 以上の表現
 ^^^^^^^^^^^^^^^^^^^^^^
 
 | 下記に記載する、太字や斜体は使用してはなりません。
-| 適切な :ref:`manual_syntax_word` を選択してください。
+| 適切な :ref:`manual_syntax_word_v2.1` を選択してください。
 
 .. code-block:: bash
 

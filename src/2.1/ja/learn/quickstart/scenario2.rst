@@ -66,7 +66,7 @@
 .. glossary:: データシート
    Exastro IT Automation が使用する固定値のパラメータを管理するデータ構造のことです。
 
-.. _quickstart_create_datasheet:
+.. _quickstart_create_datasheet_v2.1:
 
 データシートの作成
 ^^^^^^^^^^^^^^^^^^
@@ -160,7 +160,7 @@
 | そこで、本シナリオではバンドルというパラメータシートを使い、複数のパラメータを管理する方法を紹介します。
 
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、パラメータシートを登録します。
-| 項目1の :menuselection:`入力方式` を :kbd:`プルダウン選択` に設定することで、:ref:`quickstart_create_datasheet` で登録したデータシートを参照できるようになります。
+| 項目1の :menuselection:`入力方式` を :kbd:`プルダウン選択` に設定することで、:ref:`quickstart_create_datasheet_v2.1` で登録したデータシートを参照できるようになります。
 
 .. figure:: ../../../../images/learn/quickstart/scenario2/パラメータ項目設定.gif
    :width: 1200px

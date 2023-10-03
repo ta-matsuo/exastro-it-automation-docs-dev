@@ -34,11 +34,11 @@
 	"postAttachCommand": "/workspace/start-autobuild.sh",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"mounts": [
-		// "source=/mnt/mainte/talisman,target=/mnt/mainte/talisman,type=bind",
-		"source=${localEnv:HOME}/.netrc,target=/home/sphinx/.netrc,type=bind",
+		"source=/mnt/mainte/talisman,target=/mnt/mainte/talisman,type=bind",
+		// "source=${localEnv:HOME}/.netrc,target=/home/sphinx/.netrc,type=bind",
 		"source=${localEnv:HOME}/.gitconfig,target=/home/sphinx/.gitconfig,type=bind",
 		// "source=${localEnv:HOME}/.kube/config,target=/home/sphinx/.kube/config,type=bind",
-		// "source=/mnt/mainte/certification/ZscalerRootCertificate.crt,target=/usr/local/share/ca-certificates/ZscalerRootCertificate.crt,type=bind",
+		"source=/mnt/mainte/certification/ZscalerRootCertificate.crt,target=/usr/local/share/ca-certificates/ZscalerRootCertificate.crt,type=bind",
 	],
 	"workspaceFolder": "/workspace",
 	"containerEnv": {
@@ -48,6 +48,6 @@
 		"https_proxy": "${localEnv:HTTP_PROXY}",
 		"NO_PROXY": "localhost,127.0.0.1",
 		"no_proxy": "localhost,127.0.0.1",
-		// "NODE_EXTRA_CA_CERTS": "/usr/local/share/ca-certificates/ZscalerRootCertificate.crt"
+		"NODE_EXTRA_CA_CERTS": "/usr/local/share/ca-certificates/ZscalerRootCertificate.crt"
 	},
 }

@@ -462,7 +462,7 @@ Policyの記述
 .. _terraform_cloud_ep_module_example:
 
 Module素材「Variableブロック」記入例・登録例
-------------------------
+--------------------------------------------
 
 Module素材の「Variableブロック」の記入例と、代入値自動登録設定への登録例を、変数のタイプ毎に記載します。
 
@@ -574,7 +574,7 @@ Module素材の「Variableブロック」の記入例と、代入値自動登録
          :align: left
          :width: 600px
            
-.. _terraform_cloud_ep_nested_example:
+.. _terraform_nested_example:
 
 変数ネスト管理フロー例
 ----------------------
