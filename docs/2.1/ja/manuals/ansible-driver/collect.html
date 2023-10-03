@@ -68,15 +68,17 @@
         <dd>
           <div>
             <select name="version" onchange="location.href=value;">
-                file_path: 2.1/ja/manuals/ansible-driver/collect
-                  <option value="#"
-                  selected
+                file_path: 2.2/ja/manuals/ansible-driver/collect
+                  <option value="../../../../2.2/ja/manuals/ansible-driver/collect.html"
                   >current</option>
                 file_path: 2.0/ja/manuals/ansible-driver/collect
                 file_path: 2.1/ja/manuals/ansible-driver/collect
                   <option value="#"
                   selected
-                  >2.1(current)</option>
+                  >2.1</option>
+                file_path: 2.2/ja/manuals/ansible-driver/collect
+                  <option value="../../../../2.2/ja/manuals/ansible-driver/collect.html"
+                  >2.2(current)</option>
             </select>
           </div>
         </dd>
@@ -148,6 +150,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../2.2/index.html">Exastro IT Automation Documentation 2.2</a></li>
 </ul>
 
     <!-- <ul>
@@ -288,7 +291,7 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">※収集機能のデータ型の取り扱い例については、「 <a class="reference internal" href="#about-values-for-collected-files"><span class="std std-ref">収集対象ファイルの値の取り扱い</span></a> 」をご参照ください。</div>
+<div class="line">※収集機能のデータ型の取り扱い例については、「 <a class="reference internal" href="../../../../2.2/ja/manuals/ansible-driver/collect.html#about-values-for-collected-files"><span class="std std-ref">収集対象ファイルの値の取り扱い</span></a> 」をご参照ください。</div>
 </div>
 </div>
 </section>
@@ -431,7 +434,7 @@ VAR_RH_sshd_config:
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">ソースファイルを生成するPlaybookを作成する際の出力先について、「<a class="reference internal" href="#table-ita-original-variable"><span class="std std-ref">収集機能対象ディレクトリITA独自変数</span></a>」を使用しない場合、以下の構造を認識してPlaybookを記述する必要があります。</div>
+<div class="line">ソースファイルを生成するPlaybookを作成する際の出力先について、「<a class="reference internal" href="../../../../2.2/ja/manuals/ansible-driver/collect.html#table-ita-original-variable"><span class="std std-ref">収集機能対象ディレクトリITA独自変数</span></a>」を使用しない場合、以下の構造を認識してPlaybookを記述する必要があります。</div>
 </div>
 </div>
 <table class="docutils align-left" id="id34">
@@ -733,7 +736,7 @@ VAR_RH_sshd_config:
 <li><div class="line-block">
 <div class="line"><span class="menuselection">収集項目値管理</span> の登録</div>
 <div class="line"><span class="menuselection">Ansible共通</span> の <span class="menuselection">収集項目値管理</span> の画面から、ソースファイルとパラメータシートの項目の紐付情報の登録をします。</div>
-<div class="line">詳細は「<a class="reference internal" href="#about-collected-item-value-list"><span class="std std-ref">収集項目値管理</span></a>」を参照してください。</div>
+<div class="line">詳細は「<a class="reference internal" href="../../../../2.2/ja/manuals/ansible-driver/collect.html#about-collected-item-value-list"><span class="std std-ref">収集項目値管理</span></a>」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
@@ -751,13 +754,13 @@ VAR_RH_sshd_config:
 <li><div class="line-block">
 <div class="line">収集機能実行</div>
 <div class="line">作業実行が完了した作業Noを収集機能の対象として、パラメータシートへの登録処理を実施します。</div>
-<div class="line">詳細は「<a class="reference internal" href="#about-backyard"><span class="std std-ref">BackYardコンテンツ</span></a>」を参照してください。</div>
+<div class="line">詳細は「<a class="reference internal" href="../../../../2.2/ja/manuals/ansible-driver/collect.html#about-backyard"><span class="std std-ref">BackYardコンテンツ</span></a>」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line">収集状況確認</div>
 <div class="line">「<span class="menuselection">Ansible-Legacy</span> 」/「<span class="menuselection">Ansible-Pioneer</span> 」/「<span class="menuselection">Ansible-LegacyRole</span> 」の <span class="menuselection">作業管理</span> の画面では、完了した作業の収集状態の確認、ログファイルがDL可能です。</div>
-<div class="line">詳細は「<a class="reference internal" href="#about-collect-status"><span class="std std-ref">収集状況の確認</span></a>」を参照してください。</div>
+<div class="line">詳細は「<a class="reference internal" href="../../../../2.2/ja/manuals/ansible-driver/collect.html#about-collect-status"><span class="std std-ref">収集状況の確認</span></a>」を参照してください。</div>
 </div>
 </li>
 </ol>
@@ -866,7 +869,7 @@ VAR_RH_sshd_config:
 <p class="admonition-title">注釈</p>
 <div class="line-block">
 <div class="line">※1 ファイル名、変数、メンバ変数入力値の例</div>
-<div class="line">※2 同一の「<span class="menuselection">パラメータシート(To)</span> - <span class="menuselection">メニューグループ：メニュー：項目</span> 」に対して、複数の「<span class="menuselection">PREFIX(ファイル名)</span> - <span class="menuselection">変数名</span> 」を設定している場合、ファイル順に処理が実行されます。詳しくは「<a class="reference internal" href="#about-execute-example"><span class="std std-ref">収集実行例</span></a>」参照。</div>
+<div class="line">※2 同一の「<span class="menuselection">パラメータシート(To)</span> - <span class="menuselection">メニューグループ：メニュー：項目</span> 」に対して、複数の「<span class="menuselection">PREFIX(ファイル名)</span> - <span class="menuselection">変数名</span> 」を設定している場合、ファイル順に処理が実行されます。詳しくは「<a class="reference internal" href="../../../../2.2/ja/manuals/ansible-driver/collect.html#about-execute-example"><span class="std std-ref">収集実行例</span></a>」参照。</div>
 </div>
 </div>
 <div class="line-block">
@@ -1759,7 +1762,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 </div>
 </div>
 <div class="line-block">
-<div class="line">※上位ディレクトリについては、「<a class="reference internal" href="#target-directory-file-structure"><span class="std std-ref">収集対象ディレクトリ、ファイル構造</span></a>」をご参照ください。</div>
+<div class="line">※上位ディレクトリについては、「<a class="reference internal" href="../../../../2.2/ja/manuals/ansible-driver/collect.html#target-directory-file-structure"><span class="std std-ref">収集対象ディレクトリ、ファイル構造</span></a>」をご参照ください。</div>
 <div class="line">収集対象ファイルの内容収集時に対処となるファイルの実体は以下となります。</div>
 </div>
 <table class="docutils align-left" id="id70">

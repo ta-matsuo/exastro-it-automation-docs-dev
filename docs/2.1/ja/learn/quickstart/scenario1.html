@@ -68,9 +68,8 @@
         <dd>
           <div>
             <select name="version" onchange="location.href=value;">
-                file_path: 2.1/ja/learn/quickstart/scenario1
-                  <option value="#"
-                  selected
+                file_path: 2.2/ja/learn/quickstart/scenario1
+                  <option value="../../../../2.2/ja/learn/quickstart/scenario1.html"
                   >current</option>
                 file_path: 2.0/ja/learn/quickstart/scenario1
                   <option value="../../../../2.0/ja/learn/quickstart/scenario1.html"
@@ -78,7 +77,10 @@
                 file_path: 2.1/ja/learn/quickstart/scenario1
                   <option value="#"
                   selected
-                  >2.1(current)</option>
+                  >2.1</option>
+                file_path: 2.2/ja/learn/quickstart/scenario1
+                  <option value="../../../../2.2/ja/learn/quickstart/scenario1.html"
+                  >2.2(current)</option>
             </select>
           </div>
         </dd>
@@ -139,6 +141,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../2.2/index.html">Exastro IT Automation Documentation 2.2</a></li>
 </ul>
 
     <!-- <ul>
@@ -451,7 +454,7 @@
 <h2><span class="section-number">1.4. </span>作業手順の登録<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">作業手順を登録するために、Exastro IT Automation で扱う作業単位である Movement (ジョブ)を定義します。</div>
-<div class="line">定義した Movement に対して、Ansible Role パッケージを紐付け、更に Ansible Role パッケージ内の変数と <a class="reference internal" href="#quickstart-server-information-parmeter-v2-1"><span class="std std-ref">パラメータシートの作成</span></a> で登録したパラメータシートの項目の紐付けを行います。</div>
+<div class="line">定義した Movement に対して、Ansible Role パッケージを紐付け、更に Ansible Role パッケージ内の変数と <a class="reference internal" href="../../../../2.2/ja/learn/quickstart/scenario1.html#quickstart-server-information-parmeter-v2-1"><span class="std std-ref">パラメータシートの作成</span></a> で登録したパラメータシートの項目の紐付けを行います。</div>
 </div>
 <dl class="simple glossary">
 <dt id="term-Movement">Movement<a class="headerlink" href="#term-Movement" title="この用語の解説へ">¶</a></dt><dt id="term-Exastro-IT-Automation">Exastro IT Automation における、最小の作業単位のことを指します。<a class="headerlink" href="#term-Exastro-IT-Automation" title="この用語の解説へ">¶</a></dt><dt id="term-1-Movement-1-ansible-playbook">1回の Movement 実行は、1回の ansible-playbook コマンドの実行と同じです。<a class="headerlink" href="#term-1-Movement-1-ansible-playbook" title="この用語の解説へ">¶</a></dt><dd></dd>
