@@ -16,7 +16,7 @@
 
 ### 各リポジトリをフォーク
 
-下記の exastro-suite にある各リポジトリを自身のアカウントのリポジトリにフォークする。
+下記の exastro-suite にある各リポジトリを自身のアカウントのリポジトリにフォークする
 - [exastro-it-automation-docs-dev をフォーク](https://github.com/exastro-suite/exastro-it-automation-docs-dev/fork)
 
 ### 各リポジトリのクローン
@@ -39,12 +39,14 @@
 ### ドキュメントの作成・更新
 
 1. VSCode の拡張機能の"Remote - SSH"を使って、開発サーバにログインする
-2. 「ファイル」-「ファイルでワークスペースを開く」から上記でクローンしたexastro-it-automation-docs内にある「exastro-it-automation-docs.code-workspace」を開く。
-3. 左下のRemote接続用の「><」アイコンをクリックし、「Reopen in Container」を開く。
-4. あとはexastro-it-automation-docs配下のファイルを編集する。
+2. 上記でクローンした.devcontainerフォルダに.envファイルを作成する（.env.sampleを参考)
+3. 「ファイル」-「ファイルでワークスペースを開く」から上記でクローンしたexastro-it-automation-docs内にある「exastro-it-automation-docs.code-workspace」を開く
+4. 左下のRemote接続用の「><」アイコンをクリックし、「Reopen in Container」を開く
+5. 初回コンテナオープン時に表示される通知の「Extension Pack for reStructuredText」の拡張ツールはInstallを選択する
+6. あとはexastro-it-automation-docs配下のファイルを編集する
 
 ### 編集中のドキュメントの確認
-下記の拡張機能をインストールし、プレビュー画面で確認する。
+下記の拡張機能をインストールし、プレビュー画面で確認する
 
 - lextudio.restructuredtext
 - lextudio.restructuredtext-pack

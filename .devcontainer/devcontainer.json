@@ -8,6 +8,7 @@
 			"HTTP_PROXY": "${localEnv:HTTP_PROXY}",
 		}
 	},
+ "runArgs": ["--env-file",".devcontainer/.env"],
 	"settings": {
 		"terminal.integrated.profiles.linux": {
 			"bash": {
@@ -35,9 +36,7 @@
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"mounts": [
 		"source=/mnt/mainte/talisman,target=/mnt/mainte/talisman,type=bind",
-		// "source=${localEnv:HOME}/.netrc,target=/home/sphinx/.netrc,type=bind",
 		"source=${localEnv:HOME}/.gitconfig,target=/home/sphinx/.gitconfig,type=bind",
-		// "source=${localEnv:HOME}/.kube/config,target=/home/sphinx/.kube/config,type=bind",
 		"source=/mnt/mainte/certification/ZscalerRootCertificate.crt,target=/usr/local/share/ca-certificates/ZscalerRootCertificate.crt,type=bind",
 	],
 	"workspaceFolder": "/workspace",

@@ -13,6 +13,7 @@ Exastro IT Automation Documentation
 
    2.0/index
    2.1/index
+   2.2/index
 
 .. raw:: html
 
