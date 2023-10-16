@@ -36,7 +36,7 @@ Terraform Cloud/EP driver
 #. | **Terraform Cloud/EP driverのメニュー**
    | Terraform Cloud/EP driverのメニュー一覧を以下に記述します。
 
-   .. table::  Terraform Cloud/EP driver メニュー/画面一覧 
+   .. table::  Terraform Cloud/EP driver メニュー/画面一覧
       :widths: 1 2 2 5
       :align: left
 
@@ -159,19 +159,19 @@ Terraform Cloud/EP 作業フロー
       | ITAと連携するTerraformの情報を登録します。
       | 詳細は :ref:`terraform_cloud_ep_interface_information` を参照してください。
 
-   #. | **Organizationの登録と連携** 
+   #. | **Organizationの登録と連携**
       | Terraformで利用するOrganizationの情報を登録し、Terraformとの連携を行います。
       | 詳細は :ref:`terraform_cloud_ep_organization_list` を参照してください。
 
-   #. | **Workspaceの登録と連携** 
+   #. | **Workspaceの登録と連携**
       | Terraformで利用するWorkspaceの情報を登録し、Terraformとの連携を行います。
       | 詳細は :ref:`terraform_cloud_ep_workspace_list` を参照してください。
 
-   #. | **Movementの登録** 
+   #. | **Movementの登録**
       | 作業用のMovementを登録します。
       | 詳細は :ref:`terraform_cloud_ep_movement_list` を参照してください。
 
-   #. | **Module素材の登録** 
+   #. | **Module素材の登録**
       | 作業で実行するModuleファイルを登録します。
       | 詳細は :ref:`terraform_cloud_ep_module_list` を参照してください。
 
@@ -186,7 +186,7 @@ Terraform Cloud/EP 作業フロー
    #. | **Policy setにPolicyを紐付け（必要に応じて実施）**
       | Policy setとPolicyの紐付けを登録します。
       | 詳細は :ref:`terraform_cloud_ep_policyset_policy_link` を参照してください。
-   
+
    #. | **Policy setにWorkspaceを紐付け（必要に応じて実施）**
       | Policy setとWorkspaceの紐付けを登録します。
       | 詳細は :ref:`terraform_cloud_ep_policyset_workspace_link` を参照してください。
@@ -198,7 +198,7 @@ Terraform Cloud/EP 作業フロー
    #. | **最大繰返数の設定（必要に応じて実施）**
       | 変数およびメンバー変数の最大繰返数を設定します。
       | 詳細は :ref:`terraform_cloud_ep_nested_variable` を参照してください。
-   
+
    #. | **パラメータシートの作成（必要に応じて実施）**
       | パラメータシート作成の「パラメータシート定義・作成」の画面から、作業対象サーバの設定に使用するデータを登録するためのパラメータシートを作成します。
       | Module素材に定義した変数に具体値を設定する際に必要となります。
@@ -209,23 +209,23 @@ Terraform Cloud/EP 作業フロー
       | Module素材に定義した変数に具体値を設定する際に必要となります。
       | 詳細は :doc:`../create_param/menu_creation` を参照してください。
 
-   #. | **代入値自動登録設定（必要に応じて実施）** 
+   #. | **代入値自動登録設定（必要に応じて実施）**
       | 代入値自動登録設定の画面から、パラメータシートに登録されているオペレーション毎の項目の設定値と、Movementの変数を紐付けます。
       | Module素材に定義した変数に具体値を設定する際に必要となります。
       | 詳細は :ref:`terraform_cloud_ep_substitution_value_auto_registration_setting` を参照してください。
 
-   #. | **作業実行** 
+   #. | **作業実行**
       | 作業実行の画面から、Movementと投入オペレーションを選択して処理の実行を行います。
       | 詳細は :ref:`terraform_cloud_ep_execution` を参照してください。
 
-   #. | **作業状態確認** 
+   #. | **作業状態確認**
       | 作業状態確認の画面から、実行した作業の状態がリアルタイムで表示されます。また、作業の緊急停止や、実行ログ、エラーログを監視することができます。
       | 詳細は :ref:`terraform_cloud_ep_check_operation_status` を参照してください。
 
-   #. | **作業履歴確認** 
+   #. | **作業履歴確認**
       | 作業管理の画面から、実行した作業の一覧が表示され履歴が確認できます。
       | 詳細は :ref:`terraform_cloud_ep_execution_list` を参照してください。
- 
+
 
 Policyの適用
 ============
@@ -1026,13 +1026,14 @@ Movement-Module紐付
         - 入力不可
         - ー
       * - 最大繰返数
-        - | 配列の最大繰返数を0～99の範囲で入力します。
+        - | 配列の最大繰返数を1～1024の範囲で入力します。
+          | 最大繰返数の上限値は「管理コンソール - :ref:`system_setting`」より識別ID「MAXIMUM_ITERATION_TERRAFORM-CLOUD-EP」の設定値にて、1～1024の範囲内で変更することが可能です。
           | 初期値はtfファイルのdefaultに記載されている値から取得した繰返数が設定されます。
           | tfファイルにdefaultの記載がない場合、1が設定されます。
           | 最終更新者が「Terraform Cloud/EP変数更新機能」でない場合はModule素材の更新により値が変更されることはありません。
-        - ー
-        - 入力不可
-        - ー
+        - 〇
+        - 手動入力
+        - 入力値1～1,024(「:ref:`system_setting`」の設定値により変動)
       * - 備考
         - 自由記述欄です。
         - ー
@@ -1301,7 +1302,7 @@ Movement-Module紐付
 #. | **実行状態表示**
    | 実行状況に即し、ステータスが表示されます。
    | また、実行ログ、エラーログに実行状況の詳細が表示されます。
-   | 「実行種別」にはPlan確認の場合には「Plan確認」、Workspaceごとに構成・管理されたリソースの削除（「:ref:`terraform_cloud_ep_workspace_list`」から実行されます。）の場合は「リソース削除」、それ以外の場合には「通常」が入ります。   
+   | 「実行種別」にはPlan確認の場合には「Plan確認」、Workspaceごとに構成・管理されたリソースの削除（「:ref:`terraform_cloud_ep_workspace_list`」から実行されます。）の場合は「リソース削除」、それ以外の場合には「通常」が入ります。
    | ステータスが想定外エラーで終了した場合、「:ref:`terraform_cloud_ep_interface_information`」の登録不備や、「:ref:`terraform_cloud_ep_organization_list`」「:ref:`terraform_cloud_ep_workspace_list`」でのTerraformとの連携（登録）がされていない、あるいはその他のWebコンテンツの登録不備が原因であれば、エラーログにメッセージが表示されます。
    | それ以外のエラーの場合はエラーログにメッセージが表示されません。この場合は、アプリケーションログにエラー情報が記録されます。必要に応じてアプリケーションログを確認ください。
    | 「呼出元Conductor」には、どのConductorから実行されたかを表示します。Terraform Cloud/EP driver から直接実行した場合は空欄になります。
@@ -1600,7 +1601,7 @@ Movement-Module紐付
         - 対象のOrganization Nameが「:ref:`terraform_cloud_ep_organization_list`」に登録されている場合は「登録済み」と表示されます。登録されていない場合は「未登録」と表示されます。
       * - 削除
         - | ボタンをクリックすると確認ダイアログが表示され[OK]をクリックすると対象のOrganizationが連携先Terraform上から削除されます
-          | ※削除したOrganizationは元に戻すことができません。 
+          | ※削除したOrganizationは元に戻すことができません。
 
    .. list-table:: 項目一覧（Workspace登録管理）
       :widths: 2 8
@@ -1617,7 +1618,7 @@ Movement-Module紐付
         - 対象のOrganization Nameが「:ref:`terraform_cloud_ep_workspace_list`」に登録されている場合は「登録済み」と表示されます。登録されていない場合は「未登録」と表示されます。
       * - リソース削除
         - | ボタンをクリックすると確認ダイアログが表示され[OK]をクリックすると「:ref:`terraform_cloud_ep_check_operation_status`」に遷移し、対象のWorkspaceごとに構成・管理されたリソースの削除が実行されます。
-          | ※削除したリソースは元に戻すことができません。 
+          | ※削除したリソースは元に戻すことができません。
       * - 削除
         - | ボタンをクリックすると確認ダイアログが表示され[OK]をクリックすると対象のWorkspaceが連携先Terraform上から削除されます。
           | ※Workspaceを削除するとリソースの削除は実行することができません。また、削除したWorkspaceは元に戻すことができません。

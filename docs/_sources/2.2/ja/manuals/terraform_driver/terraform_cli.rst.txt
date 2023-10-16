@@ -37,7 +37,7 @@ Terraform CLI driver
 #. | **Terraform CLI driverのメニュー**
    | Terraform CLI driverのメニュー一覧を以下に記述します。
 
-   .. table::  Terraform CLI driver メニュー/画面一覧 
+   .. table::  Terraform CLI driver メニュー/画面一覧
       :widths: 1 2 2 5
       :align: left
 
@@ -135,15 +135,15 @@ Terraform CLI作業フロー
       | 作業実行の情報を設定します。
       | 詳細は :ref:`terraform_cli_interface_information` を参照してください。
 
-   #. | **Workspaceの登録と連携** 
+   #. | **Workspaceの登録と連携**
       | Terraformで利用するWorkspaceの情報を登録します。
       | 詳細は :ref:`terraform_cli_workspace_list` を参照してください。
 
-   #. | **Movementの登録** 
+   #. | **Movementの登録**
       | 作業用のMovementを登録します。
       | 詳細は :ref:`terraform_cli_movement_list` を参照してください。
 
-   #. | **Module素材の登録** 
+   #. | **Module素材の登録**
       | 作業で実行するModuleファイルを登録します。
       | 詳細は :ref:`terraform_cli_module_list` を参照してください。
 
@@ -154,7 +154,7 @@ Terraform CLI作業フロー
    #. | **最大繰返数の設定（必要に応じて実施）**
       | メンバー変数の最大繰返数を設定します。
       | 詳細は :ref:`terraform_cli_nested_variable` を参照してください。
-   
+
    #. | **パラメータシートの作成**
       | パラメータシート作成の「パラメータシート定義・作成」の画面から、作業対象サーバの設定に使用するデータを登録するためのパラメータシートを作成します。
       | 詳細は :doc:`../create_param/menu_creation` を参照してください。
@@ -163,19 +163,19 @@ Terraform CLI作業フロー
       | 入力用メニューグループの前項で作成したパラメータシート画面から、作業対象サーバの設定に使用するデータを登録します。
       | 詳細は :doc:`../create_param/menu_creation` を参照してください。
 
-   #. | **代入値自動登録設定** 
+   #. | **代入値自動登録設定**
       | 代入値自動登録設定の画面から、パラメータシートに登録されているオペレーション毎の項目の設定値と、Movementの変数を紐付けます。
       | 詳細は :ref:`terraform_cli_substitution_value_auto_registration_setting` を参照してください。
 
-   #. | **作業実行** 
+   #. | **作業実行**
       | 作業実行の画面から、Movementと投入オペレーションを選択して処理の実行を行います。
       | 詳細は :ref:`terraform_cli_execution` を参照してください。
 
-   #. | **作業状態確認** 
+   #. | **作業状態確認**
       | 作業状態確認の画面から、実行した作業の状態がリアルタイムで表示されます。また、作業の緊急停止や、実行ログ、エラーログを監視することができます。
       | 詳細は :ref:`terraform_cli_check_operation_status` を参照してください。
 
-   #. | **作業履歴確認** 
+   #. | **作業履歴確認**
       | 作業管理の画面から、実行した作業の一覧が表示され履歴が確認できます。
       | 詳細は :ref:`terraform_cli_execution_list` を参照してください。
 
@@ -239,7 +239,7 @@ Terraform CLI driver メニュー
          :widths: 1 6 1 1 1
          :header-rows: 1
          :align: left
-      
+
          * - 項目
            - 説明
            - 入力必須
@@ -253,7 +253,7 @@ Terraform CLI driver メニュー
            - 〇
            - リスト選択
            - ー
-         * - 状態監視周期(単位ミリ秒) 
+         * - 状態監視周期(単位ミリ秒)
            - | 「:ref:`terraform_cli_check_operation_status`」で表示されるログのリフレッシュ間隔を入力します。
              | 通常は3000ミリ秒程度が推奨値です。
            - 〇
@@ -263,7 +263,7 @@ Terraform CLI driver メニュー
            - | 「:ref:`terraform_cli_check_operation_status`」での進行ログ・エラーログの最大表示行数を入力します。
              | ステータスが[未実行]、[準備中]、[実行中]、[実行中(遅延)]の場合、指定した行数でログを出力します。
              | ステータスが[完了]、[完了(異常)]、[想定外エラー]、[緊急停止]、[未実行(予約)、[予約取消]]の場合、指定した行数ではなくすべてのログを出力します。
-             | 環境毎にチューニングを要しますが、通常は1000行程度が推奨値です。    
+             | 環境毎にチューニングを要しますが、通常は1000行程度が推奨値です。
            - 〇
            - 手動入力
            - ー
@@ -271,7 +271,7 @@ Terraform CLI driver メニュー
            - 自由記述欄です。
            - ー
            - 手動入力
-           - 最大長4000バイト 
+           - 最大長4000バイト
 
 .. _terraform_cli_workspace_list:
 
@@ -568,13 +568,14 @@ Movement-Module紐付
         - 入力不可
         - ー
       * - 最大繰返数
-        - | 配列の最大繰返数を0～99の範囲で入力します。
+        - | 配列の最大繰返数を1～1024の範囲で入力します。
+          | 最大繰返数の上限値は「管理コンソール - :ref:`system_setting`」より識別ID「MAXIMUM_ITERATION_TERRAFORM-CLI」の設定値にて、1～1024の範囲内で変更することが可能です。
           | 初期値はtfファイルのdefaultに記載されている値から取得した繰返数が設定されます。
           | tfファイルにdefaultの記載がない場合、1が設定されます。
           | 最終更新者が「Terraform CLI 変数更新機能」でない場合はModule素材の更新により値が変更されることはありません。
-        - ー
-        - 入力不可
-        - ー
+        - 〇
+        - 手動入力
+        - 入力値1～1,024(「:ref:`system_setting`」の設定値により変動)
       * - 備考
         - 自由記述欄です。
         - ー
@@ -846,7 +847,7 @@ Movement-Module紐付
 #. | **実行状態表示**
    | 実行状況に即し、ステータスが表示されます。
    | また、実行ログ、エラーログに実行状況の詳細が表示されます。
-   | 「実行種別」にはPlan確認の場合には「Plan確認」、Workspaceごとに構成・管理されたリソースの削除（「:ref:`terraform_cli_workspace_list`」から実行されます。）の場合は「リソース削除」、それ以外の場合には「通常」が入ります。   
+   | 「実行種別」にはPlan確認の場合には「Plan確認」、Workspaceごとに構成・管理されたリソースの削除（「:ref:`terraform_cli_workspace_list`」から実行されます。）の場合は「リソース削除」、それ以外の場合には「通常」が入ります。
    | ステータスが想定外エラーで終了した場合、「:ref:`terraform_cli_interface_information`」の登録不備や、その他のWebコンテンツの登録不備が原因であれば、エラーログにメッセージが表示されます。
    | それ以外のエラーの場合はエラーログにメッセージが表示されません。この場合は、アプリケーションログにエラー情報が記録されます。必要に応じてアプリケーションログを確認ください。
 

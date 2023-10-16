@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="検索" href="../../../../search.html" />
-    <link rel="next" title="2. 比較機能" href="comparison_function.html" />
+    <link rel="next" title="2. パラメータ集" href="parameter_collection.html" />
     <link rel="prev" title="パラメータ管理" href="index.html" /> 
   </head>
 <body id="page" class="ja">
@@ -109,7 +109,7 @@
     <div id="toolbarNavigation">
       <ul>
         <li class="prev"><a href="index.html" title="前のトピックへ">パラメータ管理</a></li>
-        <li class="next"><a href="comparison_function.html" title="次のトピックへ"><span class="section-number">2. </span>比較機能</a></li>
+        <li class="next"><a href="parameter_collection.html" title="次のトピックへ"><span class="section-number">2. </span>パラメータ集</a></li>
       </ul>
     </div>
   </div>
@@ -134,7 +134,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../it_automation_base/index.html">基本操作</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">パラメータ管理</a><ul class="current">
 <li class="toctree-l5 current"><a class="current reference internal" href="#">1. パラメータシート作成機能</a></li>
-<li class="toctree-l5"><a class="reference internal" href="comparison_function.html">2. 比較機能</a></li>
+<li class="toctree-l5"><a class="reference internal" href="parameter_collection.html">2. パラメータ集</a></li>
+<li class="toctree-l5"><a class="reference internal" href="comparison_function.html">3. 比較機能</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../host_group/index.html">ホストグループ</a></li>
@@ -183,32 +184,32 @@
 <li><a class="reference internal" href="#menu-confirmation">1.6.6. 「パラメータシート定義一覧」メニューでパラメータシートを確認</a></li>
 <li><a class="reference internal" href="#checking-status">1.6.7. 「パラメータシート作成履歴」メニューで作成状況の確認</a></li>
 <li><a class="reference internal" href="#id13">1.6.8. 作成されたパラメータシートの確認</a><ul>
-<li><a class="reference internal" href="#id14">1.「作成対象」欄で”データシート”を選択した場合</a><ul>
-<li><a class="reference internal" href="#id15">A) 入力用メニューグループ</a></li>
+<li><a class="reference internal" href="#id14">1.6.8.1. 1.「作成対象」欄で”データシート”を選択した場合</a><ul>
+<li><a class="reference internal" href="#id15">1.6.8.1.1. A) 入力用メニューグループ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id16">2.「作成対象」欄で”パラメータシート（ホスト/オペレーションあり）”を選択した場合</a><ul>
-<li><a class="reference internal" href="#id17">A) 入力用メニューグループ</a></li>
-<li><a class="reference internal" href="#id18">B) 代入値自動登録用メニューグループ</a></li>
-<li><a class="reference internal" href="#id19">C) 参照用メニューグループ</a></li>
+<li><a class="reference internal" href="#id16">1.6.8.2. 2.「作成対象」欄で”パラメータシート（ホスト/オペレーションあり）”を選択した場合</a><ul>
+<li><a class="reference internal" href="#id17">1.6.8.2.1. A) 入力用メニューグループ</a></li>
+<li><a class="reference internal" href="#id18">1.6.8.2.2. B) 代入値自動登録用メニューグループ</a></li>
+<li><a class="reference internal" href="#id19">1.6.8.2.3. C) 参照用メニューグループ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id20">3.「作成対象」欄で”パラメータシート（オペレーションあり）”を選択した場合</a><ul>
-<li><a class="reference internal" href="#id21">A) 入力用メニューグループ</a></li>
-<li><a class="reference internal" href="#id22">B) 代入値自動登録用メニューグループ</a></li>
-<li><a class="reference internal" href="#id23">C) 参照用メニューグループ</a></li>
+<li><a class="reference internal" href="#id20">1.6.8.3. 3.「作成対象」欄で”パラメータシート（オペレーションあり）”を選択した場合</a><ul>
+<li><a class="reference internal" href="#id21">1.6.8.3.1. A) 入力用メニューグループ</a></li>
+<li><a class="reference internal" href="#id22">1.6.8.3.2. B) 代入値自動登録用メニューグループ</a></li>
+<li><a class="reference internal" href="#id23">1.6.8.3.3. C) 参照用メニューグループ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id24">4.「作成対象」欄で”パラメータシート”を選択し、「バンドル利用」チェックボックスにチェックを入れた場合</a><ul>
-<li><a class="reference internal" href="#id25">A) 入力用メニューグループ</a></li>
-<li><a class="reference internal" href="#id26">B) 代入値自動登録用メニューグループ</a></li>
-<li><a class="reference internal" href="#id27">C) 参照用メニューグループ</a></li>
+<li><a class="reference internal" href="#id24">1.6.8.4. 4.「作成対象」欄で”パラメータシート”を選択し、「バンドル利用」チェックボックスにチェックを入れた場合</a><ul>
+<li><a class="reference internal" href="#id25">1.6.8.4.1. A) 入力用メニューグループ</a></li>
+<li><a class="reference internal" href="#id26">1.6.8.4.2. B) 代入値自動登録用メニューグループ</a></li>
+<li><a class="reference internal" href="#id27">1.6.8.4.3. C) 参照用メニューグループ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id28">5.「作成対象」欄で”パラメータシート”を選択し、「ホストグループ利用」チェックボックスにチェックを入れた場合</a><ul>
-<li><a class="reference internal" href="#id29">A) 入力用メニューグループ</a></li>
-<li><a class="reference internal" href="#id30">B) 代入値自動登録用メニューグループ</a></li>
-<li><a class="reference internal" href="#id31">C) 参照用メニューグループ</a></li>
+<li><a class="reference internal" href="#id28">1.6.8.5. 5.「作成対象」欄で”パラメータシート”を選択し、「ホストグループ利用」チェックボックスにチェックを入れた場合</a><ul>
+<li><a class="reference internal" href="#id29">1.6.8.5.1. A) 入力用メニューグループ</a></li>
+<li><a class="reference internal" href="#id30">1.6.8.5.2. B) 代入値自動登録用メニューグループ</a></li>
+<li><a class="reference internal" href="#id31">1.6.8.5.3. C) 参照用メニューグループ</a></li>
 </ul>
 </li>
 </ul>
@@ -1730,7 +1731,7 @@
 </figcaption>
 </figure>
 <section id="id14">
-<h4>1.「作成対象」欄で”データシート”を選択した場合<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">1.6.8.1. </span>1.「作成対象」欄で”データシート”を選択した場合<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h4>
 <p>パラメータシート作成時に「パラメータシート定義・作成」メニュー（または「パラメータシート定義一覧」メニュー）の「作成対象」欄で「データシート」を選択した場合、データシートが作成されます。</p>
 <figure class="align-left" id="id92">
 <a class="reference internal image-reference" href="../../../../_images/data_sheet_creation.png"><img alt="データシート作成" src="../../../../_images/data_sheet_creation.png" style="width: 9.54048in; height: 6.28686in;" /></a>
@@ -1748,7 +1749,7 @@
 </figcaption>
 </figure>
 <section id="id15">
-<h5>A) 入力用メニューグループ<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.1.1. </span>A) 入力用メニューグループ<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h5>
 <p>メンテナンス（登録/更新/廃止/復活）が可能なデータシートが作成されます。</p>
 <figure class="align-left" id="id94">
 <a class="reference internal image-reference" href="../../../../_images/data_sheet_for_input.png"><img alt="入力用メニューグループ配下に作成されたデータシート" src="../../../../_images/data_sheet_for_input.png" style="width: 9.90718in; height: 6.76682in;" /></a>
@@ -1807,7 +1808,7 @@
 </section>
 </section>
 <section id="id16">
-<h4>2.「作成対象」欄で”パラメータシート（ホスト/オペレーションあり）”を選択した場合<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">1.6.8.2. </span>2.「作成対象」欄で”パラメータシート（ホスト/オペレーションあり）”を選択した場合<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h4>
 <p>パラメータシート作成時に「パラメータシート定義・作成」メニュー（または「パラメータシート定義一覧」メニュー）の「作成対象」欄で「パラメータシート（ホスト/オペレーションあり）」を選択した場合、パラメータシートが作成されます。</p>
 <figure class="align-left" id="id96">
 <a class="reference internal image-reference" href="../../../../_images/parametersheet_with_host_operation_creation.png"><img alt="パラメータシート作成" src="../../../../_images/parametersheet_with_host_operation_creation.png" style="width: 9.16042in; height: 6.37986in;" /></a>
@@ -1825,7 +1826,7 @@
 </figcaption>
 </figure>
 <section id="id17">
-<h5>A) 入力用メニューグループ<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.2.1. </span>A) 入力用メニューグループ<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h5>
 <p>ホスト・オペレーション単位でメンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。</p>
 <figure class="align-left" id="id98">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_input.gif"><img alt="入力用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_input.gif" style="width: 9.06711in; height: 6.9135in;" /></a>
@@ -1902,7 +1903,7 @@
 </table>
 </section>
 <section id="id18">
-<h5>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.2.2. </span>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。入力用メニューグループで登録した内容が「一覧」サブメニューに表示されます。</p>
 <figure class="align-left" id="id100">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration.png"><img alt="代入値自動登録用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration.png" style="width: 9.36046in; height: 6.50022in;" /></a>
@@ -1912,7 +1913,7 @@
 </figure>
 </section>
 <section id="id19">
-<h5>C) 参照用メニューグループ<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.2.3. </span>C) 参照用メニューグループ<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定を「一覧」サブメニューに表示します。</p>
 <figure class="align-left" id="id101">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_reference.png"><img alt="参照用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_reference.png" style="width: 6.85384in; height: 6.91359in;" /></a>
@@ -1931,7 +1932,7 @@
 </section>
 </section>
 <section id="id20">
-<h4>3.「作成対象」欄で”パラメータシート（オペレーションあり）”を選択した場合<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">1.6.8.3. </span>3.「作成対象」欄で”パラメータシート（オペレーションあり）”を選択した場合<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h4>
 <p>パラメータシート作成時に「パラメータシート定義・作成」メニュー（または「パラメータシート定義一覧」メニュー）の「作成対象」欄で「パラメータシート（オペレーションあり）」を選択した場合、パラメータシートが作成されます。</p>
 <figure class="align-left" id="id102">
 <a class="reference internal image-reference" href="../../../../_images/parametersheet_with_operation_creation.png"><img alt="パラメータシート作成" src="../../../../_images/parametersheet_with_operation_creation.png" style="width: 9.16042in; height: 6.37986in;" /></a>
@@ -1949,7 +1950,7 @@
 </figcaption>
 </figure>
 <section id="id21">
-<h5>A) 入力用メニューグループ<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.3.1. </span>A) 入力用メニューグループ<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h5>
 <p>オペレーション単位でメンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。</p>
 <figure class="align-left" id="id104">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_operation_input.gif"><img alt="入力用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_operation_input.gif" style="width: 9.06711in; height: 6.9135in;" /></a>
@@ -2020,7 +2021,7 @@
 </table>
 </section>
 <section id="id22">
-<h5>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.3.2. </span>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。入力用メニューグループで登録した内容が「一覧」サブメニューに表示されます。</p>
 <figure class="align-left" id="id106">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_operation_substitution_value_automatic_registration.png"><img alt="代入値自動登録用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_operation_substitution_value_automatic_registration.png" style="width: 9.36046in; height: 6.50022in;" /></a>
@@ -2030,7 +2031,7 @@
 </figure>
 </section>
 <section id="id23">
-<h5>C) 参照用メニューグループ<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.3.3. </span>C) 参照用メニューグループ<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定を「一覧」サブメニューに表示します。</p>
 <figure class="align-left" id="id107">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_operation_reference.png"><img alt="参照用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_operation_reference.png" style="width: 6.85384in; height: 6.91359in;" /></a>
@@ -2049,7 +2050,7 @@
 </section>
 </section>
 <section id="id24">
-<h4>4.「作成対象」欄で”パラメータシート”を選択し、「バンドル利用」チェックボックスにチェックを入れた場合<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">1.6.8.4. </span>4.「作成対象」欄で”パラメータシート”を選択し、「バンドル利用」チェックボックスにチェックを入れた場合<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
 <p>パラメータシート作成時に「パラメータシート定義・作成」メニュー（または「パラメータシート定義一覧」メニュー）の「作成対象」欄で「パラメータシート（ホスト/オペレーションあり）」「パラメータシート（オペレーションあり）」を選択し、「バンドル利用」欄の「利用する」チェックボックスにチェックを入れた場合、バンドル表示のパラメータシートが作成されます。</p>
 <figure class="align-left" id="id108">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_create_as_vertical_menu.png"><img alt="パラメータシート（バンドル利用）作成" src="../../../../_images/parameter_sheet_create_as_vertical_menu.png" style="width: 9.16042in; height: 6.37986in;" /></a>
@@ -2065,7 +2066,7 @@
 </figcaption>
 </figure>
 <section id="id25">
-<h5>A) 入力用メニューグループ<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.4.1. </span>A) 入力用メニューグループ<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">メンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。</div>
 <div class="line">「パラメータシート（ホスト/オペレーションあり）」では登録済みの「ホスト名」と「オペレーション」の組み合わせに対して、「代入順序」欄を入力することで複数のパラメータを設定することが可能です。</div>
@@ -2202,7 +2203,7 @@
 <p>同一の項目を繰り返すパラメータシートを作成する場合、バンドルの利用を推奨します。（データシートにはバンドルの利用はできません。）</p>
 </section>
 <section id="id26">
-<h5>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.4.2. </span>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。入力用メニューグループで登録した内容が「一覧」サブメニューに表示されます。</p>
 <figure class="align-left" id="id115">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration_2.png"><img alt="代入値自動登録用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration_2.png" style="width: 9.36046in; height: 6.50022in;" /></a>
@@ -2212,7 +2213,7 @@
 </figure>
 </section>
 <section id="id27">
-<h5>C) 参照用メニューグループ<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.4.3. </span>C) 参照用メニューグループ<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">閲覧専用メニューです。</div>
 <div class="line">「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定を「一覧」サブメニューに表示します。</div>
@@ -2235,7 +2236,7 @@
 </section>
 </section>
 <section id="id28">
-<h4>5.「作成対象」欄で”パラメータシート”を選択し、「ホストグループ利用」チェックボックスにチェックを入れた場合<a class="headerlink" href="#id28" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">1.6.8.5. </span>5.「作成対象」欄で”パラメータシート”を選択し、「ホストグループ利用」チェックボックスにチェックを入れた場合<a class="headerlink" href="#id28" title="この見出しへのパーマリンク">¶</a></h4>
 <p>パラメータシート作成時に「パラメータシート定義・作成」メニュー（または「パラメータシート定義一覧」メニュー）の「作成対象」欄で「パラメータシート（ホスト/オペレーションあり）」を選択し、
 「ホストグループ利用」欄の「利用する」チェックボックスにチェックを入れた場合、ホストグループに対応したパラメータシートが作成されます。</p>
 <figure class="align-left" id="id117">
@@ -2254,7 +2255,7 @@
 </figcaption>
 </figure>
 <section id="id29">
-<h5>A) 入力用メニューグループ<a class="headerlink" href="#id29" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.5.1. </span>A) 入力用メニューグループ<a class="headerlink" href="#id29" title="この見出しへのパーマリンク">¶</a></h5>
 <p>ホストグループ、ホスト名単位でメンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。</p>
 <figure class="align-left" id="id119">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_as_hostgroup_for_input.gif"><img alt="入力用メニューグループ配下に作成されたパラメータシート（ホストグループ利用）" src="../../../../_images/parameter_sheet_as_hostgroup_for_input.gif" style="width: 9.06711in; height: 6.9135in;" /></a>
@@ -2347,7 +2348,7 @@
 </div>
 </section>
 <section id="id30">
-<h5>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id30" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.5.2. </span>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id30" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。入力用メニューグループで登録した内容が「一覧」サブメニューに表示されます。</p>
 <figure class="align-left" id="id122">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration.png"><img alt="代入値自動登録用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration.png" style="width: 9.36046in; height: 6.50022in;" /></a>
@@ -2363,7 +2364,7 @@
 </div>
 </section>
 <section id="id31">
-<h5>C) 参照用メニューグループ<a class="headerlink" href="#id31" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">1.6.8.5.3. </span>C) 参照用メニューグループ<a class="headerlink" href="#id31" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定を「一覧」サブメニューに表示します。</p>
 <figure class="align-left" id="id123">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_reference.png"><img alt="参照用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_reference.png" style="width: 6.85384in; height: 6.91359in;" /></a>
@@ -3021,7 +3022,7 @@
 <div id="articleNavigation">
   <ul>
     <li class="prev"><a href="index.html" title="前のトピックへ"><span>前のトピックへ</span>パラメータ管理</a></li>
-    <li class="next"><a href="comparison_function.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">2. </span>比較機能</a></li>
+    <li class="next"><a href="parameter_collection.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">2. </span>パラメータ集</a></li>
   </ul>
 </div>
 
