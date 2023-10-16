@@ -4,7 +4,8 @@
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 3
+   :numbered:
 
    menu_creation
+   parameter_collection
    comparison_function

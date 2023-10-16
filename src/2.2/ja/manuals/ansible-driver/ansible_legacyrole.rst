@@ -1,5 +1,5 @@
 ==================
-Ansible-LegacyRole 
+Ansible-LegacyRole
 ==================
 
 はじめに
@@ -342,7 +342,7 @@ Movement一覧
    .. tip:: | ※1 ヘッダーセクションで「become: yes」を設定した場合
        | 作業対象に以下の設定が必要です。
        | ログインユーザの sudo権限を NOPASSWD付で :file:`/etc/sudoers` に設定します。
-       | 
+       |
        | 　　　**Demo_user ALL=(ALL) NOPASSWD:ALL**
 
    .. tip:: | ※2 「 :ref:`ansible_common_aac_sync` 」により取得したデータから選択します。
@@ -387,9 +387,9 @@ Movement一覧
         - 制約事項
       * - 項番
         - | 登録時に自動採番した36桁の文字列が表示されます。
-        - ー 
+        - ー
         - 自動入力
-        - ー 
+        - ー
       * - ロールパッケージ名
         - ITAで管理するロールパッケージ名を入力します。
         - 〇
@@ -419,7 +419,7 @@ Movement一覧
    | なお、ロールパッケージが異なる場合は上記の場合でも登録することが可能です。
    |
    | 具体例は下記の通りです。
-   
+
    | e.g.)
 
    .. table:: 具体例
@@ -497,12 +497,12 @@ Movement-ロール紐付
         - 制約事項
       * - 項番
         - | 登録時に自動採番した36桁の文字列が表示されます。
-        - ー 
+        - ー
         - 自動入力
-        - ー 
+        - ー
       * - Movement
         - | :menuselection:`Ansible-LegacyRole --> Movement一覧` で登録した  :menuselection:`Movement名` が表示されます。
-          | Movementを選択します。 
+          | Movementを選択します。
         - 〇
         - リスト選択
         - ー
@@ -533,7 +533,7 @@ Movement-ロール紐付
 
 #. | :menuselection:`Ansible-LegacyRole --> ロールパッケージ管理` で登録した :menuselection:`ロールパッケージファイル（ZIP形式）` で定義されている多段変数で、繰返配列が定義されているメンバー変数の配列の最大繰返数のメンテナンス（閲覧/更新）を行います。
    | 利用方法については、「 :ref:`ansible_legacyrole_substitution_value_auto_registration_setting` 」を参照てください。
-   
+
    .. figure:: /images/ja/ansible-legacyrole/variable_nest_management/nested_variable_list.png
       :width: 800px
       :alt: サブメニュー画面（変数ネスト管理）
@@ -562,14 +562,15 @@ Movement-ロール紐付
         - 制約事項
       * - 項番
         - | 登録時に自動採番した36桁の文字列が表示されます。
-        - ー 
+        - ー
         - 自動入力
-        - ー 
+        - ー
       * - 最大繰返数
-        - 配列の最大繰返数を1～1,024の範囲で入力します。
+        - | 配列の最大繰返数を1～1,024の範囲で入力します。
+          | 最大繰返数の上限値は「管理コンソール - :ref:`system_setting`」より識別ID「MAXIMUM_ITERATION_ANSIBLE-LEGACYROLE」の設定値にて、1～1024の範囲内で変更することが可能です。
         - 〇
         - 手動入力
-        - 入力値1～1,024
+        - 入力値1～1,024(「:ref:`system_setting`」の設定値により変動)
       * - 備考
         - 自由記述欄です。
         - ー
@@ -841,7 +842,7 @@ Movement-ロール紐付
 .. tip:: | ※3:選択した変数が複数具体値設定可能な変数の場合のみ必須
    | 特定の複数具体値変数に対して代入順序が連続していなくても問題ありません。
    | 連続していない場合は詰めて処理されます。
-   | 
+   |
    | e.g.）複数具体値変数に代入順序を入力して作業実行する場合
 
    #. | 下記のようにロールパッケージの変数定義ファイル（defaults/main.yml）に変数を定義して、 :menuselection:`Ansible-LegacyRole --> ロールパッケージ管理` でロールパッケージを登録します。
@@ -1089,10 +1090,10 @@ Movement-ロール紐付
 #. | **ドライラン**
    | :guilabel:`ドライラン` ボタンをクリックすると、実際に作業対象に対して構築作業をせず、ドライランを行うことができます。
    | ドライランを行った場合の動作は、Ansible-Playbookコマンドの--checkパラメータを指定した実行となります。
-   
+
 #. | **パラメータ確認**
    | :guilabel:`パラメータ確認` ボタンをクリックすると、実際に作業対象に対して構築作業をせず、 :menuselection:`Ansible-LegacyRole --> 代入値自動登録設定` に登録してある情報から作業対象のオペレーションとMovementに紐付く情報を :menuselection:`Ansible-LegacyRole --> 代入値管理` と :menuselection:`Ansible-LegacyRole --> 作業対象ホスト` に反映し、確認することが出来ます。
-   
+
 .. tip:: |  **予約日時の指定**
    | 「予約日時」を入力することで、実行を予約することがきます。
    | 「予約日時」には、未来の日時のみ入力可能です。
@@ -1610,7 +1611,7 @@ ITA readmeのフォーマット
 
   | ITA readmeは、作業実行時はロールパッケージから切り離されます。
   | ITA readmeに記載した変数と具体値は、ansibleに渡ることはありません。
-  
+
 
 「ita_readme」の活用例
 ----------------------
