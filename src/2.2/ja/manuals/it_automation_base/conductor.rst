@@ -344,7 +344,7 @@ Node一覧
   
   * | Movementタブ
   
-    * | 登録済みのMovementのIDと名称の一覧
+    * | 登録済みのMovement名称の一覧
 
   * | Functionタブ
   

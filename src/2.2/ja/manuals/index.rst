@@ -29,6 +29,7 @@
    terraform_driver/index
    export_import/index
    cicd_for_iac/index
+   api/index
    maintenance/index
 
 .. raw:: html

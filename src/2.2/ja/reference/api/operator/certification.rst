@@ -2,6 +2,8 @@
 認証
 ====
 
+.. _operator_certifications:
+
 APIのアクセス（認証）について
 =============================
 
@@ -42,6 +44,8 @@ Basic認証
 
 
 
+.. _operator_certification_bearer:
+
 Bearer認証  
 ----------
 
@@ -62,6 +66,8 @@ Bearer認証
       - | APIを呼出す際に指定するトークンです。
         | トークンの有効期限が短い（デフォルト：1日）
 
+
+.. _operator_refresh_token:
 
 事前準備手順（サンプル） - refresh_tokenの払い出し
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -87,5 +93,67 @@ Bearer認証
     -d "password=${PASSWORD}" \
     "${BASEURL}/auth/realms/${ORGANAIZATION_ID}/protocol/openid-connect/token"
 
+- | 二要素認証を設定しているユーザの場合
+  
+.. code-block:: bash
+  
+  BASEURL="https://severname"
+  USERNAME="ユーザー名"
+  PASSWORD="パスワード"
+  ONETIME_PASSWORD="ワンタイムパスワード"　# Google Authenticator等で取得したワンタイムパスワード
 
+  # refresh_token払出
+  curl -X POST \
+  -d "client_id=_platform-api" \
+  -d "grant_type=password" \
+  -d "scope=openid+offline_access" \
+  -d "username=${USERNAME}" \
+  -d "password=${PASSWORD}" \
+  -d "totp=${ONETIME_PASSWORD}" \
+  "${BASEURL}/auth/realms/master/protocol/openid-connect/token"
 
+- | 実行結果
+   
+| 以下の応答の中のrefresh_tokenを保存します（API呼出の際に使用します）。
+| ※この実行結果以外で後からrefresh_tokenを再度表示することは出来ないので、発行したrefresh_tokenは大切に保管してください。
+
+.. code-block:: bash
+
+  {
+    "access_token": "eyJhbGci...",
+    "expires_in": 172800,
+    "refresh_expires_in": 31536000,
+    "refresh_token": "eyJhbGci...",
+    "token_type": "Bearer",
+    "id_token": "eyJhbGci...",
+    "not-before-policy": 0,
+    "session_state": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+    "scope": "openid email profile offline_access"
+  }
+
+実行手順（サンプル） 
+^^^^^^^^^^^^^^^^^^^^
+
+| 以下のサンプルはBearer認証を使用して、オペレーションの一覧取得APIを呼出しています。
+
+.. code-block:: bash
+
+  BASEURL="https://severname"
+  REFRESH_TOKEN="eyJhbGci..." # 事前準備手順で払い出したrefresh_token
+  ORGANAIZATION_ID="オーガナイゼーションID"
+  WORKSPACE_ID="ワークスペースID"
+
+  # access_token払出
+  ACCESS_TOKEN=$(\
+      curl -X POST \
+      -d "client_id=_platform-api" \
+      -d "grant_type=refresh_token" \
+      -d "refresh_token=${REFRESH_TOKEN}" \
+      "${BASEURL}/auth/realms/master/protocol/openid-connect/token" \
+      | jq -r ".access_token" \
+  )
+
+  # オペレーションの一覧（全件）取得APIの呼び出し
+  curl -X GET \
+    "${BASEURL}/api/${ORGANAIZATION_ID}/workspaces/${WORKSPACE_ID}/ita/menu/operation_list/filter/" \
+    -H "Authorization: Bearer ${ACCESS_TOKEN}" \
