@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>エクスポート・インポート &#8212; Documentation  ドキュメント</title>
+    <title>API &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -34,8 +34,8 @@
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="検索" href="../../../../search.html" />
-    <link rel="next" title="1. メニューエクスポート・インポート" href="menu_export_import.html" />
-    <link rel="prev" title="3. Terraform CLI driver" href="../terraform_driver/terraform_cli.html" /> 
+    <link rel="next" title="1. APIのアクセス（認証）について" href="api_record_operation.html" />
+    <link rel="prev" title="1. CI/CD For IaC機能" href="../cicd_for_iac/cicd_for_iac.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -68,15 +68,13 @@
         <dd>
           <div>
             <select name="version" onchange="location.href=value;">
-                file_path: 2.2/ja/manuals/export_import/index
+                file_path: 2.2/ja/manuals/api/index
                   <option value="#"
                   selected
                   >current</option>
-                file_path: 2.0/ja/manuals/export_import/index
-                file_path: 2.1/ja/manuals/export_import/index
-                  <option value="../../../../2.1/ja/manuals/export_import/index.html"
-                  >2.1</option>
-                file_path: 2.2/ja/manuals/export_import/index
+                file_path: 2.0/ja/manuals/api/index
+                file_path: 2.1/ja/manuals/api/index
+                file_path: 2.2/ja/manuals/api/index
                   <option value="#"
                   selected
                   >2.2(current)</option>
@@ -92,12 +90,12 @@
         <dd>
           <div>
             <select name="lang" onchange="location.href=value;">
-                file_path: 2.2/ja/manuals/export_import/index
+                file_path: 2.2/ja/manuals/api/index
                 hasdoc: True
                   <option value="#"
                   selected
                   >日本語</option>
-                file_path: 2.2/en/manuals/export_import/index
+                file_path: 2.2/en/manuals/api/index
                 hasdoc: False
             </select>
           </div>
@@ -106,8 +104,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="../terraform_driver/terraform_cli.html" title="前のトピックへ"><span class="section-number">3. </span>Terraform CLI driver</a></li>
-        <li class="next"><a href="menu_export_import.html" title="次のトピックへ"><span class="section-number">1. </span>メニューエクスポート・インポート</a></li>
+        <li class="prev"><a href="../cicd_for_iac/cicd_for_iac.html" title="前のトピックへ"><span class="section-number">1. </span>CI/CD For IaC機能</a></li>
+        <li class="next"><a href="api_record_operation.html" title="次のトピックへ"><span class="section-number">1. </span>APIのアクセス（認証）について</a></li>
       </ul>
     </div>
   </div>
@@ -134,13 +132,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../host_group/index.html">ホストグループ</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../ansible-driver/index.html">Ansible ドライバ</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../terraform_driver/index.html">Terraform ドライバ</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">エクスポート・インポート</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="menu_export_import.html">1. メニューエクスポート・インポート</a></li>
-<li class="toctree-l5"><a class="reference internal" href="excel_export_import.html">2. Excel一括エクスポート・インポート</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../export_import/index.html">エクスポート・インポート</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cicd_for_iac/index.html">CI/CD for IaC</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api_record_operation.html">1. APIのアクセス（認証）について</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api_record_operation.html#apiapi">2. 登録、編集のAPI、関連APIの実行例</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../cicd_for_iac/index.html">CI/CD for IaC</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/index.html">API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../maintenance/index.html">メンテナンス</a></li>
 </ul>
 </li>
@@ -170,7 +168,7 @@
     <li><a href="../../../index.html">Exastro IT Automation Documentation 2.2</a></li>
     <li><a href="../index.html">マニュアル</a></li>
     
-    <li>エクスポート・インポート</li>
+    <li>API</li>
   </ul>
 </div>
 
@@ -178,22 +176,15 @@
 <article class="divInner">
 <div class="body" role="main">
 
-  <section id="id1">
-<h1>エクスポート・インポート<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="この見出しへのパーマリンク">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="menu_export_import.html">1. メニューエクスポート・インポート</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="menu_export_import.html#id2">1.1. はじめに</a></li>
-<li class="toctree-l2"><a class="reference internal" href="menu_export_import.html#id3">1.2. メニューエクスポート・インポートの概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="menu_export_import.html#id8">1.3. メニューエクスポート・インポートのメニュー、画面構成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="menu_export_import.html#id10">1.4. 機能・操作方法説明</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="excel_export_import.html">2. Excel一括エクスポート・インポート</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="excel_export_import.html#id1">2.1. はじめに</a></li>
-<li class="toctree-l2"><a class="reference internal" href="excel_export_import.html#id2">2.2. Excel一括エクスポート・インポートの概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="excel_export_import.html#execl">2.3. Execl一括エクスポート・インポートのメニュー、画面構成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="excel_export_import.html#id6">2.4. 機能・操作方法説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_record_operation.html">1. APIのアクセス（認証）について</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_record_operation.html#apiapi">2. 登録、編集のAPI、関連APIの実行例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_record_operation.html#menu-filter">2.1. 一覧取得（Menu Filter：レコードの取得）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_record_operation.html#menu-maintenanceall">2.2. 登録、編集（Menu MaintenanceAll レコードの一括操作）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_record_operation.html#api-menu-info">2.3. APIのパラメータ関連情報（Menu Info メニュー情報の取得）</a></li>
 </ul>
 </li>
 </ul>
