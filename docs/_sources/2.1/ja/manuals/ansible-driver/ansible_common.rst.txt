@@ -1145,8 +1145,6 @@ Ansible共通メニュー構成
 Ansible Automation Controller ホスト一覧
 ----------------------------------------
 
-.. include:: ../../include/ansible_option_ansible_automation_controlller_hosts.rst
-
 #. | Ansible Automation ControllerへのRestAPI実行に必要な情報、および構築資材をAnsible Automation Controllerにファイル転送するために必要な情報のメンテナンス(閲覧/登録/更新/廃止)を行います。
    | クラスタ構成の場合は、構成している全てのホストを登録してください。
    | ただし、Ansible Automation Controllerのhop nodeの登録は不要です。

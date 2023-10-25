@@ -179,10 +179,21 @@
 <li><a class="reference internal" href="#menu-unique-operation">4.4. 各メニュー個別情報</a><ul>
 <li><a class="reference internal" href="#system-setting">4.4.1. システム設定</a></li>
 <li><a class="reference internal" href="#id8">4.4.2. メニューグループ管理</a></li>
-<li><a class="reference internal" href="#menu-list">4.4.3. メニュー管理</a></li>
-<li><a class="reference internal" href="#id10">4.4.4. ロール・メニュー紐付管理</a></li>
-<li><a class="reference internal" href="#id11">4.4.5. オペレーション削除管理</a></li>
-<li><a class="reference internal" href="#id12">4.4.6. ファイル削除管理</a></li>
+<li><a class="reference internal" href="#menu-list">4.4.3. メニュー管理</a><ul>
+<li><a class="reference internal" href="#id10">「独自メニュー用素材」の機能概要</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">4.4.4. ロール・メニュー紐付管理</a></li>
+<li><a class="reference internal" href="#id12">4.4.5. オペレーション削除管理</a></li>
+<li><a class="reference internal" href="#id13">4.4.6. ファイル削除管理</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id14">4.5. 付録</a><ul>
+<li><a class="reference internal" href="#custom-menu-sample">4.5.1. 独自メニュー利用方法</a><ul>
+<li><a class="reference internal" href="#id16">利用手順</a></li>
+<li><a class="reference internal" href="#sample-file">独自メニュー用素材サンプル</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -224,8 +235,8 @@
 <div class="line">管理コンソールでは、初期メニュー以外に、利用部門が独自の情報をITAのデータベース上で管理する場合、管理レベルにあった個別メニューの作成が出来ます。</div>
 <div class="line">個別メニューの登録／変更／削除をご使用される際は、製品サポートへお問い合わせ下さい。</div>
 </div>
-<table class="docutils align-left" id="id13">
-<caption><span class="caption-number">表 4.71 </span><span class="caption-text">Webコンテンツメニュー/画面一覧</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id18">
+<caption><span class="caption-number">表 4.71 </span><span class="caption-text">Webコンテンツメニュー/画面一覧</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>メニューグループ</strong></p></th>
@@ -285,8 +296,8 @@
 <div class="line-block">
 <div class="line">ITAシステム導入・運用時に設定すべき各種情報の更新を行います。</div>
 </div>
-<table class="docutils align-left" id="id14">
-<caption><span class="caption-number">表 4.72 </span><span class="caption-text">システム設定</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id19">
+<caption><span class="caption-number">表 4.72 </span><span class="caption-text">システム設定</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>項目名</strong></p></th>
@@ -324,8 +335,8 @@
 <div class="line-block">
 <div class="line">メニュー（子）はメニューグループ（親）に属します。この画面では親となるメニューグループの登録／更新／廃止を行います。</div>
 </div>
-<table class="docutils align-left" id="id15">
-<caption><span class="caption-number">表 4.73 </span><span class="caption-text">メニューグループ管理</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id20">
+<caption><span class="caption-number">表 4.73 </span><span class="caption-text">メニューグループ管理</span><a class="headerlink" href="#id20" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>項目名</strong></p></th>
@@ -404,8 +415,8 @@
 <div class="line-block">
 <div class="line">この画面でコンテンツの機能（メニュー）の登録／更新／廃止を行います。</div>
 </div>
-<table class="docutils align-left" id="id16">
-<caption><span class="caption-number">表 4.74 </span><span class="caption-text">メニュー管理</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id21">
+<caption><span class="caption-number">表 4.74 </span><span class="caption-text">メニュー管理</span><a class="headerlink" href="#id21" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>項目名</strong></p></th>
@@ -446,18 +457,22 @@
 <td><p>メニュー表示時に「フィルタ」をクリックした状態で表示するかどうか設定できます。</p></td>
 </tr>
 <tr class="row-even"><td><p>9</p></td>
+<td><p>独自メニュー用素材</p></td>
+<td><p>独自メニューを表示するためのZIPを登録できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
 <td><p>Web表示最大行数</p></td>
 <td><p>「一覧」に表示する最大行数を設定できます。</p></td>
 </tr>
-<tr class="row-odd"><td><p>10</p></td>
+<tr class="row-even"><td><p>11</p></td>
 <td><p>Web表示前確認行数</p></td>
 <td><p>「一覧」に出力する前に確認ダイアログを表示する最大行数を設定できます。</p></td>
 </tr>
-<tr class="row-even"><td><p>11</p></td>
+<tr class="row-odd"><td><p>12</p></td>
 <td><p>Excel出力最大行数</p></td>
 <td><p>Excel出力する最大行数を設定できます。</p></td>
 </tr>
-<tr class="row-odd"><td><p>12</p></td>
+<tr class="row-even"><td><p>13</p></td>
 <td><p>ソートキー</p></td>
 <td><p>「一覧」に表示する並び順を設定できます。</p></td>
 </tr>
@@ -496,10 +511,10 @@
 <div class="line-block">
 <div class="line">「Web表示最大行数」と「Web表示前確認行数」には次のような関係があります。</div>
 </div>
-<figure class="align-center" id="id17">
+<figure class="align-center" id="id22">
 <a class="reference internal image-reference" href="../../../../_images/Web表示最大行数の処理概要.png"><img alt="Web表示最大行数の処理概要" src="../../../../_images/Web%E8%A1%A8%E7%A4%BA%E6%9C%80%E5%A4%A7%E8%A1%8C%E6%95%B0%E3%81%AE%E5%87%A6%E7%90%86%E6%A6%82%E8%A6%81.png" style="width: 6in;" /></a>
 <figcaption>
-<p><span class="caption-number">図 4.42 </span><span class="caption-text">Web表示最大行数の処理概要</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 4.42 </span><span class="caption-text">Web表示最大行数の処理概要</span><a class="headerlink" href="#id22" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
@@ -508,9 +523,23 @@
 <div class="line">JSON形式のファイルはダウンロードが可能です。</div>
 <div class="line">画面下部の変更履歴全件ダウンロードは出力し確認する用途で、アップロードには対応しておりません。</div>
 </div>
-</section>
 <section id="id10">
-<h3><span class="section-number">4.4.4. </span>ロール・メニュー紐付管理<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
+<h4>「独自メニュー用素材」の機能概要<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line"><span class="menuselection">メニュー管理</span> メニューでメニューを直接登録した場合に使用される素材です。</div>
+<div class="line">既存メニューやパラメータシート作成機能で作成されたメニューには登録しても使用されません。</div>
+<div class="line">メニュー上に表示させたいHTML、Javascript、CSS等をZIPに圧縮して登録します。</div>
+<div class="line">メインで表示させたいHTMLは「main.html」というファイル名固定です。</div>
+<div class="line">「main.html」内で使用されるファイル名は任意です。</div>
+<div class="line">ZIP内のファイルは全てフォルダ直下に配置する必要があります。</div>
+<div class="line">新規で作成したメニューで「独自メニュー用素材」が登録されていない場合は、そのメニューを表示しても何も表示されません。</div>
+<div class="line">独自メニューを表示したい場合は「独自メニュー用素材」を登録後、<span class="menuselection">ロール・メニュー紐付管理</span> メニューで表示させたいメニューに対して、「メンテナンス可」または「閲覧のみ」の権限を付与する必要があります。</div>
+</div>
+<p>独自メニュー用素材の利用方法とサンプルについては <a class="reference internal" href="#custom-menu-sample"><span class="std std-ref">独自メニュー利用方法</span></a> を参照してください。</p>
+</section>
+</section>
+<section id="id11">
+<h3><span class="section-number">4.4.4. </span>ロール・メニュー紐付管理<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">各メニューとロール対応付けの登録／更新／廃止を行います。</div>
 </div>
@@ -526,8 +555,8 @@
 <div class="line">ロールに紐付かないメニュー画面はメニューグループに表示されません。</div>
 </div>
 </div>
-<table class="docutils align-left" id="id18">
-<caption><span class="caption-number">表 4.75 </span><span class="caption-text">ロール・メニュー紐付管理</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id23">
+<caption><span class="caption-number">表 4.75 </span><span class="caption-text">ロール・メニュー紐付管理</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>項目名</strong></p></th>
@@ -564,13 +593,79 @@
 </div>
 </div>
 </section>
-<section id="id11">
-<h3><span class="section-number">4.4.5. </span>オペレーション削除管理<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id12">
+<h3><span class="section-number">4.4.5. </span>オペレーション削除管理<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
 <p>詳細については、メンテナンスの「<a class="reference internal" href="../maintenance/operation_autoclean.html"><span class="doc">オペレーション削除管理</span></a>」を参照してください。</p>
 </section>
-<section id="id12">
-<h3><span class="section-number">4.4.6. </span>ファイル削除管理<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id13">
+<h3><span class="section-number">4.4.6. </span>ファイル削除管理<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h3>
 <p>詳細については、メンテナンスの「<a class="reference internal" href="../maintenance/file_autoclean.html"><span class="doc">ファイル削除機能</span></a>」を参照してください。</p>
+</section>
+</section>
+<section id="id14">
+<h2><span class="section-number">4.5. </span>付録<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="custom-menu-sample">
+<span id="id15"></span><h3><span class="section-number">4.5.1. </span>独自メニュー利用方法<a class="headerlink" href="#custom-menu-sample" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id16">
+<h4>利用手順<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">(1) <span class="menuselection">メニュー管理</span> メニューで「独自メニュー用素材」を登録し、新規メニューを作成します。</div>
+<div class="line">登録する「独自メニュー用素材」は <a class="reference internal" href="#sample-file"><span class="std std-ref">独自メニュー用素材サンプル</span></a> を参考に作成してください。</div>
+</div>
+<figure class="align-center" id="id24">
+<a class="reference internal image-reference" href="../../../../_images/sample1_menu_regist.png"><img alt="新規メニュー登録" src="../../../../_images/sample1_menu_regist.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.43 </span><span class="caption-text">新規メニュー登録</span><a class="headerlink" href="#id24" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">(2) <span class="menuselection">ロール・メニュー紐付管理</span> メニューで登録したメニューに対して、「メンテナンス可」または「閲覧のみ」の権限を付与します。</div>
+</div>
+<figure class="align-center" id="id25">
+<a class="reference internal image-reference" href="../../../../_images/sample1_role_regist.png"><img alt="ロール・メニュー紐付管理登録" src="../../../../_images/sample1_role_regist.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.44 </span><span class="caption-text">ロール・メニュー紐付管理登録</span><a class="headerlink" href="#id25" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">(3) 登録したメニューを表示します。</div>
+</div>
+</section>
+<section id="sample-file">
+<span id="id17"></span><h4>独自メニュー用素材サンプル<a class="headerlink" href="#sample-file" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">サンプル①</div>
+<div class="line">1枚の画像と <span class="guilabel">Hello</span> ボタンを押下すると「Hello」というアラートを表示します。</div>
+<div class="line"><a class="reference download internal" download="" href="../../../../_downloads/cb524a3cff3b89d3cb8e099561ff4f1a/sample.zip"><code class="xref download docutils literal notranslate"><span class="pre">サンプル①素材</span></code></a></div>
+</div>
+<figure class="align-center" id="id26">
+<a class="reference internal image-reference" href="../../../../_images/sample_menu1.png"><img alt="サンプル①" src="../../../../_images/sample_menu1.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.45 </span><span class="caption-text">サンプル①</span><a class="headerlink" href="#id26" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">サンプル②</div>
+<div class="line">他のITAのメニューと同じようなメニューを表示します。</div>
+<div class="line"><a class="reference download internal" download="" href="../../../../_downloads/35b30c2a167353d87810be6697d16097/sample2.zip"><code class="xref download docutils literal notranslate"><span class="pre">サンプル②素材</span></code></a></div>
+</div>
+<figure class="align-center" id="id27">
+<a class="reference internal image-reference" href="../../../../_images/sample_menu2.png"><img alt="サンプル②" src="../../../../_images/sample_menu2.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.46 </span><span class="caption-text">サンプル②</span><a class="headerlink" href="#id27" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">サンプル③</div>
+<div class="line">「独自メニュー用素材」を登録せずに作成したメニューを表示した場合</div>
+</div>
+<figure class="align-center" id="id28">
+<a class="reference internal image-reference" href="../../../../_images/sample_menu3.png"><img alt="サンプル③" src="../../../../_images/sample_menu3.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.47 </span><span class="caption-text">サンプル③</span><a class="headerlink" href="#id28" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 </section>
 </section>
