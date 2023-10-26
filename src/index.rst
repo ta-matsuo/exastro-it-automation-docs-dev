@@ -11,9 +11,9 @@ Exastro IT Automation Documentation
 .. toctree::
    :maxdepth: 2
 
-   2.0/index
-   2.1/index
    2.2/index
+   2.1/index
+   2.0/index
 
 .. raw:: html
 
