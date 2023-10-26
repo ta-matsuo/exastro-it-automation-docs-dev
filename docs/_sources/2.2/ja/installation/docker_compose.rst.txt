@@ -201,6 +201,7 @@ Docker Compose
 
 | 最も簡単なインストール方法はインストールスクリプトを利用するインストールです。
 | 1回のコマンド実行と対話型による設定が可能です。
+| 以下、ユーザーはtest_user、ホームディレクトリは/home/test_userで実行した例です。
 
 
 .. code-block:: shell
@@ -269,7 +270,7 @@ Docker Compose
    :caption: サービス接続情報の出力
 
    System manager page:
-     URL:                http://ita.example.com:30081/auth/
+     URL:                http://ita.example.com:30081/
      Login user:         admin
      Initial password:   ******************
 
@@ -280,7 +281,7 @@ Docker Compose
    GitLab service is has completely started!
 
    Run creation organization command:
-      bash /home/azureuser/exastro-docker-compose/create-organization.sh 
+      bash /home/test_user/exastro-docker-compose/create-organization.sh 
 
 
    ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
@@ -306,7 +307,7 @@ Docker Compose
 .. code-block:: shell
    :caption: Organization の作成
 
-   bash /home/azureuser/exastro-docker-compose/create-organization.sh 
+   bash /home/test_user/exastro-docker-compose/create-organization.sh 
 
 | 対話型スクリプトが実行されるので、必要な情報を登録してください。
 
@@ -333,7 +334,7 @@ Docker Compose
 .. code-block:: shell
    :caption: Organization の再作成
 
-   bash /home/azureuser/exastro-docker-compose/create-organization.sh --retry
+   bash /home/test_user/exastro-docker-compose/create-organization.sh --retry
 
 ワークスペースの作成
 ====================
@@ -346,3 +347,95 @@ Let's Try!!
 
 | Exastro IT Automation のトレーニングのために、 :doc:`../learn/quickstart/index` を実施することを推奨します。
 | クイックスタートを実施することで、Exastro IT Automation の使い方や、パラメータシートの設計方針についての理解の手助けになるでしょう。
+
+アップグレード
+==============
+
+| Exastro システムのアップグレード方法について紹介します。
+
+
+アップグレードの準備
+--------------------
+
+.. warning:: 
+  | アップグレード実施前に、バックアップを取得しておくことを推奨します。
+  | バックアップ対象は :file:`~/exastro-docker-compose/.volumes` です。
+
+リポジトリの更新
+^^^^^^^^^^^^^^^^^^^^^
+
+| exastro-docker-composeリポジトリを更新します。
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド
+
+   # exastro-docker-composeリポジトリの確認
+   cd ~/exastro-docker-compose
+   git pull
+
+
+
+デフォルト設定値の更新の確認
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| デフォルト値の更新を確認します。
+| インストール時に作成した設定ファイル :file:`~/exastro-docker-compose/.env` とアップグレード後の設定ファイルを比較します。
+
+.. code-block:: shell
+   :caption: コマンド
+
+   cd ~/exastro-docker-compose
+
+   # OSがAlmaLinuxまたはUbuntuの場合
+   diff .env .env.docker.sample
+   # OSがRed Hat Enterprise Linuxの場合
+   diff .env .env.podman.sample
+
+設定値の更新
+^^^^^^^^^^^^
+
+| デフォルト設定値の比較結果から、項目の追加などにより設定値の追加が必要な場合は更新をしてください。
+| 設定値の更新が不要であればこの手順はスキップしてください。
+
+アップグレード
+--------------
+
+アップグレード実施
+^^^^^^^^^^^^^^^^^^
+
+| アップグレードを実施します。
+
+.. code-block:: bash
+  :caption: コマンド
+
+  sh <(curl -sf https://ita.exastro.org/setup) install
+
+
+アンインストール
+================
+
+| Exastro システムのアンインストール方法について紹介します。
+
+アンインストールの準備
+----------------------
+
+.. warning:: 
+  | アンインストール実施前に、バックアップを取得しておくことを推奨します。
+  | バックアップ対象は :file:`~/exastro-docker-compose/.volumes` です。
+
+アンインストール
+----------------
+
+アンインストール実施
+^^^^^^^^^^^^^^^^^^^^
+
+| アンインストールを実施します。
+
+.. code-block:: bash
+  :caption: コマンド
+  # コンテナのみ削除する場合
+  sh <(curl -sf https://ita.exastro.org/setup) install
+  # コンテナ＋データを削除する場合
+  sh <(curl -sf https://ita.exastro.org/setup) install -c
+

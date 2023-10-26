@@ -108,7 +108,8 @@ Ansible Automation Controller の登録
                       "password": null,
                       "ssh_private_key_file": "aap_id_rsa",
                       "passphrase": null,
-                      "isolated_tower": "False",
+                      "ansible_automation_controller_port": null,
+                      "execution_node": "False",
                       "remarks": null
                     }
                   }
@@ -285,7 +286,8 @@ Ansible Automation Controller の登録
                             "password": null,
                             "ssh_private_key_file": "aap_id_rsa",
                             "passphrase": null,
-                            "isolated_tower": "False",
+                            "ansible_automation_controller_port": null,
+                            "execution_node": "False",
                             "remarks": null
                           }
                         }
@@ -346,7 +348,8 @@ Ansible Automation Contoller 連携の確認
                       "parameter": {
                         "authentication_method": "\u9375\u8a8d\u8a3c(\u30d1\u30b9\u30d5\u30ec\u30fc\u30ba\u306a\u3057)",
                         "host": "aap.example.com",
-                        "isolated_tower": "False",
+                        "ansible_automation_controller_port": null,
+                        "execution_node": "False",
                         "passphrase": null,
                         "password": null,
                         "remarks": null,
@@ -429,7 +432,8 @@ Ansible Automation Contoller 連携の確認
                       "parameter": {
                         "authentication_method": "\u9375\u8a8d\u8a3c(\u30d1\u30b9\u30d5\u30ec\u30fc\u30ba\u306a\u3057)",
                         "host": "aap.example.com",
-                        "isolated_tower": "False",
+                        "ansible_automation_controller_port": null,
+                        "execution_node": "False",
                         "passphrase": null,
                         "password": null,
                         "remarks": null,
