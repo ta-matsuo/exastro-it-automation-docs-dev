@@ -49,10 +49,14 @@
      - | SSH 秘密鍵ファイルにパスフレーズが設定されている場合、そのパスフレーズを指定。
        | ※ 最大長256バイト
      - パスフレーズ
-   * - initial_data.ansible_automation_controller_host_list[*].parameter.isolated_tower
+   * - initial_data.ansible_automation_controller_host_list[*].parameter.ansible_automation_controller_port
+     - Ansible Automation Controllerにsshで接続するポート番号を指定。未設定の場合は22。
+     - ポート番号
+   * - initial_data.ansible_automation_controller_host_list[*].parameter.execution_node
      - このノードが Ansible Automation Controller の Execution node であるかどうかを指定。
      - | :kbd:`True` : Execution node である場合。
        | :kbd:`False` : Execution node でない場合。
+       | key名はexecution_nodeの代わりにisolated_towerでも可。
    * - initial_data.ansible_automation_controller_host_list[*].parameter.remarks
      - 備考
      - 任意の文字列

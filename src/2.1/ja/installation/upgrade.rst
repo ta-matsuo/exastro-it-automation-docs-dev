@@ -227,7 +227,7 @@ Helm リポジトリの更新
 | ※正常に起動するまで数分かかる場合があります。
 
 .. code-block:: bash
-   :caption: 出力結果bbb
+   :caption: 出力結果
 
     NAME                                                      READY   STATUS      RESTARTS   AGE
     ita-api-admin-64657656c6-r4s2l                            1/1     Running     0          30m
