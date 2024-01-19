@@ -59,34 +59,8 @@
           <div>
             <select name="version" onchange="location.href=value;">
               {%- for display_ver, path_ver in versions.items() %}
-                {%- set doc_path = pagename.split('/', 2) %}
-                {%- set doc_ver = doc_path[0] %}
-                {%- set doc_lang = doc_path[1] %}
-                {%- set doc_file = doc_path[2] %}
-                {%- set file_path = '' %}
-                {%- if doc_ver != None and doc_ver != "index" %}
-                  {%- set file_path = path_ver %}
-                  {%- if doc_lang != None and doc_lang != "index" %}
-                    {%- set file_path = file_path ~ '/' ~ doc_lang %}
-                    {%- if doc_file != None and doc_file != "index" %}
-                      {%- set file_path = file_path ~ '/' ~ doc_file %}
-                    {%- else %}
-                      {%- set file_path = file_path ~ '/index' %}
-                    {%- endif %}
-                  {%- else %}
-                    {%- set file_path = file_path ~ '/index' %}
-                  {%- endif %}
-                {%- else %}
-                  {%- set file_path = 'index' %}
-                {%- endif %}
-                file_path: {{ file_path }}
-                {%- if hasdoc(file_path) %}
-                  <option value="{{ pathto(file_path) }}"
-                  {%- if path_ver == doc_ver %}
-                  selected
-                  {%- endif %}
-                  >{{ display_ver }}</option>
-                {%- endif %}
+              {%- set file_path = language ~ '/' ~ path_ver ~ '/' ~ pagename %}
+              <option value="../../{{ pathto(file_path) }}" {%- if path_ver == version %} selected{%- endif -%}>{{ display_ver }}</option>
               {%- endfor %}
             </select>
           </div>
@@ -101,35 +75,8 @@
           <div>
             <select name="lang" onchange="location.href=value;">
               {%- for lang, display_lang in languages.items() %}
-                {%- set doc_path = pagename.split('/', 2) %}
-                {%- set doc_ver = doc_path[0] %}
-                {%- set doc_lang = doc_path[1] %}
-                {%- set doc_file = doc_path[2] %}
-                {%- set file_path = '' %}
-                {%- if doc_ver != None and doc_ver != "index" %}
-                  {%- set file_path = doc_ver %}
-                  {%- if doc_lang != None and doc_lang != "index" %}
-                    {%- set file_path = file_path ~ '/' ~ lang %}
-                    {%- if doc_file != None and doc_file != "index" %}
-                      {%- set file_path = file_path ~ '/' ~ doc_file %}
-                    {%- else %}
-                      {%- set file_path = file_path ~ '/index' %}
-                    {%- endif %}
-                  {%- else %}
-                    {%- set file_path = file_path ~ '/index' %}
-                  {%- endif %}
-                {%- else %}
-                  {%- set file_path = 'index' %}
-                {%- endif %}
-                file_path: {{ file_path }}
-                hasdoc: {{hasdoc(file_path)}}
-                {%- if hasdoc(file_path) %}
-                  <option value="{{ pathto(file_path) }}"
-                  {%- if lang == doc_lang %}
-                  selected
-                  {%- endif %}
-                  >{{ display_lang }}</option>
-                {%- endif %}
+              {%- set file_path = lang ~ '/' ~ version ~ '/' ~ pagename %}
+              <option value="../../{{ pathto(file_path) }}" {%- if lang == language %} selected{%- endif %}>{{ display_lang }}</option>
               {%- endfor %}
             </select>
           </div>

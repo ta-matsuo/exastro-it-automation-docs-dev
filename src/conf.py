@@ -24,6 +24,7 @@ author = 'NEC'
 # The full version, including alpha/beta/rc tags
 release = ''
 
+# locale_dirs = ['locale/']
 gettext_compact = False
 
 # -- General configuration ---------------------------------------------------
@@ -35,7 +36,8 @@ extensions = [
     'sphinxcontrib.blockdiag',
     'sphinx_copybutton',
     'sphinx_tabs.tabs',
-    'sphinx_toolbox.collapse'
+    'sphinx_toolbox.collapse',
+    'sphinx.ext.todo'
 ]
 
 # Fontpath for blockdiag (truetype font)
@@ -50,6 +52,7 @@ templates_path = ['_templates']
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
 language = 'ja'
+languages = ["ja", "en"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -68,7 +71,7 @@ html_theme_path = ['.']
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['../_static']
 
 html_css_files = [
     'exastro_documents.css',
@@ -89,7 +92,7 @@ html_show_sourcelink = False
 html_show_sphinx = False
 
 # favion
-html_favicon = '_static/favicon.ico'
+html_favicon = '../../_static/favicon.ico'
 
 # LaTeX の docclass 設定
 latex_docclass = {'manual': 'jsbook'}
@@ -105,9 +108,13 @@ html_context = {
         'en': 'English'
     },
     'versions': {
-        'current': '2.2',
-        '2.2(current)': '2.2',
+        'current': '2.3',
+        '2.3(current)': '2.3',
+        '2.2': '2.2',
         '2.1': '2.1',
         '2.0 ': '2.0'
     }
 }
+
+[extensions]
+todo_include_todos = True

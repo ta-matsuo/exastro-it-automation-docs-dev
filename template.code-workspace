@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+  "esbonio.server.enabled": true,
+  "esbonio.sphinx.buildDir": "${workspaceFolder}/_build",
+  "esbonio.sphinx.srcDir": "${workspaceFolder}/src/ja/#__version__#",
+  "esbonio.sphinx.confDir": "${workspaceFolder}/src/ja/#__version__#"
+	},
+}

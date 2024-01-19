@@ -3,5 +3,6 @@
 .gitmodules
 .docx
 docs
+_build
 /my-repo
 /my-repo.pub

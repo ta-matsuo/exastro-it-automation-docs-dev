@@ -8,3 +8,4 @@ sphinxcontrib-nwdiag
 sphinx-copybutton
 sphinx-tabs
 sphinx-toolbox
+sphinx-intl
