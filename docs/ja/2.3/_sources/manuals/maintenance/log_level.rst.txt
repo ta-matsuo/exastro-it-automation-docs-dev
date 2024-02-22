@@ -17,7 +17,7 @@
 | 指定したサービスに対して、ログレベルを変更することができます。
 | サービスのログレベルは、全オーガナイゼーション、ワークスペースで共通です。
 
-.. _ita_log_level_list_v2.1:
+.. _ita_log_level_list:
 
 ログレベルの設定値と出力について
 --------------------------------
@@ -38,7 +38,7 @@
 
 .. note:: インストール直後は、INFOで設定されています。
 
-.. _ita_service_list_v2.1:
+.. _ita_service_list:
 
 ログレベル変更可能なサービス一覧
 --------------------------------
@@ -93,6 +93,10 @@
      - Terraform-Cloud/EP作業実行
    * - ita-by-terraform-cloud-ep-vars-listup
      - Terraform-Cloud/EP変数刈取
+   * - ita-api-oase-receiver
+     - OASE利用者用API
+   * - ita-by-oase-conclusion
+     - OASE評価機能
 
 
 ログレベルの設定手順
@@ -220,7 +224,9 @@
           "ita-by-terraform-cli-execute": "INFO",
           "ita-by-terraform-cli-vars-listup": "INFO",
           "ita-by-terraform-cloud-ep-execute": "INFO",
-          "ita-by-terraform-cloud-ep-vars-listup": "INFO"
+          "ita-by-terraform-cloud-ep-vars-listup": "INFO",
+          "ita-api-oase-receiver": "INFO",
+          "ita-by-oase-conclusion": "INFO"
         },
         "message": "SUCCESS",
         "result": "000-00000",
@@ -251,7 +257,7 @@
 - 変更するログレベルのjsonファイルを設定
 
   | 取得した toolsフォルダ配下にある、 `update-ita-loglevel.sample.json` を コピーして使用してください。
-  | :ref:`ita_service_list_v2.1`  または、:ref:`get_log_level` で確認した対象から、変更するサービス名、ログレベルを指定してください。
+  | :ref:`ita_service_list`  または、:ref:`get_log_level` で確認した対象から、変更するサービス名、ログレベルを指定してください。
 
 
 - 登録するログレベルの設定

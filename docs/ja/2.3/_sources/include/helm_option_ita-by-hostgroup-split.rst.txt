@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-hostgroup-split.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-hostgroup-split
+     - docker.io/exastro/exastro-it-automation-by-hostgroup-split
    * - exastro-it-automation.ita-by-hostgroup-split.image.tag
      - コンテナイメージのタグ
      - 不可

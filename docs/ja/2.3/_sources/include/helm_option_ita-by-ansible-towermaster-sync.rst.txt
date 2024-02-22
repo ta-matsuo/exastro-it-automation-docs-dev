@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-ansible-towermaster-sync.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-ansible-towermaster-sync
+     - docker.io/exastro/exastro-it-automation-by-ansible-towermaster-sync
    * - exastro-it-automation.ita-by-ansible-towermaster-sync.image.tag
      - コンテナイメージのタグ
      - 不可

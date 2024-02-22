@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-menu-export-import.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-menu-export-import
+     - docker.io/exastro/exastro-it-automation-by-menu-export-import
    * - exastro-it-automation.ita-by-menu-export-import.image.tag
      - コンテナイメージのタグ
      - 不可

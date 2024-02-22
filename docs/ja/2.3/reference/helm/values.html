@@ -4,7 +4,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
     <link rel="next" title="貢献" href="../../contribute/index.html" />
-    <link rel="prev" title="3. Exastro IT Automation Organization API" href="../api/developer/ita-api-organization.html" /> 
+    <link rel="prev" title="3. Exastro IT Automation Admin API" href="../api/system_manager/ita-api-admin.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -94,7 +94,7 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="../api/developer/ita-api-organization.html" title="前のトピックへ"><span class="section-number">3. </span>Exastro IT Automation Organization API</a></li>
+        <li class="prev"><a href="../api/system_manager/ita-api-admin.html" title="前のトピックへ"><span class="section-number">3. </span>Exastro IT Automation Admin API</a></li>
         <li class="next"><a href="../../contribute/index.html" title="次のトピックへ">貢献</a></li>
       </ul>
     </div>
@@ -126,12 +126,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#id4">Exastro Platform セットアップ機能</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mariadb">MariaDB</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id5">Keycloak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mongodb">MongoDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gitlab">GitLab</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#exastro-it-automation">Exastro IT Automation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id6">共通設定 (Exastro IT Automation)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id7">共通設定 (Exastro IT Automation 用データベース)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gitlab">共通設定 (GitLab)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">共通設定 (GitLab)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ita-api-admin">ita-api-admin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ita-api-organization">ita-api-organization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ita-by-ansible-execute">ita-by-ansible-execute</a></li>
@@ -156,6 +158,17 @@
 <li class="toctree-l4"><a class="reference internal" href="#ita-database-setup-job">ita-database-setup-job</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ita-web-server">ita-web-server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ita-migration">ita-migration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exastro-oase">Exastro OASE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">共通設定 (MongoDB)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ita-by-oase-conclusion">ita-by-oase-conclusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ita-api-oase-receiver">ita-api-oase-receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exastro-oase-agent">Exastro OASE Agent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oase-agent">共通設定 (OASE Agent)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ita-ag-oase">ita-ag-oase</a></li>
 </ul>
 </li>
 </ul>
@@ -189,12 +202,14 @@
 <li><a class="reference internal" href="#id4">Exastro Platform セットアップ機能</a></li>
 <li><a class="reference internal" href="#mariadb">MariaDB</a></li>
 <li><a class="reference internal" href="#id5">Keycloak</a></li>
+<li><a class="reference internal" href="#mongodb">MongoDB</a></li>
+<li><a class="reference internal" href="#gitlab">GitLab</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#exastro-it-automation">Exastro IT Automation</a><ul>
 <li><a class="reference internal" href="#id6">共通設定 (Exastro IT Automation)</a></li>
 <li><a class="reference internal" href="#id7">共通設定 (Exastro IT Automation 用データベース)</a></li>
-<li><a class="reference internal" href="#gitlab">共通設定 (GitLab)</a></li>
+<li><a class="reference internal" href="#id8">共通設定 (GitLab)</a></li>
 <li><a class="reference internal" href="#ita-api-admin">ita-api-admin</a></li>
 <li><a class="reference internal" href="#ita-api-organization">ita-api-organization</a></li>
 <li><a class="reference internal" href="#ita-by-ansible-execute">ita-by-ansible-execute</a></li>
@@ -219,6 +234,17 @@
 <li><a class="reference internal" href="#ita-database-setup-job">ita-database-setup-job</a></li>
 <li><a class="reference internal" href="#ita-web-server">ita-web-server</a></li>
 <li><a class="reference internal" href="#ita-migration">ita-migration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exastro-oase">Exastro OASE</a><ul>
+<li><a class="reference internal" href="#id9">共通設定 (MongoDB)</a></li>
+<li><a class="reference internal" href="#ita-by-oase-conclusion">ita-by-oase-conclusion</a></li>
+<li><a class="reference internal" href="#ita-api-oase-receiver">ita-api-oase-receiver</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exastro-oase-agent">Exastro OASE Agent</a><ul>
+<li><a class="reference internal" href="#oase-agent">共通設定 (OASE Agent)</a></li>
+<li><a class="reference internal" href="#ita-ag-oase">ita-ag-oase</a></li>
 </ul>
 </li>
 </ul>
@@ -253,13 +279,13 @@
 <h2>Exastro Platform<a class="headerlink" href="#exastro-platform" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="id1">
 <h3>共通設定 (認証機能)<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id8">
-<caption><span class="caption-number">表 1 </span><span class="caption-text">共通設定 (Exastro 共通基盤) のオプションパラメータ</span><a class="headerlink" href="#id8" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id10">
+<caption><span class="caption-number">表 1 </span><span class="caption-text">共通設定 (Exastro 共通基盤) のオプションパラメータ</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -359,10 +385,10 @@
 <tr class="row-even"><td><p>global.pfGlobalDefinition.persistence.enabled</p></td>
 <td><div class="line-block">
 <div class="line">Exastro 共通基盤におけるデータの永続化の有無</div>
-<div class="line">※現在このパラメータは使用していません。</div>
+<div class="line">※2.3にて削除されました。</div>
 </div>
 </td>
-<td><p>可 (無効)</p></td>
+<td><p>削除</p></td>
 <td><div class="line-block">
 <div class="line"><strong class="program">true</strong> (デフォルト): 永続化する。</div>
 <div class="line"><strong class="program">false</strong>: 永続化しない。</div>
@@ -372,10 +398,10 @@
 <tr class="row-odd"><td><p>global.pfGlobalDefinition.persistence.accessMode</p></td>
 <td><div class="line-block">
 <div class="line">Exastro 共通基盤における Persisten Volume Claim のアクセスモード</div>
-<div class="line">※現在このパラメータは使用していません。</div>
+<div class="line">※2.3にて削除されました。</div>
 </div>
 </td>
-<td><p>可 (無効)</p></td>
+<td><p>削除</p></td>
 <td><div class="line-block">
 <div class="line"><strong class="program">ReadWriteMany</strong> (デフォルト): ボリュームは多数のNodeで読み取り専用としてマウント。</div>
 <div class="line"><strong class="program">ReadWriteOnce</strong>: ボリュームは単一のNodeで読み取り/書き込みとしてマウント。</div>
@@ -385,30 +411,30 @@
 <tr class="row-even"><td><p>global.pfGlobalDefinition.persistence.size</p></td>
 <td><div class="line-block">
 <div class="line">Exastro 共通基盤における Persisten Volume Claim のボリュームに要求するサイズ(Bytes)</div>
-<div class="line">※現在このパラメータは使用していません。</div>
+<div class="line">※2.3にて削除されました。</div>
 </div>
 </td>
-<td><p>可 (無効)</p></td>
+<td><p>削除</p></td>
 <td><p>&quot;10Gi&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.pfGlobalDefinition.persistence.volumeType</p></td>
 <td><div class="line-block">
 <div class="line">Exastro 共通基盤における Persisten Volume のボリュームタイプ</div>
 <div class="line">Storage Class を利用する場合は設定は不要です。</div>
-<div class="line">※現在このパラメータは使用していません。</div>
+<div class="line">※2.3にて削除されました。</div>
 </div>
 </td>
-<td><p>可 (無効)</p></td>
+<td><p>削除</p></td>
 <td><p>&quot;hostPath&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>global.pfGlobalDefinition.persistence.storageClass</p></td>
 <td><div class="line-block">
 <div class="line">Exastro 共通基盤におけるデータの永続化のために利用する Storage Class</div>
 <div class="line">Persistent Volume を利用する場合は設定は不要です。</div>
-<div class="line">※現在このパラメータは使用していません。</div>
+<div class="line">※2.3にて削除されました。</div>
 </div>
 </td>
-<td><p>可 (無効)</p></td>
+<td><p>削除</p></td>
 <td><p>不可</p></td>
 </tr>
 </tbody>
@@ -416,13 +442,13 @@
 </section>
 <section id="keycloak">
 <h3>共通設定 (Keycloak)<a class="headerlink" href="#keycloak" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id9">
-<caption><span class="caption-number">表 2 </span><span class="caption-text">共通設定 (Keycloak) のオプションパラメータ</span><a class="headerlink" href="#id9" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id11">
+<caption><span class="caption-number">表 2 </span><span class="caption-text">共通設定 (Keycloak) のオプションパラメータ</span><a class="headerlink" href="#id11" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -435,7 +461,7 @@
 <tr class="row-even"><td><p>global.keycloakDefinition.name</p></td>
 <td><p>Keycloak の定義名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;keycloak&quot;</p></td>
+<td><p>keycloak</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.enabled</p></td>
 <td><p>Keycloak の定義の利用有無</p></td>
@@ -444,55 +470,60 @@
 </tr>
 <tr class="row-even"><td><p>global.keycloakDefinition.config.API_KEYCLOAK_PROTOCOL</p></td>
 <td><p>Keycloak API エンドポイントのプロトコル</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;http”</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.config.API_KEYCLOAK_HOST</p></td>
 <td><p>Keycloak API エンドポイントのホスト名、もしくは、FQDN</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;keycloak&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>global.keycloakDefinition.config.API_KEYCLOAK_PORT</p></td>
 <td><p>Keycloak API エンドポイントのポート番号</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;8080&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.config.KEYCLOAK_PROTOCOL</p></td>
 <td><p>Keycloak エンドポイントのプロトコル</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;http&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>global.keycloakDefinition.config.KEYCLOAK_HOST</p></td>
 <td><p>Keycloak エンドポイントのホスト名、もしくは、FQDN</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;keycloak&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.config.KEYCLOAK_PORT</p></td>
 <td><p>Keycloak API エンドポイントのポート番号</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;8080&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>global.keycloakDefinition.config.KEYCLOAK_MASTER_REALM</p></td>
 <td><p>Keycloak のマスターレルム名</p></td>
-<td><p>可</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;master&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.config.KEYCLOAK_DB_DATABASE</p></td>
 <td><p>Keycloak が利用するデータベース名</p></td>
-<td><p>可</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;keycloak&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>global.keycloakDefinition.secret.KEYCLOAK_USER</p></td>
+<tr class="row-even"><td><p>global.keycloakDefinition.secret.SYSTEM_ADMIN</p></td>
 <td><div class="line-block">
 <div class="line">Keycloak のマスターレルムにおける管理権限を持ったユーザ名を指定。</div>
 <div class="line">指定した Keycloak ユーザが作成される。</div>
+<div class="line">※KEYCLOAK_USER→SYSTEM_ADMINに変更</div>
 </div>
 </td>
 <td><p>必須</p></td>
 <td><p>任意の文字列</p></td>
 </tr>
-<tr class="row-odd"><td><p>global.keycloakDefinition.secret.KEYCLOAK_PASSWORD</p></td>
-<td><p>Keycloak のマスターレルムにおける管理権限を持ったユーザに設定するパスワード(エンコードなし)</p></td>
+<tr class="row-odd"><td><p>global.keycloakDefinition.secret.SYSTEM_ADMIN_PASSWORD</p></td>
+<td><div class="line-block">
+<div class="line">Keycloak のマスターレルムにおける管理権限を持ったユーザに設定するパスワード(エンコードなし)</div>
+<div class="line">※KEYCLOAK_PASSWORD→SYSTEM_ADMIN_PASSWORDに変更</div>
+</div>
+</td>
 <td><p>必須</p></td>
 <td><p>任意の文字列</p></td>
 </tr>
@@ -515,13 +546,17 @@
 </section>
 <section id="exastro-ita">
 <h3>共通設定 (Exastro ITA)<a class="headerlink" href="#exastro-ita" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id10">
-<caption><span class="caption-number">表 3 </span><span class="caption-text">共通設定 (Exastro IT Automation) のオプションパラメータ</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>2.3にてItaDefinition→pfItaDefinitionへ変更</p>
+</div>
+<table class="filter-table docutils align-left" id="id12">
+<caption><span class="caption-number">表 3 </span><span class="caption-text">共通設定 (Exastro IT Automation) のオプションパラメータ</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -534,7 +569,7 @@
 <tr class="row-even"><td><p>global.itaDefinition.name</p></td>
 <td><p>Exastro IT Automation の定義名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;ita&quot;</p></td>
+<td><p>&quot;pf-ita&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.itaDefinition.enabled</p></td>
 <td><p>Exastro IT Automation 共通定義の利用有無</p></td>
@@ -591,13 +626,13 @@
 </section>
 <section id="id2">
 <h3>共通設定 (認証機能用データベース)<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id11">
-<caption><span class="caption-number">表 4 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id11" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id13">
+<caption><span class="caption-number">表 4 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -675,13 +710,17 @@
 </section>
 <section id="exastro">
 <h3>共通設定 (Exastro 共用データベース)<a class="headerlink" href="#exastro" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id12">
-<caption><span class="caption-number">表 5 </span><span class="caption-text">共通設定 (Exastro 共用データベース) のオプションパラメータ</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>2.3にてMariaDBへ統合したため使用不可</p>
+</div>
+<table class="filter-table docutils align-left" id="id14">
+<caption><span class="caption-number">表 5 </span><span class="caption-text">共通設定 (Exastro 共用データベース) のオプションパラメータ</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -757,13 +796,13 @@
 </section>
 <section id="exastro-platform-api">
 <h3>Exastro Platform API 機能<a class="headerlink" href="#exastro-platform-api" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id13">
-<caption><span class="caption-number">表 6 </span><span class="caption-text">Exastro Platform API 機能のオプションパラメータ</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id15">
+<caption><span class="caption-number">表 6 </span><span class="caption-text">Exastro Platform API 機能のオプションパラメータ</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -776,7 +815,7 @@
 <tr class="row-even"><td><p>exastro-platform.platform-api.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;exastro/exastro-platform-api&quot;</p></td>
+<td><p>&quot;docker.io/exastro/exastro-platform-api&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-platform.platform-api.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -788,13 +827,13 @@
 </section>
 <section id="id3">
 <h3>Exastro Platform 認証機能<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id14">
-<caption><span class="caption-number">表 7 </span><span class="caption-text">Exastro Platform 認証機能のオプションパラメータ</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id16">
+<caption><span class="caption-number">表 7 </span><span class="caption-text">Exastro Platform 認証機能のオプションパラメータ</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -916,7 +955,7 @@
 <tr class="row-even"><td><p>exastro-platform.platform-auth.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;exastro/exastro-platform-auth&quot;</p></td>
+<td><p>&quot;docker.io/exastro/exastro-platform-auth&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-platform.platform-auth.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -928,13 +967,13 @@
 </section>
 <section id="exastro-platform-web">
 <h3>Exastro Platform Web 機能<a class="headerlink" href="#exastro-platform-web" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id15">
-<caption><span class="caption-number">表 8 </span><span class="caption-text">Exastro Platform Web 機能のオプションパラメータ</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id17">
+<caption><span class="caption-number">表 8 </span><span class="caption-text">Exastro Platform Web 機能のオプションパラメータ</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -947,7 +986,7 @@
 <tr class="row-even"><td><p>exastro-platform.platform-web.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;exastro/exastro-platform-web&quot;</p></td>
+<td><p>&quot;docker.io/exastro/exastro-platform-web&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-platform.platform-web.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -959,13 +998,13 @@
 </section>
 <section id="id4">
 <h3>Exastro Platform セットアップ機能<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id16">
-<caption><span class="caption-number">表 9 </span><span class="caption-text">Exastro Platform セットアップ機能のオプションパラメータ</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id18">
+<caption><span class="caption-number">表 9 </span><span class="caption-text">Exastro Platform セットアップ機能のオプションパラメータ</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -978,7 +1017,7 @@
 <tr class="row-even"><td><p>exastro-platform.platform-setup.keycloak.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;exastro/exastro-platform-job&quot;</p></td>
+<td><p>&quot;docker.io/exastro/exastro-platform-job&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-platform.platform-setup.keycloak.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -990,13 +1029,13 @@
 </section>
 <section id="mariadb">
 <h3>MariaDB<a class="headerlink" href="#mariadb" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id17">
-<caption><span class="caption-number">表 10 </span><span class="caption-text">MariaDB コンテナのオプションパラメータ</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id19">
+<caption><span class="caption-number">表 10 </span><span class="caption-text">MariaDB コンテナのオプションパラメータ</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1018,12 +1057,12 @@
 <tr class="row-odd"><td><p>exastro-platform.mariadb.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;mariadb&quot;</p></td>
+<td><p>&quot;docker.io/mariadb&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-platform.mariadb.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;10.9&quot;</p></td>
+<td><p>&quot;10.11&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-platform.mariadb.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -1034,6 +1073,48 @@
 <div class="line"><strong class="program">None</strong>: プルしない</div>
 </div>
 </td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mariadb.persistence.enabled</p></td>
+<td><p>Exastro 共用データベースのデータ永続化の有効フラグ</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;true&quot;</strong> (デフォルト): データを永続化する</div>
+<div class="line"><strong class="program">&quot;false&quot;</strong>: データを永続化しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mariadb.persistence.reinstall</p></td>
+<td><p>再インストール時にデータ領域の初期化の要否</p></td>
+<td><p>不可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;true&quot;</strong>: データを初期化(削除)する</div>
+<div class="line"><strong class="program">&quot;false&quot;</strong> (デフォルト): データを初期化(削除)しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mariadb.persistence.accessMode</p></td>
+<td><p>永続ボリュームのアクセスモードの指定。</p></td>
+<td><p>可(データ永続化時)</p></td>
+<td><p>&quot;ReadWriteOnce&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mariadb.persistence.size</p></td>
+<td><p>永続ボリュームのディスク容量</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><p>&quot;20Gi&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mariadb.persistence.storageClass</p></td>
+<td><p>永続ボリュームにストレージクラスを利用する場合のクラスを指定</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;-&quot;</strong> (デフォルト): ストレージクラスを指定しない。</div>
+<div class="line"><strong class="program">ストレージクラス名</strong>: クラウドプロバイダなどから提供されるストレージクラス名を指定。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mariadb.persistence.matchLabels.name</p></td>
+<td><p>利用する永続ボリューム名を指定</p></td>
+<td><p>可(データ永続化時)</p></td>
+<td><p>&quot;pv-database&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-platform.mariadb.resources.requests.memory</p></td>
 <td><p>メモリ要求</p></td>
@@ -1060,13 +1141,13 @@
 </section>
 <section id="id5">
 <h3>Keycloak<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id18">
-<caption><span class="caption-number">表 11 </span><span class="caption-text">Keycloak コンテナのオプションパラメータ</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id20">
+<caption><span class="caption-number">表 11 </span><span class="caption-text">Keycloak コンテナのオプションパラメータ</span><a class="headerlink" href="#id20" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1088,7 +1169,7 @@
 <tr class="row-odd"><td><p>exastro-platform.keycloak.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;exastro/keycloak&quot;</p></td>
+<td><p>&quot;docker.io/exastro/keycloak&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-platform.keycloak.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1128,18 +1209,324 @@
 </tbody>
 </table>
 </section>
+<section id="mongodb">
+<h3>MongoDB<a class="headerlink" href="#mongodb" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id21">
+<caption><span class="caption-number">表 12 </span><span class="caption-text">MongoDB コンテナのオプションパラメータ</span><a class="headerlink" href="#id21" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-platform.mongo.enabled</p></td>
+<td><p>MongoDB コンテナのデプロイの有無</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">true</strong> (デフォルト): MongoDB コンテナをデプロイします。</div>
+<div class="line"><strong class="program">false</strong> : MongoDB コンテナをデプロイしません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mongo.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;mongo&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mongo.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mongo.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;6.0&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mongo.persistence.enabled</p></td>
+<td><p>Exastro 共用データベースのデータ永続化の有効フラグ</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">true</strong> (デフォルト): データを永続化する</div>
+<div class="line"><strong class="program">false</strong>: データを永続化しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mongo.persistence.reinstall</p></td>
+<td><p>再インストール時にデータ領域の初期化の要否</p></td>
+<td><p>不可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">true</strong> : データを初期化(削除)する</div>
+<div class="line"><strong class="program">false</strong> (デフォルト): データを初期化(削除)しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mongo.persistence.accessMode</p></td>
+<td><p>永続ボリュームのアクセスモードの指定。</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;ReadWriteOnce&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mongo.persistence.size</p></td>
+<td><p>永続ボリュームのディスク容量</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><p>&quot;20Gi&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mongo.persistence.storageClass</p></td>
+<td><p>永続ボリュームにストレージクラスを利用する場合のクラスを指定</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">-</strong> (デフォルト): ストレージクラスを指定しない。</div>
+<div class="line"><strong class="program">ストレージクラス名</strong>: クラウドプロバイダなどから提供されるストレージクラス名を指定。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mongo.persistence.matchLabels.name</p></td>
+<td><p>利用する永続ボリューム名を指定</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;コメントアウト&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mongo.resources.requests.memory</p></td>
+<td><p>メモリ要求</p></td>
+<td><p>可</p></td>
+<td><p>&quot;256Mi&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mongo.resources.requests.cpu</p></td>
+<td><p>CPU要求</p></td>
+<td><p>可</p></td>
+<td><p>&quot;1m&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mongo.resources.limits.memory</p></td>
+<td><p>メモリ上限</p></td>
+<td><p>可</p></td>
+<td><p>&quot;2Gi&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mongo.resources.limits.cpu</p></td>
+<td><p>CPU上限</p></td>
+<td><p>可</p></td>
+<td><p>&quot;4&quot;</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gitlab">
+<h3>GitLab<a class="headerlink" href="#gitlab" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id22">
+<caption><span class="caption-number">表 13 </span><span class="caption-text">GitLab コンテナのオプションパラメータ</span><a class="headerlink" href="#id22" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-platform.gitlab.enabled</p></td>
+<td><p>GitLab コンテナのデプロイの有無</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">true</strong> : GitLab コンテナをデプロイします。</div>
+<div class="line"><strong class="program">false</strong> (デフォルト): GitLab コンテナをデプロイしません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.extraEnv.GITLAB_OMNIBUS_CONFIG</p></td>
+<td><p>GitLab コンテナの環境変数設定</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line">postgresql['shared_buffers'] = &quot;2048MB&quot;</div>
+<div class="line">postgresql['work_mem'] = &quot;128MB&quot;</div>
+<div class="line">postgresql['maintenance_work_mem'] = &quot;128MB&quot;</div>
+<div class="line">postgresql['effective_cache_size'] = &quot;128MB&quot;</div>
+<div class="line">postgresql['checkpoint_segments'] = 16</div>
+<div class="line">postgresql['checkpoint_timeout'] = &quot;10min&quot;</div>
+<div class="line">external_url '<a class="reference external" href="http://gitlab:40080">http://gitlab:40080</a>'</div>
+<div class="line">nginx['listen_port'] = 40080</div>
+<div class="line">gitlab_rails['initial_root_password'] = &quot;${GITLAB_ROOT_PASSWORD:-}&quot;</div>
+<div class="line">gitlab_rails['registry_enabled'] = false;</div>
+<div class="line">gitlab_rails['db_prepared_statements'] = false;</div>
+<div class="line">gitlab_rails['monitoring_whitelist'] = ['0.0.0.0/0']</div>
+<div class="line"># gitlab_rails['env'] = {'MALLOC_CONF' =&gt; 'dirty_decay_ms:1000,muzzy_decay_ms:1000'}</div>
+<div class="line"># puma['worker_processes'] = 0</div>
+<div class="line">prometheus_monitoring['enable'] = false</div>
+<div class="line"># sidekiq['max_concurrency'] = 10</div>
+<div class="line"># gitaly['env'] = {'MALLOC_CONF' =&gt; 'dirty_decay_ms:1000,muzzy_decay_ms:1000', 'GITALY_COMMAND_SPAWN_MAX_PARALLEL' =&gt; '2'}</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.extraEnv.GITLAB_POST_RECONFIGURE_SCRIPT</p></td>
+<td><p>GitLab コンテナのトークン確認と作成コマンド</p></td>
+<td><p>不可</p></td>
+<td><div class="line-block">
+<div class="line">while ! curl -sfI -o /dev/null <a class="reference external" href="http://localhost:40080/-/readiness">http://localhost:40080/-/readiness</a>;</div>
+<div class="line">do</div>
+<div class="line">echo &quot;GitLab service is not ready.&quot;</div>
+<div class="line">sleep 1</div>
+<div class="line">done</div>
+<div class="line">echo &quot;GitLab service started normally&quot;</div>
+<div class="line">curl -Ssf -H &quot;PRIVATE-TOKEN: ${GITLAB_ROOT_TOKEN:-}&quot; &quot;<a class="reference external" href="http://localhost:40080/api/v4/version">http://localhost:40080/api/v4/version</a>&quot; || (</div>
+<div class="line-block">
+<div class="line">gitlab-rails runner &quot;token = User.find_by_username('root').personal_access_tokens.create(scopes: [:api, :write_repository, :sudo], name: 'exastro system token'); token.set_token('${GITLAB_ROOT_TOKEN:-}'); token.save!&quot;</div>
+</div>
+<div class="line">)</div>
+<div class="line">echo &quot;GitLab post reconfigure script ended.&quot;</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;docker.io/gitlab/gitlab-ce&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;15.11.13-ce.0&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.persistence.enabled</p></td>
+<td><p>Exastro 共用データベースのデータ永続化の有効フラグ</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;true&quot;</strong> (デフォルト): データを永続化する</div>
+<div class="line"><strong class="program">&quot;false&quot;</strong>: データを永続化しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.persistence.volumeName</p></td>
+<td><p>永続ボリュームのボリューム名</p></td>
+<td><p>不可</p></td>
+<td><p>pv-gitlab</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.persistence.reinstall</p></td>
+<td><p>再インストール時にデータ領域の初期化の要否</p></td>
+<td><p>不可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;true&quot;</strong>: データを初期化(削除)する</div>
+<div class="line"><strong class="program">&quot;false&quot;</strong> (デフォルト): データを初期化(削除)しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.persistence.accessMode</p></td>
+<td><p>永続ボリュームのアクセスモードの指定。</p></td>
+<td><p>可(データ永続化時)</p></td>
+<td><p>&quot;ReadWriteMany&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.persistence.size</p></td>
+<td><p>永続ボリュームのディスク容量</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><p>&quot;20Gi&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.persistence.storageClass</p></td>
+<td><p>永続ボリュームにストレージクラスを利用する場合のクラスを指定</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;-&quot;</strong> (デフォルト): ストレージクラスを指定しない。</div>
+<div class="line"><strong class="program">ストレージクラス名</strong>: クラウドプロバイダなどから提供されるストレージクラス名を指定。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.persistence.matchLabels.name</p></td>
+<td><p>永続ボリュームのボリューム名</p></td>
+<td><p>不可</p></td>
+<td><p>pv-gitlab</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.resources.requests.memory</p></td>
+<td><p>メモリ要求</p></td>
+<td><p>可</p></td>
+<td><p>&quot;4Gi&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.resources.requests.cpu</p></td>
+<td><p>CPU要求</p></td>
+<td><p>可</p></td>
+<td><p>&quot;4&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.resources.limits.memory</p></td>
+<td><p>メモリ上限</p></td>
+<td><p>可</p></td>
+<td><p>&quot;8Gi&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.resources.limits.cpu</p></td>
+<td><p>CPU上限</p></td>
+<td><p>可</p></td>
+<td><p>&quot;8&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.service.type</p></td>
+<td><p>GitLab のサービスタイプ</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">ClusterIP</strong> (デフォルト): Ingress Controller を利用する場合などに選択</div>
+<div class="line"><strong class="program">LoadBalancer</strong> : LoadBalancer を利用する場合に選択</div>
+<div class="line"><strong class="program">NodePort</strong> : NodePort を利用する場合に選択</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.service.name</p></td>
+<td><div class="line-block">
+<div class="line">GitLab のサービス用名前</div>
+</div>
+</td>
+<td><p>不可</p></td>
+<td><p>&quot;gitlab&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.gitlab.service.port</p></td>
+<td><div class="line-block">
+<div class="line">GitLab のサービス用公開ポート番号</div>
+</div>
+</td>
+<td><p>可 (NodePort利用時)</p></td>
+<td><p>&quot;40080&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.gitlab.service.nodePort</p></td>
+<td><div class="line-block">
+<div class="line">GitLab のシステム管理用公開ポート番号</div>
+</div>
+</td>
+<td><p>可 (NodePort利用時)</p></td>
+<td><p>&quot;30082&quot;</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="exastro-it-automation">
 <h2>Exastro IT Automation<a class="headerlink" href="#exastro-it-automation" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="id6">
 <h3>共通設定 (Exastro IT Automation)<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id19">
-<caption><span class="caption-number">表 12 </span><span class="caption-text">共通設定 (Exastro IT Automation) のオプションパラメータ</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id23">
+<caption><span class="caption-number">表 14 </span><span class="caption-text">共通設定 (Exastro IT Automation) のオプションパラメータ</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1270,13 +1657,13 @@
 </section>
 <section id="id7">
 <h3>共通設定 (Exastro IT Automation 用データベース)<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id20">
-<caption><span class="caption-number">表 13 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id20" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id24">
+<caption><span class="caption-number">表 15 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1352,15 +1739,15 @@
 </tbody>
 </table>
 </section>
-<section id="gitlab">
-<h3>共通設定 (GitLab)<a class="headerlink" href="#gitlab" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id21">
-<caption><span class="caption-number">表 14 </span><span class="caption-text">共通設定 (GitLab) のオプションパラメータ</span><a class="headerlink" href="#id21" title="このテーブルへのパーマリンク">¶</a></caption>
+<section id="id8">
+<h3>共通設定 (GitLab)<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id25">
+<caption><span class="caption-number">表 16 </span><span class="caption-text">共通設定 (GitLab) のオプションパラメータ</span><a class="headerlink" href="#id25" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1395,7 +1782,12 @@
 <td><p>可</p></td>
 <td><p>80</p></td>
 </tr>
-<tr class="row-odd"><td><p>global.gitlabDefinition.secret.GITLAB_ROOT_TOKEN</p></td>
+<tr class="row-odd"><td><p>global.gitlabDefinition.secret.GITLAB_ROOT_PASSWORD</p></td>
+<td><p>GitLabのRoot権限のパスワード</p></td>
+<td><p>必須</p></td>
+<td><p>任意の文字列（8文字以上で予測可能な単語等は利用不可）</p></td>
+</tr>
+<tr class="row-even"><td><p>global.gitlabDefinition.secret.GITLAB_ROOT_TOKEN</p></td>
 <td><p>GitLab の root 権限アカウントのアクセストークン</p></td>
 <td><p>必須</p></td>
 <td><p>アクセエストークン(平文)</p></td>
@@ -1405,13 +1797,13 @@
 </section>
 <section id="ita-api-admin">
 <h3>ita-api-admin<a class="headerlink" href="#ita-api-admin" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id22">
-<caption><span class="caption-number">表 15 </span><span class="caption-text">ita-api-admin における Values 一覧</span><a class="headerlink" href="#id22" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id26">
+<caption><span class="caption-number">表 17 </span><span class="caption-text">ita-api-admin における Values 一覧</span><a class="headerlink" href="#id26" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1429,7 +1821,7 @@
 <tr class="row-odd"><td><p>exastro-it-automation.ita-api-admin.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-api-admin</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-api-admin</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-api-admin.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1451,13 +1843,13 @@
 </section>
 <section id="ita-api-organization">
 <h3>ita-api-organization<a class="headerlink" href="#ita-api-organization" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id23">
-<caption><span class="caption-number">表 16 </span><span class="caption-text">ita-api-organization における Values 一覧</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id27">
+<caption><span class="caption-number">表 18 </span><span class="caption-text">ita-api-organization における Values 一覧</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1475,7 +1867,7 @@
 <tr class="row-odd"><td><p>exastro-it-automation.ita-api-organization.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-api-organization</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-api-organization</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-api-organization.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1497,13 +1889,13 @@
 </section>
 <section id="ita-by-ansible-execute">
 <h3>ita-by-ansible-execute<a class="headerlink" href="#ita-by-ansible-execute" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id24">
-<caption><span class="caption-number">表 17 </span><span class="caption-text">ita-by-ansible-execute における Values 一覧</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id28">
+<caption><span class="caption-number">表 19 </span><span class="caption-text">ita-by-ansible-execute における Values 一覧</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1521,7 +1913,7 @@
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-execute.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-ansible-execute</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-ansible-execute</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-execute.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1582,13 +1974,13 @@
 </section>
 <section id="ita-by-ansible-legacy-role-vars-listup">
 <h3>ita-by-ansible-legacy-role-vars-listup<a class="headerlink" href="#ita-by-ansible-legacy-role-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id25">
-<caption><span class="caption-number">表 18 </span><span class="caption-text">ita-by-ansible-legacy-role-vars-listup における Values 一覧</span><a class="headerlink" href="#id25" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id29">
+<caption><span class="caption-number">表 20 </span><span class="caption-text">ita-by-ansible-legacy-role-vars-listup における Values 一覧</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1621,7 +2013,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1643,13 +2035,13 @@
 </section>
 <section id="ita-by-ansible-legacy-vars-listup">
 <h3>ita-by-ansible-legacy-vars-listup<a class="headerlink" href="#ita-by-ansible-legacy-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id26">
-<caption><span class="caption-number">表 19 </span><span class="caption-text">ita-by-ansible-legacy-vars-listup における Values 一覧</span><a class="headerlink" href="#id26" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id30">
+<caption><span class="caption-number">表 21 </span><span class="caption-text">ita-by-ansible-legacy-vars-listup における Values 一覧</span><a class="headerlink" href="#id30" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1682,7 +2074,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-ansible-legacy-vars-listup</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-ansible-legacy-vars-listup</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-legacy-vars-listup.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1704,13 +2096,13 @@
 </section>
 <section id="ita-by-ansible-pioneer-vars-listup">
 <h3>ita-by-ansible-pioneer-vars-listup<a class="headerlink" href="#ita-by-ansible-pioneer-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id27">
-<caption><span class="caption-number">表 20 </span><span class="caption-text">ita-by-ansible-pioneer-vars-listup における Values 一覧</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id31">
+<caption><span class="caption-number">表 22 </span><span class="caption-text">ita-by-ansible-pioneer-vars-listup における Values 一覧</span><a class="headerlink" href="#id31" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1743,7 +2135,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-ansible-pioneer-vars-listup</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-ansible-pioneer-vars-listup</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-pioneer-vars-listup.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1765,13 +2157,13 @@
 </section>
 <section id="ita-by-ansible-towermaster-sync">
 <h3>ita-by-ansible-towermaster-sync<a class="headerlink" href="#ita-by-ansible-towermaster-sync" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id28">
-<caption><span class="caption-number">表 21 </span><span class="caption-text">ita-by-ansible-towermaster-sync における Values 一覧</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id32">
+<caption><span class="caption-number">表 23 </span><span class="caption-text">ita-by-ansible-towermaster-sync における Values 一覧</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1804,7 +2196,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-ansible-towermaster-sync.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-ansible-towermaster-sync</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-ansible-towermaster-sync</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-ansible-towermaster-sync.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1826,13 +2218,13 @@
 </section>
 <section id="ita-by-cicd-for-iac">
 <h3>ita-by-cicd-for-iac<a class="headerlink" href="#ita-by-cicd-for-iac" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id29">
-<caption><span class="caption-number">表 22 </span><span class="caption-text">ita-by-cicd-for-iac における Values 一覧</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id33">
+<caption><span class="caption-number">表 24 </span><span class="caption-text">ita-by-cicd-for-iac における Values 一覧</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1865,7 +2257,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-cicd-for-iac.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-cicd-for-iac</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-cicd-for-iac</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-cicd-for-iac.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1887,13 +2279,13 @@
 </section>
 <section id="ita-by-collector">
 <h3>ita-by-collector<a class="headerlink" href="#ita-by-collector" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id30">
-<caption><span class="caption-number">表 23 </span><span class="caption-text">ita-by-collector における Values 一覧</span><a class="headerlink" href="#id30" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id34">
+<caption><span class="caption-number">表 25 </span><span class="caption-text">ita-by-collector における Values 一覧</span><a class="headerlink" href="#id34" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1926,7 +2318,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-collector.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-collector</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-collector</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-collector.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -1948,13 +2340,13 @@
 </section>
 <section id="ita-by-conductor-regularly">
 <h3>ita-by-conductor-regularly<a class="headerlink" href="#ita-by-conductor-regularly" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id31">
-<caption><span class="caption-number">表 24 </span><span class="caption-text">ita-by-conductor-regularly における Values 一覧</span><a class="headerlink" href="#id31" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id35">
+<caption><span class="caption-number">表 26 </span><span class="caption-text">ita-by-conductor-regularly における Values 一覧</span><a class="headerlink" href="#id35" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1987,7 +2379,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-regularly.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-conductor-regularly</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-conductor-regularly</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-conductor-regularly.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2009,13 +2401,13 @@
 </section>
 <section id="ita-by-conductor-synchronize">
 <h3>ita-by-conductor-synchronize<a class="headerlink" href="#ita-by-conductor-synchronize" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id32">
-<caption><span class="caption-number">表 25 </span><span class="caption-text">ita-by-conductor-synchronize における Values 一覧</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id36">
+<caption><span class="caption-number">表 27 </span><span class="caption-text">ita-by-conductor-synchronize における Values 一覧</span><a class="headerlink" href="#id36" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2048,7 +2440,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-conductor-synchronize.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-conductor-synchronize</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-conductor-synchronize</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-conductor-synchronize.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2070,13 +2462,13 @@
 </section>
 <section id="ita-by-excel-export-import">
 <h3>ita-by-excel-export-import<a class="headerlink" href="#ita-by-excel-export-import" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id33">
-<caption><span class="caption-number">表 26 </span><span class="caption-text">ita-by-excel-export-import における Values 一覧</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id37">
+<caption><span class="caption-number">表 28 </span><span class="caption-text">ita-by-excel-export-import における Values 一覧</span><a class="headerlink" href="#id37" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2109,7 +2501,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-excel-export-import.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-excel-export-import</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-excel-export-import</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-excel-export-import.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2131,13 +2523,13 @@
 </section>
 <section id="ita-by-execinstance-dataautoclean">
 <h3>ita-by-execinstance-dataautoclean<a class="headerlink" href="#ita-by-execinstance-dataautoclean" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id34">
-<caption><span class="caption-number">表 27 </span><span class="caption-text">ita-by-execinstance-dataautoclean における Values 一覧</span><a class="headerlink" href="#id34" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id38">
+<caption><span class="caption-number">表 29 </span><span class="caption-text">ita-by-execinstance-dataautoclean における Values 一覧</span><a class="headerlink" href="#id38" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2170,7 +2562,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-execinstance-dataautoclean</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-execinstance-dataautoclean</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-execinstance-dataautoclean.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2192,13 +2584,13 @@
 </section>
 <section id="ita-by-file-autoclean">
 <h3>ita-by-file-autoclean<a class="headerlink" href="#ita-by-file-autoclean" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id35">
-<caption><span class="caption-number">表 28 </span><span class="caption-text">ita-by-file-autoclean における Values 一覧</span><a class="headerlink" href="#id35" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id39">
+<caption><span class="caption-number">表 30 </span><span class="caption-text">ita-by-file-autoclean における Values 一覧</span><a class="headerlink" href="#id39" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2231,7 +2623,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-file-autoclean.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-file-autoclean</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-file-autoclean</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-file-autoclean.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2253,13 +2645,13 @@
 </section>
 <section id="ita-by-hostgroup-split">
 <h3>ita-by-hostgroup-split<a class="headerlink" href="#ita-by-hostgroup-split" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id36">
-<caption><span class="caption-number">表 29 </span><span class="caption-text">ita-by-hostgroup-split における Values 一覧</span><a class="headerlink" href="#id36" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id40">
+<caption><span class="caption-number">表 31 </span><span class="caption-text">ita-by-hostgroup-split における Values 一覧</span><a class="headerlink" href="#id40" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2292,7 +2684,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-hostgroup-split.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-hostgroup-split</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-hostgroup-split</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-hostgroup-split.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2314,13 +2706,13 @@
 </section>
 <section id="ita-by-menu-create">
 <h3>ita-by-menu-create<a class="headerlink" href="#ita-by-menu-create" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id37">
-<caption><span class="caption-number">表 30 </span><span class="caption-text">ita-by-menu-create における Values 一覧</span><a class="headerlink" href="#id37" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id41">
+<caption><span class="caption-number">表 32 </span><span class="caption-text">ita-by-menu-create における Values 一覧</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2353,7 +2745,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-create.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-menu-create</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-menu-create</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-menu-create.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2375,13 +2767,13 @@
 </section>
 <section id="ita-by-menu-export-import">
 <h3>ita-by-menu-export-import<a class="headerlink" href="#ita-by-menu-export-import" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id38">
-<caption><span class="caption-number">表 31 </span><span class="caption-text">ita-by-menu-export-import における Values 一覧</span><a class="headerlink" href="#id38" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id42">
+<caption><span class="caption-number">表 33 </span><span class="caption-text">ita-by-menu-export-import における Values 一覧</span><a class="headerlink" href="#id42" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2414,7 +2806,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-menu-export-import.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-menu-export-import</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-menu-export-import</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-menu-export-import.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2436,13 +2828,13 @@
 </section>
 <section id="ita-by-terraform-cli-execute">
 <h3>ita-by-terraform-cli-execute<a class="headerlink" href="#ita-by-terraform-cli-execute" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id39">
-<caption><span class="caption-number">表 32 </span><span class="caption-text">ita-by-terraform-cli-execute における Values 一覧</span><a class="headerlink" href="#id39" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id43">
+<caption><span class="caption-number">表 34 </span><span class="caption-text">ita-by-terraform-cli-execute における Values 一覧</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2475,7 +2867,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-terraform-cli-execute</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-terraform-cli-execute</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cli-execute.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2497,13 +2889,13 @@
 </section>
 <section id="ita-by-terraform-cli-vars-listup">
 <h3>ita-by-terraform-cli-vars-listup<a class="headerlink" href="#ita-by-terraform-cli-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id40">
-<caption><span class="caption-number">表 33 </span><span class="caption-text">ita-by-terraform-cli-vars-listup における Values 一覧</span><a class="headerlink" href="#id40" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id44">
+<caption><span class="caption-number">表 35 </span><span class="caption-text">ita-by-terraform-cli-vars-listup における Values 一覧</span><a class="headerlink" href="#id44" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2536,7 +2928,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-terraform-cli-vars-listup</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-terraform-cli-vars-listup</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cli-vars-listup.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2558,13 +2950,13 @@
 </section>
 <section id="ita-by-terraform-cloud-ep-execute">
 <h3>ita-by-terraform-cloud-ep-execute<a class="headerlink" href="#ita-by-terraform-cloud-ep-execute" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id41">
-<caption><span class="caption-number">表 34 </span><span class="caption-text">ita-by-terraform-cloud-ep-execute における Values 一覧</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id45">
+<caption><span class="caption-number">表 36 </span><span class="caption-text">ita-by-terraform-cloud-ep-execute における Values 一覧</span><a class="headerlink" href="#id45" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2597,7 +2989,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-terraform-cloud-ep-execute</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-terraform-cloud-ep-execute</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-execute.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2619,13 +3011,13 @@
 </section>
 <section id="ita-by-terraform-cloud-ep-vars-listup">
 <h3>ita-by-terraform-cloud-ep-vars-listup<a class="headerlink" href="#ita-by-terraform-cloud-ep-vars-listup" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id42">
-<caption><span class="caption-number">表 35 </span><span class="caption-text">ita-by-terraform-cloud-ep-vars-listup における Values 一覧</span><a class="headerlink" href="#id42" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id46">
+<caption><span class="caption-number">表 37 </span><span class="caption-text">ita-by-terraform-cloud-ep-vars-listup における Values 一覧</span><a class="headerlink" href="#id46" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2658,7 +3050,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2680,13 +3072,17 @@
 </section>
 <section id="ita-database-setup-job">
 <h3>ita-database-setup-job<a class="headerlink" href="#ita-database-setup-job" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id43">
-<caption><span class="caption-number">表 36 </span><span class="caption-text">ita-database-setup-job における Values 一覧</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>2.3にて削除したため利用不可</p>
+</div>
+<table class="filter-table docutils align-left" id="id47">
+<caption><span class="caption-number">表 38 </span><span class="caption-text">ita-database-setup-job における Values 一覧</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2722,13 +3118,13 @@
 </section>
 <section id="ita-web-server">
 <h3>ita-web-server<a class="headerlink" href="#ita-web-server" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id44">
-<caption><span class="caption-number">表 37 </span><span class="caption-text">ita-web-server における Values 一覧</span><a class="headerlink" href="#id44" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id48">
+<caption><span class="caption-number">表 39 </span><span class="caption-text">ita-web-server における Values 一覧</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2746,7 +3142,7 @@
 <tr class="row-odd"><td><p>exastro-it-automation.ita-web-server.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-web-server</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-web-server</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-it-automation.ita-web-server.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2768,13 +3164,13 @@
 </section>
 <section id="ita-migration">
 <h3>ita-migration<a class="headerlink" href="#ita-migration" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="filter-table docutils align-left" id="id45">
-<caption><span class="caption-number">表 38 </span><span class="caption-text">ita-migration における Values 一覧</span><a class="headerlink" href="#id45" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="filter-table docutils align-left" id="id49">
+<caption><span class="caption-number">表 40 </span><span class="caption-text">ita-migration における Values 一覧</span><a class="headerlink" href="#id49" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2797,7 +3193,7 @@
 <tr class="row-even"><td><p>exastro-it-automation.ita-migration.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>exastro/exastro-it-automation-migration</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-migration</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-it-automation.ita-migration.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
@@ -2818,6 +3214,424 @@
 </table>
 </section>
 </section>
+<section id="exastro-oase">
+<h2>Exastro OASE<a class="headerlink" href="#exastro-oase" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id9">
+<h3>共通設定 (MongoDB)<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id50">
+<caption><span class="caption-number">表 41 </span><span class="caption-text">OASE設定 (Exastro OASE用データベース) のオプションパラメータ</span><a class="headerlink" href="#id50" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>global.mongoDefinition.config.MONGO_PROTOCOL</p></td>
+<td><div class="line-block">
+<div class="line">OASE用データベースで利用するDBのプロトコル</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><p>&quot;http&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>global.mongoDefinition.config.MONGO_HOST</p></td>
+<td><div class="line-block">
+<div class="line">OASE用データベース利用するDB</div>
+<div class="line">デフォルト状態では、同一の Kubernetes クラスタ内にデプロイされるコンテナを指定しています。</div>
+<div class="line">クラスタ外部の DB を利用する場合には設定が必要となります。</div>
+</div>
+</td>
+<td><p>可 (外部データベース利用時)</p></td>
+<td><p>&quot;mongo&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>global.mongoDefinition.config.MONGO_PORT</p></td>
+<td><p>OASE用データベースで利用するポート番号(TCP)</p></td>
+<td><p>可 (外部データベース利用時)</p></td>
+<td><p>&quot;27017&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>global.mongoDefinition.secret.MONGO_ADMIN_USER</p></td>
+<td><p>OASE用データベースで利用する管理権限を持つDBユーザ名</p></td>
+<td><p>必須</p></td>
+<td><p>管理権限を持つDBユーザ名</p></td>
+</tr>
+<tr class="row-even"><td><p>global.mongoDefinition.secret.DB_ADMIN_PASSWORD</p></td>
+<td><p>OASE用データベースで利用する管理権限を持つDBユーザのパスワード(エンコードなし)</p></td>
+<td><p>必須</p></td>
+<td><p>管理権限を持つDBユーザ名のパスワード</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-by-oase-conclusion">
+<h3>ita-by-oase-conclusion<a class="headerlink" href="#ita-by-oase-conclusion" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id51">
+<caption><span class="caption-number">表 42 </span><span class="caption-text">ita-by-oase-conclusion における Values 一覧</span><a class="headerlink" href="#id51" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-oase-conclusion.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-oase-conclusion.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>処理終了後から次回実行時までの待機時間</p></td>
+<td><p>不可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-oase-conclusion.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-oase-conclusion.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-oase-conclusion.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-api-oase-receiver</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-by-oase-conclusion.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-by-oase-conclusion.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-api-oase-receiver">
+<h3>ita-api-oase-receiver<a class="headerlink" href="#ita-api-oase-receiver" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id52">
+<caption><span class="caption-number">表 43 </span><span class="caption-text">ita-api-oase-receiver における Values 一覧</span><a class="headerlink" href="#id52" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exastro-it-automation.ita-api-oase-receiver.replicaCount</p></td>
+<td><p>Pod のレプリカ数</p></td>
+<td><p>不可</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-api-oase-receiver.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>docker.io/exastro/exastro-it-automation-api-oase-receiver</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-api-oase-receiver.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-api-oase-receiver.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-api-oase-receiver.extraEnv.LISTEN_PORT</p></td>
+<td><p>OASEで公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-it-automation.ita-api-oase-receiver.extraEnv.PLATFORM_API_HOST</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するホスト名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;platform-api&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-it-automation.ita-api-oase-receiver.extraEnv.PLATFORM_API_PORT</p></td>
+<td><p>Exastro 共通基盤で公開する内部の API エンドポイントで利用するポート番号(TCP)</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;8000&quot;</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="exastro-oase-agent">
+<h2>Exastro OASE Agent<a class="headerlink" href="#exastro-oase-agent" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="oase-agent">
+<h3>共通設定 (OASE Agent)<a class="headerlink" href="#oase-agent" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id53">
+<caption><span class="caption-number">表 44 </span><span class="caption-text">共通設定 (Exastro OASE Agent) のオプションパラメータ</span><a class="headerlink" href="#id53" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>global.agentGlobalDefinition.name</p></td>
+<td><p>Exastro OASE Agent の定義名</p></td>
+<td><p>不可</p></td>
+<td><p>agent-global</p></td>
+</tr>
+<tr class="row-odd"><td><p>global.agentGlobalDefinition.enabled</p></td>
+<td><p>Exastro OASE Agent の定義の利用有無</p></td>
+<td><p>不可</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>global.agentGlobalDefinition.image.registry</p></td>
+<td><p>Exastro OASE Agent で利用するデフォルトイメージレジストリ</p></td>
+<td><p>不可</p></td>
+<td><p>docker.io</p></td>
+</tr>
+<tr class="row-odd"><td><p>global.agentGlobalDefinition.image.organization</p></td>
+<td><p>Exastro OASE Agent で利用するデフォルトイメージレジストリの組織名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro</p></td>
+</tr>
+<tr class="row-even"><td><p>global.agentGlobalDefinition.image.package</p></td>
+<td><p>Exastro OASE Agent で利用するデフォルトイメージレジストリのパッケージ名</p></td>
+<td><p>不可</p></td>
+<td><p>exastro-it-automation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-ag-oase">
+<h3>ita-ag-oase<a class="headerlink" href="#ita-ag-oase" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="filter-table docutils align-left" id="id54">
+<caption><span class="caption-number">表 45 </span><span class="caption-text">ita-ag-oase における Values 一覧</span><a class="headerlink" href="#id54" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ita-ag-oase.agents.image.repository</p></td>
+<td><p>コンテナイメージのリポジトリ名</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.image.pullPolicy</p></td>
+<td><p>イメージプルポリシー</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">IfNotPresent</strong> (デフォルト): コンテナイメージが存在しない場合のみプル</div>
+<div class="line"><strong class="program">Always</strong>: 毎回必ずプル</div>
+<div class="line"><strong class="program">None</strong>: プルしない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.TZ</p></td>
+<td><p>OASE エージェント システムで使用する規定の言語</p></td>
+<td><p>可</p></td>
+<td><p>Asia/Tokyo</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.DEFAULT_LANGUAGE</p></td>
+<td><p>OASE エージェント システムで使用する言語</p></td>
+<td><p>可</p></td>
+<td><p>ja</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.LANGUAGE</p></td>
+<td><p>OASE エージェント のバージョン</p></td>
+<td><p>可</p></td>
+<td><p>en</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.ITERATION</p></td>
+<td><p>OASE エージェント が設定を初期化するまでの、処理の繰り返し数（下限値: 10）</p></td>
+<td><p>可</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>ita-ag-oaseがイベント取得対象に対してイベント取得の間隔（秒）（下限値: 3）</p></td>
+<td><p>可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.LOG_LEVEL</p></td>
+<td><p>OASE エージェント のログレベル</p></td>
+<td><p>可</p></td>
+<td><p>INFO</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.eagents.xtraEnv.AGENT_NAME</p></td>
+<td><p>起動する OASEエージェントの名前</p></td>
+<td><p>可</p></td>
+<td><p>oase-agent</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.EXASTRO_URL</p></td>
+<td><p>Exastro IT Automation の Service URL</p></td>
+<td><p>可</p></td>
+<td><p><a class="reference external" href="http://platform-auth:8000">http://platform-auth:8000</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.EXASTRO_ORGANIZATION_ID</p></td>
+<td><p>Exastro IT Automation で作成した OrganizationID</p></td>
+<td><p>必須</p></td>
+<td><p>org001</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.EXASTRO_WORKSPACE_ID</p></td>
+<td><p>Exastro IT Automation で作成した WorkspaceID</p></td>
+<td><p>必須</p></td>
+<td><p>ws01</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.EVENT_COLLECTION_SETTINGS_NAMES</p></td>
+<td><div class="line-block">
+<div class="line">Exastro IT Automation のOASE管理 エージェント で作成した イベント収集設定名</div>
+<div class="line">カンマ区切りで複数指定可能</div>
+</div>
+</td>
+<td><p>必須</p></td>
+<td><p>id0001</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.secret.EXASTRO_USERNAME</p></td>
+<td><p>Exastro IT Automation で作成した ユーザー名</p></td>
+<td><p>可</p></td>
+<td><p>admin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.secret.EXASTRO_PASSWORD</p></td>
+<td><p>Exastro IT Automation で作成した パスワード</p></td>
+<td><p>可</p></td>
+<td><p>sample-password</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.resources.requests.memory</p></td>
+<td><p>メモリ要求</p></td>
+<td><p>可</p></td>
+<td><p>&quot;64Mi&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.resources.requests.cpu</p></td>
+<td><p>CPU要求</p></td>
+<td><p>可</p></td>
+<td><p>&quot;250m&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.resources.limits.memory</p></td>
+<td><p>メモリ上限</p></td>
+<td><p>可</p></td>
+<td><p>&quot;64Mi&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.resources.limits.cpu</p></td>
+<td><p>CPU上限</p></td>
+<td><p>可</p></td>
+<td><p>&quot;250m&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.nameOverride</p></td>
+<td><div class="line-block">
+<div class="line">Exastro OASE Agent の定義名</div>
+<div class="line">※同一クラスタ内に複数エージェントを構築する際は必須</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.persistence.enabled</p></td>
+<td><p>OASE エージェントコンテナのデプロイの有無</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">true</strong> (デフォルト): OASE エージェントコンテナをデプロイします。</div>
+<div class="line"><strong class="program">false</strong> : OASE エージェントコンテナをデプロイしません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.persistence.reinstall</p></td>
+<td><p>再インストール時にデータ領域の初期化の要否</p></td>
+<td><p>不可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">true</strong> : データを初期化(削除)する</div>
+<div class="line"><strong class="program">false</strong> (デフォルト): データを初期化(削除)しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.persistence.accessMode</p></td>
+<td><p>永続ボリュームのアクセスモードの指定。</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;ReadWriteMany&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.persistence.size</p></td>
+<td><p>永続ボリュームのディスク容量</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><p>&quot;10Gi&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.persistence.volumeType</p></td>
+<td><p>永続ボリュームのボリュームタイプ</p></td>
+<td><p>可 (現在無効)</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">hostPath</strong> (デフォルト): Kubernetes クラスタのノード上にデータを保存(非推奨)</div>
+<div class="line"><strong class="program">AKS</strong>: AKS のストレージクラスを利用</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.persistence.storageClass</p></td>
+<td><p>永続ボリュームにストレージクラスを利用する場合のクラスを指定</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">-</strong> (デフォルト): ストレージクラスを指定しない。</div>
+<div class="line"><strong class="program">ストレージクラス名</strong>: クラウドプロバイダなどから提供されるストレージクラス名を指定。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mariadb.persistence.matchLabels.name</p></td>
+<td><p>利用する永続ボリューム名を指定</p></td>
+<td><p>可(データ永続化時)</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 </section>
 
 
@@ -2826,7 +3640,7 @@
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="../api/developer/ita-api-organization.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">3. </span>Exastro IT Automation Organization API</a></li>
+    <li class="prev"><a href="../api/system_manager/ita-api-admin.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">3. </span>Exastro IT Automation Admin API</a></li>
     <li class="next"><a href="../../contribute/index.html" title="次のトピックへ"><span>次のトピックへ</span>貢献</a></li>
   </ul>
 </div>

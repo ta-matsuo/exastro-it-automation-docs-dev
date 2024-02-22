@@ -12,7 +12,7 @@
    * - exastro-platform.platform-web.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - "exastro/exastro-platform-web"
+     - "docker.io/exastro/exastro-platform-web"
    * - exastro-platform.platform-web.image.tag
      - コンテナイメージのタグ
      - 不可

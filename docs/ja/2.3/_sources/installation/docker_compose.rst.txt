@@ -196,7 +196,7 @@ Docker Compose
    | HTTPSを利用する場合には、 LoadBalancer または、リバースプロキシを利用する必要があります。
    | LoadBalancer または、リバースプロキシを利用する場合は、別途準備をする必要があります。
 
-.. _install_docker_compose_v2.2:
+.. _install_docker_compose:
 
 インストール (自動)
 ===================
@@ -215,6 +215,16 @@ Docker Compose
 | 必要なパッケージなどのインストールが完了すると下記のように対話形式で設定値を投入することが可能です。
 
 .. code-block:: shell
+   :caption: OASE コンテナデプロイ要否の確認
+
+   Deploy OASE containers? (y/n) [default: y]:
+
+.. code-block:: shell
+   :caption: GitLab コンテナデプロイ要否の確認
+
+   Deploy GitLab container? (y/n) [default: n]: 
+
+.. code-block:: shell
    :caption: パスワード自動生成の確認
 
    # Exastro システムが利用する MariaDB のパスワードや、システム管理者のパスワード自動生成するか？
@@ -231,17 +241,14 @@ Docker Compose
    Management URL? [default: http://127.0.0.1:30081]: http://ita.example.com:30081
 
 .. code-block:: shell
-   :caption: GitLab コンテナデプロイ要否の確認
-
-   Deploy GitLab container? (y/n) [default: n]: 
-
-.. code-block:: shell
    :caption: 設定ファイルの生成の確認
 
    System parametes are bellow.
 
    System administrator password:    ********
-   Database password:                ********
+   MariaDB password:                 ********
+   OASE deployment                   true
+   MongoDB password                  ********
    Service URL:                      http://ita.example.com:30080
    Manegement URL:                   http://ita.example.com:30081
    Docker GID:                       1000
@@ -292,8 +299,6 @@ Docker Compose
 
    Be sure to reboot the you host operating system to ensure proper system operation.
 
-   Reboot now? (y/n) [default: y]: y
-
 | 必要に応じて出力された接続情報を保存し、:command:`y` もしくは :command:`yes` と入力し再起動を実施します。
 
 .. note::
@@ -303,40 +308,12 @@ Docker Compose
 オーガナイゼーションの作成
 ==========================
 
-| 再起動後に再度ログインをしたら、オーガナイゼーションの作成を行います。
+| オーガナイゼーションの作成を行います。
 | オーガナイゼーションの詳細については、 :doc:`../manuals/platform_management/organization` を参照してください。
-
-.. code-block:: shell
-   :caption: Organization の作成
-
-   bash /home/test_user/exastro-docker-compose/create-organization.sh 
-
-| 対話型スクリプトが実行されるので、必要な情報を登録してください。
-
-.. code-block:: shell
-   :caption: Organization の作成結果
-
-   {
-     "data": null,
-     "message": "SUCCESS",
-     "result": "000-00000",
-     "ts": "2023-09-07T14:37:17.832Z"
-   }
-
-   Organization page:
-     URL:                http://ita.example.com:30080/your-org/platform/
-     User:               admin
-     Password:           *********
-
-| :command:`SUCCESS` と表示されたら成功ですが、失敗した場合は :command:`--retry` オプションを追加し、5分程度時間を空けてから再登録してください。
 
 .. tip:: 
    | GitLab 連携時に、GitLab が完全に立ち上がっていない状態では、オーガナイゼーションの作成はできません。
 
-.. code-block:: shell
-   :caption: Organization の再作成
-
-   bash /home/test_user/exastro-docker-compose/create-organization.sh --retry
 
 ワークスペースの作成
 ====================
@@ -438,6 +415,7 @@ Let's Try!!
    :caption: コマンド
 
    # コンテナのみ削除する場合
-   sh <(curl -sf https://ita.exastro.org/setup) install
+   sh <(curl -sf https://ita.exastro.org/setup) remove
+
    # コンテナ＋データを削除する場合
-   sh <(curl -sf https://ita.exastro.org/setup) install -c
+   sh <(curl -sf https://ita.exastro.org/setup) remove -c

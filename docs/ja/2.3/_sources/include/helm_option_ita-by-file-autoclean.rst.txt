@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-file-autoclean.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-file-autoclean
+     - docker.io/exastro/exastro-it-automation-by-file-autoclean
    * - exastro-it-automation.ita-by-file-autoclean.image.tag
      - コンテナイメージのタグ
      - 不可

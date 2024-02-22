@@ -1,4 +1,4 @@
-.. _ita_maintenance_mode_v2.2:
+.. _ita_maintenance_mode:
 
 ==================
 メンテナンスモード
@@ -16,7 +16,7 @@
 | データの閲覧は可能な状態で、データベースに対する登録・更新やバックヤード処理を止め、データベースのバックアップやバージョンアップをより安全に行うための機能です。
 | メンテナンスモードは、システム上の全オーガナイゼーション・ワークスペースに対して適用されます。
 
-.. _ita_maintenance_mode_purpose_of_use_v2.2:
+.. _ita_maintenance_mode_purpose_of_use:
 
 メンテナンスモードの利用用途
 ----------------------------
@@ -25,9 +25,9 @@
 | 「BACKYARD_EXECUTE_STOP」を有効にすると、作業実行などを行うバックヤード機能が、新たに処理を実行しなくなります。
 | ただし「BACKYARD_EXECUTE_STOP」を有効にした時点ですでに動作している処理（ステータスが「準備中」「実行中」「実行中(遅延)」のもの）については、ステータスが「完了」「完了(異常)」「想定外エラー」となるまで処理が継続されます。
 | 「DATA_UPDATE_STOP」を有効にすると、データベースに対する登録・更新を行うすべての機能が利用できなくなります。（各メニューからのデータの閲覧は可能です。）
-| 詳細は「:ref:`ita_maintenance_mode_setting_value_v2.2`」を参照してください。
+| 詳細は「:ref:`ita_maintenance_mode_setting_value`」を参照してください。
 |
-| また「:ref:`ita_maintenance_mode_get_backyard_execute_check_v2.2`」APIを利用し、ステータスが「準備中」「実行中」「実行中(遅延)」のバックヤード処理を一括で取得することができます。
+| また「:ref:`ita_maintenance_mode_get_backyard_execute_check`」APIを利用し、ステータスが「準備中」「実行中」「実行中(遅延)」のバックヤード処理を一括で取得することができます。
 | これらを利用し
 
 - | 「BACKYARD_EXECUTE_STOP」を有効にする。
@@ -50,7 +50,7 @@
 
    メンテナンスモード中のWeb画面
 
-.. _ita_maintenance_mode_setting_value_v2.2:
+.. _ita_maintenance_mode_setting_value:
 
 メンテナンスモードの種類と設定値について
 ----------------------------------------
@@ -119,7 +119,7 @@
 メンテナンスモード設定確認、設定手順
 ====================================
 
-.. _ita_maintenance_mode_preparation_v2.2:
+.. _ita_maintenance_mode_preparation:
 
 事前準備
 --------
@@ -155,7 +155,7 @@
        | 設定ファイル内の :kbd:`CURL_OPT=-sv` を :kbd:`CURL_OPT=-svk` に変更することで証明書エラーを回避できますが、認証機関から発行された正しい証明書をインストールすることを推奨します。
 
 
-.. _ita_maintenance_mode_confirm_v2.2:
+.. _ita_maintenance_mode_confirm:
 
 メンテナンスモードの確認
 ------------------------
@@ -214,7 +214,7 @@
           "${BASE_URL}/api/platform/maintenance-mode-setting"
 
 
-.. _ita_maintenance_mode_create_json_v2.2:
+.. _ita_maintenance_mode_create_json:
 
 メンテナンスモードの設定を作成
 ------------------------------
@@ -222,7 +222,7 @@
 - 変更するメンテナンスモードのjsonファイルを設定
 
   | 取得した toolsフォルダ配下にある、 `update-maintenance-mode-setting.sample.json` を コピーして使用してください。
-  | 「:ref:`ita_maintenance_mode_setting_value_v2.2`」を参考に、変更する種類の設定値に0(無効)もしくは1(有効)を指定してください。
+  | 「:ref:`ita_maintenance_mode_setting_value`」を参考に、変更する種類の設定値に0(無効)もしくは1(有効)を指定してください。
 
 
 - 変更するメンテナンスモードの設定
@@ -254,7 +254,7 @@
           "data_update_stop": "0"
       }
 
-.. _ita_maintenance_mode_change_settings_v2.2:
+.. _ita_maintenance_mode_change_settings:
 
 メンテナンスモードの設定を変更
 ------------------------------
@@ -333,9 +333,9 @@
         }
         EOF
 
-| 設定変更後の確認は、「:ref:`ita_maintenance_mode_confirm_v2.2`」を参照してください。
+| 設定変更後の確認は、「:ref:`ita_maintenance_mode_confirm`」を参照してください。
 
-.. _ita_maintenance_mode_get_backyard_execute_check_v2.2:
+.. _ita_maintenance_mode_get_backyard_execute_check:
 
 バックヤード起動状態一括取得
 ============================
@@ -358,7 +358,7 @@
 バックヤード起動状態一括取得の実行
 ----------------------------------
 
-| 利用前に必要な準備として「:ref:`ita_maintenance_mode_preparation_v2.2`」を参照してください。
+| 利用前に必要な準備として「:ref:`ita_maintenance_mode_preparation`」を参照してください。
 
 - コマンド
 

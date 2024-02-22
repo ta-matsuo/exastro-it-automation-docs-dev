@@ -4,7 +4,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -146,6 +146,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../terraform_driver/index.html">Terraform ドライバ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../export_import/index.html">エクスポート・インポート</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cicd_for_iac/index.html">CI/CD for IaC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oase/index.html">OASE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html">API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../maintenance/index.html">メンテナンス</a></li>
 </ul>
@@ -222,13 +223,13 @@
 <div class="line">プランに複数のリソースの上限値を設定しておき、オーガナイゼーション毎にプランを割り当てることで使用リソースを制限することができます。</div>
 </div>
 <table class="docutils align-left" id="id14">
-<caption><span class="caption-number">表 3.8 </span><span class="caption-text">リソースプラン設定例</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.11 </span><span class="caption-text">リソースプラン設定例</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>オーガナイゼーション</p></th>
@@ -257,7 +258,7 @@
 <h3><span class="section-number">3.2.1. </span>リソースプラン設定手順<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">オーガナイゼーションへリソースプランを適用する場合は、あらかじめリソースプランを登録する必要があります。</div>
-<div class="line">登録したリソースプランを適用する方法は、 <a class="reference internal" href="organization.html#organization-creation-v2-1"><span class="std std-ref">オーガナイゼーション作成</span></a> を参照してください。</div>
+<div class="line">登録したリソースプランを適用する方法は、 <a class="reference internal" href="organization.html#organization-creation"><span class="std std-ref">オーガナイゼーション作成</span></a> を参照してください。</div>
 </div>
 </section>
 <section id="id5">
@@ -388,7 +389,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exast
 </div>
 </li>
 </ol>
-<p>※リソースプランの適用は、 <a class="reference internal" href="organization.html#organization-creation-v2-1"><span class="std std-ref">オーガナイゼーション作成 または 変更</span></a> をご参照ください。</p>
+<p>※リソースプランの適用は、 <a class="reference internal" href="organization.html#organization-creation"><span class="std std-ref">オーガナイゼーション作成 または 変更</span></a> をご参照ください。</p>
 </section>
 <section id="plan-list">
 <span id="id10"></span><h3><span class="section-number">3.3.4. </span>現状のリソースプラン項目確認<a class="headerlink" href="#plan-list" title="この見出しへのパーマリンク">¶</a></h3>
@@ -537,10 +538,10 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <a class="with-border-thin reference internal image-reference" href="../../_images/plan_create.png"><img alt="../../_images/plan_create.png" class="with-border-thin" src="../../_images/plan_create.png" style="width: 600px;" /></a>
 </figure>
 <table class="docutils align-left" id="id15">
-<caption><span class="caption-number">表 3.9 </span><span class="caption-text">項目説明</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.12 </span><span class="caption-text">項目説明</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 16.7%" />
+<col style="width: 83.3%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>項目名</p></th>
@@ -632,11 +633,11 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <div class="line">項目説明</div>
 </div>
 <table class="docutils align-left" id="id16">
-<caption><span class="caption-number">表 3.10 </span><span class="caption-text">リソースプラン設定項目</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.13 </span><span class="caption-text">リソースプラン設定項目</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 50%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>項目</p></th>

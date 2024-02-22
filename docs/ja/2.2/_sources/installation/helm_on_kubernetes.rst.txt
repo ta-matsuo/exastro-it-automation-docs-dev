@@ -598,7 +598,7 @@ Helm リポジトリの登録
 
 | 以降の手順では、この :file:`exastro.yaml` に対してインストールに必要なパラメータを設定してきいます。
 
-.. _service_setting_v2.1:
+.. _service_setting:
 
 サービス公開の設定
 ------------------
@@ -638,7 +638,7 @@ Helm リポジトリの登録
       - 設定例
 
       | サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。
-      | Azure におけるドメイン名の確認方法については :ref:`aks-dns_v2.1` を確認してください。
+      | Azure におけるドメイン名の確認方法については :ref:`aks-dns` を確認してください。
       | クラウドプロバイダ毎に必要な :kbd:`annotations` を指定してください。
       | 下記は、AKS の Ingress Controller を使用する際の例を記載しています。
 
@@ -1420,7 +1420,7 @@ Exastro システム管理者の作成
       4. 接続確認
 
          | 出力結果に従って、:menuselection:`Administrator Console` の URL にアクセスします。
-         | 下記は、実行例のため :ref:`service_setting_v2.1` で設定したホスト名に読み替えてください。
+         | 下記は、実行例のため :ref:`service_setting` で設定したホスト名に読み替えてください。
 
          .. code-block:: bash
             :caption: 出力結果(例)

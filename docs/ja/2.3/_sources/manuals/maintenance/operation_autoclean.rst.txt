@@ -136,6 +136,11 @@
      - 7210
      - 基本コンソール:オペレーション一覧
      - 
+   * - 17
+     - 3600
+     - 7200
+     - ルール:評価結果
+     - 
 
 
 .. figure:: /images/ja/operation_autoclean/operation_autoclean_list_edit.png

@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-cicd-for-iac.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-cicd-for-iac
+     - docker.io/exastro/exastro-it-automation-by-cicd-for-iac
    * - exastro-it-automation.ita-by-cicd-for-iac.image.tag
      - コンテナイメージのタグ
      - 不可

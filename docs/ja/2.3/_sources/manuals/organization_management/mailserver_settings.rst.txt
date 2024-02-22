@@ -8,6 +8,8 @@
 
 | 本書では、Exastro Suite における メール送信サーバ設定  について説明します。
 
+.. _email_sending_server_settings:
+
 メール送信サーバの設定
 ======================
 

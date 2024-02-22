@@ -79,7 +79,7 @@ ITA Conductor利用手順
 #. | Conductor実行履歴を確認する
 
 - | 「機器情報」の登録方法については、「Ansible共通 :ref:`ansible_common_device_list` 」を参照して下さい。
-- | 「オペレーション」の登録方法については、「基本コンソール - :ref:`basic_console_operation_v2.1` 」を参照して下さい。
+- | 「オペレーション」の登録方法については、「基本コンソール - :ref:`basic_console_operation` 」を参照して下さい。
 - | Movementの登録方法については、各Driverの利用手順マニュアルを参照して下さい。 
 - | Conductor実行時の各 Movementで共有するディレクトリパスが利用可能です。
   | Movement間で情報伝達する必要がある場合、共有するディレクトリパスを利用する事で情報の受け渡しが可能となります。
@@ -1063,9 +1063,9 @@ Conductor作業実行について
 | 閲覧モードにて、 :guilabel:`作業実行` をクリックすると作業実行設定画面が表示されます。
 
 * | :guilabel:`オペレーション選択` をクリックすると、 :menuselection:`「基本コンソール」メニューグループ --> 「オペレーション一覧」メニュー` で登録したオペレーションが表示されます。
-  | ※「基本コンソール -  :ref:`basic_console_operation_v2.1` 」を参照。
+  | ※「基本コンソール -  :ref:`basic_console_operation` 」を参照。
 * オペレーションを選択し :guilabel:`実行` をクリックすると :menuselection:`「Conductor作業確認」メニュー` に遷移し、作業のトレースが始まります。
-* | 「スケジュール」にて予約日時を入力して :guilabel:`実行` をクリックすると、作業予約が作られます。登録情報は「 :ref:`conductor_conductor_job_list_v2.1` 」で確認出来ます。
+* | 「スケジュール」にて予約日時を入力して :guilabel:`実行` をクリックすると、作業予約が作られます。登録情報は「 :ref:`conductor_conductor_job_list` 」で確認出来ます。
   | ※現在時刻より過去の日時は入力できません
 * | Movement、Conductor Callのオペレーション, スキップのみ、設定値を変更可能です。
   | ※Conductor編集で登録したデータへ変更は反映されません。作業実行にのみ反映されます。
@@ -1126,7 +1126,7 @@ Conductor作業実行について
    | ただし、閲覧モードでは実行時のみの反映となり、設定は保存されません。
    | 一時的に、処理を飛ばして、又は実施して、作業実行したい時などにご活用下さい。
 
-.. _conductor_conductor_job_list_v2.1:
+.. _conductor_conductor_job_list:
 
 Conductor作業一覧
 -----------------
@@ -1148,7 +1148,7 @@ Conductor作業確認
 | :menuselection:`「Conductor作業確認」メニュー` では、Conductorの実行状態を表示します。
 
 *  | 実行中以降のステータスになっている実行状況サークルをクリックすると、各ドライバの「作業状態確認」メニューに遷移し作業実行状況の詳細を確認することが可能です。
-*  | 「 :ref:`conductor_conductor_job_list_v2.1` 」の :guilabel:`詳細` をクリックすると、選択したConductor作業の処理状況をモニター表示します。状況に応じて「予約取消」、「停止解除」や「緊急停止」の投入が可能です。
+*  | 「 :ref:`conductor_conductor_job_list` 」の :guilabel:`詳細` をクリックすると、選択したConductor作業の処理状況をモニター表示します。状況に応じて「予約取消」、「停止解除」や「緊急停止」の投入が可能です。
    | ※「Movement」、「Conductor Call」のNodeについては、Node選択後に、画面右側に表示される :guilabel:`作業情報確認` からも「作業状態確認」メニューに遷移出来ます。
 
 .. figure:: /images/ja/conductor/condudtor_edit_and_excute/conductor_job_detail.gif
@@ -1162,7 +1162,7 @@ Conductor作業確認
    | 作業実行済みのConductorを編集して再度実行する場合は、 :menuselection:`「Conductor編集/作業実行」メニュー` の :guilabel:`流用新規` にて、別のConductorを作成してご利用いただくことを推奨します。
 
 * | 選択したConductor作業に予約日時が設定されていて、かつ未実行の場合は、 :guilabel:`予約取消` が表示されます。
-* | :guilabel:`予約取消` をクリックすると、「 :ref:`conductor_conductor_job_list_v2.1` 」で確認できるステータスが「予約取消」となり、実行されなくなります。
+* | :guilabel:`予約取消` をクリックすると、「 :ref:`conductor_conductor_job_list` 」で確認できるステータスが「予約取消」となり、実行されなくなります。
 * | :menuselection:`「Conductor作業確認」メニュー` の共通項目は以下の通りです。
 
 .. list-table:: 「Conductor作業確認」共通項目一覧
@@ -1334,7 +1334,7 @@ Conductor定期作業実行
 
 1. :menuselection:`「Conductor定期作業実行」メニュー` では、スケジュールに従って定期的に実行するConductor作業を管理します。
 2. | :menuselection:`「Conductor定期作業実行」メニュー-->「一覧」サブメニュー` の :guilabel:`作業一覧確認` ボタンをクリックすると、その定期作業で実行した対象をフィルタした状態で
-   | :ref:`conductor_conductor_job_list_v2.1` 画面へ遷移できます。
+   | :ref:`conductor_conductor_job_list` 画面へ遷移できます。
 
 3. :guilabel:`登録` ボタンより、定期作業実行の登録を行います。 
 
@@ -1364,7 +1364,7 @@ Conductor定期作業実行
    | Conductor名称                   | 「:ref:`conductor_list`」で登録したConductorがリストに\      | ○            | リスト選択    | ー                    |
    |                                 | 表示されます。                                               |              |               |                       |
    +---------------------------------+--------------------------------------------------------------+--------------+---------------+-----------------------+
-   | オペレーション名                | 「基本コンソール - :ref:`basic_console_operation_v2.1`」で\  | ○            | リスト選択    | ー                    |
+   | オペレーション名                | 「基本コンソール - :ref:`basic_console_operation`」で\       | ○            | リスト選択    | ー                    |
    |                                 | 登録したオペレーションがリストに表示されます。               |              |               |                       |
    +---------------------------------+--------------------------------------------------------------+--------------+---------------+-----------------------+
    | ステータス                      | 下記「:ref:`status_list`」参照                               | ー           | 自動入力      |                       |

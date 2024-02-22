@@ -16,7 +16,7 @@
    * - exastro-it-automation.ita-by-ansible-execute.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-ansible-execute
+     - docker.io/exastro/exastro-it-automation-by-ansible-execute
    * - exastro-it-automation.ita-by-ansible-execute.image.tag
      - コンテナイメージのタグ
      - 不可
@@ -55,4 +55,4 @@
    * - exastro-it-automation.ita-by-ansible-execute.serviceAccount.name
      - 作成するサービスアカウント名
      - 不可
-     - exastro-it-automation.ita-by-ansible-execute-sa 
+     - exastro-it-automation.ita-by-ansible-execute-sa

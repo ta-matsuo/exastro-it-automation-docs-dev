@@ -120,7 +120,7 @@ Ansible-LegacyRoleの作業フロー
 
    #. | **オペレーション名の登録**
       | :menuselection:`基本コンソール --> オペレーション一覧` から、作業用のオペレーション名を登録します。
-      | 詳細は「 :ref:`basic_console_operation_v2.1` 」を参照してください。
+      | 詳細は「 :ref:`basic_console_operation` 」を参照してください。
 
    #. | **Ansible Automation Controllerホスト情報を登録（必要に応じて実施）**
       | :menuselection:`Ansible共通 --> Ansible Automation Controllerホスト一覧` から、Ansible Automation Controllerのホスト情報を登録します。

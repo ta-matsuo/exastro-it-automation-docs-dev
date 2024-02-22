@@ -3,7 +3,7 @@
 APIのアクセス（認証）について
 =============================
 
-| 利用する対象のAPIのエンドポイント、パラメータ、詳細については、各利用者向けの、「:ref:`api_operator`」、「:ref:`api_developer`」、「:ref:`api_system_manager`」を参照してください。
+| 利用する対象のAPIのエンドポイント、パラメータ、詳細については、各利用者向けの、「:ref:`api_operator`」、「:ref:`api_system_manager`」を参照してください。
 | Bearer認証を使用して、API実行を行う場合、各利用者向けの「APIのアクセス（認証）について - Bearer認証」 の参照して、認証方式を変更してください。
 
 .. warning::

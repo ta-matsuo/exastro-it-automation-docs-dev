@@ -275,7 +275,7 @@ Hello world を出力するプログラム
          print("Hello World")
 
 
-.. _manual_syntax_word_v2.1:
+.. _manual_syntax_word:
 
 コード
 ======
@@ -1023,8 +1023,8 @@ CSVテーブル(使用禁止)
          | OK： 「:doc:`../../manuals/ansible-driver/index`」
          | NG： 「:doc:`Ansibleドライバのマニュアルはこちら <../../manuals/ansible-driver/index>` 」
 
-         | OK：  「:ref:`manual_syntax_word_v2.1`」
-         | NG：  「:ref:`コードについての参照先はこちらです。<manual_syntax_word_v2.1>`」
+         | OK：  「:ref:`manual_syntax_word`」
+         | NG：  「:ref:`コードについての参照先はこちらです。<manual_syntax_word>`」
 
 | 例外として、外部ページのリンクを参照する場合は、例外的に使用可能とします。
 
@@ -1062,7 +1062,7 @@ H6 (見出し6) 以上の表現
 ^^^^^^^^^^^^^^^^^^^^^^
 
 | 下記に記載する、太字や斜体は使用してはなりません。
-| 適切な :ref:`manual_syntax_word_v2.1` を選択してください。
+| 適切な :ref:`manual_syntax_word` を選択してください。
 
 .. code-block:: bash
 

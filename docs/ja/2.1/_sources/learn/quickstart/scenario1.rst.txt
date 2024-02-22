@@ -58,7 +58,7 @@
 
 | システムにある全ての情報をパラメータとして管理する必要はなく、今後管理が必要になったタイミングで適宜追加や見直しをしましょう。
 
-.. _quickstart_server_information_parmeter_v2.1:
+.. _quickstart_server_information_parmeter:
 
 パラメータシートの作成
 ----------------------
@@ -175,7 +175,7 @@
 ==============
 
 | 作業手順を登録するために、Exastro IT Automation で扱う作業単位である Movement (ジョブ)を定義します。
-| 定義した Movement に対して、Ansible Role パッケージを紐付け、更に Ansible Role パッケージ内の変数と :ref:`quickstart_server_information_parmeter_v2.1` で登録したパラメータシートの項目の紐付けを行います。
+| 定義した Movement に対して、Ansible Role パッケージを紐付け、更に Ansible Role パッケージ内の変数と :ref:`quickstart_server_information_parmeter` で登録したパラメータシートの項目の紐付けを行います。
 
 .. glossary:: Movement
    Exastro IT Automation における、最小の作業単位のことを指します。

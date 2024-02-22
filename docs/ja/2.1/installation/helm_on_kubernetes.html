@@ -4,7 +4,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -118,7 +118,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">2.4. インストールの準備</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#helm">2.4.1. Helm リポジトリの登録</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id5">2.4.2. デフォルト設定値の取得</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#service-setting-v2-1">2.4.3. サービス公開の設定</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#service-setting">2.4.3. サービス公開の設定</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#id7">パラメータ</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id8">設定例</a></li>
 </ul>
@@ -169,7 +169,7 @@
 <li><a class="reference internal" href="#id4">2.4. インストールの準備</a><ul>
 <li><a class="reference internal" href="#helm">2.4.1. Helm リポジトリの登録</a></li>
 <li><a class="reference internal" href="#id5">2.4.2. デフォルト設定値の取得</a></li>
-<li><a class="reference internal" href="#service-setting-v2-1">2.4.3. サービス公開の設定</a><ul>
+<li><a class="reference internal" href="#service-setting">2.4.3. サービス公開の設定</a><ul>
 <li><a class="reference internal" href="#id7">パラメータ</a></li>
 <li><a class="reference internal" href="#id8">設定例</a></li>
 </ul>
@@ -250,8 +250,8 @@ $(window).on('load', function () {
 <table class="docutils align-default" id="id19">
 <caption><span class="caption-number">表 2.9 </span><span class="caption-text">クライアント要件</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>アプリケーション</p></th>
@@ -275,8 +275,8 @@ $(window).on('load', function () {
 <table class="docutils align-default" id="id20">
 <caption><span class="caption-number">表 2.10 </span><span class="caption-text">デプロイ環境</span><a class="headerlink" href="#id20" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>リソース種別</p></th>
@@ -343,7 +343,7 @@ $(window).on('load', function () {
 </ul>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 100%" />
+<col style="width: 100.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>リポジトリ</p></th>
@@ -851,8 +851,8 @@ $(window).on('load', function () {
 <div class="line">以降の手順では、この <code class="file docutils literal notranslate"><span class="pre">exastro.yaml</span></code> に対してインストールに必要なパラメータを設定してきいます。</div>
 </div>
 </section>
-<section id="service-setting-v2-1">
-<span id="id6"></span><h3><span class="section-number">2.4.3. </span>サービス公開の設定<a class="headerlink" href="#service-setting-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="service-setting">
+<span id="id6"></span><h3><span class="section-number">2.4.3. </span>サービス公開の設定<a class="headerlink" href="#service-setting" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro サービスを公開するための代表的な3つの設定方法について紹介します。</div>
 </div>
@@ -875,10 +875,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id23">
 <caption><span class="caption-number">表 2.11 </span><span class="caption-text">Exastro Platform 認証機能のオプションパラメータ</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1028,7 +1028,7 @@ $(window).on('load', function () {
 </ul>
 <div class="line-block">
 <div class="line">サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。</div>
-<div class="line">Azure におけるドメイン名の確認方法については <a class="reference internal" href="../configuration/kubernetes/aks.html#aks-dns-v2-1"><span class="std std-ref">ドメイン名の確認</span></a> を確認してください。</div>
+<div class="line">Azure におけるドメイン名の確認方法については <a class="reference internal" href="../configuration/kubernetes/aks.html#aks-dns"><span class="std std-ref">ドメイン名の確認</span></a> を確認してください。</div>
 <div class="line">クラウドプロバイダ毎に必要な <kbd class="kbd docutils literal notranslate">annotations</kbd> を指定してください。</div>
 <div class="line">下記は、AKS の Ingress Controller を使用する際の例を記載しています。</div>
 </div>
@@ -1218,10 +1218,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id27">
 <caption><span class="caption-number">表 2.12 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1327,10 +1327,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id29">
 <caption><span class="caption-number">表 2.13 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1436,10 +1436,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id31">
 <caption><span class="caption-number">表 2.14 </span><span class="caption-text">共通設定 (Exastro 共用データベース) のオプションパラメータ</span><a class="headerlink" href="#id31" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1557,10 +1557,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id33">
 <caption><span class="caption-number">表 2.15 </span><span class="caption-text">共通設定 (Exastro 共用データベース) のオプションパラメータ</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1684,10 +1684,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id36">
 <caption><span class="caption-number">表 2.16 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id36" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1790,10 +1790,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id38">
 <caption><span class="caption-number">表 2.17 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id38" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -1921,10 +1921,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id40">
 <caption><span class="caption-number">表 2.18 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id40" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2027,10 +2027,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id42">
 <caption><span class="caption-number">表 2.19 </span><span class="caption-text">共通設定 (Keycloak) のオプションパラメータ</span><a class="headerlink" href="#id42" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2152,10 +2152,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id44">
 <caption><span class="caption-number">表 2.20 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id44" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2262,10 +2262,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id46">
 <caption><span class="caption-number">表 2.21 </span><span class="caption-text">共通設定 (GitLab) のオプションパラメータ</span><a class="headerlink" href="#id46" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2346,10 +2346,10 @@ $(window).on('load', function () {
 <table class="filter-table docutils align-left" id="id48">
 <caption><span class="caption-number">表 2.22 </span><span class="caption-text">共通設定 (Keycloak) のオプションパラメータ</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 25%" />
+<col style="width: 31.2%" />
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
@@ -2628,11 +2628,11 @@ pv-ita-common<span class="w">   </span>10Gi<span class="w">       </span>RWX<spa
 <table class="docutils align-left" id="id55">
 <caption><span class="caption-number">表 2.23 </span><span class="caption-text">Helm チャートとアプリケーションのバージョン</span><a class="headerlink" href="#id55" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 44%" />
+<col style="width: 11.1%" />
+<col style="width: 11.1%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 44.4%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Chart Version</p></th>
@@ -2817,7 +2817,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <li><p>接続確認</p>
 <div class="line-block">
 <div class="line">出力結果に従って、<span class="menuselection">Administrator Console</span> の URL にアクセスします。</div>
-<div class="line">下記は、実行例のため <a class="reference internal" href="#service-setting-v2-1"><span class="std std-ref">サービス公開の設定</span></a> で設定したホスト名に読み替えてください。</div>
+<div class="line">下記は、実行例のため <a class="reference internal" href="#service-setting"><span class="std std-ref">サービス公開の設定</span></a> で設定したホスト名に読み替えてください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id64">
 <div class="code-block-caption"><span class="caption-number">リスト 2.31 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id64" title="このコードへのパーマリンク">¶</a></div>
@@ -2836,8 +2836,8 @@ http://exastro-suite-mng.example.local/auth/
 <table class="docutils align-left" id="id65">
 <caption><span class="caption-number">表 2.24 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id65" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 67%" />
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>管理コンソール</p></td>
@@ -3041,8 +3041,8 @@ http://172.16.20.XXX:31798
 <table class="docutils align-left" id="id76">
 <caption><span class="caption-number">表 2.25 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id76" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 67%" />
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>管理コンソール</p></td>
@@ -3244,8 +3244,8 @@ http://172.16.20.xxx:30080
 <table class="docutils align-left" id="id87">
 <caption><span class="caption-number">表 2.26 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id87" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 67%" />
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>管理コンソール</p></td>

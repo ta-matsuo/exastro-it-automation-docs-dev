@@ -94,7 +94,7 @@ AKS クラスタの作成例
         --enable-addons http_application_routing \
         --api-server-authorized-ip-ranges ${AUTHORIZED_IP_RANGES}
 
-.. _aks-dns_v2.1:
+.. _aks-dns:
 
 ドメイン名の確認
 ----------------

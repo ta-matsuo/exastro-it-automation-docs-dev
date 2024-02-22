@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-collector.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-collector
+     - docker.io/exastro/exastro-it-automation-by-collector
    * - exastro-it-automation.ita-by-collector.image.tag
      - コンテナイメージのタグ
      - 不可
