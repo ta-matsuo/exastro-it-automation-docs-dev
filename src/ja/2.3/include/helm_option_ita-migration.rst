@@ -20,7 +20,7 @@
    * - exastro-it-automation.ita-migration.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-migration
+     - docker.io/exastro/exastro-it-automation-migration
    * - exastro-it-automation.ita-migration.image.tag
      - コンテナイメージのタグ
      - 不可

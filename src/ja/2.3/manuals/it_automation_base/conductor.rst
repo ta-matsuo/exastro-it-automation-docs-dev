@@ -79,8 +79,8 @@ ITA Conductor利用手順
 #. | Conductor実行履歴を確認する
 
 - | 「機器情報」の登録方法については、「Ansible共通 :ref:`ansible_common_device_list` 」を参照して下さい。
-- | 「オペレーション」の登録方法については、「基本コンソール - :ref:`basic_console_operation_v2.1` 」を参照して下さい。
-- | Movementの登録方法については、各Driverの利用手順マニュアルを参照して下さい。 
+- | 「オペレーション」の登録方法については、「基本コンソール - :ref:`basic_console_operation` 」を参照して下さい。
+- | Movementの登録方法については、各Driverの利用手順マニュアルを参照して下さい。
 - | Conductor実行時の各 Movementで共有するディレクトリパスが利用可能です。
   | Movement間で情報伝達する必要がある場合、共有するディレクトリパスを利用する事で情報の受け渡しが可能となります。
   | 共有対象については、「Ansible driver」を対象としています。
@@ -151,14 +151,14 @@ Conductor通知先定義
         - 入力形式
       * - Conductor通知ID
         - システム側で自動採番されるため、編集不可です。
-        - 
+        -
         - 自動入力
       * - 通知名称
         - 通知名称を入力してください。
         - ○
         - 手動入力
       * - 通知先URL
-        - 通知先の URL を入力してください。 
+        - 通知先の URL を入力してください。
         - ○
         - 手動入力
       * - ヘッダー
@@ -202,41 +202,41 @@ Conductor通知先定義
 
       * - ITA 独自変数
         - 変数指定内容
-      * - __CONDUCTOR_INSTANCE_ID__ 
+      * - __CONDUCTOR_INSTANCE_ID__
         - Conductor インスタンス ID
-      * - __CONDUCTOR_NAME__ 
+      * - __CONDUCTOR_NAME__
         - Conductor インスタンス名
-      * - __STATUS_ID__    
+      * - __STATUS_ID__
         - ステータス ID
-      * - __OPERATION_ID__  
+      * - __OPERATION_ID__
         - オペレーション ID
-      * - __OPERATION_NAME__   
+      * - __OPERATION_NAME__
         - 実行時のオペレーション名
       * - __EXECUTION_USER__
         - 作業実行ユーザー
-      * - __PARENT_CONDUCTOR_INSTANCE_ID__ 
+      * - __PARENT_CONDUCTOR_INSTANCE_ID__
         - 親ConductorインスタンスID
-      * - __PARENT_CONDUCTOR_NAME__   
+      * - __PARENT_CONDUCTOR_NAME__
         - 親Conductor名称
       * - __TOP_CONDUCTOR_INSTANCE_ID__
         - 最上位ConductorインスタンスID
-      * - __TOP_CONDUCTOR_NAME__ 
+      * - __TOP_CONDUCTOR_NAME__
         - 最上位Conductor名称
-      * - __ABORT_EXECUTE_FLAG__   
+      * - __ABORT_EXECUTE_FLAG__
         - 緊急停止フラグ
-      * - __REGISTER_TIME__    
+      * - __REGISTER_TIME__
         - 登録日時
-      * - __TIME_BOOK__    
+      * - __TIME_BOOK__
         - 予約日時
-      * - __TIME_START__    
+      * - __TIME_START__
         - 開始日時
-      * - __TIME_END__     
+      * - __TIME_END__
         - 終了日時
-      * - __NOTICE_NAME__    
+      * - __NOTICE_NAME__
         - 通知ログ
-      * - __NOTE__    
+      * - __NOTE__
         - 備考
-      * - __JUMP_URL__     
+      * - __JUMP_URL__
         - Conductor作業確認画面のURL(作業確認URLを使用)
 
    | ※ステータスIDに対応するステータス名は以下となります。
@@ -265,7 +265,7 @@ Conductor通知先定義
         - 予約取消
       * - 11
         - 想定外エラー
-   
+
    | ※作業確認 URL の出力内容は、「作業確認 URL(FQDN)」の入力内容が使用され以下の形で出力されます。
 
     例:作業確認 URL(FQDN)の値を「http://localhost:38000」としていた場合
@@ -326,7 +326,7 @@ Conductor編集/作業実行
 
 * | Conductor 名称、作業フローを構成する各パーツ（以下、Node）を登録します。
 * | 選択したNodeにより、画面右上（詳細情報）に表示される内容が変わります。
-  
+
 .. figure:: /images/ja/conductor/condudtor_edit_and_excute/conductor_edit_mode.png
    :width: 800px
    :alt: Conductor編集/作業実行メニュー画面(編集モード)
@@ -341,13 +341,13 @@ Node一覧
 
 * | 画面右側下部の領域には、利用可能なNodeが表示されます。
 * | 以下のタブから構成されます。
-  
+
   * | Movementタブ
-  
+
     * | 登録済みのMovement名称の一覧
 
   * | Functionタブ
-  
+
     * | Conductor end
     * | Conductor pause
     * | Conductor call
@@ -487,7 +487,7 @@ Node一覧
      Node制約事項（NG例：Conditional branch）
 
   * | Parallel branch、Conditional branch、Parallel merge、Conductor pauseについて、連続して同じ種類のNodeを接続する事はできません。
-  
+
   .. figure:: /images/ja/conductor/condudtor_edit_and_excute/Node制約事項NG例連続使用.png
      :width: 600px
      :alt: Node制約事項（NG例：連続使用）
@@ -495,9 +495,9 @@ Node一覧
      Node制約事項（NG例：連続使用）
 
   * | 更新中のConductorをConductor callで指定し、更新することはできません。
-  
+
   * | 各NodeをNode一覧からドラッグ&ドロップで追加することが可能です。
- 
+
   * | Node選択時、画面右上（詳細情報）に表示される「備考」欄には、処理説明やコメントをメモすることが可能です。
 
   * | 「備考」欄の記述は処理実行に影響はありません。Web上でのみ参照できるメモ欄です。
@@ -528,7 +528,7 @@ Node一覧
         :widths: 8 25 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -539,36 +539,36 @@ Node一覧
           - \-
           - 自動入力
           - \-
-        * - 名称 
+        * - 名称
           - 任意のConductor名称を入力します。
           - ○
           - 手動入力
           - \-
-        * - 更新日時 
+        * - 更新日時
           - 選択したConductorが更新された日時が自動入力されます。
           - \-
           - 自動入力
           - \-
-        * - 通知 
+        * - 通知
           - | 実行する通知を選択します。
             | 各ステータスに対して、実行する通知を複数選択できます。
             | 選択できる通知は、「 :ref:`conductor_notice` 」で登録したものが対象となります。
           - \-
           - チェックボックス
           - \-
-        * - Movement共通表示設定 
+        * - Movement共通表示設定
           - Movementノードの表示に関する設定(ノードの幅とMovement名の表示形式)を選択します。
           - \-
           - リスト選択
           - \-
-        * - 備考 
+        * - 備考
           - Conductorに対する説明やコメントを入力します。
           - \-
           - 手動入力
           - \-
 
   #. | Movement選択時
-  
+
      * |  「:ref:`node_list` 」における「Movement」タブ内のNodeを選択した場合表示されます。
      * | タブ名は選択したMovementのオーケストレータ名が表示されます（例_Ansible Legacy Role）。
 
@@ -580,7 +580,7 @@ Node一覧
         :widths: 10 30 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -615,15 +615,15 @@ Node一覧
 
 
   #. 各Node選択時の「備考」欄
-  
+
      * | 「:ref:`node_list` 」における「Movement」タブおよび「Function」タブ内の各Nodeを選択した場合表示されます。
      * | タブ内の項目は以下の通りです。
-  
+
      .. list-table:: 各Node選択時のタブ
         :widths: 10 30 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -634,18 +634,18 @@ Node一覧
           - \-
           - 手動入力
           - \-
-  
-  
+
+
   #. Conductor call選択時
-  
+
      * | 「:ref:`node_list` 」における「Function」タブ内の「Conductor call」を選択した場合表示されます。
      * | タブ内の項目は以下の通りです。
-  
+
      .. list-table:: 「Conductor call」タブ
         :widths: 10 30 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -669,19 +669,19 @@ Node一覧
           - \-
           - 選択
           - \-
-  
+
   #. Conditional branch選択時
-  
+
      * | 「:ref:`node_list` 」における「Function」タブ内の「Conditional branch」を選択した場合表示されます。
      * | タブ内の項目は以下の通りです。
-    
-  
+
+
      .. table:: 「Conditional branch」タブ
         :align: left
-  
+
         +------+----------------------------------------------+---------------+---------------+---------------+
         | **項\| **説明**                                     | **入力必須**  | **入力形式**  | **制約事項**  |
-        | 目** |                                              |               |               |               | 
+        | 目** |                                              |               |               |               |
         |      |                                              |               |               |               |
         |      |                                              |               |               |               |
         |      |                                              |               |               |               |
@@ -716,18 +716,18 @@ Node一覧
         |      | |                 | 、Skip終了、警告終了  |  |               |               |               |
         |      | +-----------------+-----------------------+  |               |               |               |
         +------+----------------------------------------------+---------------+---------------+---------------+
-    
-  
+
+
   #. Parallel branch選択時
-  
+
      * | 「:ref:`node_list` 」における「Function」タブ内の「Parallelbranch」を選択した場合表示されます。
      * | タブ内の項目は以下の通りです。
-  
+
      .. list-table:: 「Parallel branch」タブ
         :widths: 10 30 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -739,18 +739,18 @@ Node一覧
           - \-
           - 選択
           - \-
-  
-  
+
+
   #. Parallel Merge選択時
-  
+
      * | 「:ref:`node_list` 」における「Function」タブ内の「Parallel merge」を選択した場合表示されます。
      * | タブ内の項目は以下の通りです。
-  
+
      .. list-table:: 「Parallel Merge」タブ
         :widths: 10 30 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -762,18 +762,18 @@ Node一覧
           - \-
           - 選択
           - \-
-  
+
 
   #. Conductor end選択時
-  
+
      * | 「:ref:`node_list` 」における「Function」タブ内の「Conductor end」を選択した場合表示されます。
      * | タブ内の項目は以下の通りです。
-  
+
      .. list-table:: 「End」タブ
         :widths: 10 30 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -781,26 +781,26 @@ Node一覧
           - **制約事項**
         * - 終了ステータス
           - | Endまで処理された際に、選択されたステータスが、Conductorのステータスへ反映されます。
-            | - 正常 (デフォルト値)  
-            | - 警告 
-            | - 異常  
-            | 
+            | - 正常 (デフォルト値)
+            | - 警告
+            | - 異常
+            |
             | 複数のEndノードまで処理された場合、反映されるステータスの優先度は以下です。
             |  優先度： 正常 < 警告 < 異常
           - \-
           - 選択
           - \-
-  
+
   #. Status file branch選択時（Status file branchタブ）
-  
+
      * | 「:ref:`node_list` 」における「Function」タブ内の「Status file branch」を選択した場合表示されます。
      * | タブ内の項目は以下の通りです。
-  
+
      .. list-table:: 「Status file branch」タブ
         :widths: 10 30 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -818,46 +818,46 @@ Node一覧
           - \-
           - 手動入力
           - \-
-  
+
      .. note:: | **参照するステータスファイルについて**
-  
+
       * | 参照するステータスファイルは、各Movmentの作業結果ディレクトリ配下の「MOVEMENT_STATUS_FILE」を参照します。
       * | ステータスファイルが存在しない場合、「else」側の処理を行います。
       * | ステータスファイル内の内容が、複数行（改行コードを含む）場合、改行コード以降は、除外した値を評価対象とします。
-      
+
       | 例）改行含むステータスファイルの内容
-  
-      .. code-block:: 
-  
+
+      .. code-block::
+
          1
-  
+
          23
-  
+
          4
-  
+
       | ステータスファイルの内容を「1」として、評価を行います。
-  
+
       .. list-table:: ステータスファイルITA独自変数
          :widths: 15 25 5
          :header-rows: 1
          :align: left
-          
+
          * - **ITA独自変数**
            - **変数指定内容**
            - **制約事項**
-         * - __movement_status_filepath__ 
+         * - __movement_status_filepath__
            - 作業結果ディレクトリ配下の「MOVEMENT_STATUS_FILE」のパス
            - ※
-  
+
       .. | ※ 「 :ref:`ansible_legacyrole_work_flow` 」で対応しています。
-  
+
   #. 「Node」タブ
-  
+
      *  「:ref:`node_list` 」における「Movement」タブおよび「Function」タブ内のNodeを複数選択した場合表示されます。
      * グリッド内の整列をすることが可能になります。
      * Nodeを複数選択する方法については、ドラッグアンドドロップでの範囲選択の他、「shift」キーをクリックしながらの選択が可能です。
      * タブ内の項目は以下の通りです。
-     
+
      .. figure:: /images/ja/conductor/condudtor_edit_and_excute/conductor_align_nodes.gif
         :width: 800px
         :alt: Nodeの整列
@@ -868,7 +868,7 @@ Node一覧
         :widths: 10 30 5 5 5
         :header-rows: 1
         :align: left
-        
+
         * - **項目**
           - **説明**
           - **入力必須**
@@ -995,7 +995,7 @@ Node一覧
    | グリッドに\ | チェックを入れると、ノードの\     | 〇       |         | 〇      |      |
    | スナップ    | 移動がグリッド線に合わせて移動\   |          |         |         |      |
    |             | します。                          |          |         |         |      |
-   +-------------+-----------------------------------+----------+---------+---------+------+   
+   +-------------+-----------------------------------+----------+---------+---------+------+
 
 「閲覧」モードについて
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1009,10 +1009,10 @@ Node一覧
    「Conductor編集/作業実行」メニュー（「閲覧」モード）
 
 .. list-table:: 「閲覧」モード
-   :widths: 10 30 
+   :widths: 10 30
    :header-rows: 1
    :align: left
-   
+
    * - **項目**
      - **説明**
    * - :guilabel:`選択`
@@ -1038,10 +1038,10 @@ Node一覧
    「Conductor編集/作業実行」メニュー（「更新」モード）
 
 .. list-table:: 「更新」モード
-   :widths: 10 30 
+   :widths: 10 30
    :header-rows: 1
    :align: left
-   
+
    * - **項目**
      - **説明**
    * - :guilabel:`更新`
@@ -1063,9 +1063,9 @@ Conductor作業実行について
 | 閲覧モードにて、 :guilabel:`作業実行` をクリックすると作業実行設定画面が表示されます。
 
 * | :guilabel:`オペレーション選択` をクリックすると、 :menuselection:`「基本コンソール」メニューグループ --> 「オペレーション一覧」メニュー` で登録したオペレーションが表示されます。
-  | ※「基本コンソール -  :ref:`basic_console_operation_v2.1` 」を参照。
+  | ※「基本コンソール -  :ref:`basic_console_operation` 」を参照。
 * オペレーションを選択し :guilabel:`実行` をクリックすると :menuselection:`「Conductor作業確認」メニュー` に遷移し、作業のトレースが始まります。
-* | 「スケジュール」にて予約日時を入力して :guilabel:`実行` をクリックすると、作業予約が作られます。登録情報は「 :ref:`conductor_conductor_job_list_v2.1` 」で確認出来ます。
+* | 「スケジュール」にて予約日時を入力して :guilabel:`実行` をクリックすると、作業予約が作られます。登録情報は「 :ref:`conductor_conductor_job_list` 」で確認出来ます。
   | ※現在時刻より過去の日時は入力できません
 * | Movement、Conductor Callのオペレーション, スキップのみ、設定値を変更可能です。
   | ※Conductor編集で登録したデータへ変更は反映されません。作業実行にのみ反映されます。
@@ -1077,7 +1077,7 @@ Conductor作業実行について
    :widths: 10 25 5 5 5
    :header-rows: 1
    :align: left
-      
+
    * - **項目**
      - **説明**
      - **入力必須**
@@ -1087,22 +1087,22 @@ Conductor作業実行について
      - 選択したしたConductorが表示されます。
      - \-
      - 自動入力
-     - 
+     -
    * - オペレーション
      - :guilabel:`オペレーション選択` をクリックし、オペレーションを選択します。
      - ○
      - 選択
-     - 
+     -
    * - スケジュール
      - Conductorの実行予定日時を指定します。
      - \-
      - 手動入力
      - 現在時刻より過去の日時は入力不可
    * - 作業実行
-     - 登録したConductorを実行します。 
+     - 登録したConductorを実行します。
      - ○
      - ボタン
-     - 
+     -
 
 .. figure:: /images/ja/conductor/condudtor_edit_and_excute/conductor_execute.gif
    :width: 800px
@@ -1126,7 +1126,7 @@ Conductor作業実行について
    | ただし、閲覧モードでは実行時のみの反映となり、設定は保存されません。
    | 一時的に、処理を飛ばして、又は実施して、作業実行したい時などにご活用下さい。
 
-.. _conductor_conductor_job_list_v2.1:
+.. _conductor_conductor_job_list:
 
 Conductor作業一覧
 -----------------
@@ -1136,7 +1136,7 @@ Conductor作業一覧
    | 作業表示欄の :guilabel:`詳細` ボタンをクリックすると、 :ref:`conductor_check_conductor_job` 画面へ遷移します。
    | :guilabel:`投入データ一式(zip)` をクリックすると、実行された全てのConductor配下のMovement(*)の実行ファイルなどをまとめてダウンロードすることが出来ます。
    | :guilabel:`結果データ一式(zip)` をクリックすると、実行された全てのConductor配下のMovement(*)の実行ログ、エラーログなどをまとめてダウンロードすることが出来ます。
-   
+
    | ※Conductorが階層構造になっている場合は、末端のMovementも対象になります。
 
 
@@ -1148,7 +1148,7 @@ Conductor作業確認
 | :menuselection:`「Conductor作業確認」メニュー` では、Conductorの実行状態を表示します。
 
 *  | 実行中以降のステータスになっている実行状況サークルをクリックすると、各ドライバの「作業状態確認」メニューに遷移し作業実行状況の詳細を確認することが可能です。
-*  | 「 :ref:`conductor_conductor_job_list_v2.1` 」の :guilabel:`詳細` をクリックすると、選択したConductor作業の処理状況をモニター表示します。状況に応じて「予約取消」、「停止解除」や「緊急停止」の投入が可能です。
+*  | 「 :ref:`conductor_conductor_job_list` 」の :guilabel:`詳細` をクリックすると、選択したConductor作業の処理状況をモニター表示します。状況に応じて「予約取消」、「停止解除」や「緊急停止」の投入が可能です。
    | ※「Movement」、「Conductor Call」のNodeについては、Node選択後に、画面右側に表示される :guilabel:`作業情報確認` からも「作業状態確認」メニューに遷移出来ます。
 
 .. figure:: /images/ja/conductor/condudtor_edit_and_excute/conductor_job_detail.gif
@@ -1162,14 +1162,14 @@ Conductor作業確認
    | 作業実行済みのConductorを編集して再度実行する場合は、 :menuselection:`「Conductor編集/作業実行」メニュー` の :guilabel:`流用新規` にて、別のConductorを作成してご利用いただくことを推奨します。
 
 * | 選択したConductor作業に予約日時が設定されていて、かつ未実行の場合は、 :guilabel:`予約取消` が表示されます。
-* | :guilabel:`予約取消` をクリックすると、「 :ref:`conductor_conductor_job_list_v2.1` 」で確認できるステータスが「予約取消」となり、実行されなくなります。
+* | :guilabel:`予約取消` をクリックすると、「 :ref:`conductor_conductor_job_list` 」で確認できるステータスが「予約取消」となり、実行されなくなります。
 * | :menuselection:`「Conductor作業確認」メニュー` の共通項目は以下の通りです。
 
 .. list-table:: 「Conductor作業確認」共通項目一覧
       :widths: 4 15 5 5 10
       :header-rows: 1
       :align: left
-      
+
       * - **項目**
         - **説明**
         - **入力必須**
@@ -1179,12 +1179,12 @@ Conductor作業確認
         - 「Couductor pause」Nodeの三角アイコンをクリックすることで解除します。
         - \-
         - ボタン
-        - 
-      * - 緊急停止 
+        -
+      * - 緊急停止
         - Conductorの実行を中止します。
         - \-
         - ボタン
-        - 
+        -
       * - 予約取消
         - Conductorの実行予約を取り消します。
         - \-
@@ -1196,7 +1196,7 @@ Conductor作業確認
    :alt: Conductor実行中/Conductor Pause状態画面
 
    Conductor実行中/Conductor Pause状態画面
-   
+
 .. figure:: /images/ja/conductor/conductor_verification/conductor_reserved.png
    :width: 800px
    :alt: 日時予約されたConductor実行画面（未実行）
@@ -1207,13 +1207,13 @@ Conductor作業確認
 * Nodeを選択すると、選択しているNodeの詳細情報が表示されます。
 
   #. 「Conductor」タブ
-  
+
      * Node未選択の場合表示されます。
      * タブ内の項目は以下の通りです。
-  
+
      .. table:: 「Conductor」タブ
         :align: left
-     
+
         +---------------------------------+------------------------------------------+
         | **項目**                        | **説明**                                 |
         +==================+==============+==========================================+
@@ -1266,15 +1266,15 @@ Conductor作業確認
         | 備考                            | Conductorに対する説明や\                 |
         |                                 | コメントを表示します。                   |
         +---------------------------------+------------------------------------------+
-  
+
   #. 「Node」タブ
-  
+
      *  Nodeを選択した場合表示されます。
      *  タブ内の項目は以下の通りです。
-   
+
      .. table:: 「Node」タブ
         :align: left
-     
+
         +---------------------------------+------------------------------------------+
         | **項目**                        | **説明**                                 |
         +==================+==============+==========================================+
@@ -1334,9 +1334,9 @@ Conductor定期作業実行
 
 1. :menuselection:`「Conductor定期作業実行」メニュー` では、スケジュールに従って定期的に実行するConductor作業を管理します。
 2. | :menuselection:`「Conductor定期作業実行」メニュー-->「一覧」サブメニュー` の :guilabel:`作業一覧確認` ボタンをクリックすると、その定期作業で実行した対象をフィルタした状態で
-   | :ref:`conductor_conductor_job_list_v2.1` 画面へ遷移できます。
+   | :ref:`conductor_conductor_job_list` 画面へ遷移できます。
 
-3. :guilabel:`登録` ボタンより、定期作業実行の登録を行います。 
+3. :guilabel:`登録` ボタンより、定期作業実行の登録を行います。
 
 .. figure:: /images/ja/conductor/conductor_scheduled_execution/conductor_scheduled_execution_register.gif
    :width: 800px
@@ -1364,7 +1364,7 @@ Conductor定期作業実行
    | Conductor名称                   | 「:ref:`conductor_list`」で登録したConductorがリストに\      | ○            | リスト選択    | ー                    |
    |                                 | 表示されます。                                               |              |               |                       |
    +---------------------------------+--------------------------------------------------------------+--------------+---------------+-----------------------+
-   | オペレーション名                | 「基本コンソール - :ref:`basic_console_operation_v2.1`」で\  | ○            | リスト選択    | ー                    |
+   | オペレーション名                | 「基本コンソール - :ref:`basic_console_operation`」で\       | ○            | リスト選択    | ー                    |
    |                                 | 登録したオペレーションがリストに表示されます。               |              |               |                       |
    +---------------------------------+--------------------------------------------------------------+--------------+---------------+-----------------------+
    | ステータス                      | 下記「:ref:`status_list`」参照                               | ー           | 自動入力      |                       |
@@ -1464,6 +1464,12 @@ Conductor定期作業実行
    | ステータスが「稼働中」か「紐付けエラー」の作業は「次回実行日付」より「Conductorインターバル時間設定」に登録されている時間前に「:ref:`conductor_list`」への作業登録を実行し、再びスケジュール設定に基づいて「次回実行日付」が更新されます。
 
 2. | 「Conductorインターバル時間設定」は「管理コンソール - :ref:`system_setting`」より「次回実行日付」の何分前に作業登録を実行するか設定可能です。
+   |
+
+.. tip::
+  | 「:ref:`menu_export_import`」により異なるオーガナイゼーション間でメニューインポートを行った際に、インポート先の定期作業実行の実行ユーザがID変換失敗になり、その状態で定期作業実行が行われると定期作業実行のステータスが「紐付エラー」になります。
+  | その場合、レコードの更新を行い、実行ユーザをID変換失敗ではない状態にする必要があります。
+
 
 付録
 ====
@@ -1595,12 +1601,12 @@ Conductor通知先定義設定例
 通知ログの構造
 ^^^^^^^^^^^^^^
 
-.. code-block:: 
+.. code-block::
 
    [
     {
         "conductor_status_id": "XXX",
-        "exec_time": "YYYY/MM/dd HH:ii:ss",                                                                  
+        "exec_time": "YYYY/MM/dd HH:ii:ss",
         "result": [
             {
                 "notice_name": "XXX",
@@ -1615,11 +1621,11 @@ Conductor通知先定義設定例
             }
         ]
      }
-   ]                                                                
+   ]
 
 例) 通知実行ログ(正常)
 ^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: 
+.. code-block::
 
   [
       {
@@ -1653,7 +1659,7 @@ Conductor通知先定義設定例
 例) 通知実行ログ(異常)
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: 
+.. code-block::
 
   [
       {
@@ -1675,4 +1681,4 @@ Conductor通知先定義設定例
               }
           ]
       }
-  ] 
+  ]

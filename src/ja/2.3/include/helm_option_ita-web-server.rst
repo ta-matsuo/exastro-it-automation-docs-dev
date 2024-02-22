@@ -16,7 +16,7 @@
    * - exastro-it-automation.ita-web-server.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-web-server
+     - docker.io/exastro/exastro-it-automation-web-server
    * - exastro-it-automation.ita-web-server.image.tag
      - コンテナイメージのタグ
      - 不可

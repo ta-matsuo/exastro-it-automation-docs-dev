@@ -77,7 +77,7 @@
    * - exastro-platform.platform-auth.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - "exastro/exastro-platform-auth"
+     - "docker.io/exastro/exastro-platform-auth"
    * - exastro-platform.platform-auth.image.tag
      - コンテナイメージのタグ
      - 不可

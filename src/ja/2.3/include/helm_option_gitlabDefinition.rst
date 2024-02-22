@@ -29,6 +29,10 @@
      - GitLab エンドポイントのポート番号
      - 可
      - 80
+   * - global.gitlabDefinition.secret.GITLAB_ROOT_PASSWORD
+     - GitLabのRoot権限のパスワード
+     - 必須
+     - 任意の文字列（8文字以上で予測可能な単語等は利用不可）
    * - global.gitlabDefinition.secret.GITLAB_ROOT_TOKEN
      - GitLab の root 権限アカウントのアクセストークン
      - 必須

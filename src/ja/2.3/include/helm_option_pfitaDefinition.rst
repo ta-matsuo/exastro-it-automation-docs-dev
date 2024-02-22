@@ -12,7 +12,7 @@
    * - global.itaDefinition.name
      - Exastro IT Automation の定義名
      - 不可
-     - "ita"
+     - "pf-ita"
    * - global.itaDefinition.enabled
      - Exastro IT Automation 共通定義の利用有無
      - 不可

@@ -56,7 +56,7 @@ Organization (オーガナイゼーション)
     - :kbd:`git`
     - :kbd:`jq`
 
-.. _organization_creation_v2.1:
+.. _organization_creation:
 
 オーガナイゼーション作成
 ------------------------
@@ -91,7 +91,7 @@ Organization (オーガナイゼーション)
             # Exastro Platform への接続のための設定情報を登録
             vi ./exastro-platform/tools/api-auth.conf
 
-         | 例えば、:ref:`service_setting_v2.1` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
+         | 例えば、:ref:`service_setting` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
 
          .. code-block:: diff
             :caption: create-organization.conf
@@ -331,7 +331,7 @@ Organization (オーガナイゼーション)
             # Exastro Platform への接続のための設定情報を登録
             vi ./exastro-platform/tools/api-auth.conf
 
-         | 例えば、:ref:`service_setting_v2.1` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
+         | 例えば、:ref:`service_setting` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
 
          .. code-block:: diff
             :caption: create-organization.conf

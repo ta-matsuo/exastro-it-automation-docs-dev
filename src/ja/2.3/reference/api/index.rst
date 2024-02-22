@@ -12,7 +12,6 @@ API
 
    operator/index
    system_manager/index
-   developer/index
 
 .. raw:: html
 

@@ -76,30 +76,30 @@
      - | ランダムな32バイト ASCII 文字を BASE64 エンコードした値
    * - global.pfGlobalDefinition.persistence.enabled
      - | Exastro 共通基盤におけるデータの永続化の有無
-       | ※現在このパラメータは使用していません。
-     - 可 (無効)
+       | ※2.3にて削除されました。
+     - 削除
      - | :program:`true` (デフォルト): 永続化する。
        | :program:`false`: 永続化しない。
    * - global.pfGlobalDefinition.persistence.accessMode
      - | Exastro 共通基盤における Persisten Volume Claim のアクセスモード
-       | ※現在このパラメータは使用していません。
-     - 可 (無効)
+       | ※2.3にて削除されました。
+     - 削除
      - | :program:`ReadWriteMany` (デフォルト): ボリュームは多数のNodeで読み取り専用としてマウント。
        | :program:`ReadWriteOnce`: ボリュームは単一のNodeで読み取り/書き込みとしてマウント。
    * - global.pfGlobalDefinition.persistence.size
      - | Exastro 共通基盤における Persisten Volume Claim のボリュームに要求するサイズ(Bytes)
-       | ※現在このパラメータは使用していません。
-     - 可 (無効)
+       | ※2.3にて削除されました。
+     - 削除
      - "10Gi"
    * - global.pfGlobalDefinition.persistence.volumeType
      - | Exastro 共通基盤における Persisten Volume のボリュームタイプ
        | Storage Class を利用する場合は設定は不要です。
-       | ※現在このパラメータは使用していません。
-     - 可 (無効)
+       | ※2.3にて削除されました。
+     - 削除
      - "hostPath"
    * - global.pfGlobalDefinition.persistence.storageClass
      - | Exastro 共通基盤におけるデータの永続化のために利用する Storage Class
        | Persistent Volume を利用する場合は設定は不要です。
-       | ※現在このパラメータは使用していません。
-     - 可 (無効)
+       | ※2.3にて削除されました。
+     - 削除
      - 不可

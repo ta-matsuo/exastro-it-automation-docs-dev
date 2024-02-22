@@ -56,12 +56,12 @@ Organization (オーガナイゼーション)
     - :kbd:`git`
     - :kbd:`jq`
 
-.. _organization_creation_v2.1:
+.. _organization_creation:
 
 オーガナイゼーション作成
 ------------------------
 
-| オーガナイゼーションの作成方法には、下記の4通りの方法があります。
+| オーガナイゼーションの作成方法には、下記の2通りの方法があります。
 
 .. tabs::
 
@@ -79,7 +79,7 @@ Organization (オーガナイゼーション)
             :width: 200px
             :align: left
             :class: with-border-thin
-      
+
       #. オーガナイゼーション一覧が表示されますので、 :guilabel:`作成` ボタンを押下して、新しいオーガナイゼーションを作成することができます。
 
          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション一覧_作成.png
@@ -93,7 +93,7 @@ Organization (オーガナイゼーション)
             :width: 600px
             :align: left
             :class: with-border-thin
-       
+
          .. list-table:: リストテーブルサンプル
             :widths: 40 200
             :header-rows: 1
@@ -127,409 +127,13 @@ Organization (オーガナイゼーション)
               - | インストールするドライバを指定します。
                 | 一度インストールしたドライバを削除することは不可能です。
 
-         .. tip:: 
-            インストールドライバについては、:doc:`../cicd_for_iac/cicd_for_iac` を参照
-
-   .. group-tab:: 設定ファイルとスクリプトによる作成
-
-      - 特徴
-
-      | 対話型スクリプトによる作成方法と違い複数のオーガナイゼーション管理ユーザーを登録できます。
-
-      - 作成方法
-
-      | GitHub リポジトリから取得した資材の中にある、シェルスクリプトを実行しオーガナイゼーションを作成します。
-
-      #. オーガナイゼーション作成用シェルスクリプトを、リポジトリから :kbd:`git clone` により取得します。
-
-         .. code-block:: bash
-            :caption: コマンド
-
-            # Exastro Platform の資材を入手
-            git clone https://github.com/exastro-suite/exastro-platform.git
-
-      #. 設定ファイルの :kbd:`CONF_BASE_URL` に Exastro システム の管理用エンドポイント URL を設定します。
-
-         .. code-block:: bash
-            :caption: コマンド
-
-            # Exastro Platform への接続のための設定情報を登録
-            vi ./exastro-platform/tools/api-auth.conf
-
-         | 例えば、:ref:`service_setting_v2.1` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
-
-         .. code-block:: diff
-            :caption: create-organization.conf
-            :linenos:
-            :lineno-start: 1
-
-            - CONF_BASE_URL=http://platform-auth:8001
-            + CONF_BASE_URL=http://exastro-suite-mng.example.local
-              CURL_OPT=-sv
-        
          .. tip::
-             | 自己証明書を利用している場合、証明書エラーが発生します。
-             | 設定ファイル内の :kbd:`CURL_OPT=-sv` を :kbd:`CURL_OPT=-svk` に変更することで証明書エラーを回避できますが、認証機関から発行された正しい証明書をインストールすることを推奨します。
-            
-      #. オーガナイゼーション情報の設定
-
-         | オーガナイゼーション作成時の初期登録情報として下記の項目を設定できます。
-
-         .. list-table:: オーガナイゼーション作成パラメータ
-            :widths: 25 30 20 35
-            :header-rows: 1
-            :align: left
-        
-            * - 項目
-              - 説明
-              - 変更
-              - デフォルト値・選択可能な設定値
-            * - id
-              - | オーガナイゼーションIDを指定。
-                | 英小文字、数字、ハイフン、アンダースコアが利用可能。
-                | 最大36文字。
-                | ※先頭文字は英小文字であること。
-                | ※予約語(後述)に合致しないこと。
-              - 可
-              - :kbd:`org001`
-            * - name
-              - | オーガナイゼーション名を指定。
-                | 最大255文字
-              - 可
-              - :kbd:`org001-name`
-            * - organization_managers
-              - | オーガナイゼーション管理者の情報を指定。
-                | ※複数名登録するときは繰り返し指定可能
-              - 可
-              - (オーガナイゼーション管理者のリスト)
-            * - organization_managers[*].username
-              - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
-              - 可
-              - :kbd:`admin`
-            * - organization_managers[*].email
-              - オーガナイゼーション管理者のE-mailアドレスを指定。
-              - 可
-              - :kbd:`admin@example.com`
-            * - organization_managers[*].firstName
-              - オーガナイゼーション管理者の名を指定。
-              - 可
-              - :kbd:`admin`
-            * - organization_managers[*].lastName
-              - オーガナイゼーション管理者の姓を指定。
-              - 可
-              - :kbd:`admin`
-            * - organization_managers[*].credentials[0].type
-              - 認証方式を指定。
-              - 不可
-              - :kbd:`password`
-            * - organization_managers[*].credentials[0].value
-              - オーガナイゼーション管理者の初期パスワードを指定。
-              - 可
-              - :kbd:`password`
-            * - organization_managers[*].credentials[0].temporary
-              - 初回ログイン時のパスワード変更の要否の有無を指定。
-              - 可
-              - | :program:`true` (デフォルト): パスワードの変更を要求する。 
-                | :program:`false`: パスワードの変更を要求しない。
-            * - plan.id
-              - リソースプランを指定。
-              - 可
-              - ※初期状態では存在しないため指定しない。 
-            * - options.sslRequired
-              - SSL 接続の有無を指定。
-              - 可
-              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。
-                | :program:`none`: SSL の設定なし。
-                | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
-            * - optionsIta.no_install_driver
-              - インストールをしないドライバを指定。
-              - 可
-              - | 以下の値をList形式で指定すると、指定したドライバがワークスペース作成時にインストールされない。省略可。
-                | :program:`terraform_cloud_ep`: Terraform Cloud/EPドライバ
-                | :program:`terraform_cli`: Terraform CLIドライバ
-                | :program:`ci_cd`: CI/CD for IaCドライバ
-                | 例：:program:`"optionsIta": {"no_install_driver": ["terraform_cloud_ep", "terraform_cli", "ci_cd"]}`
-
-
-         | 設定ファイルの作成は、:file:`./exastro-platform/tools/create-organization.sample.json` を基に、作成するオーガナイゼーションの情報を指定した JSON ファイルを基に作成します。
-
-         .. raw:: html
-
-            <details>
-              <summary>create-organization.sample.json</summary>
-
-         .. code-block:: json
-            :linenos:
-
-            {
-                "id"    :   "org001",
-                "name"  :   "org001-name",
-                "organization_managers" : [
-                    {
-                        "username"  :   "admin",
-                        "email"     :   "admin@example.com",
-                        "firstName" :   "admin",
-                        "lastName"  :   "admin",
-                        "credentials"   :   [
-                            {
-                                "type"      :   "password",
-                                "value"     :   "password",
-                                "temporary" :   true
-                            }
-                        ],
-                        "requiredActions": [
-                            "UPDATE_PROFILE"
-                        ],
-                        "enabled": true
-                    }
-                ],
-                "plan": {
-                    "id": "plan-1"
-                },
-                "options": {},
-                "optionsIta": {}
-            }
-
-         .. raw:: html
-
-            </details>
-
-         .. code-block:: bash
-            :caption: コマンド
-
-            # 設定用ファイルの作成
-            cp -pi ./exastro-platform/tools/create-organization{.sample,}.json
-
-            # 設定用ファイルの編集
-            vi ./exastro-platform/tools/create-organization.json
-
-        
-         .. tip::
-            | optionsの値に :program:`"sslRequired": "none"` を指定することで、オーガナイゼーションユーザーが http でのアクセスが可能となります。
-
-      #. オーガナイゼーション作成実行
-
-         | スクリプトを実行してオーガナイゼーションを作成します。
-         | :kbd:`your username` と :kbd:`your username` は :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
-
-         .. code-block:: bash
-            :caption: コマンド
-
-             ./exastro-platform/tools/create-organization.sh ./exastro-platform/tools/create-organization.json
-
-             your username : INPUT-YOUR-USERNAME # システム管理者のユーザー名を入力します
-             your password : INPUT-USER-PASSWORD # システム管理者のパスワードを入力します
-
-             Create an organization, are you sure? (Y/other) : Y # Y を入力するとオーガナイゼーションの作成処理が開始します
-
-         | 成功時の結果表示は、:kbd:`result` が "000-00000”となります。
-            
-         .. code-block:: bash
-            :caption: 実行結果 (成功時)
-
-            ...
-            < HTTP/1.1 200 OK
-            < Date: Thu, 18 Aug 2022 01:49:13 GMT
-            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-            < Content-Length: 107
-            < Content-Type: application/json
-            < 
-            {
-              "data": null, 
-              "message": "SUCCESS", 
-              "result": "000-00000", 
-              "ts": "2022-08-18T01:49:17.251Z"
-            }
-            * Connection #0 to host platform-auth left intact
-
-         | 失敗時の結果表示は、:kbd:`result` が "000-00000”以外となります。
-
-         .. code-block:: bash
-            :caption: 実行結果 (失敗時)
-
-            ...
-            < HTTP/1.1 400 BAD REQUEST
-            < Date: Thu, 18 Aug 2022 05:29:35 GMT
-            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-            < Content-Length: 252
-            < Connection: close
-            < Content-Type: application/json
-            < 
-            { [252 bytes data]
-            * Closing connection 0
-            {
-              "data": null,
-              "message": "指定されたorganization(org002)は作成済みのため、作成できません。",
-              "result": "400-23001",
-              "ts": "2022-08-18T05:29:35.643Z"
-            }
-
-   .. group-tab:: 対話型スクリプトによる作成
-
-      - 特徴
-
-      | 設定ファイルとスクリプトによる作成方法と違い設定ファイルの作成が不要です。
-
-      .. tip::
-        | この方法の場合、オーガナイゼーション管理者は1人のみ指定できます。
-        | 複数名オーガナイゼーション管理者を作成する場合は、:menuselection:`設定ファイルとスクリプトによる作成方法` を行ってください。
-
-      - 作成方法
-
-      | 画面の指示に従ってオーガナイゼーション情報を指定し、オーガナイゼーションを作成します。
-
-      | GitHub リポジトリから取得した資材の中にある、シェルスクリプトを実行しオーガナイゼーションを作成します。
-
-      #. オーガナイゼーション作成用シェルスクリプトを、リポジトリから :kbd:`git clone` により取得します。
-
-         .. code-block:: bash
-            :caption: コマンド
-
-            # Exastro Platform の資材を入手
-            git clone https://github.com/exastro-suite/exastro-platform.git
-
-      #. 設定ファイルの :kbd:`CONF_BASE_URL` に Exastro システム の管理用エンドポイント URL を設定します。
-
-         .. code-block:: bash
-            :caption: コマンド
-
-            # Exastro Platform への接続のための設定情報を登録
-            vi ./exastro-platform/tools/api-auth.conf
-
-         | 例えば、:ref:`service_setting_v2.1` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
-
-         .. code-block:: diff
-            :caption: create-organization.conf
-            :linenos:
-            :lineno-start: 1
-
-            - CONF_BASE_URL=http://platform-auth:8001
-            + CONF_BASE_URL=http://exastro-suite-mng.example.local
-              CURL_OPT=-sv
-        
-         .. tip::
-             | 自己証明書を利用している場合、証明書エラーが発生します。
-             | 設定ファイル内の :kbd:`CURL_OPT=-sv` を :kbd:`CURL_OPT=-svk` に変更することで証明書エラーを回避できますが、認証機関から発行された正しい証明書をインストールすることを推奨します。
-
-      #. オーガナイゼーション作成実行
-
-         | オーガナイゼーション作成時の初期登録情報として下記の項目を設定できます。
-
-         .. list-table:: オーガナイゼーション作成パラメータ
-            :widths: 25 30 20 35
-            :header-rows: 1
-            :align: left
-        
-            * - 項目
-              - 説明
-              - 変更
-              - デフォルト値・選択可能な設定値
-            * - organization id
-              - | オーガナイゼーションIDを指定。
-                | 英小文字、数字、ハイフン、アンダースコアが利用可能。
-                | 最大36文字。
-                | ※先頭文字は英小文字であること。
-                | ※予約語(後述)に合致しないこと。
-              - 可
-              - :kbd:`org001`
-            * - organization name
-              - | オーガナイゼーション名を指定。
-                | 最大255文字
-              - 可
-              - :kbd:`org001-name`
-            * - organization manager's username
-              - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
-              - 可
-              - :kbd:`admin`
-            * - organization manager's email
-              - オーガナイゼーション管理者のE-mailアドレスを指定。
-              - 可
-              - :kbd:`admin@example.com`
-            * - organization manager's firstName
-              - オーガナイゼーション管理者の名を指定。
-              - 可
-              - :kbd:`admin`
-            * - organization manager's lastName
-              - オーガナイゼーション管理者の姓を指定。
-              - 可
-              - :kbd:`admin`
-            * - organization manager's initial password
-              - オーガナイゼーション管理者の初期パスワードを指定。
-              - 可
-              - :kbd:`password`
-            * - organization plan id (optional)
-              - リソースプランを指定。
-              - 可
-              - ※初期状態では未作成のため入力不要。 
-
-         .. code-block:: sh
-            :caption: コマンド 
-
-            bash ./exastro-platform/tools/create-organization.sh
-
-         | :kbd:`your username` と :kbd:`your password` は :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
-
-         .. code-block::
-            :caption: コマンド (入力例)
-
-            Please enter the organization information to be created
-        
-            organization id : org001                             # オーガナイゼーションIDを入力します
-            organization name : org001-name                      # オーガナイゼーション名を入力します
-            organization manager's username : admin              # オーガナイゼーション管理者のユーザー名（ログインするときのID）を入力します
-            organization manager's email : admin@example.com     # オーガナイゼーション管理者のE-mailアドレスを入力します
-            organization manager's first name : admin            # オーガナイゼーション管理者の名を入力します
-            organization manager's last name : admin             # オーガナイゼーション管理者の姓を入力します
-            organization manager's initial password : password   # オーガナイゼーション管理者の初期パスワードを入力します
-            organization plan id (optional) :                    # リソースプランを指定(任意)します ※ 初期状態では未作成のため入力不要
-
-            your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザー名を入力します
-            your password : INPUT-USER-PASSWORD                  # システム管理者のパスワードを入力します
-      
-            Create an organization, are you sure? (Y/other) : Y # "Y"を入力すると実行します
-
-
-         | 成功時の結果表示は、:kbd:`result` が "000-00000”となります。
-            
-         .. code-block:: bash
-            :caption: 実行結果 (成功時)
-
-            ...
-            < HTTP/1.1 200 OK
-            < Date: Thu, 18 Aug 2022 01:49:13 GMT
-            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-            < Content-Length: 107
-            < Content-Type: application/json
-            < 
-            {
-              "data": null, 
-              "message": "SUCCESS", 
-              "result": "000-00000", 
-              "ts": "2022-08-18T01:49:17.251Z"
-            }
-            * Connection #0 to host platform-auth left intact
-
-         | 失敗時の結果表示は、:kbd:`result` が "000-00000”以外となります。
-
-         .. code-block:: bash
-            :caption: 実行結果 (失敗時)
-
-            ...
-            < HTTP/1.1 400 BAD REQUEST
-            < Date: Thu, 18 Aug 2022 05:29:35 GMT
-            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-            < Content-Length: 252
-            < Connection: close
-            < Content-Type: application/json
-            < 
-            { [252 bytes data]
-            * Closing connection 0
-            {
-              "data": null,
-              "message": "指定されたorganization(org002)は作成済みのため、作成できません。",
-              "result": "400-23001",
-              "ts": "2022-08-18T05:29:35.643Z"
-            }
+            | Exastro OASEをインストールするためにはMongoDBが必要です。MongoDBがない（環境変数「MONGO_HOST」の記載が空である）場合は有効にできません。
+            | インストールドライバの詳細については、各ドキュメントを参照してください。
+            | ・:doc:`../cicd_for_iac/index`
+            | ・:doc:`../oase/index`
+            | ・:doc:`../terraform_driver/terraform_cli`
+            | ・:doc:`../terraform_driver/terraform_cloud_ep`
 
    .. group-tab:: Rest API による実行
 
@@ -549,7 +153,7 @@ Organization (オーガナイゼーション)
             :widths: 25 30 20 35
             :header-rows: 1
             :align: left
-        
+
             * - 項目
               - 説明
               - 変更
@@ -593,14 +197,17 @@ Organization (オーガナイゼーション)
               - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
-            * - optionsIta.no_install_driver
-              - インストールをしないドライバを指定。
+            * - optionsIta.drivers
+              - | 対象のドライバについて、インストールする場合はtrue、インストールしない場合はfalseを指定。
+                | ドライバのkeyを記載しない場合はデフォルトでtrueが設定されます。
+                | Exastro OASEをインストールするためにはMongoDBが必要です。MongoDBがない（環境変数「MONGO_HOST」の記載が空である）場合は有効にできません。
               - 可
-              - | 以下の値をList形式で指定すると、指定したドライバがワークスペース作成時にインストールされない。省略可。
-                | :program:`terraform_cloud_ep`: Terraform Cloud/EPドライバ
-                | :program:`terraform_cli`: Terraform CLIドライバ
-                | :program:`ci_cd`: CI/CD for IaCドライバ
-                | 例：:program:`"optionsIta": {"no_install_driver": ["terraform_cloud_ep", "terraform_cli", "ci_cd"]}`
+              - | 各ドライバに対応した以下のkeyに対してtrue/falseを指定し、ワークスペース作成時にインストールされるかどうかを設定。省略可。
+                | :program:`ci_cd`: CI/CD for IaC
+                | :program:`oase`: Exastro OASE
+                | :program:`terraform_cloud_ep`: Terraform Cloud/EP driver
+                | :program:`terraform_cli`: Terraform CLI driver
+                | 例：:program:`"optionsIta": {"drivers": {"ci_cd": true, "oase": true, "terraform_cli": false, "terraform_cloud_ep": true}}`
 
 
       | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
@@ -656,7 +263,7 @@ Organization (オーガナイゼーション)
 
 | オーガナイゼーション一覧の確認方法には、下記の2通りの方法があります。
 
-.. tabs:: 
+.. tabs::
 
    .. group-tab:: 画面操作
 
@@ -686,7 +293,7 @@ Organization (オーガナイゼーション)
    .. group-tab:: Rest API による実行
 
      | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
-     
+
      .. code-block:: bash
 
       BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
@@ -711,6 +318,9 @@ Organization (オーガナイゼーション)
           - オーガナイゼーションID
         * - data.name
           - オーガナイゼーション名
+        * - data.optionsIta.drivers
+          - | 各ドライバの有効無効
+            | true:有効 false:無効
         * - data.organization_managers
           - オーガナイゼーション管理者情報
         * - data.active_plan.id
@@ -766,7 +376,7 @@ Organization (オーガナイゼーション)
 
 | オーガナイゼーションの編集方法には、下記の2通りの方法があります。
 
-.. tabs:: 
+.. tabs::
 
    .. group-tab:: 画面操作
 
@@ -780,24 +390,24 @@ Organization (オーガナイゼーション)
             :class: with-border-thin
 
       #. | オーガナイゼーション一覧が表示されますので、編集したいオーガナイゼーションの行にある :guilabel:`編集` ボタンを押下します。
-     
+
          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集.png
             :width: 600px
             :align: left
             :class: with-border-thin
-     
+
       #. | オーガナイゼーション名を変更することができます。
 
          .. figure:: /images/ja/manuals/platform/organization/orgname_edit.png
             :width: 600px
             :align: left
             :class: with-border-thin
-          
-         .. tip:: 
+
+         .. tip::
             | オーガナイゼーションIDを変更することは出来ません。
 
       #. | 追加したいドライバにチェックを入れることで、インストールするドライバを追加することができます。
-         | しかし、インストール済みのドライバを削除することはできません。
+         | インストール済みのドライバを削除することはできません。
 
          .. figure:: /images/ja/manuals/platform/organization/org_edit_driver.png
             :width: 600px
@@ -842,7 +452,7 @@ Organization (オーガナイゼーション)
             :align: left
             :class: with-border-thin
 
-      .. tip:: 
+      .. tip::
          | リソースプラン設定とリソースプラン解除の手順を繰り返し行い、:guilabel:`登録` ボタンを押下することで、
          | 複数のリソースプランの紐づけや解除を、同時に行うことが可能です。
 
@@ -942,7 +552,7 @@ Organization (オーガナイゼーション)
      - | オーガナイゼーションへのリソースプラン解除
 
      .. code-block:: bash
-          
+
          BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
          BASE_URL=システム管理者用サイトアドレスを設定してください
          ORG_ID=リソースプラン解除するorganization idを設定してください
@@ -959,8 +569,8 @@ Organization (オーガナイゼーション)
 
 | オーガナイゼーションの削除方法には、下記の2通りの方法があります。
 
-.. tabs:: 
- 
+.. tabs::
+
    .. group-tab:: 画面操作
 
        | 以下の手順で実行
@@ -1000,8 +610,8 @@ Organization (オーガナイゼーション)
           -H "Authorization: basic ${BASE64_BASIC}" \
           "${BASE_URL}/api/platform/organizations/${ORGANIZATION_ID}"
 
-.. warning:: 
- 
+.. warning::
+
    | 削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。
 
 オーガナイゼーションへのアクセス
@@ -1025,7 +635,7 @@ Organization (オーガナイゼーション)
 ------------------------------
 
 | 以下に示すパターンに合致するワードは、オーガナイゼーションの ID として使用できません。
-  
+
 - master
 - platform
 - account

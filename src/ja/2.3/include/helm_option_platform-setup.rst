@@ -12,7 +12,7 @@
    * - exastro-platform.platform-setup.keycloak.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - "exastro/exastro-platform-job"
+     - "docker.io/exastro/exastro-platform-job"
    * - exastro-platform.platform-setup.keycloak.image.tag
      - コンテナイメージのタグ
      - 不可

@@ -19,8 +19,9 @@ Exastro Platform
 
 共通設定 (Exastro ITA)
 ----------------------
+.. warning:: 2.3にてItaDefinition→pfItaDefinitionへ変更
 
-.. include:: ../../include/helm_option_itaDefinition.rst
+.. include:: ../../include/helm_option_pfitaDefinition.rst
 
 共通設定 (認証機能用データベース)
 ---------------------------------
@@ -29,6 +30,7 @@ Exastro Platform
 
 共通設定 (Exastro 共用データベース)
 -----------------------------------
+.. warning:: 2.3にてMariaDBへ統合したため使用不可
 
 .. include:: ../../include/helm_option_databaseDefinition.rst
 
@@ -62,6 +64,15 @@ Keycloak
 
 .. include:: ../../include/helm_option_keycloak.rst
 
+MongoDB
+--------
+
+.. include:: ../../include/helm_option_mongo.rst
+
+GitLab
+--------
+
+.. include:: ../../include/helm_option_gitlab.rst
 
 Exastro IT Automation
 =====================
@@ -189,6 +200,8 @@ ita-by-terraform-cloud-ep-vars-listup
 ita-database-setup-job
 ----------------------
 
+.. warning:: 2.3にて削除したため利用不可
+
 .. include:: ../../include/helm_option_ita-database-setup-job.rst
 
 ita-web-server
@@ -200,3 +213,35 @@ ita-migration
 --------------
 
 .. include:: ../../include/helm_option_ita-migration.rst
+
+Exastro OASE
+============
+
+共通設定 (MongoDB)
+------------------
+
+.. include:: ../../include/helm_option_mongoDefinition.rst
+
+ita-by-oase-conclusion
+----------------------
+
+.. include:: ../../include/helm_option_ita-by-oase-conclusion.rst
+
+ita-api-oase-receiver
+---------------------
+
+.. include:: ../../include/helm_option_ita-api-oase-receiver.rst
+
+
+Exastro OASE Agent
+==================
+
+共通設定 (OASE Agent)
+---------------------
+
+.. include:: ../../include/helm_option_agentGlobalDefinition.rst
+
+ita-ag-oase
+-----------
+
+.. include:: ../../include/helm_option_ita-ag-oase.rst

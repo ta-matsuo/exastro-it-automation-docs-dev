@@ -35,26 +35,51 @@ Helm chart (Kubernetes)
 - クライアント要件
 
   | 動作確認が取れているクライアントアプリケーションのバージョンは下記のとおりです。
-  
-  .. csv-table:: クライアント要件
-   :header: アプリケーション, バージョン
-   :widths: 30, 30
-  
-   Helm, v3.9.x
-   kubectl, 1.23
+
+  .. list-table:: クライアント要件
+   :widths: 20, 20
+   :header-rows: 1
+
+   * - アプリケーション
+     - バージョン
+   * - Helm
+     - v3.9.x
+   * - kubectl
+     - 1.23
 
 - デプロイ環境
 
   | 動作確認が取れているコンテナ環境の最小要求リソースとバージョンは下記のとおりです。
 
-  .. csv-table:: デプロイ環境
-   :header: リソース種別, 要求リソース
+  .. list-table:: ハードウェア要件(最小構成)
    :widths: 20, 20
-  
-   CPU,2 Cores (3.0 GHz)
-   Memory, 4GB
-   Storage (Container image size),10GB
-   Kubernetes, 1.23 以上
+   :header-rows: 1
+
+   * - リソース種別
+     - 要求リソース
+   * - CPU
+     - 2 Cores (3.0 GHz, x86_64)
+   * - Memory
+     - 4GB
+   * - Storage (Container image size)
+     - 10GB
+   * - Kubernetes (Container image size)
+     - 1.23 以上
+
+  .. list-table:: ハードウェア要件(推奨構成)
+   :widths: 20, 20
+   :header-rows: 1
+
+   * - リソース種別
+     - 要求リソース
+   * - CPU
+     - 4 Cores (3.0 GHz, x86_64)
+   * - Memory
+     - 16GB
+   * - Storage (Container image size)
+     - 120GB
+   * - Kubernetes (Container image size)
+     - 1.23 以上
 
   .. warning::
     | 要求リソースは Exastro IT Automation のコア機能に対する値です。同一クラスタ上に Keycloak や MariaDB などの外部ツールをデプロイする場合は、その分のリソースが別途必要となります。
@@ -127,22 +152,14 @@ Helm リポジトリの登録
    # Declare variables to be passed into your templates.
    global:
      itaGlobalDefinition:
-       name: ita-global
-       enabled: true
-       image:
-         registry: "docker.io"
-         organization: exastro
-         package: exastro-it-automation
        config:
          DEFAULT_LANGUAGE: "ja"
          LANGUAGE: "en"
-         CONTAINER_BASE: "kubernetes"
          TZ: "Asia/Tokyo"
-         STORAGEPATH: "/storage/"
        secret:
          ENCRYPT_KEY: ""
        persistence:
-         enabled: true
+         reinstall: false
          accessMode: ReadWriteMany
          size: 10Gi
          volumeType: hostPath # e.g.) hostPath or AKS
@@ -151,18 +168,7 @@ Helm リポジトリの登録
          #   release: "stable"
          # matchExpressions:
          #   - {key: environment, operator: In, values: [dev]}
-     gitlabDefinition:
-       name: gitlab
-       enabled: true
-       config:
-         GITLAB_PROTOCOL: "http"
-         GITLAB_HOST: "gitlab"
-         GITLAB_PORT: "80"
-       secret:
-         GITLAB_ROOT_TOKEN: ""
      itaDatabaseDefinition:
-       name: ita-database
-       enabled: true
        config:
          DB_VENDOR: "mariadb"
          DB_HOST: "mariadb"
@@ -174,68 +180,13 @@ Helm リポジトリの登録
          DB_USER: ""
          DB_PASSWORD: ""
      pfGlobalDefinition:
-       name: pf-global
-       enabled: true
-       image:
-         registry: "docker.io"
-         organization: exastro
-         package: exastro-platform
        config:
          DEFAULT_LANGUAGE: "ja"
          LANGUAGE: "en"
          TZ: "Asia/Tokyo"
-         PYTHONIOENCODING: utf-8
-         PLATFORM_API_PROTOCOL: "http"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-         PLATFORM_WEB_PROTOCOL: "http"
-         PLATFORM_WEB_HOST: "platform-web"
-         PLATFORM_WEB_PORT: "8000"
        secret:
          ENCRYPT_KEY: ""
-       persistence:
-         enabled: true
-         accessMode: ReadWriteMany
-         size: 10Gi
-         volumeType: hostPath # e.g.) hostPath or AKS
-         storageClass: "-" # e.g.) azurefile or - (None)
-         # matchLabels:
-         #   release: "stable"
-         # matchExpressions:
-         #   - {key: environment, operator: In, values: [dev]}
-     keycloakDefinition:
-       name: keycloak
-       enabled: true
-       config:
-         API_KEYCLOAK_PROTOCOL: "http"
-         API_KEYCLOAK_HOST: "keycloak"
-         API_KEYCLOAK_PORT: "8080"
-         KEYCLOAK_PROTOCOL: "http"
-         KEYCLOAK_HOST: "keycloak"
-         KEYCLOAK_PORT: "8080"
-         KEYCLOAK_MASTER_REALM: "master"
-         KEYCLOAK_DB_DATABASE: "keycloak"
-       secret:
-         KEYCLOAK_USER: ""
-         KEYCLOAK_PASSWORD: ""
-         KEYCLOAK_DB_USER: ""
-         KEYCLOAK_DB_PASSWORD: ""
-     itaDefinition:
-       name: ita
-       enabled: true
-       config:
-         ITA_WEB_PROTOCOL: "http"
-         ITA_WEB_HOST: "ita-web-server"
-         ITA_WEB_PORT: "8000"
-         ITA_API_PROTOCOL: "http"
-         ITA_API_HOST: "ita-api-organization"
-         ITA_API_PORT: "8080"
-         ITA_API_ADMIN_PROTOCOL: "http"
-         ITA_API_ADMIN_HOST: "ita-api-admin"
-         ITA_API_ADMIN_PORT: "8080"
      pfDatabaseDefinition:
-       name: pf-database
-       enabled: true
        config:
          DB_VENDOR: "mariadb"
          DB_HOST: "mariadb"
@@ -246,28 +197,35 @@ Helm リポジトリの登録
          DB_ADMIN_PASSWORD: ""
          DB_USER: ""
          DB_PASSWORD: ""
-     databaseDefinition:
-       name: mariadb
-       enabled: true
+     keycloakDefinition:
        secret:
-         MARIADB_ROOT_PASSWORD: ""
-       persistence:
-         enabled: true
-         reinstall: false
-         accessMode: ReadWriteOnce
-         size: 20Gi
-         volumeType: hostPath # e.g.) hostPath or AKS
-         storageClass: "-" # e.g.) azurefile or - (None)
-         # matchLabels:
-         #   release: "stable"
-         # matchExpressions:
-         #   - {key: environment, operator: In, values: [dev]}
+         SYSTEM_ADMIN: ""
+         SYSTEM_ADMIN_PASSWORD: ""
+         KEYCLOAK_DB_USER: ""
+         KEYCLOAK_DB_PASSWORD: ""
+     gitlabDefinition:
+       config:
+         GITLAB_PROTOCOL: "http"
+         GITLAB_HOST: "None" # "gitlab" if use container.
+         GITLAB_PORT: "8080"
+       secret:
+         GITLAB_ROOT_PASSWORD: ""
+         GITLAB_ROOT_TOKEN: ""
+     mongoDefinition:
+       config:
+         MONGO_PROTOCOL: "http"
+         MONGO_HOST: "mongo" # "mongo" if use container.
+         MONGO_PORT: "27017"
+       secret:
+         MONGO_ADMIN_USER: ""
+         MONGO_ADMIN_PASSWORD: ""
 
    exastro-it-automation:
+
      ita-api-admin:
        replicaCount: 1
        image:
-         repository: "exastro/exastro-it-automation-api-admin"
+         repository: "docker.io/exastro/exastro-it-automation-api-admin"
          tag: ""
          pullPolicy: IfNotPresent
        extraEnv:
@@ -277,22 +235,33 @@ Helm リポジトリの登録
      ita-api-organization:
        replicaCount: 1
        image:
-         repository: "exastro/exastro-it-automation-api-organization"
+         repository: "docker.io/exastro/exastro-it-automation-api-organization"
          tag: ""
          pullPolicy: IfNotPresent
        extraEnv:
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
 
+     ita-api-oase-receiver:
+       replicaCount: 1
+       image:
+         repository: "docker.io/exastro/exastro-it-automation-api-oase-receiver"
+         tag: ""
+         pullPolicy: IfNotPresent
+       extraEnv:
+         LISTEN_PORT: "8000"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+
      ita-by-ansible-execute:
        replicaCount: 1
        image:
-         repository: "exastro/exastro-it-automation-by-ansible-execute"
+         repository: "docker.io/exastro/exastro-it-automation-by-ansible-execute"
          tag: ""
          pullPolicy: IfNotPresent
        extraEnv:
          EXECUTE_INTERVAL: "10"
-         ANSIBLE_AGENT_IMAGE: "exastro/exastro-it-automation-by-ansible-agent"
+         ANSIBLE_AGENT_IMAGE: "docker.io/exastro/exastro-it-automation-by-ansible-agent"
          ANSIBLE_AGENT_IMAGE_TAG: ""
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
@@ -307,7 +276,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup"
+         repository: "docker.io/exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -318,7 +287,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-ansible-legacy-vars-listup"
+         repository: "docker.io/exastro/exastro-it-automation-by-ansible-legacy-vars-listup"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -329,7 +298,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-ansible-pioneer-vars-listup"
+         repository: "docker.io/exastro/exastro-it-automation-by-ansible-pioneer-vars-listup"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -340,7 +309,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-ansible-towermaster-sync"
+         repository: "docker.io/exastro/exastro-it-automation-by-ansible-towermaster-sync"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -351,7 +320,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-cicd-for-iac"
+         repository: "docker.io/exastro/exastro-it-automation-by-cicd-for-iac"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -362,7 +331,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-collector"
+         repository: "docker.io/exastro/exastro-it-automation-by-collector"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -373,7 +342,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-conductor-regularly"
+         repository: "docker.io/exastro/exastro-it-automation-by-conductor-regularly"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -384,7 +353,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-conductor-synchronize"
+         repository: "docker.io/exastro/exastro-it-automation-by-conductor-synchronize"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -395,7 +364,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-excel-export-import"
+         repository: "docker.io/exastro/exastro-it-automation-by-excel-export-import"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -406,7 +375,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-execinstance-dataautoclean"
+         repository: "docker.io/exastro/exastro-it-automation-by-execinstance-dataautoclean"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -417,7 +386,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-file-autoclean"
+         repository: "docker.io/exastro/exastro-it-automation-by-file-autoclean"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -428,7 +397,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-hostgroup-split"
+         repository: "docker.io/exastro/exastro-it-automation-by-hostgroup-split"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -439,7 +408,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-menu-create"
+         repository: "docker.io/exastro/exastro-it-automation-by-menu-create"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -450,7 +419,18 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-menu-export-import"
+         repository: "docker.io/exastro/exastro-it-automation-by-menu-export-import"
+         tag: ""
+         pullPolicy: IfNotPresent
+
+     ita-by-oase-conclusion:
+       replicaCount: 1
+       extraEnv:
+         EXECUTE_INTERVAL: "10"
+         PLATFORM_API_HOST: "platform-api"
+         PLATFORM_API_PORT: "8000"
+       image:
+         repository: "docker.io/exastro/exastro-it-automation-by-oase-conclusion"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -461,7 +441,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-terraform-cli-execute"
+         repository: "docker.io/exastro/exastro-it-automation-by-terraform-cli-execute"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -472,7 +452,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-terraform-cli-vars-listup"
+         repository: "docker.io/exastro/exastro-it-automation-by-terraform-cli-vars-listup"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -483,7 +463,7 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-terraform-cloud-ep-execute"
+         repository: "docker.io/exastro/exastro-it-automation-by-terraform-cloud-ep-execute"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -494,20 +474,14 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-database-setup-job:
-       image:
-         repository: ""
+         repository: "docker.io/exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup"
          tag: ""
          pullPolicy: IfNotPresent
 
      ita-web-server:
        replicaCount: 1
        image:
-         repository: "exastro/exastro-it-automation-web-server"
+         repository: "docker.io/exastro/exastro-it-automation-web-server"
          tag: ""
          pullPolicy: IfNotPresent
 
@@ -516,14 +490,14 @@ Helm リポジトリの登録
          PLATFORM_API_HOST: "platform-api"
          PLATFORM_API_PORT: "8000"
        image:
-         repository: "exastro/exastro-it-automation-migration"
+         repository: "docker.io/exastro/exastro-it-automation-migration"
          tag: ""
          pullPolicy: IfNotPresent
 
    exastro-platform:
      platform-api:
        image:
-         repository: "exastro/exastro-platform-api"
+         repository: "docker.io/exastro/exastro-platform-api"
          tag: ""
 
      platform-auth:
@@ -551,25 +525,71 @@ Helm リポジトリの登録
          # httpMng:
          #   nodePort: 30081
        image:
-         repository: "exastro/exastro-platform-auth"
+         repository: "docker.io/exastro/exastro-platform-auth"
+         tag: ""
+
+     platform-job:
+       extraEnv:
+         # LOG_LEVEL: "INFO"
+         # SUB_PROCESS_TERMINATE_REQUEST_SECONDS: "1800"
+         # SUB_PROCESS_ACCEPTABLE: "2"
+         # SUB_PROCESS_MAX_JOBS: "10"
+         # SUB_PROCESS_WATCH_INTERVAL_SECONDS: "1.0"
+         # SUB_PROCESS_DB_RECONNECT_INTERVAL_SECONDS: "60"
+         # SUB_PROCESS_DB_HEALTH_CHECK_INTERVAL_SECONDS: "5"
+         # SUB_PROCESS_MAX_CANCEL_TIMEOUT: "10"
+         # JOB_STATUS_WATCH_INTERVAL_SECONDS: "1.0"
+         # JOB_CANCEL_TIMEOUT_SECONDS: "5.0"
+         # JOB_NOTIFICATION_TIMEOUT_SECONDS: "20"
+         # JOB_NOTIFICATION_TEAMS_CONNECTION_TIMEOUT: "3.0"
+         # JOB_NOTIFICATION_TEAMS_READ_TIMEOUT: "10.0"
+         # JOB_NOTIFICATION_SMTP_TIMEOUT: "10.0"
+         # JOB_NOTIFICATION_SMTPS_SSL_VERIFY_ENABLED: "TRUE"
+         # JOB_FORCE_UPDATE_STATUS_TIMEOUT_SECONDS: "60"
+         # JOB_FORCE_UPDATE_STATUS_INTERVAL_SECONDS: "180"
+         # JOB_FORCE_UPDATE_STATUS_PROGRASS_SECONDS: "600"
+       image:
+         repository: "docker.io/exastro/exastro-platform-job"
          tag: ""
 
      platform-migration:
        image:
-         repository: "exastro/exastro-platform-migration"
+         repository: "docker.io/exastro/exastro-platform-migration"
          tag: ""
 
      platform-web:
        image:
-         repository: "exastro/exastro-platform-web"
+         repository: "docker.io/exastro/exastro-platform-web"
          tag: ""
 
      mariadb:
        enabled: true
        image:
-         repository: "mariadb"
-         tag: "10.9"
+         repository: "docker.io/mariadb"
+         tag: "10.11"
          pullPolicy: IfNotPresent
+       imagePullSecrets: []
+       persistence:
+         enabled: false
+         reinstall: false
+         accessMode: ReadWriteOnce
+         size: 20Gi
+         storageClass: "-" # e.g.) azurefile or - (None)
+         matchLabels:
+           name: pv-database
+         matchExpressions:
+           # - {key: name, operator: In, values: [pv-database]}
+       dbSetup:
+         dbConfInfo:
+           name: mysql-server-conf-config
+           customCnf: |-
+             [mysqld]
+             character-set-server=utf8mb4
+             collation-server=utf8mb4_bin
+             secure_file_priv=/tmp
+             lower_case_table_names=1
+             [client]
+             default-character-set=utf8mb4
        resources:
          requests:
            memory: "256Mi"
@@ -581,16 +601,138 @@ Helm リポジトリの登録
      keycloak:
        enabled: true
        image:
-         repository: "exastro/keycloak"
+         repository: "docker.io/exastro/keycloak"
          tag: ""
          pullPolicy: IfNotPresent
-       resources:
-         requests:
-           memory: "256Mi"
-           cpu: "1m"
-         limits:
-           memory: "2Gi"
-           cpu: "4"
+       resources: {}
+         # requests:
+         #   memory: "256Mi"
+         #   cpu: "1m"
+         # limits:
+         #   memory: "2Gi"
+         #   cpu: "4"
+
+     gitlab:
+       enabled: false
+       extraEnv:
+         GITLAB_OMNIBUS_CONFIG: |
+           postgresql['shared_buffers'] = "2048MB"
+           postgresql['work_mem'] = "128MB"
+           postgresql['maintenance_work_mem'] = "128MB"
+           postgresql['effective_cache_size'] = "128MB"
+           postgresql['checkpoint_segments'] = 16
+           postgresql['checkpoint_timeout'] = "10min"
+           external_url 'http://gitlab:40080'
+           nginx['listen_port'] = 40080
+           gitlab_rails['initial_root_password'] = "${GITLAB_ROOT_PASSWORD:-}"
+           gitlab_rails['registry_enabled'] = false;
+           gitlab_rails['db_prepared_statements'] = false;
+           gitlab_rails['monitoring_whitelist'] = ['0.0.0.0/0']
+           # gitlab_rails['env'] = {'MALLOC_CONF' => 'dirty_decay_ms:1000,muzzy_decay_ms:1000'}
+           # puma['worker_processes'] = 0
+           prometheus_monitoring['enable'] = false
+           # sidekiq['max_concurrency'] = 10
+           # gitaly['env'] = {'MALLOC_CONF' => 'dirty_decay_ms:1000,muzzy_decay_ms:1000', 'GITALY_COMMAND_SPAWN_MAX_PARALLEL' => '2'}
+         GITLAB_POST_RECONFIGURE_SCRIPT: |
+           while ! curl -sfI -o /dev/null http://localhost:40080/-/readiness;
+           do
+           echo "GitLab service is not ready."
+           sleep 1
+           done
+           echo "GitLab service started normally"
+           curl -Ssf -H "PRIVATE-TOKEN: ${GITLAB_ROOT_TOKEN:-}" "http://localhost:40080/api/v4/version" || (
+             gitlab-rails runner "token = User.find_by_username('root').personal_access_tokens.create(scopes: [:api, :write_repository, :sudo], name: 'exastro system token'); token.set_token('${GITLAB_ROOT_TOKEN:-}'); token.save!"
+           )
+           echo "GitLab post reconfigure script ended."
+       image:
+         repository: "docker.io/gitlab/gitlab-ce"
+         tag: "15.11.13-ce.0"
+         pullPolicy: IfNotPresent
+         # Overrides the image tag whose default is the chart appVersion.
+       persistence:
+         enabled: false
+         volumeName: pv-gitlab
+         reinstall: false
+         accessMode: ReadWriteMany
+         size: 20Gi
+         storageClass: "-" # e.g.) azurefile or - (None)
+         matchLabels:
+           name: pv-gitlab
+         matchExpressions:
+           # - {key: name, operator: In, values: [pv-gitlab]}
+       resources: {}
+         # requests:
+         #   memory: "256Mi"
+         #   cpu: "1m"
+         # limits:
+         #   memory: "2Gi"
+         #   cpu: "4"
+       service:
+         type: ClusterIP
+         name: gitlab
+         port: 40080
+         # nodePort: 30082
+
+     mongo:
+       enabled: true
+       replicaCount: 1
+       image:
+         repository: "docker.io/mongo"
+         pullPolicy: IfNotPresent
+         # Overrides the image tag whose default is the chart appVersion.
+         tag: "6.0"
+       persistence:
+         enabled: false
+         reinstall: false
+         accessMode: ReadWriteOnce
+         size: 20Gi
+         storageClass: "-" # e.g.) azurefile, local-path or - (None)
+         matchLabels:
+           # release: "pv-mongo"
+         matchExpressions:
+           # - {key: name, operator: In, values: [pv-mongo]}
+       dbSetup:
+         dbConfInfo:
+           name: mongo-server-conf-config
+           customCnf: |
+             systemLog:
+               verbosity: 0
+               # destination: file
+               # path: /root/logs/mongod.log
+               timeStampFormat: iso8601-utc
+             # storage:
+             #   directoryPerDB: true
+             #   dbPath: /root/data
+             #   engine: wiredTiger
+             #   wiredTiger:
+             #     engineConfig:
+             #       cacheSizeGB: 1
+             #   journal:
+             #     enabled: true
+             # processManagement:
+             #   fork: true
+             # net:
+             #   port: 27017
+             #   bindIp: 0.0.0.0
+             # security:
+             #   authorization: enabled
+       resources: {}
+         # requests:
+         #   memory: "256Mi"
+         #   cpu: "1m"
+         # limits:
+         #   memory: "2Gi"
+         #   cpu: "4"
+       affinity:
+         podAntiAffinity:
+           requiredDuringSchedulingIgnoredDuringExecution:
+           - labelSelector:
+               matchExpressions:
+               - key: name
+                 operator: In
+                 values:
+                 - mongo
+             topologyKey: kubernetes.io/hostname
 
 .. raw:: html
 
@@ -598,7 +740,7 @@ Helm リポジトリの登録
 
 | 以降の手順では、この :file:`exastro.yaml` に対してインストールに必要なパラメータを設定してきいます。
 
-.. _service_setting_v2.1:
+.. _service_setting:
 
 サービス公開の設定
 ------------------
@@ -609,14 +751,14 @@ Helm リポジトリの登録
 - LoadBalancer
 - NodePort
 
-.. note:: 
+.. note::
   | ここで紹介する方法以外にもサービス公開方法はあります。ユーザの環境ごとに適切な構成・設定を選択してください。
 
 パラメータ
 ^^^^^^^^^^
 
 | 利用可能なパラメータについては下記を参照してください。
-       
+
 .. include:: ../include/helm_option_platform-auth.rst
 
 設定例
@@ -638,7 +780,7 @@ Helm リポジトリの登録
       - 設定例
 
       | サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。
-      | Azure におけるドメイン名の確認方法については :ref:`aks-dns_v2.1` を確認してください。
+      | Azure におけるドメイン名の確認方法については :ref:`aks-dns` を確認してください。
       | クラウドプロバイダ毎に必要な :kbd:`annotations` を指定してください。
       | 下記は、AKS の Ingress Controller を使用する際の例を記載しています。
 
@@ -646,7 +788,7 @@ Helm リポジトリの登録
          :caption: exastro.yaml
          :linenos:
          :lineno-start: 232
-      
+
           platform-auth:
             extraEnv:
               # Please set the URL to access
@@ -688,12 +830,12 @@ Helm リポジトリの登録
 
       | :kbd:`service.type` に :kbd:`LoadBalancer` を設定することで、LoadBalancer を使ったサービス公開ができます。
       | 下記は、LoadBalancer を使用する際の例を記載しています。
-      
+
       .. code-block:: diff
          :caption: exastro.yaml
          :linenos:
          :lineno-start: 232
-      
+
           platform-auth:
             extraEnv:
               # Please set the URL to access
@@ -743,10 +885,10 @@ Helm リポジトリの登録
           platform-auth:
             extraEnv:
               # Please set the URL to access
-         -    EXTERNAL_URL: ""
-         -    EXTERNAL_URL_MNG: ""
-         +    EXTERNAL_URL: "http://10.10.10.10:30080"
-         +    EXTERNAL_URL_MNG: "http://10.10.10.10:30081"
+        -     EXTERNAL_URL: ""
+        -     EXTERNAL_URL_MNG: ""
+        +     EXTERNAL_URL: "http://10.10.10.10:30080"
+        +     EXTERNAL_URL_MNG: "http://10.10.10.10:30081"
             ingress:
         -    enabled: true
         +    enabled: false
@@ -802,11 +944,11 @@ Helm リポジトリの登録
       | 外部データベースを操作するために必要な接続情報を設定します。
 
       .. warning::
-        | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
-      
+        | :command:`DB_ADMIN_USER` と :command:`MONGO_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
+
       .. warning::
         | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
-      
+
       1.  Exastro IT Automation 用データベースの設定
 
           | データベースの接続情報を設定します。
@@ -819,8 +961,6 @@ Helm リポジトリの登録
             :lineno-start: 39
 
               itaDatabaseDefinition:
-                name: ita-database
-                enabled: true
                 config:
             -     DB_VENDOR: "mariadb"
             -     DB_HOST: "mariadb"
@@ -849,8 +989,6 @@ Helm リポジトリの登録
             :lineno-start: 112
 
               pfDatabaseDefinition:
-                name: auth-database
-                enabled: true
                 config:
             -     DB_VENDOR: "mariadb"
             -     DB_HOST: "mariadb"
@@ -867,11 +1005,36 @@ Helm リポジトリの登録
                   DB_USER: ""
                   DB_PASSWORD: ""
 
-      3.  データベースコンテナの無効化
+      3.  OASE用データベースの設定
+
+          | OASE用データベースの接続情報を設定します。(OASEを利用しない場合設定不要)
+
+          .. include:: ../include/helm_option_mongoDefinition.rst
+
+          .. code-block:: diff
+            :caption: exastro.yaml
+            :linenos:
+            :lineno-start: 112
+
+              mongoDefinition:
+                config:
+            -     MONGO_PROTOCOL: "http"
+            -     MONGO_HOST: "mongo"
+            -     MONGO_PORT: "27017"
+            +     MONGO_PROTOCOL: "your.protocol"        # http or https
+            +     MONGO_HOST: "your.database.endpoint"   # OASE用データベースのエンドポイント
+            +     MONGO_PORT: "your.port"                # OASE用データベース接続ポート
+                secret:
+            -     MONGO_ADMIN_USER: ""
+            -     MONGO_ADMIN_PASSWORD: ""
+            +     MONGO_ADMIN_USER: "your-admin-account"      # OASE用データベースの管理者ユーザ
+            +     MONGO_ADMIN_PASSWORD: "your-admin-password" # OASE用データベースの管理者ユーザのパスワード
+
+      4.  データベースコンテナの無効化
 
           | データベースコンテナが起動しないように設定します。
 
-          .. include:: ../include/helm_option_databaseDefinition.rst
+          .. include:: ../include/helm_option_mariadb.rst
 
           .. code-block:: diff
             :caption: exastro.yaml
@@ -879,6 +1042,19 @@ Helm リポジトリの登録
             :lineno-start: 270
 
               mariadb:
+            -   enabled: true
+            +   enabled: false
+
+          | OASE用データベースコンテナが起動しないように設定します。
+
+          .. include:: ../include/helm_option_mongo.rst
+
+          .. code-block:: diff
+            :caption: exastro.yaml
+            :linenos:
+            :lineno-start: 270
+
+              mongo:
             -   enabled: true
             +   enabled: false
 
@@ -895,8 +1071,8 @@ Helm リポジトリの登録
       | また、データベースのデータを永続化するために利用するストレージを指定します。
 
       .. warning::
-        | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
-      
+        | :command:`DB_ADMIN_USER` と :command:`MONGO_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
+
       .. warning::
         | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
 
@@ -907,7 +1083,7 @@ Helm リポジトリの登録
           | データベースコンテナの root パスワードを設定します。
           | また、データベースのデータを永続化するために利用するストレージを指定します。
 
-          .. include:: ../include/helm_option_databaseDefinition.rst
+          .. include:: ../include/helm_option_mariadb.rst
 
           .. tabs::
 
@@ -917,23 +1093,22 @@ Helm リポジトリの登録
                   :caption: exastro.yaml
                   :linenos:
                   :lineno-start: 125
-          
-                      databaseDefinition:
-                        name: mariadb
+
+                      mariadb:                                             # 旧databaseDefinition
                         enabled: true
-                        secret:
-                  -     MARIADB_ROOT_PASSWORD: ""
-                  +     MARIADB_ROOT_PASSWORD: "root-password"  # データベースコンテナの root のパスワード
+                        image:
+                          repository: "docker.io/mariadb"
+                          tag: "10.11"
+                          pullPolicy: IfNotPresent
+                        imagePullSecrets: []
                         persistence:
                           enabled: true
                           reinstall: false
                           accessMode: ReadWriteOnce
-                  -      size: 20Gi
-                  -      volumeType: hostPath # e.g.) hostPath or AKS
-                  -      storageClass: "-" # e.g.) azurefile or - (None)
-                  +      size: XXGi                                       # 必要な容量に変更
-                  +      volumeType: AKS                                  # AKS を選択
-                  +      storageClass: "exastro-suite-azurefile-csi-nfs"  # 利用する Storage Class を指定
+                  -       size: 20Gi
+                  +       size: XXGi                                       # 必要な容量に変更
+                  -       storageClass: "-" # e.g.) azurefile or - (None)
+                  +       storageClass: "exastro-suite-azurefile-csi-nfs"  # 利用する Storage Class を指定
 
             .. tab:: hostPath 利用
 
@@ -941,21 +1116,20 @@ Helm リポジトリの登録
                   :caption: exastro.yaml
                   :linenos:
                   :lineno-start: 125
-          
-                      databaseDefinition:
-                        name: mariadb
+
+                      mariadb:                                             # 旧databaseDefinition
                         enabled: true
-                        secret:
-                  -     MARIADB_ROOT_PASSWORD: ""
-                  +     MARIADB_ROOT_PASSWORD: "root-password"  # コンテナデータベースの root のパスワード
+                        image:
+                          repository: "docker.io/mariadb"
+                          tag: "10.11"
+                          pullPolicy: IfNotPresent
+                        imagePullSecrets: []
                         persistence:
                           enabled: true
                           reinstall: false
                           accessMode: ReadWriteOnce
-                  -      size: 20Gi
-                  -      volumeType: hostPath # e.g.) hostPath or AKS
-                  +      size: XXGi                                       # 必要な容量に変更
-                  +      volumeType: hostPath                             # AKS を選択
+                  -       size: 20Gi
+                  +       size: XXGi                                       # 必要な容量に変更
                           storageClass: "-" # e.g.) azurefile or - (None)
 
       2.  Exastro IT Automation 用データベースの設定
@@ -970,8 +1144,6 @@ Helm リポジトリの登録
             :lineno-start: 39
 
               itaDatabaseDefinition:
-                name: ita-database
-                enabled: true
                 config:
                   DB_VENDOR: "mariadb"
                   DB_HOST: "mariadb"
@@ -997,7 +1169,6 @@ Helm リポジトリの登録
             :lineno-start: 112
 
               pfDatabaseDefinition:
-                name: auth-database
                 enabled: true
                 config:
                   DB_VENDOR: "mariadb"
@@ -1011,6 +1182,28 @@ Helm リポジトリの登録
             +     DB_ADMIN_PASSWORD: "your-admin-password" # 「1.  データベースコンテナの設定」で設定したコンテナデータベースの root のパスワード
                   DB_USER: ""
                   DB_PASSWORD: ""
+
+      4.  OASE用データベースの設定
+
+          | OASE用データベースの接続情報を設定します。(OASEを利用しない場合設定不要)
+
+          .. include:: ../include/helm_option_mongoDefinition.rst
+
+          .. code-block:: diff
+            :caption: exastro.yaml
+            :linenos:
+            :lineno-start: 112
+
+              mongoDefinition:
+                config:
+            -     MONGO_PROTOCOL: "http"
+            -     MONGO_HOST: "mongo"
+            -     MONGO_PORT: "27017"
+                secret:
+            -     MONGO_ADMIN_USER: ""
+            -     MONGO_ADMIN_PASSWORD: ""
+            +     MONGO_ADMIN_USER: "your-admin-account"      # OASE用データベースの管理者ユーザ
+            +     MONGO_ADMIN_PASSWORD: "your-admin-password" # OASE用データベースの管理者ユーザのパスワード
 
 .. _installation_kubernetes_Keycloak 設定:
 
@@ -1043,7 +1236,6 @@ Helm リポジトリの登録
       :lineno-start: 39
 
         itaDatabaseDefinition:
-          name: ita-database
           enabled: true
           config:
             DB_VENDOR: "mariadb"
@@ -1071,7 +1263,6 @@ Helm リポジトリの登録
       :lineno-start: 82
 
         keycloakDefinition:
-          name: keycloak
           enabled: true
           config:
             API_KEYCLOAK_PROTOCOL: "http"
@@ -1103,7 +1294,7 @@ Helm リポジトリの登録
       :lineno-start: 112
 
         pfDatabaseDefinition:
-          name: auth-database
+          name: pf-database
           enabled: true
           config:
             DB_VENDOR: "mariadb"
@@ -1126,37 +1317,136 @@ GitLab 連携設定
 
 | GitLab 連携のための接続情報を登録します。
 
-.. include:: ../include/helm_option_gitlabDefinition.rst
+- 外部GitLab
+- GitLabコンテナ
 
-.. warning::
-  | GITLAB_ROOT_TOKEN は下記の権限スコープが割り当てられたトークンが必要です。
-  | ・api
-  | ・write_repository
-  | ・sudo
+.. tabs::
 
-| 下記は、GitLab 連携の設定例を記載しています。
+   .. tab:: 外部GitLab
 
-.. code-block:: diff
-  :caption: exastro.yaml
-  :linenos:
-  :lineno-start: 30
+      - 特徴
 
-      gitlabDefinition:
-        name: gitlab
-        enabled: true
-        config:
-    -     GITLAB_PROTOCOL: "http"
-    -     GITLAB_HOST: "gitlab"
-    -     GITLAB_PORT: "80"
-    +     GITLAB_PROTOCOL: "接続プロトコル http or https"
-    +     GITLAB_HOST: "接続先"
-    +     GITLAB_PORT: "接続ポート"
-        secret:
-    -     GITLAB_ROOT_TOKEN: ""
-    +     GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
+      | マネージドGitLabや別途用意した Kubernetes クラスタ外のGitLabを利用します。
+      | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
 
-.. _create_system_manager:
-.. _install_helm_v2.2:
+      - 設定例
+
+      | 外部GitLabを操作するために必要な接続情報を設定します。
+
+      1.  GitLabデータベースの設定
+
+          | GitLabコンテナに接続できるようにするための設定します。
+
+      .. include:: ../include/helm_option_gitlabDefinition.rst
+
+      .. warning::
+        | GITLAB_ROOT_TOKEN は下記の権限スコープが割り当てられたトークンが必要です。
+        | ・api
+        | ・write_repository
+        | ・sudo
+
+      | 下記は、GitLab 連携の設定例を記載しています。
+
+      .. code-block:: diff
+        :caption: exastro.yaml
+        :linenos:
+        :lineno-start: 30
+
+            gitlabDefinition:
+              name: gitlab
+              enabled: true
+              config:
+        -       GITLAB_PROTOCOL: "http"
+        -       GITLAB_HOST: "gitlab"
+        -       GITLAB_PORT: "80"
+        +       GITLAB_PROTOCOL: "接続プロトコル http or https"
+        +       GITLAB_HOST: "接続先"
+        +       GITLAB_PORT: "接続ポート"
+              secret:
+        -       GITLAB_ROOT_PASSWORD: ""
+        -       GITLAB_ROOT_TOKEN: ""
+        +       GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
+        +       GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
+
+   .. tab:: GitLabコンテナ
+
+      - 特徴
+
+      | Kubernetes クラスタ内にデプロイしたGitLabコンテナを利用します。
+      | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
+
+      - 設定例
+
+      | GitLabンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
+      | また、GitLabのデータを永続化するために利用するストレージを指定します。
+
+      1.  GitLabデータベースの設定
+
+          | GitLabコンテナに接続できるようにするための設定します。
+
+      .. include:: ../include/helm_option_gitlabDefinition.rst
+
+      .. warning::
+         | トークンはGITLAB_ROOT_TOKENで指定された平文で作成されます。
+
+      | 下記は、GitLab 連携の設定例を記載しています。
+
+      .. code-block:: diff
+          :caption: exastro.yaml
+          :linenos:
+          :lineno-start: 30
+
+            gitlabDefinition:
+                name: gitlab
+                enabled: true
+                config:
+                  GITLAB_PROTOCOL: "http"
+          -       GITLAB_HOST: "gitlab"
+          -       GITLAB_PORT: "80"
+          +       GITLAB_HOST: "your.database.endpoint" # GitLab用データベースのエンドポイント（外部から接続可能なIP or URL）
+          +       GITLAB_PORT: "30082" # GitLab用データベースの接続ポート
+                secret:
+          -       GITLAB_ROOT_PASSWORD: ""
+          -       GITLAB_ROOT_TOKEN: ""
+          +       GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
+          +       GITLAB_ROOT_TOKEN: "GitLabに作成したいトークン"
+
+      1.  GitLabコンテナの有効化
+
+          | GitLabコンテナを起動するように設定します。
+          | 下記は、NodePort を使用する際の例を記載しています。
+
+          .. include:: ../include/helm_option_gitlab.rst
+
+          .. code-block:: diff
+            :caption: exastro.yaml
+            :linenos:
+            :lineno-start: 270
+
+              gitlab:
+            -   enabled: false
+            +   enabled: true
+                extraEnv:
+                  GITLAB_OMNIBUS_CONFIG: |
+                    postgresql['shared_buffers'] = "2048MB"
+                    postgresql['work_mem'] = "128MB"
+                    postgresql['maintenance_work_mem'] = "128MB"
+                    postgresql['effective_cache_size'] = "128MB"
+                    postgresql['checkpoint_segments'] = 16
+                    postgresql['checkpoint_timeout'] = "10min"
+            -       external_url 'http://gitlab:40080'
+            +       external_url 'http://your.database.endpoint:30082'
+                ～ 略 ～
+                service:
+            -     type: ClusterIP
+            +     type: NodePort
+                  name: gitlab
+                  port: 40080
+            -     # nodePort: 30082
+            +     nodePort: 30082
+
+   .. _create_system_manager:
+   .. _install_helm_v2.2:
 
 Exastro システム管理者の作成
 ----------------------------
@@ -1208,7 +1498,7 @@ Exastro システム管理者の作成
    .. tab:: マネージドディスク
 
       - 特徴
-       
+
       | パブリッククラウドで提供されるストレージサービスを利用することでストレージの構築や維持管理が不要となります。
 
       - 設定例
@@ -1252,7 +1542,7 @@ Exastro システム管理者の作成
         :linenos:
         :lineno-start: 39
 
-          databaseDefinition:
+          mariadb:
             persistence:
               enabled: true
               reinstall: false
@@ -1314,6 +1604,48 @@ Exastro システム管理者の作成
             path: /var/data/exastro-suite/exastro-it-automation/ita-common
             type: DirectoryOrCreate
 
+      .. code-block:: diff
+        :caption: pv-mongo.yaml (OASE用ボリューム) ※OASEを利用しない場合設定不要
+        :linenos:
+
+        # pv-mongo.yaml
+        apiVersion: v1
+        kind: PersistentVolume
+        metadata:
+          name: pv-mongo
+        spec:
+          claimRef:
+            name: volume-mongo-storage-mongo-0
+            namespace: exastro
+          capacity:
+            storage: 20Gi
+          accessModes:
+            - ReadWriteOnce
+          persistentVolumeReclaimPolicy: Retain
+          hostPath:
+            path: /var/data/exastro-suite/exastro-platform/mongo
+            type: DirectoryOrCreate
+
+      .. code-block:: diff
+        :caption: pv-gitlab.yaml (GitLab用ボリューム) ※外部GitLabを利用する場合設定不要
+        :linenos:
+
+        # pv-gitlab.yaml
+        apiVersion: v1
+        kind: PersistentVolume
+        metadata:
+          name: pv-gitlab
+        spec:
+          capacity:
+            storage: 20Gi
+          accessModes:
+            - ReadWriteMany
+          persistentVolumeReclaimPolicy: Retain
+          hostPath:
+            path: /var/data/exastro-suite/exastro-platform/gitlab
+            type: DirectoryOrCreate
+
+
 .. _インストール-1:
 
 インストール
@@ -1332,6 +1664,12 @@ Exastro システム管理者の作成
     # pv-ita-common.yaml
     kubectl apply -f pv-ita-common.yaml
 
+    # pv-mongo.yaml ※OASEを利用しない場合設定不要
+    kubectl apply -f pv-mongo.yaml
+
+    # pv-gitlab.yaml ※外部GitLabを利用する場合設定不要
+    kubectl apply -f pv-gitlab.yaml
+
 .. code-block:: bash
 
     # 確認
@@ -1339,9 +1677,12 @@ Exastro システム管理者の作成
 
 .. code-block:: bash
 
-    NAME            CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
-    pv-database     20Gi       RWO            Retain           Available                                   19s
-    pv-ita-common   10Gi       RWX            Retain           Available                                   9s
+    NAME            CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM                                  STORAGECLASS   REASON   AGE
+    pv-database     20Gi       RWO            Retain           Available                                                                  6s
+    pv-gitlab       20Gi       RWX            Retain           Available                                                                  5s
+    pv-ita-common   10Gi       RWX            Retain           Available                                                                  6s
+    pv-mongo        20Gi       RWO            Retain           Available   exastro/volume-mongo-storage-mongo-0                           5s
+
 
 インストール
 ------------
@@ -1358,17 +1699,17 @@ Exastro システム管理者の作成
    .. group-tab:: Ingress
 
       1. Helm コマンドを使い Kubernetes 環境にインストールを行います。
-      
+
          .. code-block:: bash
             :caption: コマンド
 
             helm install exastro exastro/exastro \
               --namespace exastro --create-namespace \
               --values exastro.yaml
-      
+
          .. code-block:: bash
             :caption: 出力結果
-      
+
             NAME: exastro
             LAST DEPLOYED: Sat Jan 28 15:00:02 2023
             NAMESPACE: exastro
@@ -1411,17 +1752,17 @@ Exastro システム管理者の作成
          | 以下、上記の出力結果に従って操作をします。
 
       2. | インストール状況確認
-   
+
       .. include:: ../include/check_installation_status.rst
-     
-      3. 暗号化キーのバックアップ
+
+      1. 暗号化キーのバックアップ
 
          .. include:: ../include/backup_encrypt_key_k8s.rst
 
-      4. 接続確認
+      2. 接続確認
 
          | 出力結果に従って、:menuselection:`Administrator Console` の URL にアクセスします。
-         | 下記は、実行例のため :ref:`service_setting_v2.1` で設定したホスト名に読み替えてください。
+         | 下記は、実行例のため :ref:`service_setting` で設定したホスト名に読み替えてください。
 
          .. code-block:: bash
             :caption: 出力結果(例)
@@ -1430,7 +1771,7 @@ Exastro システム管理者の作成
             * Service Console       *
             *************************
             http://exastro-suite.example.local/
-            
+
             *************************
             * Administrator Console *
             *************************
@@ -1447,17 +1788,17 @@ Exastro システム管理者の作成
    .. group-tab:: LoadBalancer
 
       1. Helm コマンドを使い Kubernetes 環境にインストールを行います。
-      
+
          .. code-block:: bash
             :caption: コマンド
-        
+
             helm install exastro exastro/exastro \
               --namespace exastro --create-namespace \
               --values exastro.yaml
-  
+
          .. code-block:: bash
             :caption: 出力結果(例)
-      
+
             NAME: exastro
             LAST DEPLOYED: Sat Jan 28 15:00:02 2023
             NAMESPACE: exastro
@@ -1505,14 +1846,14 @@ Exastro システム管理者の作成
          | 以下、上記の出力結果に従って操作をします。
 
       2. | インストール状況確認
-   
+
       .. include:: ../include/check_installation_status.rst
 
-      3. 暗号化キーのバックアップ
+      1. 暗号化キーのバックアップ
 
          .. include:: ../include/backup_encrypt_key_k8s.rst
 
-      4. 接続確認
+      2. 接続確認
 
          | 1. で実行した :command:`helm install` の出力結果のコマンドをコンソール上に貼り付けて実行します。
 
@@ -1560,17 +1901,17 @@ Exastro システム管理者の作成
    .. group-tab:: NodePort
 
       1. Helm コマンドを使い Kubernetes 環境にインストールを行います。
-      
+
          .. code-block:: bash
             :caption: コマンド
-        
+
             helm install exastro exastro/exastro \
               --namespace exastro --create-namespace \
               --values exastro.yaml
-  
+
          .. code-block:: bash
             :caption: 出力結果
-      
+
             NAME: exastro
             LAST DEPLOYED: Sun Jan 29 12:18:02 2023
             NAMESPACE: exastro
@@ -1617,14 +1958,14 @@ Exastro システム管理者の作成
          | 以下、上記の出力結果に従って操作をします。
 
       2. | インストール状況確認
-   
+
       .. include:: ../include/check_installation_status.rst
 
-      3. 暗号化キーのバックアップ
+      1. 暗号化キーのバックアップ
 
          .. include:: ../include/backup_encrypt_key_k8s.rst
 
-      4. 接続確認
+      2. 接続確認
 
          | 1. で実行した :command:`helm install` の出力結果のコマンドをコンソール上に貼り付けて実行します。
 
@@ -1704,7 +2045,7 @@ Exastro システム管理者の作成
 アップグレードの準備
 --------------------
 
-.. warning:: 
+.. warning::
   | アップグレード実施前に :doc:`../manuals/maintenance/backup_and_restore` の手順に従い、バックアップを取得しておくことを推奨します。
 
 Helm リポジトリの更新
@@ -1727,7 +2068,7 @@ Helm リポジトリの更新
    :emphasize-lines: 3
 
    helm search repo exastro
-   NAME                            CHART VERSION   APP VERSION     DESCRIPTION                                       
+   NAME                            CHART VERSION   APP VERSION     DESCRIPTION
    exastro/exastro                 1.0.0           2.0.3           A Helm chart for Exastro. Exastro is an Open So...
    exastro/exastro-it-automation   1.2.0           2.0.3           A Helm chart for Exastro IT Automation. Exastro...
    exastro/exastro-platform        1.5.0           1.4.0           A Helm chart for Exastro Platform. Exastro Plat...
@@ -1756,7 +2097,7 @@ Helm リポジトリの更新
    :emphasize-lines: 3
 
    helm search repo exastro
-   NAME                            CHART VERSION   APP VERSION     DESCRIPTION                                       
+   NAME                            CHART VERSION   APP VERSION     DESCRIPTION
    exastro/exastro                 1.0.1           2.1.0           A Helm chart for Exastro. Exastro is an Open So...
    exastro/exastro-it-automation   1.2.0           2.0.3           A Helm chart for Exastro IT Automation. Exastro...
    exastro/exastro-platform        1.5.0           1.4.0           A Helm chart for Exastro Platform. Exastro Plat...
@@ -1776,13 +2117,13 @@ Helm リポジトリの更新
 
 .. code-block:: diff
    :caption: 実行結果
-    
+
    exastro-platform:
      platform-api:
        image:
          repository: "exastro/exastro-platform-api"
           tag: ""
-    
+
      platform-auth:
    +    extraEnv:
    +      # Please set the URL to access
@@ -1804,13 +2145,13 @@ Helm リポジトリの更新
 
 .. code-block:: diff
    :caption: 実行結果
-    
+
    exastro-platform:
      platform-api:
        image:
          repository: "exastro/exastro-platform-api"
           tag: ""
-    
+
      platform-auth:
    +    extraEnv:
    +      # Please set the URL to access
@@ -1909,6 +2250,7 @@ Helm リポジトリの更新
 
     NAME                                                      READY   STATUS      RESTARTS   AGE
     ita-api-admin-64657656c6-r4s2l                            1/1     Running     0          30m
+    ita-api-oase-receiver-6647cb4457-46d2                     1/1     Running     0          30m
     ita-api-organization-75ff9d599c-gthvl                     1/1     Running     0          30m
     ita-by-ansible-execute-fdd8dfc57-7676h                    1/1     Running     0          30m
     ita-by-ansible-legacy-role-vars-listup-6cd558d78b-xxl6x   1/1     Running     0          30m
@@ -1923,6 +2265,7 @@ Helm リポジトリの更新
     ita-by-hostgroup-split-86746f758-b796k                    1/1     Running     0          30m
     ita-by-menu-create-8588c9747d-66xwn                       1/1     Running     0          30m
     ita-by-menu-export-import-6b8498f476-zwml7                1/1     Running     0          30m
+    ita-by-oase-conclusion-567c85567b-8tgvq                   1/1     Running     0          30m
     ita-by-terraform-cli-execute-8478554d8d-qztbv             1/1     Running     0          30m
     ita-by-terraform-cli-vars-listup-bf688659d-zgh8d          1/1     Running     0          30m
     ita-by-terraform-cloud-ep-execute-5dbbb599b-qh8rc         1/1     Running     0          30m
@@ -1943,7 +2286,7 @@ Helm リポジトリの更新
 アンインストールの準備
 ----------------------
 
-.. warning:: 
+.. warning::
   | アンインストール実施前に :doc:`../manuals/maintenance/backup_and_restore` の手順に従い、バックアップを取得しておくことを推奨します。
 
 アンインストール
