@@ -27,9 +27,10 @@ Copyright © NEC Corporation 2019-2023. All rights reserved.
 - | GitHubは、GitHub, Inc.の米国およびその他の国における登録商標または商標です。
 - | GitLabは、GitLab, Inc.の米国およびその他の国における登録商標または商標です。
 - | Google Chromeは、Google LLC の米国およびその他の国における登録商標または商標です。
-- | Helm、Kubernetesは、The Linux Foundationの米国およびその他の国における登録商標または商標です。
+- | Helm、Kubernetes、Fluent Bitは、The Linux Foundationの米国およびその他の国における登録商標または商標です。
 - | LinuxはLinus Torvalds氏の米国およびその他の国における登録商標または商標です。
 - | MariaDBは、MariaDB Foundationの米国およびその他の国における登録商標または商標です。
+- | MongoDB は、MongoDB Inc.の登録商標です。
 - | Oracle、MySQLは、Oracle Corporation およびその子会社、関連会社の米国およびその他の国における登録商標です。
 - | Slackは、Slack Technologies, Inc.の米国およびその他の国における登録商標または商標です。
 - | Terraform、Terraform Cloud、Terraform Enterpriseは、HashiCorp, Inc.の米国およびその他の国における登録商標または商標です。
