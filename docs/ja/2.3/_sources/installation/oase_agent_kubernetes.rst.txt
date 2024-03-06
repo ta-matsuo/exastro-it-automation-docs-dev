@@ -549,7 +549,7 @@ OASE Agentのパラメータ設定例
            +   matchLabels:
            +     release: "pv-ita-ag-oase-2"    # 利用する永続ボリューム名を指定
 
-.. _persistent_volume:
+.. _agent_persistent_volume:
 
 永続ボリュームの設定
 --------------------
@@ -587,6 +587,9 @@ OASE Agentのパラメータ設定例
               metadata:
                 name: pv-ita-ag-oase
               spec:
+                claimRef:
+                  name: pvc-ita-ag-oase
+                  namespace: exastro
                 capacity:
                   storage: 10Gi
                 accessModes:
@@ -609,6 +612,9 @@ OASE Agentのパラメータ設定例
               metadata:
                 name: pv-ita-ag-oase-1
               spec:
+                claimRef:
+                  name: pvc-ita-ag-oase-1
+                  namespace: exastro
                 capacity:
                   storage: 10Gi
                 accessModes:
@@ -628,6 +634,9 @@ OASE Agentのパラメータ設定例
               metadata:
                 name: pv-ita-ag-oase-2
               spec:
+                claimRef:
+                  name: pvc-ita-ag-oase-2
+                  namespace: exastro
                 capacity:
                   storage: 10Gi
                 accessModes:
@@ -637,7 +646,7 @@ OASE Agentのパラメータ設定例
                   path: /var/data/exastro-suite/exastro-agent/ita-ag-oase-2
                   type: DirectoryOrCreate
 
-.. _インストール-1:
+.. _インストール-2:
 
 インストール
 ============
@@ -645,7 +654,7 @@ OASE Agentのパラメータ設定例
 永続ボリュームの作成
 --------------------
 
-| :ref:`persistent_volume` で作成したマニフェストファイルを適用し、ボリュームを作成します。
+| :ref:`agent_persistent_volume` で作成したマニフェストファイルを適用し、ボリュームを作成します。
 
 .. code-block:: bash
 

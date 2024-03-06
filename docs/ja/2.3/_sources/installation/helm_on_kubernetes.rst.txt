@@ -159,7 +159,7 @@ Helm リポジトリの登録
        secret:
          ENCRYPT_KEY: ""
        persistence:
-         reinstall: false
+         enabled: true
          accessMode: ReadWriteMany
          size: 10Gi
          volumeType: hostPath # e.g.) hostPath or AKS
@@ -175,10 +175,10 @@ Helm リポジトリの登録
          DB_PORT: "3306"
          DB_DATABASE: "ITA_DB"
        secret:
-         DB_ADMIN_USER: ""
-         DB_ADMIN_PASSWORD: ""
-         DB_USER: ""
-         DB_PASSWORD: ""
+         DB_ADMIN_USER: "root"
+         DB_ADMIN_PASSWORD: "Ch@ngeMeDBAdm"
+         DB_USER: "ITA_USER"
+         DB_PASSWORD: "Ch@ngeMeITADB"
      pfGlobalDefinition:
        config:
          DEFAULT_LANGUAGE: "ja"
@@ -193,35 +193,34 @@ Helm リポジトリの登録
          DB_PORT: "3306"
          DB_DATABASE: "platform"
        secret:
-         DB_ADMIN_USER: ""
-         DB_ADMIN_PASSWORD: ""
-         DB_USER: ""
-         DB_PASSWORD: ""
+         DB_ADMIN_USER: "root"
+         DB_ADMIN_PASSWORD: "Ch@ngeMeDBAdm"
+         DB_USER: "pf-user"
+         DB_PASSWORD: "Ch@ngeMePFDB"
      keycloakDefinition:
        secret:
-         SYSTEM_ADMIN: ""
-         SYSTEM_ADMIN_PASSWORD: ""
-         KEYCLOAK_DB_USER: ""
-         KEYCLOAK_DB_PASSWORD: ""
+         SYSTEM_ADMIN: "admin"
+         SYSTEM_ADMIN_PASSWORD: "Ch@ngeMeKCAdm"
+         KEYCLOAK_DB_USER: "keycloak"
+         KEYCLOAK_DB_PASSWORD: "Ch@ngeMeKCADB"
      gitlabDefinition:
        config:
          GITLAB_PROTOCOL: "http"
-         GITLAB_HOST: "None" # "gitlab" if use container.
+         GITLAB_HOST: "" # "gitlab" if use container.
          GITLAB_PORT: "8080"
        secret:
-         GITLAB_ROOT_PASSWORD: ""
-         GITLAB_ROOT_TOKEN: ""
+         GITLAB_ROOT_PASSWORD: "Ch@ngeMeGL"
+         GITLAB_ROOT_TOKEN: "change-this-token"
      mongoDefinition:
        config:
          MONGO_PROTOCOL: "http"
          MONGO_HOST: "mongo" # "mongo" if use container.
          MONGO_PORT: "27017"
        secret:
-         MONGO_ADMIN_USER: ""
-         MONGO_ADMIN_PASSWORD: ""
+         MONGO_ADMIN_USER: "admin"
+         MONGO_ADMIN_PASSWORD: "Ch@ngeMeMGAdm"
 
    exastro-it-automation:
-
      ita-api-admin:
        replicaCount: 1
        image:
@@ -570,8 +569,7 @@ Helm リポジトリの登録
          pullPolicy: IfNotPresent
        imagePullSecrets: []
        persistence:
-         enabled: false
-         reinstall: false
+         enabled: true
          accessMode: ReadWriteOnce
          size: 20Gi
          storageClass: "-" # e.g.) azurefile or - (None)
@@ -650,9 +648,8 @@ Helm リポジトリの登録
          pullPolicy: IfNotPresent
          # Overrides the image tag whose default is the chart appVersion.
        persistence:
-         enabled: false
+         enabled: true
          volumeName: pv-gitlab
-         reinstall: false
          accessMode: ReadWriteMany
          size: 20Gi
          storageClass: "-" # e.g.) azurefile or - (None)
@@ -662,11 +659,11 @@ Helm リポジトリの登録
            # - {key: name, operator: In, values: [pv-gitlab]}
        resources: {}
          # requests:
-         #   memory: "256Mi"
-         #   cpu: "1m"
-         # limits:
-         #   memory: "2Gi"
+         #   memory: "4Gi"
          #   cpu: "4"
+         # limits:
+         #   memory: "8Gi"
+         #   cpu: "8"
        service:
          type: ClusterIP
          name: gitlab
@@ -675,15 +672,13 @@ Helm リポジトリの登録
 
      mongo:
        enabled: true
-       replicaCount: 1
        image:
          repository: "docker.io/mongo"
          pullPolicy: IfNotPresent
          # Overrides the image tag whose default is the chart appVersion.
          tag: "6.0"
        persistence:
-         enabled: false
-         reinstall: false
+         enabled: true
          accessMode: ReadWriteOnce
          size: 20Gi
          storageClass: "-" # e.g.) azurefile, local-path or - (None)
@@ -718,10 +713,10 @@ Helm リポジトリの登録
              #   authorization: enabled
        resources: {}
          # requests:
-         #   memory: "256Mi"
-         #   cpu: "1m"
+         #   memory: "4Gi"
+         #   cpu: "4"
          # limits:
-         #   memory: "2Gi"
+         #   memory: "8Gi"
          #   cpu: "4"
        affinity:
          podAntiAffinity:
@@ -787,7 +782,7 @@ Helm リポジトリの登録
       .. code-block:: diff
          :caption: exastro.yaml
          :linenos:
-         :lineno-start: 232
+         :lineno-start: 353
 
           platform-auth:
             extraEnv:
@@ -834,7 +829,7 @@ Helm リポジトリの登録
       .. code-block:: diff
          :caption: exastro.yaml
          :linenos:
-         :lineno-start: 232
+         :lineno-start: 353
 
           platform-auth:
             extraEnv:
@@ -880,7 +875,7 @@ Helm リポジトリの登録
       .. code-block:: diff
         :caption: exastro.yaml
         :linenos:
-        :lineno-start: 232
+        :lineno-start: 353
 
           platform-auth:
             extraEnv:
@@ -958,7 +953,7 @@ Helm リポジトリの登録
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 39
+            :lineno-start: 22
 
               itaDatabaseDefinition:
                 config:
@@ -970,12 +965,12 @@ Helm リポジトリの登録
             +     DB_PORT: "3306"                     # データベース接続ポート
                   DB_DATABASE: "ITA_DB"               # 変更不要
                 secret:
-            -     DB_ADMIN_USER: ""
-            -     DB_ADMIN_PASSWORD: ""s
+            -     DB_ADMIN_USER: "root"
+            -     DB_ADMIN_PASSWORD: "Ch@ngeMeDBAdm"
             +     DB_ADMIN_USER: "your-admin-account"      # データベースの管理権限を持つユーザ
             +     DB_ADMIN_PASSWORD: "your-admin-password" # データベースの管理権限を持つユーザのパスワード
-                  DB_USER: ""
-                  DB_PASSWORD: ""
+                  DB_USER: "ITA_USER"
+                  DB_PASSWORD: "Ch@ngeMeITADB"
 
       2.  Exastro 共通基盤用データベースの設定
 
@@ -986,7 +981,7 @@ Helm リポジトリの登録
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 112
+            :lineno-start: 40
 
               pfDatabaseDefinition:
                 config:
@@ -998,12 +993,12 @@ Helm リポジトリの登録
             +     DB_PORT: "3306"                     # データベース接続ポート
                   DB_DATABASE: "platform"             # 変更不要
                 secret:
-            -     DB_ADMIN_USER: ""
-            -     DB_ADMIN_PASSWORD: ""
+            -     DB_ADMIN_USER: "root"
+            -     DB_ADMIN_PASSWORD: "Ch@ngeMeDBAdm"
             +     DB_ADMIN_USER: "your-admin-account"      # データベースの管理者ユーザ
             +     DB_ADMIN_PASSWORD: "your-admin-password" # データベースの管理者ユーザのパスワード
-                  DB_USER: ""
-                  DB_PASSWORD: ""
+                  DB_USER: "ITA_USER"
+                  DB_PASSWORD: "Ch@ngeMeITADB"
 
       3.  OASE用データベースの設定
 
@@ -1014,7 +1009,7 @@ Helm リポジトリの登録
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 112
+            :lineno-start: 65
 
               mongoDefinition:
                 config:
@@ -1025,8 +1020,8 @@ Helm リポジトリの登録
             +     MONGO_HOST: "your.database.endpoint"   # OASE用データベースのエンドポイント
             +     MONGO_PORT: "your.port"                # OASE用データベース接続ポート
                 secret:
-            -     MONGO_ADMIN_USER: ""
-            -     MONGO_ADMIN_PASSWORD: ""
+            -     MONGO_ADMIN_USER: "admin"
+            -     MONGO_ADMIN_PASSWORD: "Ch@ngeMeMGAdm"
             +     MONGO_ADMIN_USER: "your-admin-account"      # OASE用データベースの管理者ユーザ
             +     MONGO_ADMIN_PASSWORD: "your-admin-password" # OASE用データベースの管理者ユーザのパスワード
 
@@ -1039,7 +1034,7 @@ Helm リポジトリの登録
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 270
+            :lineno-start: 415
 
               mariadb:
             -   enabled: true
@@ -1052,7 +1047,7 @@ Helm リポジトリの登録
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 270
+            :lineno-start: 524
 
               mongo:
             -   enabled: true
@@ -1092,7 +1087,7 @@ Helm リポジトリの登録
                 .. code-block:: diff
                   :caption: exastro.yaml
                   :linenos:
-                  :lineno-start: 125
+                  :lineno-start: 415
 
                       mariadb:                                             # 旧databaseDefinition
                         enabled: true
@@ -1115,7 +1110,7 @@ Helm リポジトリの登録
                 .. code-block:: diff
                   :caption: exastro.yaml
                   :linenos:
-                  :lineno-start: 125
+                  :lineno-start: 415
 
                       mariadb:                                             # 旧databaseDefinition
                         enabled: true
@@ -1141,7 +1136,7 @@ Helm リポジトリの登録
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 39
+            :lineno-start: 22
 
               itaDatabaseDefinition:
                 config:
@@ -1150,12 +1145,11 @@ Helm リポジトリの登録
                   DB_PORT: "3306"
                   DB_DATABASE: "ITA_DB"
                 secret:
-            -     DB_ADMIN_USER: ""
-            -     DB_ADMIN_PASSWORD: ""
-            +     DB_ADMIN_USER: "root"                    # root を指定
+                  DB_ADMIN_USER: "root"
+            -     DB_ADMIN_PASSWORD: "Ch@ngeMeDBAdm"
             +     DB_ADMIN_PASSWORD: "your-admin-password" # 「1.  データベースコンテナの設定」で設定したコンテナデータベースの root のパスワード
-                  DB_USER: ""
-                  DB_PASSWORD: ""
+                  DB_USER: "ITA_USER"
+                  DB_PASSWORD: "Ch@ngeMeITADB"
 
       3.  Exastro 共通基盤用データベースの設定
 
@@ -1166,22 +1160,20 @@ Helm リポジトリの登録
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 112
+            :lineno-start: 40
 
               pfDatabaseDefinition:
-                enabled: true
                 config:
                   DB_VENDOR: "mariadb"
                   DB_HOST: "mariadb"
                   DB_PORT: "3306"
                   DB_DATABASE: "platform"
                 secret:
-            -     DB_ADMIN_USER: ""
-            -     DB_ADMIN_PASSWORD: ""
-            +     DB_ADMIN_USER: "root"                    # root を指定
+                  DB_ADMIN_USER: "root" 
+            -     DB_ADMIN_PASSWORD: "Ch@ngeMeDBAdm"
             +     DB_ADMIN_PASSWORD: "your-admin-password" # 「1.  データベースコンテナの設定」で設定したコンテナデータベースの root のパスワード
-                  DB_USER: ""
-                  DB_PASSWORD: ""
+                  DB_USER: "pf-user"
+                  DB_PASSWORD: "Ch@ngeMePFDB"
 
       4.  OASE用データベースの設定
 
@@ -1192,7 +1184,7 @@ Helm リポジトリの登録
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 112
+            :lineno-start: 65
 
               mongoDefinition:
                 config:
@@ -1200,8 +1192,8 @@ Helm リポジトリの登録
             -     MONGO_HOST: "mongo"
             -     MONGO_PORT: "27017"
                 secret:
-            -     MONGO_ADMIN_USER: ""
-            -     MONGO_ADMIN_PASSWORD: ""
+            -     MONGO_ADMIN_USER: "admin"
+            -     MONGO_ADMIN_PASSWORD: "Ch@ngeMeMGAdm"
             +     MONGO_ADMIN_USER: "your-admin-account"      # OASE用データベースの管理者ユーザ
             +     MONGO_ADMIN_PASSWORD: "your-admin-password" # OASE用データベースの管理者ユーザのパスワード
 
@@ -1233,7 +1225,7 @@ Helm リポジトリの登録
     .. code-block:: diff
       :caption: exastro.yaml
       :linenos:
-      :lineno-start: 39
+      :lineno-start: 22
 
         itaDatabaseDefinition:
           enabled: true
@@ -1260,24 +1252,14 @@ Helm リポジトリの登録
     .. code-block:: diff
       :caption: exastro.yaml
       :linenos:
-      :lineno-start: 82
+      :lineno-start: 51
 
         keycloakDefinition:
-          enabled: true
-          config:
-            API_KEYCLOAK_PROTOCOL: "http"
-            API_KEYCLOAK_HOST: "keycloak"
-            API_KEYCLOAK_PORT: "8080"
-            KEYCLOAK_PROTOCOL: "http"
-            KEYCLOAK_HOST: "keycloak"
-            KEYCLOAK_PORT: "8080"
-            KEYCLOAK_MASTER_REALM: "master"
-            KEYCLOAK_DB_DATABASE: "keycloak"
           secret:
-            KEYCLOAK_USER: ""
-            KEYCLOAK_PASSWORD: ""
-      -     KEYCLOAK_DB_USER: ""
-      -     KEYCLOAK_DB_PASSWORD: ""
+            SYSTEM_ADMIN: "admin"
+            SYSTEM_ADMIN_PASSWORD: "Ch@ngeMeKCAdm"
+      -     KEYCLOAK_DB_USER: "keycloak"
+      -     KEYCLOAK_DB_PASSWORD: "Ch@ngeMeKCADB"
       +     KEYCLOAK_DB_USER: "keycloak-db-user"               # Keycloak が使うDBユーザ
       +     KEYCLOAK_DB_PASSWORD: "keycloak-db-user-password"  # Keycloak が使うDBユーザのパスワード
 
@@ -1291,21 +1273,19 @@ Helm リポジトリの登録
     .. code-block:: diff
       :caption: exastro.yaml
       :linenos:
-      :lineno-start: 112
+      :lineno-start: 40
 
         pfDatabaseDefinition:
-          name: pf-database
-          enabled: true
           config:
             DB_VENDOR: "mariadb"
             DB_HOST: "mariadb"
             DB_PORT: "3306"
             DB_DATABASE: "platform"
           secret:
-            DB_ADMIN_USER: ""
-            DB_ADMIN_PASSWORD: ""
-      -     DB_USER: ""
-      -     DB_PASSWORD: ""
+            DB_ADMIN_USER: "root"
+            DB_ADMIN_PASSWORD: "Ch@ngeMeDBAdm"
+      -     DB_USER: "pf-user"
+      -     DB_PASSWORD: "Ch@ngeMePFDB"
       +     DB_USER: "pf-db-user"           # Exastro 共通基盤が使うDBユーザ
       +     DB_PASSWORD: "pf-db-password"   # Exastro 共通基盤が使うDBユーザのパスワード
 
@@ -1316,6 +1296,10 @@ GitLab 連携設定
 ---------------
 
 | GitLab 連携のための接続情報を登録します。
+
+.. warning::
+     | GitLab 連携を利用しない場合は、下記のように設定してください。
+     | GITLAB_HOST: ""
 
 - 外部GitLab
 - GitLabコンテナ
@@ -1350,21 +1334,19 @@ GitLab 連携設定
       .. code-block:: diff
         :caption: exastro.yaml
         :linenos:
-        :lineno-start: 30
+        :lineno-start: 57
 
             gitlabDefinition:
-              name: gitlab
-              enabled: true
               config:
         -       GITLAB_PROTOCOL: "http"
-        -       GITLAB_HOST: "gitlab"
-        -       GITLAB_PORT: "80"
+        -       GITLAB_HOST: ""
+        -       GITLAB_PORT: "8080"
         +       GITLAB_PROTOCOL: "接続プロトコル http or https"
         +       GITLAB_HOST: "接続先"
         +       GITLAB_PORT: "接続ポート"
               secret:
-        -       GITLAB_ROOT_PASSWORD: ""
-        -       GITLAB_ROOT_TOKEN: ""
+        -       GITLAB_ROOT_PASSWORD: "Ch@ngeMeGL"
+        -       GITLAB_ROOT_TOKEN: "change-this-token"
         +       GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
         +       GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
 
@@ -1377,7 +1359,7 @@ GitLab 連携設定
 
       - 設定例
 
-      | GitLabンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
+      | GitLabコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
       | また、GitLabのデータを永続化するために利用するストレージを指定します。
 
       1.  GitLabデータベースの設定
@@ -1394,22 +1376,20 @@ GitLab 連携設定
       .. code-block:: diff
           :caption: exastro.yaml
           :linenos:
-          :lineno-start: 30
+          :lineno-start: 57
 
             gitlabDefinition:
-                name: gitlab
-                enabled: true
                 config:
                   GITLAB_PROTOCOL: "http"
-          -       GITLAB_HOST: "gitlab"
-          -       GITLAB_PORT: "80"
-          +       GITLAB_HOST: "your.database.endpoint" # GitLab用データベースのエンドポイント（外部から接続可能なIP or URL）
-          +       GITLAB_PORT: "30082" # GitLab用データベースの接続ポート
+          -       GITLAB_HOST: ""
+          -       GITLAB_PORT: "8080"
+          +       GITLAB_HOST: "your.database.endpoint" # 起動する Gitalb コンテナの公開時のURL。AAPから接続できる必要がある。
+          +       GITLAB_PORT: "30082" # 起動する Gitalb コンテナの公開時のポート番号
                 secret:
-          -       GITLAB_ROOT_PASSWORD: ""
-          -       GITLAB_ROOT_TOKEN: ""
+          -       GITLAB_ROOT_PASSWORD: "Ch@ngeMeGL"
+          -       GITLAB_ROOT_TOKEN: "change-this-token"
           +       GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
-          +       GITLAB_ROOT_TOKEN: "GitLabに作成したいトークン"
+          +       GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
 
       1.  GitLabコンテナの有効化
 
@@ -1421,7 +1401,7 @@ GitLab 連携設定
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 270
+            :lineno-start: 464
 
               gitlab:
             -   enabled: false
@@ -1444,10 +1424,9 @@ GitLab 連携設定
                   port: 40080
             -     # nodePort: 30082
             +     nodePort: 30082
-
+   
    .. _create_system_manager:
-   .. _install_helm_v2.2:
-
+ 
 Exastro システム管理者の作成
 ----------------------------
 
@@ -1458,27 +1437,16 @@ Exastro システム管理者の作成
 .. code-block:: diff
   :caption: exastro.yaml
   :linenos:
-  :lineno-start: 82
+  :lineno-start: 51
 
     keycloakDefinition:
-      name: keycloak
-      enabled: true
-      config:
-        API_KEYCLOAK_PROTOCOL: "http"
-        API_KEYCLOAK_HOST: "keycloak"
-        API_KEYCLOAK_PORT: "8080"
-        KEYCLOAK_PROTOCOL: "http"
-        KEYCLOAK_HOST: "keycloak"
-        KEYCLOAK_PORT: "8080"
-        KEYCLOAK_MASTER_REALM: "master"
-        KEYCLOAK_DB_DATABASE: "keycloak"
       secret:
-  -     KEYCLOAK_USER: ""
-  -     KEYCLOAK_PASSWORD: ""
+  -     KEYCLOAK_USER: "admin"
+  -     KEYCLOAK_PASSWORD: "Ch@ngeMeKCAdm"
   +     KEYCLOAK_USER: "admin"               # Exastro システムの管理者
   +     KEYCLOAK_PASSWORD: "admin-password"  # Exastro システムの管理者のパスワード
-        KEYCLOAK_DB_USER: ""
-        KEYCLOAK_DB_PASSWORD: ""
+        KEYCLOAK_DB_USER: "keycloak"
+        KEYCLOAK_DB_PASSWORD: "Ch@ngeMeKCADB"
 
 .. _persistent_volume:
 
@@ -1527,6 +1495,12 @@ Exastro システム管理者の作成
         :lineno-start: 5
 
           itaGlobalDefinition:
+            config:
+              DEFAULT_LANGUAGE: "ja"
+              LANGUAGE: "en"
+              TZ: "Asia/Tokyo"
+            secret:
+              ENCRYPT_KEY: ""
             persistence:
               enabled: true
               accessMode: ReadWriteMany
@@ -1537,10 +1511,12 @@ Exastro システム管理者の作成
 
       | ※ 下記は、:ref:`DATABASE_SETUP` で設定済みです。
 
+      - mariadb
+
       .. code-block:: diff
         :caption: exastro.yaml
         :linenos:
-        :lineno-start: 39
+        :lineno-start: 415
 
           mariadb:
             persistence:
@@ -1551,6 +1527,46 @@ Exastro システム管理者の作成
               volumeType: hostPath # e.g.) hostPath or AKS
         -      storageClass: "-" # e.g.) azurefile or - (None)
         +      storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
+
+      - gitlab
+
+      .. code-block:: diff
+        :caption: exastro.yaml
+        :linenos:
+        :lineno-start: 464
+
+          gitlab:
+        -   enabled: false
+        +   enabled: true
+             ～ 略 ～
+            persistence:
+              enabled: true
+              volumeName: pv-gitlab
+              accessMode: ReadWriteMany
+              size: 20Gi
+        -     storageClass: "-" # e.g.) azurefile or - (None)
+        +     storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
+
+      - mongo
+
+      .. code-block:: diff
+        :caption: exastro.yaml
+        :linenos:
+        :lineno-start: 524
+
+          mongo:
+            enabled: true
+            image:
+              repository: "docker.io/mongo"
+              pullPolicy: IfNotPresent
+              # Overrides the image tag whose default is the chart appVersion.
+              tag: "6.0"
+            persistence:
+              enabled: true
+              accessMode: ReadWriteOnce
+              size: 20Gi
+        -     storageClass: "-" # e.g.) azurefile, local-path or - (None)
+        +     storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
 
    .. tab:: Kubernetes ノードのディレクトリ
 
@@ -1576,6 +1592,9 @@ Exastro システム管理者の作成
         metadata:
           name: pv-database
         spec:
+          claimRef:
+            name: pvc-mariadb
+            namespace: exastro
           capacity:
             storage: 20Gi
           accessModes:
@@ -1595,6 +1614,9 @@ Exastro システム管理者の作成
         metadata:
           name: pv-ita-common
         spec:
+          claimRef:
+            name: pvc-ita-global
+            namespace: exastro
           capacity:
             storage: 10Gi
           accessModes:
@@ -1636,6 +1658,9 @@ Exastro システム管理者の作成
         metadata:
           name: pv-gitlab
         spec:
+          claimRef:
+            name: pvc-gitlab
+            namespace: exastro
           capacity:
             storage: 20Gi
           accessModes:

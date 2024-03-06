@@ -125,7 +125,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#id7">4.4.3.2. OASE Agentのパラメータ設定例</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#persistent-volume">4.4.4. 永続ボリュームの設定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-persistent-volume">4.4.4. 永続ボリュームの設定</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id9">4.5. インストール</a><ul>
@@ -166,7 +166,7 @@
 <li><a class="reference internal" href="#id7">4.4.3.2. OASE Agentのパラメータ設定例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#persistent-volume">4.4.4. 永続ボリュームの設定</a></li>
+<li><a class="reference internal" href="#agent-persistent-volume">4.4.4. 永続ボリュームの設定</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id9">4.5. インストール</a><ul>
@@ -962,8 +962,8 @@ $(window).on('load', function () {
 </div></div>
 </section>
 </section>
-<section id="persistent-volume">
-<span id="id8"></span><h3><span class="section-number">4.4.4. </span>永続ボリュームの設定<a class="headerlink" href="#persistent-volume" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="agent-persistent-volume">
+<span id="id8"></span><h3><span class="section-number">4.4.4. </span>永続ボリュームの設定<a class="headerlink" href="#agent-persistent-volume" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">データベースのデータ永続化 (クラスタ内コンテナがある場合)、および、ファイルの永続化のために、永続ボリュームを設定する必要があります。</div>
 <div class="line">永続ボリュームの詳細については、 <a class="reference external" href="https://kubernetes.io/ja/docs/concepts/storage/persistent-volumes/#%E6%B0%B8%E7%B6%9A%E3%83%9C%E3%83%AA%E3%83%A5%E3%83%BC%E3%83%A0">永続ボリューム - Kubernetes</a> を参照してください。</div>
@@ -997,14 +997,17 @@ $(window).on('load', function () {
 <span class="linenos"> 4</span>metadata:
 <span class="linenos"> 5</span><span class="w"> </span> name: pv-ita-ag-oase
 <span class="linenos"> 6</span>spec:
-<span class="linenos"> 7</span><span class="w"> </span> capacity:
-<span class="linenos"> 8</span><span class="w"> </span>   storage: 10Gi
-<span class="linenos"> 9</span><span class="w"> </span> accessModes:
-<span class="linenos">10</span><span class="w"> </span>   - ReadWriteMany
-<span class="linenos">11</span><span class="w"> </span> persistentVolumeReclaimPolicy: Retain
-<span class="linenos">12</span><span class="w"> </span> hostPath:
-<span class="linenos">13</span><span class="w"> </span>   path: /var/data/exastro-suite/exastro-agent/ita-ag-oase
-<span class="linenos">14</span><span class="w"> </span>   type: DirectoryOrCreate
+<span class="linenos"> 7</span><span class="w"> </span> claimRef:
+<span class="linenos"> 8</span><span class="w"> </span>   name: pvc-ita-ag-oase
+<span class="linenos"> 9</span><span class="w"> </span>   namespace: exastro
+<span class="linenos">10</span><span class="w"> </span> capacity:
+<span class="linenos">11</span><span class="w"> </span>   storage: 10Gi
+<span class="linenos">12</span><span class="w"> </span> accessModes:
+<span class="linenos">13</span><span class="w"> </span>   - ReadWriteMany
+<span class="linenos">14</span><span class="w"> </span> persistentVolumeReclaimPolicy: Retain
+<span class="linenos">15</span><span class="w"> </span> hostPath:
+<span class="linenos">16</span><span class="w"> </span>   path: /var/data/exastro-suite/exastro-agent/ita-ag-oase
+<span class="linenos">17</span><span class="w"> </span>   type: DirectoryOrCreate
 </pre></div>
 </div>
 </div>
@@ -1016,14 +1019,17 @@ $(window).on('load', function () {
 <span class="linenos"> 4</span>metadata:
 <span class="linenos"> 5</span><span class="w"> </span> name: pv-ita-ag-oase-1
 <span class="linenos"> 6</span>spec:
-<span class="linenos"> 7</span><span class="w"> </span> capacity:
-<span class="linenos"> 8</span><span class="w"> </span>   storage: 10Gi
-<span class="linenos"> 9</span><span class="w"> </span> accessModes:
-<span class="linenos">10</span><span class="w"> </span>   - ReadWriteMany
-<span class="linenos">11</span><span class="w"> </span> persistentVolumeReclaimPolicy: Retain
-<span class="linenos">12</span><span class="w"> </span> hostPath:
-<span class="linenos">13</span><span class="w"> </span>   path: /var/data/exastro-suite/exastro-agent/ita-ag-oase-1
-<span class="linenos">14</span><span class="w"> </span>   type: DirectoryOrCreate
+<span class="linenos"> 7</span><span class="w"> </span> claimRef:
+<span class="linenos"> 8</span><span class="w"> </span>   name: pvc-ita-ag-oase-1
+<span class="linenos"> 9</span><span class="w"> </span>   namespace: exastro
+<span class="linenos">10</span><span class="w"> </span> capacity:
+<span class="linenos">11</span><span class="w"> </span>   storage: 10Gi
+<span class="linenos">12</span><span class="w"> </span> accessModes:
+<span class="linenos">13</span><span class="w"> </span>   - ReadWriteMany
+<span class="linenos">14</span><span class="w"> </span> persistentVolumeReclaimPolicy: Retain
+<span class="linenos">15</span><span class="w"> </span> hostPath:
+<span class="linenos">16</span><span class="w"> </span>   path: /var/data/exastro-suite/exastro-agent/ita-ag-oase-1
+<span class="linenos">17</span><span class="w"> </span>   type: DirectoryOrCreate
 </pre></div>
 </div>
 </div>
@@ -1035,14 +1041,17 @@ $(window).on('load', function () {
 <span class="linenos"> 4</span>metadata:
 <span class="linenos"> 5</span><span class="w"> </span> name: pv-ita-ag-oase-2
 <span class="linenos"> 6</span>spec:
-<span class="linenos"> 7</span><span class="w"> </span> capacity:
-<span class="linenos"> 8</span><span class="w"> </span>   storage: 10Gi
-<span class="linenos"> 9</span><span class="w"> </span> accessModes:
-<span class="linenos">10</span><span class="w"> </span>   - ReadWriteMany
-<span class="linenos">11</span><span class="w"> </span> persistentVolumeReclaimPolicy: Retain
-<span class="linenos">12</span><span class="w"> </span> hostPath:
-<span class="linenos">13</span><span class="w"> </span>   path: /var/data/exastro-suite/exastro-agent/ita-ag-oase-2
-<span class="linenos">14</span><span class="w"> </span>   type: DirectoryOrCreate
+<span class="linenos"> 7</span><span class="w"> </span> claimRef:
+<span class="linenos"> 8</span><span class="w"> </span>   name: pvc-ita-ag-oase-2
+<span class="linenos"> 9</span><span class="w"> </span>   namespace: exastro
+<span class="linenos">10</span><span class="w"> </span> capacity:
+<span class="linenos">11</span><span class="w"> </span>   storage: 10Gi
+<span class="linenos">12</span><span class="w"> </span> accessModes:
+<span class="linenos">13</span><span class="w"> </span>   - ReadWriteMany
+<span class="linenos">14</span><span class="w"> </span> persistentVolumeReclaimPolicy: Retain
+<span class="linenos">15</span><span class="w"> </span> hostPath:
+<span class="linenos">16</span><span class="w"> </span>   path: /var/data/exastro-suite/exastro-agent/ita-ag-oase-2
+<span class="linenos">17</span><span class="w"> </span>   type: DirectoryOrCreate
 </pre></div>
 </div>
 </div>
@@ -1055,7 +1064,7 @@ $(window).on('load', function () {
 <section id="id11">
 <h3><span class="section-number">4.5.1. </span>永続ボリュームの作成<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line"><a class="reference internal" href="#persistent-volume"><span class="std std-ref">永続ボリュームの設定</span></a> で作成したマニフェストファイルを適用し、ボリュームを作成します。</div>
+<div class="line"><a class="reference internal" href="#agent-persistent-volume"><span class="std std-ref">永続ボリュームの設定</span></a> で作成したマニフェストファイルを適用し、ボリュームを作成します。</div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># pv-ita-ag-oase.yaml</span>
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>pv-ita-ag-oase.yaml
