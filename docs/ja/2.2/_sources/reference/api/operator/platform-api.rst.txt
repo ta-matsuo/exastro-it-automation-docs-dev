@@ -13,7 +13,7 @@ Exastro Platform API
      $('#article').attr('id', 'swaggerBody');
 
      $api_urls = [
-       {url: "https://raw.githubusercontent.com/exastro-suite/exastro-platform/1.5/docs/openapi/build/user_reference.yaml", name: "v1.5"}
+       {url: "https://raw.githubusercontent.com/exastro-suite/exastro-platform/1.6/docs/openapi/build/user_reference.yaml", name: "v1.6"}
      ];
 
      // Begin Swagger UI call region

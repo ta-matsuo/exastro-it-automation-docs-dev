@@ -173,8 +173,8 @@ Organization (オーガナイゼーション)
             * - options.sslRequired
               - SSL 接続の有無を指定。
               - 可
-              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
-                | :program:`none`: SSL の設定なし。
+              - | :program:`external`: プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
+                | :program:`none` (既定): SSL の設定なし。 ver.2.2より規定が`none`となりました。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
             * - optionsIta.no_install_driver
               - インストールをしないドライバを指定。
