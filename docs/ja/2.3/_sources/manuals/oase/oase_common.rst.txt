@@ -6,6 +6,8 @@ OASE共通
 ========
 | 本書では、OASE（Operation Autonomy Support Engine）の概要について説明します。
 
+.. _oase_common:
+
 機能の概要
 ===========
 | OASEとは、外部から取得したイベント情報を分析し、そのイベントへの対処の自動化を支援する機能です。
