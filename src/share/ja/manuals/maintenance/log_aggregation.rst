@@ -82,9 +82,9 @@ Fluent Bitインストール
        namespace: default
 
 Fluent Bit: helm chart values.yamlの準備
-^^^^^^^^^^^^^^^^~~^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| helm chartsでインストールする際に使用する`values.yaml`は、以下のコマンドで抽出して、編集する
+| helm chartsでインストールする際に使用する :kbd:`values.yaml` は、以下のコマンドで抽出して、編集する
 
 .. code-block:: shell
    :caption: コマンド
