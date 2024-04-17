@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-conductor-regularly.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-conductor-regularly
+     - docker.io/exastro/exastro-it-automation-by-conductor-regularly
    * - exastro-it-automation.ita-by-conductor-regularly.image.tag
      - コンテナイメージのタグ
      - 不可

@@ -16,7 +16,7 @@
    * - exastro-it-automation.ita-api-admin.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-api-admin
+     - docker.io/exastro/exastro-it-automation-api-admin
    * - exastro-it-automation.ita-api-admin.image.tag
      - コンテナイメージのタグ
      - 不可

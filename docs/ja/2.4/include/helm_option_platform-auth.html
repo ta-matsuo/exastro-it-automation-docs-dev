@@ -185,6 +185,52 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.extraEnv.AUDIT_LOG_ENABLED</p></td>
+<td><div class="line-block">
+<div class="line">監査ログの出力有無。</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">True</strong> (デフォルト): 出力する</div>
+<div class="line"><strong class="program">False</strong>: 出力しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.extraEnv.AUDIT_LOG_PATH</p></td>
+<td><div class="line-block">
+<div class="line">監査ログのファイル名（ファイルパス）。</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">exastro-audit.log</strong> (デフォルト)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.extraEnv.AUDIT_LOG_FILE_MAX_BYTE</p></td>
+<td><div class="line-block">
+<div class="line">監査ログファイルの最大サイズ(Byte)を指定できます。</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">100000000</strong> (デフォルト)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.extraEnv.AUDIT_LOG_BACKUP_COUNT</p></td>
+<td><div class="line-block">
+<div class="line">監査ログファイルのバックアップカウント数。</div>
+<div class="line">監査ログファイルの最大サイズ(Byte)を超えた際、ファイル名に&quot;.&quot;＋数値で指定された値の分、バックアップされます。</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">30</strong> (デフォルト)</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>exastro-platform.platform-auth.ingress.enabled</p></td>
 <td><p>Exastro Platform における Ingress 利用の要否</p></td>
 <td><p>可</p></td>
@@ -271,7 +317,7 @@
 <tr class="row-even"><td><p>exastro-platform.platform-auth.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;exastro/exastro-platform-auth&quot;</p></td>
+<td><p>&quot;docker.io/exastro/exastro-platform-auth&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-platform.platform-auth.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>

@@ -50,7 +50,7 @@ Exastro Platform Web 機能
 Exastro Platform セットアップ機能
 ---------------------------------
 
-.. include:: ../../include/helm_option_platform-setup.rst
+.. include:: ../../include/helm_option_platform-migration.rst
 
 MariaDB
 -------

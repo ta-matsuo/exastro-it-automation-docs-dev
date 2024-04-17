@@ -13,6 +13,7 @@
    kubernetes/index
    ansible/index
    terraform/index
+   logging/index
 
 .. raw:: html
 

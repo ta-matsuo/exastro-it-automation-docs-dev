@@ -125,18 +125,31 @@
 <li class="toctree-l3"><a class="reference internal" href="oase_common.html">1. OASE共通</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">2. OASE管理</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id1">2.1. はじめに</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">2.2. OASE管理 メニュー構成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">2.3. OASE管理 エージェント概要</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">2.4. OASE管理 通知テンプレート（共通）概要</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">2.5. OASE管理 エージェント利用手順</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">2.6. OASE管理 通知テンプレート（共通）利用手順</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">2.7. OASE管理 機能メニュー操作説明</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id8">2.7.1. OASE管理 メニュー</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id9">2.7.2. エージェント</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id10">2.7.3. 通知テンプレート（共通）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.2. メニュー構成</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id3">2.2.1. メニュー/画面一覧</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">2.8. 付録</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-about">2.3. エージェント概要</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id5">2.3.1. エージェントについて</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2.4. エージェント利用手順</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id7">2.4.1. 作業フロー</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2.5. 通知テンプレート（共通）概要</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">2.6. 通知テンプレート（共通）利用手順</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">2.7. 機能メニュー操作説明</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id11">2.7.1. メニューについて</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#agent">2.7.2. エージェント</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#notification-template-common">2.7.3. 通知テンプレート（共通）</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">2.8. 付録</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#oase-agent-env">2.8.1. OASE Agentの処理フローと.envの設定値</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id18">2.8.2. イベント収集設定の即時反映について</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="oase.html">3. OASE</a></li>
@@ -163,18 +176,31 @@
   <ul>
 <li><a class="reference internal" href="#">2. OASE管理</a><ul>
 <li><a class="reference internal" href="#id1">2.1. はじめに</a></li>
-<li><a class="reference internal" href="#id2">2.2. OASE管理 メニュー構成</a></li>
-<li><a class="reference internal" href="#id3">2.3. OASE管理 エージェント概要</a></li>
-<li><a class="reference internal" href="#id4">2.4. OASE管理 通知テンプレート（共通）概要</a></li>
-<li><a class="reference internal" href="#id5">2.5. OASE管理 エージェント利用手順</a></li>
-<li><a class="reference internal" href="#id6">2.6. OASE管理 通知テンプレート（共通）利用手順</a></li>
-<li><a class="reference internal" href="#id7">2.7. OASE管理 機能メニュー操作説明</a><ul>
-<li><a class="reference internal" href="#id8">2.7.1. OASE管理 メニュー</a></li>
-<li><a class="reference internal" href="#id9">2.7.2. エージェント</a></li>
-<li><a class="reference internal" href="#id10">2.7.3. 通知テンプレート（共通）</a></li>
+<li><a class="reference internal" href="#id2">2.2. メニュー構成</a><ul>
+<li><a class="reference internal" href="#id3">2.2.1. メニュー/画面一覧</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id14">2.8. 付録</a></li>
+<li><a class="reference internal" href="#agent-about">2.3. エージェント概要</a><ul>
+<li><a class="reference internal" href="#id5">2.3.1. エージェントについて</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">2.4. エージェント利用手順</a><ul>
+<li><a class="reference internal" href="#id7">2.4.1. 作業フロー</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">2.5. 通知テンプレート（共通）概要</a></li>
+<li><a class="reference internal" href="#id9">2.6. 通知テンプレート（共通）利用手順</a></li>
+<li><a class="reference internal" href="#id10">2.7. 機能メニュー操作説明</a><ul>
+<li><a class="reference internal" href="#id11">2.7.1. メニューについて</a></li>
+<li><a class="reference internal" href="#agent">2.7.2. エージェント</a></li>
+<li><a class="reference internal" href="#notification-template-common">2.7.3. 通知テンプレート（共通）</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id17">2.8. 付録</a><ul>
+<li><a class="reference internal" href="#oase-agent-env">2.8.1. OASE Agentの処理フローと.envの設定値</a></li>
+<li><a class="reference internal" href="#id18">2.8.2. イベント収集設定の即時反映について</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -204,55 +230,191 @@
 <section id="id1">
 <h2><span class="section-number">2.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本書では、</div>
+<div class="line">本書では、OASE管理の機能および操作方法について説明します。</div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">2.2. </span>OASE管理 メニュー構成<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
-</section>
+<h2><span class="section-number">2.2. </span>メニュー構成<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本章では、OASE管理で利用するメニュー構成について説明します。</div>
+</div>
 <section id="id3">
-<h2><span class="section-number">2.3. </span>OASE管理 エージェント概要<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<h3><span class="section-number">2.2.1. </span>メニュー/画面一覧<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">OASE管理のメニュー一覧を以下に記述します。</div>
+</div>
+<table class="docutils align-left" id="id19">
+<caption><span class="caption-number">表 2.96 </span><span class="caption-text">OASE管理 メニュー/画面一覧</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>No</strong></p></th>
+<th class="head"><p><strong>メニューグループ</strong></p></th>
+<th class="head"><p><strong>メニュー・画面</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td rowspan="2"><p>OASE管理</p></td>
+<td><p>エージェント</p></td>
+<td><p>イベント収集対象の情報を管理します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>通知テンプレート（共通）</p></td>
+<td><p>OASEの通知で使用する情報を管理します。</p></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="id4">
-<h2><span class="section-number">2.4. </span>OASE管理 通知テンプレート（共通）概要<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
 </section>
+<section id="agent-about">
+<span id="id4"></span><h2><span class="section-number">2.3. </span>エージェント概要<a class="headerlink" href="#agent-about" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本章では、エージェント（Exastro OASE Agent）について説明します。</div>
+</div>
 <section id="id5">
-<h2><span class="section-number">2.5. </span>OASE管理 エージェント利用手順<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<h3><span class="section-number">2.3.1. </span>エージェントについて<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">エージェントは、Exastro IT Automation（以下、ITA）とは独立しており、ITA OASEと外部サービスの仲介役として機能します。</div>
+<div class="line">エージェントは、対象とする外部サービスのイベント収集設定をITAから取得し、その設定を用いて外部サービスからイベントを取得します。このプロセスを経て、取得したイベントをITAに送信します。</div>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/agent_overview_v2-3.png"><img alt="OASEエージェント概要" src="../../_images/agent_overview_v2-3.png" style="width: 800px;" /></a>
+</figure>
+</section>
 </section>
 <section id="id6">
-<h2><span class="section-number">2.6. </span>OASE管理 通知テンプレート（共通）利用手順<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
-</section>
+<h2><span class="section-number">2.4. </span>エージェント利用手順<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本章では、エージェント（Exastro OASE Agent）の利用手順について説明します。</div>
+</div>
 <section id="id7">
-<h2><span class="section-number">2.7. </span>OASE管理 機能メニュー操作説明<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
+<h3><span class="section-number">2.4.1. </span>作業フロー<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">エージェントを利用するための作業を含めた、OASEの作業フローは以下のとおりです。</div>
+<div class="line">エージェント利用のための作業の詳細は次項に記載しています。</div>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/oase_process_v2-3.png"><img alt="OASE作業フロー" src="../../_images/oase_process_v2-3.png" style="width: 700px;" /></a>
+</figure>
+<ul>
+<li><p><strong>作業フロー詳細と参照先</strong></p>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line"><strong>イベント収集設定</strong></div>
+<div class="line">OASE管理のエージェントメニュー画面から、イベント収集対象サービスに関する設定を登録します。</div>
+<div class="line">詳細は <a class="reference internal" href="#agent"><span class="std std-ref">エージェント</span></a> を参照してください。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>ラベル設定</strong></div>
+<div class="line">OASEのラベル作成/ラベル付与メニュー画面から、ラベルを付与するための設定を行います。</div>
+<div class="line">詳細は <a class="reference internal" href="oase.html#label-creation"><span class="std std-ref">ラベル作成</span></a> および <a class="reference internal" href="oase.html#labeling"><span class="std std-ref">ラベル付与</span></a> を参照してください。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>エージェントのインストール・起動</strong></div>
+<div class="line">エージェントを起動し、イベント収集を開始します。</div>
+<div class="line">詳細は <a class="reference internal" href="../../installation/oase_agent_docker_compose.html#oase-agent-docker-compose-install"><span class="std std-ref">インストールガイド（Docker Compose）</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="../../installation/oase_agent_kubernetes.html#oase-agent-kubernetes-install"><span class="std std-ref">インストールガイド（Kubernetes）</span></a> を参照してください。</div>
+</div>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h2><span class="section-number">2.5. </span>通知テンプレート（共通）概要<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">OASEの通知機能の概要図を以下に示します。</div>
+</div>
+<figure class="align-default" id="id20">
+<a class="reference internal image-reference" href="../../_images/notification_template_overview.png"><img alt="通知テンプレート（共通）概要" src="../../_images/notification_template_overview.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.67 </span><span class="caption-text">通知テンプレート（共通）概要</span><a class="headerlink" href="#id20" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id9">
+<h2><span class="section-number">2.6. </span>通知テンプレート（共通）利用手順<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">OASEの通知機能を利用するために必要な作業フローは以下のとおりです。</div>
+<div class="line">各作業の詳細は次項に記載しています。</div>
+</div>
+<figure class="align-default" id="id21">
+<a class="reference internal image-reference" href="../../_images/notification_template_process.png"><img alt="通知テンプレート（共通）作業フロー" src="../../_images/notification_template_process.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.68 </span><span class="caption-text">通知テンプレート（共通）作業フロー</span><a class="headerlink" href="#id21" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p><strong>作業フロー詳細と参照先</strong></p>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line"><strong>通知テンプレート（共通）のメンテナンス（閲覧/更新）</strong></div>
+<div class="line">OASE管理の通知テンプレート（共通）メニュー画面から、OASEの通知で使用するテンプレートをメンテナンス（閲覧/更新）できます。</div>
+<div class="line">詳細は <a class="reference internal" href="#notification-template-common"><span class="std std-ref">通知テンプレート（共通）</span></a> を参照してください。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>通知先設定の登録</strong></div>
+<div class="line">Exastro システムにオーガナイゼーション管理者でログインし、メニューより <span class="menuselection">通知管理</span> から登録します。</div>
+<div class="line">詳細は <a class="reference internal" href="../organization_management/notification.html#notification-management"><span class="std std-ref">通知先設定の登録</span></a> を参照してください。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>（通知先がメールの方のみ）メール送信サーバの設定</strong></div>
+<div class="line">Exastro システムにオーガナイゼーション管理者でログインし、メニューより <span class="menuselection">メール送信サーバ設定</span> から登録します。</div>
+<div class="line">詳細は <a class="reference internal" href="../organization_management/mailserver_settings.html#email-sending-server-settings"><span class="std std-ref">メール送信サーバーの設定</span></a> を参照してください。</div>
+</div>
+</li>
+</ol>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<div class="line-block">
+<div class="line">通知テンプレート（共通）は、変更しなくても利用可能です。</div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h2><span class="section-number">2.7. </span>機能メニュー操作説明<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本章では、OASE管理機能のメニュー操作説明について説明します。</div>
 </div>
-<section id="id8">
-<h3><span class="section-number">2.7.1. </span>OASE管理 メニュー<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id11">
+<h3><span class="section-number">2.7.1. </span>メニューについて<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">本節では、OASE管理をインストールした状態で表示されるメニューの操作について記載します。</div>
 </div>
 </section>
-<section id="id9">
-<h3><span class="section-number">2.7.2. </span>エージェント<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="agent">
+<span id="id12"></span><h3><span class="section-number">2.7.2. </span>エージェント<a class="headerlink" href="#agent" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">OASE管理 ‣ エージェント</span> では、（エージェントに設定する）イベント収集対象の、接続方式・認証方式・TTL等をメンテナンス（閲覧/登録/更新/廃止）できます。</div>
 </div>
 </li>
 </ol>
-<figure class="align-default" id="id15">
+<figure class="align-default" id="id22">
 <a class="reference internal image-reference" href="../../_images/agent_menu.png"><img alt="サブメニュー画面（エージェント）" src="../../_images/agent_menu.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 2.67 </span><span class="caption-text">サブメニュー画面（エージェント）</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.69 </span><span class="caption-text">サブメニュー画面（エージェント）</span><a class="headerlink" href="#id22" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line">エージェント画面の入力項目は以下の通りです。</div>
+<div class="line">エージェント※1 画面の入力項目は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id16">
-<caption><span class="caption-number">表 2.97 </span><span class="caption-text">エージェント画面 入力項目一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id23">
+<caption><span class="caption-number">表 2.97 </span><span class="caption-text">エージェント画面 入力項目一覧</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 8.0%" />
 <col style="width: 12.0%" />
@@ -262,69 +424,71 @@
 <col style="width: 16.0%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head" colspan="2"><p>項目</p></th>
-<th class="head"><p>説明</p></th>
-<th class="head"><p>入力必須</p></th>
-<th class="head"><p>入力方法</p></th>
-<th class="head"><p>制約事項</p></th>
+<tr class="row-odd"><th class="head" colspan="2"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力必須</strong></p></th>
+<th class="head"><p><strong>入力方法</strong></p></th>
+<th class="head"><p><strong>制約事項</strong></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td colspan="2"><p>イベント収集設定名</p></td>
-<td><p>イベント収集設定名を入力します。</p></td>
+<td><p>任意のイベント収集設定名を入力します。</p></td>
 <td><p>〇</p></td>
 <td><p>自動入力</p></td>
 <td><p>最大長255バイト</p></td>
 </tr>
 <tr class="row-odd"><td colspan="2"><p>接続方式</p></td>
-<td><p>エージェントへの接続方法を選択します。</p>
+<td><p>イベント収集対象への接続方法を選択します。</p>
 <p>・IMAP パスワード認証</p>
 </td>
 <td><p>〇</p></td>
 <td><p>リスト選択</p></td>
-<td><p>※</p></td>
+<td><p>※2</p></td>
 </tr>
 <tr class="row-even"><td colspan="2"><p>リクエストメソッド</p></td>
-<td><p>リクエストメソッドを選択します。</p>
+<td><p>イベント収集対象へのリクエストメソッドを選択します。</p>
 <p>・IMAP: Plaintext</p>
 </td>
 <td><p>ー</p></td>
 <td><p>リスト選択</p></td>
-<td><p>※</p></td>
+<td><p>※2</p></td>
 </tr>
 <tr class="row-odd"><td colspan="2"><p>URL</p></td>
-<td><p>URLを入力します。</p></td>
+<td><p>イベント収集対象の接続先を入力します。</p>
+<p>・メールサーバの場合はホスト名を入力します。</p>
+</td>
 <td><p>〇</p></td>
 <td><p>手動入力</p></td>
 <td><p>最大長1024バイト</p></td>
 </tr>
 <tr class="row-even"><td colspan="2"><p>ポート</p></td>
-<td><p>ポートを入力します。</p></td>
+<td><p>イベント収集対象のポートを入力します。</p></td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>
 <td><p>0～65535</p></td>
 </tr>
 <tr class="row-odd"><td rowspan="4"><p>認証情報</p></td>
 <td><p>プロキシ</p></td>
-<td><p>プロキシURIを入力します。</p></td>
+<td><p>イベント収集対象のプロキシURIを入力します。</p></td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>
 <td><p>最大長255バイト</p></td>
 </tr>
 <tr class="row-even"><td><p>ユーザー名</p></td>
-<td><p>ログインするユーザー名を入力します。</p></td>
+<td><p>イベント収集対象へログインするユーザー名を入力します。</p></td>
 <td><p>ー</p></td>
 <td></td>
 <td><p>最大長255バイト</p></td>
 </tr>
 <tr class="row-odd"><td><p>パスワード</p></td>
-<td><p>ログインするパスワードを入力します。</p></td>
+<td><p>イベント収集対象へログインするパスワードを入力します。</p></td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>
 <td><p>最大長4000バイト</p></td>
 </tr>
 <tr class="row-even"><td><p>メールボックス名</p></td>
-<td><p>メールボックス名を入力します。</p>
+<td><p>イベント収集対象のメールボックス名を入力します。</p>
 <p>デフォルトでINBOXを参照します。</p>
 </td>
 <td><p>ー</p></td>
@@ -333,9 +497,12 @@
 </tr>
 <tr class="row-odd"><td colspan="2"><p>TTL</p></td>
 <td><p>TTL（Time To Live）とは、エージェンが取得したイベントが、ルールの評価対象として扱われる期間（秒）のことです。</p></td>
-<td><p>ー</p></td>
+<td><p>〇</p></td>
 <td><p>手動入力</p></td>
-<td><p>1～2147483647</p></td>
+<td><p>最小値10（秒）</p>
+<p>最大値2147483647（秒）</p>
+<p>デフォルトの値：3600（秒）</p>
+</td>
 </tr>
 <tr class="row-even"><td colspan="2"><p>備考</p></td>
 <td><p>自由記述欄です。</p></td>
@@ -348,7 +515,10 @@
 </li>
 </ol>
 <div class="line-block">
-<div class="line">※接続方式・認証情報・リクエストメソッドについて、必要な組み合わせは下記となります。</div>
+<div class="line">※1 イベント収集対象への設定です。</div>
+</div>
+<div class="line-block">
+<div class="line">※2 接続方式・認証情報・リクエストメソッドについて、必要な組み合わせは以下のとおりです。</div>
 </div>
 <table class="docutils align-left">
 <colgroup>
@@ -373,24 +543,30 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">本バージョン（2.3）で取り扱い可能なメールの文字コードは「UTF-8」のみとなります。</div>
+</div>
+</div>
 </section>
-<section id="id10">
-<h3><span class="section-number">2.7.3. </span>通知テンプレート（共通）<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="notification-template-common">
+<span id="id13"></span><h3><span class="section-number">2.7.3. </span>通知テンプレート（共通）<a class="headerlink" href="#notification-template-common" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line"><span class="menuselection">OASE管理 ‣ 通知テンプレート（共通）</span> では、OASEの通知で使用するテンプレートをメンテナンス（閲覧/更新）できます。</div>
+<div class="line"><span class="menuselection">OASE管理 ‣ 通知テンプレート（共通）</span> では、OASEの通知機能で使用するテンプレートをメンテナンス（閲覧/更新）できます。</div>
 </div>
 </li>
 </ol>
-<figure class="align-default" id="id17">
+<figure class="align-default" id="id24">
 <a class="reference internal image-reference" href="../../_images/notification_template_menu.png"><img alt="サブメニュー画面（通知テンプレート（共通））" src="../../_images/notification_template_menu.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 2.68 </span><span class="caption-text">サブメニュー画面（通知テンプレート（共通））</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.70 </span><span class="caption-text">サブメニュー画面（通知テンプレート（共通））</span><a class="headerlink" href="#id24" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line">通知テンプレート（共通）画面の入力項目は以下の通りです。</div>
+<div class="line">通知テンプレート（共通）画面の入力項目は以下のとおりです。</div>
 </div>
 </li>
 </ol>
@@ -412,10 +588,17 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>テンプレート</p></td>
-<td><p>通知で使用するテンプレートを編集できます。</p></td>
+<td><div class="line-block">
+<div class="line">通知で使用するテンプレートを編集できます。下記4種類が存在します。</div>
+<div class="line">・新規.j2</div>
+<div class="line">・既知（判定済み）.j2</div>
+<div class="line">・既知（時間切れ）.j2</div>
+<div class="line">・未知.j2</div>
+</div>
+</td>
 <td><p>〇</p></td>
 <td><p>手動入力</p></td>
-<td><p>最大長255バイト</p></td>
+<td><p>最大サイズ2MB</p></td>
 </tr>
 <tr class="row-odd"><td><p>備考</p></td>
 <td><p>自由記述欄です。</p></td>
@@ -426,10 +609,10 @@
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">テンプレートの初期設定値は下記の通りです。</div>
+<div class="line">テンプレートの初期設定値は下記のとおりです。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="j2">
-<div class="code-block-caption"><span class="caption-number">リスト 2.108 </span><span class="caption-text">新規.j2</span><a class="headerlink" href="#j2" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.103 </span><span class="caption-text">新規.j2</span><a class="headerlink" href="#j2" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> [TITLE]
 <span class="linenos"> 2</span>新規イベントが発生しました。
 <span class="linenos"> 3</span>
@@ -451,8 +634,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-number">リスト 2.109 </span><span class="caption-text">既知（判定済）.j2</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-number">リスト 2.104 </span><span class="caption-text">既知（判定済）.j2</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>[TITLE]
 <span class="linenos"> 2</span>既知（判定済）イベントが発生しました。
 <span class="linenos"> 3</span>
@@ -474,8 +657,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-number">リスト 2.110 </span><span class="caption-text">既知（時間切れ）.j2</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-number">リスト 2.105 </span><span class="caption-text">既知（時間切れ）.j2</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>[TITLE]
 <span class="linenos"> 2</span>既知（時間切れ）イベントが発生しました。
 <span class="linenos"> 3</span>
@@ -497,8 +680,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-number">リスト 2.111 </span><span class="caption-text">未知.j2</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-number">リスト 2.106 </span><span class="caption-text">未知.j2</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>[TITLE]
 <span class="linenos"> 2</span>未知イベントが発生しました。
 <span class="linenos"> 3</span>
@@ -522,8 +705,94 @@
 </div>
 </section>
 </section>
-<section id="id14">
-<h2><span class="section-number">2.8. </span>付録<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id17">
+<h2><span class="section-number">2.8. </span>付録<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="oase-agent-env">
+<span id="oase-agent-flow"></span><h3><span class="section-number">2.8.1. </span>OASE Agentの処理フローと.envの設定値<a class="headerlink" href="#oase-agent-env" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">本項では、以下について示します。</div>
+<div class="line">- OASE Agentの処理フロー</div>
+<div class="line">- OASE Agentのインストール時、.envに設定した、一部の設定値について</div>
+</div>
+<figure class="align-default" id="id25">
+<a class="reference internal image-reference" href="../../_images/agent_detailed_flow_v2-3.png"><img alt="OASE Agent フロー図" src="../../_images/agent_detailed_flow_v2-3.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.71 </span><span class="caption-text">OASE Agent処理フロー図</span><a class="headerlink" href="#id25" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41.7%" />
+<col style="width: 58.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AGENT_NAME</p></td>
+<td><p>起動する OASEエージェントの名前および、内部データベースのファイル名として使用されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXASTRO_URL</p></td>
+<td><p>ITAに対してAPIリクエストをする際に、リクエスト先として使用されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>EXASTRO_ORGANIZATION_ID</p></td>
+<td><p>ITAに対してAPIリクエストをする際に、Organizationを識別するために使用されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXASTRO_WORKSPACE_ID</p></td>
+<td><p>ITAに対してAPIリクエストをする際に、ワークスペースを識別するために使用されます。</p>
+<p>EXASTRO_ORGANIZATION_IDで設定したオーガナイゼーションと紐づいたワークスペースである必要があります。</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>EXASTRO_USERNAME</p></td>
+<td><p>ITAに対してAPIリクエストをする際に、Basic認証のユーザー名として使用されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXASTRO_PASSWORD</p></td>
+<td><p>ITAに対してAPIリクエストをする際に、Basic認証のパスワードとして使用されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>EVENT_COLLECTION_SETTINGS_NAMES</p></td>
+<td><p>このパラメータで設定されている値から、イベント収集設定をITAから取得し、設定ファイルを生成します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ITERATION</p></td>
+<td><p>上記フロー図にて緑色の矢印で示されているループ処理を、このパラメータで設定している数だけ行います。</p></td>
+</tr>
+<tr class="row-even"><td><p>EXECUTE_INTERVAL</p></td>
+<td><p>上記フロー図にて緑色の矢印で示されているループ処理の実行間隔です。</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id18">
+<h3><span class="section-number">2.8.2. </span>イベント収集設定の即時反映について<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">本項では、イベント収集設定を変更した際に、OASE Agentに即時反映させる方法について説明します。</div>
+</div>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">OASE Agentのbashシェルを開始します。</div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;OASE<span class="w"> </span>Agentのコンテナ名&gt;<span class="w"> </span>bash
+</pre></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">/tmp内の設定ファイル「event_collection_settings.json」を削除します。</div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>/tmp/event_collection_settings.json
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">OASE Agentでは、設定ファイル「event_collection_settings.json」が存在しない場合、ITAからイベント収集設定を取得し、設定ファイルを作成します。</div>
+<div class="line">設定ファイルを削除することで最新の設定を反映させることができます。</div>
+<div class="line">※この操作を行わない場合、<a class="reference internal" href="#oase-agent-flow"><span class="std std-ref">前項</span></a> で示した「ITERATION」の数だけループする処理が終了するまで、変更後の設定が反映されません。</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 

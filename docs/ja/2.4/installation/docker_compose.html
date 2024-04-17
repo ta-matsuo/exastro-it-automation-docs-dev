@@ -115,7 +115,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">1.2. 特徴</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">1.3. 前提条件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">1.4. 事前準備</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-docker-compose-v2-2">1.5. インストール (自動)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-docker-compose">1.5. インストール (自動)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">1.6. オーガナイゼーションの作成</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">1.7. ワークスペースの作成</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#let-s-try">1.8. Let's Try!!</a></li>
@@ -143,6 +143,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="helm_on_kubernetes.html">2. Helm chart (Kubernetes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oase_agent_docker_compose.html">3. OASE Agent (Docker Compose)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oase_agent_kubernetes.html">4. OASE Agent (Kubernetes)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../learn/index.html">Learn</a></li>
@@ -167,7 +169,7 @@
 <li><a class="reference internal" href="#id2">1.2. 特徴</a></li>
 <li><a class="reference internal" href="#id3">1.3. 前提条件</a></li>
 <li><a class="reference internal" href="#id4">1.4. 事前準備</a></li>
-<li><a class="reference internal" href="#install-docker-compose-v2-2">1.5. インストール (自動)</a></li>
+<li><a class="reference internal" href="#install-docker-compose">1.5. インストール (自動)</a></li>
 <li><a class="reference internal" href="#id6">1.6. オーガナイゼーションの作成</a></li>
 <li><a class="reference internal" href="#id7">1.7. ワークスペースの作成</a></li>
 <li><a class="reference internal" href="#let-s-try">1.8. Let's Try!!</a></li>
@@ -250,7 +252,7 @@ $(window).on('load', function () {
 <div class="line">動作確認が取れているコンテナ環境の最小要求リソースとバージョンは下記のとおりです。</div>
 </div>
 <table class="docutils align-default" id="id19">
-<caption><span class="caption-number">表 1.5 </span><span class="caption-text">ハードウェア要件(最小構成)</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.11 </span><span class="caption-text">ハードウェア要件(最小構成)</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -273,7 +275,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <table class="docutils align-default" id="id20">
-<caption><span class="caption-number">表 1.6 </span><span class="caption-text">ハードウェア要件(推奨構成)</span><a class="headerlink" href="#id20" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.12 </span><span class="caption-text">ハードウェア要件(推奨構成)</span><a class="headerlink" href="#id20" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -306,7 +308,7 @@ $(window).on('load', function () {
 </li>
 <li><p>通信要件</p>
 <table class="docutils align-default" id="id21">
-<caption><span class="caption-number">表 1.7 </span><span class="caption-text">通信要件</span><a class="headerlink" href="#id21" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.13 </span><span class="caption-text">通信要件</span><a class="headerlink" href="#id21" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 33.3%" />
@@ -359,7 +361,7 @@ $(window).on('load', function () {
 <li><p>動作確認済みオペレーティングシステム</p>
 <p>以下は、動作確認済のバージョンとなります。</p>
 <table class="docutils align-default" id="id22">
-<caption><span class="caption-number">表 1.8 </span><span class="caption-text">オペレーティングシステム</span><a class="headerlink" href="#id22" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.14 </span><span class="caption-text">オペレーティングシステム</span><a class="headerlink" href="#id22" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -386,7 +388,7 @@ $(window).on('load', function () {
 <p>手動でインストールする際には、下記のコンテナプラットフォームを準備してください。
 以下は、動作確認済のバージョンとなります。</p>
 <table class="docutils align-default" id="id23">
-<caption><span class="caption-number">表 1.9 </span><span class="caption-text">コンテナプラットフォーム</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.15 </span><span class="caption-text">コンテナプラットフォーム</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 66.7%" />
 <col style="width: 33.3%" />
@@ -429,7 +431,7 @@ $(window).on('load', function () {
 <div class="line">サービス公開用の URL を準備しておく必要があります。</div>
 </div>
 <table class="docutils align-default" id="id24">
-<caption><span class="caption-number">表 1.10 </span><span class="caption-text">例1) IPアドレスによるサービス公開</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.16 </span><span class="caption-text">例1) IPアドレスによるサービス公開</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 42.9%" />
 <col style="width: 57.1%" />
@@ -452,7 +454,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <table class="docutils align-default" id="id25">
-<caption><span class="caption-number">表 1.11 </span><span class="caption-text">例2) ドメインによるサービス公開</span><a class="headerlink" href="#id25" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.17 </span><span class="caption-text">例2) ドメインによるサービス公開</span><a class="headerlink" href="#id25" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 42.9%" />
 <col style="width: 57.1%" />
@@ -475,7 +477,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <table class="docutils align-default" id="id26">
-<caption><span class="caption-number">表 1.12 </span><span class="caption-text">例3) LoadBalancer を経由したサービス公開</span><a class="headerlink" href="#id26" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.18 </span><span class="caption-text">例3) LoadBalancer を経由したサービス公開</span><a class="headerlink" href="#id26" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 42.9%" />
 <col style="width: 57.1%" />
@@ -505,8 +507,8 @@ $(window).on('load', function () {
 </div>
 </div>
 </section>
-<section id="install-docker-compose-v2-2">
-<span id="id5"></span><h2><span class="section-number">1.5. </span>インストール (自動)<a class="headerlink" href="#install-docker-compose-v2-2" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="install-docker-compose">
+<span id="id5"></span><h2><span class="section-number">1.5. </span>インストール (自動)<a class="headerlink" href="#install-docker-compose" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">最も簡単なインストール方法はインストールスクリプトを利用するインストールです。</div>
 <div class="line">1回のコマンド実行と対話型による設定が可能です。</div>
@@ -523,36 +525,50 @@ $(window).on('load', function () {
 <div class="line">必要なパッケージなどのインストールが完了すると下記のように対話形式で設定値を投入することが可能です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-number">リスト 1.2 </span><span class="caption-text">パスワード自動生成の確認</span><a class="headerlink" href="#id28" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 1.2 </span><span class="caption-text">OASE コンテナデプロイ要否の確認</span><a class="headerlink" href="#id28" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Deploy<span class="w"> </span>OASE<span class="w"> </span>containers?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>y<span class="o">]</span>:
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-number">リスト 1.3 </span><span class="caption-text">GitLab コンテナデプロイ要否の確認</span><a class="headerlink" href="#id29" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Deploy<span class="w"> </span>GitLab<span class="w"> </span>container?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>n<span class="o">]</span>:
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-number">リスト 1.4 </span><span class="caption-text">パスワード自動生成の確認</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro システムが利用する MariaDB のパスワードや、システム管理者のパスワード自動生成するか？</span>
 Generate<span class="w"> </span>all<span class="w"> </span>password<span class="w"> </span>and<span class="w"> </span>token<span class="w"> </span>automatically.?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>y<span class="o">]</span>:
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-number">リスト 1.3 </span><span class="caption-text">Exastro サービスのURL</span><a class="headerlink" href="#id29" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-number">リスト 1.5 </span><span class="caption-text">Exastro サービスのURL</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Service<span class="w"> </span>URL?<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>http://127.0.0.1:30080<span class="o">]</span>:<span class="w"> </span>http://ita.example.com:30080
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-number">リスト 1.4 </span><span class="caption-text">Exastro 管理用サービスのURL</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-number">リスト 1.6 </span><span class="caption-text">Exastro 管理用サービスのURL</span><a class="headerlink" href="#id32" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Management<span class="w"> </span>URL?<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>http://127.0.0.1:30081<span class="o">]</span>:<span class="w"> </span>http://ita.example.com:30081
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-number">リスト 1.5 </span><span class="caption-text">GitLab コンテナデプロイ要否の確認</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-number">リスト 1.7 </span><span class="caption-text">GitLab コンテナデプロイ要否の確認</span><a class="headerlink" href="#id33" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Deploy<span class="w"> </span>GitLab<span class="w"> </span>container?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>n<span class="o">]</span>:
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-number">リスト 1.6 </span><span class="caption-text">設定ファイルの生成の確認</span><a class="headerlink" href="#id32" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-number">リスト 1.8 </span><span class="caption-text">設定ファイルの生成の確認</span><a class="headerlink" href="#id34" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>System<span class="w"> </span>parametes<span class="w"> </span>are<span class="w"> </span>bellow.
 
 System<span class="w"> </span>administrator<span class="w"> </span>password:<span class="w">    </span>********
 Database<span class="w"> </span>password:<span class="w">                </span>********
+OASE<span class="w"> </span>deployment<span class="w">                   </span><span class="nb">true</span>
+MongoDB<span class="w"> </span>password<span class="w">                  </span>********
 Service<span class="w"> </span>URL:<span class="w">                      </span>http://ita.example.com:30080
 Manegement<span class="w"> </span>URL:<span class="w">                   </span>http://ita.example.com:30081
 Docker<span class="w"> </span>GID:<span class="w">                       </span><span class="m">1000</span>
@@ -566,8 +582,8 @@ Generate<span class="w"> </span>.env<span class="w"> </span>file<span class="w">
 <div class="line-block">
 <div class="line"><strong class="command">y</strong> もしくは <strong class="command">yes</strong> と入力すると、GitHub から Exastro システムの起動に必要な、Docker Compose ファイルのダウンロードやファイアウォールの設定投入が開始されます。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-number">リスト 1.7 </span><span class="caption-text">Exastro コンテナデプロイ実施の確認</span><a class="headerlink" href="#id33" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-number">リスト 1.9 </span><span class="caption-text">Exastro コンテナデプロイ実施の確認</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Deploy<span class="w"> </span>Exastro<span class="w"> </span>containers<span class="w"> </span>now?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span><span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>n<span class="o">]</span>:<span class="w"> </span>y
 </pre></div>
 </div>
@@ -577,8 +593,8 @@ Generate<span class="w"> </span>.env<span class="w"> </span>file<span class="w">
 <div class="line">そのまま Exastro システムのコンテナ群を起動する場合は、 <strong class="command">y</strong> もしくは <strong class="command">yes</strong> と入力します。</div>
 <div class="line">Exastro システムのデプロイには数分～数十分程度の時間が掛かります。(通信環境やサーバースペックによって状況は異なります。)</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-number">リスト 1.8 </span><span class="caption-text">Exastro コンテナデプロイ実行中</span><a class="headerlink" href="#id34" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-number">リスト 1.10 </span><span class="caption-text">Exastro コンテナデプロイ実行中</span><a class="headerlink" href="#id36" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Please<span class="w"> </span><span class="nb">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>little<span class="w"> </span><span class="k">while</span>.<span class="w"> </span>It<span class="w"> </span>will<span class="w"> </span>take<span class="w"> </span><span class="m">10</span><span class="w"> </span>minutes<span class="w"> </span>or<span class="w"> </span>later..........
 </pre></div>
 </div>
@@ -586,8 +602,8 @@ Generate<span class="w"> </span>.env<span class="w"> </span>file<span class="w">
 <div class="line-block">
 <div class="line">Exastro システムのデプロイが完了すると、サービス接続情報が出力されます。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-number">リスト 1.9 </span><span class="caption-text">サービス接続情報の出力</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-number">リスト 1.11 </span><span class="caption-text">サービス接続情報の出力</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>System<span class="w"> </span>manager<span class="w"> </span>page:
 <span class="w">  </span>URL:<span class="w">                </span>http://ita.example.com:30081/
 <span class="w">  </span>Login<span class="w"> </span>user:<span class="w">         </span>admin
@@ -629,8 +645,8 @@ Reboot<span class="w"> </span>now?<span class="w"> </span><span class="o">(</spa
 <div class="line">再起動後に再度ログインをしたら、オーガナイゼーションの作成を行います。</div>
 <div class="line">オーガナイゼーションの詳細については、 <a class="reference internal" href="../manuals/platform_management/organization.html"><span class="doc">Organization (オーガナイゼーション)</span></a> を参照してください。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-number">リスト 1.10 </span><span class="caption-text">Organization の作成</span><a class="headerlink" href="#id36" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-number">リスト 1.12 </span><span class="caption-text">Organization の作成</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>/home/test_user/exastro-docker-compose/create-organization.sh
 </pre></div>
 </div>
@@ -638,8 +654,8 @@ Reboot<span class="w"> </span>now?<span class="w"> </span><span class="o">(</spa
 <div class="line-block">
 <div class="line">対話型スクリプトが実行されるので、必要な情報を登録してください。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-number">リスト 1.11 </span><span class="caption-text">Organization の作成結果</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-number">リスト 1.13 </span><span class="caption-text">Organization の作成結果</span><a class="headerlink" href="#id39" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
 <span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span>null,
 <span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>,
@@ -663,8 +679,8 @@ Organization<span class="w"> </span>page:
 <div class="line">GitLab 連携時に、GitLab が完全に立ち上がっていない状態では、オーガナイゼーションの作成はできません。</div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-number">リスト 1.12 </span><span class="caption-text">Organization の再作成</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-number">リスト 1.14 </span><span class="caption-text">Organization の再作成</span><a class="headerlink" href="#id40" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>/home/test_user/exastro-docker-compose/create-organization.sh<span class="w"> </span>--retry
 </pre></div>
 </div>
@@ -703,8 +719,8 @@ Organization<span class="w"> </span>page:
 <div class="line-block">
 <div class="line">exastro-docker-composeリポジトリを更新します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-number">リスト 1.13 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id39" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-number">リスト 1.15 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id41" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># exastro-docker-composeリポジトリの確認</span>
 <span class="linenos">2</span><span class="nb">cd</span><span class="w"> </span>~/exastro-docker-compose
 <span class="linenos">3</span>git<span class="w"> </span>pull
@@ -718,8 +734,8 @@ Organization<span class="w"> </span>page:
 <div class="line">デフォルト値の更新を確認します。</div>
 <div class="line">インストール時に作成した設定ファイル <code class="file docutils literal notranslate"><span class="pre">~/exastro-docker-compose/.env</span></code> とアップグレード後の設定ファイルを比較します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-number">リスト 1.14 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id40" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id42">
+<div class="code-block-caption"><span class="caption-number">リスト 1.16 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id42" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/exastro-docker-compose
 
 <span class="c1"># OSがAlmaLinuxまたはUbuntuの場合</span>
@@ -745,8 +761,8 @@ diff<span class="w"> </span>.env<span class="w"> </span>.env.podman.sample
 <div class="line-block">
 <div class="line">アップグレードを実施します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id41">
-<div class="code-block-caption"><span class="caption-number">リスト 1.15 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id41" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id43">
+<div class="code-block-caption"><span class="caption-number">リスト 1.17 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id43" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sh<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-sf<span class="w"> </span>https://ita.exastro.org/setup<span class="o">)</span><span class="w"> </span>install
 </pre></div>
 </div>
@@ -776,12 +792,13 @@ diff<span class="w"> </span>.env<span class="w"> </span>.env.podman.sample
 <div class="line-block">
 <div class="line">アンインストールを実施します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id42">
-<div class="code-block-caption"><span class="caption-number">リスト 1.16 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id42" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id44">
+<div class="code-block-caption"><span class="caption-number">リスト 1.18 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id44" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># コンテナのみ削除する場合</span>
-sh<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-sf<span class="w"> </span>https://ita.exastro.org/setup<span class="o">)</span><span class="w"> </span>install
+sh<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-sf<span class="w"> </span>https://ita.exastro.org/setup<span class="o">)</span><span class="w"> </span>remove
+
 <span class="c1"># コンテナ＋データを削除する場合</span>
-sh<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-sf<span class="w"> </span>https://ita.exastro.org/setup<span class="o">)</span><span class="w"> </span>install<span class="w"> </span>-c
+sh<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-sf<span class="w"> </span>https://ita.exastro.org/setup<span class="o">)</span><span class="w"> </span>remove<span class="w"> </span>-c
 </pre></div>
 </div>
 </div>

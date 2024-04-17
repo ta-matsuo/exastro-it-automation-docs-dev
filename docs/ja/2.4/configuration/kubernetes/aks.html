@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>1. Azure Kubernetes Service &#8212; Documentation  ドキュメント</title>
+    <title>2. Azure Kubernetes Service &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -35,7 +35,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
     <link rel="next" title="Ansible" href="../ansible/index.html" />
-    <link rel="prev" title="Kubernetes" href="index.html" /> 
+    <link rel="prev" title="1. 概要" href="overview.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -95,7 +95,7 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="index.html" title="前のトピックへ">Kubernetes</a></li>
+        <li class="prev"><a href="overview.html" title="前のトピックへ"><span class="section-number">1. </span>概要</a></li>
         <li class="next"><a href="../ansible/index.html" title="次のトピックへ">Ansible</a></li>
       </ul>
     </div>
@@ -110,12 +110,13 @@
     <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">構成・構築ガイド</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Kubernetes</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">1. Azure Kubernetes Service</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">1.1. はじめに</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">1.2. 前提条件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#aks">1.3. AKS クラスタ構築</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id3">1.3.1. AKS クラスタの作成例</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#aks-dns-v2-1">1.3.2. ドメイン名の確認</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html">1. 概要</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2. Azure Kubernetes Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">2.1. はじめに</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.2. 前提条件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aks">2.3. AKS クラスタ構築</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id3">2.3.1. AKS クラスタの作成例</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#aks-dns">2.3.2. ドメイン名の確認</a></li>
 </ul>
 </li>
 </ul>
@@ -124,6 +125,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html">Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../terraform/index.html">Terraform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logging/index.html">ログ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/index.html">インストール</a></li>
@@ -144,12 +146,12 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">1. Azure Kubernetes Service</a><ul>
-<li><a class="reference internal" href="#id1">1.1. はじめに</a></li>
-<li><a class="reference internal" href="#id2">1.2. 前提条件</a></li>
-<li><a class="reference internal" href="#aks">1.3. AKS クラスタ構築</a><ul>
-<li><a class="reference internal" href="#id3">1.3.1. AKS クラスタの作成例</a></li>
-<li><a class="reference internal" href="#aks-dns-v2-1">1.3.2. ドメイン名の確認</a></li>
+<li><a class="reference internal" href="#">2. Azure Kubernetes Service</a><ul>
+<li><a class="reference internal" href="#id1">2.1. はじめに</a></li>
+<li><a class="reference internal" href="#id2">2.2. 前提条件</a></li>
+<li><a class="reference internal" href="#aks">2.3. AKS クラスタ構築</a><ul>
+<li><a class="reference internal" href="#id3">2.3.1. AKS クラスタの作成例</a></li>
+<li><a class="reference internal" href="#aks-dns">2.3.2. ドメイン名の確認</a></li>
 </ul>
 </li>
 </ul>
@@ -168,7 +170,7 @@
     <li><a href="../index.html">構成・構築ガイド</a></li>
     <li><a href="index.html">Kubernetes</a></li>
     
-    <li><span class="section-number">1. </span>Azure Kubernetes Service</li>
+    <li><span class="section-number">2. </span>Azure Kubernetes Service</li>
   </ul>
 </div>
 
@@ -177,24 +179,24 @@
 <div class="body" role="main">
 
   <section id="azure-kubernetes-service">
-<h1><span class="section-number">1. </span>Azure Kubernetes Service<a class="headerlink" href="#azure-kubernetes-service" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">2. </span>Azure Kubernetes Service<a class="headerlink" href="#azure-kubernetes-service" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id1">
-<h2><span class="section-number">1.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本書では、Exastro IT Automation のデプロイ先となる、Azure Kubernetes Service (AKS) クラスタにおけるセットアップ方法について説明します。</div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">1.2. </span>前提条件<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.2. </span>前提条件<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><p>Azure CLI が利用可能であること。</p></li>
 <li><p>下記の操作を行うために必要な権限を持っていること。</p></li>
 </ul>
 </section>
 <section id="aks">
-<h2><span class="section-number">1.3. </span>AKS クラスタ構築<a class="headerlink" href="#aks" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.3. </span>AKS クラスタ構築<a class="headerlink" href="#aks" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="id3">
-<h3><span class="section-number">1.3.1. </span>AKS クラスタの作成例<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.3.1. </span>AKS クラスタの作成例<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">AKS 環境へデプロイした Exastro Suite に接続するための AKS クラスタ作成におけるセットアップ例を紹介します。</div>
 <div class="line">必要な設定などは適宜確認の上、環境に合った設定値を投入して下さい。</div>
@@ -290,8 +292,8 @@ az<span class="w"> </span>aks<span class="w"> </span>create<span class="w"> </sp
 </li>
 </ol>
 </section>
-<section id="aks-dns-v2-1">
-<span id="id4"></span><h3><span class="section-number">1.3.2. </span>ドメイン名の確認<a class="headerlink" href="#aks-dns-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="aks-dns">
+<span id="id4"></span><h3><span class="section-number">2.3.2. </span>ドメイン名の確認<a class="headerlink" href="#aks-dns" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">作成した AKS クラスタにインターネットから接続するためのドメイン名を確認します。</div>
 </div>
@@ -320,7 +322,7 @@ az<span class="w"> </span>aks<span class="w"> </span>show<span class="w"> </span
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="index.html" title="前のトピックへ"><span>前のトピックへ</span>Kubernetes</a></li>
+    <li class="prev"><a href="overview.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">1. </span>概要</a></li>
     <li class="next"><a href="../ansible/index.html" title="次のトピックへ"><span>次のトピックへ</span>Ansible</a></li>
   </ul>
 </div>

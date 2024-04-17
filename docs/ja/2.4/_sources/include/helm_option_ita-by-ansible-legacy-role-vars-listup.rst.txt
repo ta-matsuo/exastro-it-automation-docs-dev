@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup
+     - docker.io/exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup
    * - exastro-it-automation.ita-by-ansible-legacy-role-vars-listup.image.tag
      - コンテナイメージのタグ
      - 不可

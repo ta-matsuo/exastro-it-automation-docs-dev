@@ -196,7 +196,7 @@ Docker Compose
    | HTTPSを利用する場合には、 LoadBalancer または、リバースプロキシを利用する必要があります。
    | LoadBalancer または、リバースプロキシを利用する場合は、別途準備をする必要があります。
 
-.. _install_docker_compose_v2.2:
+.. _install_docker_compose:
 
 インストール (自動)
 ===================
@@ -213,6 +213,16 @@ Docker Compose
 
 | 上記のコマンドを実行すると、システムが要件を満たしていることを確認し、Exastro の起動に必要なコンテナ環境の構築を始めます。
 | 必要なパッケージなどのインストールが完了すると下記のように対話形式で設定値を投入することが可能です。
+
+.. code-block:: shell
+   :caption: OASE コンテナデプロイ要否の確認
+
+   Deploy OASE containers? (y/n) [default: y]:
+
+.. code-block:: shell
+   :caption: GitLab コンテナデプロイ要否の確認
+
+   Deploy GitLab container? (y/n) [default: n]: 
 
 .. code-block:: shell
    :caption: パスワード自動生成の確認
@@ -242,6 +252,8 @@ Docker Compose
 
    System administrator password:    ********
    Database password:                ********
+   OASE deployment                   true
+   MongoDB password                  ********
    Service URL:                      http://ita.example.com:30080
    Manegement URL:                   http://ita.example.com:30081
    Docker GID:                       1000
@@ -438,6 +450,7 @@ Let's Try!!
    :caption: コマンド
 
    # コンテナのみ削除する場合
-   sh <(curl -sf https://ita.exastro.org/setup) install
+   sh <(curl -sf https://ita.exastro.org/setup) remove
+
    # コンテナ＋データを削除する場合
-   sh <(curl -sf https://ita.exastro.org/setup) install -c
+   sh <(curl -sf https://ita.exastro.org/setup) remove -c

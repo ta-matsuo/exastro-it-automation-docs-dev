@@ -20,7 +20,7 @@ Exastro Platform
 共通設定 (Exastro ITA)
 ----------------------
 
-.. include:: ../../include/helm_option_itaDefinition.rst
+.. include:: ../../include/helm_option_pfitaDefinition.rst
 
 共通設定 (認証機能用データベース)
 ---------------------------------

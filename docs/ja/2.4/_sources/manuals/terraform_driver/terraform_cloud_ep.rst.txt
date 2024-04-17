@@ -366,7 +366,7 @@ Terraform Cloud/EP メニュー
       |                                   | _check_operation_status`」\  |           |              | ミリ秒          |
       |                                   | 表示されるログのリフレッ\    |           |              |                 |
       |                                   | シュ間隔を入力します。通常\  |           |              |                 |
-      |                                   | は3000ミリ秒程度が推奨値\    |           |              |                 |
+      |                                   | は1000ミリ秒程度が推奨値\    |           |              |                 |
       |                                   | です。                       |           |              |                 |
       +-----------------+--------+--------+------------------------------+-----------+--------------+-----------------+
       | 進行状態表示桁数                  | 「:ref:`terraform_cloud_ep\  | ○         | 手動入力     | ー              |
@@ -1246,7 +1246,7 @@ Movement-Module紐付
    | **ファイルパス**
    | [Conductor作業ディレクトリパス]/[ConductorインスタンスID]/terraform_output_[作業No.].json
    | Conductor作業ディレクトリパス・・・Ansible ITA独自変数のデータ連携のConductor作業ディレクトリパス
-   | ConductorインスタンスID・・・「:ref:`conductor_conductor_job_list_v2.1`」のconductorインスタンスID
+   | ConductorインスタンスID・・・「:ref:`conductor_conductor_job_list`」のconductorインスタンスID
    | 作業No.・・・「:ref:`terraform_cloud_ep_execution_list`」の作業No.
 
    | 記述例

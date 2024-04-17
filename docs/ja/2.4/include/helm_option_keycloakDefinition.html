@@ -162,7 +162,7 @@
 <tr class="row-even"><td><p>global.keycloakDefinition.name</p></td>
 <td><p>Keycloak の定義名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;keycloak&quot;</p></td>
+<td><p>keycloak</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.enabled</p></td>
 <td><p>Keycloak の定義の利用有無</p></td>
@@ -171,55 +171,60 @@
 </tr>
 <tr class="row-even"><td><p>global.keycloakDefinition.config.API_KEYCLOAK_PROTOCOL</p></td>
 <td><p>Keycloak API エンドポイントのプロトコル</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;http”</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.config.API_KEYCLOAK_HOST</p></td>
 <td><p>Keycloak API エンドポイントのホスト名、もしくは、FQDN</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;keycloak&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>global.keycloakDefinition.config.API_KEYCLOAK_PORT</p></td>
 <td><p>Keycloak API エンドポイントのポート番号</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;8080&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.config.KEYCLOAK_PROTOCOL</p></td>
 <td><p>Keycloak エンドポイントのプロトコル</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;http&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>global.keycloakDefinition.config.KEYCLOAK_HOST</p></td>
 <td><p>Keycloak エンドポイントのホスト名、もしくは、FQDN</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;keycloak&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.config.KEYCLOAK_PORT</p></td>
 <td><p>Keycloak API エンドポイントのポート番号</p></td>
-<td><p>可 (外部Keycloak利用時)</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;8080&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>global.keycloakDefinition.config.KEYCLOAK_MASTER_REALM</p></td>
 <td><p>Keycloak のマスターレルム名</p></td>
-<td><p>可</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;master&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>global.keycloakDefinition.config.KEYCLOAK_DB_DATABASE</p></td>
 <td><p>Keycloak が利用するデータベース名</p></td>
-<td><p>可</p></td>
+<td><p>不可</p></td>
 <td><p>&quot;keycloak&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>global.keycloakDefinition.secret.KEYCLOAK_USER</p></td>
+<tr class="row-even"><td><p>global.keycloakDefinition.secret.SYSTEM_ADMIN</p></td>
 <td><div class="line-block">
 <div class="line">Keycloak のマスターレルムにおける管理権限を持ったユーザ名を指定。</div>
 <div class="line">指定した Keycloak ユーザが作成される。</div>
+<div class="line">※KEYCLOAK_USER→SYSTEM_ADMINに変更</div>
 </div>
 </td>
 <td><p>必須</p></td>
 <td><p>任意の文字列</p></td>
 </tr>
-<tr class="row-odd"><td><p>global.keycloakDefinition.secret.KEYCLOAK_PASSWORD</p></td>
-<td><p>Keycloak のマスターレルムにおける管理権限を持ったユーザに設定するパスワード(エンコードなし)</p></td>
+<tr class="row-odd"><td><p>global.keycloakDefinition.secret.SYSTEM_ADMIN_PASSWORD</p></td>
+<td><div class="line-block">
+<div class="line">Keycloak のマスターレルムにおける管理権限を持ったユーザに設定するパスワード(エンコードなし)</div>
+<div class="line">※KEYCLOAK_PASSWORD→SYSTEM_ADMIN_PASSWORDに変更</div>
+</div>
+</td>
 <td><p>必須</p></td>
 <td><p>任意の文字列</p></td>
 </tr>

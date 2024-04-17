@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-ansible-pioneer-vars-listup.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-ansible-pioneer-vars-listup
+     - docker.io/exastro/exastro-it-automation-by-ansible-pioneer-vars-listup
    * - exastro-it-automation.ita-by-ansible-pioneer-vars-listup.image.tag
      - コンテナイメージのタグ
      - 不可

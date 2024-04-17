@@ -121,8 +121,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#id2">4.1. はじめに</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">4.2. ロールとは</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">4.3. ロール作成とユーザへの紐づけ</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#role-workspace-v2-1">4.3.1. ロール追加・ワークスペース紐づけ</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#role-user-v2-1">4.3.2. ユーザ・ロール紐づけ</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#role-workspace">4.3.1. ロール追加・ワークスペース紐づけ</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#role-user">4.3.2. ユーザ・ロール紐づけ</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id7">4.3.3. ロールの編集</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id8">4.3.4. ロールの削除</a></li>
 </ul>
@@ -165,8 +165,8 @@
 <li><a class="reference internal" href="#id2">4.1. はじめに</a></li>
 <li><a class="reference internal" href="#id3">4.2. ロールとは</a></li>
 <li><a class="reference internal" href="#id4">4.3. ロール作成とユーザへの紐づけ</a><ul>
-<li><a class="reference internal" href="#role-workspace-v2-1">4.3.1. ロール追加・ワークスペース紐づけ</a></li>
-<li><a class="reference internal" href="#role-user-v2-1">4.3.2. ユーザ・ロール紐づけ</a></li>
+<li><a class="reference internal" href="#role-workspace">4.3.1. ロール追加・ワークスペース紐づけ</a></li>
+<li><a class="reference internal" href="#role-user">4.3.2. ユーザ・ロール紐づけ</a></li>
 <li><a class="reference internal" href="#id7">4.3.3. ロールの編集</a></li>
 <li><a class="reference internal" href="#id8">4.3.4. ロールの削除</a></li>
 </ul>
@@ -217,7 +217,7 @@
 </li>
 </ul>
 <table class="docutils align-left" id="id9">
-<caption><span class="caption-number">表 4.2 </span><span class="caption-text">オーガナイゼーションロール</span><a class="headerlink" href="#id9" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.5 </span><span class="caption-text">オーガナイゼーションロール</span><a class="headerlink" href="#id9" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 40.0%" />
 <col style="width: 60.0%" />
@@ -258,7 +258,7 @@
 </li>
 </ul>
 <table class="docutils align-left" id="id10">
-<caption><span class="caption-number">表 4.3 </span><span class="caption-text">ワークスペースロール</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.6 </span><span class="caption-text">ワークスペースロール</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 40.0%" />
 <col style="width: 60.0%" />
@@ -293,18 +293,18 @@
 </div>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line"><a class="reference internal" href="#role-workspace-v2-1"><span class="std std-ref">ロール追加・ワークスペース紐づけ</span></a></div>
+<div class="line"><a class="reference internal" href="#role-workspace"><span class="std std-ref">ロール追加・ワークスペース紐づけ</span></a></div>
 <div class="line">ロールごとにワークスペースへのアクセス権限をメンテナンスできます。</div>
 </div>
 </li>
 <li><div class="line-block">
-<div class="line"><a class="reference internal" href="#role-user-v2-1"><span class="std std-ref">ユーザ・ロール紐づけ</span></a></div>
+<div class="line"><a class="reference internal" href="#role-user"><span class="std std-ref">ユーザ・ロール紐づけ</span></a></div>
 <div class="line">ユーザ毎にアクセスを許可するロールを付与することで、ユーザごとにワークスペースへのアクセスを制御することができます。</div>
 </div>
 </li>
 </ol>
-<section id="role-workspace-v2-1">
-<span id="id5"></span><h3><span class="section-number">4.3.1. </span>ロール追加・ワークスペース紐づけ<a class="headerlink" href="#role-workspace-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="role-workspace">
+<span id="id5"></span><h3><span class="section-number">4.3.1. </span>ロール追加・ワークスペース紐づけ<a class="headerlink" href="#role-workspace" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">Exastro システムにオーガナイゼーション管理者 または _${ws-id}-adminロールに紐づくユーザでログインします。</div>
@@ -335,7 +335,7 @@
 <a class="reference internal image-reference" href="../../_images/platform_role_register.png"><img alt="../../_images/platform_role_register.png" src="../../_images/platform_role_register.png" style="width: 600px;" /></a>
 </figure>
 <table class="docutils align-left" id="id11">
-<caption><span class="caption-number">表 4.4 </span><span class="caption-text">新規ロール登録</span><a class="headerlink" href="#id11" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.7 </span><span class="caption-text">新規ロール登録</span><a class="headerlink" href="#id11" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 16.7%" />
 <col style="width: 83.3%" />
@@ -387,8 +387,8 @@
 </div>
 </div>
 </section>
-<section id="role-user-v2-1">
-<span id="id6"></span><h3><span class="section-number">4.3.2. </span>ユーザ・ロール紐づけ<a class="headerlink" href="#role-user-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="role-user">
+<span id="id6"></span><h3><span class="section-number">4.3.2. </span>ユーザ・ロール紐づけ<a class="headerlink" href="#role-user" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">Exastro システムにオーガナイゼーション管理者 または _${ワークスペースID}-adminロールに紐づくユーザでログインします。</div>
@@ -456,7 +456,7 @@
 <a class="reference internal image-reference" href="../../_images/platform_role_edit.png"><img alt="../../_images/platform_role_edit.png" src="../../_images/platform_role_edit.png" style="width: 600px;" /></a>
 </figure>
 <table class="docutils align-left" id="id12">
-<caption><span class="caption-number">表 4.5 </span><span class="caption-text">ロール編集</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.8 </span><span class="caption-text">ロール編集</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 16.7%" />
 <col style="width: 83.3%" />

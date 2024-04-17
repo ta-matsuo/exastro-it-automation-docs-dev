@@ -171,12 +171,12 @@
 <tr class="row-odd"><td><p>exastro-platform.mariadb.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;mariadb&quot;</p></td>
+<td><p>&quot;docker.io/mariadb&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-platform.mariadb.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;10.9&quot;</p></td>
+<td><p>&quot;10.11&quot;</p></td>
 </tr>
 <tr class="row-odd"><td><p>exastro-platform.mariadb.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
@@ -187,6 +187,48 @@
 <div class="line"><strong class="program">None</strong>: プルしない</div>
 </div>
 </td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mariadb.persistence.enabled</p></td>
+<td><p>Exastro 共用データベースのデータ永続化の有効フラグ</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;true&quot;</strong> (デフォルト): データを永続化する</div>
+<div class="line"><strong class="program">&quot;false&quot;</strong>: データを永続化しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mariadb.persistence.reinstall</p></td>
+<td><p>再インストール時にデータ領域の初期化の要否</p></td>
+<td><p>不可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;true&quot;</strong>: データを初期化(削除)する</div>
+<div class="line"><strong class="program">&quot;false&quot;</strong> (デフォルト): データを初期化(削除)しない</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mariadb.persistence.accessMode</p></td>
+<td><p>永続ボリュームのアクセスモードの指定。</p></td>
+<td><p>可(データ永続化時)</p></td>
+<td><p>&quot;ReadWriteOnce&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mariadb.persistence.size</p></td>
+<td><p>永続ボリュームのディスク容量</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><p>&quot;20Gi&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>exastro-platform.mariadb.persistence.storageClass</p></td>
+<td><p>永続ボリュームにストレージクラスを利用する場合のクラスを指定</p></td>
+<td><p>可 (データ永続化時)</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">&quot;-&quot;</strong> (デフォルト): ストレージクラスを指定しない。</div>
+<div class="line"><strong class="program">ストレージクラス名</strong>: クラウドプロバイダなどから提供されるストレージクラス名を指定。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.mariadb.persistence.matchLabels.name</p></td>
+<td><p>利用する永続ボリューム名を指定</p></td>
+<td><p>可(データ永続化時)</p></td>
+<td><p>&quot;pv-database&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>exastro-platform.mariadb.resources.requests.memory</p></td>
 <td><p>メモリ要求</p></td>

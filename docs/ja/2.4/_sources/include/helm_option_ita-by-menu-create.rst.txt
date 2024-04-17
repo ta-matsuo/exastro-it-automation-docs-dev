@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-menu-create.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-menu-create
+     - docker.io/exastro/exastro-it-automation-by-menu-create
    * - exastro-it-automation.ita-by-menu-create.image.tag
      - コンテナイメージのタグ
      - 不可

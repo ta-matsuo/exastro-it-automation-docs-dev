@@ -7,6 +7,7 @@
 
 | 本書では、Exastro システム における 通知管理 について説明します。
 
+.. _notification_management:
 
 通知先設定の登録
 ================
@@ -27,7 +28,7 @@
       :align: left
 
    .. note:: | OASE機能について
-      | OASE機能の詳細につきましては :doc:`../platform_management/organization` をご参照ください。
+      | OASE機能の詳細につきましては :doc:`../oase/oase_common` をご参照ください。
 
 #. | :menuselection:`通知先ワークスペース一覧` 画面が表示されるので、通知先設定を行いたいワークスペースを選択、または :guilabel:`通知先設定` をクリックします。
 

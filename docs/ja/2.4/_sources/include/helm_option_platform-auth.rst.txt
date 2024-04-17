@@ -21,6 +21,24 @@
      - 可
      - | 公開用エンドポイントのURL
        | (http[s]://your-exastro.domain:port)
+   * - exastro-platform.platform-auth.extraEnv.AUDIT_LOG_ENABLED
+     - | 監査ログの出力有無。
+     - 可
+     - | :program:`True` (デフォルト): 出力する
+       | :program:`False`: 出力しない
+   * - exastro-platform.platform-auth.extraEnv.AUDIT_LOG_PATH
+     - | 監査ログのファイル名（ファイルパス）。
+     - 可
+     - | :program:`exastro-audit.log` (デフォルト)
+   * - exastro-platform.platform-auth.extraEnv.AUDIT_LOG_FILE_MAX_BYTE
+     - | 監査ログファイルの最大サイズ(Byte)を指定できます。
+     - 可
+     - | :program:`100000000` (デフォルト)
+   * - exastro-platform.platform-auth.extraEnv.AUDIT_LOG_BACKUP_COUNT
+     - | 監査ログファイルのバックアップカウント数。
+       | 監査ログファイルの最大サイズ(Byte)を超えた際、ファイル名に"."＋数値で指定された値の分、バックアップされます。
+     - 可
+     - | :program:`30` (デフォルト)
    * - exastro-platform.platform-auth.ingress.enabled
      - Exastro Platform における Ingress 利用の要否
      - 可
@@ -77,7 +95,7 @@
    * - exastro-platform.platform-auth.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - "exastro/exastro-platform-auth"
+     - "docker.io/exastro/exastro-platform-auth"
    * - exastro-platform.platform-auth.image.tag
      - コンテナイメージのタグ
      - 不可
