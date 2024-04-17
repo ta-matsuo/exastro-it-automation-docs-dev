@@ -1,0 +1,20 @@
+version: 2
+
+secret:
+  ignored-matches:
+    - match: Ch@ngeMeDBAdm
+      name: default secret.
+    - match: Ch@ngeMeITADB
+      name: default secret.
+    - match: Ch@ngeMePFDB
+      name: default secret.
+    - match: Ch@ngeMeKCAdm
+      name: default secret.
+    - match: Ch@ngeMeKCADB
+      name: default secret.
+    - match: Ch@ngeMeGL
+      name: default secret.
+    - match: change-this-token
+      name: default secret.
+    - match: Ch@ngeMeMGAdm
+      name: default secret.

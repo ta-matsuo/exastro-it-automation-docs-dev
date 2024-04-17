@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup
+     - docker.io/exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup
    * - exastro-it-automation.ita-by-terraform-cloud-ep-vars-listup.image.tag
      - コンテナイメージのタグ
      - 不可

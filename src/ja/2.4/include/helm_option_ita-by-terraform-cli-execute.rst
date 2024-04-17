@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-terraform-cli-execute.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-terraform-cli-execute
+     - docker.io/exastro/exastro-it-automation-by-terraform-cli-execute
    * - exastro-it-automation.ita-by-terraform-cli-execute.image.tag
      - コンテナイメージのタグ
      - 不可

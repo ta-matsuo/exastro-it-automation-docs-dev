@@ -28,7 +28,7 @@
    * - exastro-it-automation.ita-by-conductor-synchronize.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - exastro/exastro-it-automation-by-conductor-synchronize
+     - docker.io/exastro/exastro-it-automation-by-conductor-synchronize
    * - exastro-it-automation.ita-by-conductor-synchronize.image.tag
      - コンテナイメージのタグ
      - 不可

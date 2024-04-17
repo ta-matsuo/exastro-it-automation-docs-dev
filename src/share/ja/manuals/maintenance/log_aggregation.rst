@@ -108,6 +108,7 @@ Fluent Bit: helm chart values.yamlの準備
    :diff: /share/ja/manuals/maintenance/literal_includes/fluentbit-values-org.yaml
    :language: yaml
    :linenos:
+   :caption: fluentbit-values.yaml
 
 .. note::
 

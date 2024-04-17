@@ -17,7 +17,7 @@
    * - exastro-platform.keycloak.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - "exastro/keycloak"
+     - "docker.io/exastro/keycloak"
    * - exastro-platform.keycloak.image.tag
      - コンテナイメージのタグ
      - 不可

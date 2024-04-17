@@ -1,4 +1,4 @@
-FROM python:3.9.9
+FROM python:3.10.0
 
 ARG HTTP_PROXY=${HTTP_PROXY}
 ARG USERNAME=sphinx
@@ -22,7 +22,7 @@ RUN apt-get install -y ca-certificates fonts-ipafont plantuml lsof \
 
 RUN set -eux && \
     python -m pip install --proxy=$HTTP_PROXY --upgrade pip && \
-    python -m pip install --proxy=$HTTP_PROXY sphinx sphinx-autobuild rstcheck sphinxcontrib-blockdiag sphinxcontrib-blockdiag sphinxcontrib-seqdiag sphinxcontrib-actdiag sphinxcontrib-nwdiag sphinx-copybutton sphinx-tabs sphinx-toolbox
+    python -m pip install --proxy=$HTTP_PROXY sphinx sphinx-autobuild rstcheck sphinxcontrib-blockdiag sphinxcontrib-blockdiag sphinxcontrib-seqdiag sphinxcontrib-actdiag sphinxcontrib-nwdiag sphinx-copybutton sphinx-tabs sphinx-toolbox watchfiles
 
 RUN curl -kL https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb \
      -o /tmp/pandoc.deb && \

@@ -36,25 +36,50 @@ Helm chart (Kubernetes)
 
   | 動作確認が取れているクライアントアプリケーションのバージョンは下記のとおりです。
   
-  .. csv-table:: クライアント要件
-   :header: アプリケーション, バージョン
-   :widths: 30, 30
-  
-   Helm, v3.9.x
-   kubectl, 1.23
+  .. list-table:: クライアント要件
+   :widths: 20, 20
+   :header-rows: 1
+
+   * - アプリケーション
+     - バージョン
+   * - Helm
+     - v3.9.x
+   * - kubectl
+     - 1.23
 
 - デプロイ環境
 
   | 動作確認が取れているコンテナ環境の最小要求リソースとバージョンは下記のとおりです。
 
-  .. csv-table:: デプロイ環境
-   :header: リソース種別, 要求リソース
+  .. list-table:: ハードウェア要件(最小構成)
    :widths: 20, 20
-  
-   CPU,2 Cores (3.0 GHz)
-   Memory, 4GB
-   Storage (Container image size),10GB
-   Kubernetes, 1.23 以上
+   :header-rows: 1
+
+   * - リソース種別
+     - 要求リソース
+   * - CPU
+     - 2 Cores (3.0 GHz, x86_64)
+   * - Memory
+     - 4GB
+   * - Storage (Container image size)
+     - 10GB
+   * - Kubernetes (Container image size)
+     - 1.23 以上
+
+  .. list-table:: ハードウェア要件(推奨構成)
+   :widths: 20, 20
+   :header-rows: 1
+
+   * - リソース種別
+     - 要求リソース
+   * - CPU
+     - 4 Cores (3.0 GHz, x86_64)
+   * - Memory
+     - 16GB
+   * - Storage (Container image size)
+     - 120GB
+   * - Kubernetes (Container image size)
+     - 1.23 以上
 
   .. warning::
     | 要求リソースは Exastro IT Automation のコア機能に対する値です。同一クラスタ上に Keycloak や MariaDB などの外部ツールをデプロイする場合は、その分のリソースが別途必要となります。
@@ -63,14 +88,14 @@ Helm chart (Kubernetes)
 
 - 通信要件
 
-  - クライアントからデプロイ先のコンテナ環境にアクセスできる必要があります。
-  - Platform 管理者用と一般ユーザー用の2つ通信ポートが使用となります。
-  - コンテナ環境からコンテナイメージの取得のために、Docker Hub に接続できる必要があります。
+  - | クライアントからデプロイ先のコンテナ環境にアクセスできる必要があります。
+  - | Platform 管理者用と一般ユーザー用の2つ通信ポートが使用となります。
+  - | コンテナ環境からコンテナイメージの取得のために、Docker Hub に接続できる必要があります。
 
 - 外部コンポーネント
 
-  - MariaDB、もしくは、MySQL サーバ
-  - GitLab リポジトリ、および、アカウントの払い出しが可能なこと
+  - | MariaDB、もしくは、MySQL サーバ
+  - | GitLab リポジトリ、および、アカウントの払い出しが可能なこと
 
   .. warning::
     | GitLab 環境を同一クラスタに構築する場合は、GitLab のシステム要件に対応する最小要件を追加で容易する必要があります。
@@ -119,478 +144,10 @@ Helm リポジトリの登録
    <details>
      <summary>exastro.yaml</summary>
 
-.. code-block:: yaml
+.. literalinclude:: literal_includes/exastro.yaml
+   :caption: exastro.yaml
+   :language: yaml
    :linenos:
-
-   # Default values for Exastro.
-   # This is a YAML-formatted file.
-   # Declare variables to be passed into your templates.
-   global:
-     itaGlobalDefinition:
-       name: ita-global
-       enabled: true
-       image:
-         registry: "docker.io"
-         organization: exastro
-         package: exastro-it-automation
-       config:
-         DEFAULT_LANGUAGE: "ja"
-         LANGUAGE: "en"
-         CONTAINER_BASE: "kubernetes"
-         TZ: "Asia/Tokyo"
-         STORAGEPATH: "/storage/"
-       secret:
-         ENCRYPT_KEY: ""
-       persistence:
-         enabled: true
-         accessMode: ReadWriteMany
-         size: 10Gi
-         volumeType: hostPath # e.g.) hostPath or AKS
-         storageClass: "-" # e.g.) azurefile or - (None)
-         # matchLabels:
-         #   release: "stable"
-         # matchExpressions:
-         #   - {key: environment, operator: In, values: [dev]}
-     gitlabDefinition:
-       name: gitlab
-       enabled: true
-       config:
-         GITLAB_PROTOCOL: "http"
-         GITLAB_HOST: "gitlab"
-         GITLAB_PORT: "80"
-       secret:
-         GITLAB_ROOT_TOKEN: ""
-     itaDatabaseDefinition:
-       name: ita-database
-       enabled: true
-       config:
-         DB_VENDOR: "mariadb"
-         DB_HOST: "mariadb"
-         DB_PORT: "3306"
-         DB_DATABASE: "ITA_DB"
-       secret:
-         DB_ADMIN_USER: ""
-         DB_ADMIN_PASSWORD: ""
-         DB_USER: ""
-         DB_PASSWORD: ""
-     pfGlobalDefinition:
-       name: pf-global
-       enabled: true
-       image:
-         registry: "docker.io"
-         organization: exastro
-         package: exastro-platform
-       config:
-         DEFAULT_LANGUAGE: "ja"
-         LANGUAGE: "en"
-         TZ: "Asia/Tokyo"
-         PYTHONIOENCODING: utf-8
-         PLATFORM_API_PROTOCOL: "http"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-         PLATFORM_WEB_PROTOCOL: "http"
-         PLATFORM_WEB_HOST: "platform-web"
-         PLATFORM_WEB_PORT: "8000"
-       secret:
-         ENCRYPT_KEY: ""
-       persistence:
-         enabled: true
-         accessMode: ReadWriteMany
-         size: 10Gi
-         volumeType: hostPath # e.g.) hostPath or AKS
-         storageClass: "-" # e.g.) azurefile or - (None)
-         # matchLabels:
-         #   release: "stable"
-         # matchExpressions:
-         #   - {key: environment, operator: In, values: [dev]}
-     keycloakDefinition:
-       name: keycloak
-       enabled: true
-       config:
-         API_KEYCLOAK_PROTOCOL: "http"
-         API_KEYCLOAK_HOST: "keycloak"
-         API_KEYCLOAK_PORT: "8080"
-         KEYCLOAK_PROTOCOL: "http"
-         KEYCLOAK_HOST: "keycloak"
-         KEYCLOAK_PORT: "8080"
-         KEYCLOAK_MASTER_REALM: "master"
-         KEYCLOAK_DB_DATABASE: "keycloak"
-       secret:
-         KEYCLOAK_USER: ""
-         KEYCLOAK_PASSWORD: ""
-         KEYCLOAK_DB_USER: ""
-         KEYCLOAK_DB_PASSWORD: ""
-     itaDefinition:
-       name: ita
-       enabled: true
-       config:
-         ITA_WEB_PROTOCOL: "http"
-         ITA_WEB_HOST: "ita-web-server"
-         ITA_WEB_PORT: "8000"
-         ITA_API_PROTOCOL: "http"
-         ITA_API_HOST: "ita-api-organization"
-         ITA_API_PORT: "8080"
-         ITA_API_ADMIN_PROTOCOL: "http"
-         ITA_API_ADMIN_HOST: "ita-api-admin"
-         ITA_API_ADMIN_PORT: "8080"
-     pfDatabaseDefinition:
-       name: pf-database
-       enabled: true
-       config:
-         DB_VENDOR: "mariadb"
-         DB_HOST: "mariadb"
-         DB_PORT: "3306"
-         DB_DATABASE: "platform"
-       secret:
-         DB_ADMIN_USER: ""
-         DB_ADMIN_PASSWORD: ""
-         DB_USER: ""
-         DB_PASSWORD: ""
-     databaseDefinition:
-       name: mariadb
-       enabled: true
-       secret:
-         MARIADB_ROOT_PASSWORD: ""
-       persistence:
-         enabled: true
-         reinstall: false
-         accessMode: ReadWriteOnce
-         size: 20Gi
-         volumeType: hostPath # e.g.) hostPath or AKS
-         storageClass: "-" # e.g.) azurefile or - (None)
-         # matchLabels:
-         #   release: "stable"
-         # matchExpressions:
-         #   - {key: environment, operator: In, values: [dev]}
-
-   exastro-it-automation:
-     ita-api-admin:
-       replicaCount: 1
-       image:
-         repository: "exastro/exastro-it-automation-api-admin"
-         tag: ""
-         pullPolicy: IfNotPresent
-       extraEnv:
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-
-     ita-api-organization:
-       replicaCount: 1
-       image:
-         repository: "exastro/exastro-it-automation-api-organization"
-         tag: ""
-         pullPolicy: IfNotPresent
-       extraEnv:
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-
-     ita-by-ansible-execute:
-       replicaCount: 1
-       image:
-         repository: "exastro/exastro-it-automation-by-ansible-execute"
-         tag: ""
-         pullPolicy: IfNotPresent
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         ANSIBLE_AGENT_IMAGE: "exastro/exastro-it-automation-by-ansible-agent"
-         ANSIBLE_AGENT_IMAGE_TAG: ""
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       serviceAccount:
-         create: false
-         name: "ita-by-ansible-execute-sa"
-
-     ita-by-ansible-legacy-role-vars-listup:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-ansible-legacy-vars-listup:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-ansible-legacy-vars-listup"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-ansible-pioneer-vars-listup:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-ansible-pioneer-vars-listup"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-ansible-towermaster-sync:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-ansible-towermaster-sync"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-cicd-for-iac:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-cicd-for-iac"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-collector:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-collector"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-conductor-regularly:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-conductor-regularly"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-conductor-synchronize:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-conductor-synchronize"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-excel-export-import:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-excel-export-import"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-execinstance-dataautoclean:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-execinstance-dataautoclean"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-file-autoclean:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-file-autoclean"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-hostgroup-split:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-hostgroup-split"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-menu-create:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-menu-create"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-menu-export-import:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-menu-export-import"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-terraform-cli-execute:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-terraform-cli-execute"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-terraform-cli-vars-listup:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-terraform-cli-vars-listup"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-terraform-cloud-ep-execute:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-terraform-cloud-ep-execute"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-by-terraform-cloud-ep-vars-listup:
-       replicaCount: 1
-       extraEnv:
-         EXECUTE_INTERVAL: "10"
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-by-terraform-cloud-ep-vars-listup"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-database-setup-job:
-       image:
-         repository: ""
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-web-server:
-       replicaCount: 1
-       image:
-         repository: "exastro/exastro-it-automation-web-server"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-     ita-migration:
-       extraEnv:
-         PLATFORM_API_HOST: "platform-api"
-         PLATFORM_API_PORT: "8000"
-       image:
-         repository: "exastro/exastro-it-automation-migration"
-         tag: ""
-         pullPolicy: IfNotPresent
-
-   exastro-platform:
-     platform-api:
-       image:
-         repository: "exastro/exastro-platform-api"
-         tag: ""
-
-     platform-auth:
-       extraEnv:
-         # Please set the URL to access
-         EXTERNAL_URL: ""
-         EXTERNAL_URL_MNG: ""
-       ingress:
-         enabled: true
-         hosts:
-           - host: exastro-suite.example.local
-             paths:
-               - path: /
-                 pathType: Prefix
-                 backend: "http"
-           - host: exastro-suite-mng.example.local
-             paths:
-               - path: /
-                 pathType: Prefix
-                 backend: "httpMng"
-       service:
-         type: ClusterIP
-         # http:
-         #   nodePort: 30080
-         # httpMng:
-         #   nodePort: 30081
-       image:
-         repository: "exastro/exastro-platform-auth"
-         tag: ""
-
-     platform-migration:
-       image:
-         repository: "exastro/exastro-platform-migration"
-         tag: ""
-
-     platform-web:
-       image:
-         repository: "exastro/exastro-platform-web"
-         tag: ""
-
-     mariadb:
-       enabled: true
-       image:
-         repository: "mariadb"
-         tag: "10.9"
-         pullPolicy: IfNotPresent
-       resources:
-         requests:
-           memory: "256Mi"
-           cpu: "1m"
-         limits:
-           memory: "2Gi"
-           cpu: "4"
-
-     keycloak:
-       enabled: true
-       image:
-         repository: "exastro/keycloak"
-         tag: ""
-         pullPolicy: IfNotPresent
-       resources:
-         requests:
-           memory: "256Mi"
-           cpu: "1m"
-         limits:
-           memory: "2Gi"
-           cpu: "4"
 
 .. raw:: html
 
@@ -598,7 +155,7 @@ Helm リポジトリの登録
 
 | 以降の手順では、この :file:`exastro.yaml` に対してインストールに必要なパラメータを設定してきいます。
 
-.. _service_setting_v2.1:
+.. _service_setting:
 
 サービス公開の設定
 ------------------
@@ -610,7 +167,7 @@ Helm リポジトリの登録
 - NodePort
 
 .. note:: 
-  | ここで紹介する方法以外にもサービス公開方法はあります。ユーザの環境ごとに適切な構成・設定を選択してください。
+  | ここで紹介する方法以外にもサービス公開方法はあります。ユーザーの環境ごとに適切な構成・設定を選択してください。
 
 パラメータ
 ^^^^^^^^^^
@@ -630,148 +187,62 @@ Helm リポジトリの登録
 
       .. _ingress_setting:
 
+      | 
+
       - 特徴
 
-      | パブリッククラウドなどで Ingress Controller が利用可能な場合、Ingress を使ったサービス公開ができます。
-      | クラスタ内にロードバランサーを構築して、ユーザ自身が運用したい場合などにメリットがあります。
+        | パブリッククラウドなどで Ingress Controller が利用可能な場合、Ingress を使ったサービス公開ができます。
+        | クラスタ内にロードバランサーを構築して、ユーザー自身が運用したい場合などにメリットがあります。
 
       - 設定例
 
-      | サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。
-      | Azure におけるドメイン名の確認方法については :ref:`aks-dns_v2.1` を確認してください。
-      | クラウドプロバイダ毎に必要な :kbd:`annotations` を指定してください。
-      | 下記は、AKS の Ingress Controller を使用する際の例を記載しています。
+        | サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。
+        | Azure におけるドメイン名の確認方法については :ref:`aks-dns` を確認してください。
+        | クラウドプロバイダ毎に必要な :kbd:`annotations` を指定してください。
+        | 下記は、AKS の Ingress Controller を使用する際の例を記載しています。
 
-      .. code-block:: diff
-         :caption: exastro.yaml
-         :linenos:
-         :lineno-start: 232
-      
-          platform-auth:
-            extraEnv:
-              # Please set the URL to access
-         -    EXTERNAL_URL: ""
-         -    EXTERNAL_URL_MNG: ""
-         +    EXTERNAL_URL: "http://exastro-suite.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io"
-         +    EXTERNAL_URL_MNG: "http://exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io"
-            ingress:
-              enabled: true
-         +    annotations:
-         +      kubernetes.io/ingress.class: addon-http-application-routing
-         +      nginx.ingress.kubernetes.io/proxy-body-size: 100m
-         +      nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
-         +      nginx.ingress.kubernetes.io/server-snippet: |
-         +        client_header_buffer_size 100k;
-         +        large_client_header_buffers 4 100k;
-              hosts:
-         -      - host: exastro-suite.example.local
-         +      - host: exastro-suite.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io
-                  paths:
-                    - path: /
-                      pathType: Prefix
-                      backend: "http"
-         -      - host: exastro-suite-mng.example.local
-         +      - host: exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io
-                  paths:
-                    - path: /
-                      pathType: Prefix
-                      backend: "httpMng"
+        .. literalinclude:: literal_includes/exastro_ingress_setting.yaml
+           :diff: literal_includes/exastro.yaml
+           :caption: exastro.yaml
+           :language: yaml
 
    .. group-tab:: LoadBalancer
 
+      | 
+
       - 特徴
 
-      | パブリッククラウドなどで LoadBalancer が利用可能な場合、LoadBalancer を使ったサービス公開ができます。
-      | Ingress とは異なり、クラスタ外部(多くは、パブリッククラウドのサービス上)にロードバランサーがデプロイされるため、ユーザ自身が運用する必要がないことにメリットがあります。
+        | パブリッククラウドなどで LoadBalancer が利用可能な場合、LoadBalancer を使ったサービス公開ができます。
+        | Ingress とは異なり、クラスタ外部(多くは、パブリッククラウドのサービス上)にロードバランサーがデプロイされるため、ユーザー自身が運用する必要がないことにメリットがあります。
 
       - 設定例
 
-      | :kbd:`service.type` に :kbd:`LoadBalancer` を設定することで、LoadBalancer を使ったサービス公開ができます。
-      | 下記は、LoadBalancer を使用する際の例を記載しています。
-      
-      .. code-block:: diff
-         :caption: exastro.yaml
-         :linenos:
-         :lineno-start: 232
-      
-          platform-auth:
-            extraEnv:
-              # Please set the URL to access
-         -    EXTERNAL_URL: ""
-         -    EXTERNAL_URL_MNG: ""
-         +    EXTERNAL_URL: "https://your-exastro.domain"
-         +    EXTERNAL_URL_MNG: "https://your-exastro-mng.domain"
-            ingress:
-         -    enabled: true
-         +    enabled: false
-              hosts:
-                - host: exastro-suite.example.local
-                  paths:
-                    - path: /
-                      pathType: Prefix
-                      backend: "http"
-                - host: exastro-suite-mng.example.local
-                  paths:
-                    - path: /
-                      pathType: Prefix
-                      backend: "httpMng"
-            service:
-         -    type: ClusterIP
-         +    type: LoadBalancer
-              # http:
-              #   nodePort: 30080
-              # httpMng:
-              #   nodePort: 30081
+        | :kbd:`service.type` に :kbd:`LoadBalancer` を設定することで、LoadBalancer を使ったサービス公開ができます。
+        | 下記は、LoadBalancer を使用する際の例を記載しています。
+        
+        .. literalinclude:: literal_includes/exastro_loadbalancer_setting.yaml
+           :diff: literal_includes/exastro.yaml
+           :caption: exastro.yaml
+           :language: yaml
 
    .. group-tab:: NodePort
 
+      | 
+
       - 特徴
 
-      | ユーザ自身の環境でロードバランサーを準備する、もしくは、検証などの環境では NodePort を使ったサービス公開ができます。
-      | Ingress や LoadBalancer とは異なり、ネイティブな Kubernetes で利用可能です。
+        | ユーザー自身の環境でロードバランサーを準備する、もしくは、検証などの環境では NodePort を使ったサービス公開ができます。
+        | Ingress や LoadBalancer とは異なり、ネイティブな Kubernetes で利用可能です。
 
       - 設定例
 
-      | :kbd:`service.type` に :kbd:`NodePort` を設定することで、NodePort を使ったサービス公開ができます。
-      | 下記は、NodePort を使用する際の例を記載しています。
+        | :kbd:`service.type` に :kbd:`NodePort` を設定することで、NodePort を使ったサービス公開ができます。
+        | 下記は、NodePort を使用する際の例を記載しています。
 
-      .. code-block:: diff
-        :caption: exastro.yaml
-        :linenos:
-        :lineno-start: 232
-
-          platform-auth:
-            extraEnv:
-              # Please set the URL to access
-         -    EXTERNAL_URL: ""
-         -    EXTERNAL_URL_MNG: ""
-         +    EXTERNAL_URL: "http://10.10.10.10:30080"
-         +    EXTERNAL_URL_MNG: "http://10.10.10.10:30081"
-            ingress:
-        -    enabled: true
-        +    enabled: false
-              hosts:
-                - host: exastro-suite.example.local
-                  paths:
-                    - path: /
-                      pathType: Prefix
-                      backend: "http"
-                - host: exastro-suite-mng.example.local
-                  paths:
-                    - path: /
-                      pathType: Prefix
-                      backend: "httpMng"
-            service:
-        -    type: ClusterIP
-        -    # http:
-        -    #   nodePort: 30080
-        -    # httpMng:
-        -    #   nodePort: 30081
-        +    type: NodePort
-        +    http:
-        +      nodePort: 30080
-        +    httpMng:
-        +      nodePort: 30081
+        .. literalinclude:: literal_includes/exastro_nodeport_setting.yaml
+           :diff: literal_includes/exastro.yaml
+           :caption: exastro.yaml
+           :language: yaml
 
 .. _DATABASE_SETUP:
 
@@ -788,24 +259,27 @@ Helm リポジトリの登録
 
    .. tab:: 外部データベース
 
+      | 
+
       - 特徴
 
-      | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
-      | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
+        | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
+        | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
 
       .. warning::
+
         | 複数のITAを構築する場合はlower_case_table_namesの設定を統一してください。
         | ※統一しないと環境間でのメニューエクスポート・インポートが正常に動作しなくなる可能性があります。
 
       - 設定例
 
-      | 外部データベースを操作するために必要な接続情報を設定します。
+        | 外部データベースを操作するために必要な接続情報を設定します。
 
-      .. warning::
-        | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
-      
-      .. warning::
-        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+        .. warning::
+          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
+        
+        .. warning::
+          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
       
       1.  Exastro IT Automation 用データベースの設定
 
@@ -813,29 +287,10 @@ Helm リポジトリの登録
 
           .. include:: ../include/helm_option_itaDatabaseDefinition.rst
 
-          .. code-block:: diff
-            :caption: exastro.yaml
-            :linenos:
-            :lineno-start: 39
-
-              itaDatabaseDefinition:
-                name: ita-database
-                enabled: true
-                config:
-            -     DB_VENDOR: "mariadb"
-            -     DB_HOST: "mariadb"
-            -     DB_PORT: "3306"
-            +     DB_VENDOR: "mariadb"                # mariadb or mysql
-            +     DB_HOST: "your.database.endpoint"   # データベースのエンドポイント
-            +     DB_PORT: "3306"                     # データベース接続ポート
-                  DB_DATABASE: "ITA_DB"               # 変更不要
-                secret:
-            -     DB_ADMIN_USER: ""
-            -     DB_ADMIN_PASSWORD: ""s
-            +     DB_ADMIN_USER: "your-admin-account"      # データベースの管理権限を持つユーザ
-            +     DB_ADMIN_PASSWORD: "your-admin-password" # データベースの管理権限を持つユーザのパスワード
-                  DB_USER: ""
-                  DB_PASSWORD: ""
+          .. literalinclude:: literal_includes/exastro_ita_database.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
 
       2.  Exastro 共通基盤用データベースの設定
 
@@ -843,29 +298,10 @@ Helm リポジトリの登録
 
           .. include:: ../include/helm_option_pfDatabaseDefinition.rst
 
-          .. code-block:: diff
-            :caption: exastro.yaml
-            :linenos:
-            :lineno-start: 112
-
-              pfDatabaseDefinition:
-                name: auth-database
-                enabled: true
-                config:
-            -     DB_VENDOR: "mariadb"
-            -     DB_HOST: "mariadb"
-            -     DB_PORT: "3306"
-            +     DB_VENDOR: "mariadb"                # mariadb or mysql
-            +     DB_HOST: "your.database.endpoint"   # データベースのエンドポイント
-            +     DB_PORT: "3306"                     # データベース接続ポート
-                  DB_DATABASE: "platform"             # 変更不要
-                secret:
-            -     DB_ADMIN_USER: ""
-            -     DB_ADMIN_PASSWORD: ""
-            +     DB_ADMIN_USER: "your-admin-account"      # データベースの管理者ユーザ
-            +     DB_ADMIN_PASSWORD: "your-admin-password" # データベースの管理者ユーザのパスワード
-                  DB_USER: ""
-                  DB_PASSWORD: ""
+          .. literalinclude:: literal_includes/exastro_pf_database.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
 
       3.  データベースコンテナの無効化
 
@@ -873,32 +309,30 @@ Helm リポジトリの登録
 
           .. include:: ../include/helm_option_databaseDefinition.rst
 
-          .. code-block:: diff
-            :caption: exastro.yaml
-            :linenos:
-            :lineno-start: 270
-
-              mariadb:
-            -   enabled: true
-            +   enabled: false
+          .. literalinclude:: literal_includes/exastro_database_disabled.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
 
    .. tab:: データベースコンテナ
 
+      | 
+
       - 特徴
 
-      | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
-      | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
+        | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
+        | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
 
       - 設定例
 
-      | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
-      | また、データベースのデータを永続化するために利用するストレージを指定します。
+        | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
+        | また、データベースのデータを永続化するために利用するストレージを指定します。
 
-      .. warning::
-        | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
-      
-      .. warning::
-        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+        .. warning::
+          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
+        
+        .. warning::
+          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
 
       .. _configuration_database_container:
 
@@ -913,50 +347,17 @@ Helm リポジトリの登録
 
             .. tab:: Storage Class 利用
 
-                .. code-block:: diff
+               .. literalinclude:: literal_includes/exastro_database_storage_class.yaml
+                  :diff: literal_includes/exastro.yaml
                   :caption: exastro.yaml
-                  :linenos:
-                  :lineno-start: 125
-          
-                      databaseDefinition:
-                        name: mariadb
-                        enabled: true
-                        secret:
-                  -     MARIADB_ROOT_PASSWORD: ""
-                  +     MARIADB_ROOT_PASSWORD: "root-password"  # データベースコンテナの root のパスワード
-                        persistence:
-                          enabled: true
-                          reinstall: false
-                          accessMode: ReadWriteOnce
-                  -      size: 20Gi
-                  -      volumeType: hostPath # e.g.) hostPath or AKS
-                  -      storageClass: "-" # e.g.) azurefile or - (None)
-                  +      size: XXGi                                       # 必要な容量に変更
-                  +      volumeType: AKS                                  # AKS を選択
-                  +      storageClass: "exastro-suite-azurefile-csi-nfs"  # 利用する Storage Class を指定
+                  :language: yaml
 
             .. tab:: hostPath 利用
 
-                .. code-block:: diff
+               .. literalinclude:: literal_includes/exastro_database_hostpath.yaml
+                  :diff: literal_includes/exastro.yaml
                   :caption: exastro.yaml
-                  :linenos:
-                  :lineno-start: 125
-          
-                      databaseDefinition:
-                        name: mariadb
-                        enabled: true
-                        secret:
-                  -     MARIADB_ROOT_PASSWORD: ""
-                  +     MARIADB_ROOT_PASSWORD: "root-password"  # コンテナデータベースの root のパスワード
-                        persistence:
-                          enabled: true
-                          reinstall: false
-                          accessMode: ReadWriteOnce
-                  -      size: 20Gi
-                  -      volumeType: hostPath # e.g.) hostPath or AKS
-                  +      size: XXGi                                       # 必要な容量に変更
-                  +      volumeType: hostPath                             # AKS を選択
-                          storageClass: "-" # e.g.) azurefile or - (None)
+                  :language: yaml
 
       2.  Exastro IT Automation 用データベースの設定
 
@@ -964,26 +365,10 @@ Helm リポジトリの登録
 
           .. include:: ../include/helm_option_itaDatabaseDefinition.rst
 
-          .. code-block:: diff
-            :caption: exastro.yaml
-            :linenos:
-            :lineno-start: 39
-
-              itaDatabaseDefinition:
-                name: ita-database
-                enabled: true
-                config:
-                  DB_VENDOR: "mariadb"
-                  DB_HOST: "mariadb"
-                  DB_PORT: "3306"
-                  DB_DATABASE: "ITA_DB"
-                secret:
-            -     DB_ADMIN_USER: ""
-            -     DB_ADMIN_PASSWORD: ""
-            +     DB_ADMIN_USER: "root"                    # root を指定
-            +     DB_ADMIN_PASSWORD: "your-admin-password" # 「1.  データベースコンテナの設定」で設定したコンテナデータベースの root のパスワード
-                  DB_USER: ""
-                  DB_PASSWORD: ""
+          .. literalinclude:: literal_includes/exastro_database_ita_setting.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
 
       3.  Exastro 共通基盤用データベースの設定
 
@@ -991,38 +376,22 @@ Helm リポジトリの登録
 
           .. include:: ../include/helm_option_pfDatabaseDefinition.rst
 
-          .. code-block:: diff
-            :caption: exastro.yaml
-            :linenos:
-            :lineno-start: 112
-
-              pfDatabaseDefinition:
-                name: auth-database
-                enabled: true
-                config:
-                  DB_VENDOR: "mariadb"
-                  DB_HOST: "mariadb"
-                  DB_PORT: "3306"
-                  DB_DATABASE: "platform"
-                secret:
-            -     DB_ADMIN_USER: ""
-            -     DB_ADMIN_PASSWORD: ""
-            +     DB_ADMIN_USER: "root"                    # root を指定
-            +     DB_ADMIN_PASSWORD: "your-admin-password" # 「1.  データベースコンテナの設定」で設定したコンテナデータベースの root のパスワード
-                  DB_USER: ""
-                  DB_PASSWORD: ""
+          .. literalinclude:: literal_includes/exastro_database_pf_setting.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
 
 .. _installation_kubernetes_Keycloak 設定:
 
-アプリケーションの DB ユーザ設定
---------------------------------
+アプリケーションの DB ユーザー設定
+----------------------------------
 
-| Exastro でアプリケーションのために作成する DB ユーザの設定をします。
+| Exastro でアプリケーションのために作成する DB ユーザーの設定をします。
 
 設定例
 ^^^^^^
 
-| 下記のアプリケーションが利用・作成する DB ユーザをそれぞれ設定します。
+| 下記のアプリケーションが利用・作成する DB ユーザーをそれぞれ設定します。
 
 - Exastro IT Automation
 - Exastro 共通基盤
@@ -1033,91 +402,36 @@ Helm リポジトリの登録
 
 1.  Exastro IT Automation 用データベースの設定
 
-    | アプリケーションが利用・作成する DB ユーザを設定します。
+    | アプリケーションが利用・作成する DB ユーザーを設定します。
 
     .. include:: ../include/helm_option_itaDatabaseDefinition.rst
 
-    .. code-block:: diff
-      :caption: exastro.yaml
-      :linenos:
-      :lineno-start: 39
-
-        itaDatabaseDefinition:
-          name: ita-database
-          enabled: true
-          config:
-            DB_VENDOR: "mariadb"
-            DB_HOST: "mariadb"
-            DB_PORT: "3306"
-            DB_DATABASE: "ITA_DB"
-          secret:
-            DB_ADMIN_USER: ""
-            DB_ADMIN_PASSWORD: ""
-      -     DB_USER: ""
-      -     DB_PASSWORD: ""
-      +     DB_USER: "ita-db-user"                # Exastro IT Automation のアプリが使うDBユーザ
-      +     DB_PASSWORD: "ita-db-user-password"   # Exastro IT Automation のアプリが使うDBユーザのパスワード
-
+    .. literalinclude:: literal_includes/exastro_db_user_ita.yaml
+       :diff: literal_includes/exastro.yaml
+       :caption: exastro.yaml
+       :language: yaml
 
 2.  Keycloak 用データベースの設定
 
-    | アプリケーションが利用・作成する DB ユーザを設定します。
+    | アプリケーションが利用・作成する DB ユーザーを設定します。
 
     .. include:: ../include/helm_option_keycloakDefinition.rst
 
-    .. code-block:: diff
-      :caption: exastro.yaml
-      :linenos:
-      :lineno-start: 82
-
-        keycloakDefinition:
-          name: keycloak
-          enabled: true
-          config:
-            API_KEYCLOAK_PROTOCOL: "http"
-            API_KEYCLOAK_HOST: "keycloak"
-            API_KEYCLOAK_PORT: "8080"
-            KEYCLOAK_PROTOCOL: "http"
-            KEYCLOAK_HOST: "keycloak"
-            KEYCLOAK_PORT: "8080"
-            KEYCLOAK_MASTER_REALM: "master"
-            KEYCLOAK_DB_DATABASE: "keycloak"
-          secret:
-            KEYCLOAK_USER: ""
-            KEYCLOAK_PASSWORD: ""
-      -     KEYCLOAK_DB_USER: ""
-      -     KEYCLOAK_DB_PASSWORD: ""
-      +     KEYCLOAK_DB_USER: "keycloak-db-user"               # Keycloak が使うDBユーザ
-      +     KEYCLOAK_DB_PASSWORD: "keycloak-db-user-password"  # Keycloak が使うDBユーザのパスワード
-
+    .. literalinclude:: literal_includes/exastro_db_user_keycloak.yaml
+       :diff: literal_includes/exastro.yaml
+       :caption: exastro.yaml
+       :language: yaml
 
 3.  Exastro 共通基盤用データベースの設定
 
-    | アプリケーションが利用・作成する DB ユーザを設定します。
+    | アプリケーションが利用・作成する DB ユーザーを設定します。
 
     .. include:: ../include/helm_option_pfDatabaseDefinition.rst
 
-    .. code-block:: diff
-      :caption: exastro.yaml
-      :linenos:
-      :lineno-start: 112
-
-        pfDatabaseDefinition:
-          name: auth-database
-          enabled: true
-          config:
-            DB_VENDOR: "mariadb"
-            DB_HOST: "mariadb"
-            DB_PORT: "3306"
-            DB_DATABASE: "platform"
-          secret:
-            DB_ADMIN_USER: ""
-            DB_ADMIN_PASSWORD: ""
-      -     DB_USER: ""
-      -     DB_PASSWORD: ""
-      +     DB_USER: "pf-db-user"           # Exastro 共通基盤が使うDBユーザ
-      +     DB_PASSWORD: "pf-db-password"   # Exastro 共通基盤が使うDBユーザのパスワード
-
+    .. literalinclude:: literal_includes/exastro_db_user_pf.yaml
+       :diff: literal_includes/exastro.yaml
+       :caption: exastro.yaml
+       :language: yaml
 
 .. _installation_kubernetes_gitlablinkage:
 
@@ -1136,59 +450,25 @@ GitLab 連携設定
 
 | 下記は、GitLab 連携の設定例を記載しています。
 
-.. code-block:: diff
-  :caption: exastro.yaml
-  :linenos:
-  :lineno-start: 30
-
-      gitlabDefinition:
-        name: gitlab
-        enabled: true
-        config:
-    -     GITLAB_PROTOCOL: "http"
-    -     GITLAB_HOST: "gitlab"
-    -     GITLAB_PORT: "80"
-    +     GITLAB_PROTOCOL: "接続プロトコル http or https"
-    +     GITLAB_HOST: "接続先"
-    +     GITLAB_PORT: "接続ポート"
-        secret:
-    -     GITLAB_ROOT_TOKEN: ""
-    +     GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
+.. literalinclude:: literal_includes/exastro_gitlab_setting.yaml
+   :diff: literal_includes/exastro.yaml
+   :caption: exastro.yaml
+   :language: yaml
 
 .. _create_system_manager:
-.. _install_helm_v2.2:
+.. _install_helm:
 
-Exastro システム管理者の作成
-----------------------------
+システム管理者の作成
+--------------------
 
-| Keycloak セットアップ時に Exastro システム管理者の初期ユーザを作成するための情報を設定します。
+| セットアップ時に システム管理者の初期ユーザーを作成するための情報を設定します。
 
 .. include:: ../include/helm_option_keycloakDefinition.rst
 
-.. code-block:: diff
-  :caption: exastro.yaml
-  :linenos:
-  :lineno-start: 82
-
-    keycloakDefinition:
-      name: keycloak
-      enabled: true
-      config:
-        API_KEYCLOAK_PROTOCOL: "http"
-        API_KEYCLOAK_HOST: "keycloak"
-        API_KEYCLOAK_PORT: "8080"
-        KEYCLOAK_PROTOCOL: "http"
-        KEYCLOAK_HOST: "keycloak"
-        KEYCLOAK_PORT: "8080"
-        KEYCLOAK_MASTER_REALM: "master"
-        KEYCLOAK_DB_DATABASE: "keycloak"
-      secret:
-  -     KEYCLOAK_USER: ""
-  -     KEYCLOAK_PASSWORD: ""
-  +     KEYCLOAK_USER: "admin"               # Exastro システムの管理者
-  +     KEYCLOAK_PASSWORD: "admin-password"  # Exastro システムの管理者のパスワード
-        KEYCLOAK_DB_USER: ""
-        KEYCLOAK_DB_PASSWORD: ""
+.. literalinclude:: literal_includes/exastro_usercreate_system_manager.yaml
+   :diff: literal_includes/exastro.yaml
+   :caption: exastro.yaml
+   :language: yaml
 
 .. _persistent_volume:
 
@@ -1200,6 +480,9 @@ Exastro システム管理者の作成
 
 | ストレージ利用時の2つの方法について説明します。
 
+.. note::
+    | 監査ログを永続ボリュームに出力する際は、永続ボリュームの設定が必要となります。
+
 - マネージドディスク
 - Kubernetes ノードのディレクトリ
 
@@ -1207,66 +490,76 @@ Exastro システム管理者の作成
 
    .. tab:: マネージドディスク
 
+      | 
+
       - 特徴
        
-      | パブリッククラウドで提供されるストレージサービスを利用することでストレージの構築や維持管理が不要となります。
+        | パブリッククラウドで提供されるストレージサービスを利用することでストレージの構築や維持管理が不要となります。
 
       - 設定例
 
-      | Azure のストレージを利用する場合、下記のように StorageClass を定義することで利用が可能です。
-      | 詳細は、 `Azure Kubernetes Service (AKS) でのアプリケーションのストレージ オプション <https://learn.microsoft.com/ja-jp/azure/aks/concepts-storage#storage-classes>`_ を参照してください。
+        | Azure のストレージを利用する場合、下記のように StorageClass を定義することで利用が可能です。
+        | 詳細は、 `Azure Kubernetes Service (AKS) でのアプリケーションのストレージ オプション <https://learn.microsoft.com/ja-jp/azure/aks/concepts-storage#storage-classes>`_ を参照してください。
 
-      .. code-block:: diff
-        :caption: storage-class-exastro-suite.yaml
-        :linenos:
+        .. literalinclude:: literal_includes/storage-class-exastro-suite.yaml
+           :caption: storage-class-exastro-suite.yaml
+           :linenos:
 
-        apiVersion: storage.k8s.io/v1
-        kind: StorageClass
-        metadata:
-          name: exastro-suite-azurefile-csi-nfs
-        provisioner: file.csi.azure.com
-        allowVolumeExpansion: true
-        parameters:
-          protocol: nfs
-        mountOptions:
-          - nconnect=8
+        .. code-block:: diff
+           :caption: exastro.yaml
 
-      .. code-block:: diff
-        :caption: exastro.yaml
-        :linenos:
-        :lineno-start: 5
+             itaGlobalDefinition:
+               persistence:
+                 enabled: true
+                 accessMode: ReadWriteMany
+                 size: 10Gi
+                 volumeType: hostPath # e.g.) hostPath or AKS
+           -      storageClass: "-" # e.g.) azurefile or - (None)
+           +      storageClass: "azurefile" # e.g.) azurefile or - (None)
 
-          itaGlobalDefinition:
-            persistence:
-              enabled: true
-              accessMode: ReadWriteMany
-              size: 10Gi
-              volumeType: hostPath # e.g.) hostPath or AKS
-        -      storageClass: "-" # e.g.) azurefile or - (None)
-        +      storageClass: "azurefile" # e.g.) azurefile or - (None)
+        | ※ 下記は、:ref:`DATABASE_SETUP` で設定済みです。
 
-      | ※ 下記は、:ref:`DATABASE_SETUP` で設定済みです。
+        .. code-block:: diff
+           :caption: exastro.yaml
 
-      .. code-block:: diff
-        :caption: exastro.yaml
-        :linenos:
-        :lineno-start: 39
+             databaseDefinition:
+               persistence:
+                 enabled: true
+                 reinstall: false
+                 accessMode: ReadWriteOnce
+                 size: 20Gi
+                 volumeType: hostPath # e.g.) hostPath or AKS
+           -      storageClass: "-" # e.g.) azurefile or - (None)
+           +      storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
 
-          databaseDefinition:
-            persistence:
-              enabled: true
-              reinstall: false
-              accessMode: ReadWriteOnce
-              size: 20Gi
-              volumeType: hostPath # e.g.) hostPath or AKS
-        -      storageClass: "-" # e.g.) azurefile or - (None)
-        +      storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
+        | ※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります
+
+        .. code-block:: diff
+           :caption: exastro.yaml
+
+             pfAuditLogDefinition:
+               name: pf-auditlog
+               persistence:
+           -      enabled: false
+           +      enabled: true
+                 reinstall: false
+                 accessMode: ReadWriteMany
+                 size: 10Gi
+                 volumeType: hostPath # e.g.) hostPath or AKS
+           -      storageClass: "-" # e.g.) azurefile or - (None)
+           +      storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
 
    .. tab:: Kubernetes ノードのディレクトリ
 
+      | 
+
       - 特徴
 
-      | Kubernetes のノード上のストレージ領域を利用するため、別途ストレージを調達する必要はありませんが、この方法は非推奨のため検証や開発時のみの利用
+        | Kubernetes のノード上のストレージ領域を利用するため、別途ストレージを調達する必要はありませんが、この方法は非推奨のため検証や開発時のみの利用
+
+      .. tip::
+          | hostpathで指定するディレクトリは、アクセス権を設定する必要があります
+          | 例） chmod 777 [該当のディレクトリ]
 
       .. danger::
           | データの永続化自体は可能ですが、コンピュートノードの増減や変更によりデータが消えてしまう可能性があるため本番環境では使用しないでください。
@@ -1274,45 +567,43 @@ Exastro システム管理者の作成
 
       - 利用例
 
-      | hostPath を使用した例を記載します。
+        | hostPath を使用した例を記載します。
 
-      .. code-block:: diff
-        :caption: pv-database.yaml (データベース用ボリューム)
-        :linenos:
+        .. literalinclude:: literal_includes/pv-database.yaml
+           :caption: pv-database.yaml (データベース用ボリューム)
+           :linenos:
 
-        # pv-database.yaml
-        apiVersion: v1
-        kind: PersistentVolume
-        metadata:
-          name: pv-database
-        spec:
-          capacity:
-            storage: 20Gi
-          accessModes:
-            - ReadWriteOnce
-          persistentVolumeReclaimPolicy: Retain
-          hostPath:
-            path: /var/data/exastro-suite/exastro-platform/database
-            type: DirectoryOrCreate
+        .. literalinclude:: literal_includes/pv-ita-common.yaml
+           :caption: pv-ita-common.yaml (ファイル用ボリューム)
+           :linenos:
 
-      .. code-block:: diff
-        :caption: pv-ita-common.yaml (ファイル用ボリューム)
-        :linenos:
+        .. literalinclude:: literal_includes/pv-mongo.yaml
+           :caption: pv-mongo.yaml (OASE用ボリューム) ※OASEを利用しない場合設定不要
+           :linenos:
 
-        # pv-ita-common.yaml
-        apiVersion: v1
-        kind: PersistentVolume
-        metadata:
-          name: pv-ita-common
-        spec:
-          capacity:
-            storage: 10Gi
-          accessModes:
-            - ReadWriteMany
-          persistentVolumeReclaimPolicy: Retain
-          hostPath:
-            path: /var/data/exastro-suite/exastro-it-automation/ita-common
-            type: DirectoryOrCreate
+        .. literalinclude:: literal_includes/pv-gitlab.yaml
+           :caption: pv-gitlab.yaml (GitLab用ボリューム) ※外部GitLabを利用する場合設定不要
+           :linenos:
+
+        | ※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります
+
+        .. code-block:: diff
+           :caption: exastro.yaml
+
+             pfAuditLogDefinition:
+               name: pf-auditlog
+               persistence:
+           -      enabled: false
+           +      enabled: true
+                 reinstall: false
+                 accessMode: ReadWriteMany
+                 size: 10Gi
+                 volumeType: hostPath # e.g.) hostPath or AKS
+                 storageClass: "-" # e.g.) azurefile or - (None)
+
+        .. literalinclude:: literal_includes/pv-pf-auditlog.yaml
+           :caption: pv-pf-auditlog (監査ログファイル用ボリューム)
+           :linenos:
 
 .. _インストール-1:
 
@@ -1332,6 +623,15 @@ Exastro システム管理者の作成
     # pv-ita-common.yaml
     kubectl apply -f pv-ita-common.yaml
 
+    # pv-mongo.yaml ※OASEを利用しない場合設定不要
+    kubectl apply -f pv-mongo.yaml
+
+    # pv-gitlab.yaml ※外部GitLabを利用する場合設定不要
+    kubectl apply -f pv-gitlab.yaml
+
+    # pv-pf-auditlog.yaml ※監査ログを永続ボリュームに出力しない場合は設定不要
+    kubectl apply -f pv-pf-auditlog.yaml
+
 .. code-block:: bash
 
     # 確認
@@ -1340,13 +640,17 @@ Exastro システム管理者の作成
 .. code-block:: bash
 
     NAME            CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+    pv-auditlog     10Gi       RWX            Retain           Available                                   26s
     pv-database     20Gi       RWO            Retain           Available                                   19s
+    pv-gitlab       20Gi       RWX            Retain           Available                                   5s
     pv-ita-common   10Gi       RWX            Retain           Available                                   9s
+    pv-mongo        20Gi       RWO            Retain           Available                                   5s
+
 
 インストール
 ------------
 
-| Helm バージョンとアプリケーションのバージョンについては下記を確認してください。
+| Helm バージョンとアプリケーションのバージョンについては `exastro-helmのサイト <https://github.com/exastro-suite/exastro-helm>`_ をご確認ください。
 
 .. include:: ../include/helm_versions.rst
 
@@ -1356,6 +660,8 @@ Exastro システム管理者の作成
 .. tabs::
 
    .. group-tab:: Ingress
+
+      | 以下の手順でインストールを行います。
 
       1. Helm コマンドを使い Kubernetes 環境にインストールを行います。
       
@@ -1412,7 +718,7 @@ Exastro システム管理者の作成
 
       2. | インストール状況確認
    
-      .. include:: ../include/check_installation_status.rst
+         .. include:: ../include/check_installation_status.rst
      
       3. 暗号化キーのバックアップ
 
@@ -1421,7 +727,7 @@ Exastro システム管理者の作成
       4. 接続確認
 
          | 出力結果に従って、:menuselection:`Administrator Console` の URL にアクセスします。
-         | 下記は、実行例のため :ref:`service_setting_v2.1` で設定したホスト名に読み替えてください。
+         | 下記は、実行例のため :ref:`service_setting` で設定したホスト名に読み替えてください。
 
          .. code-block:: bash
             :caption: 出力結果(例)
@@ -1445,6 +751,8 @@ Exastro システム管理者の作成
               - http://exastro-suite-mng.example.local/auth/
 
    .. group-tab:: LoadBalancer
+
+      | 以下の手順でインストールを行います。
 
       1. Helm コマンドを使い Kubernetes 環境にインストールを行います。
       
@@ -1506,7 +814,7 @@ Exastro システム管理者の作成
 
       2. | インストール状況確認
    
-      .. include:: ../include/check_installation_status.rst
+         .. include:: ../include/check_installation_status.rst
 
       3. 暗号化キーのバックアップ
 
@@ -1558,6 +866,8 @@ Exastro システム管理者の作成
               - http://172.16.20.xxx:32031/auth/
 
    .. group-tab:: NodePort
+
+      | 以下の手順でインストールを行います。
 
       1. Helm コマンドを使い Kubernetes 環境にインストールを行います。
       
@@ -1618,7 +928,7 @@ Exastro システム管理者の作成
 
       2. | インストール状況確認
    
-      .. include:: ../include/check_installation_status.rst
+         .. include:: ../include/check_installation_status.rst
 
       3. 暗号化キーのバックアップ
 
@@ -1907,33 +1217,38 @@ Helm リポジトリの更新
 .. code-block:: bash
    :caption: 出力結果
 
-    NAME                                                      READY   STATUS      RESTARTS   AGE
-    ita-api-admin-64657656c6-r4s2l                            1/1     Running     0          30m
-    ita-api-organization-75ff9d599c-gthvl                     1/1     Running     0          30m
-    ita-by-ansible-execute-fdd8dfc57-7676h                    1/1     Running     0          30m
-    ita-by-ansible-legacy-role-vars-listup-6cd558d78b-xxl6x   1/1     Running     0          30m
-    ita-by-ansible-legacy-vars-listup-5db44d54d8-zxqj7        1/1     Running     0          30m
-    ita-by-ansible-pioneer-vars-listup-6bf744f5b6-k8ctx       1/1     Running     0          30m
-    ita-by-ansible-towermaster-sync-59594b5d84-phbg7          1/1     Running     0          30m
-    ita-by-cicd-for-iac-f6855c588-r6w4k                       1/1     Running     0          30m
-    ita-by-collector-6fc8c7b4d4-hjwck                         1/1     Running     0          30m
-    ita-by-conductor-regularly-5897dcb9f6-4npz7               1/1     Running     0          30m
-    ita-by-conductor-synchronize-6fd6dcd5f4-qgdhx             1/1     Running     0          30m
-    ita-by-excel-export-import-df76d77c4-ms4j2                1/1     Running     0          30m
-    ita-by-hostgroup-split-86746f758-b796k                    1/1     Running     0          30m
-    ita-by-menu-create-8588c9747d-66xwn                       1/1     Running     0          30m
-    ita-by-menu-export-import-6b8498f476-zwml7                1/1     Running     0          30m
-    ita-by-terraform-cli-execute-8478554d8d-qztbv             1/1     Running     0          30m
-    ita-by-terraform-cli-vars-listup-bf688659d-zgh8d          1/1     Running     0          30m
-    ita-by-terraform-cloud-ep-execute-5dbbb599b-qh8rc         1/1     Running     0          30m
-    ita-by-terraform-cloud-ep-vars-listup-5564fcb5b-nphm7     1/1     Running     0          30m
-    ita-migration-1.0.4-0wdt                                  0/1     Completed   0          30m
-    ita-web-server-854bcdbbf4-s7fdb                           1/1     Running     0          30m
-    keycloak-56d8b4556c-tndnv                                 1/1     Running     0          30m
-    platform-api-bddb446db-s9zjh                              1/1     Running     0          30m
-    platform-auth-799f57fb6c-wlbtf                            1/1     Running     0          30m
-    platform-migration-1.4.2-6sks                             0/1     Completed   0          30m
-    platform-web-88db7c489-wkmn9                              1/1     Running     0          30m
+   NAME                                                      READY   STATUS      RESTARTS   AGE
+   ita-api-admin-6b8567596d-rgjms                            1/1     Running     0          7h40m
+   ita-api-oase-receiver-6b74bdff6-zmcrw                     1/1     Running     0          7h40m
+   ita-api-organization-559d7d8f89-ptphh                     1/1     Running     0          7h40m
+   ita-by-ansible-execute-5dc444c999-w6gmr                   1/1     Running     0          7h40m
+   ita-by-ansible-legacy-role-vars-listup-6d8f98895f-bvjgn   1/1     Running     0          7h40m
+   ita-by-ansible-legacy-vars-listup-6ccd997cf-hvkzq         1/1     Running     0          7h40m
+   ita-by-ansible-pioneer-vars-listup-6cfcfd4479-8bqst       1/1     Running     0          7h40m
+   ita-by-ansible-towermaster-sync-6759486f8f-wrbbp          1/1     Running     0          7h40m
+   ita-by-cicd-for-iac-7b75cc56f5-rrrvg                      1/1     Running     0          7h40m
+   ita-by-collector-7748d54f59-8j5r2                         1/1     Running     0          7h40m
+   ita-by-conductor-regularly-779ff79775-xnt29               1/1     Running     0          7h40m
+   ita-by-conductor-synchronize-5d5485479-5df54              1/1     Running     0          7h40m
+   ita-by-excel-export-import-6f84f97dcf-hlm4h               1/1     Running     0          7h40m
+   ita-by-hostgroup-split-59b698f479-cxggd                   1/1     Running     0          7h40m
+   ita-by-menu-create-796bdc9c75-l79zq                       1/1     Running     0          7h40m
+   ita-by-menu-export-import-849d796bb5-5mpw2                1/1     Running     0          7h40m
+   ita-by-oase-conclusion-b484595d7-kssv4                    1/1     Running     0          7h40m
+   ita-by-terraform-cli-execute-769d874d7-sknn6              1/1     Running     0          7h40m
+   ita-by-terraform-cli-vars-listup-7f589cdddc-g5xz6         1/1     Running     0          7h40m
+   ita-by-terraform-cloud-ep-execute-7f8b6d87cc-kfmfv        1/1     Running     0          7h40m
+   ita-by-terraform-cloud-ep-vars-listup-6cccbd4899-6frcn    1/1     Running     0          7h40m
+   ita-migration-1-3-6-lydz                                  0/1     Completed   0          7h40m
+   ita-web-server-b4cd4cdf8-wkx78                            1/1     Running     0          7h40m
+   keycloak-0                                                1/1     Running     0          7h40m
+   mariadb-778786f7d-ss4cq                                   1/1     Running     0          7h40m
+   mongo-0                                                   1/1     Running     0          7h40m
+   platform-api-ffb78f578-svd5t                              1/1     Running     0          7h40m
+   platform-auth-75895d784-9hhxw                             1/1     Running     0          7h40m
+   platform-job-864c47d4f-8vvvq                              1/1     Running     0          7h40m
+   platform-migration-1-8-0-rjwr                             0/1     Completed   0          7h40m
+   platform-web-6644884657-dmwp6                             1/1     Running     0          7h40m
 
 アンインストール
 ================
@@ -2021,3 +1336,32 @@ Helm リポジトリの更新
 
    # 永続データの削除
    sudo rm -rf /var/data/exastro-suite/exastro-it-automation/ita-common
+
+
+監査ログファイルデータの削除
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。
+| マネージドストレージを含む外部ストレージを利用している場合は、環境にあったデータ削除方法を実施してください。
+
+.. code-block:: bash
+  :caption: コマンド
+
+  kubectl delete pv pv-auditlog
+
+.. code-block:: bash
+  :caption: 実行結果
+
+  persistentvolume "pv-auditlog" deleted
+
+| Kubernetes のコントロールノードにログインし、データを削除します。
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/log/exastro` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/log/exastro

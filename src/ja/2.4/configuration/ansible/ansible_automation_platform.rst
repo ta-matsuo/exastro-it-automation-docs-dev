@@ -479,7 +479,7 @@ Organization 追加時の作業
 ワークスペース追加時の作業
 ==========================
 
-.. _platform_ansible_execution_environment_v2.1:
+.. _platform_ansible_execution_environment:
 
 インスタンスを組み込む
 ----------------------
@@ -490,12 +490,12 @@ Organization 追加時の作業
 インスタンスグループ作成
 ------------------------
 
-| ※ 組み込んだ インスタンス (Ansible ee) を追加するインスタンスグループが既にある場合、次の 「 :ref:`platform_add_insetance_v2.1` 」の手順に進んでください。
+| ※ 組み込んだ インスタンス (Ansible ee) を追加するインスタンスグループが既にある場合、次の 「 :ref:`platform_add_insetance` 」の手順に進んでください。
 
 | Ansible Automation Platform は admin(管理ユーザー)でログインしてください。
 |
 
-#. | :menuselection:`管理 --> インスタンスグループ` の :ref:`platform_ansible_execution_environment_v2.1` で組み込んだインスタンス( Ansible ee )を追加するインスタンスグループを選択してください。
+#. | :menuselection:`管理 --> インスタンスグループ` の :ref:`platform_ansible_execution_environment` で組み込んだインスタンス( Ansible ee )を追加するインスタンスグループを選択してください。
 #. | 該当項目を入力し、 :guilabel:`保存` ボタンを押下する。
    |
    | 必須項目及び設定値については下記の表を参照してください。
@@ -513,16 +513,16 @@ Organization 追加時の作業
      - 命名規則については下記をご参照ください
 
 
-.. _platform_add_insetance_v2.1:
+.. _platform_add_insetance:
 
 インスタンスグループにインスタンスを追加
 ----------------------------------------
 
-| インスタンスグループに「 :ref:`platform_ansible_execution_environment_v2.1` 」で組み込んだインスタンス( Ansible ee )を追加します。
+| インスタンスグループに「 :ref:`platform_ansible_execution_environment` 」で組み込んだインスタンス( Ansible ee )を追加します。
 | Ansible Automation Platform は admin(管理ユーザー)でログインしてください。
 |
 
-#. | :menuselection:`管理 --> インスタンスグループ` より、「 :ref:`platform_ansible_execution_environment_v2.1` 」で組み込んだインスタンス( Ansible ee )を追加するインスタンスグループ名をクリックしてください。
+#. | :menuselection:`管理 --> インスタンスグループ` より、「 :ref:`platform_ansible_execution_environment` 」で組み込んだインスタンス( Ansible ee )を追加するインスタンスグループ名をクリックしてください。
 #. | インスタンスグループの詳細画面に遷移されるため、:menuselection:`インスタンス` タブを選択し、:guilabel:`関連付け` ボタンをクリックしてください。
 #. | インスタンスの選択の画面に遷移され、組み込んだインスタンス( Ansible ee )が表示されるので選択し、:guilabel:`保存` ボタンをクリックしてください。
 

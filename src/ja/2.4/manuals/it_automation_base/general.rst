@@ -36,7 +36,7 @@
           | e.g. password ※
           
    .. tip::
-      |  ※初回ログイン時は、:ref:`organization_creation_v2.1` で指定した管理者のログインID(ユーザー名、E-mailアドレス)、初期パスワードを使用してください。
+      |  ※初回ログイン時は、:ref:`organization_creation` で指定した管理者のログインID(ユーザー名、E-mailアドレス)、初期パスワードを使用してください。
 
 #. | パスワードの更新を行い、:guilabel:`送信` ボタンを押下します。
 

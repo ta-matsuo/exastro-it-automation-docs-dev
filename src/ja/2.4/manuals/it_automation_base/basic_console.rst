@@ -49,7 +49,7 @@ ITA基本コンソールメニュー 一覧
 ITA基本コンソール
 -----------------
 
-.. _basic_console_operation_v2.1:
+.. _basic_console_operation:
 
 オペレーション一覧
 ~~~~~~~~~~~~~~~~~~
