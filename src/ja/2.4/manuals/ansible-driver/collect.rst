@@ -1094,14 +1094,14 @@ BackYardコンテンツ
    * - 8
      - VAR_true: true
      - パラメータ/VAR_true
-     - "true"
-     - string
+     - true
+     - boolean
      - true
    * - 9
      - VAR_false: false
      - パラメータ/VAR_false
-     - "false"
-     - string
+     - false
+     - boolean
      - false
    * - 10
      - VAR_STR_true: "true"
@@ -1118,14 +1118,14 @@ BackYardコンテンツ
    * - 12
      - VAR_YES: YES
      - パラメータ/VAR_YES
-     - "true"
-     - string
+     - true
+     - boolean
      - true
    * - 13
      - VAR_NO: NO
      - パラメータ/VAR_NO
-     - "false"
-     - string
+     - false
+     - boolean
      - false
    * - 14
      - VAR_STR_YES: "YES"

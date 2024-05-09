@@ -4,7 +4,7 @@
     :caption: コマンド
     
     # Pod の一覧を取得
-    kubectl get po -n exastro
+    kubectl get po --namespace exastro
     
     | 正常に起動している場合は、ita-migration-xxxとplatform-migration-xxxが “Completed” 、その他すべてが “Running” となります。
     | ※正常に起動するまで数分かかる場合があります。

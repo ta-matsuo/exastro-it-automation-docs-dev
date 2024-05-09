@@ -189,6 +189,10 @@
 
    プリントタブ
 
+.. note::
+   | パラメータ表示実行結果によっては横幅が見切れる場合があります。
+   | 対処法については :ref:`parameter_collection_print` を参照してください。
+
 パラメータ表示実行結果をEXCEL出力
 ---------------------------------
 | (1) パラメータ表示実行結果をEXCEL出力できます。
@@ -202,3 +206,78 @@
    :align: center
 
    EXCELダウンロードタブ
+
+
+付録
+====
+
+.. _parameter_collection_print:
+
+パラメータ表示実行結果の横幅が見切れる場合
+-------------------------------------------
+
+| 4種類の対処法があり、下記の通りです。
+
+1. レイアウトの向きを変更する
+2. 用紙サイズを変更する
+3. 余白を変更する
+4. 倍率をカスタムにし、数値を変更する
+
+.. figure:: /images/ja/parameter_collection/parameter_collection_print.png
+   :width: 400px
+   :alt: パラメータ表示実行結果の横幅が見切れる
+   :align: center
+
+   パラメータ表示実行結果の横幅が見切れる
+
+1. レイアウトの向きを変更する
+
+   1.	レイアウトの :guilabel:`縦` を押下し、横を選択します。
+
+.. figure:: /images/ja/parameter_collection/parameter_collection_print_beside.png
+   :width: 600px
+   :alt: レイアウトの向きを横にする
+   :align: center
+
+   レイアウトの向きを横にする
+
+2. 用紙サイズを変更する
+
+   1.  :guilabel:`詳細設定` を押下します。
+
+   2. 用紙サイズの :guilabel:`A4` を押下し、A3等のA4よりも大きい用紙サイズを選択します。
+
+.. figure:: /images/ja/parameter_collection/parameter_collection_print_size.png
+   :width: 400px
+   :alt: 用紙サイズをA3に変更する
+   :align: center
+
+   用紙サイズをA3に変更する
+
+3. 余白を変更する
+
+   1.  :guilabel:`詳細設定` を押下します。
+
+   2. 余白の :guilabel:`デフォルト` を押下し、なし等の余白が小さくなるものを選択します。
+
+.. figure:: /images/ja/parameter_collection/parameter_collection_print_margin.png
+   :width: 400px
+   :alt: 余白をなしに変更する
+   :align: center
+
+   余白をなしに変更する
+
+4. 倍率をカスタムにし、数値を変更する
+
+   1.  :guilabel:`詳細設定` を押下します。
+
+   2. 倍率の :guilabel:`規定` を押下し、カスタムを選択します。
+
+   3. そして、数値を90等の100より小さい数値に変更します。
+
+.. figure:: /images/ja/parameter_collection/parameter_collection_print_magnification.png
+   :width: 400px
+   :alt: 倍率をカスタムにし、数値を90に変更する
+   :align: center
+
+   倍率をカスタムにし、数値を90に変更する

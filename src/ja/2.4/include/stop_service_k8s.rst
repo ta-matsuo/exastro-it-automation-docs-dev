@@ -6,30 +6,35 @@
    .. code-block:: bash
      :caption: コマンド
 
-     RS_AE=`kubectl get deploy ita-by-ansible-execute -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_ALRV=`kubectl get deploy ita-by-ansible-legacy-role-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_ATS=`kubectl get deploy ita-by-ansible-towermaster-sync -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_CS=`kubectl get deploy ita-by-conductor-synchronize -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_MC=`kubectl get deploy ita-by-menu-create -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_PA=`kubectl get deploy platform-auth -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_AE=`kubectl get deploy ita-by-ansible-execute -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_ALRV=`kubectl get deploy ita-by-ansible-legacy-role-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_ATS=`kubectl get deploy ita-by-ansible-towermaster-sync -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_CS=`kubectl get deploy ita-by-conductor-synchronize -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_MC=`kubectl get deploy ita-by-menu-create -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_PA=`kubectl get deploy platform-auth -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
 
    | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。
 
    .. code-block:: bash
 
-     RS_ALV=`kubectl get deploy ita-by-ansible-legacy-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_APV=`kubectl get deploy ita-by-ansible-pioneer-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_CFI=`kubectl get deploy ita-by-cicd-for-iac -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_CR=`kubectl get deploy ita-by-conductor-regularly -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_COL=`kubectl get deploy ita-by-collector -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_EEI=`kubectl get deploy ita-by-excel-export-import -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_HS=`kubectl get deploy ita-by-hostgroup-split -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_MEI=`kubectl get deploy ita-by-menu-export-import -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_TCE=`kubectl get deploy ita-by-terraform-cli-execute -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_TCV=`kubectl get deploy ita-by-terraform-cli-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_TCEE=`kubectl get deploy ita-by-terraform-cloud-ep-execute -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
-     RS_TCEV=`kubectl get deploy ita-by-terraform-cloud-ep-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' -n exastro`
+     RS_ALV=`kubectl get deploy ita-by-ansible-legacy-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_APV=`kubectl get deploy ita-by-ansible-pioneer-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_CFI=`kubectl get deploy ita-by-cicd-for-iac -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_CR=`kubectl get deploy ita-by-conductor-regularly -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_COL=`kubectl get deploy ita-by-collector -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_EEI=`kubectl get deploy ita-by-excel-export-import -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_HS=`kubectl get deploy ita-by-hostgroup-split -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_MEI=`kubectl get deploy ita-by-menu-export-import -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_TCE=`kubectl get deploy ita-by-terraform-cli-execute -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_TCV=`kubectl get deploy ita-by-terraform-cli-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_TCEE=`kubectl get deploy ita-by-terraform-cloud-ep-execute -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
+     RS_TCEV=`kubectl get deploy ita-by-terraform-cloud-ep-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
  
+   | 以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。
+
+   .. code-block:: bash 
+
+     RS_OC=`kubectl get deploy ita-by-oase-conclusion -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
 
 2. リバースプロキシの停止
 
@@ -38,7 +43,7 @@
    .. code-block:: bash
      :caption: コマンド
 
-     kubectl scale deployment platform-auth -n exastro --replicas=0
+     kubectl scale deployment platform-auth --namespace exastro --replicas=0
 
 3. バックヤード処理の停止
 
@@ -47,28 +52,34 @@
    .. code-block:: bash
      :caption: コマンド
 
-     kubectl scale deployment ita-by-ansible-execute -n exastro --replicas=0
-     kubectl scale deployment ita-by-ansible-legacy-role-vars-listup -n exastro --replicas=0
-     kubectl scale deployment ita-by-ansible-towermaster-sync -n exastro --replicas=0
-     kubectl scale deployment ita-by-conductor-synchronize -n exastro --replicas=0
-     kubectl scale deployment ita-by-menu-create -n exastro --replicas=0
+     kubectl scale deployment ita-by-ansible-execute --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-ansible-legacy-role-vars-listup --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-ansible-towermaster-sync --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-conductor-synchronize --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-menu-create --namespace exastro --replicas=0
 
    | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。
 
    .. code-block:: bash
 
-     kubectl scale deployment ita-by-ansible-legacy-vars-listup -n exastro --replicas=0
-     kubectl scale deployment ita-by-ansible-pioneer-vars-listup -n exastro --replicas=0
-     kubectl scale deployment ita-by-cicd-for-iac -n exastro --replicas=0
-     kubectl scale deployment ita-by-collector -n exastro --replicas=0
-     kubectl scale deployment ita-by-conductor-regularly -n exastro --replicas=0
-     kubectl scale deployment ita-by-excel-export-import -n exastro --replicas=0
-     kubectl scale deployment ita-by-hostgroup-split -n exastro --replicas=0
-     kubectl scale deployment ita-by-menu-export-import -n exastro --replicas=0
-     kubectl scale deployment ita-by-terraform-cli-execute -n exastro --replicas=0
-     kubectl scale deployment ita-by-terraform-cli-vars-listup -n exastro --replicas=0
-     kubectl scale deployment ita-by-terraform-cloud-ep-execute -n exastro --replicas=0
-     kubectl scale deployment ita-by-terraform-cloud-ep-vars-listup -n exastro --replicas=0
+     kubectl scale deployment ita-by-ansible-legacy-vars-listup --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-ansible-pioneer-vars-listup --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-cicd-for-iac --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-collector --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-conductor-regularly --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-excel-export-import --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-hostgroup-split --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-menu-export-import --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-terraform-cli-execute --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-terraform-cli-vars-listup --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-terraform-cloud-ep-execute --namespace exastro --replicas=0
+     kubectl scale deployment ita-by-terraform-cloud-ep-vars-listup --namespace exastro --replicas=0
+
+   | 以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。
+
+   .. code-block:: bash 
+
+     kubectl scale deployment ita-by-oase-conclusion --namespace exastro --replicas=0
 
 4. Pod 起動数の確認
 
@@ -77,7 +88,7 @@
    .. code-block:: bash
      :caption: コマンド
 
-     kubectl get deployment -n exastro
+     kubectl get deployment --namespace exastro
 
    .. code-block:: bash
      :caption: 実行結果
@@ -114,3 +125,11 @@
      ita-by-terraform-cli-vars-listup         0/0     0            0           3h41m
      ita-by-terraform-cloud-ep-execute        0/0     0            0           3h41m
      ita-by-terraform-cloud-ep-vars-listup    0/0     0            0           3h41m
+
+   | 以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。
+
+   .. code-block:: bash
+
+     NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
+     ita-api-oase-receiver                    1/1     1            1           3h41m
+     ita-by-oase-conclusion                   0/0     0            0           3h41m
