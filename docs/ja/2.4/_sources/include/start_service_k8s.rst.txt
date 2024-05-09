@@ -3,32 +3,38 @@
 
    | サービス停止時に取得した各 Deployment の Pod 起動数を元に戻します。
 
-   .. code-block::
+   .. code-block:: bash
      :caption: コマンド
 
-     kubectl scale deployment ita-by-ansible-execute -n exastro --replicas=${RS_AE}
-     kubectl scale deployment ita-by-ansible-legacy-role-vars-listup -n exastro --replicas=${RS_ALRV}
-     kubectl scale deployment ita-by-ansible-towermaster-sync -n exastro --replicas=${RS_ATS}
-     kubectl scale deployment ita-by-conductor-synchronize -n exastro --replicas=${RS_CS}
-     kubectl scale deployment ita-by-menu-create -n exastro --replicas=${RS_MC}
-     kubectl scale deployment platform-auth -n exastro --replicas=${RS_PA}
+     kubectl scale deployment ita-by-ansible-execute --namespace exastro --replicas=${RS_AE}
+     kubectl scale deployment ita-by-ansible-legacy-role-vars-listup --namespace exastro --replicas=${RS_ALRV}
+     kubectl scale deployment ita-by-ansible-towermaster-sync --namespace exastro --replicas=${RS_ATS}
+     kubectl scale deployment ita-by-conductor-synchronize --namespace exastro --replicas=${RS_CS}
+     kubectl scale deployment ita-by-menu-create --namespace exastro --replicas=${RS_MC}
+     kubectl scale deployment platform-auth --namespace exastro --replicas=${RS_PA}
 
    | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。
 
-   .. code-block::
+   .. code-block:: bash
 
-     kubectl scale deployment ita-by-ansible-legacy-vars-listup -n exastro --replicas=${RS_ALV}
-     kubectl scale deployment ita-by-ansible-pioneer-vars-listup -n exastro --replicas=${RS_APV}
-     kubectl scale deployment ita-by-cicd-for-iac -n exastro --replicas=${RS_CFI}
-     kubectl scale deployment ita-by-conductor-regularly -n exastro --replicas=${RS_CR}
-     kubectl scale deployment ita-by-collector -n exastro --replicas=${RS_COL}
-     kubectl scale deployment ita-by-excel-export-import -n exastro --replicas=${RS_EEI}
-     kubectl scale deployment ita-by-hostgroup-split -n exastro --replicas=${RS_HS}
-     kubectl scale deployment ita-by-menu-export-import -n exastro --replicas=${RS_MEI}
-     kubectl scale deployment ita-by-terraform-cli-execute -n exastro --replicas=${RS_TCE}
-     kubectl scale deployment ita-by-terraform-cli-vars-listup -n exastro --replicas=${RS_TCV}
-     kubectl scale deployment ita-by-terraform-cloud-ep-execute -n exastro --replicas=${RS_TCEE}
-     kubectl scale deployment ita-by-terraform-cloud-ep-vars-listup -n exastro --replicas=${RS_TCEV}
+     kubectl scale deployment ita-by-ansible-legacy-vars-listup --namespace exastro --replicas=${RS_ALV}
+     kubectl scale deployment ita-by-ansible-pioneer-vars-listup --namespace exastro --replicas=${RS_APV}
+     kubectl scale deployment ita-by-cicd-for-iac --namespace exastro --replicas=${RS_CFI}
+     kubectl scale deployment ita-by-conductor-regularly --namespace exastro --replicas=${RS_CR}
+     kubectl scale deployment ita-by-collector --namespace exastro --replicas=${RS_COL}
+     kubectl scale deployment ita-by-excel-export-import --namespace exastro --replicas=${RS_EEI}
+     kubectl scale deployment ita-by-hostgroup-split --namespace exastro --replicas=${RS_HS}
+     kubectl scale deployment ita-by-menu-export-import --namespace exastro --replicas=${RS_MEI}
+     kubectl scale deployment ita-by-terraform-cli-execute --namespace exastro --replicas=${RS_TCE}
+     kubectl scale deployment ita-by-terraform-cli-vars-listup --namespace exastro --replicas=${RS_TCV}
+     kubectl scale deployment ita-by-terraform-cloud-ep-execute --namespace exastro --replicas=${RS_TCEE}
+     kubectl scale deployment ita-by-terraform-cloud-ep-vars-listup --namespace exastro --replicas=${RS_TCEV}
+
+   | 以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。
+
+   .. code-block:: bash
+
+     kubectl scale deployment ita-by-oase-conclusion --namespace exastro --replicas=${RS_OC}
 
 2. Pod 起動数の確認
 
@@ -37,7 +43,7 @@
    .. code-block:: bash
      :caption: コマンド
 
-     kubectl get deployment -n exastro
+     kubectl get deployment --namespace exastro
 
    .. code-block:: bash
      :caption: 実行結果

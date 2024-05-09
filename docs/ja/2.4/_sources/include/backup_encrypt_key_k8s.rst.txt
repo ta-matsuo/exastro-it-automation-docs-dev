@@ -9,7 +9,7 @@
    :caption: コマンド
 
    # Exastro IT Automation ENCRYPT_KEY
-   kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+   kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
 .. code-block:: bash
    :caption: 出力結果
@@ -20,7 +20,7 @@
    :caption: コマンド
 
    # Exastro Platform ENCRYPT_KEY
-   kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+   kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
 .. code-block:: bash
    :caption: 出力結果

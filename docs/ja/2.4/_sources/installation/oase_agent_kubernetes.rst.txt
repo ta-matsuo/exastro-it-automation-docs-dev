@@ -104,7 +104,7 @@ Helm リポジトリの登録
    :caption: コマンド
 
    # Exastro システムの Helm リポジトリを登録
-   helm repo add exastro https://exastro-suite.github.io/exastro-helm/ -n exastro
+   helm repo add exastro https://exastro-suite.github.io/exastro-helm/ --namespace exastro
    # リポジトリ情報の更新
    helm repo update
 
@@ -688,7 +688,7 @@ OASE Agentのパラメータ設定例
 インストール
 ------------
 
-| Helm バージョンとアプリケーションのバージョンについては下記を確認してください。
+| Helm バージョンとアプリケーションのバージョンについては `exastro-helmのサイト <https://github.com/exastro-suite/exastro-helm>`_ をご確認ください。
 
 .. tabs::
 
@@ -719,7 +719,7 @@ OASE Agentのパラメータ設定例
              :caption: コマンド
              
              # Pod の一覧を取得
-             kubectl get po -n exastro
+             kubectl get po --namespace exastro
              
              | 正常に起動している場合は、“Running” となります。
              | ※正常に起動するまで数分かかる場合があります。
@@ -774,7 +774,7 @@ OASE Agentのパラメータ設定例
              :caption: コマンド
              
              # Pod の一覧を取得
-             kubectl get po -n exastro
+             kubectl get po --namespace exastro
              
              | 正常に起動している場合は、“Running” となります。
              | ※正常に起動するまで数分かかる場合があります。
@@ -785,3 +785,194 @@ OASE Agentのパラメータ設定例
               NAME                             READY   STATUS    RESTARTS   AGE
               ita-ag-oase-1-66cb7669c6-m2q8c   1/1     Running   0          16m
               ita-ag-oase-2-787fb97f75-9s7xj   1/1     Running   0          13m
+
+
+アップグレード
+==============
+
+| OASE Agentのアップグレード方法について紹介します。
+
+アップグレードの準備
+--------------------
+
+.. warning:: 
+  | アップグレード実施前に :doc:`../manuals/maintenance/backup_and_restore` の手順に従い、バックアップを取得しておくことを推奨します。
+
+| 更新前のバージョンを確認します。
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド
+
+   # リポジトリ情報の確認
+   helm search repo exastro
+
+.. code-block:: shell
+   :linenos:
+   :caption: 実行結果
+   :emphasize-lines: 4
+
+   helm search repo exastro
+   NAME                            CHART VERSION   APP VERSION     DESCRIPTION                                       
+   exastro/exastro                         1.3.24          2.3.0           A Helm chart for Exastro. Exastro is an Open So...
+   exastro/exastro-agent                   1.0.3           2.3.0           A Helm chart for Exastro IT Automation. Exastro...
+   exastro/exastro-it-automation           1.4.22          2.3.0           A Helm chart for Exastro IT Automation. Exastro...
+   exastro/exastro-platform                1.7.14          1.7.0           A Helm chart for Exastro Platform. Exastro Plat...
+
+| Helm リポジトリを更新します。
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド
+
+   # リポジトリ情報の更新
+   helm repo update
+
+| 更新後のバージョンを確認します。
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド
+
+   # リポジトリ情報の確認
+   helm search repo exastro
+
+.. code-block:: shell
+   :linenos:
+   :caption: 実行結果
+   :emphasize-lines: 4
+
+   helm search repo exastro
+   NAME                            CHART VERSION   APP VERSION     DESCRIPTION                                       
+   exastro/exastro                    1.4.3           2.4.0           A Helm chart for Exastro. Exastro is an Open So...
+   exastro/exastro-agent              2.4.0           2.4.0           A Helm chart for Exastro IT Automation. Exastro...
+   exastro/exastro-it-automation      2.4.1           2.4.0           A Helm chart for Exastro IT Automation. Exastro...
+   exastro/exastro-platform           1.8.1           1.8.0           A Helm chart for Exastro Platform. Exastro Plat...
+
+アップグレード
+--------------
+
+サービス停止
+^^^^^^^^^^^^
+
+.. include:: ../include/stop_service_k8s_agent.rst
+
+アップグレード実施
+^^^^^^^^^^^^^^^^^^
+
+| アップグレードを実施します。
+
+.. code-block:: bash
+  :caption: コマンド
+
+  helm upgrade exastro-agent exastro/exastro-agent \
+    --namespace exastro \
+    --values exastro-agent.yaml
+
+.. code-block:: bash
+  :caption: 出力結果
+
+  Release "exastro-agent" has been upgraded. Happy Helming!
+  NAME: exastro-agent
+  LAST DEPLOYED: Mon Apr 22 14:42:59 2024
+  NAMESPACE: exastro
+  STATUS: deployed
+  REVISION: 2
+  TEST SUITE: None
+
+サービス再開
+^^^^^^^^^^^^
+
+.. include:: ../include/start_service_k8s_agent.rst
+
+
+アップグレード状況確認
+^^^^^^^^^^^^^^^^^^^^^^
+
+| コマンドラインから以下のコマンドを入力して、アップグレードが完了していることを確認します。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # Pod の一覧を取得
+   kubectl get po --namespace exastro
+
+| 正常に起動している場合は、Running” となります。
+| ※正常に起動するまで数分かかる場合があります。
+
+.. code-block:: bash
+   :caption: 出力結果
+
+   NAME                                                      READY   STATUS      RESTARTS   AGE
+   ita-ag-oase-7ff9488b55-rrn58                              1/1     Running     0             81s
+
+アンインストール
+================
+
+| OASE Agentのアンインストール方法について紹介します。
+
+アンインストールの準備
+----------------------
+
+.. warning:: 
+  | アンインストール実施前に :doc:`../manuals/maintenance/backup_and_restore` の手順に従い、バックアップを取得しておくことを推奨します。
+
+アンインストール
+----------------
+
+アンインストール実施
+^^^^^^^^^^^^^^^^^^^^
+
+| アンインストールを実施します。
+
+.. code-block:: bash
+  :caption: コマンド
+
+  helm uninstall exastro-agent --namespace exastro
+
+.. code-block:: bash
+  :caption: 出力結果
+
+  release "exastro-agent" uninstalled
+
+永続ボリュームを削除
+^^^^^^^^^^^^^^^^^^^^
+
+| Persitent Volume（PV） を Kubernetes 上に hostPath で作成した場合の方法を記載します。
+| マネージドデータベースを含む外部データベースを利用している場合は、環境にあったデータ削除方法を実施してください。
+
+エージェント用
+**************
+
+.. warning:: 
+  | エージェント用のPVが複数存在する場合はそれらすべての削除を実施してください。
+
+.. code-block:: bash
+  :caption: コマンド
+
+  kubectl delete pv pv-ita-ag-oase
+
+.. code-block:: bash
+  :caption: 実行結果
+
+  persistentvolume "pv-ita-ag-oase" deleted
+
+永続データを削除
+^^^^^^^^^^^^^^^^
+
+| Kubernetes のコントロールノードにログインし、データを削除します。
+
+エージェント用
+**************
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-agent/ita-ag-oase` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-agent/ita-ag-oase
+

@@ -113,7 +113,7 @@ OASE Agent (Docker Compose)
 
    git clone https://github.com/exastro-suite/exastro-docker-compose.git
 
-| 以降は、exastro-docker-compose/ita-ag-oaseディレクトリで作業をします。
+| 以降は、exastro-docker-compose/ita_ag_oaseディレクトリで作業をします。
 
 .. code-block:: shell
 
@@ -145,12 +145,12 @@ OASE Agent (Docker Compose)
 .. code-block:: shell
    :caption: docker コマンドを利用する場合(Docker環境)
 
-   docker compose up -d  --wait  
+   docker compose up -d --wait  
 
 .. code-block:: shell
    :caption: docker-compose コマンドを利用する場合(Podman環境)
 
-   docker-compose up -d  --wait  
+   docker-compose up -d --wait  
 
 パラメータ一覧
 ==============
@@ -247,3 +247,127 @@ OASE Agent (Docker Compose)
    - OASE エージェント のログレベル
    - 可
    - INFO
+
+
+アップグレード
+==============
+
+| Exastro OASE Agentのアップグレード方法について紹介します。
+
+
+アップグレードの準備
+--------------------
+
+.. warning:: 
+  | アップグレード実施前に、バックアップを取得しておくことを推奨します。
+  | バックアップ対象は :file:`~/exastro-docker-compose/ita_ag_oase/.volumes/` です。
+
+リポジトリの更新
+^^^^^^^^^^^^^^^^
+
+| exastro-docker-composeリポジトリを更新します。
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド
+
+   # exastro-docker-composeリポジトリの確認
+   cd ~/exastro-docker-compose/ita_ag_oase
+   git pull
+
+デフォルト設定値の更新の確認
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| デフォルト値の更新を確認します。
+| インストール時に作成した設定ファイル :file:`~/exastro-docker-compose/.env` とアップグレード後の設定ファイルを比較します。
+
+.. code-block:: shell
+   :caption: コマンド
+
+   cd ~/exastro-docker-compose/ita_ag_oase
+
+   # OSがAlmaLinuxまたはUbuntuの場合
+   diff .env .env.docker.sample
+   # OSがRed Hat Enterprise Linuxの場合
+   diff .env .env.podman.sample
+
+設定値の更新
+^^^^^^^^^^^^
+
+| デフォルト設定値の比較結果から、項目の追加などにより設定値の追加が必要な場合は更新をしてください。
+| 設定値の更新が不要であればこの手順はスキップしてください。
+
+アップグレード
+--------------
+
+アップグレード実施
+^^^^^^^^^^^^^^^^^^
+
+| アップグレードを実施します。
+
+.. code-block:: shell
+   :caption: コマンド
+
+   cd ~/exastro-docker-compose/ita_ag_oase
+
+.. code-block:: shell
+   :caption: docker コマンドを利用する場合(Docker環境)
+
+   docker compose up -d --wait  
+
+.. code-block:: shell
+   :caption: docker-compose コマンドを利用する場合(Podman環境)
+
+   docker-compose up -d --wait  
+
+
+アンインストール
+================
+
+| Exastro OASE Agentのアンインストール方法について紹介します。
+
+アンインストールの準備
+----------------------
+
+.. warning:: 
+  | アンインストール実施前に、バックアップを取得しておくことを推奨します。
+  | バックアップ対象は :file:`~/exastro-docker-compose/ita_ag_oase/.volumes/` です。
+
+アンインストール
+----------------
+
+アンインストール実施
+^^^^^^^^^^^^^^^^^^^^
+
+| アンインストールを実施します。
+
+
+.. code-block:: shell
+   :caption: コマンド
+
+   cd ~/exastro-docker-compose/ita_ag_oase
+
+.. code-block:: shell
+   :caption: docker コマンドを利用する場合(Docker環境)
+
+   # コンテナのみ削除する場合
+   docker compose down
+
+   # コンテナ＋コンテナイメージ＋ボリュームを削除する場合
+   docker compose down --rmi all --volumes
+
+.. code-block:: shell
+   :caption: docker-compose コマンドを利用する場合(Podman環境)
+
+   # コンテナのみ削除する場合
+   docker-compose down
+
+   # コンテナ＋コンテナイメージ＋ボリュームを削除する場合
+   docker-compose down --rmi all --volumes
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # データを削除する場合
+   rm -rf ~/exastro-docker-compose/ita_ag_oase/.volumes/storage/*
+

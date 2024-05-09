@@ -108,6 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../learn/index.html">Learn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manuals/index.html">マニュアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">テンプレート</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">リファレンス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">貢献</a></li>
 </ul>
@@ -156,7 +157,7 @@
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id1" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro IT Automation ENCRYPT_KEY</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>ita-secret-ita-global<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>ita-secret-ita-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </pre></div>
 </div>
 </div>
@@ -169,7 +170,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform ENCRYPT_KEY</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>platform-secret-pf-global<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>platform-secret-pf-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </pre></div>
 </div>
 </div>

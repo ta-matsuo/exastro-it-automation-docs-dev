@@ -136,6 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../maintenance/index.html">メンテナンス</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../templates/index.html">テンプレート</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">リファレンス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">貢献</a></li>
 </ul>
@@ -193,7 +194,7 @@
 <div class="line">OASEとは、外部から取得したイベント情報を分析し、そのイベントへの対処の自動化を支援する機能です。</div>
 </div>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../../_images/oase_overview_v2-3.png"><img alt="OASE機能概要" src="../../_images/oase_overview_v2-3.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oase_overview_v2-4.png"><img alt="OASE機能概要" src="../../_images/oase_overview_v2-4.png" style="width: 800px;" /></a>
 </figure>
 <div class="line-block">
 <div class="line">OASEの機能フローは以下の通りです。</div>
@@ -235,7 +236,7 @@
 <div class="line">本書では以下として記載します。</div>
 </div>
 <table class="docutils align-left" id="id4">
-<caption><span class="caption-number">表 1.106 </span><span class="caption-text">用語説明</span><a class="headerlink" href="#id4" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.157 </span><span class="caption-text">用語説明</span><a class="headerlink" href="#id4" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 16.7%" />
 <col style="width: 83.3%" />
@@ -257,7 +258,7 @@
 <div class="line">一方で、完全な条件が揃うまでOASEはイベントの発生を待ち、最終的な判断はイベントの発生日時からTTLで指定した期間を経過したタイミングまでに行われます。</div>
 <div class="line">▼古すぎるイベントによる意図しないアクション実行の防止</div>
 <div class="line">発生からTTLの2倍以上の期間が経過したイベントは、ユーザーが意図しないイベントである可能性があるため、即座に「時間切れ」ステータスになり、ルールの評価対象から除外します。</div>
-<div class="line">最小値は1（秒）、最大値は2137483647（秒）です。</div>
+<div class="line">最小値は10（秒）、最大値は2137483647（秒）、デフォルトの値は3600（秒）です。</div>
 </div>
 </td>
 </tr>
@@ -289,7 +290,7 @@
 <div class="line">※イベント種別については、以下の通りです。</div>
 </div>
 <table class="docutils align-left" id="id5">
-<caption><span class="caption-number">表 1.107 </span><span class="caption-text">イベント種別</span><a class="headerlink" href="#id5" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 1.158 </span><span class="caption-text">イベント種別</span><a class="headerlink" href="#id5" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 16.7%" />
 <col style="width: 83.3%" />

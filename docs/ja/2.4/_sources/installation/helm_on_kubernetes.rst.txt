@@ -27,7 +27,7 @@ Helm chart (Kubernetes)
 ====
 
 | 高い可用性やサービスレベルを必要とされる際の、Exastro IT Automation の導入方法となります。
-| 評価や一時的な利用など、簡単に利用を開始したい場合には、:doc:`Docker Compose 版<docker_compose>` の利用を推奨します。
+| 評価や一時的な利用など、簡単に利用を開始したい場合には、:doc:`Docker Compose 版<docker_compose_online>` の利用を推奨します。
 
 前提条件
 ========
@@ -125,7 +125,7 @@ Helm リポジトリの登録
    :caption: コマンド
 
    # Exastro システムの Helm リポジトリを登録
-   helm repo add exastro https://exastro-suite.github.io/exastro-helm/ -n exastro
+   helm repo add exastro https://exastro-suite.github.io/exastro-helm/ --namespace exastro
    # リポジトリ情報の更新
    helm repo update
 
@@ -259,28 +259,25 @@ Helm リポジトリの登録
 
    .. tab:: 外部データベース
 
-      | 
-
       - 特徴
 
-        | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
-        | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
+      | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
+      | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
 
       .. warning::
-
         | 複数のITAを構築する場合はlower_case_table_namesの設定を統一してください。
         | ※統一しないと環境間でのメニューエクスポート・インポートが正常に動作しなくなる可能性があります。
 
       - 設定例
 
-        | 外部データベースを操作するために必要な接続情報を設定します。
+      | 外部データベースを操作するために必要な接続情報を設定します。
 
-        .. warning::
-          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
-        
-        .. warning::
-          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
-      
+      .. warning::
+        | :command:`DB_ADMIN_USER` と :command:`MONGO_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
+
+      .. warning::
+        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+
       1.  Exastro IT Automation 用データベースの設定
 
           | データベースの接続情報を設定します。
@@ -303,7 +300,24 @@ Helm リポジトリの登録
              :caption: exastro.yaml
              :language: yaml
 
-      3.  データベースコンテナの無効化
+      3.  OASE用データベースの設定
+
+          | OASE用データベースの接続情報を設定します。(OASEを利用しない場合設定不要)
+
+          .. warning::
+             | MongoDBのユーザやデータベースを「自動払い出し( :ref:`organization_creation` )」で利用する場合は、:command:`MONGO_HOST` の指定が必要です。
+             | :command:`MONGO_ADMIN_USER` がユーザやデータベースの作成・削除が可能（rootロールまたは同等の権限）である必要があります。
+             | 上記の権限がない場合は「Python接続文字列( :ref:`organization_creation` )」の指定が必要です。
+             | また、自動払い出しを利用しない場合は :command:`MONGO_HOST` の指定は不要です。
+
+          .. include:: ../include/helm_option_mongoDefinition.rst
+
+          .. literalinclude:: literal_includes/exastro_mongo_database.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+
+      4.  データベースコンテナの無効化
 
           | データベースコンテナが起動しないように設定します。
 
@@ -314,25 +328,34 @@ Helm リポジトリの登録
              :caption: exastro.yaml
              :language: yaml
 
-   .. tab:: データベースコンテナ
+      5.  MongoDBコンテナの無効化
 
-      | 
+          | MongoDBコンテナが起動しないように設定します。(OASEを利用しない場合も設定必要)
+
+          .. include:: ../include/helm_option_mongo.rst
+
+          .. literalinclude:: literal_includes/exastro_mongodb_disabled.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+
+   .. tab:: データベースコンテナ
 
       - 特徴
 
-        | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
-        | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
+      | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
+      | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
 
       - 設定例
 
-        | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
-        | また、データベースのデータを永続化するために利用するストレージを指定します。
+      | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
+      | また、データベースのデータを永続化するために利用するストレージを指定します。
 
-        .. warning::
-          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
-        
-        .. warning::
-          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+      .. warning::
+        | :command:`DB_ADMIN_USER` と :command:`MONGO_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
+
+      .. warning::
+        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
 
       .. _configuration_database_container:
 
@@ -380,6 +403,41 @@ Helm リポジトリの登録
              :diff: literal_includes/exastro.yaml
              :caption: exastro.yaml
              :language: yaml
+
+      4.  OASE用データベースの設定
+
+          | OASE用データベースの接続情報を設定します。
+
+          .. warning::
+             | MongoDBのユーザやデータベースを「自動払い出し( :ref:`organization_creation` )」で利用する場合は、:command:`MONGO_HOST` の指定が必要です。
+             | :command:`MONGO_ADMIN_USER` がユーザやデータベースの作成・削除が可能（rootロールまたは同等の権限）である必要があります。
+             | 上記の権限がない場合は「Python接続文字列( :ref:`organization_creation` )」の指定が必要です。
+             | また、自動払い出しを利用しない場合は :command:`MONGO_HOST` の指定は不要です。
+
+          .. include:: ../include/helm_option_mongoDefinition.rst
+
+          .. literalinclude:: literal_includes/exastro_database_mongo_setting.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+             
+      5.  MongoDBコンテナの設定
+
+          | データベースのデータを永続化するために利用するストレージを指定します
+
+          .. warning::
+             | MongoDBコンテナを利用しない場合、:command:`exastro-platform.mongo.enabled` をfalseに指定して下さい。
+
+          .. include:: ../include/helm_option_mongo.rst
+
+          .. tabs::
+
+            .. tab:: hostPath 利用
+
+               .. literalinclude:: literal_includes/exastro_mongodb_hostpath.yaml
+                  :diff: literal_includes/exastro.yaml
+                  :caption: exastro.yaml
+                  :language: yaml
 
 .. _installation_kubernetes_Keycloak 設定:
 
@@ -439,6 +497,10 @@ GitLab 連携設定
 ---------------
 
 | GitLab 連携のための接続情報を登録します。
+
+.. warning::
+     | GitLab 連携を利用しない場合は、下記のように設定してください。
+     | GITLAB_HOST: ""
 
 .. include:: ../include/helm_option_gitlabDefinition.rst
 
@@ -610,6 +672,9 @@ GitLab 連携設定
 インストール
 ============
 
+.. note::
+   | インストールに失敗した場合は、 :ref:`ita_uninstall` を実施して、再度インストールを実施してください。
+
 永続ボリュームの作成
 --------------------
 
@@ -646,6 +711,7 @@ GitLab 連携設定
     pv-ita-common   10Gi       RWX            Retain           Available                                   9s
     pv-mongo        20Gi       RWO            Retain           Available                                   5s
 
+.. _ita_install:
 
 インストール
 ------------
@@ -693,10 +759,10 @@ GitLab 連携設定
             2. Get the ENCRYPT_KEY by running these commands:
 
               # Exastro IT Automation ENCRYPT_KEY
-              kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               # Exastro Platform ENCRYPT_KEY
-              kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               !!! Please save the output ENCRYPT_KEY carefully. !!!
 
@@ -784,10 +850,10 @@ GitLab 連携設定
             2. Get the ENCRYPT_KEY by running these commands:
 
               # Exastro IT Automation ENCRYPT_KEY
-              kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               # Exastro Platform ENCRYPT_KEY
-              kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               !!! Please save the output ENCRYPT_KEY carefully. !!!
 
@@ -899,10 +965,10 @@ GitLab 連携設定
             2. Get the ENCRYPT_KEY by running these commands:
 
               # Exastro IT Automation ENCRYPT_KEY
-              kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               # Exastro Platform ENCRYPT_KEY
-              kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               !!! Please save the output ENCRYPT_KEY carefully. !!!
 
@@ -1107,6 +1173,9 @@ Helm リポジトリの更新
 設定値の更新
 ^^^^^^^^^^^^
 
+.. warning:: 
+  | ユーザ名やパスワードはバージョンアップ前のものと合わせる必要があります。
+
 | デフォルト設定値の比較結果から、項目の追加などにより設定値の追加が必要な場合は更新をしてください。
 | 設定値の更新が不要であればこの手順はスキップしてください。
 | 例えば下記の差分確認結果から、:kbd:`exastro-platform.platform-auth.extraEnv` が追加されていますので、必要に応じて、:file:`exastro.yaml` に項目と設定値を追加します。
@@ -1132,8 +1201,29 @@ Helm リポジトリの更新
            - host: exastro-suite.example.local
              paths:
 
+.. _change_encrypt_key:
+
+暗号化キーの指定
+^^^^^^^^^^^^^^^^
+
+| :ref:`backup_encrypt_key` でバックアップした暗号化キーを指定します。
+
+.. literalinclude:: literal_includes/update_exastro.yaml
+   :diff: literal_includes/exastro.yaml
+   :caption: exastro.yaml
+   :language: yaml
+
+.. _ita_upgrade:
+
 アップグレード
 --------------
+
+.. warning:: 
+  | バージョン2.2.1以前から2.3.0以降へのアップグレードを行う場合は一度 :ref:`ita_uninstall` の :ref:`delete_pv` まで行い、再度 :ref:`ita_install` してください。
+
+.. danger::
+  | :ref:`delete_data` は行わないでください。
+  | 永続データの削除を行うとアップグレード前のデータがすべて消えてしまいます。
 
 サービス停止
 ^^^^^^^^^^^^
@@ -1173,10 +1263,10 @@ Helm リポジトリの更新
   2. Get the ENCRYPT_KEY by running these commands:
 
     # Exastro IT Automation ENCRYPT_KEY
-    kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+    kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
     # Exastro Platform ENCRYPT_KEY
-    kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+    kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
     !!! Please save the output ENCRYPT_KEY carefully. !!!
 
@@ -1209,7 +1299,7 @@ Helm リポジトリの更新
    :caption: コマンド
 
    # Pod の一覧を取得
-   kubectl get po -n exastro
+   kubectl get po --namespace exastro
 
 | 正常に起動している場合は、ita-migration-xxxとplatform-migration-xxxが “Completed” 、その他すべてが “Running” となります。
 | ※正常に起動するまで数分かかる場合があります。
@@ -1250,6 +1340,8 @@ Helm リポジトリの更新
    platform-migration-1-8-0-rjwr                             0/1     Completed   0          7h40m
    platform-web-6644884657-dmwp6                             1/1     Running     0          7h40m
 
+.. _ita_uninstall:
+
 アンインストール
 ================
 
@@ -1279,12 +1371,16 @@ Helm リポジトリの更新
 
   release "exastro" uninstalled
 
+.. _delete_pv:
 
-データベースのデータの削除
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+永続ボリュームを削除
+^^^^^^^^^^^^^^^^^^^^
 
-| Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。
+| Persitent Volume（PV） を Kubernetes 上に hostPath で作成した場合の方法を記載します。
 | マネージドデータベースを含む外部データベースを利用している場合は、環境にあったデータ削除方法を実施してください。
+
+データベース用
+**************
 
 .. code-block:: bash
   :caption: コマンド
@@ -1296,24 +1392,9 @@ Helm リポジトリの更新
 
   persistentvolume "pv-database" deleted
 
-| Kubernetes のコントロールノードにログインし、データを削除します。
-| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-platform/database` を指定した場合の例です。
 
-.. code-block:: bash
-   :caption: コマンド
-
-   # 永続データがあるコントロールノードにログイン
-   ssh user@contol.node.example
-
-   # 永続データの削除
-   sudo rm -rf /var/data/exastro-suite/exastro-platform/database
-
-
-ファイルデータの削除
-^^^^^^^^^^^^^^^^^^^^
-
-| Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。
-| マネージドストレージを含む外部ストレージを利用している場合は、環境にあったデータ削除方法を実施してください。
+ファイル用
+**********
 
 .. code-block:: bash
   :caption: コマンド
@@ -1325,24 +1406,44 @@ Helm リポジトリの更新
 
   persistentvolume "pv-ita-common" deleted
 
-| Kubernetes のコントロールノードにログインし、データを削除します。
-| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-it-automation/ita-common` を指定した場合の例です。
+OASE用
+******
 
 .. code-block:: bash
-   :caption: コマンド
+  :caption: コマンド
 
-   # 永続データがあるコントロールノードにログイン
-   ssh user@contol.node.example
+  kubectl delete pv pv-mongo
 
-   # 永続データの削除
-   sudo rm -rf /var/data/exastro-suite/exastro-it-automation/ita-common
+.. code-block:: bash
+  :caption: 実行結果
 
+  persistentvolume "pv-mongo" deleted
+  
+.. code-block:: bash
+  :caption: コマンド
 
-監査ログファイルデータの削除
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  kubectl delete pvc volume-mongo-storage-mongo-0 --namespace exastro
 
-| Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。
-| マネージドストレージを含む外部ストレージを利用している場合は、環境にあったデータ削除方法を実施してください。
+.. code-block:: bash
+  :caption: 実行結果
+
+  persistentvolumeclaim "volume-mongo-storage-mongo-0" deleted
+
+GitLab用
+********
+
+.. code-block:: bash
+  :caption: コマンド
+
+  kubectl delete pv pv-gitlab
+
+.. code-block:: bash
+  :caption: 実行結果
+
+  persistentvolume "pv-gitlab" deleted
+
+監査ログファイル用
+******************
 
 .. code-block:: bash
   :caption: コマンド
@@ -1354,7 +1455,73 @@ Helm リポジトリの更新
 
   persistentvolume "pv-auditlog" deleted
 
+.. _delete_data:
+
+永続データを削除
+^^^^^^^^^^^^^^^^
+
 | Kubernetes のコントロールノードにログインし、データを削除します。
+
+データベース用
+**************
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-platform/database` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-platform/database
+
+ファイル用
+**********
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-it-automation/ita-common` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-it-automation/ita-common
+
+OASE用
+******
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-platform/mongo` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-platform/mongo
+
+GitLab用
+********
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-platform/gitlab` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-platform/gitlab
+
+
+監査ログファイル用
+******************
+
 | 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/log/exastro` を指定した場合の例です。
 
 .. code-block:: bash

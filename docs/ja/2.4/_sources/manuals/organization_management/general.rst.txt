@@ -14,7 +14,7 @@
 
 #. | ログイン時は、必ずログインID(ユーザー名、E-mailアドレス)とパスワードを準備の上、ログインしてください。
 
-   .. figure:: /images/ja/manuals/platform/login/exastro-login.png
+   .. figure:: /images/ja/manuals/platform/login/exastro-login_v2-4.png
       :alt: ログイン
       :width: 600px
       :align: left
