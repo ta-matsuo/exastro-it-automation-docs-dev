@@ -129,12 +129,18 @@ Docker Compose - Online
 
    * - 種別
      - バージョン
-   * - Red Hat Enterprise Linux
-     - バージョン	8
+   * - Red Hat Enterprise Linux (RHEL)
+     - バージョン	8.7, 9.2
    * - AlmaLinux
-     - バージョン	8
+     - バージョン	8.6, 8.7
    * - Ubuntu
      - バージョン	22.04
+
+.. tip::
+   | RHEL 8.2 もしくは podman 4.x の初期バージョンでは、ルートレスモードで正常に名前解決ができない事象が報告されています。RHEL 8.3 以降のバージョンをご使用ください。
+   | 
+   | https://github.com/containers/podman/issues/10672
+   | https://github.com/containers/podman/issues/12565
 
 - 動作確認済みコンテナプラットフォーム
 
@@ -252,17 +258,34 @@ Docker Compose - Online
    :caption: パスワード自動生成の確認
 
    # Exastro システムが利用する MariaDB のパスワードや、システム管理者のパスワード自動生成するか？
-   Generate all password and token automatically.? (y/n) [default: y]: 
+   Generate all password and token automatically? (y/n) [default: y]: 
 
 .. code-block:: shell
    :caption: Exastro サービスのURL
 
-   Service URL? [default: http://127.0.0.1:30080]: http://ita.example.com:30080
+   Input the Exastro service URL:
+
+.. tip::
+   | URLはポート番号まで指定してください。
+   | ポート番号は、OSがRed Hat Enterprise Linuxの場合は30080、それ以外は80を指定してください。
 
 .. code-block:: shell
    :caption:  Exastro 管理用サービスのURL
 
-   Management URL? [default: http://127.0.0.1:30081]: http://ita.example.com:30081
+   Input the Exastro management URL:
+
+.. tip::
+   | URLはポート番号まで指定してください。
+   | ポート番号は、OSがRed Hat Enterprise Linuxの場合は30081、それ以外は81を指定してください。
+
+.. code-block:: shell
+   :caption:  GitLabのURL (上記の「GitLab コンテナデプロイ要否の確認」でyの場合)
+
+   Input the external URL of GitLab container [default: (nothing)]:
+
+.. tip::
+   | URLはポート番号まで指定してください。
+   | ポート番号は40080を指定してください。
 
 .. code-block:: shell
    :caption: 設定ファイルの生成の確認
@@ -279,14 +302,14 @@ Docker Compose - Online
    Docker Socket path:               /run/user/1000/podman/podman.sock
    GitLab deployment:                false
 
-   Generate .env file by above settings? (y/n) [default: n]: y
+   Generate .env file with these settings? (y/n) [default: n]:
 
 | :command:`y` もしくは :command:`yes` と入力すると、GitHub から Exastro システムの起動に必要な、Docker Compose ファイルのダウンロードやファイアウォールの設定投入が開始されます。
 
 .. code-block:: shell
    :caption: Exastro コンテナデプロイ実施の確認
 
-   Deploy Exastro containers now? (y/n) [default: n]: y
+   Deploy Exastro containers now? (y/n) [default: n]:
 
 | 詳細な設定を編集する場合は、 :command:`n` もしくは :command:`no` と入力し、以降の処理をスキップします。
 | そのまま Exastro システムのコンテナ群を起動する場合は、 :command:`y` もしくは :command:`yes` と入力します。
