@@ -742,3 +742,447 @@ APIのパラメータ関連情報（Menu Info メニュー情報の取得）
          "result": "000-00000",
          "ts": "2023-10-13T09:07:04.036Z"
      }
+
+.. _api_apply:
+
+適用（API）
+=============================
+
+| 本APIは、オペレーションの生成からパラメータの適用までを行いConductor作業実行を行うAPIです。
+| 尚、Conductor作業実行の完了確認は行いません。完了確認は、 :menuselection:`Conductor  -->  Conductor作業一覧` より行って下さい。
+
+.. _api_apply_request_format_description:
+
+request形式
+-----------------------
+
+| 本APIのrequest形式についての説明を記載します。
+
+.. list-table:: request形式について説明
+   :header-rows: 1
+   :align: left
+
+   * - 項目
+     - 説明
+   * - APIカテゴリ
+     - Apply
+   * - API名
+     - 適用
+   * - URL
+     - /api/{organizaiton_id}/workspaces/{workspace_id}/ita/apply/ 
+   * - method
+     - POST 
+   * - headers
+     - | content-type: application/json
+       | Authorization: Basic認証またはBearer認証
+       | Bearer認証を使用したAPIの実行を行う場合、「:ref:`operator_certification_bearer`」を参照してください。
+   * - Request body
+     - | Request bodyを参照して下さい。
+
+.. _api_apply_request_body_description:
+
+Request body
+-----------------------
+
+| Request bodyについての説明を記載します。
+
+.. table:: Request bodyについての説明
+   :widths: 10 10 20 30 15 15 100
+   :align: left
+
+   +----------------------------------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | キー                                   | 項目                   | 必須 | 型               | 説明                                                                                                                          |
+   +========================================+========================+======+==================+===============================================================================================================================+
+   | conductor_class_name                   | Conductor名            | ○    | 文字列           | | 作業実行を要求するConductor名を指定します。                                                                                 |
+   |                                        |                        |      |                  | | Conductor名は、:menuselection:`Conductor  -->  Conductor一覧` に登録されている :menuselection:`Conductor名称` を指定します。|
+   |                                        |                        |      |                  | | :menuselection:`Conductor  -->  Conductor一覧` に登録されていないConductor名を指定した場合はエラーになります。              |
+   +----------------------------------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | operation_name                         | オペレーション名       |      | 文字列           | | 作業実行を行うオペレーション名を指定します。                                                                                |
+   |                                        |                        |      |                  |                                                                                                                               |
+   |                                        |                        |      |                  | + | 既存オペレーション                                                                                                        |
+   |                                        |                        |      |                  |   | :menuselection:`基本コンソール  -->  オペレーション一覧` に登録されている :menuselection:`オペレーション名` を指定します。|
+   |                                        |                        |      |                  |                                                                                                                               |
+   |                                        |                        |      |                  | + | 新規オペレーション                                                                                                        |
+   |                                        |                        |      |                  |   | :menuselection:`基本コンソール  -->  オペレーション一覧` に登録されていない :menuselection:`オペレーション名` \           |
+   |                                        |                        |      |                  |     を指定します。                                                                                                            |
+   |                                        |                        |      |                  |   | 指定されたoperation_nameが :menuselection:`基本コンソール  -->  オペレーション一覧` に登録されます。                      |
+   |                                        |                        |      |                  |                                                                                                                               |
+   |                                        |                        |      |                  | + | オペレーション自動採番                                                                                                    |
+   |                                        |                        |      |                  |   | operation_nameの指定がない場合や省略した場合は、以下の採番ルールで :menuselection:`オペレーション名` を採番し\            |
+   |                                        |                        |      |                  |     :menuselection:`基本コンソール  -->  オペレーション一覧` に登録されます。                                                 |
+   |                                        |                        |      |                  |   |  　採番ルール：「yyyymmddhhmissffffffN」                                                                                  |
+   |                                        |                        |      |                  |   |  　y:年 m:月 d:日 h:時 mi:分 s:秒 f:マイクロ秒 N:0-9の通番                                                                |
+   |                                        |                        |      |                  |                                                                                                                               |
+   +----------------------------------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | schedule_date                          | 予約日時               |      | 文字列           | | Conductor作業実行の予約日時を yyyy/mm/dd hh:mi:ss で指定します。                                                            |
+   |                                        |                        |      |                  | | 指定しない場合や省略した場合は、即時実行となります。                                                                        |
+   +----------------------------------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | parameter_info                         | パラメータ情報         |      | 配列             | | 登録/更新/廃止/復活の操作を行うパラメータ情報を指定します。                                                                 |
+   |                                        |                        |      |                  | | 複数メニューが対象で順序性を考慮する必要がある場合は、配列の順番で調整して下さい。                                          |
+   |                                        |                        |      |                  | | Conductor作業実行のみを行う場合は省略して下さい。                                                                           |
+   +----------------+-----------------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | ※1             | (menu_name_rest)      | メニュー名(REST)       |      | 配列             | | :menuselection:`管理コンソール  -->  メニュー管理` の :menuselection:`メニュー名(Rest)` を指定します。                      |
+   |                |                       |                        |      |                  | | 複数レコードが対象で順序性を考慮する必要がある場合は、配列の順番で調整して下さい。                                          |
+   |                +--------+--------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   |                |        | type         | レコード操作種別       |      | 文字列           | | 以下のいずれかを指定します。                                                                                                |
+   |                |        |              |                        |      |                  | | 登録の場合： Register                                                                                                       |
+   |                |        |              |                        |      |                  | | 更新の場合： Update                                                                                                         |
+   |                |        |              |                        |      |                  | | 廃止の場合： Discard                                                                                                        |
+   |                |        |              |                        |      |                  | | 復活の場合： Restore                                                                                                        |
+   |                |        +--------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   |                |        | file         | アップロードファイル   |      | 辞書             | | アップロードファイルカラムがある場合、カラムキーと値の組み合わせを指定します。                                              |
+   |                |        |              |                        |      |                  | | 値には、ファイルデータをbase64でエンコードした文字列を指定します。                                                          |
+   |                |        +--------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   |                |        | parameter    | パラメータ             |      | 辞書             | | 対象メニューのカラムキーと値の組み合わせを指定します。                                                                      |
+   |                |        |              |                        |      |                  | | operation_nameで「新規オペレーション」や「オペレーション自動採番」を指定した場合、オペレーション名に相当する\               |
+   |                |        |              |                        |      |                  |   カラムキーと値の組み合わせの指定は必要ありません。                                                                          |
+   |                |        |              |                        |      |                  | | また、conductor_class_nameで、Conductor call function（以降、サブConductorと称す。）が含まれるConductor名を指定した場合\    |
+   |                |        |              |                        |      |                  |   で、サブConductorの個別オペレーションを明示的に指定する必要がある場合、該当のオペレーション名を指定します。                 |
+   +----------------+--------+--------------+------------------------+------+------------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+.. tip:: | ※1  (menu_name_rest) からparameterまでのRequest bodyは、以下のレコード操作を行うAPIと同じ仕様です。
+   | ・「Menu MaintenanceAll」
+
+
+.. _api_apply_request_body_example:
+
+Request bodyの具体例
+-----------------------
+
+| Request bodyの具体例を記載します。
+
+既存オペレーションで登録済みパラメータを使用したConductorの作業実行
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. code-block:: json
+
+     {
+       "conductor_class_name"  : "sample_conductor",
+       "operation_name"        : "sample_operation"
+     }
+
+
+既存オペレーションで登録済みパラメータを使用したConductorの予約実行
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. code-block:: json
+
+     {
+       "conductor_class_name"  : "sample_conductor",
+       "operation_name"        : "sample_operation",
+       "schedule_date"         : "2024/12/31 23:59"	
+     }
+
+
+既存オペレーションでパラメータ適用をしたConductorの作業実行
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. figure:: /images/ja/api/Apply_API_request_body_exp3.png
+     :align: left
+
+  .. code-block:: json
+
+     {
+         "conductor_class_name": "sample_conductor",
+         "operation_name" : "sample_operation",
+         "schedule_date" : "",
+         "parameter_info" : [ 
+             {
+                 "sample_menu_001" : [ 
+                     {
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host1",
+                             "operation_name_select" : "2024/01/01 00:00_sample_operation",                                                                                                   
+                             "column_1"              : "value",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                      } 
+                  ]
+              }
+         ]
+     }
+
+  .. tip::
+      | オペレーション「operation_name_select」の指定について
+      | 既存オベーションの場合、オペレーション「operation_name_select」に設定する値は、該当オペレーションの「実施予定日」(YYYY/MM/DD hh:mm)_「オペレーション名」で指定します。
+   
+
+新規オペレーションでパラメータ適用をしたConductorの作業実行
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. figure:: /images/ja/api/Apply_API_request_body_exp4.png
+     :align: left
+
+  .. code-block:: json
+
+     {
+         "conductor_class_name": "sample_conductor",
+         "operation_name" : "new_operation",
+         "schedule_date" : "",
+         "parameter_info" : [ 
+             {
+                 "sample_menu_001" : [ 
+                     {
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host1",
+                             "column_1"              : "value",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     } 
+                 ]
+             }
+         ]
+     }
+
+  .. tip::
+      | オペレーション「operation_name_select」の指定について
+      | 新規オペレーションの場合、オペレーション「operation_name_select」の指定は不要です。
+
+
+オペレーション自動採番でパラメータ適用をしたConductorの予約実行
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. figure:: /images/ja/api/Apply_API_request_body_exp5.png
+     :align: left
+
+  .. code-block:: json
+
+     {
+         "conductor_class_name": "sample_conductor",
+         "schedule_date" : "",
+         "parameter_info" : [ 
+             {
+                 "sample_menu_001" : [ 
+                     {
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host1",
+                             "column_1"              : "value",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     } 
+                 ]
+             }
+         ]
+     }
+
+  .. tip::
+      | オペレーション「operation_name_select」の指定について
+      | オペレーション自動採番の場合、オペレーション「operation_name_select」の指定は不要です。
+
+
+複数メニューに対して複数レコードのパラメータ適用をしたConductor作業実行
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. figure:: /images/ja/api/Apply_API_request_body_exp6.png
+     :align: left
+
+  .. code-block:: json
+
+     {
+         "conductor_class_name": "sample_conductor",
+         "operation_name" : "",
+         "schedule_date" : "",
+         "parameter_info" : [
+             {
+                 "sample_menu_001" : [
+                     {
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host1",
+                             "column_1"              : "value11",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     },{
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host2",
+                             "column_1"              : "value11",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     }
+                 ]
+             },{
+                 "sample_menu_002" : [
+                     {
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host1",
+                             "column_1"              : "value",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     },{
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host2",
+                             "column_1"              : "value",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     }
+                 ]
+             }
+         ]
+     }
+
+サブConductorの個別オペレーションを明示的に指定してパラメータ適用でConductor作業実行
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  .. figure:: /images/ja/api/Apply_API_request_body_exp7.png
+     :align: left
+
+  .. code-block:: json
+
+     {
+         "conductor_class_name": "sample_main_conductor",
+         "operation_name" : "",
+         "schedule_date" : "",
+         "parameter_info" : [
+             {
+                 "sample_menu_001" : [
+                     {
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host1",
+                             "column_1"              : "value11",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     },{
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host2",
+                             "column_1"              : "value11",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     }
+                 ]
+             },{
+                 "sample_menu_002" : [
+                     {
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host1",
+                             "operation_name_select" : "2024/01/01 00:00_sample_operation",                                                                                                   
+                             "column_1"              : "value",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     },{
+                         "type" : "Register",
+                         "parameter" : {
+                             "host_name"             : "sample_host2",
+                             "operation_name_select" : "2024/01/01 00:00_sample_operation",                                                                                                   
+                             "column_1"              : "value",
+                             "column_2"              : "value.txt"
+                         },
+                         "file" : {
+                             "column_2"              : "c2FtcGxlIGZpbGU="
+                         }
+                     }
+                 ]
+             }
+         ]
+     }
+
+.. _api_apply_response_format_description:
+
+response body
+-----------------------
+
+| 本APIのresponse bodyについての説明を記載します。
+
+  .. code-block:: json
+     :caption: 正常時
+
+     {
+         "data" : {
+         "conductor_instance_id" : "conductord作業実行時に採番されたID"
+         }	,
+         "message" : "SUCCESS",
+         "result"  : "000-00000",
+         "ts"      : "処理日時"
+         }
+     }
+
+  .. code-block:: json
+     :caption: 異常時
+
+     {
+         "message" : "エラーメッセージ"
+         "result"  : "エラーコード"
+         "ts"      : "処理日時"
+     }
+
+  .. code-block:: none
+     :caption: エラーメッセージの例
+
+     Request bodyで指定しているメニュー名(REST):sample_menu_001 の 1レコード目(0オリジン) の キー:column_1 に指定した値の文字数の不備でエラーが発生した場合の例
+     { 
+         "message": {                                                               
+             "1": {                                                                                    メニュー名(REST)のレコード番号が0オリジンで表示されます。
+                "column_1": [ "文字長エラー (閾値 : 値<=8byte, 値 : 30byte), menu : sample_menu_001"]  キー：エラーとなった項目のREST名、値：エラー内容、menu : エラーとなったメニュー名（REST)
+                  }
+         },
+         "result": "499-00201",
+         "ts": "実施日時"
+     }
+
+.. _api_apply_important_notice:
+
+留意事項
+-----------------------
+
+| 本APIは、ITAで更新可能なメニューに対してパラメータ適用を行う事が出来ます。
+| しかし、トランザクション処理の影響により、以下の留意事項があります。
+
+ホストグループへのパラメータ適用
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   | 「:menuselection:`ホストグループ管理`」にパラメータ適用をした場合、指定されたホストグループに属するホスト解析が処理されない状態でconductor作業実行が行われます。
+   | 「:menuselection:`ホストグループ管理`」へのパラメータ適用は、以下のレコード操作を行うAPIで事前に登録を行ってください。
+   |   ・「Menu MaintenanceAll」
+   |   ・「Menu Maintenance」
+
+変数抜出対象のメニューへのパラメータ適用
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   | 変数抜出対象のメニューにパラメータ適用は、指定されたパラメータ内で使用している変数の刈取りが処理されない状態でconductor作業実行が行われます。
+   | 変数抜出対象のメニューへのパラメータ適用は、以下のレコード操作を行うAPIで事前に登録を行ってください。
+   |   ・「Menu MaintenanceAll」
+   |   ・「Menu Maintenance」
+   | 変数抜出対象のメニューについては、「:doc:`../terraform_driver/terraform_common` -> :ref:`terraform_common_variable_handling`」\
+    「:doc:`../ansible-driver/ansible_common` -> :ref:`ansible_common_var_listup`」を参照してください。
+
+エラー時のロールバック
+^^^^^^^^^^^^^^^^^^^^^^^
+   | 本APIは、トランザクション処理でデータベースの更新を行っています。
+   | Request bodyの指定不備などで、データベースの更新に失敗した場合は、トランザクション処理内で更新した情報はロールバックされます。
+   
