@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>2.3.3. ジョブフロー &#8212; Documentation  ドキュメント</title>
+    <title>3. ジョブフロー &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -34,8 +34,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
-    <link rel="next" title="2.3.4. ユーザー管理 (演習問題)" href="practice1.html" />
-    <link rel="prev" title="2.3.2. パッケージ管理" href="scenario2.html" /> 
+    <link rel="next" title="4. ユーザー管理 (演習問題)" href="practice1.html" />
+    <link rel="prev" title="2. パッケージ管理" href="scenario2.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -95,8 +95,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="scenario2.html" title="前のトピックへ"><span class="section-number">2.3.2. </span>パッケージ管理</a></li>
-        <li class="next"><a href="practice1.html" title="次のトピックへ"><span class="section-number">2.3.4. </span>ユーザー管理 (演習問題)</a></li>
+        <li class="prev"><a href="scenario2.html" title="前のトピックへ"><span class="section-number">2. </span>パッケージ管理</a></li>
+        <li class="next"><a href="practice1.html" title="次のトピックへ"><span class="section-number">4. </span>ユーザー管理 (演習問題)</a></li>
       </ul>
     </div>
   </div>
@@ -113,21 +113,21 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Learn</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">クイックスタート</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../legacy/index.html">1. Ansible-Legacy</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="index.html">2. Ansible-Legacy-Role</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="index.html#id1">2.1. 前提</a></li>
-<li class="toctree-l4"><a class="reference internal" href="index.html#id2">2.2. 各シナリオの流れ</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="index.html#id3">2.3. シナリオ</a><ul class="current">
-<li class="toctree-l5"><a class="reference internal" href="scenario1.html">2.3.1. ホスト名管理</a></li>
-<li class="toctree-l5"><a class="reference internal" href="scenario2.html">2.3.2. パッケージ管理</a></li>
-<li class="toctree-l5 current"><a class="current reference internal" href="#">2.3.3. ジョブフロー</a></li>
-<li class="toctree-l5"><a class="reference internal" href="practice1.html">2.3.4. ユーザー管理 (演習問題)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="answer1.html">2.3.5. ユーザー管理 (解答)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Ansible-Legacy-Role</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="index.html#id1">前提</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#id2">各シナリオの流れ</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#id3">シナリオ</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="scenario1.html">1. ホスト名管理</a></li>
+<li class="toctree-l5"><a class="reference internal" href="scenario2.html">2. パッケージ管理</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">3. ジョブフロー</a></li>
+<li class="toctree-l5"><a class="reference internal" href="practice1.html">4. ユーザー管理 (演習問題)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="answer1.html">5. ユーザー管理 (解答)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../oase/index.html">3. oase</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../terraform/index.html">4. terraform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../oase/index.html">2. oase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../terraform/index.html">3. terraform</a></li>
 </ul>
 </li>
 </ul>
@@ -149,26 +149,26 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">2.3.3. ジョブフロー</a><ul>
-<li><a class="reference internal" href="#id2">作業概要の作成</a><ul>
-<li><a class="reference internal" href="#id3">作業概要登録</a></li>
+<li><a class="reference internal" href="#">3. ジョブフロー</a><ul>
+<li><a class="reference internal" href="#id2">3.1. 作業概要の作成</a><ul>
+<li><a class="reference internal" href="#id3">3.1.1. 作業概要登録</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4">パラメータ設計</a></li>
-<li><a class="reference internal" href="#id5">作業対象の登録</a><ul>
-<li><a class="reference internal" href="#id6">機器情報の更新</a></li>
+<li><a class="reference internal" href="#id4">3.2. パラメータ設計</a></li>
+<li><a class="reference internal" href="#id5">3.3. 作業対象の登録</a><ul>
+<li><a class="reference internal" href="#id6">3.3.1. 機器情報の更新</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7">作業手順の登録</a><ul>
-<li><a class="reference internal" href="#id8">ジョブフローの作成</a></li>
+<li><a class="reference internal" href="#id7">3.4. 作業手順の登録</a><ul>
+<li><a class="reference internal" href="#id8">3.4.1. ジョブフローの作成</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id9">サーバー再構築作業の実施</a><ul>
-<li><a class="reference internal" href="#id10">パラメータ設定</a></li>
-<li><a class="reference internal" href="#id11">作業実行</a></li>
+<li><a class="reference internal" href="#id9">3.5. サーバー再構築作業の実施</a><ul>
+<li><a class="reference internal" href="#id10">3.5.1. パラメータ設定</a></li>
+<li><a class="reference internal" href="#id11">3.5.2. 作業実行</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id12">まとめ</a></li>
+<li><a class="reference internal" href="#id12">3.6. まとめ</a></li>
 </ul>
 </li>
 </ul>
@@ -184,9 +184,9 @@
     <li><a href="../../../index.html">HOME</a></li>
     <li><a href="../../index.html">Learn</a></li>
     <li><a href="../index.html">クイックスタート</a></li>
-    <li><a href="index.html"><span class="section-number">2. </span>Ansible-Legacy-Role</a></li>
+    <li><a href="index.html">Ansible-Legacy-Role</a></li>
     
-    <li><span class="section-number">2.3.3. </span>ジョブフロー</li>
+    <li><span class="section-number">3. </span>ジョブフロー</li>
   </ul>
 </div>
 
@@ -195,7 +195,7 @@
 <div class="body" role="main">
 
   <section id="id1">
-<h1><span class="section-number">2.3.3. </span>ジョブフロー<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">3. </span>ジョブフロー<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
 <div class="line-block">
 <div class="line">本シナリオでは、<a class="reference internal" href="scenario2.html"><span class="doc">前のシナリオ</span></a> で構築したデータベース用のサーバを Web サーバに作り直す作業を題材にして、複数のジョブを一連の流れで実行するための方法について学習します。</div>
 <div class="line">具体的には、</div>
@@ -212,12 +212,12 @@
 <p>本シナリオに入る前に、  <a class="reference internal" href="scenario1.html"><span class="doc">ホスト名管理</span></a> と <a class="reference internal" href="scenario2.html"><span class="doc">パッケージ管理</span></a> を完了させておく必要があります。</p>
 </div>
 <section id="id2">
-<h2>作業概要の作成<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.1. </span>作業概要の作成<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="scenario2.html"><span class="doc">前のシナリオ</span></a> と同様に、まずは作業計画を立てましょう。</div>
 </div>
 <table class="docutils align-default" id="id13">
-<caption><span class="caption-number">表 2.42 </span><span class="caption-text">作業の方針</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.9 </span><span class="caption-text">作業の方針</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 60.0%" />
 <col style="width: 40.0%" />
@@ -235,7 +235,7 @@
 </tbody>
 </table>
 <section id="id3">
-<h3>作業概要登録<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>作業概要登録<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line"><span class="menuselection">基本コンソール ‣ オペレーション一覧</span> から、作業実施日時や作業名を登録します。</div>
 </div>
@@ -243,7 +243,7 @@
 <a class="reference internal image-reference" href="../images/learn/quickstart/scenario3/オペレーション登録.png"><img alt="オペレーション登録" src="../images/learn/quickstart/scenario3/オペレーション登録.png" style="width: 1200px;" /></a>
 </figure>
 <table class="docutils align-default" id="id14">
-<caption><span class="caption-number">表 2.43 </span><span class="caption-text">オペレーション登録内容</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.10 </span><span class="caption-text">オペレーション登録内容</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 60.0%" />
 <col style="width: 40.0%" />
@@ -262,18 +262,18 @@
 </section>
 </section>
 <section id="id4">
-<h2>パラメータ設計<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.2. </span>パラメータ設計<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本シナリオでは、 <a class="reference internal" href="scenario1.html"><span class="doc">ホスト名管理</span></a> と <a class="reference internal" href="scenario2.html"><span class="doc">パッケージ管理</span></a> で作成したパラメータシート(データシート)を使って、パラメーターの投入を行うため、パラメータシートを新たに作成する必要はありません。</div>
 </div>
 </section>
 <section id="id5">
-<h2>作業対象の登録<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.3. </span>作業対象の登録<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">作業実施を行う対象機器の登録情報を更新します。</div>
 </div>
 <section id="id6">
-<h3>機器情報の更新<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.3.1. </span>機器情報の更新<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">作業対象となるサーバーは <a class="reference internal" href="scenario2.html"><span class="doc">前のシナリオ</span></a> で登録した db01 を利用しますが、今回は DB サーバーを Web サーバーに作り直すため、ホスト名を更新しておきます。</div>
 <div class="line">作業対象となるサーバー db01 のホスト名を web01 に変更します。</div>
@@ -285,7 +285,7 @@
 <a class="reference internal image-reference" href="../images/learn/quickstart/scenario3/機器情報の更新.gif"><img alt="機器情報の更新" src="../images/learn/quickstart/scenario3/機器情報の更新.gif" style="width: 1200px;" /></a>
 </figure>
 <table class="docutils align-default" id="id15">
-<caption><span class="caption-number">表 2.44 </span><span class="caption-text">機器一覧の設定値</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.11 </span><span class="caption-text">機器一覧の設定値</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 12.5%" />
 <col style="width: 12.5%" />
@@ -330,7 +330,7 @@
 </section>
 </section>
 <section id="id7">
-<h2>作業手順の登録<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.4. </span>作業手順の登録<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本シナリオでは、 <a class="reference internal" href="scenario1.html"><span class="doc">ホスト名管理</span></a> と <a class="reference internal" href="scenario2.html"><span class="doc">パッケージ管理</span></a> で作成した下記の Movement を使うため、新たに Movement を作成する必要はありません。</div>
 </div>
@@ -342,7 +342,7 @@
 <div class="line">しかし、これまでは Movement を単体で実行していましたが、これらを逐次実行するにはどうすればよいでしょうか。</div>
 </div>
 <section id="id8">
-<h3>ジョブフローの作成<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.4.1. </span>ジョブフローの作成<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">複数の Movement を一連の作業として実行する方法に、Conductor という仕組みがあります。</div>
 <div class="line">Conductor を利用することで、複数の Movement をまとめて実行できるだけでなく、Movement の実行結果に応じて、後続処理を分岐させたり、ユーザ確認の為に一時停止するといった複雑なロジックを組み込む事が可能です。</div>
@@ -359,7 +359,7 @@
 <div class="line">3. 各 Node 間を下記の様に接続します。</div>
 </div>
 <table class="docutils align-default" id="id16">
-<caption><span class="caption-number">表 2.45 </span><span class="caption-text">Node 間の接続</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.12 </span><span class="caption-text">Node 間の接続</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -387,13 +387,13 @@
 </section>
 </section>
 <section id="id9">
-<h2>サーバー再構築作業の実施<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.5. </span>サーバー再構築作業の実施<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本シナリオでは、db01 というホストに対して、 <kbd class="kbd docutils literal notranslate">httpd</kbd> というパッケージをインストールしますが、前のシナリオで <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">mariadb</kbd>-<kbd class="kbd docutils literal notranslate">server</kbd></kbd> というパッケージがインストール済みの状態となっています。</div>
 <div class="line">db01 というホストを web01 という Web サーバーに作り変えるため、ホスト名と導入パッケージを変更する必要があります。</div>
 </div>
 <table class="docutils align-default" id="id17">
-<caption><span class="caption-number">表 2.46 </span><span class="caption-text">サーバー再構築作業による変更内容</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.13 </span><span class="caption-text">サーバー再構築作業による変更内容</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 37.5%" />
@@ -421,7 +421,7 @@
 </tbody>
 </table>
 <section id="id10">
-<h3>パラメータ設定<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.5.1. </span>パラメータ設定<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line"><span class="menuselection">入力用 ‣ サーバー基本情報</span> から、ホスト名に関するパラメータを登録します。</div>
 </div>
@@ -429,7 +429,7 @@
 <a class="reference internal image-reference" href="../images/learn/quickstart/scenario3/サーバ基本情報登録.png"><img alt="サーバ基本情報登録" src="../images/learn/quickstart/scenario3/サーバ基本情報登録.png" style="width: 1200px;" /></a>
 </figure>
 <table class="docutils align-default" id="id18">
-<caption><span class="caption-number">表 2.47 </span><span class="caption-text">サーバー基本情報パラメータの設定値</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.14 </span><span class="caption-text">サーバー基本情報パラメータの設定値</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 14.3%" />
 <col style="width: 57.1%" />
@@ -459,7 +459,7 @@
 <a class="reference internal image-reference" href="../images/learn/quickstart/scenario3/導入パッケージ登録.gif"><img alt="導入パッケージ登録" src="../images/learn/quickstart/scenario3/導入パッケージ登録.gif" style="width: 1200px;" /></a>
 </figure>
 <table class="docutils align-default" id="id19">
-<caption><span class="caption-number">表 2.48 </span><span class="caption-text">導入パッケージパラメータの設定値</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.15 </span><span class="caption-text">導入パッケージパラメータの設定値</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 11.1%" />
 <col style="width: 44.4%" />
@@ -498,7 +498,7 @@
 </table>
 </section>
 <section id="id11">
-<h3>作業実行<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.5.2. </span>作業実行<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><p>事前確認</p>
 <div class="line-block">
@@ -508,14 +508,14 @@
 <div class="line">ホスト名を確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-number">リスト 2.21 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.19 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ホスト名の取得</span>
 hostnamectl<span class="w"> </span>status<span class="w"> </span>--static
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-number">リスト 2.22 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.20 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>db01
 </pre></div>
 </div>
@@ -524,26 +524,26 @@ hostnamectl<span class="w"> </span>status<span class="w"> </span>--static
 <div class="line">サーバに SSH ログインし、パッケージのインストール状態を確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-number">リスト 2.23 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.21 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rpm<span class="w"> </span>-q<span class="w"> </span>mariadb-server
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-number">リスト 2.24 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.22 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 環境ごとにバージョンは異なります</span>
 mariadb-server-10.3.35-1.module+el8.6.0+15949+4ba4ec26.x86_64
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-number">リスト 2.25 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.23 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rpm<span class="w"> </span>-q<span class="w"> </span>httpd
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-number">リスト 2.26 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.24 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package<span class="w"> </span>httpd<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installed
 </pre></div>
 </div>
@@ -572,14 +572,14 @@ mariadb-server-10.3.35-1.module+el8.6.0+15949+4ba4ec26.x86_64
 <div class="line">ホスト名を確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-number">リスト 2.27 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id26" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.25 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id26" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ホスト名の取得</span>
 hostnamectl<span class="w"> </span>status<span class="w"> </span>--static
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-number">リスト 2.28 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id27" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.26 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id27" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>web01
 </pre></div>
 </div>
@@ -588,26 +588,26 @@ hostnamectl<span class="w"> </span>status<span class="w"> </span>--static
 <div class="line">サーバに SSH ログインし、パッケージのインストール状態を確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-number">リスト 2.29 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id28" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.27 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id28" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rpm<span class="w"> </span>-q<span class="w"> </span>mariadb-server
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-number">リスト 2.30 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id29" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.28 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id29" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 環境ごとにバージョンは異なります</span>
 is<span class="w"> </span>not<span class="w"> </span>installed
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-number">リスト 2.31 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.29 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rpm<span class="w"> </span>-q<span class="w"> </span>httpd
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-number">リスト 2.32 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.30 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>httpd-2.4.37-51.module+el8.7.0+18026+7b169787.1.x86_64
 </pre></div>
 </div>
@@ -617,7 +617,7 @@ is<span class="w"> </span>not<span class="w"> </span>installed
 </section>
 </section>
 <section id="id12">
-<h2>まとめ<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.6. </span>まとめ<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本シナリオでは、DB サーバーを Web サーバーに再構築するシナリオを通して、Exastro IT Automation のジョブフローである Conductor の運用方法について紹介をしました。</div>
 </div>
@@ -637,8 +637,8 @@ is<span class="w"> </span>not<span class="w"> </span>installed
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="scenario2.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">2.3.2. </span>パッケージ管理</a></li>
-    <li class="next"><a href="practice1.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">2.3.4. </span>ユーザー管理 (演習問題)</a></li>
+    <li class="prev"><a href="scenario2.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">2. </span>パッケージ管理</a></li>
+    <li class="next"><a href="practice1.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">4. </span>ユーザー管理 (演習問題)</a></li>
   </ul>
 </div>
 
