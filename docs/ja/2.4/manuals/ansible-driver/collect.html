@@ -370,7 +370,7 @@
 <ol class="arabic">
 <li><p>収集対象のファイルフォーマット</p>
 <div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-number">リスト 5.41 </span><span class="caption-text">Yaml形式で出力されたファイル</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.31 </span><span class="caption-text">Yaml形式で出力されたファイル</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>■ファイル名：RH_snmp.yml
 ■ファイルの内容：
 VAR_RH_sshd_config:
@@ -388,7 +388,7 @@ VAR_RH_sshd_config:
 <div class="line">収集対象ディレクトリについて、収集対象ディレクトリパス（ソースファイルの出力先として）をIaC(Playbook,Role)内にて、で以下の変数として扱えます。</div>
 </div>
 <span id="table-ita-original-variable"></span><table class="docutils align-left" id="id32">
-<caption><span class="caption-number">表 5.32 </span><span class="caption-text">収集機能対象ディレクトリITA独自変数</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.13 </span><span class="caption-text">収集機能対象ディレクトリITA独自変数</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 35.7%" />
 <col style="width: 53.6%" />
@@ -423,7 +423,7 @@ VAR_RH_sshd_config:
 <div class="line">収集対象のディレクトリ（_parameters）の上位ディレクトリのパスについて、Ansible-Driverの実行モード、実施した作業Noに依存します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-number">リスト 5.42 </span><span class="caption-text">収集対象ディレクトリパス</span><a class="headerlink" href="#id33" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.32 </span><span class="caption-text">収集対象ディレクトリパス</span><a class="headerlink" href="#id33" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>-<span class="w">  </span>_parameters<span class="w">           </span>※1
 <span class="p">|</span><span class="w">   </span><span class="p">|</span>-<span class="w">  </span>localhost<span class="w">         </span>※2
 <span class="p">|</span><span class="w">       </span><span class="p">|</span>-<span class="w">  </span>SAMPLE.yml<span class="w">    </span>※3
@@ -454,7 +454,7 @@ VAR_RH_sshd_config:
 </div>
 </div>
 <table class="docutils align-left" id="id34">
-<caption><span class="caption-number">表 5.33 </span><span class="caption-text">Ansible-Driverモード別上位ディレクトリパス</span><a class="headerlink" href="#id34" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.14 </span><span class="caption-text">Ansible-Driverモード別上位ディレクトリパス</span><a class="headerlink" href="#id34" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 17.9%" />
 <col style="width: 17.9%" />
@@ -496,7 +496,7 @@ VAR_RH_sshd_config:
 <div class="line">■　e.g.) 収集対象ファイルのファイルパス、ディレクトリ構造</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-number">リスト 5.43 </span><span class="caption-text">収集対象ファイルのファイルパス、ディレクトリ構造</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.33 </span><span class="caption-text">収集対象ファイルのファイルパス、ディレクトリ構造</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>実行モード：<span class="w"> </span>Ansible-Legacy
 作業No：<span class="w"> </span><span class="m">00000000</span>-0000-0000-0000-000000000001
 対象ホスト：<span class="w"> </span>localhost
@@ -519,7 +519,7 @@ VAR_RH_sshd_config:
 <div class="line">_parameters_file配下に配置されているアップロード対象ファイルの指定方法として、以下の記載方法があります。</div>
 </div>
 <table class="docutils align-left" id="id36">
-<caption><span class="caption-number">表 5.34 </span><span class="caption-text">アップロード対象ファイルの指定方法</span><a class="headerlink" href="#id36" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.15 </span><span class="caption-text">アップロード対象ファイルの指定方法</span><a class="headerlink" href="#id36" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 21.7%" />
 <col style="width: 65.2%" />
@@ -553,7 +553,7 @@ VAR_RH_sshd_config:
 <div class="line">■　e.g.) 通常変数の構造の変数の場合のディレクトリ構造とソースファイルの内容</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-number">リスト 5.44 </span><span class="caption-text">通常変数の構造の変数の場合のディレクトリ構造とソースファイルの内容</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.34 </span><span class="caption-text">通常変数の構造の変数の場合のディレクトリ構造とソースファイルの内容</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>■構造
 <span class="w"> </span>【上位ディレクトリ】
 <span class="w">    </span><span class="p">|</span>-<span class="w">  </span>_parameters
@@ -588,7 +588,7 @@ VAR_RH_sshd_config:
 </li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-number">リスト 5.45 </span><span class="caption-text">通常変数の場合</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.35 </span><span class="caption-text">通常変数の場合</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">VAR_users</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 </pre></div>
 </div>
@@ -603,7 +603,7 @@ VAR_RH_sshd_config:
 </li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-number">リスト 5.46 </span><span class="caption-text">複数具体値の構造の変数の場合</span><a class="headerlink" href="#id39" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.36 </span><span class="caption-text">複数具体値の構造の変数の場合</span><a class="headerlink" href="#id39" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">VAR_users</span><span class="p">:</span>
 <span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
@@ -620,7 +620,7 @@ VAR_RH_sshd_config:
 </li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-number">リスト 5.47 </span><span class="caption-text">多段変数の構造の変数の場合</span><a class="headerlink" href="#id40" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.37 </span><span class="caption-text">多段変数の構造の変数の場合</span><a class="headerlink" href="#id40" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">VAR_users</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">user-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alice</span><span class="w">      </span><span class="c1">#メンバ変数</span>
 <span class="w">      </span><span class="nt">authorized</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
@@ -655,7 +655,7 @@ VAR_RH_sshd_config:
 </li>
 </ol>
 <table class="docutils align-left" id="id41">
-<caption><span class="caption-number">表 5.35 </span><span class="caption-text">Ansible共通 メニュー/画面一覧</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.16 </span><span class="caption-text">Ansible共通 メニュー/画面一覧</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>No</p></th>
 <th class="head"><p>メニューグループ</p></th>
@@ -689,7 +689,7 @@ VAR_RH_sshd_config:
 </li>
 </ol>
 <table class="docutils align-left" id="id43">
-<caption><span class="caption-number">表 5.36 </span><span class="caption-text">Ansible driver メニュー/画面一覧</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.17 </span><span class="caption-text">Ansible driver メニュー/画面一覧</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>No</p></th>
 <th class="head"><p>メニューグループ</p></th>
@@ -825,7 +825,7 @@ VAR_RH_sshd_config:
 </li>
 </ol>
 <table class="docutils align-left" id="id47">
-<caption><span class="caption-number">表 5.37 </span><span class="caption-text">登録画面項目一覧（収集項目値管理）：収集項目(From)</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.18 </span><span class="caption-text">登録画面項目一覧（収集項目値管理）：収集項目(From)</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>項目：収集項目(From)</p></th>
 <th class="head"><p>説明</p></th>
@@ -861,7 +861,7 @@ VAR_RH_sshd_config:
 </tbody>
 </table>
 <table class="docutils align-left" id="id48">
-<caption><span class="caption-number">表 5.38 </span><span class="caption-text">登録画面項目一覧（収集項目値管理）：パラメータシート(To)</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.19 </span><span class="caption-text">登録画面項目一覧（収集項目値管理）：パラメータシート(To)</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>項目：パラメータシート(To)</p></th>
 <th class="head"><p>説明</p></th>
@@ -892,7 +892,7 @@ VAR_RH_sshd_config:
 <div class="line">■e.g.) 通常変数の構造の変数の場合</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id49">
-<div class="code-block-caption"><span class="caption-number">リスト 5.48 </span><span class="caption-text">通常変数の構造の変数の場合</span><a class="headerlink" href="#id49" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.38 </span><span class="caption-text">通常変数の構造の変数の場合</span><a class="headerlink" href="#id49" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>■ファイル名:<span class="w"> </span>SAMPLE.yml
 ■ファイルの内容
 
@@ -911,7 +911,7 @@ PREFIX<span class="o">(</span>ファイル名<span class="o">)</span>:<span clas
 <div class="line">■ e.g.) 複数具体値の構造の変数の場合1</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id50">
-<div class="code-block-caption"><span class="caption-number">リスト 5.49 </span><span class="caption-text">複数具体値の構造の変数の場合1</span><a class="headerlink" href="#id50" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.39 </span><span class="caption-text">複数具体値の構造の変数の場合1</span><a class="headerlink" href="#id50" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>■ファイル名:<span class="w"> </span>SAMPLE_2.yml
 ■ファイルの内容
 
@@ -933,7 +933,7 @@ PREFIX<span class="o">(</span>ファイル名<span class="o">)</span>:<span clas
 <div class="line">■ e.g.) 複数具体値の構造の変数の場合2</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id51">
-<div class="code-block-caption"><span class="caption-number">リスト 5.50 </span><span class="caption-text">複数具体値の構造の変数の場合2</span><a class="headerlink" href="#id51" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.40 </span><span class="caption-text">複数具体値の構造の変数の場合2</span><a class="headerlink" href="#id51" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>■ファイル名:<span class="w"> </span>RH_sshd.yml
 ■ファイルの内容
 
@@ -957,7 +957,7 @@ VAR_RH_sshd_config:
 <div class="line">■e.g.)複数具体値の構造の変数の場合3</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id52">
-<div class="code-block-caption"><span class="caption-number">リスト 5.51 </span><span class="caption-text">複数具体値の構造の変数の場合3</span><a class="headerlink" href="#id52" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.41 </span><span class="caption-text">複数具体値の構造の変数の場合3</span><a class="headerlink" href="#id52" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>■ファイル名:<span class="w"> </span>RH_snmp.yml
 ■ファイルの内容
 
@@ -998,7 +998,7 @@ PREFIX<span class="o">(</span>ファイル名<span class="o">)</span>:<span clas
 </figcaption>
 </figure>
 <table class="docutils align-left" id="id54">
-<caption><span class="caption-number">表 5.39 </span><span class="caption-text">作業管理画面収集状況詳細</span><a class="headerlink" href="#id54" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.20 </span><span class="caption-text">作業管理画面収集状況詳細</span><a class="headerlink" href="#id54" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>項目</p></th>
 <th class="head"><p>説明</p></th>
@@ -1024,7 +1024,7 @@ PREFIX<span class="o">(</span>ファイル名<span class="o">)</span>:<span clas
 </tbody>
 </table>
 <table class="docutils align-left" id="id55">
-<caption><span class="caption-number">表 5.40 </span><span class="caption-text">収集状況詳細</span><a class="headerlink" href="#id55" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.21 </span><span class="caption-text">収集状況詳細</span><a class="headerlink" href="#id55" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
 <div class="line">作業状態</div>
@@ -1103,7 +1103,7 @@ PREFIX<span class="o">(</span>ファイル名<span class="o">)</span>:<span clas
 <div class="line">■ e.g.) ログファイル出力内容例</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id56">
-<div class="code-block-caption"><span class="caption-number">リスト 5.52 </span><span class="caption-text">ログファイル出力例 - 収集済み</span><a class="headerlink" href="#id56" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.42 </span><span class="caption-text">ログファイル出力例 - 収集済み</span><a class="headerlink" href="#id56" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>Collect<span class="w"> </span>START<span class="w"> </span><span class="o">(</span>host<span class="w"> </span>name:<span class="w"> </span>exastro-test-1<span class="w"> </span>file<span class="w"> </span>name:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;Ansible_conf&#39;</span><span class="o">])</span>
 <span class="w"> </span>REST<span class="w"> </span>DATA<span class="w"> </span><span class="o">(</span>host<span class="w"> </span>name:<span class="w"> </span>exastro-test-1<span class="w"> </span>menu<span class="w"> </span>ID:<span class="w"> </span>collect_001<span class="w"> </span>operation<span class="w"> </span>NO:<span class="w"> </span>4001e182-51d2-4918-96e0-5981c4dc6d5f<span class="o">)</span>
 <span class="w"> </span>Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</span>host<span class="w"> </span>name:<span class="w"> </span>exastro-test-1<span class="w"> </span>file<span class="w"> </span>name:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;Ansible_conf&#39;</span><span class="o">])</span>
@@ -1117,7 +1117,7 @@ PREFIX<span class="o">(</span>ファイル名<span class="o">)</span>:<span clas
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id57">
-<div class="code-block-caption"><span class="caption-number">リスト 5.53 </span><span class="caption-text">ログファイル出力例 - 収集済み(通知あり)</span><a class="headerlink" href="#id57" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.43 </span><span class="caption-text">ログファイル出力例 - 収集済み(通知あり)</span><a class="headerlink" href="#id57" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Collect<span class="w"> </span>START<span class="w"> </span><span class="o">(</span>host<span class="w"> </span>name:<span class="w"> </span>exastro-test-1<span class="w"> </span>file<span class="w"> </span>name:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;Ansible_conf&#39;</span><span class="o">])</span>
 <span class="o">{</span><span class="s1">&#39;item_1&#39;</span>:<span class="w"> </span><span class="o">[{</span><span class="s1">&#39;status_code&#39;</span>:<span class="w"> </span><span class="s1">&#39;&#39;</span>,<span class="w"> </span><span class="s1">&#39;msg_args&#39;</span>:<span class="w"> </span><span class="s1">&#39;&#39;</span>,<span class="w"> </span><span class="s1">&#39;msg&#39;</span>:<span class="w"> </span><span class="s1">&#39;Regular expression error (1,Value:sample_value)&#39;</span><span class="o">}]}</span>
 <span class="o">[</span>Process<span class="o">]</span><span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>register<span class="w"> </span>or<span class="w"> </span>update<span class="w"> </span>data<span class="w"> </span><span class="k">in</span><span class="w"> </span>CMDB.<span class="w"> </span><span class="o">(</span><span class="m">1</span>/1<span class="o">)</span>
@@ -1134,13 +1134,13 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id58">
-<div class="code-block-caption"><span class="caption-number">リスト 5.54 </span><span class="caption-text">ログファイル出力例 - 収集エラー[Operation]</span><a class="headerlink" href="#id58" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.44 </span><span class="caption-text">ログファイル出力例 - 収集エラー[Operation]</span><a class="headerlink" href="#id58" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>Process<span class="o">]</span><span class="w"> </span>Operation<span class="w"> </span>is<span class="w"> </span>abolished,<span class="w"> </span>so<span class="w"> </span>registration<span class="w"> </span>and<span class="w"> </span>update<span class="w"> </span>processing<span class="w"> </span>is<span class="w"> </span>skipped<span class="w"> </span><span class="o">(</span>Operation<span class="w"> </span>No:<span class="w"> </span>4001e182-51d2-4918-96e0-5981c4dc6d5f<span class="o">)</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id59">
-<div class="code-block-caption"><span class="caption-number">リスト 5.55 </span><span class="caption-text">ログファイル出力例 - 収集エラー[host]</span><a class="headerlink" href="#id59" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.45 </span><span class="caption-text">ログファイル出力例 - 収集エラー[host]</span><a class="headerlink" href="#id59" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>Process<span class="o">]</span><span class="w"> </span>The<span class="w"> </span>registration<span class="w"> </span>/<span class="w"> </span>update<span class="w"> </span>process<span class="w"> </span>is<span class="w"> </span>skipped<span class="w"> </span>because<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>device<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>registered<span class="w"> </span>or<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>abolished<span class="w"> </span><span class="o">(</span>host<span class="w"> </span>name:<span class="w"> </span>exastro-test-1<span class="o">)</span>.
 <span class="o">[</span>Process<span class="o">]</span><span class="w"> </span>The<span class="w"> </span>registration<span class="w"> </span>/<span class="w"> </span>update<span class="w"> </span>process<span class="w"> </span>is<span class="w"> </span>skipped<span class="w"> </span>because<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>device<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>registered<span class="w"> </span>or<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>abolished<span class="w"> </span><span class="o">(</span>host<span class="w"> </span>name:<span class="w"> </span>exastro-test-2<span class="o">)</span>.
 <span class="o">[</span>Process<span class="o">]</span><span class="w"> </span>The<span class="w"> </span>registration<span class="w"> </span>/<span class="w"> </span>update<span class="w"> </span>process<span class="w"> </span>is<span class="w"> </span>skipped<span class="w"> </span>because<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>device<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>registered<span class="w"> </span>or<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>abolished<span class="w"> </span><span class="o">(</span>host<span class="w"> </span>name:<span class="w"> </span>exastro-test-3<span class="o">)</span>.
@@ -1148,7 +1148,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id60">
-<div class="code-block-caption"><span class="caption-number">リスト 5.56 </span><span class="caption-text">ログファイル出力例 - 対象外</span><a class="headerlink" href="#id60" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.46 </span><span class="caption-text">ログファイル出力例 - 対象外</span><a class="headerlink" href="#id60" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>Process<span class="o">]</span><span class="w"> </span>There<span class="w"> </span>is<span class="w"> </span>no<span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>collection<span class="w"> </span>target<span class="w"> </span>directory.
 </pre></div>
 </div>
@@ -1226,7 +1226,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">Ansibleコンフィグ取得、パラメータ生成Playbook</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="makeyml-ansible-yml">
-<div class="code-block-caption"><span class="caption-number">リスト 5.57 </span><span class="caption-text">makeYml_Ansible.yml</span><a class="headerlink" href="#makeyml-ansible-yml" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.47 </span><span class="caption-text">makeYml_Ansible.yml</span><a class="headerlink" href="#makeyml-ansible-yml" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make yaml file</span>
 <span class="w">   </span><span class="nt">blockinfile</span><span class="p">:</span>
 <span class="w">     </span><span class="nt">create</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
@@ -1290,7 +1290,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id61">
-<div class="code-block-caption"><span class="caption-number">リスト 5.58 </span><span class="caption-text">gather_facts有効設定例</span><a class="headerlink" href="#id61" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.48 </span><span class="caption-text">gather_facts有効設定例</span><a class="headerlink" href="#id61" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span>
 <span class="w">  </span><span class="nt">remote_user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">__loginuser__</span><span class="nv"> </span><span class="s">}}&quot;</span>
 <span class="w">  </span><span class="nt">gather_facts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
@@ -1307,7 +1307,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">収集項目値管理にて、一つの「メニュー-項目」に対して、複数の「PREFIX(ファイル名)-変数名」の設定をしている場合、対象ホストの収集対象ディレクトリ内に、該当する複数のソースファイルがある場合の収集処理の例について記載します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-number">リスト 5.59 </span><span class="caption-text">収集対象ファイル</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.49 </span><span class="caption-text">収集対象ファイル</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>【上位ディレクトリ】
 <span class="w">   </span><span class="p">|</span>-<span class="w">  </span>_parameters
 <span class="w">       </span><span class="p">|</span>-<span class="w">  </span>ita-sample01
@@ -1323,7 +1323,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">■ファイル名：SAMPLE_01.yml ,SAMPLE_02.yml</div>
 </div>
 <table class="docutils align-left" id="id62">
-<caption><span class="caption-number">表 5.41 </span><span class="caption-text">ファイルの内容</span><a class="headerlink" href="#id62" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.22 </span><span class="caption-text">ファイルの内容</span><a class="headerlink" href="#id62" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -1389,7 +1389,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">Yaml形式で出力された収集対象ファイルについて、パラメータシートへの登録処理時の値の取り扱いについて以下として扱います。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-number">リスト 5.60 </span><span class="caption-text">Sample.yml</span><a class="headerlink" href="#id26" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.50 </span><span class="caption-text">Sample.yml</span><a class="headerlink" href="#id26" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">VAR_TEST</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TEST</span>
 <span class="nt">VAR_STR_TEST1</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TEST1&#39;</span>
 <span class="nt">VAR_STR_TEST2</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TEST2&quot;</span>
@@ -1415,7 +1415,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">■ 収集対象YAML(sample.yml)のキーと値</div>
 </div>
 <table class="docutils align-left" id="id64">
-<caption><span class="caption-number">表 5.42 </span><span class="caption-text">収集対象YAML(sample.yml)のキーと値</span><a class="headerlink" href="#id64" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.23 </span><span class="caption-text">収集対象YAML(sample.yml)のキーと値</span><a class="headerlink" href="#id64" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 10.7%" />
 <col style="width: 35.7%" />
@@ -1526,7 +1526,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">■ 収集対象YAML(sample.yml)の収集</div>
 </div>
 <table class="docutils align-left" id="id65">
-<caption><span class="caption-number">表 5.43 </span><span class="caption-text">収集対象YAML(sample.yml)の収集</span><a class="headerlink" href="#id65" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.24 </span><span class="caption-text">収集対象YAML(sample.yml)の収集</span><a class="headerlink" href="#id65" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>No</p></th>
 <th class="head"><p>収集対象 (キー:値)</p></th>
@@ -1700,7 +1700,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <li><p>対象パラメータシートのRESTAPI(filter)での取得結果</p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id68">
-<div class="code-block-caption"><span class="caption-number">リスト 5.61 </span><span class="caption-text">RESTAPI(filter)のレスポンス</span><a class="headerlink" href="#id68" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.51 </span><span class="caption-text">RESTAPI(filter)のレスポンス</span><a class="headerlink" href="#id68" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -1752,7 +1752,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">Yaml形式で出力された収集対象ファイルについて、同一ホストで、階層別で同一ファイル名を取り扱う必要がある場合に、アップロード対象ファイルの指定例について記載します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id69">
-<div class="code-block-caption"><span class="caption-number">リスト 5.62 </span><span class="caption-text">収集対象ファイルのファイルパス、ディレクトリ構造(複数の同一ファイル名)</span><a class="headerlink" href="#id69" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.52 </span><span class="caption-text">収集対象ファイルのファイルパス、ディレクトリ構造(複数の同一ファイル名)</span><a class="headerlink" href="#id69" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>【上位ディレクトリ】
 <span class="w">   </span><span class="p">|</span>-<span class="w">  </span>_parameters
 <span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="p">|</span>-<span class="w">  </span>localhost
@@ -1782,7 +1782,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">収集対象ファイルの内容収集時に対処となるファイルの実体は以下となります。</div>
 </div>
 <table class="docutils align-left" id="id70">
-<caption><span class="caption-number">表 5.44 </span><span class="caption-text">収集対象ファイルとファイルの実体</span><a class="headerlink" href="#id70" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 5.25 </span><span class="caption-text">収集対象ファイルとファイルの実体</span><a class="headerlink" href="#id70" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 40.0%" />
 <col style="width: 40.0%" />
@@ -1821,7 +1821,7 @@ Collect<span class="w"> </span>END<span class="w"> </span><span class="o">(</spa
 <div class="line">削除するファイルについて対象の変数名の値を空文字として設定することで削除可能です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id71">
-<div class="code-block-caption"><span class="caption-number">リスト 5.63 </span><span class="caption-text">ファイルアップロード項目の削除収集対象ファイルのファイルパス、ディレクトリ構造</span><a class="headerlink" href="#id71" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 5.53 </span><span class="caption-text">ファイルアップロード項目の削除収集対象ファイルのファイルパス、ディレクトリ構造</span><a class="headerlink" href="#id71" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>【上位ディレクトリ】
 <span class="w">   </span><span class="p">|</span>-<span class="w">  </span>_parameters
 <span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="p">|</span>-<span class="w">  </span>localhost
