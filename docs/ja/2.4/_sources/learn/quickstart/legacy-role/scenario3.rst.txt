@@ -34,7 +34,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario3/オペレーション登録.png
+.. figure:: ../../../../../images/learn/quickstart/scenario3/オペレーション登録.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -66,7 +66,7 @@
 
 | :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である db01 のホスト名を web01 に更新します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario3/機器情報の更新.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario3/機器情報の更新.gif
    :width: 1200px
    :alt: 機器情報の更新
 
@@ -119,7 +119,7 @@
 
 | :menuselection:`Conductor --> Conductor編集/作業実行` から、ジョブフローを定義します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario3/ジョブフローの作成.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario3/ジョブフローの作成.gif
    :width: 1200px
    :alt: ジョブフローの作成
 
@@ -171,7 +171,7 @@
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ホスト名に関するパラメータを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario3/サーバ基本情報登録.png
+.. figure:: ../../../../../images/learn/quickstart/scenario3/サーバ基本情報登録.png
    :width: 1200px
    :alt: サーバ基本情報登録
 
@@ -191,7 +191,7 @@
 
 | :menuselection:`入力用 --> 導入パッケージ` から、パッケージに関するパラメータを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario3/導入パッケージ登録.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario3/導入パッケージ登録.gif
    :width: 1200px
    :alt: 導入パッケージ登録
 
@@ -271,7 +271,7 @@
 
    | :menuselection:`Conductor作業確認` 画面が開き、実行が完了した後に、全ての Movement のステータスが「Done」になったことを確認します。
 
-   .. figure:: ../../../../images/learn/quickstart/scenario3/Conductor作業実行.gif
+   .. figure:: ../../../../../images/learn/quickstart/scenario3/Conductor作業実行.gif
       :width: 1200px
       :alt: Conductor作業実行
 

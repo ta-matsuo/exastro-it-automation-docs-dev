@@ -56,7 +56,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/作業概要登録.png
+.. figure:: ../../../../../images/learn/quickstart/answer1/作業概要登録.png
    :width: 1200px
    :alt: Conductor作業実行
 
@@ -107,11 +107,11 @@
 .. tip:: 
    | パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/グループのパラメータシート.png
+.. figure:: ../../../../../images/learn/quickstart/answer1/グループのパラメータシート.png
    :width: 1200px
    :alt: グループのパラメータシート
 
-.. figure:: ../../../../images/learn/quickstart/answer1/グループのパラメータシート作成.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/グループのパラメータシート作成.gif
    :width: 1200px
    :alt: グループのパラメータシート作成
 
@@ -249,11 +249,11 @@
 .. tip:: 
    | :menuselection:`入力方式` を :kbd:`プルダウン選択` に設定することで、:ref:`groups_parameter_sheet` で登録したデータシートを参照できるようになります。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート.png
+.. figure:: ../../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート.png
    :width: 1200px
    :alt: ユーザーのパラメータシート
 
-.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート作成_1.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート作成_1.gif
    :width: 1200px
    :alt: ユーザーのパラメータシートの作成1
 
@@ -353,7 +353,7 @@
      - 
      - 
 
-.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート作成_2.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート作成_2.gif
    :width: 1200px
    :alt: ユーザーのパラメータシート作成_2
 
@@ -488,7 +488,7 @@ Movement 登録
 
 | :menuselection:`Ansible-LegacyRole --> Movement一覧` から、ホスト名設定のための Movement を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/Movement登録.png
+.. figure:: ../../../../../images/learn/quickstart/answer1/Movement登録.png
    :width: 1200px
    :alt: Movement登録
    
@@ -515,7 +515,7 @@ Movement と Ansible Role の紐付け
 | 本シナリオでは、 `グループ管理用の Ansible Role パッケージ <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ および `ユーザー管理用の Ansible Role パッケージ <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ を利用します。
 | ユーザーを作成する際には、先にグループを指定する必要があるため下記の順序でインクルードする必要があります。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/MovementとAnsibleRoleの紐づけ.png
+.. figure:: ../../../../../images/learn/quickstart/answer1/MovementとAnsibleRoleの紐づけ.png
    :width: 1200px
    :alt: MovementとAnsibleRoleの紐づけ
 
@@ -581,7 +581,7 @@ Movement と Ansible Role の紐付け
 
 | 多段変数の場合、その上限数を予め決めておく必要があります。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/変数ネスト管理.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/変数ネスト管理.gif
    :width: 1200px
    :alt: 変数ネスト管理
 
@@ -608,7 +608,7 @@ Movement と Ansible Role の紐付け
 | :menuselection:`Ansible-LegacyRole --> 代入値自動登録設定` から、パラメータシートの項目と Ansible Role パッケージの変数の紐付けを行います。
 | 大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/グループの代入値自動登録設定.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/グループの代入値自動登録設定.gif
    :width: 1200px
    :alt: グループの代入値自動登録設定
 
@@ -689,7 +689,7 @@ Movement と Ansible Role の紐付け
     - :kbd:`ユーザー管理:VAR_RH_group`
     - :kbd:`ユーザー管理:VAR_RH_group:[4].action`
 
-.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーの代入値自動登録設定.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/ユーザーの代入値自動登録設定.gif
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
@@ -997,7 +997,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`入力用 --> グループ` から、グループに対するパラメータを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/グループのパラメータ登録.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/グループのパラメータ登録.gif
    :width: 1200px
    :alt: グループのパラメータ登録
 
@@ -1032,7 +1032,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`入力用 --> ユーザー` から、ユーザーに対するパラメータを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/ユーザのパラメータ登録.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/ユーザのパラメータ登録.gif
    :width: 1200px
    :alt: ユーザのパラメータ登録
 
@@ -1153,7 +1153,7 @@ Movement と Ansible Role の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/作業実行.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/作業実行.gif
    :width: 1200px
    :alt: 作業実行
 
@@ -1243,7 +1243,7 @@ Movement と Ansible Role の紐付け
 | 6. :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
 | 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/実行失敗.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/実行失敗.gif
    :width: 1200px
    :alt: 実行失敗
 
@@ -1277,7 +1277,7 @@ Movement と Ansible Role の紐付け
 | 6. :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
 | 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
-.. figure:: ../../../../images/learn/quickstart/answer1/実行成功.gif
+.. figure:: ../../../../../images/learn/quickstart/answer1/実行成功.gif
    :width: 1200px
    :alt: 実行成功
 
@@ -1288,4 +1288,4 @@ Movement と Ansible Role の紐付け
 
 | 本シナリオでは、これまでのシナリオの確認のために、演習課題を実施しました。
 | また Conductor のパラメータ連携の1つの手段として、個別オペレーションについて紹介をしました。
-| より詳細な情報を知りたい場合は、:doc:`../../manuals/index` を参照してください。
+| より詳細な情報を知りたい場合は、:doc:`../../../manuals/index` を参照してください。

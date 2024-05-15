@@ -205,17 +205,22 @@
      - :kbd:`IP`
 
 Ansible Playbook 登録
------------------
+---------------------
 
 | Ansible Playbook の登録を行います。Ansible Playbook は運用手順書内に記載されたコマンドに該当します。
 | Ansible-Legacyモードではご自身で作成したPlaybookを利用することを想定しています。
 | Ansible-Legacyモードを使用することのメリットとして、自身の用途に合ったPlaybookを作成することで自由に手順を作成することが可能です。
 | ですが、Ansible-Legacyモードを利用するにはご自身でPlaybookを作成していただく必要があるため、Playbook作成の知識が必要となります。
 
-| 本シナリオでは、 `hostname.yml <https://github.com/exastro-suite/playbook-collection-docs/blob/master/ansible_role_packages/README.md>`_ を利用します。
+| 本シナリオでは、 以下のPlaybookを利用します。以下をコピーして、yml形式でhostname.ymlを作成してください。
 
-| `ここ <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をクリックして Ansible Playbook の hostname.yml をダウンロードしてください。
-| :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `hostname.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
+.. code-block:: bash
+   :caption: hostname.yml
+
+   - hostname:
+     name: "{{ hostname }}"
+
+| :menuselection:`Ansible-Legacy --> Playbook素材集` から、上記のPlaybookを登録します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Playbook素材集.png
    :width: 1200px
@@ -231,10 +236,10 @@ Ansible Playbook 登録
     - :file:`hostname.yml`
 
 Movement と Ansible Playbook の紐付け
----------------------------------
+-------------------------------------
 
 | :menuselection:`Ansible-Legacy --> Movement-ロール紐付` から、Movement と Ansible Playbook の紐付けを行います。
-| 本シナリオでは、 `hostname.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_hostname/OS_build>`_ を利用します。
+| 本シナリオでは、 hostname.ymlを利用します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Movement-Playbook紐付.png
    :width: 1200px
@@ -252,7 +257,7 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`1`
 
 パラメータシートの項目と Ansible Playbook の変数の紐付け
-----------------------------------------------------
+--------------------------------------------------------
 
 | hostname.ymlでは、:kbd:`hostname` という変数にホスト名を代入することで、対象サーバーのホスト名を設定することができます。
 
@@ -467,4 +472,4 @@ Movement と Ansible Playbook の紐付け
 ======
 
 | 本シナリオでは、RHEL8 サーバに対してホスト名を設定するシナリオを通して、Exastro IT Automation の基本的な操作方法やコンセプトについて紹介をしました。
-| :doc:`次のシナリオ <scenario2>` では、より実用的なパラメータシートの管理方法について紹介をします。
+| :doc:`次のシナリオ <Legacy_scenario2>` では、より実用的なパラメータシートの管理方法について紹介をします。

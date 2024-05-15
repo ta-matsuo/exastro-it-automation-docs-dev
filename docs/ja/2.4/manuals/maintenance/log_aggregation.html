@@ -266,7 +266,7 @@
 <div class="line">事前準備として、出力先の永続ボリューム(PV)とリソースの要求(PVC)のmanifestを作成します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-number">リスト 3.35 </span><span class="caption-text">fluentbit-pv.yaml</span><a class="headerlink" href="#id8" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.18 </span><span class="caption-text">fluentbit-pv.yaml</span><a class="headerlink" href="#id8" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="linenos"> 2</span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
 <span class="linenos"> 3</span><span class="nt">metadata</span><span class="p">:</span>
@@ -307,7 +307,7 @@
 <div class="line">helm chartsでインストールする際に使用する <kbd class="kbd docutils literal notranslate">values.yaml</kbd> は、以下のコマンドで抽出して、編集する</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-number">リスト 3.36 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id9" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.19 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id9" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>fluent/fluent-bit<span class="w"> </span>&gt;<span class="w"> </span>fluentbit-values.yaml
 </pre></div>
 </div>
@@ -318,7 +318,7 @@
 <div class="line">Fluent Bitのhelmリポジトリ登録は以下のコマンドで実施できます。 <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">helm</kbd> <kbd class="kbd docutils literal notranslate">show</kbd> <kbd class="kbd docutils literal notranslate">values</kbd></kbd> を実行する前に１度だけ必要となります。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-number">リスト 3.37 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id10" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.20 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id10" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro システムの Helm リポジトリを登録</span>
 helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>fluent<span class="w"> </span>https://fluent.github.io/helm-charts
 <span class="c1"># リポジトリ情報の更新</span>
@@ -331,7 +331,7 @@ helm<span class="w"> </span>repo<span class="w"> </span>update
 <div class="line">出力された <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">fluentbit</kbd>-<kbd class="kbd docutils literal notranslate">values.yaml</kbd></kbd> を以下のように修正します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-number">リスト 3.38 </span><span class="caption-text">fluentbit-values.yaml</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.21 </span><span class="caption-text">fluentbit-values.yaml</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/share/ja/manuals/maintenance/literal_includes/fluentbit-values-org.yaml</span>
 <span class="linenos">  2</span><span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/share/ja/manuals/maintenance/literal_includes/fluentbit-values.yaml</span>
 <span class="linenos">  3</span><span class="gu">@@ -298,9 +298,12 @@</span>
@@ -520,7 +520,7 @@ helm<span class="w"> </span>repo<span class="w"> </span>update
 <div class="line">PV, PVCのapply</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-number">リスト 3.39 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.22 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>fluentbit-pv.yaml
 </pre></div>
 </div>
@@ -530,7 +530,7 @@ helm<span class="w"> </span>repo<span class="w"> </span>update
 <div class="line">Fluent Bit: インストール</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-number">リスト 3.40 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.23 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>fluent-bit<span class="w"> </span>fluent/fluent-bit<span class="w"> </span>-f<span class="w"> </span>fluentbit-values.yaml
 </pre></div>
 </div>
@@ -540,13 +540,13 @@ helm<span class="w"> </span>repo<span class="w"> </span>update
 <div class="line">インストールされた <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Fluent</kbd> <kbd class="kbd docutils literal notranslate">Bit</kbd></kbd> の確認</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-number">リスト 3.41 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.24 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>po
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-number">リスト 3.42 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.25 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">               </span>READY<span class="w">   </span>STATUS<span class="w">              </span>RESTARTS<span class="w">   </span>AGE
 fluent-bit-gx2c5<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">             </span><span class="m">0</span><span class="w">          </span>22s
 fluent-bit-tgbls<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ContainerCreating<span class="w">   </span><span class="m">0</span><span class="w">          </span>22s
@@ -555,13 +555,13 @@ fluent-bit-xhm6w<span class="w">   </span><span class="m">0</span>/1<span class=
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-number">リスト 3.43 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.26 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>daemonset
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-number">リスト 3.44 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.27 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">         </span>DESIRED<span class="w">   </span>CURRENT<span class="w">   </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>NODE<span class="w"> </span>SELECTOR<span class="w">   </span>AGE
 fluent-bit<span class="w">   </span><span class="m">3</span><span class="w">         </span><span class="m">3</span><span class="w">         </span><span class="m">3</span><span class="w">       </span><span class="m">3</span><span class="w">            </span><span class="m">3</span><span class="w">           </span>&lt;none&gt;<span class="w">          </span>88m
 </pre></div>
@@ -580,7 +580,7 @@ fluent-bit<span class="w">   </span><span class="m">3</span><span class="w">    
 <div class="line">集約したログファイル一覧(例)</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-number">リスト 3.45 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.28 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">156434</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">14</span>:53<span class="w"> </span>exastro-suite.exastro.mongo.20240305.log
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">514599</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">14</span>:53<span class="w"> </span>exastro-suite.exastro.platform-api.20240305.log
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">6931</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">14</span>:51<span class="w"> </span>exastro-suite.exastro.platform-job.20240305.log
@@ -592,7 +592,7 @@ fluent-bit<span class="w">   </span><span class="m">3</span><span class="w">    
 <div class="line">集約したログファイルの内容(例)</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-number">リスト 3.46 </span><span class="caption-text">集約したログファイルの内容</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.29 </span><span class="caption-text">集約したログファイルの内容</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;stream&quot;</span><span class="p">:</span><span class="s2">&quot;stdout&quot;</span><span class="p">,</span><span class="nt">&quot;logtag&quot;</span><span class="p">:</span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="nt">&quot;record_date&quot;</span><span class="p">:</span><span class="s2">&quot;20240301&quot;</span><span class="p">,</span><span class="nt">&quot;log&quot;</span><span class="p">:</span><span class="s2">&quot;2024/03/01 16:40:09.098836 INFO (dumm) /app/controllers/internal_maintenance_mode_setting_controller.py(37) ### func:internal_get_maintenance_mode_setting&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="nt">&quot;stream&quot;</span><span class="p">:</span><span class="s2">&quot;stdout&quot;</span><span class="p">,</span><span class="nt">&quot;logtag&quot;</span><span class="p">:</span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="nt">&quot;record_date&quot;</span><span class="p">:</span><span class="s2">&quot;20240301&quot;</span><span class="p">,</span><span class="nt">&quot;log&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.172.2 - - [01/Mar/2024:16:40:09 +0900] \&quot;GET /internal-api/platform/maintenance-mode-setting HTTP/1.1\&quot; 200 135 \&quot;-\&quot; \&quot;python-requests/2.31.0\&quot;&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="nt">&quot;stream&quot;</span><span class="p">:</span><span class="s2">&quot;stdout&quot;</span><span class="p">,</span><span class="nt">&quot;logtag&quot;</span><span class="p">:</span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="nt">&quot;record_date&quot;</span><span class="p">:</span><span class="s2">&quot;20240301&quot;</span><span class="p">,</span><span class="nt">&quot;log&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.172.2 - - [01/Mar/2024:16:40:09 +0900] \&quot;GET /internal-api/platform/maintenance-mode-setting HTTP/1.1\&quot; 200 135&quot;</span><span class="p">}</span>

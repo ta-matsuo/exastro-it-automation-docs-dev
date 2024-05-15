@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>6. OASE Agent (Kubernetes) &#8212; Documentation  ドキュメント</title>
+    <title>4. OASE Agent (Kubernetes) &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,7 +36,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="Learn" href="../learn/index.html" />
-    <link rel="prev" title="5. OASE Agent (Docker Compose)" href="oase_agent_docker_compose.html" /> 
+    <link rel="prev" title="3. OASE Agent (Docker Compose)" href="oase_agent_docker_compose.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -96,7 +96,7 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="oase_agent_docker_compose.html" title="前のトピックへ"><span class="section-number">5. </span>OASE Agent (Docker Compose)</a></li>
+        <li class="prev"><a href="oase_agent_docker_compose.html" title="前のトピックへ"><span class="section-number">3. </span>OASE Agent (Docker Compose)</a></li>
         <li class="next"><a href="../learn/index.html" title="次のトピックへ">Learn</a></li>
       </ul>
     </div>
@@ -112,47 +112,45 @@
 <li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">構成・構築ガイド</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="docker_compose_online.html">1. Docker Compose - Online</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docker_compose_offline_docker.html">2. Docker Compose on Docker - Offline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docker_compose_offline_podman.html">3. Docker Compose on Podman - Offline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helm_on_kubernetes.html">4. Helm chart (Kubernetes)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oase_agent_docker_compose.html">5. OASE Agent (Docker Compose)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6. OASE Agent (Kubernetes)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">6.1. 目的</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">6.2. 特徴</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">6.3. 前提条件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">6.4. インストールの準備</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#helm">6.4.1. Helm リポジトリの登録</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">6.4.2. デフォルト設定値の取得</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#oase-agent">6.4.3. OASE Agentの設定</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id6">6.4.3.1. パラメータ</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id7">6.4.3.2. OASE Agentのパラメータ設定例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helm_on_kubernetes.html">2. Helm chart (Kubernetes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oase_agent_docker_compose.html">3. OASE Agent (Docker Compose)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. OASE Agent (Kubernetes)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">4.1. 目的</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.2. 特徴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.3. 前提条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.4. インストールの準備</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#helm">4.4.1. Helm リポジトリの登録</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">4.4.2. デフォルト設定値の取得</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oase-agent">4.4.3. OASE Agentの設定</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id6">4.4.3.1. パラメータ</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id7">4.4.3.2. OASE Agentのパラメータ設定例</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#agent-persistent-volume">6.4.4. 永続ボリュームの設定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-persistent-volume">4.4.4. 永続ボリュームの設定</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">6.5. インストール</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id11">6.5.1. 永続ボリュームの作成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">6.5.2. インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">4.5. インストール</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">4.5.1. 永続ボリュームの作成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">4.5.2. インストール</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">6.6. アップグレード</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id14">6.6.1. アップグレードの準備</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">6.6.2. アップグレード</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id16">6.6.2.1. サービス停止</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id17">6.6.2.2. アップグレード実施</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id18">6.6.2.3. サービス再開</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id19">6.6.2.4. アップグレード状況確認</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">4.6. アップグレード</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">4.6.1. アップグレードの準備</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">4.6.2. アップグレード</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id16">4.6.2.1. サービス停止</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id17">4.6.2.2. アップグレード実施</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id18">4.6.2.3. サービス再開</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id19">4.6.2.4. アップグレード状況確認</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id20">6.7. アンインストール</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id21">6.7.1. アンインストールの準備</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id22">6.7.2. アンインストール</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id23">6.7.2.1. アンインストール実施</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id24">6.7.2.2. 永続ボリュームを削除</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id26">6.7.2.3. 永続データを削除</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">4.7. アンインストール</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">4.7.1. アンインストールの準備</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">4.7.2. アンインストール</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id23">4.7.2.1. アンインストール実施</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id24">4.7.2.2. 永続ボリュームを削除</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id26">4.7.2.3. 永続データを削除</a></li>
 </ul>
 </li>
 </ul>
@@ -179,47 +177,47 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">6. OASE Agent (Kubernetes)</a><ul>
-<li><a class="reference internal" href="#id1">6.1. 目的</a></li>
-<li><a class="reference internal" href="#id2">6.2. 特徴</a></li>
-<li><a class="reference internal" href="#id3">6.3. 前提条件</a></li>
-<li><a class="reference internal" href="#id4">6.4. インストールの準備</a><ul>
-<li><a class="reference internal" href="#helm">6.4.1. Helm リポジトリの登録</a></li>
-<li><a class="reference internal" href="#id5">6.4.2. デフォルト設定値の取得</a></li>
-<li><a class="reference internal" href="#oase-agent">6.4.3. OASE Agentの設定</a><ul>
-<li><a class="reference internal" href="#id6">6.4.3.1. パラメータ</a></li>
-<li><a class="reference internal" href="#id7">6.4.3.2. OASE Agentのパラメータ設定例</a></li>
+<li><a class="reference internal" href="#">4. OASE Agent (Kubernetes)</a><ul>
+<li><a class="reference internal" href="#id1">4.1. 目的</a></li>
+<li><a class="reference internal" href="#id2">4.2. 特徴</a></li>
+<li><a class="reference internal" href="#id3">4.3. 前提条件</a></li>
+<li><a class="reference internal" href="#id4">4.4. インストールの準備</a><ul>
+<li><a class="reference internal" href="#helm">4.4.1. Helm リポジトリの登録</a></li>
+<li><a class="reference internal" href="#id5">4.4.2. デフォルト設定値の取得</a></li>
+<li><a class="reference internal" href="#oase-agent">4.4.3. OASE Agentの設定</a><ul>
+<li><a class="reference internal" href="#id6">4.4.3.1. パラメータ</a></li>
+<li><a class="reference internal" href="#id7">4.4.3.2. OASE Agentのパラメータ設定例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#agent-persistent-volume">6.4.4. 永続ボリュームの設定</a></li>
+<li><a class="reference internal" href="#agent-persistent-volume">4.4.4. 永続ボリュームの設定</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id9">6.5. インストール</a><ul>
-<li><a class="reference internal" href="#id11">6.5.1. 永続ボリュームの作成</a></li>
-<li><a class="reference internal" href="#id12">6.5.2. インストール</a></li>
+<li><a class="reference internal" href="#id9">4.5. インストール</a><ul>
+<li><a class="reference internal" href="#id11">4.5.1. 永続ボリュームの作成</a></li>
+<li><a class="reference internal" href="#id12">4.5.2. インストール</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id13">6.6. アップグレード</a><ul>
-<li><a class="reference internal" href="#id14">6.6.1. アップグレードの準備</a></li>
-<li><a class="reference internal" href="#id15">6.6.2. アップグレード</a><ul>
-<li><a class="reference internal" href="#id16">6.6.2.1. サービス停止</a></li>
-<li><a class="reference internal" href="#id17">6.6.2.2. アップグレード実施</a></li>
-<li><a class="reference internal" href="#id18">6.6.2.3. サービス再開</a></li>
-<li><a class="reference internal" href="#id19">6.6.2.4. アップグレード状況確認</a></li>
+<li><a class="reference internal" href="#id13">4.6. アップグレード</a><ul>
+<li><a class="reference internal" href="#id14">4.6.1. アップグレードの準備</a></li>
+<li><a class="reference internal" href="#id15">4.6.2. アップグレード</a><ul>
+<li><a class="reference internal" href="#id16">4.6.2.1. サービス停止</a></li>
+<li><a class="reference internal" href="#id17">4.6.2.2. アップグレード実施</a></li>
+<li><a class="reference internal" href="#id18">4.6.2.3. サービス再開</a></li>
+<li><a class="reference internal" href="#id19">4.6.2.4. アップグレード状況確認</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id20">6.7. アンインストール</a><ul>
-<li><a class="reference internal" href="#id21">6.7.1. アンインストールの準備</a></li>
-<li><a class="reference internal" href="#id22">6.7.2. アンインストール</a><ul>
-<li><a class="reference internal" href="#id23">6.7.2.1. アンインストール実施</a></li>
-<li><a class="reference internal" href="#id24">6.7.2.2. 永続ボリュームを削除</a><ul>
-<li><a class="reference internal" href="#id25">6.7.2.2.1. エージェント用</a></li>
+<li><a class="reference internal" href="#id20">4.7. アンインストール</a><ul>
+<li><a class="reference internal" href="#id21">4.7.1. アンインストールの準備</a></li>
+<li><a class="reference internal" href="#id22">4.7.2. アンインストール</a><ul>
+<li><a class="reference internal" href="#id23">4.7.2.1. アンインストール実施</a></li>
+<li><a class="reference internal" href="#id24">4.7.2.2. 永続ボリュームを削除</a><ul>
+<li><a class="reference internal" href="#id25">4.7.2.2.1. エージェント用</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id26">6.7.2.3. 永続データを削除</a><ul>
-<li><a class="reference internal" href="#id27">6.7.2.3.1. エージェント用</a></li>
+<li><a class="reference internal" href="#id26">4.7.2.3. 永続データを削除</a><ul>
+<li><a class="reference internal" href="#id27">4.7.2.3.1. エージェント用</a></li>
 </ul>
 </li>
 </ul>
@@ -241,7 +239,7 @@
     <li><a href="../index.html">HOME</a></li>
     <li><a href="index.html">インストール</a></li>
     
-    <li><span class="section-number">6. </span>OASE Agent (Kubernetes)</li>
+    <li><span class="section-number">4. </span>OASE Agent (Kubernetes)</li>
   </ul>
 </div>
 
@@ -262,15 +260,15 @@ $(window).on('load', function () {
    },200);
 });
 </script><section id="oase-agent-kubernetes">
-<span id="oase-agent-kubernetes-install"></span><h1><span class="section-number">6. </span>OASE Agent (Kubernetes)<a class="headerlink" href="#oase-agent-kubernetes" title="この見出しへのパーマリンク">¶</a></h1>
+<span id="oase-agent-kubernetes-install"></span><h1><span class="section-number">4. </span>OASE Agent (Kubernetes)<a class="headerlink" href="#oase-agent-kubernetes" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id1">
-<h2><span class="section-number">6.1. </span>目的<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.1. </span>目的<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本書では、Exastro IT AutomationにおいてOASEを利用する際に、外部との連携に必要となる、Exastro OASE Agentを導入する手順について説明します。</div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">6.2. </span>特徴<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.2. </span>特徴<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">OASEを利用するための絶対条件である、Exastro OASE Agentの高い可用性やサービスレベルを必要とされる際の、Exastro IT Automation の導入方法となります。</div>
 <div class="line">評価や一時的な利用など、簡単に利用を開始したい場合には、<a class="reference internal" href="oase_agent_docker_compose.html"><span class="doc">Docker Compose 版 OASE Agent</span></a> の利用を推奨します。</div>
@@ -278,7 +276,7 @@ $(window).on('load', function () {
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">6.3. </span>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.3. </span>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
 <ul>
 <li><p>Exastro IT Automationについて</p>
 <div class="line-block">
@@ -290,7 +288,7 @@ $(window).on('load', function () {
 <div class="line">動作確認が取れているクライアントアプリケーションのバージョンは下記のとおりです。</div>
 </div>
 <table class="docutils align-default" id="id28">
-<caption><span class="caption-number">表 6.1 </span><span class="caption-text">クライアント要件</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.1 </span><span class="caption-text">クライアント要件</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -315,7 +313,7 @@ $(window).on('load', function () {
 <div class="line">動作確認が取れているコンテナ環境の最小要求リソースとバージョンは下記のとおりです。</div>
 </div>
 <table class="docutils align-default" id="id29">
-<caption><span class="caption-number">表 6.2 </span><span class="caption-text">ハードウェア要件(最小構成)</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.2 </span><span class="caption-text">ハードウェア要件(最小構成)</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -357,9 +355,9 @@ $(window).on('load', function () {
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">6.4. </span>インストールの準備<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.4. </span>インストールの準備<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="helm">
-<h3><span class="section-number">6.4.1. </span>Helm リポジトリの登録<a class="headerlink" href="#helm" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.4.1. </span>Helm リポジトリの登録<a class="headerlink" href="#helm" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro OASE AgentはExastro システムと同一の Helm リポジトリ上に存在しています。</div>
 </div>
@@ -380,7 +378,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-number">リスト 6.1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Exastro システムの Helm リポジトリを登録</span>
 <span class="linenos">2</span>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>exastro<span class="w"> </span>https://exastro-suite.github.io/exastro-helm/<span class="w"> </span>--namespace<span class="w"> </span>exastro
 <span class="linenos">3</span><span class="c1"># リポジトリ情報の更新</span>
@@ -390,12 +388,12 @@ $(window).on('load', function () {
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">6.4.2. </span>デフォルト設定値の取得<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.4.2. </span>デフォルト設定値の取得<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">投入するパラメータを管理しやすくするために、下記のコマンドから共通基盤 values.yaml のデフォルト値を出力します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-number">リスト 6.2 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.2 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>exastro/exastro-agent<span class="w"> </span>&gt;<span class="w"> </span>exastro-agent.yaml
 </pre></div>
 </div>
@@ -528,7 +526,7 @@ $(window).on('load', function () {
 </div>
 </section>
 <section id="oase-agent">
-<h3><span class="section-number">6.4.3. </span>OASE Agentの設定<a class="headerlink" href="#oase-agent" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.4.3. </span>OASE Agentの設定<a class="headerlink" href="#oase-agent" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">OASE Agentを立ち上げる際の代表的な設定方法について紹介します。</div>
 <div class="line">下記の例では、永続ボリュームはhostPathで設定してます。</div>
@@ -539,12 +537,12 @@ $(window).on('load', function () {
 <li><p>複数エージェント（別Pod）</p></li>
 </ul>
 <section id="id6">
-<h4><span class="section-number">6.4.3.1. </span>パラメータ<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.4.3.1. </span>パラメータ<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">利用可能なパラメータについては下記を参照してください。</div>
 </div>
 <table class="filter-table docutils align-left" id="id32">
-<caption><span class="caption-number">表 6.3 </span><span class="caption-text">ita-ag-oase における Values 一覧</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.3 </span><span class="caption-text">ita-ag-oase における Values 一覧</span><a class="headerlink" href="#id32" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -732,7 +730,7 @@ $(window).on('load', function () {
 </table>
 </section>
 <section id="id7">
-<h4><span class="section-number">6.4.3.2. </span>OASE Agentのパラメータ設定例<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.4.3.2. </span>OASE Agentのパラメータ設定例<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">Agentの設定例を下記に記載します。</div>
 </div>
@@ -752,7 +750,7 @@ $(window).on('load', function () {
 <div class="line">OASE Agentの設定します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-number">リスト 6.3 </span><span class="caption-text">exastro-agent.yaml</span><a class="headerlink" href="#id33" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.3 </span><span class="caption-text">exastro-agent.yaml</span><a class="headerlink" href="#id33" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">13</span>ita-ag-oase:
 <span class="linenos">14</span><span class="w"> </span> agents:
 <span class="linenos">15</span><span class="w"> </span>   - image:
@@ -803,7 +801,7 @@ $(window).on('load', function () {
 <div class="line">OASE Agentの設定します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-number">リスト 6.4 </span><span class="caption-text">exastro-agent.yaml</span><a class="headerlink" href="#id34" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.4 </span><span class="caption-text">exastro-agent.yaml</span><a class="headerlink" href="#id34" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">13</span>ita-ag-oase:
 <span class="linenos">14</span><span class="w"> </span> agents:
 <span class="linenos">15</span><span class="w"> </span>   - image:
@@ -880,7 +878,7 @@ $(window).on('load', function () {
 </li>
 <li><p>一つ目のOASE Agentの設定</p>
 <div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-number">リスト 6.5 </span><span class="caption-text">exastro-agent-1.yaml</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.5 </span><span class="caption-text">exastro-agent-1.yaml</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">13</span>ita-ag-oase:
 <span class="linenos">14</span><span class="w"> </span> agents:
 <span class="linenos">15</span><span class="w"> </span>   - image:
@@ -916,7 +914,7 @@ $(window).on('load', function () {
 </li>
 <li><p>一つ目のOASE Agentの定義名を設定</p>
 <div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-number">リスト 6.6 </span><span class="caption-text">exastro-agent-1.yaml</span><a class="headerlink" href="#id36" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.6 </span><span class="caption-text">exastro-agent-1.yaml</span><a class="headerlink" href="#id36" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">45</span><span class="w"> </span> imagePullSecrets: []
 <span class="linenos">46</span><span class="gd">- nameOverride: &quot;&quot;</span>
 <span class="linenos">47</span><span class="gi">+ nameOverride: &quot;ita-ag-oase-1&quot;    # Exastro OASE Agent の定義名</span>
@@ -929,7 +927,7 @@ $(window).on('load', function () {
 <ol class="arabic" start="5">
 <li><p>一つ目のOASE AgentのmatchLabelsを設定</p>
 <div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-number">リスト 6.7 </span><span class="caption-text">exastro-agent-1.yaml</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.7 </span><span class="caption-text">exastro-agent-1.yaml</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">64</span><span class="w"> </span> persistence:
 <span class="linenos">65</span><span class="w"> </span>   enabled: true
 <span class="linenos">66</span><span class="w"> </span>   reinstall: false
@@ -947,7 +945,7 @@ $(window).on('load', function () {
 </li>
 <li><p>二つ目のOASE Agentの設定</p>
 <div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-number">リスト 6.8 </span><span class="caption-text">exastro-agent-2.yaml</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.8 </span><span class="caption-text">exastro-agent-2.yaml</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">13</span>ita-ag-oase:
 <span class="linenos">14</span><span class="w"> </span> agents:
 <span class="linenos">15</span><span class="w"> </span>   - image:
@@ -983,7 +981,7 @@ $(window).on('load', function () {
 </li>
 <li><p>二つ目のOASE Agentの定義名を設定します。</p>
 <div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-number">リスト 6.9 </span><span class="caption-text">exastro-agent-2.yaml</span><a class="headerlink" href="#id39" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.9 </span><span class="caption-text">exastro-agent-2.yaml</span><a class="headerlink" href="#id39" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">45</span><span class="w"> </span> imagePullSecrets: []
 <span class="linenos">46</span><span class="gd">- nameOverride: &quot;&quot;</span>
 <span class="linenos">47</span><span class="gi">+ nameOverride: &quot;ita-ag-oase-2&quot;    # Exastro OASE Agent の定義名</span>
@@ -994,7 +992,7 @@ $(window).on('load', function () {
 </li>
 <li><p>二つ目のOASE AgentのmatchLabelsを設定</p>
 <div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-number">リスト 6.10 </span><span class="caption-text">exastro-agent-2.yaml</span><a class="headerlink" href="#id40" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.10 </span><span class="caption-text">exastro-agent-2.yaml</span><a class="headerlink" href="#id40" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">64</span><span class="w"> </span> persistence:
 <span class="linenos">65</span><span class="w"> </span>   enabled: true
 <span class="linenos">66</span><span class="w"> </span>   reinstall: false
@@ -1015,7 +1013,7 @@ $(window).on('load', function () {
 </section>
 </section>
 <section id="agent-persistent-volume">
-<span id="id8"></span><h3><span class="section-number">6.4.4. </span>永続ボリュームの設定<a class="headerlink" href="#agent-persistent-volume" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id8"></span><h3><span class="section-number">4.4.4. </span>永続ボリュームの設定<a class="headerlink" href="#agent-persistent-volume" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">データベースのデータ永続化 (クラスタ内コンテナがある場合)、および、ファイルの永続化のために、永続ボリュームを設定する必要があります。</div>
 <div class="line">永続ボリュームの詳細については、 <a class="reference external" href="https://kubernetes.io/ja/docs/concepts/storage/persistent-volumes/#%E6%B0%B8%E7%B6%9A%E3%83%9C%E3%83%AA%E3%83%A5%E3%83%BC%E3%83%A0">永続ボリューム - Kubernetes</a> を参照してください。</div>
@@ -1042,7 +1040,7 @@ $(window).on('load', function () {
 </div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" name="44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" role="tab" tabindex="0">シンプル構成 &amp; 複数エージェント（同一Pod）</button><button aria-controls="panel-2-6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" name="6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" role="tab" tabindex="-1">複数エージェント（別Pod）</button></div><div aria-labelledby="tab-2-44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" class="sphinx-tabs-panel group-tab" id="panel-2-44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" name="44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id41">
-<div class="code-block-caption"><span class="caption-number">リスト 6.11 </span><span class="caption-text">pv-ita-ag-oase.yaml</span><a class="headerlink" href="#id41" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.11 </span><span class="caption-text">pv-ita-ag-oase.yaml</span><a class="headerlink" href="#id41" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span># pv-ita-ag-oase.yaml
 <span class="linenos"> 2</span>apiVersion: v1
 <span class="linenos"> 3</span>kind: PersistentVolume
@@ -1064,7 +1062,7 @@ $(window).on('load', function () {
 </div>
 </div>
 </div><div aria-labelledby="tab-2-6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" name="6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id42">
-<div class="code-block-caption"><span class="caption-number">リスト 6.12 </span><span class="caption-text">pv-ita-ag-oase-1.yaml</span><a class="headerlink" href="#id42" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.12 </span><span class="caption-text">pv-ita-ag-oase-1.yaml</span><a class="headerlink" href="#id42" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span># pv-ita-ag-oase-1.yaml
 <span class="linenos"> 2</span>apiVersion: v1
 <span class="linenos"> 3</span>kind: PersistentVolume
@@ -1086,7 +1084,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id43">
-<div class="code-block-caption"><span class="caption-number">リスト 6.13 </span><span class="caption-text">pv-ita-ag-oase-2.yaml</span><a class="headerlink" href="#id43" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.13 </span><span class="caption-text">pv-ita-ag-oase-2.yaml</span><a class="headerlink" href="#id43" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span># pv-ita-ag-oase-2.yaml
 <span class="linenos"> 2</span>apiVersion: v1
 <span class="linenos"> 3</span>kind: PersistentVolume
@@ -1112,9 +1110,9 @@ $(window).on('load', function () {
 </section>
 </section>
 <section id="id9">
-<span id="id10"></span><h2><span class="section-number">6.5. </span>インストール<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h2>
+<span id="id10"></span><h2><span class="section-number">4.5. </span>インストール<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="id11">
-<h3><span class="section-number">6.5.1. </span>永続ボリュームの作成<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.5.1. </span>永続ボリュームの作成<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="#agent-persistent-volume"><span class="std std-ref">永続ボリュームの設定</span></a> で作成したマニフェストファイルを適用し、ボリュームを作成します。</div>
 </div>
@@ -1144,7 +1142,7 @@ pv-ita-ag-oase-2<span class="w">   </span>10Gi<span class="w">       </span>RWX<
 </div>
 </section>
 <section id="id12">
-<h3><span class="section-number">6.5.2. </span>インストール<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.5.2. </span>インストール<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Helm バージョンとアプリケーションのバージョンについては <a class="reference external" href="https://github.com/exastro-suite/exastro-helm">exastro-helmのサイト</a> をご確認ください。</div>
 </div>
@@ -1152,7 +1150,7 @@ pv-ita-ag-oase-2<span class="w">   </span>10Gi<span class="w">       </span>RWX<
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" name="44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" role="tab" tabindex="0">シンプル構成 &amp; 複数エージェント（同一Pod）</button><button aria-controls="panel-3-6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" name="6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" role="tab" tabindex="-1">複数エージェント（別Pod）</button></div><div aria-labelledby="tab-3-44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" class="sphinx-tabs-panel group-tab" id="panel-3-44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" name="44K344Oz44OX44Or5qeL5oiQICYg6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5ZCM5LiAUG9k77yJ" role="tabpanel" tabindex="0"><ol class="arabic">
 <li><p>Helm コマンドを使い Kubernetes 環境にインストールを行います。</p>
 <div class="literal-block-wrapper docutils container" id="id44">
-<div class="code-block-caption"><span class="caption-number">リスト 6.14 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id44" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.14 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id44" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>install<span class="w"> </span>exastro-agent<span class="w"> </span>exastro/exastro-agent<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro-agent.yaml
@@ -1160,7 +1158,7 @@ pv-ita-ag-oase-2<span class="w">   </span>10Gi<span class="w">       </span>RWX<
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id45">
-<div class="code-block-caption"><span class="caption-number">リスト 6.15 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id45" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.15 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id45" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro-agent
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Wed<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">14</span>:36:27<span class="w"> </span><span class="m">2024</span>
 NAMESPACE:<span class="w"> </span>exastro
@@ -1173,7 +1171,7 @@ TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
 </li>
 <li><p>インストール状況確認</p>
 <div class="literal-block-wrapper docutils container" id="id46">
-<div class="code-block-caption"><span class="caption-number">リスト 6.16 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id46" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.16 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id46" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pod の一覧を取得</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>--namespace<span class="w"> </span>exastro
 
@@ -1183,7 +1181,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id47">
-<div class="code-block-caption"><span class="caption-number">リスト 6.17 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id47" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.17 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id47" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>NAME<span class="w">                             </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
 <span class="w"> </span>ita-ag-oase-66cb7669c6-m2q8c<span class="w">     </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>16m
 </pre></div>
@@ -1194,7 +1192,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div><div aria-labelledby="tab-3-6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" name="6KSH5pWw44Ko44O844K444Kn44Oz44OI77yI5YilUG9k77yJ" role="tabpanel" tabindex="0"><ol class="arabic">
 <li><p>Helm コマンドを使い Kubernetes 環境にインストールを行います。</p>
 <div class="literal-block-wrapper docutils container" id="id48">
-<div class="code-block-caption"><span class="caption-number">リスト 6.18 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id48" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.18 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id48" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>install<span class="w"> </span>exastro-agent-1<span class="w"> </span>exastro/exastro-agent<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro-agent-1.yaml
@@ -1202,7 +1200,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id49">
-<div class="code-block-caption"><span class="caption-number">リスト 6.19 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id49" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.19 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id49" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro-agent-1
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Wed<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">14</span>:36:27<span class="w"> </span><span class="m">2024</span>
 NAMESPACE:<span class="w"> </span>exastro
@@ -1213,7 +1211,7 @@ TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id50">
-<div class="code-block-caption"><span class="caption-number">リスト 6.20 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id50" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.20 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id50" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>install<span class="w"> </span>exastro-agent-2<span class="w"> </span>exastro/exastro-agent<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro-agent-2.yaml
@@ -1221,7 +1219,7 @@ TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id51">
-<div class="code-block-caption"><span class="caption-number">リスト 6.21 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id51" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.21 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id51" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro-agent-2
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Wed<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">14</span>:36:27<span class="w"> </span><span class="m">2024</span>
 NAMESPACE:<span class="w"> </span>exastro
@@ -1234,7 +1232,7 @@ TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
 </li>
 <li><p>インストール状況確認</p>
 <div class="literal-block-wrapper docutils container" id="id52">
-<div class="code-block-caption"><span class="caption-number">リスト 6.22 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id52" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.22 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id52" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pod の一覧を取得</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>--namespace<span class="w"> </span>exastro
 
@@ -1244,7 +1242,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id53">
-<div class="code-block-caption"><span class="caption-number">リスト 6.23 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id53" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.23 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id53" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>NAME<span class="w">                             </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
 <span class="w"> </span>ita-ag-oase-1-66cb7669c6-m2q8c<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>16m
 <span class="w"> </span>ita-ag-oase-2-787fb97f75-9s7xj<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>13m
@@ -1257,12 +1255,12 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </section>
 </section>
 <section id="id13">
-<h2><span class="section-number">6.6. </span>アップグレード<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.6. </span>アップグレード<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">OASE Agentのアップグレード方法について紹介します。</div>
 </div>
 <section id="id14">
-<h3><span class="section-number">6.6.1. </span>アップグレードの準備<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.6.1. </span>アップグレードの準備<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -1273,14 +1271,14 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 <div class="line">更新前のバージョンを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id54">
-<div class="code-block-caption"><span class="caption-number">リスト 6.24 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id54" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.24 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id54" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># リポジトリ情報の確認</span>
 <span class="linenos">2</span>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id55">
-<div class="code-block-caption"><span class="caption-number">リスト 6.25 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id55" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.25 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id55" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>exastro
 <span class="linenos">2</span>NAME<span class="w">                            </span>CHART<span class="w"> </span>VERSION<span class="w">   </span>APP<span class="w"> </span>VERSION<span class="w">     </span>DESCRIPTION
 <span class="linenos">3</span>exastro/exastro<span class="w">                         </span><span class="m">1</span>.3.24<span class="w">          </span><span class="m">2</span>.3.0<span class="w">           </span>A<span class="w"> </span>Helm<span class="w"> </span>chart<span class="w"> </span><span class="k">for</span><span class="w"> </span>Exastro.<span class="w"> </span>Exastro<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>Open<span class="w"> </span>So...
@@ -1294,7 +1292,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 <div class="line">Helm リポジトリを更新します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id56">
-<div class="code-block-caption"><span class="caption-number">リスト 6.26 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id56" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.26 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id56" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># リポジトリ情報の更新</span>
 <span class="linenos">2</span>helm<span class="w"> </span>repo<span class="w"> </span>update
 </pre></div>
@@ -1304,14 +1302,14 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 <div class="line">更新後のバージョンを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id57">
-<div class="code-block-caption"><span class="caption-number">リスト 6.27 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id57" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.27 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id57" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># リポジトリ情報の確認</span>
 <span class="linenos">2</span>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id58">
-<div class="code-block-caption"><span class="caption-number">リスト 6.28 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id58" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.28 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id58" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>exastro
 <span class="linenos">2</span>NAME<span class="w">                            </span>CHART<span class="w"> </span>VERSION<span class="w">   </span>APP<span class="w"> </span>VERSION<span class="w">     </span>DESCRIPTION
 <span class="linenos">3</span>exastro/exastro<span class="w">                    </span><span class="m">1</span>.4.3<span class="w">           </span><span class="m">2</span>.4.0<span class="w">           </span>A<span class="w"> </span>Helm<span class="w"> </span>chart<span class="w"> </span><span class="k">for</span><span class="w"> </span>Exastro.<span class="w"> </span>Exastro<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>Open<span class="w"> </span>So...
@@ -1323,16 +1321,16 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div>
 </section>
 <section id="id15">
-<h3><span class="section-number">6.6.2. </span>アップグレード<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.6.2. </span>アップグレード<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id16">
-<h4><span class="section-number">6.6.2.1. </span>サービス停止<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.6.2.1. </span>サービス停止<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><p>Pod 起動数の確認</p>
 <div class="line-block">
 <div class="line">作業前の Pod 起動数の確認をし、状態を記録します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id59">
-<div class="code-block-caption"><span class="caption-number">リスト 6.29 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id59" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.29 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id59" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RS_AG</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-ag-oase<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="sb">`</span>
 </pre></div>
 </div>
@@ -1343,7 +1341,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 <div class="line">Pod 起動数を 0 に変更し、データベースの更新を停止します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id60">
-<div class="code-block-caption"><span class="caption-number">リスト 6.30 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id60" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.30 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id60" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-ag-oase<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
@@ -1354,13 +1352,13 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 <div class="line">上記で停止した対象の Pod 数が 0 になっていることを確認</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id61">
-<div class="code-block-caption"><span class="caption-number">リスト 6.31 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id61" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.31 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id61" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id62">
-<div class="code-block-caption"><span class="caption-number">リスト 6.32 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id62" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.32 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id62" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
 ita-ag-oase<span class="w">                              </span><span class="m">0</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>29m
 </pre></div>
@@ -1370,12 +1368,12 @@ ita-ag-oase<span class="w">                              </span><span class="m">
 </ol>
 </section>
 <section id="id17">
-<h4><span class="section-number">6.6.2.2. </span>アップグレード実施<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.6.2.2. </span>アップグレード実施<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">アップグレードを実施します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id63">
-<div class="code-block-caption"><span class="caption-number">リスト 6.33 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id63" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.33 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id63" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>upgrade<span class="w"> </span>exastro-agent<span class="w"> </span>exastro/exastro-agent<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro-agent.yaml
@@ -1383,7 +1381,7 @@ ita-ag-oase<span class="w">                              </span><span class="m">
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id64">
-<div class="code-block-caption"><span class="caption-number">リスト 6.34 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id64" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.34 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id64" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Release<span class="w"> </span><span class="s2">&quot;exastro-agent&quot;</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>upgraded.<span class="w"> </span>Happy<span class="w"> </span>Helming!
 NAME:<span class="w"> </span>exastro-agent
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Mon<span class="w"> </span>Apr<span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">14</span>:42:59<span class="w"> </span><span class="m">2024</span>
@@ -1396,14 +1394,14 @@ TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
 </div>
 </section>
 <section id="id18">
-<h4><span class="section-number">6.6.2.3. </span>サービス再開<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.6.2.3. </span>サービス再開<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><p>サービス再開</p>
 <div class="line-block">
 <div class="line">サービス停止時に取得した各 Deployment の Pod 起動数を元に戻します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id65">
-<div class="code-block-caption"><span class="caption-number">リスト 6.35 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id65" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.35 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id65" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-ag-oase<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="si">${</span><span class="nv">RS_AG</span><span class="si">}</span>
 </pre></div>
 </div>
@@ -1414,13 +1412,13 @@ TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
 <div class="line">上記で起動した対象の Pod 数が元に戻りすべて <kbd class="kbd docutils literal notranslate">READY</kbd> になっていることを確認</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id66">
-<div class="code-block-caption"><span class="caption-number">リスト 6.36 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id66" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.36 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id66" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id67">
-<div class="code-block-caption"><span class="caption-number">リスト 6.37 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id67" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.37 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id67" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
 ita-ag-oase<span class="w">                              </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>29m
 </pre></div>
@@ -1430,12 +1428,12 @@ ita-ag-oase<span class="w">                              </span><span class="m">
 </ol>
 </section>
 <section id="id19">
-<h4><span class="section-number">6.6.2.4. </span>アップグレード状況確認<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.6.2.4. </span>アップグレード状況確認<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">コマンドラインから以下のコマンドを入力して、アップグレードが完了していることを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id68">
-<div class="code-block-caption"><span class="caption-number">リスト 6.38 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id68" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.38 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id68" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pod の一覧を取得</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
@@ -1446,7 +1444,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 <div class="line">※正常に起動するまで数分かかる場合があります。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id69">
-<div class="code-block-caption"><span class="caption-number">リスト 6.39 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id69" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.39 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id69" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                                      </span>READY<span class="w">   </span>STATUS<span class="w">      </span>RESTARTS<span class="w">   </span>AGE
 ita-ag-oase-7ff9488b55-rrn58<span class="w">                              </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">             </span>81s
 </pre></div>
@@ -1456,12 +1454,12 @@ ita-ag-oase-7ff9488b55-rrn58<span class="w">                              </span
 </section>
 </section>
 <section id="id20">
-<h2><span class="section-number">6.7. </span>アンインストール<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">4.7. </span>アンインストール<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">OASE Agentのアンインストール方法について紹介します。</div>
 </div>
 <section id="id21">
-<h3><span class="section-number">6.7.1. </span>アンインストールの準備<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.7.1. </span>アンインストールの準備<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -1470,33 +1468,33 @@ ita-ag-oase-7ff9488b55-rrn58<span class="w">                              </span
 </div>
 </section>
 <section id="id22">
-<h3><span class="section-number">6.7.2. </span>アンインストール<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">4.7.2. </span>アンインストール<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id23">
-<h4><span class="section-number">6.7.2.1. </span>アンインストール実施<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.7.2.1. </span>アンインストール実施<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">アンインストールを実施します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id70">
-<div class="code-block-caption"><span class="caption-number">リスト 6.40 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id70" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.40 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id70" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>uninstall<span class="w"> </span>exastro-agent<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id71">
-<div class="code-block-caption"><span class="caption-number">リスト 6.41 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id71" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.41 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id71" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>release<span class="w"> </span><span class="s2">&quot;exastro-agent&quot;</span><span class="w"> </span>uninstalled
 </pre></div>
 </div>
 </div>
 </section>
 <section id="id24">
-<h4><span class="section-number">6.7.2.2. </span>永続ボリュームを削除<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.7.2.2. </span>永続ボリュームを削除<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">Persitent Volume（PV） を Kubernetes 上に hostPath で作成した場合の方法を記載します。</div>
 <div class="line">マネージドデータベースを含む外部データベースを利用している場合は、環境にあったデータ削除方法を実施してください。</div>
 </div>
 <section id="id25">
-<h5><span class="section-number">6.7.2.2.1. </span>エージェント用<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">4.7.2.2.1. </span>エージェント用<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -1504,13 +1502,13 @@ ita-ag-oase-7ff9488b55-rrn58<span class="w">                              </span
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id72">
-<div class="code-block-caption"><span class="caption-number">リスト 6.42 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id72" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.42 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id72" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pv<span class="w"> </span>pv-ita-ag-oase
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id73">
-<div class="code-block-caption"><span class="caption-number">リスト 6.43 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id73" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.43 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id73" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolume<span class="w"> </span><span class="s2">&quot;pv-ita-ag-oase&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
@@ -1518,17 +1516,17 @@ ita-ag-oase-7ff9488b55-rrn58<span class="w">                              </span
 </section>
 </section>
 <section id="id26">
-<h4><span class="section-number">6.7.2.3. </span>永続データを削除<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">4.7.2.3. </span>永続データを削除<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">Kubernetes のコントロールノードにログインし、データを削除します。</div>
 </div>
 <section id="id27">
-<h5><span class="section-number">6.7.2.3.1. </span>エージェント用<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">4.7.2.3.1. </span>エージェント用<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">下記コマンドは、Persistent Volume 作成時の hostPath に <code class="file docutils literal notranslate"><span class="pre">/var/data/exastro-suite/exastro-agent/ita-ag-oase</span></code> を指定した場合の例です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id74">
-<div class="code-block-caption"><span class="caption-number">リスト 6.44 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id74" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.44 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id74" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永続データがあるコントロールノードにログイン</span>
 ssh<span class="w"> </span>user@contol.node.example
 
@@ -1549,7 +1547,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="oase_agent_docker_compose.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">5. </span>OASE Agent (Docker Compose)</a></li>
+    <li class="prev"><a href="oase_agent_docker_compose.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">3. </span>OASE Agent (Docker Compose)</a></li>
     <li class="next"><a href="../learn/index.html" title="次のトピックへ"><span>次のトピックへ</span>Learn</a></li>
   </ul>
 </div>

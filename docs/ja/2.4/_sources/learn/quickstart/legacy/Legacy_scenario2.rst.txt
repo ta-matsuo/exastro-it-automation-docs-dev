@@ -4,13 +4,13 @@
 
 | 本シナリオでは、パッケージのインストールやアンインストールといったパッケージ管理を通して、より実用的なパラメータシートの管理・運用のテクニックについて学習します。
 
-.. tip:: 本シナリオに入る前に、 :doc:`前のシナリオ <scenario1>` を完了させておくことを推奨します。
+.. tip:: 本シナリオに入る前に、 :doc:`前のシナリオ <Legacy_scenario1>` を完了させておくことを推奨します。
 
 
 作業概要の作成
 ==============
 
-| :doc:`前のシナリオ <scenario1>` と同様に、まずは作業計画を立てましょう。
+| :doc:`前のシナリオ <Legacy_scenario1>` と同様に、まずは作業計画を立てましょう。
 
 .. list-table:: 作業の方針
    :widths: 5 10
@@ -247,7 +247,7 @@
 機器登録
 --------
 
-| 作業対象となるサーバーは :doc:`前のシナリオ <scenario1>` で登録した db01 を利用するため、作業は不要です。
+| 作業対象となるサーバーは :doc:`前のシナリオ <Legacy_scenario1>` で登録した db01 を利用するため、作業は不要です。
 
 
 作業手順の登録
@@ -277,20 +277,43 @@ Movement 登録
      - :kbd:`IP`
 
 Ansible Playbook 登録
------------------
+---------------------
 
-| `ここ <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をクリックして Ansible Playbook の package.yml をダウンロードしてください。_
-| :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `package.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
+| 本シナリオでは、 以下のPlaybookを利用します。以下をコピーして、yml形式でpackage.ymlを作成してください。
+
+.. code-block:: bash
+   :caption: package.yml
+
+   ---
+   - name: install package
+     yum:
+       state: installed
+       name: "{{ item.0 }}"
+     with_together:
+       - "{{ pkg_name }}"
+       - "{{ action }}"
+     when: item.1 == 'present'
+
+   - name: uninstall package
+     yum:
+       state: removed
+       name: "{{ item.0 }}"
+     with_together:
+       - "{{ pkg_name }}"
+       - "{{ action }}"
+     when: item.1 == 'absent'
+
+| :menuselection:`Ansible-Legacy --> Playbook素材集` から、から、上記のPlaybookを登録します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/Ansible-Playbook登録.png
    :width: 1200px
    :alt: ansible-playbook登録
 
 Movement と Ansible Playbook の紐付け
----------------------------------
+-------------------------------------
 
 | :menuselection:`Ansible-Legacy --> Movement-Playbook紐付` から、Movement と Ansible Playbook の紐付けを行います。
-| 本シナリオでは、 `package.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_rpm/OS_build>`_ を利用します。
+| 本シナリオでは、 package.ymlを利用します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/MovementとPlaybook紐付け.png
    :width: 1200px
@@ -657,4 +680,4 @@ Movement と Ansible Playbook の紐付け
 - 複数かつ数が不定のパラメータを管理する場合は、「バンドル」を利用することで柔軟なパラメータ管理が行なえます。
 - 大量のパラメータを設定する場合には、「全件ダウンロード・ファイル一括登録」を利用することでファイルからのデータ登録を行うことが可能です。
 
-| :doc:`次のシナリオ <scenario3>` では、一連の作業を実行する方法について紹介をします。
+| :doc:`次のシナリオ <Legacy_scenario3>` では、一連の作業を実行する方法について紹介をします。

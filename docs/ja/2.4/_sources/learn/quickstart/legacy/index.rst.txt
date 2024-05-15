@@ -48,7 +48,6 @@ Ansible-Legacy
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 3
 
    Legacy_scenario1
    Legacy_scenario2

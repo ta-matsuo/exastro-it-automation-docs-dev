@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>4. Helm chart (Kubernetes) &#8212; Documentation  ドキュメント</title>
+    <title>2. Helm chart (Kubernetes) &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -35,8 +35,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="5. OASE Agent (Docker Compose)" href="oase_agent_docker_compose.html" />
-    <link rel="prev" title="3. Docker Compose on Podman - Offline" href="docker_compose_offline_podman.html" /> 
+    <link rel="next" title="3. OASE Agent (Docker Compose)" href="oase_agent_docker_compose.html" />
+    <link rel="prev" title="1. Docker Compose - Online" href="docker_compose_online.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -96,8 +96,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="docker_compose_offline_podman.html" title="前のトピックへ"><span class="section-number">3. </span>Docker Compose on Podman - Offline</a></li>
-        <li class="next"><a href="oase_agent_docker_compose.html" title="次のトピックへ"><span class="section-number">5. </span>OASE Agent (Docker Compose)</a></li>
+        <li class="prev"><a href="docker_compose_online.html" title="前のトピックへ"><span class="section-number">1. </span>Docker Compose - Online</a></li>
+        <li class="next"><a href="oase_agent_docker_compose.html" title="次のトピックへ"><span class="section-number">3. </span>OASE Agent (Docker Compose)</a></li>
       </ul>
     </div>
   </div>
@@ -112,67 +112,65 @@
 <li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">構成・構築ガイド</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="docker_compose_online.html">1. Docker Compose - Online</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docker_compose_offline_docker.html">2. Docker Compose on Docker - Offline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docker_compose_offline_podman.html">3. Docker Compose on Podman - Offline</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Helm chart (Kubernetes)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">4.1. 目的</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">4.2. 特徴</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">4.3. 前提条件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">4.4. インストールの準備</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#helm">4.4.1. Helm リポジトリの登録</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">4.4.2. デフォルト設定値の取得</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#service-setting">4.4.3. サービス公開の設定</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id7">4.4.3.1. パラメータ</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id8">4.4.3.2. 設定例</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Helm chart (Kubernetes)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1. 目的</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.2. 特徴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.3. 前提条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.4. インストールの準備</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#helm">2.4.1. Helm リポジトリの登録</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2.4.2. デフォルト設定値の取得</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#service-setting">2.4.3. サービス公開の設定</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id7">2.4.3.1. パラメータ</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id8">2.4.3.2. 設定例</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#database-setup">4.4.4. データベース連携</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#db">4.4.5. アプリケーションの DB ユーザー設定</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id10">4.4.5.1. 設定例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#database-setup">2.4.4. データベース連携</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#db">2.4.5. アプリケーションの DB ユーザー設定</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id10">2.4.5.1. 設定例</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#gitlab">4.4.6. GitLab 連携設定</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#install-helm">4.4.7. システム管理者の作成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#persistent-volume">4.4.8. 永続ボリュームの設定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gitlab">2.4.6. GitLab 連携設定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-helm">2.4.7. システム管理者の作成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#persistent-volume">2.4.8. 永続ボリュームの設定</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">4.5. インストール</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id15">4.5.1. 永続ボリュームの作成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ita-install">4.5.2. インストール</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id17">4.5.3. 管理コンソールへのログイン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">2.5. インストール</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15">2.5.1. 永続ボリュームの作成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ita-install">2.5.2. インストール</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">2.5.3. 管理コンソールへのログイン</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id20">4.6. アップグレード</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id21">4.6.1. アップグレードの準備</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id22">4.6.1.1. Helm リポジトリの更新</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id23">4.6.1.2. デフォルト設定値の更新の確認</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id24">4.6.1.3. 設定値の更新</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#change-encrypt-key">4.6.1.4. 暗号化キーの指定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">2.6. アップグレード</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">2.6.1. アップグレードの準備</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id22">2.6.1.1. Helm リポジトリの更新</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id23">2.6.1.2. デフォルト設定値の更新の確認</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id24">2.6.1.3. 設定値の更新</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#change-encrypt-key">2.6.1.4. 暗号化キーの指定</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#ita-upgrade">4.6.2. アップグレード</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id27">4.6.2.1. サービス停止</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id28">4.6.2.2. アップグレード実施</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id29">4.6.2.3. サービス再開</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id30">4.6.2.4. アップグレード状況確認</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#ita-uninstall">4.7. アンインストール</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id32">4.7.1. アンインストールの準備</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id33">4.7.2. アンインストール</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id34">4.7.2.1. アンインストール実施</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#delete-pv">4.7.2.2. 永続ボリュームを削除</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#delete-data">4.7.2.3. 永続データを削除</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ita-upgrade">2.6.2. アップグレード</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id27">2.6.2.1. サービス停止</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id28">2.6.2.2. アップグレード実施</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id29">2.6.2.3. サービス再開</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id30">2.6.2.4. アップグレード状況確認</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#ita-uninstall">2.7. アンインストール</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id32">2.7.1. アンインストールの準備</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id33">2.7.2. アンインストール</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id34">2.7.2.1. アンインストール実施</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#delete-pv">2.7.2.2. 永続ボリュームを削除</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#delete-data">2.7.2.3. 永続データを削除</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="oase_agent_docker_compose.html">5. OASE Agent (Docker Compose)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oase_agent_kubernetes.html">6. OASE Agent (Kubernetes)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="oase_agent_docker_compose.html">3. OASE Agent (Docker Compose)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oase_agent_kubernetes.html">4. OASE Agent (Kubernetes)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../learn/index.html">Learn</a></li>
@@ -193,69 +191,69 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">4. Helm chart (Kubernetes)</a><ul>
-<li><a class="reference internal" href="#id1">4.1. 目的</a></li>
-<li><a class="reference internal" href="#id2">4.2. 特徴</a></li>
-<li><a class="reference internal" href="#id3">4.3. 前提条件</a></li>
-<li><a class="reference internal" href="#id4">4.4. インストールの準備</a><ul>
-<li><a class="reference internal" href="#helm">4.4.1. Helm リポジトリの登録</a></li>
-<li><a class="reference internal" href="#id5">4.4.2. デフォルト設定値の取得</a></li>
-<li><a class="reference internal" href="#service-setting">4.4.3. サービス公開の設定</a><ul>
-<li><a class="reference internal" href="#id7">4.4.3.1. パラメータ</a></li>
-<li><a class="reference internal" href="#id8">4.4.3.2. 設定例</a></li>
+<li><a class="reference internal" href="#">2. Helm chart (Kubernetes)</a><ul>
+<li><a class="reference internal" href="#id1">2.1. 目的</a></li>
+<li><a class="reference internal" href="#id2">2.2. 特徴</a></li>
+<li><a class="reference internal" href="#id3">2.3. 前提条件</a></li>
+<li><a class="reference internal" href="#id4">2.4. インストールの準備</a><ul>
+<li><a class="reference internal" href="#helm">2.4.1. Helm リポジトリの登録</a></li>
+<li><a class="reference internal" href="#id5">2.4.2. デフォルト設定値の取得</a></li>
+<li><a class="reference internal" href="#service-setting">2.4.3. サービス公開の設定</a><ul>
+<li><a class="reference internal" href="#id7">2.4.3.1. パラメータ</a></li>
+<li><a class="reference internal" href="#id8">2.4.3.2. 設定例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#database-setup">4.4.4. データベース連携</a></li>
-<li><a class="reference internal" href="#db">4.4.5. アプリケーションの DB ユーザー設定</a><ul>
-<li><a class="reference internal" href="#id10">4.4.5.1. 設定例</a></li>
+<li><a class="reference internal" href="#database-setup">2.4.4. データベース連携</a></li>
+<li><a class="reference internal" href="#db">2.4.5. アプリケーションの DB ユーザー設定</a><ul>
+<li><a class="reference internal" href="#id10">2.4.5.1. 設定例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#gitlab">4.4.6. GitLab 連携設定</a></li>
-<li><a class="reference internal" href="#install-helm">4.4.7. システム管理者の作成</a></li>
-<li><a class="reference internal" href="#persistent-volume">4.4.8. 永続ボリュームの設定</a></li>
+<li><a class="reference internal" href="#gitlab">2.4.6. GitLab 連携設定</a></li>
+<li><a class="reference internal" href="#install-helm">2.4.7. システム管理者の作成</a></li>
+<li><a class="reference internal" href="#persistent-volume">2.4.8. 永続ボリュームの設定</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id13">4.5. インストール</a><ul>
-<li><a class="reference internal" href="#id15">4.5.1. 永続ボリュームの作成</a></li>
-<li><a class="reference internal" href="#ita-install">4.5.2. インストール</a></li>
-<li><a class="reference internal" href="#id17">4.5.3. 管理コンソールへのログイン</a></li>
+<li><a class="reference internal" href="#id13">2.5. インストール</a><ul>
+<li><a class="reference internal" href="#id15">2.5.1. 永続ボリュームの作成</a></li>
+<li><a class="reference internal" href="#ita-install">2.5.2. インストール</a></li>
+<li><a class="reference internal" href="#id17">2.5.3. 管理コンソールへのログイン</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id20">4.6. アップグレード</a><ul>
-<li><a class="reference internal" href="#id21">4.6.1. アップグレードの準備</a><ul>
-<li><a class="reference internal" href="#id22">4.6.1.1. Helm リポジトリの更新</a></li>
-<li><a class="reference internal" href="#id23">4.6.1.2. デフォルト設定値の更新の確認</a></li>
-<li><a class="reference internal" href="#id24">4.6.1.3. 設定値の更新</a></li>
-<li><a class="reference internal" href="#change-encrypt-key">4.6.1.4. 暗号化キーの指定</a></li>
+<li><a class="reference internal" href="#id20">2.6. アップグレード</a><ul>
+<li><a class="reference internal" href="#id21">2.6.1. アップグレードの準備</a><ul>
+<li><a class="reference internal" href="#id22">2.6.1.1. Helm リポジトリの更新</a></li>
+<li><a class="reference internal" href="#id23">2.6.1.2. デフォルト設定値の更新の確認</a></li>
+<li><a class="reference internal" href="#id24">2.6.1.3. 設定値の更新</a></li>
+<li><a class="reference internal" href="#change-encrypt-key">2.6.1.4. 暗号化キーの指定</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ita-upgrade">4.6.2. アップグレード</a><ul>
-<li><a class="reference internal" href="#id27">4.6.2.1. サービス停止</a></li>
-<li><a class="reference internal" href="#id28">4.6.2.2. アップグレード実施</a></li>
-<li><a class="reference internal" href="#id29">4.6.2.3. サービス再開</a></li>
-<li><a class="reference internal" href="#id30">4.6.2.4. アップグレード状況確認</a></li>
+<li><a class="reference internal" href="#ita-upgrade">2.6.2. アップグレード</a><ul>
+<li><a class="reference internal" href="#id27">2.6.2.1. サービス停止</a></li>
+<li><a class="reference internal" href="#id28">2.6.2.2. アップグレード実施</a></li>
+<li><a class="reference internal" href="#id29">2.6.2.3. サービス再開</a></li>
+<li><a class="reference internal" href="#id30">2.6.2.4. アップグレード状況確認</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ita-uninstall">4.7. アンインストール</a><ul>
-<li><a class="reference internal" href="#id32">4.7.1. アンインストールの準備</a></li>
-<li><a class="reference internal" href="#id33">4.7.2. アンインストール</a><ul>
-<li><a class="reference internal" href="#id34">4.7.2.1. アンインストール実施</a></li>
-<li><a class="reference internal" href="#delete-pv">4.7.2.2. 永続ボリュームを削除</a><ul>
-<li><a class="reference internal" href="#id36">4.7.2.2.1. データベース用</a></li>
-<li><a class="reference internal" href="#id37">4.7.2.2.2. ファイル用</a></li>
-<li><a class="reference internal" href="#oase">4.7.2.2.3. OASE用</a></li>
-<li><a class="reference internal" href="#id38">4.7.2.2.4. GitLab用</a></li>
-<li><a class="reference internal" href="#id39">4.7.2.2.5. 監査ログファイル用</a></li>
+<li><a class="reference internal" href="#ita-uninstall">2.7. アンインストール</a><ul>
+<li><a class="reference internal" href="#id32">2.7.1. アンインストールの準備</a></li>
+<li><a class="reference internal" href="#id33">2.7.2. アンインストール</a><ul>
+<li><a class="reference internal" href="#id34">2.7.2.1. アンインストール実施</a></li>
+<li><a class="reference internal" href="#delete-pv">2.7.2.2. 永続ボリュームを削除</a><ul>
+<li><a class="reference internal" href="#id36">2.7.2.2.1. データベース用</a></li>
+<li><a class="reference internal" href="#id37">2.7.2.2.2. ファイル用</a></li>
+<li><a class="reference internal" href="#oase">2.7.2.2.3. OASE用</a></li>
+<li><a class="reference internal" href="#id38">2.7.2.2.4. GitLab用</a></li>
+<li><a class="reference internal" href="#id39">2.7.2.2.5. 監査ログファイル用</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#delete-data">4.7.2.3. 永続データを削除</a><ul>
-<li><a class="reference internal" href="#id41">4.7.2.3.1. データベース用</a></li>
-<li><a class="reference internal" href="#id42">4.7.2.3.2. ファイル用</a></li>
-<li><a class="reference internal" href="#id43">4.7.2.3.3. OASE用</a></li>
-<li><a class="reference internal" href="#id44">4.7.2.3.4. GitLab用</a></li>
-<li><a class="reference internal" href="#id45">4.7.2.3.5. 監査ログファイル用</a></li>
+<li><a class="reference internal" href="#delete-data">2.7.2.3. 永続データを削除</a><ul>
+<li><a class="reference internal" href="#id41">2.7.2.3.1. データベース用</a></li>
+<li><a class="reference internal" href="#id42">2.7.2.3.2. ファイル用</a></li>
+<li><a class="reference internal" href="#id43">2.7.2.3.3. OASE用</a></li>
+<li><a class="reference internal" href="#id44">2.7.2.3.4. GitLab用</a></li>
+<li><a class="reference internal" href="#id45">2.7.2.3.5. 監査ログファイル用</a></li>
 </ul>
 </li>
 </ul>
@@ -277,7 +275,7 @@
     <li><a href="../index.html">HOME</a></li>
     <li><a href="index.html">インストール</a></li>
     
-    <li><span class="section-number">4. </span>Helm chart (Kubernetes)</li>
+    <li><span class="section-number">2. </span>Helm chart (Kubernetes)</li>
   </ul>
 </div>
 
@@ -298,29 +296,29 @@ $(window).on('load', function () {
    },200);
 });
 </script><section id="helm-chart-kubernetes">
-<h1><span class="section-number">4. </span>Helm chart (Kubernetes)<a class="headerlink" href="#helm-chart-kubernetes" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">2. </span>Helm chart (Kubernetes)<a class="headerlink" href="#helm-chart-kubernetes" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id1">
-<h2><span class="section-number">4.1. </span>目的<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.1. </span>目的<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本書では、Exastro IT Automation を利用する際に必要となる、Exastro Platform および Exastro IT Automation を Kubernetes 上に導入する手順について説明します。</div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">4.2. </span>特徴<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.2. </span>特徴<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">高い可用性やサービスレベルを必要とされる際の、Exastro IT Automation の導入方法となります。</div>
 <div class="line">評価や一時的な利用など、簡単に利用を開始したい場合には、<a class="reference internal" href="docker_compose_online.html"><span class="doc">Docker Compose 版</span></a> の利用を推奨します。</div>
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">4.3. </span>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.3. </span>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
 <ul>
 <li><p>クライアント要件</p>
 <div class="line-block">
 <div class="line">動作確認が取れているクライアントアプリケーションのバージョンは下記のとおりです。</div>
 </div>
 <table class="docutils align-default" id="id46">
-<caption><span class="caption-number">表 4.1 </span><span class="caption-text">クライアント要件</span><a class="headerlink" href="#id46" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.9 </span><span class="caption-text">クライアント要件</span><a class="headerlink" href="#id46" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -345,7 +343,7 @@ $(window).on('load', function () {
 <div class="line">動作確認が取れているコンテナ環境の最小要求リソースとバージョンは下記のとおりです。</div>
 </div>
 <table class="docutils align-default" id="id47">
-<caption><span class="caption-number">表 4.2 </span><span class="caption-text">ハードウェア要件(最小構成)</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.10 </span><span class="caption-text">ハードウェア要件(最小構成)</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -371,7 +369,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <table class="docutils align-default" id="id48">
-<caption><span class="caption-number">表 4.3 </span><span class="caption-text">ハードウェア要件(推奨構成)</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.11 </span><span class="caption-text">ハードウェア要件(推奨構成)</span><a class="headerlink" href="#id48" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -443,9 +441,9 @@ $(window).on('load', function () {
 </ul>
 </section>
 <section id="id4">
-<h2><span class="section-number">4.4. </span>インストールの準備<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.4. </span>インストールの準備<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="helm">
-<h3><span class="section-number">4.4.1. </span>Helm リポジトリの登録<a class="headerlink" href="#helm" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.4.1. </span>Helm リポジトリの登録<a class="headerlink" href="#helm" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro システムは、以下の2つのアプリケーションから構成されています。</div>
 <div class="line">Exastro の全ツールは同一の Helm リポジトリ上に存在しています。</div>
@@ -468,7 +466,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id49">
-<div class="code-block-caption"><span class="caption-number">リスト 4.1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id49" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id49" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Exastro システムの Helm リポジトリを登録</span>
 <span class="linenos">2</span>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>exastro<span class="w"> </span>https://exastro-suite.github.io/exastro-helm/<span class="w"> </span>--namespace<span class="w"> </span>exastro
 <span class="linenos">3</span><span class="c1"># リポジトリ情報の更新</span>
@@ -478,19 +476,19 @@ $(window).on('load', function () {
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">4.4.2. </span>デフォルト設定値の取得<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.4.2. </span>デフォルト設定値の取得<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">投入するパラメータを管理しやすくするために、下記のコマンドから共通基盤 values.yaml のデフォルト値を出力します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id50">
-<div class="code-block-caption"><span class="caption-number">リスト 4.2 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id50" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.2 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id50" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>exastro/exastro<span class="w"> </span>&gt;<span class="w"> </span>exastro.yaml
 </pre></div>
 </div>
 </div>
 <details>
   <summary>exastro.yaml</summary><div class="literal-block-wrapper docutils container" id="id51">
-<div class="code-block-caption"><span class="caption-number">リスト 4.3 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id51" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.3 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id51" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1"># Default values for Exastro.</span>
 <span class="linenos">  2</span><span class="c1"># This is a YAML-formatted file.</span>
 <span class="linenos">  3</span><span class="c1"># Declare variables to be passed into your templates.</span>
@@ -1093,7 +1091,7 @@ $(window).on('load', function () {
 </div>
 </section>
 <section id="service-setting">
-<span id="id6"></span><h3><span class="section-number">4.4.3. </span>サービス公開の設定<a class="headerlink" href="#service-setting" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id6"></span><h3><span class="section-number">2.4.3. </span>サービス公開の設定<a class="headerlink" href="#service-setting" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro サービスを公開するための代表的な3つの設定方法について紹介します。</div>
 </div>
@@ -1109,12 +1107,12 @@ $(window).on('load', function () {
 </div>
 </div>
 <section id="id7">
-<h4><span class="section-number">4.4.3.1. </span>パラメータ<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.4.3.1. </span>パラメータ<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">利用可能なパラメータについては下記を参照してください。</div>
 </div>
 <table class="filter-table docutils align-left" id="id52">
-<caption><span class="caption-number">表 4.4 </span><span class="caption-text">Exastro Platform 認証機能のオプションパラメータ</span><a class="headerlink" href="#id52" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.12 </span><span class="caption-text">Exastro Platform 認証機能のオプションパラメータ</span><a class="headerlink" href="#id52" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -1298,7 +1296,7 @@ $(window).on('load', function () {
 </table>
 </section>
 <section id="id8">
-<h4><span class="section-number">4.4.3.2. </span>設定例<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.4.3.2. </span>設定例<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">各サービス公開方法の設定例を下記に記載します。</div>
 </div>
@@ -1321,7 +1319,7 @@ $(window).on('load', function () {
 <div class="line">下記は、AKS の Ingress Controller を使用する際の例を記載しています。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id53">
-<div class="code-block-caption"><span class="caption-number">リスト 4.4 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id53" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.4 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id53" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_ingress_setting.yaml</span>
 <span class="gu">@@ -366,17 +366,25 @@</span>
@@ -1380,7 +1378,7 @@ $(window).on('load', function () {
 <div class="line">下記は、LoadBalancer を使用する際の例を記載しています。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id54">
-<div class="code-block-caption"><span class="caption-number">リスト 4.5 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id54" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.5 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id54" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_loadbalancer_setting.yaml</span>
 <span class="gu">@@ -366,10 +366,10 @@</span>
@@ -1432,7 +1430,7 @@ $(window).on('load', function () {
 <div class="line">下記は、NodePort を使用する際の例を記載しています。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id55">
-<div class="code-block-caption"><span class="caption-number">リスト 4.6 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id55" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.6 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id55" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_nodeport_setting.yaml</span>
 <span class="gu">@@ -366,10 +366,10 @@</span>
@@ -1480,7 +1478,7 @@ $(window).on('load', function () {
 </section>
 </section>
 <section id="database-setup">
-<span id="id9"></span><h3><span class="section-number">4.4.4. </span>データベース連携<a class="headerlink" href="#database-setup" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id9"></span><h3><span class="section-number">2.4.4. </span>データベース連携<a class="headerlink" href="#database-setup" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro サービスを利用するためには、CMDB やオーガナイゼーションの管理のためのデータベースが必要となります。</div>
 <div class="line">データベース利用時の3つの設定方法について説明します。</div>
@@ -1528,7 +1526,7 @@ $(window).on('load', function () {
 <div class="line">データベースの接続情報を設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id56">
-<caption><span class="caption-number">表 4.5 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id56" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.13 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id56" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -1609,7 +1607,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id57">
-<div class="code-block-caption"><span class="caption-number">リスト 4.7 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id57" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.7 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id57" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_ita_database.yaml</span>
 <span class="gu">@@ -21,13 +21,13 @@</span>
@@ -1645,7 +1643,7 @@ $(window).on('load', function () {
 <div class="line">データベースの接続情報を設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id58">
-<caption><span class="caption-number">表 4.6 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id58" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.14 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id58" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -1726,7 +1724,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id59">
-<div class="code-block-caption"><span class="caption-number">リスト 4.8 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id59" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.8 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id59" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_pf_database.yaml</span>
 <span class="gu">@@ -52,13 +52,13 @@</span>
@@ -1771,7 +1769,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <table class="filter-table docutils align-left" id="id60">
-<caption><span class="caption-number">表 4.7 </span><span class="caption-text">OASE設定 (Exastro OASE用データベース) のオプションパラメータ</span><a class="headerlink" href="#id60" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.15 </span><span class="caption-text">OASE設定 (Exastro OASE用データベース) のオプションパラメータ</span><a class="headerlink" href="#id60" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -1823,7 +1821,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id61">
-<div class="code-block-caption"><span class="caption-number">リスト 4.9 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id61" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.9 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id61" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_mongo_database.yaml</span>
 <span class="gu">@@ -77,12 +77,12 @@</span>
@@ -1854,7 +1852,7 @@ $(window).on('load', function () {
 <div class="line">データベースコンテナが起動しないように設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id62">
-<caption><span class="caption-number">表 4.8 </span><span class="caption-text">共通設定 (Exastro 共用データベース) のオプションパラメータ</span><a class="headerlink" href="#id62" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.16 </span><span class="caption-text">共通設定 (Exastro 共用データベース) のオプションパラメータ</span><a class="headerlink" href="#id62" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -1933,7 +1931,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id63">
-<div class="code-block-caption"><span class="caption-number">リスト 4.10 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id63" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.10 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id63" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_database_disabled.yaml</span>
 <span class="gu">@@ -426,7 +426,7 @@</span>
@@ -1959,7 +1957,7 @@ $(window).on('load', function () {
 <div class="line">MongoDBコンテナが起動しないように設定します。(OASEを利用しない場合も設定必要)</div>
 </div>
 <table class="filter-table docutils align-left" id="id64">
-<caption><span class="caption-number">表 4.9 </span><span class="caption-text">MongoDB コンテナのオプションパラメータ</span><a class="headerlink" href="#id64" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.17 </span><span class="caption-text">MongoDB コンテナのオプションパラメータ</span><a class="headerlink" href="#id64" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -2068,7 +2066,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id65">
-<div class="code-block-caption"><span class="caption-number">リスト 4.11 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id65" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.11 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id65" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_mongodb_disabled.yaml</span>
 <span class="gu">@@ -535,7 +535,7 @@</span>
@@ -2118,7 +2116,7 @@ $(window).on('load', function () {
 <div class="line">また、データベースのデータを永続化するために利用するストレージを指定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id66">
-<caption><span class="caption-number">表 4.10 </span><span class="caption-text">共通設定 (Exastro 共用データベース) のオプションパラメータ</span><a class="headerlink" href="#id66" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.18 </span><span class="caption-text">共通設定 (Exastro 共用データベース) のオプションパラメータ</span><a class="headerlink" href="#id66" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -2198,7 +2196,7 @@ $(window).on('load', function () {
 </table>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Storage Class 利用</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">hostPath 利用</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id67">
-<div class="code-block-caption"><span class="caption-number">リスト 4.12 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id67" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.12 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id67" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_database_storage_class.yaml</span>
 <span class="gu">@@ -435,8 +435,8 @@</span>
@@ -2221,7 +2219,7 @@ $(window).on('load', function () {
 </div>
 </div>
 </div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id68">
-<div class="code-block-caption"><span class="caption-number">リスト 4.13 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id68" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.13 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id68" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_database_hostpath.yaml</span>
 <span class="gu">@@ -435,7 +435,7 @@</span>
@@ -2248,7 +2246,7 @@ $(window).on('load', function () {
 <div class="line">Exastro IT Automation コンテナがデータベースに接続できるようにするために、<a class="reference internal" href="#database-setup"><span class="std std-ref">データベース連携</span></a> で作成した root アカウントのパスワードを設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id69">
-<caption><span class="caption-number">表 4.11 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id69" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.19 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id69" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -2329,7 +2327,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id70">
-<div class="code-block-caption"><span class="caption-number">リスト 4.14 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id70" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.14 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id70" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_database_ita_setting.yaml</span>
 <span class="gu">@@ -27,7 +27,7 @@</span>
@@ -2355,7 +2353,7 @@ $(window).on('load', function () {
 <div class="line">Exastro 共通基盤のコンテナがデータベースに接続できるようにするために、「1.  データベースコンテナの設定」で作成した root アカウントのパスワードを設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id71">
-<caption><span class="caption-number">表 4.12 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id71" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.20 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id71" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -2436,7 +2434,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id72">
-<div class="code-block-caption"><span class="caption-number">リスト 4.15 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id72" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.15 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id72" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_database_pf_setting.yaml</span>
 <span class="gu">@@ -58,7 +58,7 @@</span>
@@ -2471,7 +2469,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <table class="filter-table docutils align-left" id="id73">
-<caption><span class="caption-number">表 4.13 </span><span class="caption-text">OASE設定 (Exastro OASE用データベース) のオプションパラメータ</span><a class="headerlink" href="#id73" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.21 </span><span class="caption-text">OASE設定 (Exastro OASE用データベース) のオプションパラメータ</span><a class="headerlink" href="#id73" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -2523,7 +2521,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id74">
-<div class="code-block-caption"><span class="caption-number">リスト 4.16 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id74" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.16 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id74" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_database_mongo_setting.yaml</span>
 <span class="gu">@@ -81,8 +81,8 @@</span>
@@ -2552,7 +2550,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <table class="filter-table docutils align-left" id="id75">
-<caption><span class="caption-number">表 4.14 </span><span class="caption-text">MongoDB コンテナのオプションパラメータ</span><a class="headerlink" href="#id75" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.22 </span><span class="caption-text">MongoDB コンテナのオプションパラメータ</span><a class="headerlink" href="#id75" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -2662,7 +2660,7 @@ $(window).on('load', function () {
 </table>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">hostPath 利用</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id76">
-<div class="code-block-caption"><span class="caption-number">リスト 4.17 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id76" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.17 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id76" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_mongodb_hostpath.yaml</span>
 <span class="gu">@@ -544,7 +544,7 @@</span>
@@ -2683,12 +2681,12 @@ $(window).on('load', function () {
 </div></div>
 </section>
 <section id="db">
-<span id="installation-kubernetes-keycloak"></span><h3><span class="section-number">4.4.5. </span>アプリケーションの DB ユーザー設定<a class="headerlink" href="#db" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="installation-kubernetes-keycloak"></span><h3><span class="section-number">2.4.5. </span>アプリケーションの DB ユーザー設定<a class="headerlink" href="#db" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro でアプリケーションのために作成する DB ユーザーの設定をします。</div>
 </div>
 <section id="id10">
-<h4><span class="section-number">4.4.5.1. </span>設定例<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.4.5.1. </span>設定例<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">下記のアプリケーションが利用・作成する DB ユーザーをそれぞれ設定します。</div>
 </div>
@@ -2709,7 +2707,7 @@ $(window).on('load', function () {
 <div class="line">アプリケーションが利用・作成する DB ユーザーを設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id77">
-<caption><span class="caption-number">表 4.15 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id77" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.23 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id77" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -2790,7 +2788,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id78">
-<div class="code-block-caption"><span class="caption-number">リスト 4.18 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id78" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.18 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id78" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_db_user_ita.yaml</span>
 <span class="gu">@@ -28,8 +28,8 @@</span>
@@ -2818,7 +2816,7 @@ $(window).on('load', function () {
 <div class="line">アプリケーションが利用・作成する DB ユーザーを設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id79">
-<caption><span class="caption-number">表 4.16 </span><span class="caption-text">共通設定 (Keycloak) のオプションパラメータ</span><a class="headerlink" href="#id79" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.24 </span><span class="caption-text">共通設定 (Keycloak) のオプションパラメータ</span><a class="headerlink" href="#id79" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -2919,7 +2917,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id80">
-<div class="code-block-caption"><span class="caption-number">リスト 4.19 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id80" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.19 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id80" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_db_user_keycloak.yaml</span>
 <span class="gu">@@ -65,8 +65,8 @@</span>
@@ -2947,7 +2945,7 @@ $(window).on('load', function () {
 <div class="line">アプリケーションが利用・作成する DB ユーザーを設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id81">
-<caption><span class="caption-number">表 4.17 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id81" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.25 </span><span class="caption-text">共通設定 (Exastro 共通基盤用データベース) のオプションパラメータ</span><a class="headerlink" href="#id81" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -3028,7 +3026,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id82">
-<div class="code-block-caption"><span class="caption-number">リスト 4.20 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id82" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.20 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id82" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_db_user_pf.yaml</span>
 <span class="gu">@@ -59,8 +59,8 @@</span>
@@ -3055,7 +3053,7 @@ $(window).on('load', function () {
 </section>
 </section>
 <section id="gitlab">
-<span id="installation-kubernetes-gitlablinkage"></span><h3><span class="section-number">4.4.6. </span>GitLab 連携設定<a class="headerlink" href="#gitlab" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="installation-kubernetes-gitlablinkage"></span><h3><span class="section-number">2.4.6. </span>GitLab 連携設定<a class="headerlink" href="#gitlab" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">GitLab 連携のための接続情報を登録します。</div>
 </div>
@@ -3067,7 +3065,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <table class="filter-table docutils align-left" id="id83">
-<caption><span class="caption-number">表 4.18 </span><span class="caption-text">共通設定 (GitLab) のオプションパラメータ</span><a class="headerlink" href="#id83" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.26 </span><span class="caption-text">共通設定 (GitLab) のオプションパラメータ</span><a class="headerlink" href="#id83" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -3132,7 +3130,7 @@ $(window).on('load', function () {
 <div class="line">下記は、GitLab 連携の設定例を記載しています。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id84">
-<div class="code-block-caption"><span class="caption-number">リスト 4.21 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id84" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.21 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id84" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_gitlab_setting.yaml</span>
 <span class="gu">@@ -69,12 +69,12 @@</span>
@@ -3164,12 +3162,12 @@ $(window).on('load', function () {
 </div>
 </section>
 <section id="install-helm">
-<span id="create-system-manager"></span><span id="id11"></span><h3><span class="section-number">4.4.7. </span>システム管理者の作成<a class="headerlink" href="#install-helm" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="create-system-manager"></span><span id="id11"></span><h3><span class="section-number">2.4.7. </span>システム管理者の作成<a class="headerlink" href="#install-helm" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">セットアップ時に システム管理者の初期ユーザーを作成するための情報を設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id85">
-<caption><span class="caption-number">表 4.19 </span><span class="caption-text">共通設定 (Keycloak) のオプションパラメータ</span><a class="headerlink" href="#id85" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.27 </span><span class="caption-text">共通設定 (Keycloak) のオプションパラメータ</span><a class="headerlink" href="#id85" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -3270,7 +3268,7 @@ $(window).on('load', function () {
 </tbody>
 </table>
 <div class="literal-block-wrapper docutils container" id="id86">
-<div class="code-block-caption"><span class="caption-number">リスト 4.22 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id86" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.22 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id86" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro_usercreate_system_manager.yaml</span>
 <span class="gu">@@ -63,8 +63,8 @@</span>
@@ -3294,7 +3292,7 @@ $(window).on('load', function () {
 </div>
 </section>
 <section id="persistent-volume">
-<span id="id12"></span><h3><span class="section-number">4.4.8. </span>永続ボリュームの設定<a class="headerlink" href="#persistent-volume" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id12"></span><h3><span class="section-number">2.4.8. </span>永続ボリュームの設定<a class="headerlink" href="#persistent-volume" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">データベースのデータ永続化 (クラスタ内コンテナがある場合)、および、ファイルの永続化のために、永続ボリュームを設定する必要があります。</div>
 <div class="line">永続ボリュームの詳細については、 <a class="reference external" href="https://kubernetes.io/ja/docs/concepts/storage/persistent-volumes/#%E6%B0%B8%E7%B6%9A%E3%83%9C%E3%83%AA%E3%83%A5%E3%83%BC%E3%83%A0">永続ボリューム - Kubernetes</a> を参照してください。</div>
@@ -3328,7 +3326,7 @@ $(window).on('load', function () {
 <div class="line">詳細は、 <a class="reference external" href="https://learn.microsoft.com/ja-jp/azure/aks/concepts-storage#storage-classes">Azure Kubernetes Service (AKS) でのアプリケーションのストレージ オプション</a> を参照してください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id87">
-<div class="code-block-caption"><span class="caption-number">リスト 4.23 </span><span class="caption-text">storage-class-exastro-suite.yaml</span><a class="headerlink" href="#id87" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.23 </span><span class="caption-text">storage-class-exastro-suite.yaml</span><a class="headerlink" href="#id87" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">apiVersion</span><span class="p">:</span> <span class="n">storage</span><span class="o">.</span><span class="n">k8s</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">v1</span>
 <span class="linenos"> 2</span><span class="n">kind</span><span class="p">:</span> <span class="n">StorageClass</span>
 <span class="linenos"> 3</span><span class="n">metadata</span><span class="p">:</span>
@@ -3343,7 +3341,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id88">
-<div class="code-block-caption"><span class="caption-number">リスト 4.24 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id88" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.24 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id88" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w"> </span> itaGlobalDefinition:
 <span class="w"> </span>   persistence:
 <span class="w"> </span>     enabled: true
@@ -3359,7 +3357,7 @@ $(window).on('load', function () {
 <div class="line">※ 下記は、<a class="reference internal" href="#database-setup"><span class="std std-ref">データベース連携</span></a> で設定済みです。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id89">
-<div class="code-block-caption"><span class="caption-number">リスト 4.25 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id89" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.25 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id89" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w"> </span> databaseDefinition:
 <span class="w"> </span>   persistence:
 <span class="w"> </span>     enabled: true
@@ -3376,7 +3374,7 @@ $(window).on('load', function () {
 <div class="line">※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id90">
-<div class="code-block-caption"><span class="caption-number">リスト 4.26 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id90" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.26 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id90" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w"> </span> pfAuditLogDefinition:
 <span class="w"> </span>   name: pf-auditlog
 <span class="w"> </span>   persistence:
@@ -3423,7 +3421,7 @@ $(window).on('load', function () {
 <div class="line">hostPath を使用した例を記載します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id91">
-<div class="code-block-caption"><span class="caption-number">リスト 4.27 </span><span class="caption-text">pv-database.yaml (データベース用ボリューム)</span><a class="headerlink" href="#id91" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.27 </span><span class="caption-text">pv-database.yaml (データベース用ボリューム)</span><a class="headerlink" href="#id91" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># pv-database.yaml</span>
 <span class="linenos"> 2</span><span class="n">apiVersion</span><span class="p">:</span> <span class="n">v1</span>
 <span class="linenos"> 3</span><span class="n">kind</span><span class="p">:</span> <span class="n">PersistentVolume</span>
@@ -3445,7 +3443,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id92">
-<div class="code-block-caption"><span class="caption-number">リスト 4.28 </span><span class="caption-text">pv-ita-common.yaml (ファイル用ボリューム)</span><a class="headerlink" href="#id92" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.28 </span><span class="caption-text">pv-ita-common.yaml (ファイル用ボリューム)</span><a class="headerlink" href="#id92" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># pv-ita-common.yaml</span>
 <span class="linenos"> 2</span><span class="n">apiVersion</span><span class="p">:</span> <span class="n">v1</span>
 <span class="linenos"> 3</span><span class="n">kind</span><span class="p">:</span> <span class="n">PersistentVolume</span>
@@ -3467,7 +3465,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id93">
-<div class="code-block-caption"><span class="caption-number">リスト 4.29 </span><span class="caption-text">pv-mongo.yaml (OASE用ボリューム) ※OASEを利用しない場合設定不要</span><a class="headerlink" href="#id93" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.29 </span><span class="caption-text">pv-mongo.yaml (OASE用ボリューム) ※OASEを利用しない場合設定不要</span><a class="headerlink" href="#id93" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># pv-mongo.yaml</span>
 <span class="linenos"> 2</span><span class="n">apiVersion</span><span class="p">:</span> <span class="n">v1</span>
 <span class="linenos"> 3</span><span class="n">kind</span><span class="p">:</span> <span class="n">PersistentVolume</span>
@@ -3489,7 +3487,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id94">
-<div class="code-block-caption"><span class="caption-number">リスト 4.30 </span><span class="caption-text">pv-gitlab.yaml (GitLab用ボリューム) ※外部GitLabを利用する場合設定不要</span><a class="headerlink" href="#id94" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.30 </span><span class="caption-text">pv-gitlab.yaml (GitLab用ボリューム) ※外部GitLabを利用する場合設定不要</span><a class="headerlink" href="#id94" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># pv-gitlab.yaml</span>
 <span class="linenos"> 2</span><span class="n">apiVersion</span><span class="p">:</span> <span class="n">v1</span>
 <span class="linenos"> 3</span><span class="n">kind</span><span class="p">:</span> <span class="n">PersistentVolume</span>
@@ -3514,7 +3512,7 @@ $(window).on('load', function () {
 <div class="line">※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id95">
-<div class="code-block-caption"><span class="caption-number">リスト 4.31 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id95" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.31 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id95" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w"> </span> pfAuditLogDefinition:
 <span class="w"> </span>   name: pf-auditlog
 <span class="w"> </span>   persistence:
@@ -3529,7 +3527,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id96">
-<div class="code-block-caption"><span class="caption-number">リスト 4.32 </span><span class="caption-text">pv-pf-auditlog (監査ログファイル用ボリューム)</span><a class="headerlink" href="#id96" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.32 </span><span class="caption-text">pv-pf-auditlog (監査ログファイル用ボリューム)</span><a class="headerlink" href="#id96" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># pv-database.yaml</span>
 <span class="linenos"> 2</span><span class="n">apiVersion</span><span class="p">:</span> <span class="n">v1</span>
 <span class="linenos"> 3</span><span class="n">kind</span><span class="p">:</span> <span class="n">PersistentVolume</span>
@@ -3556,7 +3554,7 @@ $(window).on('load', function () {
 </section>
 </section>
 <section id="id13">
-<span id="id14"></span><h2><span class="section-number">4.5. </span>インストール<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h2>
+<span id="id14"></span><h2><span class="section-number">2.5. </span>インストール<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
@@ -3564,7 +3562,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <section id="id15">
-<h3><span class="section-number">4.5.1. </span>永続ボリュームの作成<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.5.1. </span>永続ボリュームの作成<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="#persistent-volume"><span class="std std-ref">永続ボリュームの設定</span></a> で作成したマニフェストファイルを適用し、ボリュームを作成します。</div>
 </div>
@@ -3598,12 +3596,12 @@ pv-mongo<span class="w">        </span>20Gi<span class="w">       </span>RWO<spa
 </div>
 </section>
 <section id="ita-install">
-<span id="id16"></span><h3><span class="section-number">4.5.2. </span>インストール<a class="headerlink" href="#ita-install" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id16"></span><h3><span class="section-number">2.5.2. </span>インストール<a class="headerlink" href="#ita-install" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Helm バージョンとアプリケーションのバージョンについては <a class="reference external" href="https://github.com/exastro-suite/exastro-helm">exastro-helmのサイト</a> をご確認ください。</div>
 </div>
 <table class="docutils align-left" id="id97">
-<caption><span class="caption-number">表 4.20 </span><span class="caption-text">Helm チャートとアプリケーションのバージョン</span><a class="headerlink" href="#id97" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.28 </span><span class="caption-text">Helm チャートとアプリケーションのバージョン</span><a class="headerlink" href="#id97" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 11.1%" />
 <col style="width: 11.1%" />
@@ -3651,7 +3649,7 @@ pv-mongo<span class="w">        </span>20Gi<span class="w">       </span>RWO<spa
 <ol class="arabic">
 <li><p>Helm コマンドを使い Kubernetes 環境にインストールを行います。</p>
 <div class="literal-block-wrapper docutils container" id="id98">
-<div class="code-block-caption"><span class="caption-number">リスト 4.33 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id98" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.33 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id98" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>install<span class="w"> </span>exastro<span class="w"> </span>exastro/exastro<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro.yaml
@@ -3659,7 +3657,7 @@ pv-mongo<span class="w">        </span>20Gi<span class="w">       </span>RWO<spa
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id99">
-<div class="code-block-caption"><span class="caption-number">リスト 4.34 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id99" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.34 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id99" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Sat<span class="w"> </span>Jan<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:00:02<span class="w"> </span><span class="m">2023</span>
 NAMESPACE:<span class="w"> </span>exastro
@@ -3712,7 +3710,7 @@ Exastro<span class="w"> </span>install<span class="w"> </span>completion!
 <div class="line">コマンドラインから以下のコマンドを入力して、インストールが完了していることを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id100">
-<div class="code-block-caption"><span class="caption-number">リスト 4.35 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id100" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.35 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id100" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pod の一覧を取得</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>--namespace<span class="w"> </span>exastro
 
@@ -3722,7 +3720,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id101">
-<div class="code-block-caption"><span class="caption-number">リスト 4.36 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id101" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.36 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id101" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                                      </span>READY<span class="w">   </span>STATUS<span class="w">      </span>RESTARTS<span class="w">   </span>AGE
 ita-api-admin-64657656c6-r4s2l<span class="w">                            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>30m
 ita-api-organization-75ff9d599c-gthvl<span class="w">                     </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>30m
@@ -3766,27 +3764,27 @@ platform-web-88db7c489-wkmn9<span class="w">                              </span
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id102">
-<div class="code-block-caption"><span class="caption-number">リスト 4.37 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id102" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.37 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id102" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro IT Automation ENCRYPT_KEY</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>ita-secret-ita-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id103">
-<div class="code-block-caption"><span class="caption-number">リスト 4.38 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id103" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.38 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id103" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">JnIoXzJtPic2MXFqRl1yI1chMj8hWzQrNypmVn41Pk8</span><span class="o">=</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id104">
-<div class="code-block-caption"><span class="caption-number">リスト 4.39 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id104" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.39 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id104" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform ENCRYPT_KEY</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>platform-secret-pf-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id105">
-<div class="code-block-caption"><span class="caption-number">リスト 4.40 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id105" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.40 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id105" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">bHFZe2VEVVM2PmFeQDMqNG4oZT4lTlglLjJJekxBTHE</span><span class="o">=</span>
 </pre></div>
 </div>
@@ -3798,7 +3796,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="line">下記は、実行例のため <a class="reference internal" href="#service-setting"><span class="std std-ref">サービス公開の設定</span></a> で設定したホスト名に読み替えてください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id106">
-<div class="code-block-caption"><span class="caption-number">リスト 4.41 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id106" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.41 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id106" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*************************
 *<span class="w"> </span>Service<span class="w"> </span>Console<span class="w">       </span>*
 *************************
@@ -3812,7 +3810,7 @@ http://exastro-suite-mng.example.local/auth/
 </div>
 </div>
 <table class="docutils align-left" id="id107">
-<caption><span class="caption-number">表 4.21 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id107" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.29 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id107" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 33.3%" />
 <col style="width: 66.7%" />
@@ -3831,7 +3829,7 @@ http://exastro-suite-mng.example.local/auth/
 <ol class="arabic">
 <li><p>Helm コマンドを使い Kubernetes 環境にインストールを行います。</p>
 <div class="literal-block-wrapper docutils container" id="id108">
-<div class="code-block-caption"><span class="caption-number">リスト 4.42 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id108" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.42 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id108" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>install<span class="w"> </span>exastro<span class="w"> </span>exastro/exastro<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro.yaml
@@ -3839,7 +3837,7 @@ http://exastro-suite-mng.example.local/auth/
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id109">
-<div class="code-block-caption"><span class="caption-number">リスト 4.43 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id109" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.43 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id109" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Sat<span class="w"> </span>Jan<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:00:02<span class="w"> </span><span class="m">2023</span>
 NAMESPACE:<span class="w"> </span>exastro
@@ -3897,7 +3895,7 @@ Exastro<span class="w"> </span>install<span class="w"> </span>completion!
 <div class="line">コマンドラインから以下のコマンドを入力して、インストールが完了していることを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id110">
-<div class="code-block-caption"><span class="caption-number">リスト 4.44 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id110" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.44 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id110" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pod の一覧を取得</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>--namespace<span class="w"> </span>exastro
 
@@ -3907,7 +3905,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id111">
-<div class="code-block-caption"><span class="caption-number">リスト 4.45 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id111" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.45 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id111" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                                      </span>READY<span class="w">   </span>STATUS<span class="w">      </span>RESTARTS<span class="w">   </span>AGE
 ita-api-admin-64657656c6-r4s2l<span class="w">                            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>30m
 ita-api-organization-75ff9d599c-gthvl<span class="w">                     </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>30m
@@ -3951,27 +3949,27 @@ platform-web-88db7c489-wkmn9<span class="w">                              </span
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id112">
-<div class="code-block-caption"><span class="caption-number">リスト 4.46 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id112" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.46 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id112" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro IT Automation ENCRYPT_KEY</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>ita-secret-ita-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id113">
-<div class="code-block-caption"><span class="caption-number">リスト 4.47 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id113" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.47 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id113" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">JnIoXzJtPic2MXFqRl1yI1chMj8hWzQrNypmVn41Pk8</span><span class="o">=</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id114">
-<div class="code-block-caption"><span class="caption-number">リスト 4.48 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id114" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.48 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id114" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform ENCRYPT_KEY</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>platform-secret-pf-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id115">
-<div class="code-block-caption"><span class="caption-number">リスト 4.49 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id115" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.49 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id115" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">bHFZe2VEVVM2PmFeQDMqNG4oZT4lTlglLjJJekxBTHE</span><span class="o">=</span>
 </pre></div>
 </div>
@@ -3982,7 +3980,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="line">1. で実行した <strong class="command">helm install</strong> の出力結果のコマンドをコンソール上に貼り付けて実行します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id116">
-<div class="code-block-caption"><span class="caption-number">リスト 4.50 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id116" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.50 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id116" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># helm install コマンドの実行結果を貼り付けて実行</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_SVC_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[0].nodePort}&quot;</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_MGT_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[1].nodePort}&quot;</span><span class="k">)</span>
@@ -4004,7 +4002,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="line">下記は、実行例のため実際のコマンド実行結果に読み替えてください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id117">
-<div class="code-block-caption"><span class="caption-number">リスト 4.51 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id117" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.51 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id117" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*************************
 *<span class="w"> </span>Administrator<span class="w"> </span>Console<span class="w"> </span>*
 *************************
@@ -4018,7 +4016,7 @@ http://172.16.20.XXX:31798
 </div>
 </div>
 <table class="docutils align-left" id="id118">
-<caption><span class="caption-number">表 4.22 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id118" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.30 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id118" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 33.3%" />
 <col style="width: 66.7%" />
@@ -4037,7 +4035,7 @@ http://172.16.20.XXX:31798
 <ol class="arabic">
 <li><p>Helm コマンドを使い Kubernetes 環境にインストールを行います。</p>
 <div class="literal-block-wrapper docutils container" id="id119">
-<div class="code-block-caption"><span class="caption-number">リスト 4.52 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id119" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.52 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id119" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>install<span class="w"> </span>exastro<span class="w"> </span>exastro/exastro<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro.yaml
@@ -4045,7 +4043,7 @@ http://172.16.20.XXX:31798
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id120">
-<div class="code-block-caption"><span class="caption-number">リスト 4.53 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id120" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.53 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id120" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Sun<span class="w"> </span>Jan<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">12</span>:18:02<span class="w"> </span><span class="m">2023</span>
 NAMESPACE:<span class="w"> </span>exastro
@@ -4102,7 +4100,7 @@ Exastro<span class="w"> </span>install<span class="w"> </span>completion!
 <div class="line">コマンドラインから以下のコマンドを入力して、インストールが完了していることを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id121">
-<div class="code-block-caption"><span class="caption-number">リスト 4.54 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id121" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.54 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id121" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pod の一覧を取得</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>--namespace<span class="w"> </span>exastro
 
@@ -4112,7 +4110,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id122">
-<div class="code-block-caption"><span class="caption-number">リスト 4.55 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id122" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.55 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id122" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                                      </span>READY<span class="w">   </span>STATUS<span class="w">      </span>RESTARTS<span class="w">   </span>AGE
 ita-api-admin-64657656c6-r4s2l<span class="w">                            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>30m
 ita-api-organization-75ff9d599c-gthvl<span class="w">                     </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>30m
@@ -4156,27 +4154,27 @@ platform-web-88db7c489-wkmn9<span class="w">                              </span
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id123">
-<div class="code-block-caption"><span class="caption-number">リスト 4.56 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id123" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.56 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id123" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro IT Automation ENCRYPT_KEY</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>ita-secret-ita-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id124">
-<div class="code-block-caption"><span class="caption-number">リスト 4.57 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id124" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.57 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id124" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">JnIoXzJtPic2MXFqRl1yI1chMj8hWzQrNypmVn41Pk8</span><span class="o">=</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id125">
-<div class="code-block-caption"><span class="caption-number">リスト 4.58 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id125" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.58 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id125" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform ENCRYPT_KEY</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>platform-secret-pf-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id126">
-<div class="code-block-caption"><span class="caption-number">リスト 4.59 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id126" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.59 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id126" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">bHFZe2VEVVM2PmFeQDMqNG4oZT4lTlglLjJJekxBTHE</span><span class="o">=</span>
 </pre></div>
 </div>
@@ -4187,7 +4185,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="line">1. で実行した <strong class="command">helm install</strong> の出力結果のコマンドをコンソール上に貼り付けて実行します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id127">
-<div class="code-block-caption"><span class="caption-number">リスト 4.60 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id127" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.60 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id127" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_SVC_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[0].nodePort}&quot;</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_MGT_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[1].nodePort}&quot;</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_IP</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].status.addresses[0].address}&quot;</span><span class="k">)</span>
@@ -4208,7 +4206,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="line">下記は、実行例のため実際のコマンド実行結果に読み替えてください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id128">
-<div class="code-block-caption"><span class="caption-number">リスト 4.61 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id128" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.61 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id128" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*************************
 *<span class="w"> </span>Administrator<span class="w"> </span>Console<span class="w"> </span>*
 *************************
@@ -4222,7 +4220,7 @@ http://172.16.20.xxx:30080
 </div>
 </div>
 <table class="docutils align-left" id="id129">
-<caption><span class="caption-number">表 4.23 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id129" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.31 </span><span class="caption-text">接続確認用URL</span><a class="headerlink" href="#id129" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 33.3%" />
 <col style="width: 66.7%" />
@@ -4238,7 +4236,7 @@ http://172.16.20.xxx:30080
 </div></div>
 </section>
 <section id="id17">
-<h3><span class="section-number">4.5.3. </span>管理コンソールへのログイン<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.5.3. </span>管理コンソールへのログイン<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">以下の画面が表示された場合、<span class="menuselection">Administration Console</span> を選択して、ログイン画面を開きます。</div>
 </div>
@@ -4263,12 +4261,12 @@ http://172.16.20.xxx:30080
 </section>
 </section>
 <section id="id20">
-<h2><span class="section-number">4.6. </span>アップグレード<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.6. </span>アップグレード<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">Exastro システムのアップグレード方法について紹介します。</div>
 </div>
 <section id="id21">
-<h3><span class="section-number">4.6.1. </span>アップグレードの準備<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.6.1. </span>アップグレードの準備<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -4276,7 +4274,7 @@ http://172.16.20.xxx:30080
 </div>
 </div>
 <section id="id22">
-<h4><span class="section-number">4.6.1.1. </span>Helm リポジトリの更新<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.6.1.1. </span>Helm リポジトリの更新<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">Exastro システムの Helm リポジトリを更新します。</div>
 </div>
@@ -4284,14 +4282,14 @@ http://172.16.20.xxx:30080
 <div class="line">更新前のバージョンを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id130">
-<div class="code-block-caption"><span class="caption-number">リスト 4.62 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id130" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.62 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id130" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># リポジトリ情報の確認</span>
 <span class="linenos">2</span>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id131">
-<div class="code-block-caption"><span class="caption-number">リスト 4.63 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id131" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.63 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id131" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>exastro
 <span class="linenos">2</span>NAME<span class="w">                            </span>CHART<span class="w"> </span>VERSION<span class="w">   </span>APP<span class="w"> </span>VERSION<span class="w">     </span>DESCRIPTION
 <span class="hll"><span class="linenos">3</span>exastro/exastro<span class="w">                 </span><span class="m">1</span>.0.0<span class="w">           </span><span class="m">2</span>.0.3<span class="w">           </span>A<span class="w"> </span>Helm<span class="w"> </span>chart<span class="w"> </span><span class="k">for</span><span class="w"> </span>Exastro.<span class="w"> </span>Exastro<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>Open<span class="w"> </span>So...
@@ -4304,7 +4302,7 @@ http://172.16.20.xxx:30080
 <div class="line">Helm リポジトリを更新します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id132">
-<div class="code-block-caption"><span class="caption-number">リスト 4.64 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id132" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.64 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id132" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># リポジトリ情報の更新</span>
 <span class="linenos">2</span>helm<span class="w"> </span>repo<span class="w"> </span>update
 </pre></div>
@@ -4314,14 +4312,14 @@ http://172.16.20.xxx:30080
 <div class="line">更新後のバージョンを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id133">
-<div class="code-block-caption"><span class="caption-number">リスト 4.65 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id133" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.65 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id133" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># リポジトリ情報の確認</span>
 <span class="linenos">2</span>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id134">
-<div class="code-block-caption"><span class="caption-number">リスト 4.66 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id134" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.66 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id134" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>exastro
 <span class="linenos">2</span>NAME<span class="w">                            </span>CHART<span class="w"> </span>VERSION<span class="w">   </span>APP<span class="w"> </span>VERSION<span class="w">     </span>DESCRIPTION
 <span class="hll"><span class="linenos">3</span>exastro/exastro<span class="w">                 </span><span class="m">1</span>.0.1<span class="w">           </span><span class="m">2</span>.1.0<span class="w">           </span>A<span class="w"> </span>Helm<span class="w"> </span>chart<span class="w"> </span><span class="k">for</span><span class="w"> </span>Exastro.<span class="w"> </span>Exastro<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>Open<span class="w"> </span>So...
@@ -4332,19 +4330,19 @@ http://172.16.20.xxx:30080
 </div>
 </section>
 <section id="id23">
-<h4><span class="section-number">4.6.1.2. </span>デフォルト設定値の更新の確認<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.6.1.2. </span>デフォルト設定値の更新の確認<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">デフォルト値の更新を確認します。</div>
 <div class="line">インストール時に作成した設定ファイル <code class="file docutils literal notranslate"><span class="pre">exastro.yaml</span></code> とアップグレード後の設定ファイルを比較します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id135">
-<div class="code-block-caption"><span class="caption-number">リスト 4.67 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id135" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.67 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id135" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>diff<span class="w"> </span>exastro.yaml<span class="w"> </span>&lt;<span class="o">(</span>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>exastro/exastro<span class="o">)</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id136">
-<div class="code-block-caption"><span class="caption-number">リスト 4.68 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id136" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.68 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id136" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>exastro-platform:
 <span class="w"> </span> platform-api:
 <span class="w"> </span>   image:
@@ -4366,7 +4364,7 @@ http://172.16.20.xxx:30080
 </div>
 </section>
 <section id="id24">
-<h4><span class="section-number">4.6.1.3. </span>設定値の更新<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.6.1.3. </span>設定値の更新<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -4379,7 +4377,7 @@ http://172.16.20.xxx:30080
 <div class="line">例えば下記の差分確認結果から、<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">exastro</kbd>-<kbd class="kbd docutils literal notranslate">platform.platform</kbd>-<kbd class="kbd docutils literal notranslate">auth.extraEnv</kbd></kbd> が追加されていますので、必要に応じて、<code class="file docutils literal notranslate"><span class="pre">exastro.yaml</span></code> に項目と設定値を追加します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id137">
-<div class="code-block-caption"><span class="caption-number">リスト 4.69 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id137" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.69 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id137" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>exastro-platform:
 <span class="w"> </span> platform-api:
 <span class="w"> </span>   image:
@@ -4401,12 +4399,12 @@ http://172.16.20.xxx:30080
 </div>
 </section>
 <section id="change-encrypt-key">
-<span id="id25"></span><h4><span class="section-number">4.6.1.4. </span>暗号化キーの指定<a class="headerlink" href="#change-encrypt-key" title="この見出しへのパーマリンク">¶</a></h4>
+<span id="id25"></span><h4><span class="section-number">2.6.1.4. </span>暗号化キーの指定<a class="headerlink" href="#change-encrypt-key" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="../manuals/maintenance/backup_and_restore.html#backup-encrypt-key"><span class="std std-ref">暗号化キーのバックアップ</span></a> でバックアップした暗号化キーを指定します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id138">
-<div class="code-block-caption"><span class="caption-number">リスト 4.70 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id138" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.70 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id138" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/exastro.yaml</span>
 <span class="gi">+++ /home/runner/work/exastro-it-automation-docs-dev/exastro-it-automation-docs-dev/workspace/src/ja/2.4/installation/literal_includes/update_exastro.yaml</span>
 <span class="gu">@@ -8,7 +8,7 @@</span>
@@ -4433,7 +4431,7 @@ http://172.16.20.xxx:30080
 </section>
 </section>
 <section id="ita-upgrade">
-<span id="id26"></span><h3><span class="section-number">4.6.2. </span>アップグレード<a class="headerlink" href="#ita-upgrade" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id26"></span><h3><span class="section-number">2.6.2. </span>アップグレード<a class="headerlink" href="#ita-upgrade" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -4448,14 +4446,14 @@ http://172.16.20.xxx:30080
 </div>
 </div>
 <section id="id27">
-<h4><span class="section-number">4.6.2.1. </span>サービス停止<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.6.2.1. </span>サービス停止<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><p>Pod 起動数の確認</p>
 <div class="line-block">
 <div class="line">作業前の Pod 起動数の確認をし、状態を記録します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id139">
-<div class="code-block-caption"><span class="caption-number">リスト 4.71 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id139" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.71 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id139" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RS_AE</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="sb">`</span>
 <span class="nv">RS_ALRV</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="sb">`</span>
 <span class="nv">RS_ATS</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="sb">`</span>
@@ -4494,7 +4492,7 @@ http://172.16.20.xxx:30080
 <div class="line">リバースプロキシ (platform-auth) の Pod 起動数を 0 に変更し、エンドユーザーからのアクセスを制限します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id140">
-<div class="code-block-caption"><span class="caption-number">リスト 4.72 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id140" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.72 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id140" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
@@ -4505,7 +4503,7 @@ http://172.16.20.xxx:30080
 <div class="line">バックヤード処理 (ita-by-***) の Pod 起動数を 0 に変更し、データベースの更新を停止します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id141">
-<div class="code-block-caption"><span class="caption-number">リスト 4.73 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id141" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.73 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id141" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
@@ -4543,13 +4541,13 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span clas
 <div class="line">上記で停止した対象の Pod 数が 0 になっていることを確認</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id142">
-<div class="code-block-caption"><span class="caption-number">リスト 4.74 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id142" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.74 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id142" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id143">
-<div class="code-block-caption"><span class="caption-number">リスト 4.75 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id143" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.75 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id143" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
 mariadb<span class="w">                                  </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h41m
 ita-web-server<span class="w">                           </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h41m
@@ -4597,12 +4595,12 @@ ita-by-oase-conclusion<span class="w">                   </span><span class="m">
 </ol>
 </section>
 <section id="id28">
-<h4><span class="section-number">4.6.2.2. </span>アップグレード実施<a class="headerlink" href="#id28" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.6.2.2. </span>アップグレード実施<a class="headerlink" href="#id28" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">アップグレードを実施します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id144">
-<div class="code-block-caption"><span class="caption-number">リスト 4.76 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id144" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.76 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id144" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>upgrade<span class="w"> </span>exastro<span class="w"> </span>exastro/exastro<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro.yaml
@@ -4610,7 +4608,7 @@ ita-by-oase-conclusion<span class="w">                   </span><span class="m">
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id145">
-<div class="code-block-caption"><span class="caption-number">リスト 4.77 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id145" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.77 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id145" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Sat<span class="w"> </span>Jan<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:00:02<span class="w"> </span><span class="m">2023</span>
 NAMESPACE:<span class="w"> </span>exastro
@@ -4654,14 +4652,14 @@ Exastro<span class="w"> </span>install<span class="w"> </span>completion!
 </div>
 </section>
 <section id="id29">
-<h4><span class="section-number">4.6.2.3. </span>サービス再開<a class="headerlink" href="#id29" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.6.2.3. </span>サービス再開<a class="headerlink" href="#id29" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><p>サービス再開</p>
 <div class="line-block">
 <div class="line">サービス停止時に取得した各 Deployment の Pod 起動数を元に戻します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id146">
-<div class="code-block-caption"><span class="caption-number">リスト 4.78 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id146" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.78 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id146" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="si">${</span><span class="nv">RS_AE</span><span class="si">}</span>
 kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="si">${</span><span class="nv">RS_ALRV</span><span class="si">}</span>
 kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="si">${</span><span class="nv">RS_ATS</span><span class="si">}</span>
@@ -4700,13 +4698,13 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span clas
 <div class="line">上記で起動した対象の Pod 数が元に戻りすべて <kbd class="kbd docutils literal notranslate">READY</kbd> になっていることを確認</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id147">
-<div class="code-block-caption"><span class="caption-number">リスト 4.79 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id147" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.79 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id147" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id148">
-<div class="code-block-caption"><span class="caption-number">リスト 4.80 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id148" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.80 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id148" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
 ita-api-admin<span class="w">                            </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-api-oase-receiver<span class="w">                    </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
@@ -4742,12 +4740,12 @@ platform-web<span class="w">                             </span><span class="m">
 </ol>
 </section>
 <section id="id30">
-<h4><span class="section-number">4.6.2.4. </span>アップグレード状況確認<a class="headerlink" href="#id30" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.6.2.4. </span>アップグレード状況確認<a class="headerlink" href="#id30" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">コマンドラインから以下のコマンドを入力して、アップグレードが完了していることを確認します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id149">
-<div class="code-block-caption"><span class="caption-number">リスト 4.81 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id149" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.81 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id149" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pod の一覧を取得</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
@@ -4758,7 +4756,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 <div class="line">※正常に起動するまで数分かかる場合があります。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id150">
-<div class="code-block-caption"><span class="caption-number">リスト 4.82 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id150" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.82 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id150" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                                      </span>READY<span class="w">   </span>STATUS<span class="w">      </span>RESTARTS<span class="w">   </span>AGE
 ita-api-admin-6b8567596d-rgjms<span class="w">                            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>7h40m
 ita-api-oase-receiver-6b74bdff6-zmcrw<span class="w">                     </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>7h40m
@@ -4798,12 +4796,12 @@ platform-web-6644884657-dmwp6<span class="w">                             </span
 </section>
 </section>
 <section id="ita-uninstall">
-<span id="id31"></span><h2><span class="section-number">4.7. </span>アンインストール<a class="headerlink" href="#ita-uninstall" title="この見出しへのパーマリンク">¶</a></h2>
+<span id="id31"></span><h2><span class="section-number">2.7. </span>アンインストール<a class="headerlink" href="#ita-uninstall" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">Exastro システムのアンインストール方法について紹介します。</div>
 </div>
 <section id="id32">
-<h3><span class="section-number">4.7.1. </span>アンインストールの準備<a class="headerlink" href="#id32" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.7.1. </span>アンインストールの準備<a class="headerlink" href="#id32" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -4812,113 +4810,113 @@ platform-web-6644884657-dmwp6<span class="w">                             </span
 </div>
 </section>
 <section id="id33">
-<h3><span class="section-number">4.7.2. </span>アンインストール<a class="headerlink" href="#id33" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.7.2. </span>アンインストール<a class="headerlink" href="#id33" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id34">
-<h4><span class="section-number">4.7.2.1. </span>アンインストール実施<a class="headerlink" href="#id34" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">2.7.2.1. </span>アンインストール実施<a class="headerlink" href="#id34" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">アンインストールを実施します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id151">
-<div class="code-block-caption"><span class="caption-number">リスト 4.83 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id151" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.83 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id151" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>uninstall<span class="w"> </span>exastro<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id152">
-<div class="code-block-caption"><span class="caption-number">リスト 4.84 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id152" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.84 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id152" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>release<span class="w"> </span><span class="s2">&quot;exastro&quot;</span><span class="w"> </span>uninstalled
 </pre></div>
 </div>
 </div>
 </section>
 <section id="delete-pv">
-<span id="id35"></span><h4><span class="section-number">4.7.2.2. </span>永続ボリュームを削除<a class="headerlink" href="#delete-pv" title="この見出しへのパーマリンク">¶</a></h4>
+<span id="id35"></span><h4><span class="section-number">2.7.2.2. </span>永続ボリュームを削除<a class="headerlink" href="#delete-pv" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">Persitent Volume（PV） を Kubernetes 上に hostPath で作成した場合の方法を記載します。</div>
 <div class="line">マネージドデータベースを含む外部データベースを利用している場合は、環境にあったデータ削除方法を実施してください。</div>
 </div>
 <section id="id36">
-<h5><span class="section-number">4.7.2.2.1. </span>データベース用<a class="headerlink" href="#id36" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.2.1. </span>データベース用<a class="headerlink" href="#id36" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="literal-block-wrapper docutils container" id="id153">
-<div class="code-block-caption"><span class="caption-number">リスト 4.85 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id153" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.85 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id153" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pv<span class="w"> </span>pv-database
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id154">
-<div class="code-block-caption"><span class="caption-number">リスト 4.86 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id154" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.86 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id154" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolume<span class="w"> </span><span class="s2">&quot;pv-database&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
 </div>
 </section>
 <section id="id37">
-<h5><span class="section-number">4.7.2.2.2. </span>ファイル用<a class="headerlink" href="#id37" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.2.2. </span>ファイル用<a class="headerlink" href="#id37" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="literal-block-wrapper docutils container" id="id155">
-<div class="code-block-caption"><span class="caption-number">リスト 4.87 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id155" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.87 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id155" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pv<span class="w"> </span>pv-ita-common
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id156">
-<div class="code-block-caption"><span class="caption-number">リスト 4.88 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id156" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.88 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id156" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolume<span class="w"> </span><span class="s2">&quot;pv-ita-common&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
 </div>
 </section>
 <section id="oase">
-<h5><span class="section-number">4.7.2.2.3. </span>OASE用<a class="headerlink" href="#oase" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.2.3. </span>OASE用<a class="headerlink" href="#oase" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="literal-block-wrapper docutils container" id="id157">
-<div class="code-block-caption"><span class="caption-number">リスト 4.89 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id157" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.89 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id157" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pv<span class="w"> </span>pv-mongo
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id158">
-<div class="code-block-caption"><span class="caption-number">リスト 4.90 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id158" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.90 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id158" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolume<span class="w"> </span><span class="s2">&quot;pv-mongo&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id159">
-<div class="code-block-caption"><span class="caption-number">リスト 4.91 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id159" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.91 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id159" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pvc<span class="w"> </span>volume-mongo-storage-mongo-0<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id160">
-<div class="code-block-caption"><span class="caption-number">リスト 4.92 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id160" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.92 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id160" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolumeclaim<span class="w"> </span><span class="s2">&quot;volume-mongo-storage-mongo-0&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
 </div>
 </section>
 <section id="id38">
-<h5><span class="section-number">4.7.2.2.4. </span>GitLab用<a class="headerlink" href="#id38" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.2.4. </span>GitLab用<a class="headerlink" href="#id38" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="literal-block-wrapper docutils container" id="id161">
-<div class="code-block-caption"><span class="caption-number">リスト 4.93 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id161" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.93 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id161" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pv<span class="w"> </span>pv-gitlab
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id162">
-<div class="code-block-caption"><span class="caption-number">リスト 4.94 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id162" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.94 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id162" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolume<span class="w"> </span><span class="s2">&quot;pv-gitlab&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
 </div>
 </section>
 <section id="id39">
-<h5><span class="section-number">4.7.2.2.5. </span>監査ログファイル用<a class="headerlink" href="#id39" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.2.5. </span>監査ログファイル用<a class="headerlink" href="#id39" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="literal-block-wrapper docutils container" id="id163">
-<div class="code-block-caption"><span class="caption-number">リスト 4.95 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id163" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.95 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id163" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pv<span class="w"> </span>pv-auditlog
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id164">
-<div class="code-block-caption"><span class="caption-number">リスト 4.96 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id164" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.96 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id164" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>persistentvolume<span class="w"> </span><span class="s2">&quot;pv-auditlog&quot;</span><span class="w"> </span>deleted
 </pre></div>
 </div>
@@ -4926,17 +4924,17 @@ platform-web-6644884657-dmwp6<span class="w">                             </span
 </section>
 </section>
 <section id="delete-data">
-<span id="id40"></span><h4><span class="section-number">4.7.2.3. </span>永続データを削除<a class="headerlink" href="#delete-data" title="この見出しへのパーマリンク">¶</a></h4>
+<span id="id40"></span><h4><span class="section-number">2.7.2.3. </span>永続データを削除<a class="headerlink" href="#delete-data" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">Kubernetes のコントロールノードにログインし、データを削除します。</div>
 </div>
 <section id="id41">
-<h5><span class="section-number">4.7.2.3.1. </span>データベース用<a class="headerlink" href="#id41" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.3.1. </span>データベース用<a class="headerlink" href="#id41" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">下記コマンドは、Persistent Volume 作成時の hostPath に <code class="file docutils literal notranslate"><span class="pre">/var/data/exastro-suite/exastro-platform/database</span></code> を指定した場合の例です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id165">
-<div class="code-block-caption"><span class="caption-number">リスト 4.97 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id165" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.97 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id165" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永続データがあるコントロールノードにログイン</span>
 ssh<span class="w"> </span>user@contol.node.example
 
@@ -4947,12 +4945,12 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 </div>
 </section>
 <section id="id42">
-<h5><span class="section-number">4.7.2.3.2. </span>ファイル用<a class="headerlink" href="#id42" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.3.2. </span>ファイル用<a class="headerlink" href="#id42" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">下記コマンドは、Persistent Volume 作成時の hostPath に <code class="file docutils literal notranslate"><span class="pre">/var/data/exastro-suite/exastro-it-automation/ita-common</span></code> を指定した場合の例です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id166">
-<div class="code-block-caption"><span class="caption-number">リスト 4.98 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id166" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.98 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id166" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永続データがあるコントロールノードにログイン</span>
 ssh<span class="w"> </span>user@contol.node.example
 
@@ -4963,12 +4961,12 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 </div>
 </section>
 <section id="id43">
-<h5><span class="section-number">4.7.2.3.3. </span>OASE用<a class="headerlink" href="#id43" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.3.3. </span>OASE用<a class="headerlink" href="#id43" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">下記コマンドは、Persistent Volume 作成時の hostPath に <code class="file docutils literal notranslate"><span class="pre">/var/data/exastro-suite/exastro-platform/mongo</span></code> を指定した場合の例です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id167">
-<div class="code-block-caption"><span class="caption-number">リスト 4.99 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id167" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.99 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id167" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永続データがあるコントロールノードにログイン</span>
 ssh<span class="w"> </span>user@contol.node.example
 
@@ -4979,12 +4977,12 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 </div>
 </section>
 <section id="id44">
-<h5><span class="section-number">4.7.2.3.4. </span>GitLab用<a class="headerlink" href="#id44" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.3.4. </span>GitLab用<a class="headerlink" href="#id44" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">下記コマンドは、Persistent Volume 作成時の hostPath に <code class="file docutils literal notranslate"><span class="pre">/var/data/exastro-suite/exastro-platform/gitlab</span></code> を指定した場合の例です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id168">
-<div class="code-block-caption"><span class="caption-number">リスト 4.100 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id168" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.100 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id168" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永続データがあるコントロールノードにログイン</span>
 ssh<span class="w"> </span>user@contol.node.example
 
@@ -4995,12 +4993,12 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 </div>
 </section>
 <section id="id45">
-<h5><span class="section-number">4.7.2.3.5. </span>監査ログファイル用<a class="headerlink" href="#id45" title="この見出しへのパーマリンク">¶</a></h5>
+<h5><span class="section-number">2.7.2.3.5. </span>監査ログファイル用<a class="headerlink" href="#id45" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">下記コマンドは、Persistent Volume 作成時の hostPath に <code class="file docutils literal notranslate"><span class="pre">/var/log/exastro</span></code> を指定した場合の例です。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id169">
-<div class="code-block-caption"><span class="caption-number">リスト 4.101 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id169" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.101 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id169" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永続データがあるコントロールノードにログイン</span>
 ssh<span class="w"> </span>user@contol.node.example
 
@@ -5021,8 +5019,8 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="docker_compose_offline_podman.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">3. </span>Docker Compose on Podman - Offline</a></li>
-    <li class="next"><a href="oase_agent_docker_compose.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">5. </span>OASE Agent (Docker Compose)</a></li>
+    <li class="prev"><a href="docker_compose_online.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">1. </span>Docker Compose - Online</a></li>
+    <li class="next"><a href="oase_agent_docker_compose.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">3. </span>OASE Agent (Docker Compose)</a></li>
   </ul>
 </div>
 
