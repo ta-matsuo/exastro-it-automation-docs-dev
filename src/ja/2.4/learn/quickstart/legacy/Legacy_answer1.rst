@@ -82,7 +82,31 @@
 ------------------------------
 
 | グループ用のパラメータシートを作成します。
-| 利用する Ansible Playbook は `グループ設定 <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ なので、下記のパラメータが管理できるようにパラメータシートを作成しましょう。
+| 利用する Ansible Playbook は下記のPlaybookになります、下記のパラメータが管理できるようにパラメータシートを作成しましょう。
+
+.. code-block:: bash
+   :caption: group.yml
+
+   ---
+   - name: create/update group
+     group:
+       name: "{{ item.0 }}"
+       gid: "{{ item.1 }}"
+     with_together:
+       - "{{ group_name }}"
+       - "{{ group_id }}"
+       - "{{ group_action }}"
+     when: item.2 == 'present'
+
+   - name: create/update group
+     group:
+       name: "{{ item.0 }}"
+       gid: "{{ item.1 }}"
+     with_together:
+       - "{{ group_name }}"
+       - "{{ group_id }}"
+       - "{{ group_action }}"
+     when: item.2 == 'absent'
 
 .. list-table:: グループ設定のパラメータ
    :widths: 10 15
@@ -206,7 +230,61 @@
 ------------------------------
 
 | ユーザー用のパラメータシートを作成します。
-| 利用する Ansible Playbook は `ユーザー設定 <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ なので、下記のパラメータが管理できるようにパラメータシートを作成しましょう。
+| 利用する Ansible Playbook は下記のPlaybookになります、下記のパラメータが管理できるようにパラメータシートを作成しましょう。
+
+.. code-block:: bash
+   :caption: user.yml
+
+   ---
+   - name: create user
+     user:
+       name: "{{ item.0 }}"
+       uid: "{{ item.1 }}"
+       group: "{{ item.2 }}"
+       comment: "{{ item.3 }}"
+       home: "{{ item.4 }}"
+       shell: "{{ item.5 }}"
+       password: "{{ item.6 | password_hash('sha512') }}"
+     with_together:
+       - "{{ user_name }}"
+       - "{{ user_id }}"
+       - "{{ group }}"
+       - "{{ comment }}"
+       - "{{ home_dir }}"
+       - "{{ login_shell }}"
+       - "{{ password }}"
+       - "{{ user_action }}"
+       - "{{ password_apply }}"
+     when: item.7 == 'present' and password_apply
+
+   - name: create user
+     user:
+       name: "{{ item.0 }}"
+       uid: "{{ item.1 }}"
+       group: "{{ item.2 }}"
+       comment: "{{ item.3 }}"
+       home: "{{ item.4 }}"
+       shell: "{{ item.5 }}"
+     with_together:
+       - "{{ user_name }}"
+       - "{{ user_id }}"
+       - "{{ group }}"
+       - "{{ comment }}"
+       - "{{ home_dir }}"
+       - "{{ login_shell }}"
+       - "{{ user_action }}"
+       - "{{ password_apply }}"
+     when: item.6 == 'present' and not password_apply
+
+   - name: delete user
+     user:
+       state: absent
+       name: "{{ item.0 }}"
+       remove: 'yes'
+     with_together:
+       - "{{ user_name }}"
+       - "{{ user_action }}"
+     when: item.1 == 'absent'
 
 .. list-table:: ユーザー設定のパラメータ
    :widths: 10 15
@@ -460,7 +538,7 @@
 機器登録
 --------
 
-| 作業対象となるサーバーは :doc:`前のシナリオ <scenario1>` で登録した web01 を利用するため、作業は不要です。
+| 作業対象となるサーバーは :doc:`前のシナリオ <Legacy_scenario1>` で登録した web01 を利用するため、作業は不要です。
 
 
 作業手順の登録
@@ -493,20 +571,111 @@ Movement 登録
      - :kbd:`IP`
 
 Ansible Playbook 登録
------------------
+---------------------
 
-| クリックして `group.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ 、 `user.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をダウンロードしてください。
-| :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `group.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ `user.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
+| 本シナリオでは、 以下のPlaybookを利用します。以下をコピーして、yml形式でgroup.ymlとuser.ymlを作成してください。
+
+.. code-block:: bash
+   :caption: group.yml
+
+   ---
+   - name: create/update group
+     group:
+       name: "{{ item.0 }}"
+       gid: "{{ item.1 }}"
+     with_together:
+       - "{{ group_name }}"
+       - "{{ group_id }}"
+       - "{{ group_action }}"
+     when: item.2 == 'present'
+
+   - name: create/update group
+     group:
+       name: "{{ item.0 }}"
+       gid: "{{ item.1 }}"
+     with_together:
+       - "{{ group_name }}"
+       - "{{ group_id }}"
+       - "{{ group_action }}"
+     when: item.2 == 'absent'
+
+.. code-block:: bash
+   :caption: user.yml
+
+   ---
+   - name: create user
+     user:
+       name: "{{ item.0 }}"
+       uid: "{{ item.1 }}"
+       group: "{{ item.2 }}"
+       comment: "{{ item.3 }}"
+       home: "{{ item.4 }}"
+       shell: "{{ item.5 }}"
+       password: "{{ item.6 | password_hash('sha512') }}"
+     with_together:
+       - "{{ user_name }}"
+       - "{{ user_id }}"
+       - "{{ group }}"
+       - "{{ comment }}"
+       - "{{ home_dir }}"
+       - "{{ login_shell }}"
+       - "{{ password }}"
+       - "{{ user_action }}"
+       - "{{ password_apply }}"
+     when: item.7 == 'present' and password_apply
+
+   - name: create user
+     user:
+       name: "{{ item.0 }}"
+       uid: "{{ item.1 }}"
+       group: "{{ item.2 }}"
+       comment: "{{ item.3 }}"
+       home: "{{ item.4 }}"
+       shell: "{{ item.5 }}"
+     with_together:
+       - "{{ user_name }}"
+       - "{{ user_id }}"
+       - "{{ group }}"
+       - "{{ comment }}"
+       - "{{ home_dir }}"
+       - "{{ login_shell }}"
+       - "{{ user_action }}"
+       - "{{ password_apply }}"
+     when: item.6 == 'present' and not password_apply
+
+   - name: delete user
+     user:
+       state: absent
+       name: "{{ item.0 }}"
+       remove: 'yes'
+     with_together:
+       - "{{ user_name }}"
+       - "{{ user_action }}"
+     when: item.1 == 'absent'
+
+
+| :menuselection:`Ansible-Legacy --> Playbook素材集` から、上記のPlaybookを登録します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/Ansible-Playbook登録.png
    :width: 1200px
    :alt: Ansible-Playbook登録
 
+.. list-table:: Ansible Playbook 情報の登録
+  :widths: 10 20
+  :header-rows: 1
+
+  * - Playbook素材名
+    - Playbook素材
+  * - :kbd:`group`
+    - :file:`group.yml`
+  * - :kbd:`user`
+    - :file:`user.yml`
+
 Movement と Ansible Playbook の紐付け
----------------------------------
+-------------------------------------
 
 | :menuselection:`Ansible-Legacy --> Movement-Playbook紐付` から、Movement と Ansible Playbook の紐付けを行います。
-| 本シナリオでは、 `group.ym <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ および `user.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ を利用します。
+| 本シナリオでは、 group.yml および user.ymlを利用します。
 | ユーザーを作成する際には、先にグループを指定する必要があるため下記の順序でインクルードする必要があります。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/MovementとPlaybook紐付け.png

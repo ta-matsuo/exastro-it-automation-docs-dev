@@ -33,7 +33,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/オペレーション登録.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario1/オペレーション登録.gif
    :width: 1200px
    :alt: オペレーション登録
 
@@ -71,7 +71,7 @@
 | ホスト名を管理するためのパラメータシートを作成します。
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、ホスト名を管理するために、「サーバー基本情報」というパラメータシートを作成します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/パラメータシート作成.png
+.. figure:: ../../../../../images/learn/quickstart/scenario1/パラメータシート作成.png
    :width: 1200px
    :alt: パラメータシート作成
 
@@ -138,7 +138,7 @@
 
 | :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である server01 の接続情報を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/機器一覧登録.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario1/機器一覧登録.gif
    :width: 1200px
    :alt: 機器一覧登録
 
@@ -189,7 +189,7 @@
 
 | :menuselection:`Ansible-LegacyRole --> Movement一覧` から、ホスト名設定のための Movement を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/Movement登録.png
+.. figure:: ../../../../../images/learn/quickstart/scenario1/Movement登録.png
    :width: 1200px
    :alt: Movement登録
 
@@ -215,7 +215,7 @@ Ansible Role 登録
 
 | :menuselection:`Ansible-LegacyRole --> ロールパッケージ管理` から、ダウンロードした `OS-RHEL8.zip <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/ロールパッケージ管理.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario1/ロールパッケージ管理.gif
    :width: 1200px
    :alt: ロールパッケージ管理
 
@@ -234,7 +234,7 @@ Movement と Ansible Role の紐付け
 | :menuselection:`Ansible-LegacyRole --> Movement-ロール紐付` から、Movement と Ansible Role パッケージの紐付けを行います。
 | 本シナリオでは、 `ホスト名管理用の Ansible Role パッケージ <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_hostname/OS_build>`_ を利用します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/Movement-ロール紐付け.png
+.. figure:: ../../../../../images/learn/quickstart/scenario1/Movement-ロール紐付け.png
    :width: 1200px
    :alt: Movement-ロール紐付け
 
@@ -256,7 +256,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`Ansible-LegacyRole --> 代入値自動登録設定` から、サーバー基本情報パラメータシートのホスト名の項目に入るパラメータを、Ansible Role パッケージの :kbd:`VAR_RH_hostname` に代入する設定を行います。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/代入値自動登録設定.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario1/代入値自動登録設定.gif
    :width: 1200px
    :alt: 代入値自動登録設定
 
@@ -292,7 +292,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ホストに対するパラメータを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/パラメータ登録.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario1/パラメータ登録.gif
    :width: 1200px
    :alt: パラメータ登録
 
@@ -338,7 +338,7 @@ Movement と Ansible Role の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/作業実行.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario1/作業実行.gif
    :width: 1200px
    :alt: 作業実行
 
@@ -371,7 +371,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ITA 独自変数を使って機器一覧に登録してあるホスト名を登録してみましょう。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/パラメータ設定.png
+.. figure:: ../../../../../images/learn/quickstart/scenario1/パラメータ設定.png
    :width: 1200px
    :alt: パラメータ設定
 
@@ -397,7 +397,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である server01 のホスト名を db01 に更新します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/機器一覧変更.png
+.. figure:: ../../../../../images/learn/quickstart/scenario1/機器一覧変更.png
    :width: 1200px
    :alt: パラメータ登録
 
@@ -442,7 +442,7 @@ Movement と Ansible Role の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/作業実行.gif
+.. figure:: ../../../../../images/learn/quickstart/scenario1/作業実行.gif
    :width: 1200px
    :alt: 作業実行
 

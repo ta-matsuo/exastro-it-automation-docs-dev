@@ -48,7 +48,6 @@ Ansible-Legacy-Role
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 3
 
    scenario1
    scenario2
